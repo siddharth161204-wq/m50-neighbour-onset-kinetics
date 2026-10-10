@@ -97,23 +97,18 @@ class Kinetics:
         self.reactants = [np.where(self.order[:, j] != 0)[0] for j in range(NR)]
         self._lnA, self._b, self._Ea = [float(x) for x in self.lnA], [float(x) for x in self.b], [float(x) for x in self.Ea]
         self._react = [[(int(s), float(self.order[s, j])) for s in self.reactants[j]] for j in range(NR)]
+        self._rmask = (self.order.T != 0).astype(float)          # (NR, NS): which species each reaction consumes
 
     def rates(self, T, c):
         """r_j for every reaction and node, shape (NR, N). A reaction stops when any of its reactants is exhausted."""
         T = np.atleast_1d(np.asarray(T, dtype=float))
         c = np.asarray(c, dtype=float).reshape(NS, -1)
-        lnT, invRT = np.log(T), 1.0 / (R_GAS * T)
-        out = np.empty((NR, T.size))
-        for j in range(NR):
-            e = self.lnA[j] + self.b[j] * lnT - self.Ea[j] * invRT
-            ok = np.ones(T.size, bool)
-            for s in self.reactants[j]:
-                cs = c[s]
-                pos = cs > 0
-                ok &= pos
-                e = e + self.order[s, j] * np.log(np.where(pos, cs, 1.0))
-            out[j] = np.where(ok, np.exp(np.minimum(e, 700.0)), 0.0)
-        return out
+        pos = c > 0
+        lnc = np.log(np.where(pos, c, 1.0))
+        e = (self.lnA[:, None] + self.b[:, None] * np.log(T)[None, :] - self.Ea[:, None] / (R_GAS * T)[None, :]
+             + self.order.T @ lnc)
+        ok = (self._rmask @ (~pos).astype(float)) == 0.0
+        return np.where(ok, np.exp(np.minimum(e, 700.0)), 0.0)
 
     def rates_scalar(self, T, c):
         """Same as rates() for one node, in plain floats (the passive integration calls this many thousand times)."""
