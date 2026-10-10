@@ -1,0 +1,112 @@
+{
+ "P1": {
+  "result": "held",
+  "tau10": {
+   "hottest_s": 4.244411183117721,
+   "lumped_s": 27.595165803068934,
+   "lead_s": 23.35075461995121,
+   "earlier_percent": 84.6190045988211,
+   "central_estimate_s": [
+    4.2,
+    29.0
+   ],
+   "holds": true
+  },
+  "tau30": {
+   "hottest_s": 11.475868734837167,
+   "lumped_s": 37.880721416164995,
+   "lead_s": 26.404852681327828,
+   "earlier_percent": 69.70525294710987,
+   "central_estimate_s": [
+    11.5,
+    39.0
+   ],
+   "holds": true
+  }
+ },
+ "P2": {
+  "result": "held",
+  "cases_reached": [
+   "21.5 kJ, 10 s, 200 mW/K",
+   "21.5 kJ, 10 s, 500 mW/K",
+   "21.5 kJ, 30 s, 200 mW/K",
+   "21.5 kJ, 30 s, 500 mW/K",
+   "33.2 kJ, 10 s, 100 mW/K",
+   "33.2 kJ, 10 s, 200 mW/K",
+   "33.2 kJ, 10 s, 500 mW/K",
+   "33.2 kJ, 30 s, 100 mW/K",
+   "33.2 kJ, 30 s, 200 mW/K",
+   "33.2 kJ, 30 s, 500 mW/K"
+  ],
+  "count": 10,
+  "predicted_but_not_reached": [],
+  "reached_but_not_predicted": [],
+  "mean_peak_C_at_33kJ_50mWK": [
+   106.95651017084077,
+   107.3026095032522
+  ]
+ },
+ "P3": {
+  "result": "held",
+  "smallest_G_mWK": 100.0,
+  "central_estimate_mWK": 100,
+  "only_hottest_cases": [
+   "21.5 kJ, 10 s, 100 mW/K",
+   "21.5 kJ, 30 s, 100 mW/K",
+   "8.75 kJ, 10 s, 500 mW/K",
+   "8.75 kJ, 30 s, 500 mW/K"
+  ]
+ },
+ "P4": {
+  "result": "held",
+  "cases": [
+   "21.5 kJ, 10 s, 500 mW/K",
+   "21.5 kJ, 30 s, 500 mW/K",
+   "33.2 kJ, 10 s, 200 mW/K",
+   "33.2 kJ, 30 s, 200 mW/K"
+  ],
+  "case_list_as_predicted": true,
+  "predicted_cases": [
+   "21.5 kJ, 10 s, 500 mW/K",
+   "21.5 kJ, 30 s, 500 mW/K",
+   "33.2 kJ, 10 s, 200 mW/K",
+   "33.2 kJ, 30 s, 200 mW/K"
+  ]
+ },
+ "summary": {
+  "levels_reached_two_strip": {
+   "hottest_node": {
+    "0.15": 16,
+    "1.0": 7,
+    "10.0": 6
+   },
+   "resolved_mean": {
+    "0.15": 10,
+    "1.0": 0,
+    "10.0": 0
+   },
+   "lumped": {
+    "0.15": 12,
+    "1.0": 2,
+    "10.0": 0
+   }
+  },
+  "temperature_at_0.15Kpm_C_range": {
+   "hottest_node": [
+    108.3881632200642,
+    108.39020171000737
+   ],
+   "resolved_mean": [
+    108.391987563567,
+    108.40945671785619
+   ],
+   "lumped": [
+    108.38992012566149,
+    108.41567208151082
+   ]
+  },
+  "reaction_at_0.15Kpm": [
+   "sei_decomp"
+  ]
+ }
+}

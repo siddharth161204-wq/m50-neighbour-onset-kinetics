@@ -10,6 +10,24 @@ Siddharth Satte, Independent researcher, Pune, India.
 2. Kinetics chosen and recorded (DECISIONS.md D1 to D7), driver filled (`src/onset_kinetics.py`), V0, V1 and V2 run on the source paper's cells and on synthetic histories only.
 3. Predictions: `predictions.md`, commit `b09ef1d21a0281b543d0bf1f3b2c95f6cd5c2528`, pushed to this public repository at 2026-10-10 08:09:37 UTC (the repository's `pushed_at` time; it was created at 08:09:05 UTC), before any kinetics were integrated along an archived history of the two-cell study.
 
+## Stage 1 results (passive kinetics along the archived histories)
+
+Computed by `src/onset_kinetics.py` (`results/onset_results.csv` and `.json`, 49 cases) and scored by `src/score_stage1.py` (`results/stage1_scorecard.json`), after the predictions were public (Stage 1 ran from 08:10:09 UTC on 10 October 2026).
+
+1. Every history that self-heats at all first reaches 0.15 K/min at 108.39 to 108.42 C, by SEI decomposition. The same kinetics give T_in = 179 C in the paper's ARC test only because its slow heat-wait-seek consumes the SEI first (V1).
+2. Copper busbars (500 mW/K) and 33.2 kJ: the resolved hottest node first self-heats at 0.15 K/min at 4.24 s and 11.48 s (10 and 30 s release), the lumped node at 27.60 s and 37.88 s, the resolved mean at 49.35 s and 59.38 s. The hottest node starts 23.4 s and 26.4 s before the lumped node (84.6 % and 69.7 % earlier).
+3. The smallest busbar conductance at which only the hottest node starts is 100 mW/K (21.5 kJ, both releases); it also happens at 8.75 kJ and 500 mW/K.
+4. The resolved mean starts in 10 of the 42 two-strip cases, the lumped node in 12 and the hottest node in 16. The hottest node reaches 10 K/min (first cathode reaction) in 6 cases, in 4 of which the lumped node never reaches 1 K/min; passively the lumped node peaks at 8.6 and 9.4 K/min at 500 mW/K and never reaches 10 K/min.
+
+| Prediction | Statement (short form) | Result | Measured |
+|---|---|---|---|
+| P1 | At 500 mW/K and 33.2 kJ the hottest node reaches 0.15 K/min more than half the lumped time earlier | Held | 4.24 s against 27.60 s (84.6 %) and 11.48 s against 37.88 s (69.7 %); central estimates 4.2 against 29 s and 11.5 against 39 s |
+| P2 | The resolved mean reaches 0.15 K/min in exactly 10 named cases | Held | The same 10 cases; at 33.2 kJ and 50 mW/K the mean peaks at 107.0 and 107.3 C, just under 108.4 C |
+| P3 | Smallest conductance with only the hottest node starting: 100 mW/K | Held | 100 mW/K (21.5 kJ), and 8.75 kJ at 500 mW/K, as predicted |
+| P4 | The hottest node reaches 10 K/min where the lumped node stays under 1 K/min | Held | In the 4 predicted cases (33.2 kJ at 200 mW/K, 21.5 kJ at 500 mW/K, both releases) |
+
+V2 repeated on the archived headline cases after Stage 1 (`results/v2_archived.json`): halving the tolerances, the largest step and the evaluation grid moves no onset time by more than 3.8e-6 of itself.
+
 ## Kinetics
 
 Posterior-mean B-CRNN model of Koenig, Zhao and Deng (2025), from the article's supplementary material (every SVGD particle of its NCM811 cathode, anode-electrolyte-SEI-binder and separator submodels): 13 species, 11 reactions, parameters in `inputs/kinetics/bcrnn_mean_model.json`, provenance and hashes in `inputs/kinetics/SOURCE.md`. Reactant masses from the paper's Table 1 (its 720 g, 25 Ah cell), with the anode-electrolyte reaction's mass read from its Fig. A.1(a) (D4). The neighbour's density and heat capacity are the published study's (2938.7 kg/m3, 950 J/(kg K)).
@@ -32,6 +50,9 @@ Python 3.11 or newer. `pip install -r requirements.txt`, then `./get_published_s
     python3 v0_dsc_check.py --out ../results
     python3 v1_arc_check.py --out ../results --sensitivity
     python3 v2_synthetic.py --out ../results
+    python3 onset_kinetics.py --series ../external/m50-two-cell-pilot/results/resolved_series --out ../results
+    python3 score_stage1.py --out ../results
+    python3 v2_archived.py --out ../results
 
 To recompute the kinetic parameters from the publisher's files: `python3 inputs/kinetics/fetch_supplementary.py` and `python3 inputs/kinetics/extract_mean_model.py`.
 
