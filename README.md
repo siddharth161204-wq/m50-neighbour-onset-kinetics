@@ -8,7 +8,7 @@ Siddharth Satte, Independent researcher, Pune, India.
 
 1. The published study was cloned at v1.0.0 (commit 2b35ac7); its archived series load, and the hottest node of the 33.2 kJ, 30 s, 500 mW/K case first reaches 456.65 K (183.5 C) between the 15.5 s and 16.0 s samples, at 15.51 s by linear interpolation, the published number.
 2. Kinetics chosen and recorded (DECISIONS.md D1 to D7), driver filled (`src/onset_kinetics.py`), V0, V1 and V2 run on the source paper's cells and on synthetic histories only.
-3. Predictions: `predictions.md`, to be committed and pushed before Stage 1 runs on any archived history.
+3. Predictions: `predictions.md`, commit `b09ef1d21a0281b543d0bf1f3b2c95f6cd5c2528`, pushed to this public repository at 2026-10-10 08:09:37 UTC (the repository's `pushed_at` time; it was created at 08:09:05 UTC), before any kinetics were integrated along an archived history of the two-cell study.
 
 ## Kinetics
 
