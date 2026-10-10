@@ -1,0 +1,36 @@
+{
+ "calibration": {
+  "x_ticks_px": [
+   289.0,
+   514.0,
+   739.5,
+   964.5,
+   1189.5,
+   1415.0
+  ],
+  "y_ticks_px_major": [
+   19.0,
+   631.5
+  ],
+  "px_per_C": 4.504,
+  "px_per_decade": 122.5
+ },
+ "sei_implied_mass_g": {
+  "median": 99.42206599963208,
+  "n": 156,
+  "table1_value": 100.58
+ },
+ "digitisation_bias_factor": 1.0116466499536652,
+ "an_ele_implied_mass_g_raw": {
+  "median": 203.16477564896468,
+  "q25": 202.09779251462808,
+  "q75": 204.06900097553765,
+  "n": 156
+ },
+ "an_ele_implied_mass_g_corrected": 205.53096467386308,
+ "candidates_g": {
+  "anode": 100.58,
+  "electrolyte": 108.0,
+  "anode_plus_electrolyte": 208.57999999999998
+ }
+}
