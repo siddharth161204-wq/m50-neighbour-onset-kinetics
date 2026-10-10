@@ -5,9 +5,10 @@ must close to 1e-9 of the heat taken in.
 
 Usage: python3 v3_stage2.py --out ../results --cases max:30:0.5 max:30:0.2
 """
-import argparse, glob, json, os
+import argparse, glob, json, os, sys
 import numpy as np
-import lumped_two_cell as LP
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "external", "m50-two-cell-pilot", "src"))
+import lumped_two_cell as LP               # noqa: E402
 
 LP.K_RADIAL = LP.K_AXIAL = 1.0e4          # before the resolved model is built
 import reactive as RX                       # noqa: E402

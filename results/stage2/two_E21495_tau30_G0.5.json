@@ -1,0 +1,90 @@
+{
+ "case": "two_E21495_tau30_G0.5",
+ "E_body_J": 21495.3,
+ "tau_rel_s": 30.0,
+ "G_bus_WK": 0.5,
+ "reaction": true,
+ "dt_target_K": 1.0,
+ "dt_accept_K": 4.0,
+ "resolved": {
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "peak": {
+   "Tmax_C": 236.83083481568417,
+   "t_s": 30.3,
+   "imax": 39060,
+   "Tmean_C": 123.51649771637562
+  },
+  "t_cat1_consumed_at_a_node_s": null,
+  "conversion_volume_mean_900s": {
+   "sei": 0.03888020168951794,
+   "li_an": 9.737174470149348e-06,
+   "ele_liq": 3.5533706578469555e-05,
+   "cat1": 0.0001365674790506273,
+   "sep": 0.3090766103570015
+  },
+  "energy_J": {
+   "in_bus": 7715.947545139271,
+   "in_gap": 500.8427333562389,
+   "in_rad": 549.6547115404513,
+   "out_conv": 2851.8268811288103,
+   "out_rad": 2628.036314674652,
+   "in_rxn": 125.84105381168654
+  },
+  "stored_J": 3412.422848056147,
+  "net_in_J": 3412.4228480441843,
+  "energy_residual_rel": 1.3452765411989802e-12,
+  "steps": 9000,
+  "rejected": 0,
+  "max_implicit_nodes": 157,
+  "max_local_reaction_heating_K_per_s": 1.2900051238858847
+ },
+ "lumped_reactive": {
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "peak": {
+   "T_C": 152.9372309995507,
+   "t_s": 166.0
+  },
+  "reaction_heat_J": 182.31242770898106,
+  "conversion_900s": {
+   "sei": 0.06137014999399748,
+   "li_an": 4.849213941715558e-05,
+   "ele_liq": 0.00014063954406462464,
+   "cat1": 0.00014354092343826785,
+   "sep": 0.9936646104143265
+  }
+ },
+ "lumped_passive": {
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "peak": {
+   "T_C": 152.73919844543252,
+   "t_s": 164.3
+  },
+  "reaction_heat_J": 0.0,
+  "conversion_900s": {
+   "sei": 0.0,
+   "li_an": 0.0,
+   "ele_liq": 0.0,
+   "cat1": 0.0,
+   "sep": 0.0
+  }
+ },
+ "passive_archived": {
+  "Tmax_peak_C": 236.6574341107799,
+  "Tmean_peak_C": 123.17767458012656,
+  "T2_be_peak_C": 152.73911225083378
+ },
+ "runtime_s": 1418.8073287010193,
+ "lumped_passive_vs_archived_T2_be_max_abs_K": 0.0
+}

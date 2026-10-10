@@ -43,22 +43,24 @@ def tidy(ax):
         ax.spines[sp].set_visible(False)
 
 
-fig, axs = plt.subplots(1, 3, figsize=(7.4, 2.45), gridspec_kw={"wspace": 0.42})
+fig, axs = plt.subplots(1, 3, figsize=(7.6, 2.45), gridspec_kw={"wspace": 0.55})
 
-# a: time to 0.15 K/min against conductance, 33.2 kJ, 30 s
+# a: time to 0.15 K/min against conductance, 30 s release, maximum (filled) and median (hollow) energy
 ax = axs[0]
-for key, col, mk, _ in HIST:
-    pts = [(g, rows[f"two_E33223_tau30_G{g:g}"][f"{key}_t_0.15Kpm_s"]) for g in G]
-    pts = [(g, y) for g, y in pts if y is not None]
-    if pts:
-        xs, ys = zip(*pts)
-        ax.plot(xs, ys, color=col, lw=1.6, zorder=2)
-        ax.scatter(xs, ys, marker=mk, s=24, facecolor=col, edgecolor=col, zorder=3)
-for g in G:
-    r = rows[f"two_E33223_tau30_G{g:g}"]
-    got = [k for k, *_ in HIST if r[f"{k}_t_0.15Kpm_s"] is not None]
-    if got == ["hottest_node"]:
-        ax.scatter([g], [r["hottest_node_t_0.15Kpm_s"]], marker="o", s=120, facecolor="none", edgecolor=INK2, lw=0.8, zorder=4)
+for e, ls, fill in (("33223", "-", True), ("21495", "--", False)):
+    for key, col, mk, _ in HIST:
+        pts = [(g, rows[f"two_E{e}_tau30_G{g:g}"][f"{key}_t_0.15Kpm_s"]) for g in G]
+        pts = [(g, y) for g, y in pts if y is not None]
+        if pts:
+            xs, ys = zip(*pts)
+            if len(xs) > 1:
+                ax.plot(xs, ys, color=col, lw=1.6, ls=ls, zorder=2)
+            ax.scatter(xs, ys, marker=mk, s=24, facecolor=col if fill else SURF, edgecolor=col, linewidth=1.2, zorder=3)
+    for g in G:
+        r = rows[f"two_E{e}_tau30_G{g:g}"]
+        got = [k for k, *_ in HIST if r[f"{k}_t_0.15Kpm_s"] is not None]
+        if got == ["hottest_node"]:
+            ax.scatter([g], [r["hottest_node_t_0.15Kpm_s"]], marker="o", s=120, facecolor="none", edgecolor=INK2, lw=0.8, zorder=4)
 ax.set_xscale("log"); ax.set_xlim(0.0036, 0.68); ax.set_xticks(G); ax.set_xticklabels(GL); ax.xaxis.set_minor_locator(NullLocator())
 ax.set_yscale("log"); ax.set_ylim(3, 1000)
 ax.set_yticks([3, 10, 30, 100, 300, 1000]); ax.set_yticklabels(["3", "10", "30", "100", "300", "1000"]); ax.yaxis.set_minor_locator(NullLocator())
@@ -77,13 +79,13 @@ ax = axs[1]
 _, ser = OK.run_case(os.path.join(a.series, "two_E33223_tau30_G0.5.npz"), keep_series=True)
 for lv in (0.15, 1.0, 10.0):
     ax.axhline(lv, color=AXIS, lw=0.8, ls=(0, (3, 2)), zorder=1)
-    ax.text(298, lv * 1.18, f"{lv:g} K/min", fontsize=6.0, color=INK2, ha="right", va="bottom")
+    ax.text(304, lv, f"{lv:g}", fontsize=6.0, color=INK2, ha="left", va="center", clip_on=False)
 for key, col, mk, lab in HIST:
     tt, sh, Tg = ser[key]
     m = tt <= 300
     ax.plot(tt[m], np.where(sh[m] > 1e-3, sh[m], np.nan), color=col, lw=1.4, zorder=2)
-ax.set_yscale("log"); ax.set_ylim(1e-3, 1e5); ax.set_xlim(0, 300)
-ax.set_yticks([1e-3, 1e-1, 1e1, 1e3, 1e5]); ax.yaxis.set_minor_locator(NullLocator())
+ax.set_yscale("log"); ax.set_ylim(1e-3, 1e4); ax.set_xlim(0, 300)
+ax.set_yticks([1e-3, 1e-1, 1e1, 1e3]); ax.yaxis.set_minor_locator(NullLocator())
 tidy(ax)
 ax.set_xlabel("Time (s)")
 ax.set_ylabel("Kinetic self-heating rate (K/min)")
@@ -94,7 +96,7 @@ ax = axs[2]
 s2 = os.path.join(a.out, "stage2", "two_E33223_tau30_G0.5.npz")
 arch = np.load(os.path.join(a.series, "two_E33223_tau30_G0.5.npz"))
 ax.axhspan(255.7, 302.1, color=BAND, lw=0, zorder=0)
-ax.text(4, 278.9, "internal-short band", fontsize=6.3, color=INK2, va="center")
+ax.text(296, 278.9, "internal-short band", fontsize=6.3, color=INK2, va="center", ha="right")
 ax.plot(arch["t"], arch["Tmax"] - 273.15, color=ORANGE, lw=1.2, ls=(0, (3, 2)), zorder=2)
 ax.plot(arch["t_be"], arch["T2_be"] - 273.15, color=BLUE, lw=1.2, ls=(0, (3, 2)), zorder=2)
 if os.path.exists(s2):
@@ -111,10 +113,12 @@ legend = [Line2D([], [], color=BLUE, marker="o", lw=1.6, markersize=4.5, label="
           Line2D([], [], color=AQUA, marker="s", lw=1.6, markersize=4.5, label="Resolved mean"),
           Line2D([], [], color=ORANGE, marker="^", lw=1.6, markersize=5, label="Resolved hottest node"),
           Line2D([], [], color=INK2, marker="o", ls="none", markerfacecolor="none", markersize=8.5, label="a: only the hottest node starts"),
-          Line2D([], [], color=INK2, lw=1.6, label="c: with reaction heat"),
-          Line2D([], [], color=INK2, lw=1.2, ls=(0, (3, 2)), label="c: without (archived, passive)")]
-fig.legend(handles=legend, loc="lower center", ncol=3, fontsize=6.6, frameon=False, bbox_to_anchor=(0.5, -0.2),
-           columnspacing=1.6, handlelength=2.0)
+          Line2D([], [], color=INK2, marker="o", lw=1.3, markersize=4.5, label="a: 33.2 kJ"),
+          Line2D([], [], color=INK2, marker="o", lw=1.3, ls=(0, (3, 2)), markersize=4.5, markerfacecolor=SURF, label="a: 21.5 kJ"),
+          Line2D([], [], color=INK2, lw=1.6, label="c: with the reaction heat"),
+          Line2D([], [], color=INK2, lw=1.2, ls=(0, (3, 2)), label="c: without (archived)")]
+fig.legend(handles=legend, loc="upper center", ncol=4, fontsize=6.6, frameon=False, bbox_to_anchor=(0.5, -0.02),
+           columnspacing=1.8, handlelength=2.2)
 for ext in ("png", "pdf"):
-    fig.savefig(os.path.join(a.out, f"neighbour_onset_figure.{ext}"), dpi=240, bbox_inches="tight")
+    fig.savefig(os.path.join(a.out, f"neighbour_onset_figure.{ext}"), dpi=240, bbox_inches="tight", pad_inches=0.03)
 print("wrote", os.path.join(a.out, "neighbour_onset_figure.png"))

@@ -1,0 +1,94 @@
+{
+ "case": "two_E33223_tau30_G0.5_no_source",
+ "E_body_J": 33222.9,
+ "tau_rel_s": 30.0,
+ "G_bus_WK": 0.5,
+ "reaction": false,
+ "dt_target_K": 1.0,
+ "dt_accept_K": 4.0,
+ "resolved": {
+  "cross_s": {
+   "T_onset_low": 19.24433865062678,
+   "T_onset_mean": 20.697877200235144,
+   "T_onset_high": 22.4121710202739
+  },
+  "peak": {
+   "Tmax_C": 348.293120172293,
+   "t_s": 30.0,
+   "imax": 39060,
+   "Tmean_C": 167.88692509251024
+  },
+  "t_cat1_consumed_at_a_node_s": null,
+  "conversion_volume_mean_900s": {
+   "sei": 0.0,
+   "li_an": 0.0,
+   "ele_liq": 0.0,
+   "cat1": 0.0,
+   "sep": 0.0
+  },
+  "energy_J": {
+   "in_bus": 11186.657659725042,
+   "in_gap": 721.7068343906041,
+   "in_rad": 1073.3906870311866,
+   "out_conv": 4025.8674056088926,
+   "out_rad": 4373.069942087453,
+   "in_rxn": 0.0
+  },
+  "stored_J": 4582.817833463359,
+  "net_in_J": 4582.817833450487,
+  "energy_residual_rel": 9.915514762507722e-13,
+  "steps": 9000,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "max_local_reaction_heating_K_per_s": 0.0
+ },
+ "lumped_reactive": {
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "peak": {
+   "T_C": 212.2415261261815,
+   "t_s": 152.9
+  },
+  "reaction_heat_J": 0.0,
+  "conversion_900s": {
+   "sei": 0.0,
+   "li_an": 0.0,
+   "ele_liq": 0.0,
+   "cat1": 0.0,
+   "sep": 0.0
+  }
+ },
+ "lumped_passive": {
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "peak": {
+   "T_C": 212.2415261261815,
+   "t_s": 152.9
+  },
+  "reaction_heat_J": 0.0,
+  "conversion_900s": {
+   "sei": 0.0,
+   "li_an": 0.0,
+   "ele_liq": 0.0,
+   "cat1": 0.0,
+   "sep": 0.0
+  }
+ },
+ "passive_archived": {
+  "Tmax_peak_C": 348.29312017229313,
+  "Tmean_peak_C": 167.88689097887732,
+  "T2_be_peak_C": 212.2414917090748
+ },
+ "runtime_s": 585.529200553894,
+ "lumped_passive_vs_archived_T2_be_max_abs_K": 0.0,
+ "resolved_passive_vs_archived_max_abs_K": {
+  "Tmax": 1.2505552149377763e-12,
+  "Tmean": 2.2737367544323206e-13
+ }
+}

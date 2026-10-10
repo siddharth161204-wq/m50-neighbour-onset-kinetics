@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: "Onset kinetics on a resolved neighbour cell: where a whole-cell threshold and a local one disagree"
+type: software
+authors:
+  - family-names: Satte
+    given-names: Siddharth
+    affiliation: Independent Researcher
+    orcid: https://orcid.org/0009-0001-3584-1008
+version: v1.0.0
+doi: 10.5281/zenodo.23279456
+date-released: 2026-10-10
+repository-code: https://github.com/siddharth161204-wq/m50-neighbour-onset-kinetics
+license:
+  - MIT
+  - CC-BY-4.0
+keywords:
+  - thermal runaway
+  - lithium-ion battery
+  - decomposition kinetics
+  - chemical reaction neural network
+  - LG M50
+  - lumped thermal model
+  - finite element method
+  - pre-registration
+references:
+  - type: software
+    title: "Where and when a neighbour cell first reaches thermal-runaway onset temperatures: resolved against lumped, a pre-registered two-cell LG M50 pilot"
+    authors:
+      - family-names: Satte
+        given-names: Siddharth
+    version: v1.0.0
+    doi: 10.5281/zenodo.23253738
+  - type: article
+    title: "Comprehensive thermal-kinetic uncertainty quantification of lithium-ion battery thermal runaway via Bayesian chemical reaction neural networks"
+    authors:
+      - family-names: Koenig
+        given-names: Benjamin C.
+      - family-names: Zhao
+        given-names: Peng
+      - family-names: Deng
+        given-names: Sili
+    journal: Chemical Engineering Journal
+    volume: 507
+    start: 160402
+    year: 2025
+    doi: 10.1016/j.cej.2025.160402

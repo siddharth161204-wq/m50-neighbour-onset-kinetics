@@ -1,0 +1,34 @@
+{
+ "a": "committed records",
+ "b": "re-run with the final code",
+ "note": "V0 to V2 were committed (78c1321) before the predictions, with a loop-based rates(); the vectorised rates() used by Stage 1 and Stage 2 (b7ba0f5) agrees with it to 4e-14. These are the committed records against a re-run of the same scripts with the final code; the committed records are kept unchanged.",
+ "files": {
+  "v0_dsc_check.json": {
+   "numbers_compared": 44,
+   "max_relative_difference": 6.443169525352315e-08,
+   "at": "/separator/reading_ii_dH_times_dcdt/peak_W_per_g",
+   "leaves_differing_in_kind": 0
+  },
+  "v1_arc_check.json": {
+   "numbers_compared": 605,
+   "max_relative_difference": 2.420068847820698e-09,
+   "at": "/arc_base/conversion_at_T_in/binder",
+   "leaves_differing_in_kind": 0
+  },
+  "v1_arc_trace.csv": {
+   "numbers_compared": 446,
+   "max_relative_difference": 1.8246498042929168e-08,
+   "at": "[5]/t_s",
+   "leaves_differing_in_kind": 0
+  },
+  "v2_synthetic.json": {
+   "numbers_compared": 354,
+   "max_relative_difference": 6.363627592225433e-15,
+   "at": "/histories/ramp_0.3Kps/tight/peak_Kpm",
+   "leaves_differing_in_kind": 0,
+   "small_differences_compared_absolutely": 98,
+   "their_max_absolute_difference": 1.4756567549931848e-15,
+   "their_at": "/histories/pulse_350C_tp5s/rel_change_tight/0.15"
+  }
+ }
+}

@@ -1,0 +1,63 @@
+{
+ "P5a": {
+  "statement": "33.2 kJ, 500 mW/K: the hottest region enters the band, the lumped cell does not",
+  "result": "held",
+  "hottest_entry_s": [
+   7.125612721976391,
+   19.22596771776333
+  ],
+  "central_estimate_hottest_entry_s": [
+   7.1,
+   19.0
+  ],
+  "lumped_peak_C": [
+   222.0665168364696,
+   226.13285295870185
+  ],
+  "central_estimate_lumped": "expected to run away too, entering the band at about 170 s and 180 s (wrong)",
+  "registered_expectation": "P5(a) expected to fail on its second half; probability that the lumped cell stays out of the band about one in three",
+  "hottest_entry_without_reaction_heat_s": [
+   7.13,
+   19.24
+  ],
+  "note": "the hottest region enters the band at the same moment without the reaction heat (archived passive series, and the no-source check run of the 30 s case at 19.244 s): its entry is set by conduction from the busbar"
+ },
+ "P5b": {
+  "statement": "33.2 kJ, 200 mW/K: the hottest region is pushed into the band, the lumped cell stays out",
+  "result": "failed",
+  "hottest_peak_C": [
+   251.36825601574174,
+   251.47169012359507
+  ],
+  "hottest_peak_passive_C": [
+   250.7253764355845,
+   250.79365632642907
+  ],
+  "lumped_peak_C": [
+   169.07037400694418,
+   169.8642577367014
+  ],
+  "lumped_half_held": true,
+  "central_estimate_hottest_rise_K": "5 to 10",
+  "central_estimate_lumped_rise_K": 4,
+  "registered_odds": "lumped half near certain; resolved half about even",
+  "hottest_rise_K": [
+   0.6428795801572278,
+   0.6780337971659947
+  ],
+  "lumped_rise_K": [
+   0.9328556269074397,
+   0.9595998751852335
+  ]
+ },
+ "P5c": {
+  "statement": "21.5 kJ, 500 mW/K, 30 s: neither enters the band",
+  "result": "held",
+  "hottest_peak_C": 236.83083481568417,
+  "hottest_peak_passive_C": 236.6574341107799,
+  "lumped_peak_C": 152.9372309995507,
+  "central_estimate": "hottest region about 2 K above its passive peak, lumped cell a few kelvin above its own",
+  "hottest_rise_K": 0.1734007049042816,
+  "lumped_rise_K": 0.19803255411818554
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "case": "two_E33223_tau10_G0.5",
+ "E_body_J": 33222.9,
+ "tau_rel_s": 10.0,
+ "G_bus_WK": 0.5,
+ "reaction": true,
+ "dt_target_K": 1.0,
+ "dt_accept_K": 4.0,
+ "resolved": {
+  "cross_s": {
+   "T_onset_low": 7.125612721976391,
+   "T_onset_mean": 7.642842396635782,
+   "T_onset_high": 8.166553627875146
+  },
+  "peak": {
+   "Tmax_C": 365.7618244041447,
+   "t_s": 13.2,
+   "imax": 39060,
+   "Tmean_C": 168.18131471179527
+  },
+  "t_cat1_consumed_at_a_node_s": 8.475,
+  "conversion_volume_mean_900s": {
+   "sei": 0.11062451273898061,
+   "li_an": 0.0024686645207683314,
+   "ele_liq": 0.00677487121659903,
+   "cat1": 0.011938043142548097,
+   "sep": 0.9999873246340762
+  },
+  "energy_J": {
+   "in_bus": 10827.03812812675,
+   "in_gap": 700.8161766932917,
+   "in_rad": 1093.9596428010923,
+   "out_conv": 4071.4553068094006,
+   "out_rad": 4426.464136008737,
+   "in_rxn": 419.6966213411772
+  },
+  "stored_J": 4543.59112615712,
+  "net_in_J": 4543.591126144172,
+  "energy_residual_rel": 9.927965403987416e-13,
+  "steps": 9294,
+  "rejected": 0,
+  "max_implicit_nodes": 1714,
+  "max_local_reaction_heating_K_per_s": 65.99581545526947
+ },
+ "lumped_reactive": {
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "peak": {
+   "T_C": 222.0665168364696,
+   "t_s": 180.6
+  },
+  "reaction_heat_J": 2510.4829238864017,
+  "conversion_900s": {
+   "sei": 0.2143253796178991,
+   "li_an": 0.027135766664974303,
+   "ele_liq": 0.12196626746839001,
+   "cat1": 0.5085365840059977,
+   "sep": 0.999999999999999
+  }
+ },
+ "lumped_passive": {
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "peak": {
+   "T_C": 211.207478189813,
+   "t_s": 142.6
+  },
+  "reaction_heat_J": 0.0,
+  "conversion_900s": {
+   "sei": 0.0,
+   "li_an": 0.0,
+   "ele_liq": 0.0,
+   "cat1": 0.0,
+   "sep": 0.0
+  }
+ },
+ "passive_archived": {
+  "Tmax_peak_C": 355.90604390627266,
+  "Tmean_peak_C": 167.12290608593946,
+  "T2_be_peak_C": 211.20743874567512
+ },
+ "runtime_s": 1572.779513835907,
+ "lumped_passive_vs_archived_T2_be_max_abs_K": 0.0
+}

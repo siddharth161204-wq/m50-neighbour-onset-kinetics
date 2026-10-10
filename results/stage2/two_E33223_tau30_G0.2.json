@@ -1,0 +1,90 @@
+{
+ "case": "two_E33223_tau30_G0.2",
+ "E_body_J": 33222.9,
+ "tau_rel_s": 30.0,
+ "G_bus_WK": 0.2,
+ "reaction": true,
+ "dt_target_K": 1.0,
+ "dt_accept_K": 4.0,
+ "resolved": {
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "peak": {
+   "Tmax_C": 251.47169012359507,
+   "t_s": 36.6,
+   "imax": 39060,
+   "Tmean_C": 148.9011122797458
+  },
+  "t_cat1_consumed_at_a_node_s": null,
+  "conversion_volume_mean_900s": {
+   "sei": 0.0741038404752403,
+   "li_an": 9.907594963560563e-05,
+   "ele_liq": 0.00034898448133552015,
+   "cat1": 0.0009104183817211838,
+   "sep": 0.9877689040897973
+  },
+  "energy_J": {
+   "in_bus": 9045.563254413131,
+   "in_gap": 1058.4649793838912,
+   "in_rad": 1294.8332684299025,
+   "out_conv": 3571.5984686712854,
+   "out_rad": 3641.832763628372,
+   "in_rxn": 229.7815367710403
+  },
+  "stored_J": 4415.211806710784,
+  "net_in_J": 4415.211806698308,
+  "energy_residual_rel": 1.072906638984433e-12,
+  "steps": 9000,
+  "rejected": 0,
+  "max_implicit_nodes": 147,
+  "max_local_reaction_heating_K_per_s": 3.3155640637969706
+ },
+ "lumped_reactive": {
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "peak": {
+   "T_C": 169.8642577367014,
+   "t_s": 245.8
+  },
+  "reaction_heat_J": 344.3156305890397,
+  "conversion_900s": {
+   "sei": 0.10480808343488135,
+   "li_an": 0.0003741288966018219,
+   "ele_liq": 0.0012312941241453546,
+   "cat1": 0.00206819501081279,
+   "sep": 0.9999985863193456
+  }
+ },
+ "lumped_passive": {
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "peak": {
+   "T_C": 168.90465786151617,
+   "t_s": 240.9
+  },
+  "reaction_heat_J": 0.0,
+  "conversion_900s": {
+   "sei": 0.0,
+   "li_an": 0.0,
+   "ele_liq": 0.0,
+   "cat1": 0.0,
+   "sep": 0.0
+  }
+ },
+ "passive_archived": {
+  "Tmax_peak_C": 250.79365632642907,
+  "Tmean_peak_C": 148.31359463859405,
+  "T2_be_peak_C": 168.9046526829709
+ },
+ "runtime_s": 1412.2136657238007,
+ "lumped_passive_vs_archived_T2_be_max_abs_K": 0.0
+}

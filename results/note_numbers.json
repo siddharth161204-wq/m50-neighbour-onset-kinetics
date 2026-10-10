@@ -1,0 +1,1033 @@
+{
+ "headline_0.15": {
+  "tau10": {
+   "hottest_s": 4.244411183117721,
+   "lumped_s": 27.595165803068934,
+   "mean_s": 49.34846414889552,
+   "lead_s": 23.35075461995121,
+   "earlier_percent": 84.6190045988211
+  },
+  "tau30": {
+   "hottest_s": 11.475868734837167,
+   "lumped_s": 37.880721416164995,
+   "mean_s": 59.379213325129385,
+   "lead_s": 26.404852681327828,
+   "earlier_percent": 69.70525294710987
+  }
+ },
+ "onset_temperature_0.15_C_range": {
+  "hottest_node": [
+   108.3881632200642,
+   108.39020171000737
+  ],
+  "resolved_mean": [
+   108.391987563567,
+   108.40945671785619
+  ],
+  "lumped": [
+   108.38992012566149,
+   108.41567208151082
+  ]
+ },
+ "only_local_smallest_mWK": 100.0,
+ "only_local_cases": [
+  "21.5 kJ, 10 s, 100 mW/K",
+  "21.5 kJ, 30 s, 100 mW/K",
+  "8.75 kJ, 10 s, 500 mW/K",
+  "8.75 kJ, 30 s, 500 mW/K"
+ ],
+ "levels_reached_two_strip": {
+  "hottest_node": {
+   "0.15": 16,
+   "1.0": 7,
+   "10.0": 6
+  },
+  "resolved_mean": {
+   "0.15": 10,
+   "1.0": 0,
+   "10.0": 0
+  },
+  "lumped": {
+   "0.15": 12,
+   "1.0": 2,
+   "10.0": 0
+  }
+ },
+ "V0": {
+  "cathode_peak": {
+   "peak_W_per_g": 0.4919934902531987,
+   "at_C": 223.66666666666663
+  },
+  "cathode_third": {
+   "peak_W_per_g": 0.15140288297098753,
+   "at_C": 402.33333333333337
+  },
+  "separator": {
+   "peak_W_per_g": -0.07884222591117263,
+   "at_C": 138.5
+  },
+  "ln_k": {
+   "cat1": -4.549681965798889,
+   "cat2": -4.309826493866439,
+   "cat3": -5.156492090354604
+  }
+ },
+ "V1": {
+  "T_in_C": 179.25169956865625,
+  "T_at_1_C_per_s_C": 272.7117324995827,
+  "T_on_1_C_per_min_C": 199.79353796800802,
+  "t_in_h": 24.8053501552037,
+  "sensitivity_T_in_C": [
+   124.5932306143925,
+   179.1719416403368,
+   179.19065270652123,
+   179.25169956865625,
+   179.34407368731428,
+   179.36040470284502,
+   179.4154691622295,
+   179.49781238394098,
+   186.61880080420468
+  ],
+  "an_ele_anode_only_T_in_C": 184.19174114529534,
+  "fresh_onset_0.15_m50_C": 108.39000000001303,
+  "fresh_onset_0.15_paper_cell_C": 114.10000000001392,
+  "paper_T_on_band_C": [
+   255.7,
+   302.1
+  ],
+  "T_on_at_stated_trigger_in_band": false
+ },
+ "V2": {
+  "synthetic_max_rel": 0.00010857102190184823,
+  "archived_max_rel": 3.843696292744927e-06
+ },
+ "stage2_scorecard": {
+  "P5a": {
+   "statement": "33.2 kJ, 500 mW/K: the hottest region enters the band, the lumped cell does not",
+   "result": "held",
+   "hottest_entry_s": [
+    7.125612721976391,
+    19.22596771776333
+   ],
+   "central_estimate_hottest_entry_s": [
+    7.1,
+    19.0
+   ],
+   "lumped_peak_C": [
+    222.0665168364696,
+    226.13285295870185
+   ],
+   "central_estimate_lumped": "expected to run away too, entering the band at about 170 s and 180 s (wrong)",
+   "registered_expectation": "P5(a) expected to fail on its second half; probability that the lumped cell stays out of the band about one in three",
+   "hottest_entry_without_reaction_heat_s": [
+    7.13,
+    19.24
+   ],
+   "note": "the hottest region enters the band at the same moment without the reaction heat (archived passive series, and the no-source check run of the 30 s case at 19.244 s): its entry is set by conduction from the busbar"
+  },
+  "P5b": {
+   "statement": "33.2 kJ, 200 mW/K: the hottest region is pushed into the band, the lumped cell stays out",
+   "result": "failed",
+   "hottest_peak_C": [
+    251.36825601574174,
+    251.47169012359507
+   ],
+   "hottest_peak_passive_C": [
+    250.7253764355845,
+    250.79365632642907
+   ],
+   "lumped_peak_C": [
+    169.07037400694418,
+    169.8642577367014
+   ],
+   "lumped_half_held": true,
+   "central_estimate_hottest_rise_K": "5 to 10",
+   "central_estimate_lumped_rise_K": 4,
+   "registered_odds": "lumped half near certain; resolved half about even",
+   "hottest_rise_K": [
+    0.6428795801572278,
+    0.6780337971659947
+   ],
+   "lumped_rise_K": [
+    0.9328556269074397,
+    0.9595998751852335
+   ]
+  },
+  "P5c": {
+   "statement": "21.5 kJ, 500 mW/K, 30 s: neither enters the band",
+   "result": "held",
+   "hottest_peak_C": 236.83083481568417,
+   "hottest_peak_passive_C": 236.6574341107799,
+   "lumped_peak_C": 152.9372309995507,
+   "central_estimate": "hottest region about 2 K above its passive peak, lumped cell a few kelvin above its own",
+   "hottest_rise_K": 0.1734007049042816,
+   "lumped_rise_K": 0.19803255411818554
+  }
+ },
+ "stage2_table": [
+  {
+   "case": "two_E33223_tau10_G0.5",
+   "E_body_kJ": "33.22",
+   "tau_rel_s": "10.0",
+   "G_bus_mWK": "500.0",
+   "hottest_enters_255.7C_s": "7.125612721976391",
+   "hottest_reaches_278.9C_s": "7.642842396635782",
+   "hottest_reaches_302.1C_s": "8.166553627875146",
+   "hottest_peak_reactive_C": "365.76",
+   "hottest_peak_passive_C": "355.91",
+   "mean_peak_reactive_C": "168.18",
+   "mean_peak_passive_C": "167.12",
+   "layered_cathode_consumed_at_a_node_s": "8.475",
+   "max_volume_fraction_above_255.7C_percent": "0.505",
+   "resolved_reaction_heat_J": "419.7",
+   "resolved_layered_cathode_conversion_volume_mean_900s": "0.0119",
+   "lumped_peak_reactive_C": "222.07",
+   "lumped_peak_passive_C": "211.21",
+   "lumped_enters_255.7C_s": "",
+   "lumped_reaction_heat_J": "2510.5",
+   "lumped_layered_cathode_conversion_900s": "0.5085",
+   "energy_residual_rel": "9.927965403987416e-13",
+   "steps": "9294",
+   "rejected_steps": "0"
+  },
+  {
+   "case": "two_E33223_tau30_G0.5",
+   "E_body_kJ": "33.22",
+   "tau_rel_s": "30.0",
+   "G_bus_mWK": "500.0",
+   "hottest_enters_255.7C_s": "19.22596771776333",
+   "hottest_reaches_278.9C_s": "20.54246647506016",
+   "hottest_reaches_302.1C_s": "22.00221659341307",
+   "hottest_peak_reactive_C": "356.92",
+   "hottest_peak_passive_C": "348.29",
+   "mean_peak_reactive_C": "168.97",
+   "mean_peak_passive_C": "167.89",
+   "layered_cathode_consumed_at_a_node_s": "22.025",
+   "max_volume_fraction_above_255.7C_percent": "0.503",
+   "resolved_reaction_heat_J": "424.6",
+   "resolved_layered_cathode_conversion_volume_mean_900s": "0.0123",
+   "lumped_peak_reactive_C": "226.13",
+   "lumped_peak_passive_C": "212.24",
+   "lumped_enters_255.7C_s": "",
+   "lumped_reaction_heat_J": "3019.9",
+   "lumped_layered_cathode_conversion_900s": "0.6337",
+   "energy_residual_rel": "9.89297596549043e-13",
+   "steps": "9249",
+   "rejected_steps": "0"
+  },
+  {
+   "case": "two_E33223_tau10_G0.2",
+   "E_body_kJ": "33.22",
+   "tau_rel_s": "10.0",
+   "G_bus_mWK": "200.0",
+   "hottest_enters_255.7C_s": "",
+   "hottest_reaches_278.9C_s": "",
+   "hottest_reaches_302.1C_s": "",
+   "hottest_peak_reactive_C": "251.37",
+   "hottest_peak_passive_C": "250.73",
+   "mean_peak_reactive_C": "148.26",
+   "mean_peak_passive_C": "147.68",
+   "layered_cathode_consumed_at_a_node_s": "",
+   "max_volume_fraction_above_255.7C_percent": "0.0",
+   "resolved_reaction_heat_J": "227.0",
+   "resolved_layered_cathode_conversion_volume_mean_900s": "0.0009",
+   "lumped_peak_reactive_C": "169.07",
+   "lumped_peak_passive_C": "168.14",
+   "lumped_enters_255.7C_s": "",
+   "lumped_reaction_heat_J": "338.5",
+   "lumped_layered_cathode_conversion_900s": "0.0019",
+   "energy_residual_rel": "1.0765636471556967e-12",
+   "steps": "9000",
+   "rejected_steps": "0"
+  },
+  {
+   "case": "two_E33223_tau30_G0.2",
+   "E_body_kJ": "33.22",
+   "tau_rel_s": "30.0",
+   "G_bus_mWK": "200.0",
+   "hottest_enters_255.7C_s": "",
+   "hottest_reaches_278.9C_s": "",
+   "hottest_reaches_302.1C_s": "",
+   "hottest_peak_reactive_C": "251.47",
+   "hottest_peak_passive_C": "250.79",
+   "mean_peak_reactive_C": "148.9",
+   "mean_peak_passive_C": "148.31",
+   "layered_cathode_consumed_at_a_node_s": "",
+   "max_volume_fraction_above_255.7C_percent": "0.0",
+   "resolved_reaction_heat_J": "229.8",
+   "resolved_layered_cathode_conversion_volume_mean_900s": "0.0009",
+   "lumped_peak_reactive_C": "169.86",
+   "lumped_peak_passive_C": "168.9",
+   "lumped_enters_255.7C_s": "",
+   "lumped_reaction_heat_J": "344.3",
+   "lumped_layered_cathode_conversion_900s": "0.0021",
+   "energy_residual_rel": "1.072906638984433e-12",
+   "steps": "9000",
+   "rejected_steps": "0"
+  },
+  {
+   "case": "two_E21495_tau30_G0.5",
+   "E_body_kJ": "21.5",
+   "tau_rel_s": "30.0",
+   "G_bus_mWK": "500.0",
+   "hottest_enters_255.7C_s": "",
+   "hottest_reaches_278.9C_s": "",
+   "hottest_reaches_302.1C_s": "",
+   "hottest_peak_reactive_C": "236.83",
+   "hottest_peak_passive_C": "236.66",
+   "mean_peak_reactive_C": "123.52",
+   "mean_peak_passive_C": "123.18",
+   "layered_cathode_consumed_at_a_node_s": "",
+   "max_volume_fraction_above_255.7C_percent": "0.0",
+   "resolved_reaction_heat_J": "125.8",
+   "resolved_layered_cathode_conversion_volume_mean_900s": "0.0001",
+   "lumped_peak_reactive_C": "152.94",
+   "lumped_peak_passive_C": "152.74",
+   "lumped_enters_255.7C_s": "",
+   "lumped_reaction_heat_J": "182.3",
+   "lumped_layered_cathode_conversion_900s": "0.0001",
+   "energy_residual_rel": "1.3452765411989802e-12",
+   "steps": "9000",
+   "rejected_steps": "0"
+  }
+ ],
+ "stage2_headline": {
+  "tau10": {
+   "hottest_entry_s": 7.125612721976391,
+   "cathode_consumed_after_entry_s": 1.3493872780236087,
+   "lumped_peak_C": 222.07,
+   "heat_ratio_lumped_over_resolved": 5.981653562068144,
+   "lumped_cathode_conversion": 0.5085,
+   "resolved_cathode_conversion": 0.0119,
+   "max_volume_percent_above_255.7": 0.505,
+   "mean_peak_reactive_C": 168.18,
+   "hottest_peak_reactive_C": 365.76,
+   "hottest_peak_passive_C": 355.91
+  },
+  "tau30": {
+   "hottest_entry_s": 19.22596771776333,
+   "cathode_consumed_after_entry_s": 2.79903228223667,
+   "lumped_peak_C": 226.13,
+   "heat_ratio_lumped_over_resolved": 7.1123410268487985,
+   "lumped_cathode_conversion": 0.6337,
+   "resolved_cathode_conversion": 0.0123,
+   "max_volume_percent_above_255.7": 0.503,
+   "mean_peak_reactive_C": 168.97,
+   "hottest_peak_reactive_C": 356.92,
+   "hottest_peak_passive_C": 348.29
+  }
+ },
+ "stage2_checks": {
+  "energy_residual_max_abs": 1.3452765411989802e-12,
+  "no_source_resolved_vs_archived_max_abs_K": {
+   "Tmax": 1.2505552149377763e-12,
+   "Tmean": 2.2737367544323206e-13
+  },
+  "no_source_lumped_vs_archived_max_abs_K": 0.0,
+  "step_halved_max_relative_move": 7.498283807072319e-05,
+  "step_halved_band_entry_s": [
+   19.22596771776333,
+   19.225145937170844
+  ],
+  "V3_high_k": {
+   "two_E33223_tau30_G0.5": {
+    "mean_K": 0.4727317305188308,
+    "hottest_K": 0.7718048653769642,
+    "peaks_C": [
+     225.71658544978078,
+     226.13285295870185
+    ],
+    "residual": 7.900845148301573e-10,
+    "pass": true
+   },
+   "two_E33223_tau30_G0.2": {
+    "mean_K": 0.04494691142463125,
+    "hottest_K": 0.35859718841481936,
+    "peaks_C": [
+     169.86435707776923,
+     169.8642577367014
+    ],
+    "residual": 8.79239583052209e-10,
+    "pass": true
+   }
+  }
+ },
+ "stage1_scorecard": {
+  "P1": {
+   "result": "held",
+   "tau10": {
+    "hottest_s": 4.244411183117721,
+    "lumped_s": 27.595165803068934,
+    "lead_s": 23.35075461995121,
+    "earlier_percent": 84.6190045988211,
+    "central_estimate_s": [
+     4.2,
+     29.0
+    ],
+    "holds": true
+   },
+   "tau30": {
+    "hottest_s": 11.475868734837167,
+    "lumped_s": 37.880721416164995,
+    "lead_s": 26.404852681327828,
+    "earlier_percent": 69.70525294710987,
+    "central_estimate_s": [
+     11.5,
+     39.0
+    ],
+    "holds": true
+   }
+  },
+  "P2": {
+   "result": "held",
+   "cases_reached": [
+    "21.5 kJ, 10 s, 200 mW/K",
+    "21.5 kJ, 10 s, 500 mW/K",
+    "21.5 kJ, 30 s, 200 mW/K",
+    "21.5 kJ, 30 s, 500 mW/K",
+    "33.2 kJ, 10 s, 100 mW/K",
+    "33.2 kJ, 10 s, 200 mW/K",
+    "33.2 kJ, 10 s, 500 mW/K",
+    "33.2 kJ, 30 s, 100 mW/K",
+    "33.2 kJ, 30 s, 200 mW/K",
+    "33.2 kJ, 30 s, 500 mW/K"
+   ],
+   "count": 10,
+   "predicted_but_not_reached": [],
+   "reached_but_not_predicted": [],
+   "mean_peak_C_at_33kJ_50mWK": [
+    106.95651017084077,
+    107.3026095032522
+   ]
+  },
+  "P3": {
+   "result": "held",
+   "smallest_G_mWK": 100.0,
+   "central_estimate_mWK": 100,
+   "only_hottest_cases": [
+    "21.5 kJ, 10 s, 100 mW/K",
+    "21.5 kJ, 30 s, 100 mW/K",
+    "8.75 kJ, 10 s, 500 mW/K",
+    "8.75 kJ, 30 s, 500 mW/K"
+   ]
+  },
+  "P4": {
+   "result": "held",
+   "cases": [
+    "21.5 kJ, 10 s, 500 mW/K",
+    "21.5 kJ, 30 s, 500 mW/K",
+    "33.2 kJ, 10 s, 200 mW/K",
+    "33.2 kJ, 30 s, 200 mW/K"
+   ],
+   "case_list_as_predicted": true,
+   "predicted_cases": [
+    "21.5 kJ, 10 s, 500 mW/K",
+    "21.5 kJ, 30 s, 500 mW/K",
+    "33.2 kJ, 10 s, 200 mW/K",
+    "33.2 kJ, 30 s, 200 mW/K"
+   ]
+  },
+  "summary": {
+   "levels_reached_two_strip": {
+    "hottest_node": {
+     "0.15": 16,
+     "1.0": 7,
+     "10.0": 6
+    },
+    "resolved_mean": {
+     "0.15": 10,
+     "1.0": 0,
+     "10.0": 0
+    },
+    "lumped": {
+     "0.15": 12,
+     "1.0": 2,
+     "10.0": 0
+    }
+   },
+   "temperature_at_0.15Kpm_C_range": {
+    "hottest_node": [
+     108.3881632200642,
+     108.39020171000737
+    ],
+    "resolved_mean": [
+     108.391987563567,
+     108.40945671785619
+    ],
+    "lumped": [
+     108.38992012566149,
+     108.41567208151082
+    ]
+   },
+   "reaction_at_0.15Kpm": [
+    "sei_decomp"
+   ]
+  }
+ },
+ "stage2_heat_ratio_lumped_over_resolved": {
+  "two_E33223_tau10_G0.5": 5.981653562068144,
+  "two_E33223_tau30_G0.5": 7.1123410268487985,
+  "two_E33223_tau10_G0.2": 1.4911894273127753,
+  "two_E33223_tau30_G0.2": 1.498259355961706,
+  "two_E21495_tau30_G0.5": 1.4491255961844198
+ },
+ "stage1_extra": {
+  "lumped_peak_Kpm_33kJ_500mWK": [
+   8.626030983611278,
+   9.375118368079807
+  ],
+  "mean_Tpeak_C_33kJ_50mWK": [
+   106.95651017084077,
+   107.3026095032522
+  ],
+  "lumped_Tpeak_C_33kJ_500mWK": [
+   211.20743874567512,
+   212.2414917090748
+  ],
+  "mean_Tpeak_C_33kJ_500mWK": [
+   167.12290608593946,
+   167.88689097887732
+  ],
+  "lumped_minus_mean_peak_K_33kJ_500mWK": [
+   44.08453265973566,
+   44.35460073019749
+  ],
+  "t_1Kpm_s_33kJ_500mWK": {
+   "hottest_node": [
+    6.19821382491761,
+    16.362068211910668
+   ],
+   "lumped": [
+    64.31191216876864,
+    74.08969930717895
+   ]
+  },
+  "T_at_1Kpm_C_lumped_33kJ_500mWK": [
+   177.73239055929798,
+   177.85451893621973
+  ],
+  "lead_at_1Kpm_s_33kJ_500mWK": [
+   58.113698343851034,
+   57.72763109526828
+  ],
+  "two_strip_cases_only_hottest_reaches_1Kpm": [
+   "two_E21495_tau10_G0.5",
+   "two_E21495_tau30_G0.5",
+   "two_E33223_tau10_G0.2",
+   "two_E33223_tau30_G0.1",
+   "two_E33223_tau30_G0.2"
+  ],
+  "two_strip_cases_reaching_1Kpm": {
+   "hottest_node": 7,
+   "resolved_mean": 0,
+   "lumped": 2
+  },
+  "median_500mWK_30s_lead_0.15_s": 43.09649017309052
+ },
+ "figA1a": {
+  "sei_implied_mass_g": 99.42206599963208,
+  "an_ele_implied_mass_g_corrected": 205.53096467386308
+ },
+ "stage2_passive_entry_s": [
+  7.13,
+  19.24
+ ],
+ "sei_storage_exploratory": {
+  "0_days": {
+   "sei_converted": 0.0,
+   "ramp_1Kps_T_at_0.15Kpm_C": 108.3941071270973,
+   "headline": {
+    "two_E33223_tau10_G0.5": {
+     "hottest_node": [
+      4.244411183117721,
+      108.3881632200642,
+      "sei_decomp"
+     ],
+     "lumped": [
+      27.595165803068934,
+      108.38992012566149,
+      "sei_decomp"
+     ],
+     "resolved_mean": [
+      49.34846414889552,
+      108.391987563567,
+      "sei_decomp"
+     ]
+    },
+    "two_E33223_tau30_G0.5": {
+     "hottest_node": [
+      11.475868734837167,
+      108.38859762281214,
+      "sei_decomp"
+     ],
+     "lumped": [
+      37.880721416164995,
+      108.39005971805454,
+      "sei_decomp"
+     ],
+     "resolved_mean": [
+      59.379213325129385,
+      108.39206004043507,
+      "sei_decomp"
+     ]
+    },
+    "two_E21495_tau30_G0.1": {
+     "hottest_node": [
+      25.940021307677494,
+      108.38954579383682,
+      "sei_decomp"
+     ],
+     "lumped": [
+      null,
+      null,
+      null
+     ],
+     "resolved_mean": [
+      null,
+      null,
+      null
+     ]
+    },
+    "two_E33223_tau30_G0.2": {
+     "hottest_node": [
+      14.564677768642696,
+      108.38872956963036,
+      "sei_decomp"
+     ],
+     "lumped": [
+      70.93198356645394,
+      108.39278761021916,
+      "sei_decomp"
+     ],
+     "resolved_mean": [
+      94.67608869926936,
+      108.3950653392406,
+      "sei_decomp"
+     ]
+    },
+    "two_E21495_tau30_G0.5": {
+     "hottest_node": [
+      14.0591249325757,
+      108.38873012890264,
+      "sei_decomp"
+     ],
+     "lumped": [
+      57.15561510566622,
+      108.39176556083055,
+      "sei_decomp"
+     ],
+     "resolved_mean": [
+      118.21269112521931,
+      108.39807506168046,
+      "sei_decomp"
+     ]
+    }
+   },
+   "lead_s": {
+    "two_E33223_tau10_G0.5": 23.35075461995121,
+    "two_E33223_tau30_G0.5": 26.404852681327828,
+    "two_E21495_tau30_G0.1": null,
+    "two_E33223_tau30_G0.2": 56.36730579781124,
+    "two_E21495_tau30_G0.5": 43.09649017309052
+   }
+  },
+  "1_days": {
+   "sei_converted": 0.12449066771335027,
+   "ramp_1Kps_T_at_0.15Kpm_C": 109.20947411280281,
+   "headline": {
+    "two_E33223_tau10_G0.5": {
+     "hottest_node": [
+      4.262754250112957,
+      109.20271778996636,
+      "sei_decomp"
+     ],
+     "lumped": [
+      27.884347689401974,
+      109.20464065332214,
+      "sei_decomp"
+     ],
+     "resolved_mean": [
+      50.07774985277154,
+      109.20703625029785,
+      "sei_decomp"
+     ]
+    },
+    "two_E33223_tau30_G0.5": {
+     "hottest_node": [
+      11.527710217581,
+      109.20312204136627,
+      "sei_decomp"
+     ],
+     "lumped": [
+      38.16684764571268,
+      109.204800490021,
+      "sei_decomp"
+     ],
+     "resolved_mean": [
+      60.09799811338539,
+      109.20711898929073,
+      "sei_decomp"
+     ]
+    },
+    "two_E21495_tau30_G0.1": {
+     "hottest_node": [
+      26.230280342209234,
+      109.20421100645643,
+      "sei_decomp"
+     ],
+     "lumped": [
+      null,
+      null,
+      null
+     ],
+     "resolved_mean": [
+      null,
+      null,
+      null
+     ]
+    },
+    "two_E33223_tau30_G0.2": {
+     "hottest_node": [
+      14.627817572875255,
+      109.2032710251126,
+      "sei_decomp"
+     ],
+     "lumped": [
+      71.73423217775108,
+      109.20795859265587,
+      "sei_decomp"
+     ],
+     "resolved_mean": [
+      96.01686930175909,
+      109.21060154957087,
+      "sei_decomp"
+     ]
+    },
+    "two_E21495_tau30_G0.5": {
+     "hottest_node": [
+      14.122707963847494,
+      109.20326416995738,
+      "sei_decomp"
+     ],
+     "lumped": [
+      57.822014550935634,
+      109.20677839346683,
+      "sei_decomp"
+     ],
+     "resolved_mean": [
+      120.97940416987987,
+      109.21413438395882,
+      "sei_decomp"
+     ]
+    }
+   },
+   "lead_s": {
+    "two_E33223_tau10_G0.5": 23.621593439289015,
+    "two_E33223_tau30_G0.5": 26.63913742813168,
+    "two_E21495_tau30_G0.1": null,
+    "two_E33223_tau30_G0.2": 57.10641460487582,
+    "two_E21495_tau30_G0.5": 43.69930658708814
+   }
+  },
+  "3_days": {
+   "sei_converted": 0.36466637920938827,
+   "ramp_1Kps_T_at_0.15Kpm_C": 111.28704330495106,
+   "headline": {
+    "two_E33223_tau10_G0.5": {
+     "hottest_node": [
+      4.309478032522702,
+      111.2775654964517,
+      "sei_decomp"
+     ],
+     "lumped": [
+      28.629762521881513,
+      111.28020555735537,
+      "sei_decomp"
+     ],
+     "resolved_mean": [
+      51.97980042001128,
+      111.28358107970956,
+      "sei_decomp"
+     ]
+    },
+    "two_E33223_tau30_G0.5": {
+     "hottest_node": [
+      11.656919631444818,
+      111.27809466306786,
+      "sei_decomp"
+     ],
+     "lumped": [
+      38.903958711834214,
+      111.28043454826349,
+      "sei_decomp"
+     ],
+     "resolved_mean": [
+      61.971967340466435,
+      111.28370007960405,
+      "sei_decomp"
+     ]
+    },
+    "two_E21495_tau30_G0.1": {
+     "hottest_node": [
+      27.015795860939622,
+      111.27959639626022,
+      "sei_decomp"
+     ],
+     "lumped": [
+      null,
+      null,
+      null
+     ],
+     "resolved_mean": [
+      null,
+      null,
+      null
+     ]
+    },
+    "two_E33223_tau30_G0.2": {
+     "hottest_node": [
+      14.788663975376101,
+      111.27828637231818,
+      "sei_decomp"
+     ],
+     "lumped": [
+      73.81749068441492,
+      111.28488859278434,
+      "sei_decomp"
+     ],
+     "resolved_mean": [
+      99.5363290272705,
+      111.28861166691905,
+      "sei_decomp"
+     ]
+    },
+    "two_E21495_tau30_G0.5": {
+     "hottest_node": [
+      14.284685578949816,
+      111.27828762748527,
+      "sei_decomp"
+     ],
+     "lumped": [
+      59.56566573799968,
+      111.28321980302343,
+      "sei_decomp"
+     ],
+     "resolved_mean": [
+      128.64348978629602,
+      111.29355611265976,
+      "sei_decomp"
+     ]
+    }
+   },
+   "lead_s": {
+    "two_E33223_tau10_G0.5": 24.320284489358812,
+    "two_E33223_tau30_G0.5": 27.247039080389396,
+    "two_E21495_tau30_G0.1": null,
+    "two_E33223_tau30_G0.2": 59.02882670903882,
+    "two_E21495_tau30_G0.5": 45.28098015904986
+   }
+  },
+  "7_days": {
+   "sei_converted": 0.7972241326662091,
+   "ramp_1Kps_T_at_0.15Kpm_C": 168.57153487853333,
+   "headline": {
+    "two_E33223_tau10_G0.5": {
+     "hottest_node": [
+      6.195114851948157,
+      210.08213907275854,
+      "cat1"
+     ],
+     "lumped": [
+      60.31520332605188,
+      172.84244041640818,
+      "sei_decomp"
+     ],
+     "resolved_mean": [
+      130.7067433473144,
+      157.37921712117435,
+      "sei_decomp"
+     ]
+    },
+    "two_E33223_tau30_G0.5": {
+     "hottest_node": [
+      16.339718969901345,
+      200.66816977634994,
+      "cat1"
+     ],
+     "lumped": [
+      70.23085990931403,
+      173.03196983808527,
+      "sei_decomp"
+     ],
+     "resolved_mean": [
+      139.53199124603782,
+      157.69116880505766,
+      "sei_decomp"
+     ]
+    },
+    "two_E21495_tau30_G0.1": {
+     "hottest_node": [
+      113.81516401157724,
+      124.66411868571885,
+      "sei_decomp"
+     ],
+     "lumped": [
+      null,
+      null,
+      null
+     ],
+     "resolved_mean": [
+      null,
+      null,
+      null
+     ]
+    },
+    "two_E33223_tau30_G0.2": {
+     "hottest_node": [
+      21.498641047598955,
+      194.07232202047823,
+      "sei_decomp"
+     ],
+     "lumped": [
+      153.2628459617107,
+      158.04636064982714,
+      "sei_decomp"
+     ],
+     "resolved_mean": [
+      229.21109919863866,
+      146.6337857893268,
+      "sei_decomp"
+     ]
+    },
+    "two_E21495_tau30_G0.5": {
+     "hottest_node": [
+      21.07245240848756,
+      193.44726609455967,
+      "sei_decomp"
+     ],
+     "lumped": [
+      143.87491694706702,
+      151.94957085219062,
+      "sei_decomp"
+     ],
+     "resolved_mean": [
+      277.6671040699057,
+      122.90651589519564,
+      "sei_decomp"
+     ]
+    }
+   },
+   "lead_s": {
+    "two_E33223_tau10_G0.5": 54.120088474103724,
+    "two_E33223_tau30_G0.5": 53.89114093941269,
+    "two_E21495_tau30_G0.1": null,
+    "two_E33223_tau30_G0.2": 131.76420491411173,
+    "two_E21495_tau30_G0.5": 122.80246453857946
+   }
+  },
+  "30_days": {
+   "sei_converted": 1.0,
+   "ramp_1Kps_T_at_0.15Kpm_C": 178.60995169753073,
+   "headline": {
+    "two_E33223_tau10_G0.5": {
+     "hottest_node": [
+      6.206580450582775,
+      210.6770954947669,
+      "cat1"
+     ],
+     "lumped": [
+      66.17959881326496,
+      179.84968640851991,
+      "cat1"
+     ],
+     "resolved_mean": [
+      null,
+      null,
+      null
+     ]
+    },
+    "two_E33223_tau30_G0.5": {
+     "hottest_node": [
+      16.39980325849826,
+      201.90615833062327,
+      "cat1"
+     ],
+     "lumped": [
+      75.90690504028072,
+      179.96399381569609,
+      "cat1"
+     ],
+     "resolved_mean": [
+      null,
+      null,
+      null
+     ]
+    },
+    "two_E21495_tau30_G0.1": {
+     "hottest_node": [
+      null,
+      null,
+      null
+     ],
+     "lumped": [
+      null,
+      null,
+      null
+     ],
+     "resolved_mean": [
+      null,
+      null,
+      null
+     ]
+    },
+    "two_E33223_tau30_G0.2": {
+     "hottest_node": [
+      21.685877526362756,
+      195.93676310491713,
+      "cat1"
+     ],
+     "lumped": [
+      null,
+      null,
+      null
+     ],
+     "resolved_mean": [
+      null,
+      null,
+      null
+     ]
+    },
+    "two_E21495_tau30_G0.5": {
+     "hottest_node": [
+      21.280863327569474,
+      195.3702266473179,
+      "cat1"
+     ],
+     "lumped": [
+      null,
+      null,
+      null
+     ],
+     "resolved_mean": [
+      null,
+      null,
+      null
+     ]
+    }
+   },
+   "lead_s": {
+    "two_E33223_tau10_G0.5": 59.97301836268218,
+    "two_E33223_tau30_G0.5": 59.50710178178246,
+    "two_E21495_tau30_G0.1": null,
+    "two_E33223_tau30_G0.2": null,
+    "two_E21495_tau30_G0.5": null
+   }
+  }
+ },
+ "rerun_final_code_max_relative": {
+  "v0_dsc_check.json": 6.443169525352315e-08,
+  "v1_arc_check.json": 2.420068847820698e-09,
+  "v1_arc_trace.csv": 1.8246498042929168e-08,
+  "v2_synthetic.json": 6.363627592225433e-15
+ }
+}

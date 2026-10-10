@@ -59,8 +59,9 @@ def _jac(t, c, T_of_t):
     return KIN.stoich @ J
 
 
-def integrate_along(t, T, t_end=None, rtol=RTOL, atol=ATOL, max_step=MAX_STEP, grid=GRID):
-    """Integrate the kinetics along a prescribed history T(t) (K), linearly interpolated between samples.
+def integrate_along(t, T, t_end=None, rtol=RTOL, atol=ATOL, max_step=MAX_STEP, grid=GRID, c0=None):
+    """Integrate the kinetics along a prescribed history T(t) (K), linearly interpolated between samples, from the
+    fresh state bcrnn.C0 (or from c0, used only by the exploratory explore_sei_storage.py).
     Returns the evaluation grid, the self-heating rate (K/min), the states on the grid, and the solver's step count."""
     t = np.asarray(t, float); T = np.asarray(T, float)
     dt0 = t[1] - t[0]
@@ -73,7 +74,8 @@ def integrate_along(t, T, t_end=None, rtol=RTOL, atol=ATOL, max_step=MAX_STEP, g
             return float(T[k] + f * (T[k + 1] - T[k]))
         return float(np.interp(tt, t, T))
     t_end = t[-1] if t_end is None else t_end
-    sol = solve_ivp(_rhs, (t[0], t_end), bcrnn.C0.copy(), args=(T_of_t,), method="BDF", rtol=rtol, atol=atol,
+    y0 = bcrnn.C0.copy() if c0 is None else np.asarray(c0, float).copy()
+    sol = solve_ivp(_rhs, (t[0], t_end), y0, args=(T_of_t,), method="BDF", rtol=rtol, atol=atol,
                     dense_output=True, max_step=max_step, jac=_jac)
     if not sol.success:
         raise RuntimeError(sol.message)

@@ -27,3 +27,25 @@ Initial dimensionless amounts (paper Fig. 2): liquid electrolyte, intercalated l
 `digitize_figA1.py` and `figA1a_mass_basis.json`: the reading of the paper's Fig. A.1(a) that fixes the mass multiplying the anode-electrolyte reaction (DECISIONS.md D4). The script needs the paper's PDF, which is not redistributed.
 
 Cell parameters of the paper's ARC simulation (its Table 1, taken there from Feng et al., Applied Energy 154 (2015) 74 to 91, a 25 Ah NCM cell): complete battery mass 720 g; cathode 179.12 g; anode including binder 100.58 g; electrolyte 108 g; SEI 100.58 g; separator 17.6 g; unknown IV and V reactant 104.3 g (average of anode and electrolyte); external area 0.04 m2; specific heat 1100 J/(kg K); battery to ARC heat transfer coefficient 25 W/(m2 K); exotherm mode trigger 0.15 C/min; ISC trigger temperature gradient 1 C/min; initial temperature 25 C.
+
+## Where each value is in the paper (page numbers added after Stage 2, DECISIONS.md D21)
+
+Pages of Chemical Engineering Journal 507 (2025) 160402 as printed (the article runs from page 1 to page 18 of its PDF):
+
+| What | Where |
+|---|---|
+| Rate law and heat release, Eqs. (2) to (4); negative enthalpy for endothermic reactions, Eq. (1) | pp. 2 and 3 |
+| Cathode three-step mechanism, Eq. (10) | p. 4 |
+| Separator melting, Eq. (11); 100 and 500 particles per submodel, Section 2.6 | p. 5 |
+| Reaction network and the reduced initial SEI amount, Fig. 2 | p. 6 |
+| ARC simulation, Section 2.7 (heat-wait-seek, 5 C steps, 30 min wait) | pp. 6 to 8 |
+| Table 1: cell and component masses, specific heat, area, heat transfer coefficient, exotherm trigger 0.15 C/min, ISC trigger 1 C/min | p. 7 |
+| Eq. (20): reaction heat as the sum of specific heat release times component mass | p. 7 |
+| DSC curves at 5 C/min used by V0, Fig. 3(a) (cathode) and Fig. 3(e) (separator) | p. 9 |
+| Definitions of T_in (0.15 C/min) and T_on (internal short at 1 C/min), Section 3.2.2 | p. 11 |
+| Two-sigma ranges of T_in, T_on and T_max, Fig. 7 | p. 12 |
+| Outliers from early SEI triggering; why the exotherm trigger was raised to 0.15 C/min; DSC data cannot resolve slow low-temperature kinetics, Appendix A | pp. 14 and 15 |
+| Main-cluster means T_in 183.5 C, T_on 278.9 C, T_max 860.8 C, Table A.1 | p. 15 |
+| ARC simulation with the mean kinetic parameters, Fig. A.1(a), read by `digitize_figA1.py` | p. 16 |
+
+The kinetic parameters themselves come from the supplementary files above (no page). Three values are not read directly from a table: the mass multiplying the anode-electrolyte reaction, 208.58 g, is the sum of two Table 1 masses (anode 100.58 g, electrolyte 108 g), chosen by reading Fig. A.1(a) (DECISIONS.md D4; V1 also reports the anode mass alone, 184.2 C); the initial SEI amount, 0.15, is given in Fig. 2 (p. 6), to which Table 1 refers; and the sign of the separator's heat, whose magnitude the supplementary file stores, is fixed by the endothermic peak of Fig. 3(e) (p. 9; D5). The two-sigma bands of T_in, 169.0 to 198.0 C, and of T_on, 255.7 to 302.1 C, were measured by the two-cell study from Fig. 7 (p. 12) and centred on the Table A.1 means (its DECISIONS.md D1 and D2).
