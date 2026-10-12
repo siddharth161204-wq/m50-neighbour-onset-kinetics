@@ -1,0 +1,165 @@
+{
+ "amendment": "DECISIONS.md D25, written after V4 failed under D23 (f9cabc7); post hoc",
+ "emulation_mean_model_T_in_C": 179.2516995686563,
+ "paper": {
+  "mean_C": 183.5,
+  "band_C": [
+   169.0,
+   198.0
+  ],
+  "band_relative_to_mean_C": [
+   -14.5,
+   14.5
+  ]
+ },
+ "tolerance_C": 5.0,
+ "D25": {
+  "n": 164,
+  "mean_C": 178.8160666415016,
+  "sd_C": 8.453190807294213,
+  "lower_edge_C": 161.90968502691317,
+  "upper_edge_C": 195.72244825609005,
+  "lower_edge_offset_C": -2.84201454174314,
+  "upper_edge_offset_C": 1.9707486874337405,
+  "mean_offset_C": -4.683933358498393,
+  "pass": true
+ },
+ "D23_as_registered": {
+  "n": 164,
+  "mean_C": 178.8160666415016,
+  "sd_C": 8.453190807294213,
+  "lower_edge_C": 146.28072311542667,
+  "upper_edge_C": 191.37943476969866,
+  "lower_edge_offset_C": -22.719276884573333,
+  "upper_edge_offset_C": -6.620565230301338,
+  "mean_offset_C": -4.683933358498393,
+  "pass": false
+ },
+ "variants": [
+  {
+   "n": 164,
+   "mean_C": 178.8160666415016,
+   "sd_C": 8.453190807294213,
+   "lower_edge_C": 146.28072311542667,
+   "upper_edge_C": 191.37943476969866,
+   "lower_edge_offset_C": -22.719276884573333,
+   "upper_edge_offset_C": -6.620565230301338,
+   "mean_offset_C": -4.683933358498393,
+   "pass": false,
+   "cluster": "D23 classes (main cluster: short by 4000 min)",
+   "statistic": "percentiles_2.5_97.5",
+   "edges": "absolute"
+  },
+  {
+   "n": 164,
+   "mean_C": 178.8160666415016,
+   "sd_C": 8.453190807294213,
+   "lower_edge_C": 146.28072311542667,
+   "upper_edge_C": 191.37943476969866,
+   "lower_edge_offset_C": -18.47097645322964,
+   "upper_edge_offset_C": -2.3722647989576444,
+   "mean_offset_C": -4.683933358498393,
+   "pass": false,
+   "cluster": "D23 classes (main cluster: short by 4000 min)",
+   "statistic": "percentiles_2.5_97.5",
+   "edges": "relative_to_emulation_mean_model"
+  },
+  {
+   "n": 164,
+   "mean_C": 178.8160666415016,
+   "sd_C": 8.453190807294213,
+   "lower_edge_C": 161.90968502691317,
+   "upper_edge_C": 195.72244825609005,
+   "lower_edge_offset_C": -7.090314973086834,
+   "upper_edge_offset_C": -2.277551743909953,
+   "mean_offset_C": -4.683933358498393,
+   "pass": false,
+   "cluster": "D23 classes (main cluster: short by 4000 min)",
+   "statistic": "mean_pm_2sd",
+   "edges": "absolute"
+  },
+  {
+   "n": 164,
+   "mean_C": 178.8160666415016,
+   "sd_C": 8.453190807294213,
+   "lower_edge_C": 161.90968502691317,
+   "upper_edge_C": 195.72244825609005,
+   "lower_edge_offset_C": -2.84201454174314,
+   "upper_edge_offset_C": 1.9707486874337405,
+   "mean_offset_C": -4.683933358498393,
+   "pass": true,
+   "cluster": "D23 classes (main cluster: short by 4000 min)",
+   "statistic": "mean_pm_2sd",
+   "edges": "relative_to_emulation_mean_model"
+  },
+  {
+   "n": 159,
+   "mean_C": 180.00969700790804,
+   "sd_C": 5.154099842528161,
+   "lower_edge_C": 169.49696423759025,
+   "upper_edge_C": 191.3891021899898,
+   "lower_edge_offset_C": 0.4969642375902481,
+   "upper_edge_offset_C": -6.6108978100101865,
+   "mean_offset_C": -3.490302992091955,
+   "pass": false,
+   "cluster": "tighter cluster (Tukey far-out fence)",
+   "statistic": "percentiles_2.5_97.5",
+   "edges": "absolute"
+  },
+  {
+   "n": 159,
+   "mean_C": 180.00969700790804,
+   "sd_C": 5.154099842528161,
+   "lower_edge_C": 169.49696423759025,
+   "upper_edge_C": 191.3891021899898,
+   "lower_edge_offset_C": 4.745264668933942,
+   "upper_edge_offset_C": -2.362597378666493,
+   "mean_offset_C": -3.490302992091955,
+   "pass": true,
+   "cluster": "tighter cluster (Tukey far-out fence)",
+   "statistic": "percentiles_2.5_97.5",
+   "edges": "relative_to_emulation_mean_model"
+  },
+  {
+   "n": 159,
+   "mean_C": 180.00969700790804,
+   "sd_C": 5.154099842528161,
+   "lower_edge_C": 169.70149732285174,
+   "upper_edge_C": 190.31789669296435,
+   "lower_edge_offset_C": 0.7014973228517363,
+   "upper_edge_offset_C": -7.682103307035646,
+   "mean_offset_C": -3.490302992091955,
+   "pass": false,
+   "cluster": "tighter cluster (Tukey far-out fence)",
+   "statistic": "mean_pm_2sd",
+   "edges": "absolute"
+  },
+  {
+   "n": 159,
+   "mean_C": 180.00969700790804,
+   "sd_C": 5.154099842528161,
+   "lower_edge_C": 169.70149732285174,
+   "upper_edge_C": 190.31789669296435,
+   "lower_edge_offset_C": 4.94979775419543,
+   "upper_edge_offset_C": -3.4338028756919527,
+   "mean_offset_C": -3.490302992091955,
+   "pass": true,
+   "cluster": "tighter cluster (Tukey far-out fence)",
+   "statistic": "mean_pm_2sd",
+   "edges": "relative_to_emulation_mean_model"
+  }
+ ],
+ "tight_cluster": {
+  "rule": "short time at or below Q3 + 3 IQR of all shorts by 8500 min",
+  "Q1_min": 1505.1975845540078,
+  "Q3_min": 1576.1097715612386,
+  "fence_min": 1788.8463325829312,
+  "draws_moved_out": [
+   6,
+   17,
+   55,
+   71,
+   107
+  ]
+ }
+}
