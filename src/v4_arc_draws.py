@@ -5,6 +5,8 @@ The emulation is V1's (`v1_arc_check.arc_test`): the paper's Table 1 cell (720 g
 25 W/(m2 K)), heat-wait-seek from 25 C in 5 C steps with D6's settings, exotherm trigger 0.15 C/min, and from the
 trigger on adiabatic tracking until the self-heating rate reaches the paper's ISC trigger of 1 C/min (T_on) and then
 1 C/s. The ISC energy release and the chamber's cooling above 400 C are not modelled, so T_max is not reported.
+Every stage gets the exact Jacobian (D24), which reproduces V1's record of the posterior-mean model; how each tracking
+stage ended is recorded, and a draw whose emulation fails is reported as failed, not counted in any class.
 
 Classes (DECISIONS.md D23), from the times the paper's Appendix A gives (p. 15): a draw whose self-heating reaches
 1 C/min no later than 4000 min after the test starts is in the main cluster; between 4000 and 8500 min, a delayed
@@ -37,15 +39,24 @@ def _init():
 def one(draw):
     d, ae, sep, cat = draw
     kin = S.draw_kinetics(_P, ae, sep, cat)
-    r = V1.arc_test(kin)
     rec = {"draw": d, "an_ele_column": ae, "separator_column": sep, "ncm811_column": cat,
-           "T_in_C": r.get("T_in_C"), "t_in_min": None if r.get("T_in_C") is None else 60.0 * r["t_in_h"],
-           "T_on_C": r.get("T_on_C"), "t_on_min": None, "T_at_1_C_per_s_C": r.get("T_at_1_C_per_s_C"),
-           "sei_converted_at_T_in": None, "class": None}
+           "T_in_C": None, "t_in_min": None, "T_on_C": None, "t_on_min": None, "T_at_1_C_per_s_C": None,
+           "sei_converted_at_T_in": None, "isc_stage": None, "isc_stage_end_T_C": None, "one_per_s_stage": None,
+           "class": None, "failure": None}
+    try:
+        r = V1.arc_test(kin, exact_jacobian=True)
+    except Exception as e:                                   # reported, never dropped (D24)
+        rec["class"], rec["failure"] = "emulation_failed", f"{type(e).__name__}: {e}"
+        return rec
     if r.get("T_in_C") is None:
         rec["class"] = "no_exotherm"
         return rec
-    rec["sei_converted_at_T_in"] = r["conversion_at_T_in"].get("sei")
+    rec.update({"T_in_C": r["T_in_C"], "t_in_min": 60.0 * r["t_in_h"], "T_on_C": r["T_on_C"],
+                "T_at_1_C_per_s_C": r["T_at_1_C_per_s_C"], "sei_converted_at_T_in": r["conversion_at_T_in"].get("sei"),
+                "isc_stage": r["isc_stage"], "isc_stage_end_T_C": r["isc_stage_end_T_C"], "one_per_s_stage": r["one_per_s_stage"]})
+    if r["isc_stage"].startswith("solver failure"):
+        rec["class"], rec["failure"] = "emulation_failed", r["isc_stage"]
+        return rec
     if r.get("T_on_C") is not None:
         rec["t_on_min"] = 60.0 * r["t_on_h"]
     t_on = rec["t_on_min"]
@@ -60,7 +71,7 @@ def one(draw):
 
 def summarise(rows):
     n = len(rows)
-    frac = {c: sum(r["class"] == c for r in rows) / n for c in ("main_cluster", "delayed_short", "no_short", "no_exotherm")}
+    frac = {c: sum(r["class"] == c for r in rows) / n for c in ("main_cluster", "delayed_short", "no_short", "no_exotherm", "emulation_failed")}
     main = np.array([r["T_in_C"] for r in rows if r["class"] == "main_cluster"], dtype=float)
     out = {"n_draws": n, "fractions": frac, "paper_fractions": PAPER_FRACTIONS}
     if main.size:
@@ -104,6 +115,11 @@ if __name__ == "__main__":
     with open(os.path.join(a.out, "stage3_v4_arc_draws.csv"), "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
     summ = summarise(rows)
-    summ["mean_model"] = {k: v for k, v in V1.arc_test(bcrnn.Kinetics()).items() if k in ("T_in_C", "T_on_C", "T_at_1_C_per_s_C", "t_in_h", "t_on_h")}
+    keys = ("T_in_C", "T_on_C", "T_at_1_C_per_s_C", "t_in_h", "t_on_h")
+    mm = V1.arc_test(bcrnn.Kinetics(), exact_jacobian=True)
+    rec1 = json.load(open(os.path.join(a.out, "v1_arc_check.json")))["arc_base"]
+    summ["mean_model"] = {k: mm[k] for k in keys}
+    summ["mean_model_against_v1_record"] = {"v1_record": {k: rec1[k] for k in keys},
+                                            "max_abs_difference": max(abs(mm[k] - rec1[k]) for k in keys)}
     json.dump(summ, open(os.path.join(a.out, "stage3_v4.json"), "w"), indent=1)
     print(json.dumps(summ, indent=1))

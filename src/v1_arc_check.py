@@ -30,7 +30,9 @@ def self_heating(kin, T, c, cp=CP):
 
 
 def arc_test(kin, ramp_C_per_min=1.0, wait_min=30.0, seek_min=10.0, step_C=5.0, trigger=0.15, isc_trigger=1.0,
-             T_start_C=25.0, T_max_C=400.0, record=False):
+             T_start_C=25.0, T_max_C=400.0, record=False, exact_jacobian=False):
+    """exact_jacobian=True passes the exact Jacobian of every stage to the solver instead of scipy's finite
+    differences (DECISIONS.md D24, used by V4); with the posterior-mean model both give the same V1 record."""
     beta = ramp_C_per_min / 60.0
     y = np.concatenate([[T_start_C + 273.15], bcrnn.C0.copy()])
     t = 0.0
@@ -41,6 +43,24 @@ def arc_test(kin, ramp_C_per_min=1.0, wait_min=30.0, seek_min=10.0, step_C=5.0, 
     def adiabatic(tt, yy):
         r = kin.rates(np.array([yy[0]]), yy[1:, None])[:, 0]
         return np.concatenate([[kin.q_mass(r[:, None])[0] / CP], kin.dcdt(r)])
+
+    def jacobian(yy, dTdot_dT_extra=0.0):
+        """Exact Jacobian of [T, c]: d(dT/dt) and d(dc/dt) with respect to T and c (bcrnn.Kinetics.jacobian)."""
+        T, c = yy[0], yy[1:]
+        r = kin.rates(np.array([T]), c[:, None])
+        drdc, drdT = kin.jacobian(np.array([T]), c[:, None], r)
+        drdc, drdT = drdc[:, :, 0], drdT[:, 0]
+        J = np.empty((1 + bcrnn.NS, 1 + bcrnn.NS))
+        J[0, 0] = kin.h_mass @ drdT / CP + dTdot_dT_extra
+        J[0, 1:] = kin.h_mass @ drdc / CP
+        J[1:, 0] = kin.stoich @ drdT
+        J[1:, 1:] = kin.stoich @ drdc
+        return J
+    jac_ad = dict(jac=lambda tt, yy: jacobian(yy)) if exact_jacobian else {}
+    jac_heat = dict(jac=lambda tt, yy: jacobian(yy, -H * A / MCP)) if exact_jacobian else {}
+
+    def ended(s):
+        return {1: "trigger reached", 0: "end of tracking"}.get(s.status, f"solver failure: {s.message}")
 
     def rate_event(level):
         def ev(tt, yy):
@@ -62,33 +82,35 @@ def arc_test(kin, ramp_C_per_min=1.0, wait_min=30.0, seek_min=10.0, step_C=5.0, 
             return yy[0] - T_goal
         reached.terminal, reached.direction = True, 1
         if y[0] < T_goal:
-            sol = solve_ivp(heat, (t, t + 5e5), y, events=reached, max_step=60.0, **opts)
+            sol = solve_ivp(heat, (t, t + 5e5), y, events=reached, max_step=60.0, **opts, **jac_heat)
             if record:
                 trace += [("heat", float(a), float(b)) for a, b in zip(sol.t[::5], sol.y[0, ::5])]
             t, y = sol.t[-1], sol.y[:, -1]
         # WAIT (adiabatic)
-        sol = solve_ivp(adiabatic, (t, t + wait_min * 60.0), y, max_step=60.0, **opts)
+        sol = solve_ivp(adiabatic, (t, t + wait_min * 60.0), y, max_step=60.0, **opts, **jac_ad)
         t, y = sol.t[-1], sol.y[:, -1]
         # SEEK (adiabatic), with the exotherm trigger; a rate already above the trigger when the seek opens counts
         already = self_heating(kin, y[0], y[1:])[0] >= trigger / 60.0
         if not already:
             ev = rate_event(trigger)
-            sol = solve_ivp(adiabatic, (t, t + seek_min * 60.0), y, events=ev, max_step=30.0, **opts)
+            sol = solve_ivp(adiabatic, (t, t + seek_min * 60.0), y, events=ev, max_step=30.0, **opts, **jac_ad)
             t, y = sol.t[-1], sol.y[:, -1]
         if already or sol.status == 1:
             T_in = y[0]
             t_in = t
             # EXOTHERM (adiabatic tracking) until the self-heating rate reaches the ISC trigger
             ev2 = rate_event(isc_trigger)
-            sol = solve_ivp(adiabatic, (t, t + 1e7), y, events=ev2, max_step=600.0, **opts)
+            sol = solve_ivp(adiabatic, (t, t + 1e7), y, events=ev2, max_step=600.0, **opts, **jac_ad)
             T_on = sol.y[0, -1] if sol.status == 1 else None
             ev3 = rate_event(60.0)
-            sol3 = solve_ivp(adiabatic, (sol.t[-1], sol.t[-1] + 1e7), sol.y[:, -1], events=ev3, max_step=600.0, **opts)
+            sol3 = solve_ivp(adiabatic, (sol.t[-1], sol.t[-1] + 1e7), sol.y[:, -1], events=ev3, max_step=600.0, **opts, **jac_ad)
             T_1Cps = sol3.y[0, -1] if sol3.status == 1 else None
             conv = {s: float(1 - y[1 + i] / bcrnn.C0[i]) for i, s in enumerate(bcrnn.SPECIES) if bcrnn.C0[i] > 0}
             return {"T_in_C": float(T_in - 273.15), "t_in_h": float(t_in / 3600), "T_on_C": None if T_on is None else float(T_on - 273.15),
                     "t_on_h": float(sol.t[-1] / 3600), "T_at_1_C_per_s_C": None if T_1Cps is None else float(T_1Cps - 273.15),
-                    "conversion_at_T_in": conv, "trace": trace}
+                    "conversion_at_T_in": conv, "trace": trace,
+                    "isc_stage": ended(sol), "isc_stage_end_T_C": float(sol.y[0, -1] - 273.15),
+                    "one_per_s_stage": ended(sol3)}
         T_goal += step_C
     return {"T_in_C": None}
 
