@@ -1,0 +1,82 @@
+20 draws done
+40 draws done
+60 draws done
+80 draws done
+100 draws done
+120 draws done
+140 draws done
+160 draws done
+180 draws done
+200 draws done
+{
+ "n_draws": 200,
+ "fractions": {
+  "main_cluster": 0.82,
+  "delayed_short": 0.075,
+  "no_short": 0.105,
+  "no_exotherm": 0.0,
+  "emulation_failed": 0.0
+ },
+ "paper_fractions": {
+  "main_cluster": 0.76,
+  "delayed_short": 0.07,
+  "no_short": 0.17
+ },
+ "main_cluster_T_in_C": {
+  "n": 164,
+  "p2.5": 146.28072311542667,
+  "p97.5": 191.37943476969866,
+  "mean": 178.8160666415016,
+  "median": 179.53121656391178,
+  "min": 139.49603376059446,
+  "max": 192.4272507455396,
+  "std": 8.453190807294213
+ },
+ "acceptance": {
+  "band_C": [
+   169.0,
+   198.0
+  ],
+  "mean_ref_C": 183.5,
+  "tolerance_C": 5.0,
+  "lower_edge_offset_C": -22.719276884573333,
+  "upper_edge_offset_C": -6.620565230301338,
+  "mean_offset_C": -4.683933358498393,
+  "pass": false
+ },
+ "delayed_short_T_in_C_mean": 137.61198145135845,
+ "no_short_T_in_C_mean": 116.31805743500122,
+ "main_cluster_T_on_C": {
+  "p2.5": 189.29954079131895,
+  "p97.5": 208.11637805534315,
+  "mean": 198.63179009518157,
+  "paper_mean": 278.9,
+  "paper_band": [
+   255.7,
+   302.1
+  ]
+ },
+ "main_cluster_T_at_1_C_per_s_C": {
+  "p2.5": 268.7333852419453,
+  "p97.5": 302.2373642664576,
+  "mean": 277.7038107276159
+ },
+ "T_max": "not reported: the emulation does not model the ISC energy release or the chamber's cooling",
+ "mean_model": {
+  "T_in_C": 179.2516995686563,
+  "T_on_C": 199.79353796800785,
+  "T_at_1_C_per_s_C": 272.7117324995862,
+  "t_in_h": 24.805350155203815,
+  "t_on_h": 25.798489589515256
+ },
+ "mean_model_against_v1_record": {
+  "v1_record": {
+   "T_in_C": 179.25169956865625,
+   "T_on_C": 199.79353796800802,
+   "T_at_1_C_per_s_C": 272.7117324995827,
+   "t_in_h": 24.8053501552037,
+   "t_on_h": 25.798489589515164
+  },
+  "max_abs_difference": 3.524291969370097e-12
+ }
+}
