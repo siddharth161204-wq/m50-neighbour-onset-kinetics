@@ -59,7 +59,7 @@ Design (DECISIONS.md D22 to D27):
 
 Results, 3a (`results/stage3a_metrics.json`, `results/stage3a_onsets.csv`, `results/stage3a_per_draw.csv`):
 
-8. The hottest node starts first in every draw in which any history starts, in all nine cases: kinetic uncertainty never reverses the order.
+8. The hottest node starts first in every draw in which any history starts, in all nine cases, and over all 42 two-strip cases the lumped node never starts at or before the hottest node: kinetic uncertainty never reverses the order.
 9. At 33.2 kJ, 30 s and 500 mW/K the hottest node starts between 7.6 and 17.0 s (2.5 to 97.5 %) and the lumped node between 23.1 and 75.9 s; the lead runs from 15.4 to 58.9 s, median 26.3 s (26.4 s under the mean model). All 200 draws start both nodes there.
 10. The spread comes from the onset temperature. On the hottest node the draws start between 59.2 and 213.3 C (2.5 to 97.5 %; all draws 45.2 to 216.6 C, median 107.9 C); 81.5 % of the starts are SEI decomposition and the rest the first cathode reaction. The same 73 draws (36.5 %) start below 100 C in every one of the nine cases, by SEI decomposition, the start that P6 counts; 68 of them are in V4's main cluster, 5 among the draws without a short and none among the delayed shorts.
 11. The smallest conductance at which only the hottest node starts, over the 42 two-strip cases, spreads over six of the sweep's seven conductances (no draw has 10 mW/K): 5 mW/K in 3.5 % of draws, 20 mW/K in 13.5 %, 50 mW/K in 34 %, 100 mW/K in 21 %, 200 mW/K in 15.5 % and 500 mW/K in 10.5 %; 2 % have no such case.

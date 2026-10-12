@@ -8,7 +8,7 @@ Siddharth Satte, Independent researcher, Pune, India, 12 October 2026. A pre-reg
 
 1. With copper busbars (500 mW/K in all) and the largest Databank energy (33.2 kJ), the resolved neighbour's hottest node starts to self-heat at 0.15 K/min 23.4 and 26.4 s before the lumped node (10 and 30 s releases); under the posterior-mean B-CRNN kinetics of Koenig, Zhao and Deng each start is a fresh SEI decomposing at 108.4 C.
 2. The smallest busbar conductance at which only the local chemistry starts is 100 mW/K under those kinetics (21.5 kJ).
-3. Over 200 draws of their kinetic posterior the hottest node starts first wherever anything starts; at 33.2 kJ, 30 s and 500 mW/K the lead runs from 15.4 to 58.9 s (2.5 to 97.5 %, median 26.3 s).
+3. Over 200 draws of their kinetic posterior the lumped node never starts first in any of the 42 cases; at 33.2 kJ, 30 s and 500 mW/K the lead runs from 15.4 to 58.9 s (2.5 to 97.5 %, median 26.3 s).
 4. There, over the published spread of the roll's conductivity and heat capacity the hottest node's onset varies 0.027 times as much as over the kinetic posterior (standard deviations; the lumped node's 0.11 times): the kinetics set both.
 
 </div>
