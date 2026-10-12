@@ -105,11 +105,14 @@ def dominant_reaction(T, c):
 HISTORIES = {"hottest_node": ("t", "Tmax"), "resolved_mean": ("t", "Tmean"), "lumped": ("t_be", "T2_be")}
 
 
-def run_case(path, keep_series=False, **kw):
+def run_case(path, keep_series=False, histories=None, **kw):
+    """histories: the labels to integrate (default all three); Stage 3a integrates two for its P3-only cases (D26)."""
     d = np.load(path)
     out = {"case": os.path.basename(path)[:-4]}
     series = {}
     for label, (tkey, Tkey) in HISTORIES.items():
+        if histories is not None and label not in histories:
+            continue
         tt, sh, Y, Tg, nsteps = integrate_along(d[tkey], d[Tkey], **kw)
         for lv in LEVELS_K_PER_MIN:
             tc = first_crossing(tt, sh, lv)
