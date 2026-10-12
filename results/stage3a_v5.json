@@ -1,0 +1,27 @@
+{
+ "draws": [
+  179,
+  178,
+  73,
+  44,
+  53
+ ],
+ "their_hottest_ramp_onset_C": [
+  45.19712599710516,
+  92.52251149044758,
+  107.99560401997473,
+  191.16107234158346,
+  213.39840783956782
+ ],
+ "halved": {
+  "rtol": 5e-09,
+  "atol": 5e-13,
+  "max_step": 0.125,
+  "grid": 0.005
+ },
+ "first_times_compared": 194,
+ "worst_relative_change": 6.700582808773559e-05,
+ "worst_absolute_change_s_for_first_times_under_1s": 0.0,
+ "failures": [],
+ "pass": true
+}

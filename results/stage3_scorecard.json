@@ -1,0 +1,71 @@
+{
+ "P1": {
+  "share_hottest_before_lumped": 1.0,
+  "threshold": "> 0.95",
+  "held": true,
+  "brief_central": 0.99,
+  "study_central": 1.0
+ },
+ "P2": {
+  "hottest_width_s": 9.344909485297839,
+  "lumped_width_s": 52.866519700446844,
+  "hottest_interval_s": [
+   7.6191136881493495,
+   16.96402317344719
+  ],
+  "lumped_interval_s": [
+   23.06827762345068,
+   75.93479732389753
+  ],
+  "threshold": "hottest < 20 s and lumped > 20 s (an interval reaching beyond 900 s counts as wider)",
+  "held": true,
+  "brief_central_s": [
+   8,
+   40
+  ],
+  "study_central_s": [
+   9.2,
+   64.2
+  ]
+ },
+ "P3": {
+  "distribution": {
+   "5 mW/K": 0.035,
+   "20 mW/K": 0.135,
+   "50 mW/K": 0.34,
+   "100 mW/K": 0.21,
+   "200 mW/K": 0.155,
+   "500 mW/K": 0.105,
+   "none": 0.02
+  },
+  "share_100mW_per_K": 0.21,
+  "n_above_200mW_per_K": 21,
+  "threshold": "share at 100 mW/K > 0.5 and none above 200 mW/K",
+  "held": false,
+  "parts": {
+   "a_share_above_half": false,
+   "b_never_above_200": false
+  },
+  "brief_central": 0.7,
+  "study_central": 0.185
+ },
+ "P6": {
+  "share_hottest_onset_below_100C": 0.365,
+  "threshold": "< 0.10",
+  "held": false,
+  "study_central": 0.365,
+  "other_cases": {
+   "two_E33223_tau10_G0.5": 0.365,
+   "two_E33223_tau10_G0.2": 0.365,
+   "two_E33223_tau10_G0.1": 0.365,
+   "two_E33223_tau10_G0.05": 0.365,
+   "two_E33223_tau30_G0.2": 0.365,
+   "two_E33223_tau30_G0.1": 0.365,
+   "two_E33223_tau30_G0.05": 0.365,
+   "two_E21495_tau30_G0.5": 0.365
+  }
+ },
+ "P4": "scored in Stage 3b",
+ "P5": "scored in Stage 3b",
+ "predictions_commit": "2657aeece0c2137af47aaae4abd9319bdd24ab40"
+}
