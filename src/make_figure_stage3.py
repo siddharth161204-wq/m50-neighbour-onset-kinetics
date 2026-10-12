@@ -122,8 +122,8 @@ ax.set_xticks(GS); ax.set_xticklabels([f"{int(g * 1000)}" for g in GS]); ax.xaxi
 ax.set_ylim(0.5, 1500)
 ax.set_xlabel("Busbar conductance (mW/K)")
 ax.set_ylabel("First time at 0.15 K/min (s)")
-ax.legend(handles=[Line2D([], [], color=BLUE, lw=1.6, label="Lumped node"),
-                   Line2D([], [], color=ORANGE, lw=1.6, label="Resolved hottest node"),
+ax.legend(handles=[Line2D([], [], color=BLUE, lw=1.6, label="Lumped node, median"),
+                   Line2D([], [], color=ORANGE, lw=1.6, label="Resolved hottest node, median"),
                    Patch(facecolor=MUTED, alpha=0.3, label="2.5 to 97.5 % of kinetic draws"),
                    Line2D([], [], marker="o", color=MUTED, mfc=SURF, lw=0, label="Posterior mean (Stage 1)")],
           loc="lower left", frameon=False, fontsize=6.3)

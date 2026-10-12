@@ -285,5 +285,100 @@
   ],
   "P3_share_100": 0.185,
   "P6": 0.365
+ },
+ "headline_3a_extra": {
+  "hottest_onset_T_min_max_C": [
+   45.2,
+   216.6
+  ],
+  "lead_modes": {
+   "gap_s": [
+    30.7,
+    49.7
+   ],
+   "first": {
+    "n": 142,
+    "lead_s": [
+     12.7,
+     30.7
+    ]
+   },
+   "second": {
+    "n": 58,
+    "lead_s": [
+     49.7,
+     60.8
+    ],
+    "n_cathode_start": 37,
+    "n_sei_start": 21,
+    "sei_start_T_C": [
+     184.9,
+     203.2
+    ]
+   }
+  },
+  "cathode_starts": {
+   "n": 37,
+   "T_C": [
+    195.9,
+    216.6
+   ],
+   "lead_s": [
+    52.5,
+    60.8
+   ]
+  },
+  "sei_starts_lead_s": [
+   12.7,
+   54.4
+  ],
+  "early_sei_by_V4_class": {
+   "main_cluster": 68,
+   "delayed_short": 0,
+   "no_short": 5
+  },
+  "by_V4_class_medians_s": {
+   "delayed_short": {
+    "n": 15,
+    "hottest": 16.3,
+    "lumped": 69.2
+   },
+   "main_cluster": {
+    "n": 164,
+    "hottest": 11.2,
+    "lumped": 36.4
+   },
+   "no_short": {
+    "n": 21,
+    "hottest": 16.0,
+    "lumped": 67.4
+   }
+  },
+  "mean_model_lead_s": 26.4
+ },
+ "thermal_30_extra": {
+  "corr_lumped_onset_c_roll": 0.99994,
+  "corr_hottest_onset_c_roll": 0.954,
+  "corr_hottest_onset_k_radial": 0.273
+ },
+ "variance_share_thermal_over_kinetic": {
+  "hottest_onset_s": 0.0007,
+  "lumped_onset_s": 0.0112,
+  "lead_s": 0.0147
+ },
+ "V6_high_k": {
+  "max_abs_Tmax_minus_lumped_K": [
+   0.75,
+   0.78
+  ],
+  "max_abs_Tmean_minus_lumped_K": [
+   0.14,
+   0.15
+  ],
+  "energy_residuals": {
+   "highk_25": -3.9e-09,
+   "highk_20": 8.8e-10,
+   "highk_27": 2.3e-09
+  }
  }
 }
