@@ -50,12 +50,20 @@ SEPARATOR_HEAT_SIGN = -1.0     # D5: the supplementary file stores the magnitude
 
 def load_mean_model(path=MODEL_JSON):
     d = json.load(open(path))
-    a = np.array(d["an_ele_rows_mean"], dtype=float)
+    m = rows_to_model(d["an_ele_rows_mean"], d["ncm811_rows_mean"], d["separator_rows_mean"])
+    m["raw"] = d
+    return m
+
+
+def rows_to_model(an_ele_rows, ncm811_rows, separator_rows):
+    """One parameter vector per file (the 220, 17 and 6 rows of the supplementary CSVs, in their order) to the model
+    arrays. The mean model passes the row means; a Stage 3 draw passes one particle's column of each file (D22)."""
+    a = np.array(an_ele_rows, dtype=float)
     n_ae = a[0:90].reshape(9, 10)            # [species, column]
     v_ae = a[90:180].reshape(9, 10)
     lnA_ae, Ea_ae, b_ae, dH_ae = a[180:190], a[190:200] * 1e5, a[200:210], a[210:220]
-    cat = np.array(d["ncm811_rows_mean"], dtype=float)
-    sep = np.array(d["separator_rows_mean"], dtype=float)
+    cat = np.array(ncm811_rows, dtype=float)
+    sep = np.array(separator_rows, dtype=float)
 
     order = np.zeros((NS, NR))      # reaction orders n_sj
     stoich = np.zeros((NS, NR))     # stoichiometric coefficients v_sj
@@ -79,7 +87,7 @@ def load_mean_model(path=MODEL_JSON):
     j = 10
     lnA[j], stoich[12, j], order[12, j], Ea[j], b[j] = sep[0], sep[1], sep[2], sep[3] * 1e5, sep[4]
     dH[j] = SEPARATOR_HEAT_SIGN * sep[5]
-    return {"order": order, "stoich": stoich, "lnA": lnA, "Ea": Ea, "b": b, "dH": dH, "raw": d}
+    return {"order": order, "stoich": stoich, "lnA": lnA, "Ea": Ea, "b": b, "dH": dH}
 
 
 class Kinetics:

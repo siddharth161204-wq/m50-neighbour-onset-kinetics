@@ -1,0 +1,18 @@
+{
+ "n_draws": 200,
+ "seed": 20261012,
+ "generator": "numpy.random.default_rng(seed); integers for an_ele, then separator, then ncm811",
+ "unique_columns": {
+  "an_ele": 88,
+  "separator": 89,
+  "ncm811": 158
+ },
+ "parameter_vectors_file": "results/stage3_kinetic_draw_parameters.csv (not committed; regenerate with this script)",
+ "parameter_vectors_sha256": "b3756da1751438a89afa28d3ae7df6af7147143c887f718ba21f98419935e5a9",
+ "unit_test": {
+  "rows_max_relative_difference": 1.094137610724251e-15,
+  "model_max_relative_difference": 1.094137610724251e-15,
+  "tolerance": 1e-12,
+  "pass": true
+ }
+}
