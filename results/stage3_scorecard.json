@@ -65,7 +65,20 @@
    "two_E21495_tau30_G0.5": 0.365
   }
  },
- "P4": "scored in Stage 3b",
- "P5": "scored in Stage 3b",
- "predictions_commit": "2657aeece0c2137af47aaae4abd9319bdd24ab40"
+ "P4": {
+  "ratio_thermal_to_kinetic_sd_hottest_onset": 0.026776970433967224,
+  "threshold": "> 1.5",
+  "held": false,
+  "brief_central": 3
+ },
+ "P5": {
+  "ratio_kinetic_to_thermal_sd_lumped_onset": 9.459004061370434,
+  "threshold": "> 1.5",
+  "held": true,
+  "brief_central": 2
+ },
+ "predictions_commit": "2657aeece0c2137af47aaae4abd9319bdd24ab40",
+ "V6": {
+  "pass": true
+ }
 }
