@@ -9,7 +9,7 @@ authors:
     orcid: https://orcid.org/0009-0001-3584-1008
 version: v1.0.0
 doi: 10.5281/zenodo.23279456
-date-released: 2026-10-10
+date-released: 2026-10-12
 repository-code: https://github.com/siddharth161204-wq/m50-neighbour-onset-kinetics
 license:
   - MIT
@@ -22,6 +22,8 @@ keywords:
   - LG M50
   - lumped thermal model
   - finite element method
+  - uncertainty quantification
+  - Latin hypercube sampling
   - pre-registration
 references:
   - type: software
@@ -45,3 +47,45 @@ references:
     start: 160402
     year: 2025
     doi: 10.1016/j.cej.2025.160402
+  - type: article
+    title: "Thermal-electrochemical parameters of a high energy lithium-ion cylindrical battery"
+    authors:
+      - family-names: O'Regan
+        given-names: Kieran
+      - family-names: Brosa Planella
+        given-names: Ferran
+      - family-names: Widanage
+        given-names: W. Dhammika
+      - family-names: Kendrick
+        given-names: Emma
+    journal: Electrochimica Acta
+    volume: 425
+    start: 140700
+    year: 2022
+    doi: 10.1016/j.electacta.2022.140700
+  - type: article
+    title: "A simplified mathematical model for heating-induced thermal runaway of lithium-ion batteries"
+    authors:
+      - family-names: Chen
+        given-names: H.
+      - family-names: Buston
+        given-names: J. E. H.
+      - family-names: Gill
+        given-names: J.
+      - family-names: Howard
+        given-names: D.
+      - family-names: Williams
+        given-names: R. C. E.
+      - family-names: Read
+        given-names: E.
+      - family-names: Abaza
+        given-names: A.
+      - family-names: Cooper
+        given-names: B.
+      - family-names: Wen
+        given-names: J. X.
+    journal: Journal of The Electrochemical Society
+    volume: 168
+    start: "010502"
+    year: 2021
+    doi: 10.1149/1945-7111/abd64c
