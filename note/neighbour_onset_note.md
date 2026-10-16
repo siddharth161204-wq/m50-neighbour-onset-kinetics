@@ -49,6 +49,15 @@ Figure 1. (a) First time each history self-heats at 0.15 K/min, 30 s release, 33
 | P5 | Lumped onset: kinetic SD over 1.5 times thermal | Held | 9.5 (central 2) |
 | P6 | Under 10 % start below 100 C (early SEI) | Failed | 36.5 %, in all nine cases |
 
+## Stage 4 (v1.1)
+
+1. Each of the posterior's three submodels varied alone over the same 200 draws, the other two at their posterior mean (a choice; the joint draws stay the headline); 33.2 kJ, 30 s, 500 and 100 mW/K; predictions commit a975f20.
+2. The anode-electrolyte submodel, holding the SEI, carries essentially all of the variance: 0.997 of the lead's at 500 mW/K (0.89 to 1.09 for every output at both); NCM811 cathode 0.000, separator at most 0.002.
+3. With it at its mean no draw starts below 100 C; varied, 37.5 % do.
+4. Its central half (a parameter-space proxy for a tighter posterior, on all 57 varying parameters) narrows the lead's 95 % width only from 43.5 to 37.1 s (14.6 %); on the SEI's own parameters, 18.1 %.
+5. Exploratory: the lead has two modes (starts by 122.4 C, or at 184.9 C and above) and a tighter posterior keeps both; in marginal draws the SEI's heat net of the separator's melting sets the mode.
+6. Scorecard: P1 (SEI submodel over half the lead's variance) held, 0.997 (central 65 %); P2 (shares sum to 0.8 to 1.1) held, 0.998; P3 (under 5 % below 100 C) held, 0 %; P4 (over 40 % narrower) failed, 14.6 %; P5 (same ranking at 100 mW/K) held.
+
 ## What it means for the thesis
 
 Under DSC-trained kinetics a neighbour heated through copper busbars at 33.2 kJ starts to react where the busbar enters, before a lumped model in all 200 draws of the kinetic posterior (by 15 to 59 s in 95 % of them at the 30 s release); the uncertain kinetics, not the roll's published properties, set when. Next: an aged SEI in a resolved, two-way coupled cell with the cap and tabs.

@@ -137,3 +137,33 @@ D30. These analyses were written after the Stage 4 results, to explain why P4 fa
 (1) Modes. The joint leads at the headline case split into two modes at the largest gap of their sorted values, 30.7 to 49.7 s, as Stage 3 reported them. For each restricted set of P4 and of its secondary analyses, the record gives two numbers: the share of its draws in the long-lead mode, and the 2.5 to 97.5 % width within the short-lead mode alone.
 (2) One more restriction. It takes the half of the anode-electrolyte particles whose fresh SEI's heat release per unit cell mass at 108.4 C lies closest to the posterior-mean model's. 108.4 C is the posterior-mean model's onset temperature in every Stage 1 history. The quantity is the natural log of dH times the SEI's mass fraction times the rate constant at that temperature, times the initial SEI amount, 0.15, raised to the reaction order. It stands for a measurement that pinned the fresh SEI's heat release near its mean onset.
 (3) Draw by draw. Each joint draw's mode and starting reaction are set against the anode-electrolyte run of the same draw. The cathode and separator runs' onset ranges are set against the posterior-mean model's onsets.
+(4) Which submodel decides the draws that differ (`src/v11_explore.py`, `results/v11_explore.json`). This was added after an independent check of the Stage 4 documents found that the draw-level differences of (3) cannot be read off the variance shares, and probed them with extra integrations.
+- At the headline case, 28 draws differ between their joint draw and their anode-electrolyte run, in mode or in the hottest node's starting reaction.
+- For each of them two more combinations are integrated along the same two histories, with the Stage 1 driver unchanged: the draw's anode-electrolyte and separator particles with the cathode at its posterior mean, and the draw's anode-electrolyte and cathode particles with the separator at its posterior mean.
+- The record says which combination restores the joint draw's mode and starting reaction. It also gives each draw's separator melting term of the self-heating, in the fresh state at 108.4 C, against the posterior mean's.
+- These are kinetic integrations along the archived histories only, with no new data and no thermal model, and nothing in them is scored.
+
+D31. Presentation (no result depends on it).
+- Figure 3 (`results/v11_figure.png`) is shown in the README; the note keeps Figure 1 alone.
+- The submodels take categorical colours that Figures 1 and 2 do not use: violet, magenta and yellow, checked for colour-blind separation. Figure 1 draws the resolved mean in aqua, so blue, orange and aqua keep their meanings. A first draft gave the cathode aqua, which the independent check caught.
+- The note gains its six Stage 4 lines without any change to its earlier text, as the brief requires. To keep it on one page only its stylesheet changes:
+  - Figure 1 at 56 % of the text width (66 % before);
+  - body text and byline at 7.4 pt (7.8 pt), line height 1.16 (1.19);
+  - tables at 7.2 pt (7.6 pt), with cell padding 0.4 pt (1.2 pt);
+  - page margins 6 and 5 mm at top and bottom (8 and 7 mm), heading space 2.5 pt (4 pt);
+  - the credit line at 6.9 pt (7.3 pt), 2 pt below the text (3 pt).
+
+## Added after an independent check of the Stage 4 documents (records and errata; no registered result changes)
+
+D32. An independent check (16 October) recomputed every Stage 4 quantity from the records, without the study's scoring code. Every registered number and verdict reproduced. It found the following, recorded here.
+(1) Erratum in `predictions_v11.md`, which is kept unchanged. Its background section gives the Stage 3 standard deviation of the lumped onset at 100 mW/K as 95.4 s; it is 95.3 s (95.347 s, `results/stage3a_metrics.json`). No score depends on it.
+(2) The failure rule of D29 (2) was not built into the harness. A failed integration would have stopped `src/v11_sensitivity.py` rather than been recorded. No integration failed, since all 600 grouped draws completed in one pass (`results/v11_run.log`), so the rule never applied.
+(3) Unspecified details:
+- The distances of the central half use the particles' population standard deviation (ddof 0), which `predictions_v11.md` does not specify. With ddof 1 every central half is the same, because one scale factor per file cannot change the ranking.
+- At 100 mW/K, the bootstrap intervals of the narrowing are taken over the resamples in which both widths are bounded, so they are conditional intervals. No document quotes them.
+(4) Counting. D29 counts 3 x 200 x 2 = 1200 runs, one per submodel, draw and case. The README counts 600 grouped draws, one per submodel and draw, each run on both cases. Both counts make 2400 integrations.
+(5) When the scoring code was written. `src/v11_score.py` was written after the predictions were pushed, while the grouped runs ran, and was committed with their results (18f184f); its rules were fixed beforehand in `predictions_v11.md`. Its exploratory parts (D30) and the per-reaction bootstrap intervals were added after the results.
+(6) Wording. The documents' first wording overstated three points, now corrected:
+- that the anode-electrolyte submodel carries "all" of the spread: it carries essentially all of the variance, but the separator decides the mode of a few marginal draws (D30 (4));
+- the cause of the draw-level differences: the first wording pointed to the cathode at its mean, which caused none of the mode changes;
+- what a measurement that decided between the lead's modes would buy: no measurement is simulated, and the central half is a parameter-space proxy for a tighter posterior.

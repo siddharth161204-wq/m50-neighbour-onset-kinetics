@@ -9,9 +9,8 @@ b  The lead at 33.2 kJ, 30 s, 500 mW/K over the 200 joint draws (Stage 3a), over
    the dominant submodel lies in that file's central half (the restricted set of P4), and over those whose particle lies
    in the central half chosen on its SEI-decomposition rows alone (secondary), as shares per 2 s bin; the bars above
    give each set's 2.5 to 97.5 % interval and its width.
-Colours: the submodels take categorical slots that Figures 1 and 2 do not use (violet, aqua, yellow; checked with the
-dataviz palette validator: worst adjacent colour-blind separation 9.1, normal-vision 22.9), so blue and orange keep
-meaning the lumped and hottest nodes.
+Colours: the submodels take categorical slots that Figures 1 and 2 do not use (violet, magenta, yellow; Figure 1 draws
+the resolved mean in aqua), checked for colour-blind separation, so blue, orange and aqua keep their meanings.
 Usage: python3 make_figure_v11.py --out ../results
 """
 import argparse, csv, json, os
@@ -27,7 +26,7 @@ ap.add_argument("--out", default="../results")
 a = ap.parse_args()
 
 INK, INK2, MUTED, GRID, AXIS, SURF = "#0b0b0b", "#52514e", "#898781", "#e1e0d9", "#c3c2b7", "#ffffff"
-COL = {"an_ele": "#6250d6", "ncm811": "#1baf7a", "separator": "#eda100"}
+COL = {"an_ele": "#6250d6", "ncm811": "#e87ba4", "separator": "#eda100"}
 plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 7.5, "axes.edgecolor": AXIS, "axes.labelcolor": INK2,
                      "xtick.color": MUTED, "ytick.color": MUTED, "axes.linewidth": 0.8, "xtick.major.width": 0.8,
                      "ytick.major.width": 0.8, "figure.facecolor": SURF, "axes.facecolor": SURF,

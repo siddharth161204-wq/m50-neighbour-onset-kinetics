@@ -794,6 +794,15 @@
       },
       "narrowing": 0.14336469727224044
      },
+     "per_reaction_share_of_resamples_largest": {
+      "elec_evap": 0.001,
+      "elec_decomp": 0.0,
+      "an_ele": 0.2525,
+      "an_bin": 0.0,
+      "sei_decomp": 0.487,
+      "IV": 0.0035,
+      "V": 0.256
+     },
      "per_reaction_restriction": {
       "elec_evap": {
        "rows_used": 7,
@@ -805,7 +814,11 @@
         "p97.5": 58.71499309633657,
         "width_s": 44.64670514620484
        },
-       "narrowing": -0.027009823670170796
+       "narrowing": -0.027009823670170796,
+       "narrowing_95_bootstrap": [
+        -0.11452349584838481,
+        0.11720759544547506
+       ]
       },
       "elec_decomp": {
        "rows_used": 7,
@@ -817,7 +830,11 @@
         "p97.5": 56.79350143829209,
         "width_s": 40.0789432615296
        },
-       "narrowing": 0.07806257332722344
+       "narrowing": 0.07806257332722344,
+       "narrowing_95_bootstrap": [
+        -0.046942440709466,
+        0.16528578861470894
+       ]
       },
       "an_ele": {
        "rows_used": 9,
@@ -829,7 +846,11 @@
         "p97.5": 57.598648910982405,
         "width_s": 36.578978545609345
        },
-       "narrowing": 0.1585723922260237
+       "narrowing": 0.1585723922260237,
+       "narrowing_95_bootstrap": [
+        0.0678451878740983,
+        0.2346762939671044
+       ]
       },
       "an_bin": {
        "rows_used": 9,
@@ -841,7 +862,11 @@
         "p97.5": 58.35775323948327,
         "width_s": 40.7335507665218
        },
-       "narrowing": 0.06300461247493527
+       "narrowing": 0.06300461247493527,
+       "narrowing_95_bootstrap": [
+        -0.066928597071618,
+        0.14726134698482854
+       ]
       },
       "sei_decomp": {
        "rows_used": 7,
@@ -853,7 +878,11 @@
         "p97.5": 56.0176521256597,
         "width_s": 35.6114666786473
        },
-       "narrowing": 0.18082810378712544
+       "narrowing": 0.18082810378712544,
+       "narrowing_95_bootstrap": [
+        0.0466735960260028,
+        0.2597432702784056
+       ]
       },
       "IV": {
        "rows_used": 10,
@@ -865,7 +894,11 @@
         "p97.5": 58.130926869077705,
         "width_s": 37.608023406063325
        },
-       "narrowing": 0.13490123492062567
+       "narrowing": 0.13490123492062567,
+       "narrowing_95_bootstrap": [
+        0.044216218881944436,
+        0.20160887714110473
+       ]
       },
       "V": {
        "rows_used": 8,
@@ -877,7 +910,11 @@
         "p97.5": 57.11293406217318,
         "width_s": 36.40860280916834
        },
-       "narrowing": 0.16249155164589457
+       "narrowing": 0.16249155164589457,
+       "narrowing_95_bootstrap": [
+        0.06773434461608875,
+        0.2800421094983748
+       ]
       }
      }
     },
@@ -903,6 +940,7 @@
       0.3150011191562205
      ],
      "bootstrap_resamples_unbounded": 1792,
+     "narrowing_95_bootstrap_note": "conditional: over the resamples in which both widths are bounded only (DECISIONS.md D32)",
      "within_own_grouped_runs": {
       "full": {
        "n": 200,
@@ -931,7 +969,11 @@
         "p97.5": null,
         "width_s": null
        },
-       "narrowing": null
+       "narrowing": null,
+       "narrowing_95_bootstrap": [
+        -0.21724337714852288,
+        0.07157226275627201
+       ]
       },
       "elec_decomp": {
        "rows_used": 7,
@@ -943,7 +985,11 @@
         "p97.5": 308.4412729249658,
         "width_s": 265.6998208354827
        },
-       "narrowing": null
+       "narrowing": null,
+       "narrowing_95_bootstrap": [
+        0.007484448658892018,
+        0.2627151774509208
+       ]
       },
       "an_ele": {
        "rows_used": 9,
@@ -955,7 +1001,11 @@
         "p97.5": 329.9235989931151,
         "width_s": 260.31976154736674
        },
-       "narrowing": null
+       "narrowing": null,
+       "narrowing_95_bootstrap": [
+        0.050097142779305825,
+        0.3187900108703618
+       ]
       },
       "an_bin": {
        "rows_used": 9,
@@ -967,7 +1017,11 @@
         "p97.5": 325.20050787577316,
         "width_s": 276.9973367270353
        },
-       "narrowing": null
+       "narrowing": null,
+       "narrowing_95_bootstrap": [
+        -0.032086480059188495,
+        0.22838958535226642
+       ]
       },
       "sei_decomp": {
        "rows_used": 7,
@@ -979,7 +1033,11 @@
         "p97.5": 283.3512380876266,
         "width_s": 217.84344914316353
        },
-       "narrowing": null
+       "narrowing": null,
+       "narrowing_95_bootstrap": [
+        0.1562289868294006,
+        0.4229574025171749
+       ]
       },
       "IV": {
        "rows_used": 10,
@@ -991,7 +1049,11 @@
         "p97.5": null,
         "width_s": null
        },
-       "narrowing": null
+       "narrowing": null,
+       "narrowing_95_bootstrap": [
+        -0.011640556207673625,
+        0.3005560844893428
+       ]
       },
       "V": {
        "rows_used": 8,
@@ -1003,7 +1065,11 @@
         "p97.5": 297.58111587312544,
         "width_s": 230.09075485290253
        },
-       "narrowing": null
+       "narrowing": null,
+       "narrowing_95_bootstrap": [
+        0.11514051511388208,
+        0.39888034031162534
+       ]
       }
      }
     }
@@ -1059,7 +1125,8 @@
       -0.06099595049151382,
       0.2281628546023546
      ],
-     "bootstrap_resamples_unbounded": 1834
+     "bootstrap_resamples_unbounded": 1834,
+     "narrowing_95_bootstrap_note": "conditional: over the resamples in which both widths are bounded only (DECISIONS.md D32)"
     }
    }
   },
@@ -1113,12 +1180,13 @@
       -0.10389492458918954,
       0.17192634166687834
      ],
-     "bootstrap_resamples_unbounded": 1795
+     "bootstrap_resamples_unbounded": 1795,
+     "narrowing_95_bootstrap_note": "conditional: over the resamples in which both widths are bounded only (DECISIONS.md D32)"
     }
    }
   }
  },
- "failed_runs": 0,
+ "failed_runs": "none: all 600 grouped draws completed in one pass (results/v11_run.log); the harness would have stopped on a failure (DECISIONS.md D32)",
  "dominant_submodel": "an_ele",
  "exploratory": {
   "note": "exploratory, not pre-registered; written after the Stage 4 results (DECISIONS.md D30)",

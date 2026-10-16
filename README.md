@@ -1,10 +1,10 @@
 # Onset kinetics on a resolved neighbour cell: where a whole-cell threshold and a local one disagree
 
-A pilot study. A published two-cell study (Satte 2026, doi:10.5281/zenodo.23253738) solved the neighbour of a failing LG M50 cell twice with identical inputs, as a single temperature (lumped) and as a resolved three-dimensional field, and compared both with fixed onset temperatures. This study replaces the fixed temperatures with decomposition kinetics: the posterior-mean B-CRNN kinetics of Koenig, Zhao and Deng (Chemical Engineering Journal 507 (2025) 160402), integrated along the archived temperature histories of the resolved hottest node, the resolved mean and the lumped node (Stage 1, passive), and then added as a heat source to both models (Stage 2, reactive, one-way). Stage 3 repeats Stage 1 over 200 draws of the kinetics' posterior and 30 draws of the roll's published thermal properties, to see which uncertainty sets each onset. Conduction and radiation only between the cells: the ejecta and flame paths are excluded. One geometry, the published two-cell case. This is onset in a neighbour, not propagation.
+A pilot study. A published two-cell study (Satte 2026, doi:10.5281/zenodo.23253738) solved the neighbour of a failing LG M50 cell twice with identical inputs, as a single temperature (lumped) and as a resolved three-dimensional field, and compared both with fixed onset temperatures. This study replaces the fixed temperatures with decomposition kinetics: the posterior-mean B-CRNN kinetics of Koenig, Zhao and Deng (Chemical Engineering Journal 507 (2025) 160402), integrated along the archived temperature histories of the resolved hottest node, the resolved mean and the lumped node (Stage 1, passive), and then added as a heat source to both models (Stage 2, reactive, one-way). Stage 3 repeats Stage 1 over 200 draws of the kinetics' posterior and 30 draws of the roll's published thermal properties, to see which uncertainty sets each onset. Stage 4 (version 1.1.0) varies each of the posterior's three submodels alone over the same draws, to see which one carries the spread of the lead and what tightening it would buy. Conduction and radiation only between the cells: the ejecta and flame paths are excluded. One geometry, the published two-cell case. This is onset in a neighbour, not propagation.
 
 Siddharth Satte, Independent researcher, Pune, India.
 
-Zenodo DOI, reserved for version v1.0.0: https://doi.org/10.5281/zenodo.23279456 (it resolves once the record is published). Cite as: Satte, S. (2026). Onset kinetics on a resolved neighbour cell: where a whole-cell threshold and a local one disagree (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.23279456
+Zenodo DOI, reserved for this study: https://doi.org/10.5281/zenodo.23279456. It resolves once the record is published, as version v1.1.0; v1.0.0 was released on GitHub only. Cite as: Satte, S. (2026). Onset kinetics on a resolved neighbour cell: where a whole-cell threshold and a local one disagree (v1.1.0). Zenodo. https://doi.org/10.5281/zenodo.23279456
 
 The one-page note is `note/neighbour_onset_note.pdf` (source `note/neighbour_onset_note.md`).
 
@@ -17,6 +17,12 @@ The one-page note is `note/neighbour_onset_note.pdf` (source `note/neighbour_ons
 5. The Stage 2 scheme and checks (DECISIONS.md D13 to D15, commit b6ba9bd, pushed 08:17:23 UTC) were public before Stage 2 ran from 08:17:31 UTC.
 6. Stage 2, the scoring of P5, the checks of D15, the figure and the note were completed on 10 October (commit f34f408). An independent review of that material led to D19 to D21: two exploratory analyses and fuller records. No registered result changed. Release v1.0.0 holds Stages 1 to 3.
 7. Stage 3, kinetic and thermophysical uncertainty (brief of 12 October): the 200 kinetic draws and their loader (D22, commit db29932); V4, the draws through the source paper's ARC test, failed the brief's acceptance as D23 set it out (commit 1385a30, before V4 ran; D22 to D24 were first pushed together with the failure, commit f9cabc7), after a numerical fix to the emulation made when its first run broke down on 13 draws (D24, commit 10e25b7), and was amended after the failure by the author's choice (D25, commit 1e835d9), under which it passes; the Stage 3a design (D26) and the predictions, `predictions_stage3.md`, commit `2657aeece0c2137af47aaae4abd9319bdd24ab40`, first pushed to this repository at 2026-10-12 13:01:52 UTC (`provenance/github_activity_stage3.json`), before any kinetic draw was integrated along an archived history of the two-cell study. Its text has not changed since. Stage 3a ran from 13:04 UTC, after the README recording that hash (commit 175cc17, 13:02:38 UTC) and the Stage 3a driver (302468b, 13:04:00 UTC) were pushed; the Stage 3b inputs and design (D27, commit c0d9a5e, 13:23:11 UTC) were public before Stage 3a finished. Stage 3a's results and the scoring of P1, P2, P3 and P6 were pushed (commit f8c08a3, 17:08:16 UTC) before any Stage 3b solve ran, and Stage 3b and 3c with P4 and P5 after (commit 9be6e40, 20:19:09 UTC).
+8. Stage 4, which submodel of the kinetic posterior sets the lead (brief of 16 October; version 1.1.0).
+   - The step 1 checks (V7) passed.
+   - The design (D29) and the predictions, `predictions_v11.md`, commit `a975f20c63cd823d932983ddf285b5782b0ca31c`, were first pushed to this repository at 2026-10-16 07:08:24 UTC (`provenance/github_activity_stage4.json`). That was before any grouped run, and the file's text has not changed since.
+   - The 600 grouped draws ran from 07:08:47 to 07:31:39 UTC. Their records, the scoring of P1 to P5 and the exploratory analyses written after the results (D30) were pushed in commit 18f184f (07:39:19 UTC).
+   - An independent check of the Stage 4 documents (D32) recomputed every Stage 4 quantity and reproduced every registered number and verdict. It led to corrections of their wording, one erratum in the predictions' background and one more exploratory analysis (D30 (4)); no registered result changed.
+   - Release v1.1.0 adds Stage 4. No v1.0.0 result changes.
 
 ## Results
 
@@ -104,6 +110,100 @@ Results, 3b and 3c (`results/stage3bc_metrics.json`, `results/stage3_thermal_dra
 
 Figure 2 (`src/make_figure_stage3.py`). (a) The lead at 33.2 kJ, 30 s, 500 mW/K over the kinetic draws, the thermal draws and the combined pairs, with zero lead and the posterior-mean value marked. (b) The hottest-node and lumped onsets against busbar conductance at 33.2 kJ and 30 s: medians and the 2.5 to 97.5 % band over the kinetic draws, with Stage 1's posterior-mean onsets; a band that reaches the dashed line holds draws in which that node does not start within the 900 s run.
 
+## Stage 4 (version 1.1.0): which part of the kinetic posterior sets the lead
+
+Stage 3 found that the kinetics, not the roll's thermal properties, set both onsets. The kinetic posterior has three submodels, one per supplementary file of the source paper, and Stage 3 drew them independently:
+- the anode-electrolyte network (`An_Ele.csv`): electrolyte evaporation and decomposition, the anode-electrolyte reaction, the anode-binder reaction, SEI decomposition, and the unknown reactions IV and V;
+- the NCM811 cathode;
+- the separator.
+
+Stage 4 (brief of 16 October) varies each submodel alone, to find which carries the lead's spread, and so, in the brief's words, which calorimetry measurement would narrow it most. No measurement is simulated: the central half below is a parameter-space proxy for a tighter posterior. The brief's "SEI submodel" is the anode-electrolyte file, the only one that holds the SEI decomposition (D29). The predictions, `predictions_v11.md` (commit a975f20), were public before any grouped run.
+
+Every registered Stage 4 quantity is computed by `src/v11_score.py` from the run records (`results/v11_sensitivity.json`). The exploratory probe of item 18 is computed by `src/v11_explore.py` (`results/v11_explore.json`). The Stage 1 and 3 values quoted beside them come from those stages' records.
+
+Design (DECISIONS.md D29):
+
+- **Grouped runs.** For each submodel and each of the 200 Stage 3 draws, the kinetics take that draw's particle of the submodel and the posterior-mean rows of the other two files. They are integrated exactly as in Stage 3a along the hottest-node and lumped histories of 33.2 kJ, 30 s, at 500 and at 100 mW/K.
+  - That makes 600 grouped draws, one per submodel and Stage 3 draw, each run on both cases; D29 counts the same work as 1200 runs, one per case (D32). In all there are 2400 integrations, with the Stage 3 draws, histories and settings unchanged, no new data and no thermal run.
+  - Holding two submodels at their posterior mean is the brief's choice. The joint draws of Stage 3 stay the headline.
+- **Main-effect share.** The variance of an output over a submodel's 200 runs, divided by its variance over the 200 joint draws. A sum of the three well below one would mean the submodels act together. A rank-based repeat squares each run set's Spearman correlation with the joint draws.
+- **Central half** of a file. The half of its particles closest to the posterior mean in standardized distance, over all the rows that vary across them (57 rows for the anode-electrolyte file). The restricted set is the joint draws whose particle of that file lies in its central half. It is a parameter-space proxy for a tighter posterior, not a simulated measurement.
+- **V7**, the step 1 checks, passed before the predictions (Verification table).
+
+Results (`results/v11_sensitivity.json`, `results/v11_sensitivity.csv`, `results/v11_onsets.csv`, `results/v11_scorecard.json`):
+
+16. **The anode-electrolyte file carries essentially all of every output's variance.** At 33.2 kJ, 30 s and 500 mW/K:
+    - Its share of the lead's variance is 0.997 (paired bootstrap 95 % interval 0.92 to 1.09). Its shares of the two onsets and of the hottest node's onset temperature are 1.00 to 1.02.
+    - The cathode file's share is 0.000 and the separator's 0.001.
+    - The three sum to 0.998 for the lead, and to 1.00 to 1.02 for the other outputs.
+    - Draw by draw the separator still decides the mode of 13 marginal draws (item 18), so its small share is not the same as no effect.
+17. **With the anode-electrolyte file at its mean, every cathode and separator run starts both nodes by SEI decomposition, and none starts below 100 C, at either conductance.** 75 anode-electrolyte runs (37.5 %) and 73 joint draws (36.5 %) start below 100 C, all by SEI decomposition.
+    - Exploratory (D30 (3)): the cathode particles move the onsets from the posterior-mean model's by at most 0.022 s at either conductance, and by about 0.003 s at most at 500 mW/K.
+    - At 500 mW/K the separator particles spread the hottest-node onset over 11.42 to 11.92 s and the lumped onset over 37.58 to 40.45 s, against 11.48 and 37.88 s for the posterior-mean model, with onset temperatures from 107.5 to 115.6 C. In these runs only the separator's melting differs from the posterior-mean model, and melting absorbs heat (D5). A particle that melts more near the onset than the posterior mean's starts later; one that melts less starts earlier.
+18. **Draw by draw (exploratory, D30 (3) and (4)), the anode-electrolyte runs track the joint draws closely but not exactly.**
+    - The squared rank correlation of the lead with the joint draws is 0.94 (the registered rank-based share), and 50 of the 200 leads agree within 0.01 s.
+    - 13 draws change mode: 9 move from the short-lead mode to the long one, and 4 the other way.
+    - Restoring a draw's own separator particle, with the cathode still at its mean, brings back its joint mode in all 13. Restoring its own cathode particle, with the separator at its mean, brings it back in none.
+    - The direction fits the separator's melting. In the fresh state at 108.4 C, 8 of the 9 draws that move to the long mode have a separator that melts more weakly than the posterior mean's, and all 4 that move to the short mode one that melts more strongly. Where a draw's SEI is close to starting early, the separator's heat absorption decides whether it does.
+    - Of the 15 further draws whose hottest node changes its starting reaction without changing mode, the draw's own separator restores the reaction in 13 and its own cathode in 6.
+    - With the anode-electrolyte file varied, 54 runs start by the first cathode reaction, at the mean cathode's 200.5 to 201.0 C; 37 joint draws did, at 195.9 to 216.6 C.
+    - The anode-electrolyte runs' lead variance is 208.1 s², against 208.8 s² over the joint draws.
+19. **At 100 mW/K the ordering is the same.**
+    - The anode-electrolyte shares run from 0.89 to 1.09 over the four outputs; the cathode's are 0.000 and the separator's 0.001 to 0.002.
+    - The lumped node does not start within the run in 4 anode-electrolyte runs and in 8 joint draws. The shares of the lumped onset and the lead leave those draws out.
+    - The rank-based repeat agrees in every output and case, with the anode-electrolyte file first: anode-electrolyte 0.91 to 0.98, separator 0.015 to 0.038, cathode at most 0.002.
+20. **Tightening the dominant submodel narrows the lead little.**
+    - The central half of the anode-electrolyte file (50 of its 100 particles, chosen on all 57 varying rows) selects 109 of the 200 joint draws. At the headline case it narrows the lead's 2.5 to 97.5 % width from 43.5 to 37.1 s, by 14.6 % (bootstrap 5.1 to 21.4 %), against the brief's threshold of 40 %. The study had expected P4 might fail.
+    - Within the file's own runs, with the other two submodels at their mean, the narrowing is 14.3 %.
+    - The cathode file's central half narrows the width by 9.3 %, and the separator's widens it by 2.9 %.
+    - Chosen on one reaction's rows at a time (secondary), the SEI decomposition's rows give the largest point estimate, 18.1 % (35.6 s; bootstrap 4.7 to 26.0 %). Reaction V (16.2 %; 6.8 to 28.0 %) and the anode-electrolyte reaction (15.9 %; 6.8 to 23.5 %) are as large within the bootstrap, and the SEI rows give the largest narrowing in only 49 % of resamples.
+    - IV gives 13.5 %, electrolyte decomposition 7.8 % and the anode-binder reaction 6.3 %; the evaporation rows widen the width by 2.7 %.
+21. **Why (exploratory, written after the results, D30 (1) and (2)).** The lead has two modes:
+    - 142 joint draws between 12.7 and 30.7 s, whose hottest node starts by 122.4 C;
+    - 58 between 49.7 and 60.8 s, whose hottest node starts only at 184.9 C or above (a late SEI or the first cathode reaction).
+
+    The anode-electrolyte central half shrinks the spread within the short mode from 17.3 to 9.7 s. It still keeps 22 % of its draws in the long mode, so its 97.5 percentile stays there; on the SEI rows alone the figures are 14 % and 10.0 s. Every restricted set here keeps 14 to 32 % of its draws in the long mode.
+
+    A further half was chosen post hoc: the particles whose fresh SEI's heat release at 108.4 C lies closest to the posterior-mean model's. That quantity has a rank correlation of -0.97 with the hottest node's onset temperature, yet the half keeps 12 of its 87 draws (14 %) in the long mode and narrows the width by only 23 %.
+
+    On these numbers:
+    - Every restricted set still holds draws of both modes, and the largest narrowing among them is 23 % (the post hoc half).
+    - A set whose 2.5 and 97.5 percentiles fall in different modes cannot have a width below the 18.9 s gap between them (30.7 to 49.7 s). Within the short mode alone the leads span 17.3 s.
+    - Which mode a draw falls in is set near the SEI's onset by its heat net of the separator's melting (item 18), not by the SEI alone.
+    - The source paper notes that its DSC data cannot resolve slow low-temperature kinetics (its Appendix A).
+
+| Output, 33.2 kJ, 30 s | Conductance | Anode-electrolyte (holds the SEI) | NCM811 cathode | Separator | Sum (bootstrap 95 %) | Rank-based: anode-electrolyte, cathode, separator |
+|---|---|---|---|---|---|---|
+| Lead | 500 mW/K | 0.997 (0.92 to 1.09) | 0.000 | 0.001 | 0.998 (0.92 to 1.09) | 0.94, 0.000, 0.037 |
+| | 100 mW/K | 1.093 (0.97 to 1.26) | 0.000 | 0.002 | 1.095 (0.97 to 1.26) | 0.98, 0.002, 0.015 |
+| Hottest-node onset | 500 mW/K | 1.020 (0.95 to 1.11) | 0.000 | 0.001 | 1.022 (0.95 to 1.11) | 0.91, 0.000, 0.036 |
+| | 100 mW/K | 0.894 (0.80 to 1.01) | 0.000 | 0.001 | 0.895 (0.80 to 1.02) | 0.94, 0.000, 0.038 |
+| Lumped onset | 500 mW/K | 1.001 (0.92 to 1.10) | 0.000 | 0.001 | 1.002 (0.92 to 1.10) | 0.93, 0.000, 0.036 |
+| | 100 mW/K | 1.092 (0.97 to 1.25) | 0.000 | 0.002 | 1.094 (0.97 to 1.25) | 0.98, 0.000, 0.017 |
+| Hottest-node onset temperature | 500 mW/K | 1.017 (0.94 to 1.11) | 0.000 | 0.001 | 1.018 (0.94 to 1.11) | 0.91, 0.000, 0.037 |
+| | 100 mW/K | 1.051 (0.98 to 1.13) | 0.000 | 0.002 | 1.053 (0.99 to 1.13) | 0.94, 0.000, 0.037 |
+
+Shares are the variance over a submodel's 200 runs divided by the variance over the 200 joint draws of Stage 3a. At 100 mW/K the lumped onset and the lead leave out the draws in which the lumped node does not start (4 anode-electrolyte runs, 8 joint draws). The rank-based shares are squared Spearman correlations with the joint draws, on values rounded to 4 significant digits.
+
+| Prediction (Stage 4) | Statement (short form) | Result | Measured |
+|---|---|---|---|
+| P1 | The SEI submodel (the anode-electrolyte file) carries over half of the lead's variance at 33.2 kJ, 30 s, 500 mW/K | Held | 0.997 (bootstrap 0.92 to 1.09); brief's central estimate 65 % |
+| P2 | There, the three main-effect shares of the lead sum to 0.8 to 1.1 | Held | 0.998 (0.92 to 1.09); at 100 mW/K 1.095, not scored |
+| P3 | With the SEI submodel at its mean, under 5 % of draws start below 100 C | Held | 0 % in the cathode runs and in the separator runs; 37.5 % in the anode-electrolyte runs, 36.5 % over the joint draws |
+| P4 | Restricting the dominant submodel to its central half narrows the lead's 95 % width by over 40 % | Failed | 14.6 %, 43.5 to 37.1 s (bootstrap 5.1 to 21.4 %); the study had expected it might fail |
+| P5 | The submodels rank the same at 100 mW/K as at 500 mW/K | Held | Anode-electrolyte first at both; cathode and separator tied (shares under 0.01 apart) |
+
+![](results/v11_figure.png)
+
+Figure 3 (`src/make_figure_v11.py`).
+- (a) Each submodel's main-effect share of each output's variance at 33.2 kJ, 30 s, stacked.
+  - Each bar's length is the sum of the three shares, printed at its end, and its whisker is the paired bootstrap 95 % interval of that sum.
+  - The dashed line marks a sum of one. The cathode and separator segments are too thin to see; the legend gives their values.
+- (b) The lead at 33.2 kJ, 30 s, 500 mW/K, as shares per 2 s bin and 2.5 to 97.5 % intervals, over three sets:
+  - all 200 joint draws;
+  - the 109 draws whose anode-electrolyte particle lies in that file's central half (P4);
+  - the 108 draws whose particle lies in the central half chosen on the SEI decomposition's rows alone.
+
 ## Exploratory, not pre-registered (DECISIONS.md D19 and D20)
 
 Fresh SEI (`src/explore_sei_storage.py`, `results/explore_sei_storage.json`). The mean model's SEI decomposes even at 25 C: stored there under the same kinetics, the neighbour loses 12 % of its SEI in a day, 36 % in three days, 80 % in a week and all of it in a month. Kinetics this slow are beyond what DSC data resolve, as the source paper's Appendix A notes; like the source's own ARC simulation, Stage 1 starts from a fresh SEI. Repeated from the stored states, at 33.2 kJ and 500 mW/K:
@@ -142,10 +242,11 @@ The source's own internal-short trigger. The source paper switches its internal 
 | V6, the nominal inputs through the Stage 3b harness | Reproduce the archived series of the headline case exactly (0.0 K for the hottest node, the mean and the lumped node) |
 | V6, energy account of the 30 Stage 3b solves (acceptance 1e-9) | Residual at most 6.3e-12 of the heat taken in, pass. The three high-conductivity reruns of the next row, run after the 30 solves, close to 3.9e-9, 8.8e-10 and 2.3e-9, two of them above 1e-9, which D27 applies to the 30 solves (Stage 2's high-conductivity runs of V3 closed to 7.9e-10 and 8.8e-10) |
 | V6, roll conductivity 1e4 W/mK for the draws with the smallest, median and largest roll specific heat (acceptance 1 K) | Hottest node within 0.75 to 0.78 K and mean within 0.14 to 0.15 K of the lumped node at every archived time, pass |
+| V7, Stage 4's step 1 checks, run before the predictions (D29 (3)) | All pass (`results/v11_checks.json`): the particle files match their recorded hashes; each draw's rows, loaded file by file, rebuild the draws' parameter file byte for byte; all 3600 arrays of the grouped models equal the joint model on the varied file's block and the posterior-mean model elsewhere, exactly; through the Stage 4 path the posterior-mean model reproduces Stage 1 on both cases, and the five V5 draws reproduce Stage 3a (largest relative difference 0 in both) |
 
 ## Contents
 
-- `DECISIONS.md`: every analysis choice not fixed by the brief, with its reason, numbered; D13 to D15 were added after the predictions were public, before Stage 2 ran, and D16 to D21 after it (presentation, records and two exploratory analyses). Stage 3: D22 and D23 before V4 ran, D24 after its first run broke down on 13 draws, D25 after it failed (post hoc, the author's choice), D26 with the Stage 3 predictions, D27 before any Stage 3b solve, and D28 after Stage 3 ran (presentation only).
+- `DECISIONS.md`: every analysis choice not fixed by the brief, with its reason, numbered; D13 to D15 were added after the predictions were public, before Stage 2 ran, and D16 to D21 after it (presentation, records and two exploratory analyses). Stage 3: D22 and D23 before V4 ran, D24 after its first run broke down on 13 draws, D25 after it failed (post hoc, the author's choice), D26 with the Stage 3 predictions, D27 before any Stage 3b solve, and D28 after Stage 3 ran (presentation only). Stage 4: D29 with the Stage 4 predictions, before any grouped run; D30 and D31 after the results (exploratory analyses and presentation); D32 after an independent check of the Stage 4 documents (records and errata).
 - `predictions.md`: the pre-registered predictions and the hand reasoning behind them.
 - `inputs/kinetics/`: the kinetics' source, hashes and page references (`SOURCE.md`), the posterior-mean parameters (`bcrnn_mean_model.json`, and readable as `bcrnn_mean_model_table.md` and `.csv`), the scripts that fetch the supplementary files, recompute the mean model and read Fig. A.1(a), and that reading (`figA1a_mass_basis.json`).
 - `inputs/databank/`: the Battery Failure Databank rows behind the energies, with the Databank's notice (`SOURCE.md` says where they come from).
@@ -155,7 +256,17 @@ The source's own internal-short trigger. The source paper switches its internal 
 - `predictions_stage3.md`: the Stage 3 predictions, with the brief's and the study's central estimates.
 - Stage 3 code: `src/stage3_draws.py` and `src/test_stage3_draws.py` (the kinetic draws and their unit test), `src/v4_arc_draws.py` and `src/v4_amended.py` (V4 as first set and as amended), `src/predictions_stage3_estimates.py` (the study's own central estimates, on synthetic ramps), `src/stage3a.py`, `src/stage3a_score.py` and `src/v5_tolerance.py` (Stage 3a, its scoring and V5), `src/stage3b.py` and `src/stage3bc_score.py` (Stages 3b and 3c, V6 and the decomposition; the scoring script was committed with the 3b results, its rule fixed beforehand in D27), `src/stage3_numbers.py` (every quoted Stage 3 number, `results/stage3_numbers.json`) and `src/make_figure_stage3.py` (Figure 2).
 - Stage 3 results: `extract_mean_model_check.txt`, `stage3_draw_indices.csv`, `stage3_draws.json`, `stage3_v4_arc_draws.csv`, `stage3_v4.json`, `stage3_v4_amended.json`, `stage3_prediction_estimates.json`, `stage3a_check_mean.json`, `stage3a_onsets.csv`, `stage3a_metrics.json`, `stage3a_per_draw.csv`, `stage3a_p3_by_draw.csv`, `stage3a_v5.json`, `stage3_thermal_draws.csv`, `stage3c_pairs.csv`, `stage3b_design.json`, `stage3b_nominal_check.json`, `stage3b_solves.jsonl`, `stage3b_series/`, `stage3bc_onsets.csv`, `stage3bc_metrics.json`, `stage3_scorecard.json`, `stage3_numbers.json`, `stage3_figure.png` and `.pdf`, and the run logs. The draws' parameter vectors (`stage3_kinetic_draw_parameters.csv`) reproduce the publisher's data and are not included: `stage3_draws.py` regenerates them from the publisher's files, and their SHA-256 is in `stage3_draws.json`.
-- `provenance/github_activity.json`: the repository's push log before the Stage 2 release commit was pushed (GitHub activity API); `provenance/github_activity_stage3.json`: the push log up to the Stage 3b results, as the API returned it before the final push.
+- `provenance/github_activity.json`: the repository's push log before the Stage 2 release commit was pushed (GitHub activity API); `provenance/github_activity_stage3.json`: the push log up to the Stage 3b results, as the API returned it before the final push; `provenance/github_activity_stage4.json`: the push log after the Stage 4 predictions were pushed, retrieved before any grouped run started.
+- `predictions_v11.md`: the Stage 4 predictions, with the brief's thresholds and the study's expectations, and every registered Stage 4 quantity defined before it was computed (an erratum to its background is in D32).
+- Stage 4 code:
+  - `src/v11_sensitivity.py`: the grouped runs, and the step 1 checks (V7).
+  - `src/v11_score.py`: the main-effect shares and their rank-based repeat, the early SEI starts, the central-half restriction, and the scoring of P1 to P5. It was written after the predictions were pushed, while the grouped runs ran, and committed with their results; its rules were fixed beforehand in `predictions_v11.md` (D32 (5)).
+  - `src/v11_explore.py`: the exploratory probe of D30 (4).
+  - `src/make_figure_v11.py`: Figure 3.
+- Stage 4 results:
+  - `v11_checks.json`, `v11_onsets.csv` (every grouped run's Stage 1 fields) and `v11_sensitivity.csv` (one row per case, run type and draw, with each particle's distance from the posterior mean).
+  - `v11_sensitivity.json` (every Stage 4 metric, with the exploratory analyses of D30 (1) to (3) under "exploratory"), `v11_explore.json` (D30 (4)), `v11_scorecard.json`, `v11_figure.png` and `.pdf`, and `v11_run.log`.
+  - The grouped runs' checkpoint files (`results/v11_runs/`) are not committed; `v11_onsets.csv` holds every record in them.
 
 ## Running
 
@@ -193,6 +304,12 @@ Python 3.11 or newer. `pip install -r requirements.txt`, then `./get_published_s
     python3 stage3bc_score.py --out ../results
     python3 stage3_numbers.py --out ../results
     python3 make_figure_stage3.py --out ../results
+    python3 v11_sensitivity.py --series ../external/m50-two-cell-pilot/results/resolved_series --out ../results check
+    python3 v11_sensitivity.py --series ../external/m50-two-cell-pilot/results/resolved_series --out ../results run --jobs 2
+    python3 v11_sensitivity.py --series ../external/m50-two-cell-pilot/results/resolved_series --out ../results merge
+    python3 v11_score.py --out ../results
+    python3 v11_explore.py --series ../external/m50-two-cell-pilot/results/resolved_series --out ../results
+    python3 make_figure_v11.py --out ../results
     cd ../note && ./render_note.sh
 
 To compare a re-run of V0 to V2 with the committed records, run those three scripts with `--out` set to another folder, then `python3 compare_records.py --a ../results --b <that folder> --files v0_dsc_check.json v1_arc_check.json v1_arc_trace.csv v2_synthetic.json --out ../results/rerun_final_code.json`.

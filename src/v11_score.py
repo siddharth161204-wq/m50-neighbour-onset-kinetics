@@ -192,7 +192,8 @@ def main(out):
 
     res = {"predictions_commit": PREDICTIONS_COMMIT, "n_draws": N, "cases": CASES, "groups": LABEL,
            "definitions": "predictions_v11.md; DECISIONS.md D29", "shares": {}, "rank_shares": {}, "early_sei": {},
-           "onset_reactions": {}, "orderings": {}, "restriction": {}, "failed_runs": 0}
+           "onset_reactions": {}, "orderings": {}, "restriction": {},
+           "failed_runs": "none: all 600 grouped draws completed in one pass (results/v11_run.log); the harness would have stopped on a failure (DECISIONS.md D32)"}
 
     # main-effect shares, with paired bootstrap intervals
     for cl, case in CASES.items():
@@ -278,12 +279,14 @@ def main(out):
                 nb.append(None if not fw["width_s"] or rw["width_s"] is None else 1.0 - rw["width_s"] / fw["width_s"])
             e["narrowing_95_bootstrap"] = pct_interval(nb)
             e["bootstrap_resamples_unbounded"] = int(sum(x is None for x in nb))
+            if e["bootstrap_resamples_unbounded"]:
+                e["narrowing_95_bootstrap_note"] = "conditional: over the resamples in which both widths are bounded only (DECISIONS.md D32)"
             if g == dom:
                 lead_g = series(g, case, "lead_rank_value")
                 fg, rg = lead_width(lead_g), lead_width([v for v, k in zip(lead_g, inside) if k])
                 e["within_own_grouped_runs"] = {"full": fg, "restricted": rg,
                                                 "narrowing": (1.0 - rg["width_s"] / fg["width_s"]) if (fg["width_s"] and rg["width_s"] is not None) else None}
-                per_rx = {}
+                per_rx, boot_rx = {}, {}
                 for rxn, rws in reaction_rows(f).items():
                     dr, nr = distances(P, M, f, rws)
                     hr = central_half(dr)
@@ -291,6 +294,25 @@ def main(out):
                     rw = lead_width([v for v, k in zip(lead_j, ins_r) if k])
                     per_rx[rxn] = {"rows_used": nr, "n_restricted_draws": int(sum(ins_r)), "restricted": rw,
                                    "narrowing": (1.0 - rw["width_s"] / full["width_s"]) if (full["width_s"] and rw["width_s"] is not None) else None}
+                    # paired bootstrap, the same resamples as above (reported, not scored)
+                    ir = np.array(ins_r)
+                    nbr = []
+                    for b in range(B):
+                        idx = boot[b]
+                        v = lj[idx]; k = ir[idx]; ok = ~np.isnan(v)
+                        fw = lead_width(list(v[ok])); rw_b = lead_width(list(v[ok & k]))
+                        nbr.append(None if not fw["width_s"] or rw_b["width_s"] is None else 1.0 - rw_b["width_s"] / fw["width_s"])
+                    per_rx[rxn]["narrowing_95_bootstrap"] = pct_interval(nbr)
+                    boot_rx[rxn] = nbr
+                # how often each reaction's half gives the largest narrowing over the resamples
+                if cl == "500 mW/K":
+                    names_rx = list(boot_rx)
+                    wins = {n: 0 for n in names_rx}
+                    for b in range(B):
+                        vals = {n: boot_rx[n][b] for n in names_rx if boot_rx[n][b] is not None}
+                        if vals:
+                            wins[max(vals, key=vals.get)] += 1
+                    e["per_reaction_share_of_resamples_largest"] = {n: wins[n] / B for n in names_rx}
                 e["per_reaction_restriction"] = per_rx
             entry["by_case"][cl] = e
         res["restriction"][g] = entry

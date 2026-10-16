@@ -1,0 +1,1003 @@
+{
+ "note": "exploratory and post hoc (DECISIONS.md D30 (4)); nothing here is scored",
+ "case": "two_E33223_tau30_G0.5",
+ "mode_cut_s": 40.204110717385255,
+ "posterior_mean_separator_melting_K_per_min_at_108.4C_fresh": -0.004782527559510328,
+ "n_draws_differing": 28,
+ "n_mode_changes": 13,
+ "n_reaction_changes_only": 15,
+ "mode_changes": {
+  "n_short_to_long": 9,
+  "n_long_to_short": 4,
+  "restored_by_own_separator": 13,
+  "restored_by_own_cathode": 0,
+  "short_to_long_with_weaker_own_separator_melting": 8,
+  "long_to_short_with_stronger_own_separator_melting": 4
+ },
+ "reaction_changes_only": {
+  "restored_by_own_separator": 13,
+  "restored_by_own_cathode": 6
+ },
+ "draws": [
+  {
+   "draw": 7,
+   "joint": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.16191764111581
+   },
+   "an_ele_run": {
+    "mode": "short",
+    "reaction": "sei_decomp",
+    "lead_s": 29.224368437693414
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 16.256257227006973,
+    "lumped_onset_s": 69.4903985980353,
+    "lead_s": 53.23414137102833,
+    "hottest_onset_T_C": 198.94850753459315,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": false
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 12.056588428543995,
+    "lumped_onset_s": 41.27947059790879,
+    "lead_s": 29.222882169364794,
+    "hottest_onset_T_C": 117.73847335104705,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "short",
+    "restores_joint_mode": false,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.004826767964507611,
+   "mode_changes": true
+  },
+  {
+   "draw": 11,
+   "joint": {
+    "mode": "long",
+    "reaction": "sei_decomp",
+    "lead_s": 52.625170125515936
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.65183192956137
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 16.153254936578403,
+    "lumped_onset_s": 68.70258564994313,
+    "lead_s": 52.549330713364725,
+    "hottest_onset_T_C": 196.82622799043537,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.365111573721403,
+    "lumped_onset_s": 70.11517494899341,
+    "lead_s": 53.750063375272006,
+    "hottest_onset_T_C": 201.1913640027695,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0036358287669020846,
+   "mode_changes": false
+  },
+  {
+   "draw": 29,
+   "joint": {
+    "mode": "short",
+    "reaction": "sei_decomp",
+    "lead_s": 29.071292116047644
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.64028082106855
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 12.02766637737217,
+    "lumped_onset_s": 41.098661087352134,
+    "lead_s": 29.070994709979963,
+    "hottest_onset_T_C": 117.25249649125965,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "short",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.364423291099907,
+    "lumped_onset_s": 70.0360650367778,
+    "lead_s": 53.67164174567789,
+    "hottest_onset_T_C": 201.1771824916388,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": false,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0015402252599959873,
+   "mode_changes": true
+  },
+  {
+   "draw": 35,
+   "joint": {
+    "mode": "long",
+    "reaction": "sei_decomp",
+    "lead_s": 51.87374269327458
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.66822203914977
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 15.99496898325153,
+    "lumped_onset_s": 67.8764593197585,
+    "lead_s": 51.881490336506964,
+    "hottest_onset_T_C": 193.56335429341635,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.333170325440843,
+    "lumped_onset_s": 69.9873852843912,
+    "lead_s": 53.65421495895035,
+    "hottest_onset_T_C": 200.53324021194265,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0030791132231162838,
+   "mode_changes": false
+  },
+  {
+   "draw": 36,
+   "joint": {
+    "mode": "short",
+    "reaction": "sei_decomp",
+    "lead_s": 29.296354830631255
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.64028082106855
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 12.070867733569596,
+    "lumped_onset_s": 41.371703770146915,
+    "lead_s": 29.30083603657732,
+    "hottest_onset_T_C": 117.97840833266582,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "short",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.324450953015795,
+    "lumped_onset_s": 69.77617162545724,
+    "lead_s": 53.45172067244144,
+    "hottest_onset_T_C": 200.35358453964085,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": false,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0028252660268808954,
+   "mode_changes": true
+  },
+  {
+   "draw": 39,
+   "joint": {
+    "mode": "long",
+    "reaction": "sei_decomp",
+    "lead_s": 52.543535900565146
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.66822203914977
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 16.16671922089806,
+    "lumped_onset_s": 68.72692484644169,
+    "lead_s": 52.56020562554363,
+    "hottest_onset_T_C": 197.10364876495834,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.336861450819903,
+    "lumped_onset_s": 69.9815040079688,
+    "lead_s": 53.64464255714889,
+    "hottest_onset_T_C": 200.60929288858028,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0034432786371010444,
+   "mode_changes": false
+  },
+  {
+   "draw": 44,
+   "joint": {
+    "mode": "long",
+    "reaction": "sei_decomp",
+    "lead_s": 51.98288082172856
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.72137122864379
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 15.997244211834543,
+    "lumped_onset_s": 67.92016862818605,
+    "lead_s": 51.922924416351506,
+    "hottest_onset_T_C": 193.61092034249276,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.3827040446283,
+    "lumped_onset_s": 70.21752326017409,
+    "lead_s": 53.83481921554579,
+    "hottest_onset_T_C": 201.55384274942213,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0030791132231162838,
+   "mode_changes": false
+  },
+  {
+   "draw": 53,
+   "joint": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 59.791245294733784
+   },
+   "an_ele_run": {
+    "mode": "short",
+    "reaction": "sei_decomp",
+    "lead_s": 29.07637300766629
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 16.98699267142197,
+    "lumped_onset_s": 76.75654919197135,
+    "lead_s": 59.76955652054937,
+    "hottest_onset_T_C": 213.79214943433527,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 12.029032486555163,
+    "lumped_onset_s": 41.10503639166006,
+    "lead_s": 29.076003905104894,
+    "hottest_onset_T_C": 117.27545120657129,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "short",
+    "restores_joint_mode": false,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.023802286060212896,
+   "mode_changes": true
+  },
+  {
+   "draw": 56,
+   "joint": {
+    "mode": "long",
+    "reaction": "sei_decomp",
+    "lead_s": 50.72529900909071
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.85274676667723
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 15.785961338045619,
+    "lumped_onset_s": 66.53231827749661,
+    "lead_s": 50.746356939451,
+    "hottest_onset_T_C": 189.19382940988112,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.334999990747676,
+    "lumped_onset_s": 70.13432362201624,
+    "lead_s": 53.799323631268564,
+    "hottest_onset_T_C": 200.57093899744723,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0020014937740269094,
+   "mode_changes": false
+  },
+  {
+   "draw": 76,
+   "joint": {
+    "mode": "short",
+    "reaction": "sei_decomp",
+    "lead_s": 29.878143041883447
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.61729889191892
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 12.177786338434796,
+    "lumped_onset_s": 42.05610163172363,
+    "lead_s": 29.878315293288832,
+    "hottest_onset_T_C": 119.77496029699745,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "short",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.32903291456111,
+    "lumped_onset_s": 69.93738404614587,
+    "lead_s": 53.608351131584755,
+    "hottest_onset_T_C": 200.44799218066788,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": false,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0034432786371010444,
+   "mode_changes": true
+  },
+  {
+   "draw": 77,
+   "joint": {
+    "mode": "long",
+    "reaction": "sei_decomp",
+    "lead_s": 52.04817758017493
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.508840525028056
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 16.108501115403616,
+    "lumped_onset_s": 68.14400258953543,
+    "lead_s": 52.03550147413182,
+    "hottest_onset_T_C": 195.90411141606648,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.348927030537723,
+    "lumped_onset_s": 69.87609179917033,
+    "lead_s": 53.5271647686326,
+    "hottest_onset_T_C": 200.85789447711772,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0031477119837771484,
+   "mode_changes": false
+  },
+  {
+   "draw": 86,
+   "joint": {
+    "mode": "long",
+    "reaction": "sei_decomp",
+    "lead_s": 52.57845433084299
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 54.12220997850837
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 16.134256351265652,
+    "lumped_onset_s": 68.63300989787724,
+    "lead_s": 52.498753546611596,
+    "hottest_onset_T_C": 196.43477738473115,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.37320358165349,
+    "lumped_onset_s": 70.58287850098144,
+    "lead_s": 54.209674919327945,
+    "hottest_onset_T_C": 201.35809333309777,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0026697487238892103,
+   "mode_changes": false
+  },
+  {
+   "draw": 90,
+   "joint": {
+    "mode": "long",
+    "reaction": "sei_decomp",
+    "lead_s": 52.2762071010907
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.50634149552716
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 16.2727322384112,
+    "lumped_onset_s": 68.4470075276426,
+    "lead_s": 52.174275289231396,
+    "hottest_onset_T_C": 199.28796192485459,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": false
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.35200788947032,
+    "lumped_onset_s": 69.95029793185003,
+    "lead_s": 53.598290042379716,
+    "hottest_onset_T_C": 200.9213731033102,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0034932811928326006,
+   "mode_changes": false
+  },
+  {
+   "draw": 94,
+   "joint": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 55.561614165795895
+   },
+   "an_ele_run": {
+    "mode": "short",
+    "reaction": "sei_decomp",
+    "lead_s": 29.07637300766629
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 16.770319505040096,
+    "lumped_onset_s": 72.44656858979359,
+    "lead_s": 55.67624908475349,
+    "hottest_onset_T_C": 209.4223519990167,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 12.029011712132972,
+    "lumped_onset_s": 41.10490416766243,
+    "lead_s": 29.075892455529463,
+    "hottest_onset_T_C": 117.27510213421812,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "short",
+    "restores_joint_mode": false,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.009455351811751212,
+   "mode_changes": true
+  },
+  {
+   "draw": 100,
+   "joint": {
+    "mode": "short",
+    "reaction": "sei_decomp",
+    "lead_s": 30.265514693798067
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.634203569430866
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 12.247848961293025,
+    "lumped_onset_s": 42.512439106048646,
+    "lead_s": 30.264590144755623,
+    "hottest_onset_T_C": 120.95222166213472,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "short",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.34715516797245,
+    "lumped_onset_s": 70.0177002516904,
+    "lead_s": 53.670545083717954,
+    "hottest_onset_T_C": 200.82138667072144,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": false,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.002020599063315963,
+   "mode_changes": true
+  },
+  {
+   "draw": 109,
+   "joint": {
+    "mode": "short",
+    "reaction": "sei_decomp",
+    "lead_s": 30.734103098343088
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.66822203914977
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 12.331622291831918,
+    "lumped_onset_s": 43.06514462208278,
+    "lead_s": 30.733522330250857,
+    "hottest_onset_T_C": 122.35986387490021,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "short",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.337979828272154,
+    "lumped_onset_s": 70.01960215835489,
+    "lead_s": 53.68162233008273,
+    "hottest_onset_T_C": 200.63233615858604,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": false,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0021055538339437418,
+   "mode_changes": true
+  },
+  {
+   "draw": 112,
+   "joint": {
+    "mode": "short",
+    "reaction": "sei_decomp",
+    "lead_s": 29.828635745730345
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.54191311400835
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 12.169608662283238,
+    "lumped_onset_s": 42.006102048572885,
+    "lead_s": 29.836493386289646,
+    "hottest_onset_T_C": 119.63755090812384,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "short",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.317766384959025,
+    "lumped_onset_s": 69.67215914456327,
+    "lead_s": 53.35439275960424,
+    "hottest_onset_T_C": 200.21585437859892,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": false,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0017330378943806843,
+   "mode_changes": true
+  },
+  {
+   "draw": 123,
+   "joint": {
+    "mode": "long",
+    "reaction": "sei_decomp",
+    "lead_s": 52.90840643500917
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.66363448839401
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 16.181496045074383,
+    "lumped_onset_s": 69.09098202095187,
+    "lead_s": 52.90948597587749,
+    "hottest_onset_T_C": 197.40811337003208,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.34410511791718,
+    "lumped_onset_s": 70.00603904851351,
+    "lead_s": 53.661933930596334,
+    "hottest_onset_T_C": 200.75854283672493,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0040779179534685085,
+   "mode_changes": false
+  },
+  {
+   "draw": 131,
+   "joint": {
+    "mode": "long",
+    "reaction": "sei_decomp",
+    "lead_s": 52.49011607248155
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.508840525028056
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 16.142365376756054,
+    "lumped_onset_s": 68.56665405413247,
+    "lead_s": 52.42428867737642,
+    "hottest_onset_T_C": 196.6018573481934,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.351547858672912,
+    "lumped_onset_s": 69.94562201052159,
+    "lead_s": 53.59407415184867,
+    "hottest_onset_T_C": 200.9118945378632,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0036358287669020846,
+   "mode_changes": false
+  },
+  {
+   "draw": 146,
+   "joint": {
+    "mode": "short",
+    "reaction": "sei_decomp",
+    "lead_s": 30.183375760746458
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.71820983098557
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 12.232416430431249,
+    "lumped_onset_s": 42.41502755944354,
+    "lead_s": 30.182611129012287,
+    "hottest_onset_T_C": 120.6929090413866,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "short",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.377793335452512,
+    "lumped_onset_s": 70.13684055388302,
+    "lead_s": 53.75904721843051,
+    "hottest_onset_T_C": 201.45266152725975,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": false,
+    "restores_joint_reaction": true
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0015451363730398637,
+   "mode_changes": true
+  },
+  {
+   "draw": 147,
+   "joint": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 54.45241767704263
+   },
+   "an_ele_run": {
+    "mode": "short",
+    "reaction": "sei_decomp",
+    "lead_s": 29.07637300766629
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 16.430762846143427,
+    "lumped_onset_s": 70.95561959936106,
+    "lead_s": 54.524856753217634,
+    "hottest_onset_T_C": 202.54405579175267,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 12.028792753998518,
+    "lumped_onset_s": 41.1035102215839,
+    "lead_s": 29.074717467585387,
+    "hottest_onset_T_C": 117.27142298345615,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "short",
+    "restores_joint_mode": false,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.006831308555924438,
+   "mode_changes": true
+  },
+  {
+   "draw": 152,
+   "joint": {
+    "mode": "long",
+    "reaction": "sei_decomp",
+    "lead_s": 52.132855178606036
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.98644865237402
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 16.11324986866415,
+    "lumped_onset_s": 68.31191819528816,
+    "lead_s": 52.19866832662401,
+    "hottest_onset_T_C": 196.0019556665501,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.330949387357396,
+    "lumped_onset_s": 70.23429100017354,
+    "lead_s": 53.90334161281615,
+    "hottest_onset_T_C": 200.48747956483737,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0027705632165020916,
+   "mode_changes": false
+  },
+  {
+   "draw": 165,
+   "joint": {
+    "mode": "long",
+    "reaction": "sei_decomp",
+    "lead_s": 49.674118336427426
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.98644865237402
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 15.584543451204926,
+    "lumped_onset_s": 65.27256178186377,
+    "lead_s": 49.68801833065885,
+    "hottest_onset_T_C": 184.98297641609503,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.332843295071502,
+    "lumped_onset_s": 70.22389616296681,
+    "lead_s": 53.89105286789531,
+    "hottest_onset_T_C": 200.526502013595,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0015451363730398637,
+   "mode_changes": false
+  },
+  {
+   "draw": 182,
+   "joint": {
+    "mode": "short",
+    "reaction": "sei_decomp",
+    "lead_s": 30.472750991059307
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "sei_decomp",
+    "lead_s": 53.44122392920441
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 12.28509450026296,
+    "lumped_onset_s": 42.75945400738457,
+    "lead_s": 30.47435950712161,
+    "hottest_onset_T_C": 121.57805798204737,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "short",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.341415943430018,
+    "lumped_onset_s": 69.74383433855897,
+    "lead_s": 53.40241839512895,
+    "hottest_onset_T_C": 200.70313455423883,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": false,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0012461542299524915,
+   "mode_changes": true
+  },
+  {
+   "draw": 183,
+   "joint": {
+    "mode": "long",
+    "reaction": "sei_decomp",
+    "lead_s": 52.889457112632854
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 54.01698917741233
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 16.300310304590372,
+    "lumped_onset_s": 69.19530049372467,
+    "lead_s": 52.894990189134305,
+    "hottest_onset_T_C": 199.85618584954557,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": false
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.362984115122376,
+    "lumped_onset_s": 70.37871556781508,
+    "lead_s": 54.015731452692705,
+    "hottest_onset_T_C": 201.14752942543174,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.0034932811928326006,
+   "mode_changes": false
+  },
+  {
+   "draw": 185,
+   "joint": {
+    "mode": "long",
+    "reaction": "sei_decomp",
+    "lead_s": 50.254904223795734
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 54.0084215685971
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 15.841036816778821,
+    "lumped_onset_s": 66.0662330661345,
+    "lead_s": 50.225196249355676,
+    "hottest_onset_T_C": 190.34524028081012,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.34405710864134,
+    "lumped_onset_s": 70.41003885181223,
+    "lead_s": 54.065981743170894,
+    "hottest_onset_T_C": 200.75755364411935,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": false
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.001280082627546447,
+   "mode_changes": false
+  },
+  {
+   "draw": 192,
+   "joint": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 54.183380096133675
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "sei_decomp",
+    "lead_s": 53.44122392920441
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 16.393946177478707,
+    "lumped_onset_s": 70.71328560858889,
+    "lead_s": 54.31933943111018,
+    "hottest_onset_T_C": 201.78547787599894,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.328063822329323,
+    "lumped_onset_s": 69.56791959364432,
+    "lead_s": 53.23985577131499,
+    "hottest_onset_T_C": 200.42802481284167,
+    "hottest_onset_reaction": "cat1",
+    "mode": "long",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.006106345837048227,
+   "mode_changes": false
+  },
+  {
+   "draw": 194,
+   "joint": {
+    "mode": "short",
+    "reaction": "sei_decomp",
+    "lead_s": 30.38994333270686
+   },
+   "an_ele_run": {
+    "mode": "long",
+    "reaction": "cat1",
+    "lead_s": 53.64028082106855
+   },
+   "an_ele_and_separator": {
+    "hottest_onset_s": 12.272543831130296,
+    "lumped_onset_s": 42.66192220877254,
+    "lead_s": 30.38937837764224,
+    "hottest_onset_T_C": 121.36716924745906,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "short",
+    "restores_joint_mode": true,
+    "restores_joint_reaction": true
+   },
+   "an_ele_and_ncm811": {
+    "hottest_onset_s": 16.37665800146936,
+    "lumped_onset_s": 70.04211798292397,
+    "lead_s": 53.66545998145461,
+    "hottest_onset_T_C": 201.42926888154085,
+    "hottest_onset_reaction": "sei_decomp",
+    "mode": "long",
+    "restores_joint_mode": false,
+    "restores_joint_reaction": true
+   },
+   "separator_melting_K_per_min_at_108.4C_fresh": -0.006646745766252618,
+   "mode_changes": true
+  }
+ ]
+}
