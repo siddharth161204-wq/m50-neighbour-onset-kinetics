@@ -101,3 +101,32 @@ Decomposition at the headline case, as the brief states: the standard deviations
 ## Added after Stage 3 ran (presentation only; no result depends on these)
 
 D28. Stage 3's figure (brief: panel (d) of the existing figure, or a second figure) is a second figure, `results/stage3_figure.png`, shown in the README, because the note must stay one page and Figure 1 already fills its width. Panel (a) shows the lead's distributions as shares per 2 s bin, so that the 200 kinetic draws, the 30 thermal draws and the 210 pairs share one axis; panel (b) shows the 30 s release, the case of P1, P2 and P4 to P6. In panel (b) a node that does not start within the run ranks after every onset, and a percentile that falls among those draws is drawn at 900 s, the run's end. To keep the note to one page with the six Stage 3 lines, its Stage 1 and 2 text is shortened (the figure caption, the method's Stage 1 and 2 items and its checks, two limits, the scorecard's wording); the full text of each stays in the README. The checks line now quotes the largest changes over all three stages (onsets moved by at most 7e-5 of themselves, energy accounts closed to 1e-11 at the published conductivities), where it quoted Stages 1 and 2 alone (4e-6 and 1.3e-12); no other number changes.
+
+## Stage 4 (version 1.1.0) design, recorded with the predictions before any grouped run (16 October)
+
+D29. Stage 4 (brief of 16 October; `src/v11_sensitivity.py`, `predictions_v11.md`).
+(1) Submodels. The posterior's three submodels are its three supplementary files (D1, D22):
+- the anode-electrolyte network (`An_Ele.csv`): electrolyte evaporation and decomposition, the anode-electrolyte reaction, the anode-binder reaction, SEI decomposition, IV and V;
+- the NCM811 cathode: three sequential reactions;
+- the separator: melting.
+
+The brief's "SEI submodel" is the anode-electrolyte file, because it is the only one that holds the SEI decomposition. The file's seven reactions were inferred together, from the same DSC data, so the SEI decomposition is not varied apart from them.
+(2) Grouped runs. For each submodel and each of the 200 Stage 3 draws, the kinetics are built by `bcrnn.rows_to_model` from two sources: the draw's particle of that submodel's file (its column in `results/stage3_draw_indices.csv`), and the posterior-mean rows of the other two files (`bcrnn_mean_model.json`, as Stage 1 used them). Holding two submodels at their posterior mean is the brief's choice, and Stage 3's joint draws stay the headline.
+
+The integration is D26 (1)'s, along the hottest-node and lumped histories of `two_E33223_tau30_G0.5` and `two_E33223_tau30_G0.1`: 3 x 200 x 2 runs, each over both histories. The archives, settings and records are Stage 3a's (D26 (3)), written to `results/v11_onsets.csv`. The joint values at the two cases are Stage 3a's records (`results/stage3a_onsets.csv`), unchanged. Nothing is refitted, no new data enter, and no thermal model is run. A grouped run whose integration fails is reported as failed and counts as a draw without its outputs; it is not rerun with other settings.
+(3) V7, the step 1 checks (`results/v11_checks.json`), run before the predictions:
+- The three particle files match the SHA-256 of `inputs/kinetics/SOURCE.md`.
+- Every draw's rows, loaded file by file, rebuild `results/stage3_kinetic_draw_parameters.csv` byte for byte (the SHA-256 of `results/stage3_draws.json`).
+- For all 200 draws and the three submodels, each of the 3600 model arrays of a grouped draw equals the joint draw's on the varied file's reactions and species, and the posterior-mean model's elsewhere, exactly.
+- The posterior-mean model built through the Stage 4 path reproduces Stage 1 on both cases and both histories (72 fields, largest relative difference 0).
+- The five V5 draws (D26 (6)) built jointly through it reproduce Stage 3a (360 fields, largest relative difference 0).
+
+These checks integrate only the posterior-mean model and five joint draws, whose records were already public. No grouped run was made before the predictions were pushed.
+(4) Metrics and scoring are as `predictions_v11.md` defines them:
+- the main-effect share, a variance ratio against the 200 joint draws;
+- the rank-based repeat, a squared Spearman correlation against the joint draws on values rounded to 4 significant digits;
+- the early SEI start, Stage 3's P6 quantity;
+- the central half and restricted set, the dominant submodel, and the ordering, with shares closer than 0.01 tied.
+
+(5) The central half uses the standardized Euclidean distance from the posterior mean, over the rows that vary across a file's particles. A Mahalanobis distance was not used: the anode-electrolyte file has 57 varying rows and only 100 particles, so its sample covariance is too poorly determined to rank particles by. One metric is used for all three files.
+(6) Bootstrap intervals use 2000 resamples of the 200 draw numbers, drawn with `numpy.random.default_rng(20261016)` and paired across the grouped and joint runs. They are reported, not scored.
