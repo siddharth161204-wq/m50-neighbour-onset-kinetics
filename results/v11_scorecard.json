@@ -1,0 +1,51 @@
+{
+ "predictions_commit": "a975f20c63cd823d932983ddf285b5782b0ca31c",
+ "P1": {
+  "an_ele_share_of_lead_variance": 0.9966196205175195,
+  "threshold": "> 0.5",
+  "brief_central": 0.65,
+  "study_expectation": "held, by a wide margin",
+  "held": true
+ },
+ "P2": {
+  "sum_of_shares_of_lead": 0.9978321348182858,
+  "threshold": "0.8 to 1.1",
+  "study_expectation": "uncertain, no number",
+  "held": true
+ },
+ "P3": {
+  "early_sei_share_ncm811_runs": 0.0,
+  "early_sei_share_separator_runs": 0.0,
+  "threshold": "each < 0.05",
+  "an_ele_runs_share": 0.375,
+  "joint_share": 0.365,
+  "study_expectation": "held",
+  "held": true
+ },
+ "P4": {
+  "dominant_submodel": "an_ele",
+  "narrowing": 0.146445737809762,
+  "threshold": "> 0.40",
+  "full_width_s": 43.47252004528376,
+  "restricted_width_s": 37.10615477280251,
+  "study_expectation": "may fail",
+  "held": false
+ },
+ "P5": {
+  "ordering_500": "an_ele > separator = ncm811",
+  "ordering_100": "an_ele > separator = ncm811",
+  "pairs_500": {
+   "an_ele|ncm811": ">",
+   "an_ele|separator": ">",
+   "ncm811|separator": "tie"
+  },
+  "pairs_100": {
+   "an_ele|ncm811": ">",
+   "an_ele|separator": ">",
+   "ncm811|separator": "tie"
+  },
+  "tie_rule": "shares closer than 0.01 are tied",
+  "study_expectation": "held, if the anode-electrolyte file leads at 500 mW/K",
+  "held": true
+ }
+}

@@ -130,3 +130,10 @@ These checks integrate only the posterior-mean model and five joint draws, whose
 
 (5) The central half uses the standardized Euclidean distance from the posterior mean, over the rows that vary across a file's particles. A Mahalanobis distance was not used: the anode-electrolyte file has 57 varying rows and only 100 particles, so its sample covariance is too poorly determined to rank particles by. One metric is used for all three files.
 (6) Bootstrap intervals use 2000 resamples of the 200 draw numbers, drawn with `numpy.random.default_rng(20261016)` and paired across the grouped and joint runs. They are reported, not scored.
+
+## Added after Stage 4 ran (exploratory, not pre-registered; no registered result changes)
+
+D30. These analyses were written after the Stage 4 results, to explain why P4 failed. They are recorded in `results/v11_sensitivity.json` under "exploratory" and are not scored. Every number is computed by `src/v11_score.py` from the committed records.
+(1) Modes. The joint leads at the headline case split into two modes at the largest gap of their sorted values, 30.7 to 49.7 s, as Stage 3 reported them. For each restricted set of P4 and of its secondary analyses, the record gives two numbers: the share of its draws in the long-lead mode, and the 2.5 to 97.5 % width within the short-lead mode alone.
+(2) One more restriction. It takes the half of the anode-electrolyte particles whose fresh SEI's heat release per unit cell mass at 108.4 C lies closest to the posterior-mean model's. 108.4 C is the posterior-mean model's onset temperature in every Stage 1 history. The quantity is the natural log of dH times the SEI's mass fraction times the rate constant at that temperature, times the initial SEI amount, 0.15, raised to the reaction order. It stands for a measurement that pinned the fresh SEI's heat release near its mean onset.
+(3) Draw by draw. Each joint draw's mode and starting reaction are set against the anode-electrolyte run of the same draw. The cathode and separator runs' onset ranges are set against the posterior-mean model's onsets.
