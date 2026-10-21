@@ -1,0 +1,153 @@
+Transforming over 1000 elements to C_CONTIGUOUS.
+two_E33223_tau30_G0.2 {"kernel": "numba", "wall_s": 1659.0478887557983, "cross_s": {"T_onset_low": [null, null], "T_onset_mean": [null, null], "T_onset_high": [null, null]}, "peak_Tmax_C": [251.4716901235946, 251.47169012359507], "peak_Tmean_C": [148.90111227974603, 148.9011122797458], "steps": [9000, 9000], "rejected": [0, 0], "max_implicit_nodes": [147, 147], "energy_residual_rel": [1.0722027346433592e-12, 1.072906638984433e-12], "in_rxn_J": [229.78153677104083, 229.7815367710403], "series_Tmax_max_abs_K": 1.5916157281026244e-12, "series_Tmean_max_abs_K": 4.547473508864641e-13, "series_length": [9001, 9001], "lumped_peak_C": [169.8642577367014, 169.8642577367014], "lumped_cross_s": [{"T_onset_low": null, "T_onset_mean": null, "T_onset_high": null}, {"T_onset_low": null, "T_onset_mean": null, "T_onset_high": null}], "lumped_reaction_heat_J": [344.3156305890397, 344.3156305890397], "lumped_series_max_abs_K": 0.0, "identical": false}
+two_E21495_tau30_G0.5 {"kernel": "numba", "wall_s": 1600.7561104297638, "cross_s": {"T_onset_low": [null, null], "T_onset_mean": [null, null], "T_onset_high": [null, null]}, "peak_Tmax_C": [236.83083481568474, 236.83083481568417], "peak_Tmean_C": [123.51649771637551, 123.51649771637562], "steps": [9000, 9000], "rejected": [0, 0], "max_implicit_nodes": [157, 157], "energy_residual_rel": [1.343640076159888e-12, 1.3452765411989802e-12], "in_rxn_J": [125.84105381168659, 125.84105381168654], "series_Tmax_max_abs_K": 1.0231815394945443e-12, "series_Tmean_max_abs_K": 4.547473508864641e-13, "series_length": [9001, 9001], "lumped_peak_C": [152.9372309995507, 152.9372309995507], "lumped_cross_s": [{"T_onset_low": null, "T_onset_mean": null, "T_onset_high": null}, {"T_onset_low": null, "T_onset_mean": null, "T_onset_high": null}], "lumped_reaction_heat_J": [182.31242770898106, 182.31242770898106], "lumped_series_max_abs_K": 0.0, "identical": false}
+{
+ "two_E33223_tau30_G0.2": {
+  "kernel": "numba",
+  "wall_s": 1659.0478887557983,
+  "cross_s": {
+   "T_onset_low": [
+    null,
+    null
+   ],
+   "T_onset_mean": [
+    null,
+    null
+   ],
+   "T_onset_high": [
+    null,
+    null
+   ]
+  },
+  "peak_Tmax_C": [
+   251.4716901235946,
+   251.47169012359507
+  ],
+  "peak_Tmean_C": [
+   148.90111227974603,
+   148.9011122797458
+  ],
+  "steps": [
+   9000,
+   9000
+  ],
+  "rejected": [
+   0,
+   0
+  ],
+  "max_implicit_nodes": [
+   147,
+   147
+  ],
+  "energy_residual_rel": [
+   1.0722027346433592e-12,
+   1.072906638984433e-12
+  ],
+  "in_rxn_J": [
+   229.78153677104083,
+   229.7815367710403
+  ],
+  "series_Tmax_max_abs_K": 1.5916157281026244e-12,
+  "series_Tmean_max_abs_K": 4.547473508864641e-13,
+  "series_length": [
+   9001,
+   9001
+  ],
+  "lumped_peak_C": [
+   169.8642577367014,
+   169.8642577367014
+  ],
+  "lumped_cross_s": [
+   {
+    "T_onset_low": null,
+    "T_onset_mean": null,
+    "T_onset_high": null
+   },
+   {
+    "T_onset_low": null,
+    "T_onset_mean": null,
+    "T_onset_high": null
+   }
+  ],
+  "lumped_reaction_heat_J": [
+   344.3156305890397,
+   344.3156305890397
+  ],
+  "lumped_series_max_abs_K": 0.0,
+  "identical": false
+ },
+ "two_E21495_tau30_G0.5": {
+  "kernel": "numba",
+  "wall_s": 1600.7561104297638,
+  "cross_s": {
+   "T_onset_low": [
+    null,
+    null
+   ],
+   "T_onset_mean": [
+    null,
+    null
+   ],
+   "T_onset_high": [
+    null,
+    null
+   ]
+  },
+  "peak_Tmax_C": [
+   236.83083481568474,
+   236.83083481568417
+  ],
+  "peak_Tmean_C": [
+   123.51649771637551,
+   123.51649771637562
+  ],
+  "steps": [
+   9000,
+   9000
+  ],
+  "rejected": [
+   0,
+   0
+  ],
+  "max_implicit_nodes": [
+   157,
+   157
+  ],
+  "energy_residual_rel": [
+   1.343640076159888e-12,
+   1.3452765411989802e-12
+  ],
+  "in_rxn_J": [
+   125.84105381168659,
+   125.84105381168654
+  ],
+  "series_Tmax_max_abs_K": 1.0231815394945443e-12,
+  "series_Tmean_max_abs_K": 4.547473508864641e-13,
+  "series_length": [
+   9001,
+   9001
+  ],
+  "lumped_peak_C": [
+   152.9372309995507,
+   152.9372309995507
+  ],
+  "lumped_cross_s": [
+   {
+    "T_onset_low": null,
+    "T_onset_mean": null,
+    "T_onset_high": null
+   },
+   {
+    "T_onset_low": null,
+    "T_onset_mean": null,
+    "T_onset_high": null
+   }
+  ],
+  "lumped_reaction_heat_J": [
+   182.31242770898106,
+   182.31242770898106
+  ],
+  "lumped_series_max_abs_K": 0.0,
+  "identical": false
+ }
+}

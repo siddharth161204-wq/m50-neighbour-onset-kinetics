@@ -1,0 +1,250 @@
+{
+ "flux_identity": {
+  "low": {
+   "h_c_W_m2K": 200.0,
+   "G_contact_W_K": 0.05028471990384173,
+   "relative_difference": {
+    "contact_and_wedge": 1.261642021953854e-16,
+    "tab_cap": 0.0,
+    "tab_base": 2.332401312237724e-16,
+    "room_convection": 1.2142974119064895e-16,
+    "radiation_from_cell1": 0.0,
+    "radiation_to_room": 0.0,
+    "heat_capacity": 0.0
+   },
+   "geometry": {
+    "volume_mesh": 2.447926995306251e-05,
+    "volume_exact": 2.4511664854465075e-05,
+    "A_outer_mesh": 0.005343635199043191,
+    "A_outer_exact": 0.0053460953425035545,
+    "A_face_mesh": 0.0011616039776886217,
+    "A_face_exact": 0.0011616902774627996,
+    "A_conv_mesh": 0.004182031221354569,
+    "A_conv_exact": 0.0041844050650407544,
+    "FA_lat_mesh": 0.000844205906553696,
+    "FA_lat_exact": 0.0008442705549255993,
+    "G_contact_mesh": 0.05028278298381908,
+    "G_contact_exact": 0.05028471990384173,
+    "A_disc_top_mesh": 4.9943122436128835e-05,
+    "A_disc_bottom_mesh": 4.994312243612884e-05,
+    "A_disc_exact": 5.0265482457436686e-05
+   },
+   "mesh": {
+    "n_rings": 16,
+    "n_layers": 35,
+    "n_nodes_2d": 553,
+    "n_tris_2d": 1023,
+    "n_outer_segments": 49,
+    "smallest_outer_spacing_mm": 0.060000000000000005,
+    "min_abs_vol": 1.6061714363423636e-12,
+    "n_nodes": 19355
+   },
+   "contact_split": {
+    "theta_band_deg": 6.835962183824193,
+    "band_width_mm": 2.5174420054055897,
+    "contact_band_W_per_mK": 0.3953965653365377,
+    "wedge_W_per_mK": 0.32193182130885073,
+    "total_W_per_mK": 0.7173283866453884,
+    "total_W_per_K": 0.05028471990384173
+   }
+  },
+  "central": {
+   "h_c_W_m2K": 2000.0,
+   "G_contact_W_K": 0.17011146022558063,
+   "relative_difference": {
+    "contact_and_wedge": 0.0,
+    "tab_cap": 0.0,
+    "tab_base": 2.332401312237724e-16,
+    "room_convection": 1.2142974119064895e-16,
+    "radiation_from_cell1": 0.0,
+    "radiation_to_room": 0.0,
+    "heat_capacity": 0.0
+   },
+   "geometry": {
+    "volume_mesh": 2.447926995306251e-05,
+    "volume_exact": 2.4511664854465075e-05,
+    "A_outer_mesh": 0.005343635199043191,
+    "A_outer_exact": 0.0053460953425035545,
+    "A_face_mesh": 0.0011616039776886217,
+    "A_face_exact": 0.0011616902774627996,
+    "A_conv_mesh": 0.004182031221354569,
+    "A_conv_exact": 0.0041844050650407544,
+    "FA_lat_mesh": 0.000844205906553696,
+    "FA_lat_exact": 0.0008442705549255993,
+    "G_contact_mesh": 0.17010849659960486,
+    "G_contact_exact": 0.17011146022558063,
+    "A_disc_top_mesh": 4.9943122436128835e-05,
+    "A_disc_bottom_mesh": 4.994312243612884e-05,
+    "A_disc_exact": 5.0265482457436686e-05
+   },
+   "mesh": {
+    "n_rings": 16,
+    "n_layers": 35,
+    "n_nodes_2d": 553,
+    "n_tris_2d": 1023,
+    "n_outer_segments": 49,
+    "smallest_outer_spacing_mm": 0.060000000000000005,
+    "min_abs_vol": 1.6061714363423636e-12,
+    "n_nodes": 19355
+   },
+   "contact_split": {
+    "theta_band_deg": 2.160567126003337,
+    "band_width_mm": 0.795660112247209,
+    "contact_band_W_per_mK": 1.2498066312971936,
+    "wedge_W_per_mK": 1.1768903762003906,
+    "total_W_per_mK": 2.426697007497584,
+    "total_W_per_K": 0.17011146022558063
+   }
+  },
+  "high": {
+   "h_c_W_m2K": 3700.0,
+   "G_contact_W_K": 0.23322020800529283,
+   "relative_difference": {
+    "contact_and_wedge": 0.0,
+    "tab_cap": 0.0,
+    "tab_base": 2.332401312237724e-16,
+    "room_convection": 1.2142974119064895e-16,
+    "radiation_from_cell1": 0.0,
+    "radiation_to_room": 0.0,
+    "heat_capacity": 0.0
+   },
+   "geometry": {
+    "volume_mesh": 2.447926995306251e-05,
+    "volume_exact": 2.4511664854465075e-05,
+    "A_outer_mesh": 0.005343635199043191,
+    "A_outer_exact": 0.0053460953425035545,
+    "A_face_mesh": 0.0011616039776886217,
+    "A_face_exact": 0.0011616902774627996,
+    "A_conv_mesh": 0.004182031221354569,
+    "A_conv_exact": 0.0041844050650407544,
+    "FA_lat_mesh": 0.000844205906553696,
+    "FA_lat_exact": 0.0008442705549255993,
+    "G_contact_mesh": 0.23321699676283453,
+    "G_contact_exact": 0.23322020800529283,
+    "A_disc_top_mesh": 4.9943122436128835e-05,
+    "A_disc_bottom_mesh": 4.994312243612884e-05,
+    "A_disc_exact": 5.0265482457436686e-05
+   },
+   "mesh": {
+    "n_rings": 16,
+    "n_layers": 35,
+    "n_nodes_2d": 553,
+    "n_tris_2d": 1023,
+    "n_outer_segments": 49,
+    "smallest_outer_spacing_mm": 0.060000000000000005,
+    "min_abs_vol": 1.6061714363423636e-12,
+    "n_nodes": 19355
+   },
+   "contact_split": {
+    "theta_band_deg": 1.588437297848623,
+    "band_width_mm": 0.5849650230686406,
+    "contact_band_W_per_mK": 1.6998828682176672,
+    "wedge_W_per_mK": 1.6270815826424303,
+    "total_W_per_mK": 3.3269644508600975,
+    "total_W_per_K": 0.23322020800529283
+   }
+  }
+ },
+ "analytic_steady": {
+  "low_none": {
+   "T1_C": 100.0,
+   "analytic_T2_C": 65.93568133059364,
+   "resolved_mean_C": 65.93489099713076,
+   "error_of_rise": -1.930671329227253e-05,
+   "max_minus_min_over_rise": 8.667049764571084e-05
+  },
+  "low_series": {
+   "T1_C": 100.0,
+   "analytic_T2_C": 68.27713736663065,
+   "resolved_mean_C": 68.2763231625404,
+   "error_of_rise": -1.8813723360756057e-05,
+   "max_minus_min_over_rise": 0.00010888500039722056
+  },
+  "low_parallel": {
+   "T1_C": 100.0,
+   "analytic_T2_C": 70.31740951560289,
+   "resolved_mean_C": 70.3166766512199,
+   "error_of_rise": -1.617180661538345e-05,
+   "max_minus_min_over_rise": 5.9217122397629886e-05
+  },
+  "central_none": {
+   "T1_C": 100.0,
+   "analytic_T2_C": 85.19357300119106,
+   "resolved_mean_C": 85.19079978537337,
+   "error_of_rise": -4.607162657761354e-05,
+   "max_minus_min_over_rise": 0.00010489407728566723
+  },
+  "central_series": {
+   "T1_C": 100.0,
+   "analytic_T2_C": 85.65382976541491,
+   "resolved_mean_C": 85.65121231269211,
+   "error_of_rise": -4.3153956360637105e-05,
+   "max_minus_min_over_rise": 0.00010716378994682584
+  },
+  "central_parallel": {
+   "T1_C": 100.0,
+   "analytic_T2_C": 86.086335081806,
+   "resolved_mean_C": 86.08388030272977,
+   "error_of_rise": -4.018540436161139e-05,
+   "max_minus_min_over_rise": 9.304693191834835e-05
+  },
+  "high_none": {
+   "T1_C": 100.0,
+   "analytic_T2_C": 88.59065218390003,
+   "resolved_mean_C": 88.58725717386682,
+   "error_of_rise": -5.3388507848577276e-05,
+   "max_minus_min_over_rise": 0.00011005528103758133
+  },
+  "high_series": {
+   "T1_C": 100.0,
+   "analytic_T2_C": 88.86590370220011,
+   "resolved_mean_C": 88.8626660385271,
+   "error_of_rise": -5.069471322469689e-05,
+   "max_minus_min_over_rise": 0.00011144013795068294
+  },
+  "high_parallel": {
+   "T1_C": 100.0,
+   "analytic_T2_C": 89.12818714240711,
+   "resolved_mean_C": 89.12510838180549,
+   "error_of_rise": -4.80094750657432e-05,
+   "max_minus_min_over_rise": 0.00010097103848587526
+  }
+ },
+ "energy_passive": {
+  "series": {
+   "residual_rel": 8.938852413205418e-12,
+   "stored_J": 115.76322551970952,
+   "net_in_J": 115.76322551860676
+  },
+  "parallel": {
+   "residual_rel": 8.596739844138042e-12,
+   "stored_J": 121.16289251399212,
+   "net_in_J": 121.16289251288289
+  }
+ },
+ "energy_reactive_no_paths": {
+  "residual_rel": 4.5084689116126335e-10,
+  "in_rxn_J": 2.0632122121762606,
+  "stored_J": 2.0632122131064534,
+  "peak_C": 150.04227938276915,
+  "steps": 600,
+  "wall_s": 105.33540987968445
+ },
+ "flux_identity_worst": 2.332401312237724e-16,
+ "flux_identity_pass": true,
+ "analytic_steady_worst": 5.3388507848577276e-05,
+ "analytic_steady_pass": 1.0,
+ "energy_passive_isothermal_roll": {
+  "series": {
+   "residual_rel": -4.0943448474117395e-09,
+   "stored_J": 148.8392191840503,
+   "net_in_J": 148.8392198290974
+  },
+  "parallel": {
+   "residual_rel": -3.9741686405681555e-09,
+   "stored_J": 153.6599209815795,
+   "net_in_J": 153.65992162803758
+  }
+ },
+ "energy_pass": true
+}

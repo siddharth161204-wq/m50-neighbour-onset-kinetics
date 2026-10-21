@@ -1,0 +1,133 @@
+Transforming over 1000 elements to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+Transforming over 1000 elements to C_CONTIGUOUS.
+{
+ "flux_identity": {
+  "low": {
+   "h_c_W_m2K": 200.0,
+   "G_contact_W_K": 0.05028471990384173,
+   "relative_difference": {
+    "contact_and_wedge": 1.261642021953854e-16,
+    "tab_cap": 0.0,
+    "tab_base": 2.332401312237724e-16,
+    "room_convection": 1.2142974119064895e-16,
+    "radiation_from_cell1": 0.0,
+    "radiation_to_room": 0.0,
+    "heat_capacity": 0.0
+   },
+   "geometry": {
+    "volume_mesh": 2.447926995306251e-05,
+    "volume_exact": 2.4511664854465075e-05,
+    "A_outer_mesh": 0.005343635199043191,
+    "A_outer_exact": 0.0053460953425035545,
+    "A_face_mesh": 0.0011616039776886217,
+    "A_face_exact": 0.0011616902774627996,
+    "A_conv_mesh": 0.004182031221354569,
+    "A_conv_exact": 0.0041844050650407544,
+    "FA_lat_mesh": 0.000844205906553696,
+    "FA_lat_exact": 0.0008442705549255993,
+    "G_contact_mesh": 0.05028278298381908,
+    "G_contact_exact": 0.05028471990384173,
+    "A_disc_top_mesh": 4.9943122436128835e-05,
+    "A_disc_bottom_mesh": 4.994312243612884e-05,
+    "A_disc_exact": 5.0265482457436686e-05
+   },
+   "mesh": {
+    "n_rings": 16,
+    "n_layers": 35,
+    "n_nodes_2d": 553,
+    "n_tris_2d": 1023,
+    "n_outer_segments": 49,
+    "smallest_outer_spacing_mm": 0.060000000000000005,
+    "min_abs_vol": 1.6061714363423636e-12,
+    "n_nodes": 19355
+   },
+   "contact_split": {
+    "theta_band_deg": 6.835962183824193,
+    "band_width_mm": 2.5174420054055897,
+    "contact_band_W_per_mK": 0.3953965653365377,
+    "wedge_W_per_mK": 0.32193182130885073,
+    "total_W_per_mK": 0.7173283866453884,
+    "total_W_per_K": 0.05028471990384173
+   }
+  },
+  "central": {
+   "h_c_W_m2K": 2000.0,
+   "G_contact_W_K": 0.17011146022558063,
+   "relative_difference": {
+    "contact_and_wedge": 0.0,
+    "tab_cap": 0.0,
+    "tab_base": 2.332401312237724e-16,
+    "room_convection": 1.2142974119064895e-16,
+    "radiation_from_cell1": 0.0,
+    "radiation_to_room": 0.0,
+    "heat_capacity": 0.0
+   },
+   "geometry": {
+    "volume_mesh": 2.447926995306251e-05,
+    "volume_exact": 2.4511664854465075e-05,
+    "A_outer_mesh": 0.005343635199043191,
+    "A_outer_exact": 0.0053460953425035545,
+    "A_face_mesh": 0.0011616039776886217,
+    "A_face_exact": 0.0011616902774627996,
+    "A_conv_mesh": 0.004182031221354569,
+    "A_conv_exact": 0.0041844050650407544,
+    "FA_lat_mesh": 0.000844205906553696,
+    "FA_lat_exact": 0.0008442705549255993,
+    "G_contact_mesh": 0.17010849659960486,
+    "G_contact_exact": 0.17011146022558063,
+    "A_disc_top_mesh": 4.9943122436128835e-05,
+    "A_disc_bottom_mesh": 4.994312243612884e-05,
+    "A_disc_exact": 5.0265482457436686e-05
+   },
+   "mesh": {
+    "n_rings": 16,
+    "n_layers": 35,
+    "n_nodes_2d": 553,
+    "n_tris_2d": 1023,
+    "n_outer_segments": 49,
+    "smallest_outer_spacing_mm": 0.060000000000000005,
+    "min_abs_vol": 1.6061714363423636e-12,
+    "n_nodes": 19355
+   },
+   "contact_split": {
+    "theta_band_deg": 2.160567126003337,
+    "band_width_mm": 0.795660112247209,
+    "contact_band_W_per_mK": 1.2498066312971936,
+    "wedge_W_per_mK": 1.1768903762003906,
+    "total_W_per_mK": 2.426697007497584,
+    "total_W_per_K": 0.17011146022558063
+   }
+  },
+  "high": {
+   "h_c_W_m2K": 3700.0,
+   "G_contact_W_K": 0.23322020800529283,
+   "relative_difference": {
+    "contact_and_wedge": 0.0,
+    "tab_cap": 0.0,
+    "tab_base": 2.332401312237724e-16,
+    "room_convection": 1.2142974119064895e-16,
+    "radiation_from_cell1": 0.0,
+    "radiation_to_room": 0.0,
+    "heat_capacity": 0.0
+   },
+   "geometry": {
+    "volume_mesh": 2.447926995306251e-05,
+    "volume_exact": 2.4511664854465075e-05,
+    "A_outer_mesh": 0.005343635199043191,
+    "A_outer_exact": 0.0053460953425035545,
+    "A_face_mesh": 0.0011616039776886217,
+    "A_face_exact": 0.0011616902774627996,
+    "A_conv_mesh": 0.004182031221354569,
+    "A_conv_exact": 0.0041844050650407544,
+    "FA_lat_mesh": 0.000844205906553696,
+    "FA_lat_exact": 0.0008442705549255993,
+    "G_contact_mesh": 0.23321699676283453,
+    "G_contact_exact": 0.23322020800529283,
+
