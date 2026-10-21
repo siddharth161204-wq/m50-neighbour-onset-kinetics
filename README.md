@@ -23,6 +23,9 @@ The one-page note is `note/neighbour_onset_note.pdf` (source `note/neighbour_ons
    - The 600 grouped draws ran from 07:08:47 to 07:31:39 UTC. Their records, the scoring of P1 to P5 and the exploratory analyses written after the results (D30) were pushed in commit 18f184f (07:39:19 UTC).
    - An independent check of the Stage 4 documents (D32) recomputed every Stage 4 quantity and reproduced every registered number and verdict. It led to corrections of their wording, one erratum in the predictions' background and one more exploratory analysis (D30 (4)); no registered result changed.
    - Release v1.1.0 adds Stage 4. No v1.0.0 result changes.
+9. Stage 5, the resolved and the lumped neighbour against measured two-cell propagation (brief of 21 October; version 1.2.0).
+   - The Stage 5 model, harness and scoring script, with the checks before the predictions (V1, V2 and the compiled reaction step; D41 and D44), which passed, were pushed first (commit 03af770); the predictions commit made the harness's time limits work on Windows.
+   - The design (D33 to D44) and the predictions, `predictions_v12.md`, commit `b4883baeac2220b117cd66c28bd8d38dde2d5d62`, were first pushed to this repository at 2026-10-21 17:22:38 UTC (`provenance/github_activity_stage5.json`). That was before any Stage 5 run, and the file's text has not changed since.
 
 ## Results
 
