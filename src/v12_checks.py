@@ -35,7 +35,7 @@ import reactive as RX
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RES = os.path.join(HERE, "..", "results")
-PARTS = os.path.join(RES, "v12_checks")
+PARTS = os.path.join(RES, os.environ.get("V12_CHECKS_DIR", "v12_checks"))   # another machine writes its own (D45)
 PUB = os.path.join(V.EXT, "..")
 STAGE2_CASES = ("max:10:0.5", "max:30:0.5", "max:10:0.2", "max:30:0.2", "median:30:0.5")
 E = dict(zip(("min", "median", "max"), sorted(LP.E_BODY_LIST)))

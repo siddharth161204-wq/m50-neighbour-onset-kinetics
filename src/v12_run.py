@@ -36,8 +36,8 @@ import reactive as RX
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RES = os.path.join(HERE, "..", "results")
-RUNS = os.path.join(RES, "v12_runs")
-SERIES = os.path.join(RES, "v12_series")
+RUNS = os.path.join(RES, "v12_runs" + os.environ.get("V12_RUNS_TAG", ""))       # a second machine's copy (D45)
+SERIES = os.path.join(RES, "v12_series" + os.environ.get("V12_RUNS_TAG", ""))
 DATABANK_USED = os.path.join(HERE, "..", "inputs", "databank", "databank_m50_used.csv")
 CENTRAL = {"h": "central", "g": "central", "tau": 30.0}
 
@@ -239,30 +239,85 @@ def _utc():
     return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
 
-def work(worker, of, budget_min, sets, wall_min=115.0):
-    """Runs this worker's share in list order. No run starts once budget_min is spent, or when less than its start
-    margin is left before wall_min, the length of the shell command that hosts the worker. A run still going 30 s
-    before wall_min is interrupted and left unrecorded, so the next pass runs it again from the start; a run that
-    exceeds its own time limit (D43 (3)) is recorded as failed. Each record carries its start and finish (UTC)."""
+STOP_FILE = os.path.join(RES, "v12_STOP")       # if this file exists, no worker starts another run
+
+
+def machine_info(label):
+    """Where a run was computed (D45): recorded with every record, without the computer's name."""
+    import platform
+    info = {"label": label, "system": platform.system(), "release": platform.release(), "machine": platform.machine(),
+            "processor": platform.processor(), "cpu_count": os.cpu_count(), "python": platform.python_version()}
+    for mod in ("numpy", "scipy", "numba", "llvmlite", "skfem"):
+        try:
+            info[mod] = __import__(mod).__version__
+        except Exception:
+            info[mod] = None
+    try:
+        import pypardiso
+        pypardiso.PyPardisoSolver(mtype=2)
+        info["sparse_solver"] = "pardiso"
+    except Exception:
+        info["sparse_solver"] = "superlu"
+    return info
+
+
+def _claim(path, worker):
+    """Takes a run for this worker: the claim file is created only if it does not exist (atomic on POSIX and NTFS)."""
+    try:
+        fd = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+    except FileExistsError:
+        return False
+    with os.fdopen(fd, "w") as fh:
+        fh.write(f"{worker} {os.getpid()} {_utc()}\n")
+    return True
+
+
+def _unclaim(path):
+    try:
+        os.remove(path)
+    except OSError:
+        pass
+
+
+def reset_claims():
+    """Removes every claim: run only when no worker is running (a worker that died leaves its claim behind)."""
+    n = 0
+    for f in os.listdir(RUNS) if os.path.isdir(RUNS) else []:
+        if f.endswith(".claim"):
+            _unclaim(os.path.join(RUNS, f)); n += 1
+    print(f"{n} claims removed")
+
+
+def work(worker, of, budget_min, sets, wall_min=115.0, queue=False, label="unlabelled"):
+    """Runs this worker's share in list order: every run whose index modulo `of` is `worker`, or, with `queue`, the
+    next run no other worker has claimed (for cores of unequal speed). No run starts once budget_min is spent, when
+    less than its start margin is left before wall_min, the length of the shell command that hosts the worker, or
+    once results/v12_STOP exists. A run still going 30 s before wall_min is interrupted and left unrecorded, so the
+    next pass runs it again from the start; a run that exceeds its own time limit (D43 (3)) is recorded as failed.
+    Each record carries its start and finish (UTC) and where it was computed."""
     os.makedirs(RUNS, exist_ok=True); os.makedirs(SERIES, exist_ok=True)
     runs = build_runs()
     ctx = Context()
+    machine = machine_info(label)
     t0 = time.time()
     done = 0
     if hasattr(signal, "SIGALRM"):
         signal.signal(signal.SIGALRM, _alarm)
     for i, spec in enumerate(runs):
-        if i % of != worker or spec["set"] not in sets:
+        if spec["set"] not in sets or (not queue and i % of != worker):
             continue
         path = os.path.join(RUNS, spec["id"] + ".json")
         if os.path.exists(path):
             continue
         elapsed = (time.time() - t0) / 60.0
         left = wall_min - elapsed
-        if elapsed > budget_min or left < START_MARGIN_MIN[spec["refine"]]:
-            print(f"{_utc()} worker {worker}: stopping after {done} runs (budget or wall time); next run {spec['id']}",
-                  flush=True)
+        if elapsed > budget_min or left < START_MARGIN_MIN[spec["refine"]] or os.path.exists(STOP_FILE):
+            print(f"{_utc()} worker {worker}: stopping after {done} runs (budget, wall time or stop file); "
+                  f"next run {spec['id']}", flush=True)
             return
+        claim = os.path.join(RUNS, spec["id"] + ".claim")
+        if queue and not _claim(claim, worker):
+            continue
         limit_s = int(RUN_LIMIT_MIN[spec["refine"]] * 60)
         wall_s = int(left * 60) - WALL_MARGIN_S
         started = _utc()
@@ -279,6 +334,8 @@ def work(worker, of, budget_min, sets, wall_min=115.0):
         except WallTime:                               # not a failure: the run is redone whole by the next pass
             _disarm()
             RX.DT_BASE, RX.DT_TARGET, RX.DT_ACCEPT = 0.1, 1.0, 4.0
+            if queue:
+                _unclaim(claim)
             print(f"{_utc()} worker {worker}: {spec['id']} interrupted at the wall time and not recorded; "
                   f"stopping after {done} runs", flush=True)
             return
@@ -290,12 +347,15 @@ def work(worker, of, budget_min, sets, wall_min=115.0):
         finally:
             _disarm()
         rec["started_utc"], rec["finished_utc"] = started, _utc()
+        rec["machine"] = machine
         if series is not None:
             np.savez_compressed(os.path.join(SERIES, spec["id"] + ".npz"), **series)
         tmp = path + f".tmp{os.getpid()}"
         with open(tmp, "w") as fh:
             json.dump(rec, fh, indent=1, default=float)
         os.replace(tmp, path)
+        if queue:
+            _unclaim(claim)
         done += 1
         if rec.get("failed"):
             print(f"{_utc()} {spec['id']}: FAILED {rec['error']}", flush=True)
@@ -309,7 +369,7 @@ def work(worker, of, budget_min, sets, wall_min=115.0):
 
 def status():
     runs = build_runs()
-    have = {f[:-5] for f in os.listdir(RUNS)} if os.path.isdir(RUNS) else set()
+    have = {f[:-5] for f in os.listdir(RUNS) if f.endswith(".json")} if os.path.isdir(RUNS) else set()
     by = {}
     for s in runs:
         b = by.setdefault(s["set"], [0, 0])
@@ -327,12 +387,14 @@ def status():
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["list", "work", "status"])
+    ap.add_argument("cmd", choices=["list", "work", "status", "reset-claims"])
     ap.add_argument("--worker", type=int, default=0)
     ap.add_argument("--of", type=int, default=1)
     ap.add_argument("--budget-min", type=float, default=110.0)
     ap.add_argument("--wall-min", type=float, default=115.0)
     ap.add_argument("--sets", nargs="*", default=["grid", "sens", "v3", "draws", "fact"])
+    ap.add_argument("--queue", action="store_true", help="claim runs from a shared list instead of taking every n-th")
+    ap.add_argument("--label", default="unlabelled", help="a name for the machine, recorded with each run")
     a = ap.parse_args()
     if a.cmd == "list":
         runs = build_runs()
@@ -340,6 +402,8 @@ if __name__ == "__main__":
         print({s: sum(r["set"] == s for r in runs) for s in ("grid", "sens", "v3", "draws", "fact")})
         print("nail-test energies (J):", nail_energies())
     elif a.cmd == "work":
-        work(a.worker, a.of, a.budget_min, set(a.sets), a.wall_min)
+        work(a.worker, a.of, a.budget_min, set(a.sets), a.wall_min, queue=a.queue, label=a.label)
+    elif a.cmd == "reset-claims":
+        reset_claims()
     else:
         status()
