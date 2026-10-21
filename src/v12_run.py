@@ -288,7 +288,7 @@ def reset_claims():
     print(f"{n} claims removed")
 
 
-def work(worker, of, budget_min, sets, wall_min=115.0, queue=False, label="unlabelled"):
+def work(worker, of, budget_min, sets, wall_min=115.0, queue=False, label="unlabelled", draws=None):
     """Runs this worker's share in list order: every run whose index modulo `of` is `worker`, or, with `queue`, the
     next run no other worker has claimed (for cores of unequal speed). No run starts once budget_min is spent, when
     less than its start margin is left before wall_min, the length of the shell command that hosts the worker, or
@@ -306,6 +306,8 @@ def work(worker, of, budget_min, sets, wall_min=115.0, queue=False, label="unlab
     for i, spec in enumerate(runs):
         if spec["set"] not in sets or (not queue and i % of != worker):
             continue
+        if draws is not None and not (isinstance(spec["kin"], int) and draws[0] <= spec["kin"] <= draws[1]):
+            continue                                   # D46: a machine takes a range of draws
         path = os.path.join(RUNS, spec["id"] + ".json")
         if os.path.exists(path):
             continue
@@ -395,6 +397,7 @@ if __name__ == "__main__":
     ap.add_argument("--sets", nargs="*", default=["grid", "sens", "v3", "draws", "fact"])
     ap.add_argument("--queue", action="store_true", help="claim runs from a shared list instead of taking every n-th")
     ap.add_argument("--label", default="unlabelled", help="a name for the machine, recorded with each run")
+    ap.add_argument("--draws", default=None, help="only the runs of these posterior draws, as first-last (D46)")
     a = ap.parse_args()
     if a.cmd == "list":
         runs = build_runs()
@@ -402,7 +405,8 @@ if __name__ == "__main__":
         print({s: sum(r["set"] == s for r in runs) for s in ("grid", "sens", "v3", "draws", "fact")})
         print("nail-test energies (J):", nail_energies())
     elif a.cmd == "work":
-        work(a.worker, a.of, a.budget_min, set(a.sets), a.wall_min, queue=a.queue, label=a.label)
+        work(a.worker, a.of, a.budget_min, set(a.sets), a.wall_min, queue=a.queue, label=a.label,
+             draws=tuple(int(x) for x in a.draws.split("-")) if a.draws else None)
     elif a.cmd == "reset-claims":
         reset_claims()
     else:
