@@ -33,7 +33,7 @@ R = LP.D_CELL / 2
 LZ = LP.L_CELL
 
 # ------------------------------------------------------------------------------------------------ inputs (D36 to D38)
-H_CONTACT = {"low": 200.0, "central": 2000.0, "high": 3700.0}      # W/(m2 K), Lienhard and Lienhard, Table 2.4 (D36)
+H_CONTACT = {"low": 200.0, "central": 2000.0, "high": 3700.0}      # W/(m2 K), Lienhard and Lienhard, A Heat Transfer Textbook, 6th ed., Table 2.1 (D36)
 G_TAB = {"low": 0.005, "central": 0.0068, "high": 0.010}          # W/K per tab (D37)
 CONNECTIONS = ("series", "parallel")
 X_TOUCH = 1.0                                                     # centre distance over diameter, cans in contact

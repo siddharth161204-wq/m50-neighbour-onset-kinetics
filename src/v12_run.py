@@ -26,7 +26,7 @@ stopped and no record depends on where a pass ended.
 import os as _os
 for _k in ("OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "OMP_NUM_THREADS", "NUMBA_NUM_THREADS"):
     _os.environ.setdefault(_k, "1")      # D43 (4): one thread per library; set before numpy and numba load
-import argparse, csv, hashlib, json, math, os, sys, time
+import _thread, argparse, csv, hashlib, json, math, os, signal, sys, threading, time
 import numpy as np
 
 import v12_model as V
@@ -202,13 +202,37 @@ class WallTime(Exception):
     pass
 
 
-_DEADLINE = {"kind": "limit"}
+_DEADLINE = {"kind": "limit", "timer": None, "fired": False}
 
 
 def _alarm(signum, frame):
     if _DEADLINE["kind"] == "wall":
         raise WallTime("the hosting shell's time ran out")
     raise RunTimeLimit("the run exceeded its time limit")
+
+
+def _fire():
+    """Where there is no SIGALRM (Windows), a timer thread interrupts the main thread at the deadline."""
+    _DEADLINE["fired"] = True
+    _thread.interrupt_main()
+
+
+def _arm(seconds, kind):
+    _DEADLINE.update(kind=kind, fired=False)
+    if hasattr(signal, "SIGALRM"):
+        signal.alarm(max(1, int(seconds)))
+    else:
+        _DEADLINE["timer"] = threading.Timer(max(1, int(seconds)), _fire)
+        _DEADLINE["timer"].daemon = True
+        _DEADLINE["timer"].start()
+
+
+def _disarm():
+    if hasattr(signal, "SIGALRM"):
+        signal.alarm(0)
+    elif _DEADLINE["timer"] is not None:
+        _DEADLINE["timer"].cancel()
+        _DEADLINE["timer"] = None
 
 
 def _utc():
@@ -220,13 +244,13 @@ def work(worker, of, budget_min, sets, wall_min=115.0):
     margin is left before wall_min, the length of the shell command that hosts the worker. A run still going 30 s
     before wall_min is interrupted and left unrecorded, so the next pass runs it again from the start; a run that
     exceeds its own time limit (D43 (3)) is recorded as failed. Each record carries its start and finish (UTC)."""
-    import signal
     os.makedirs(RUNS, exist_ok=True); os.makedirs(SERIES, exist_ok=True)
     runs = build_runs()
     ctx = Context()
     t0 = time.time()
     done = 0
-    signal.signal(signal.SIGALRM, _alarm)
+    if hasattr(signal, "SIGALRM"):
+        signal.signal(signal.SIGALRM, _alarm)
     for i, spec in enumerate(runs):
         if i % of != worker or spec["set"] not in sets:
             continue
@@ -241,13 +265,19 @@ def work(worker, of, budget_min, sets, wall_min=115.0):
             return
         limit_s = int(RUN_LIMIT_MIN[spec["refine"]] * 60)
         wall_s = int(left * 60) - WALL_MARGIN_S
-        _DEADLINE["kind"] = "wall" if wall_s < limit_s else "limit"
         started = _utc()
-        signal.alarm(max(1, min(limit_s, wall_s)))
+        _arm(min(limit_s, wall_s), "wall" if wall_s < limit_s else "limit")
         try:
-            rec, series = run_one(spec, ctx, keep_series=spec["set"] in ("grid", "sens", "v3"))
+            try:
+                rec, series = run_one(spec, ctx, keep_series=spec["set"] in ("grid", "sens", "v3"))
+            except KeyboardInterrupt:                  # the timer thread's interrupt, not a user's Ctrl-C
+                if not _DEADLINE["fired"]:
+                    raise
+                if _DEADLINE["kind"] == "wall":
+                    raise WallTime("the hosting shell's time ran out") from None
+                raise RunTimeLimit("the run exceeded its time limit") from None
         except WallTime:                               # not a failure: the run is redone whole by the next pass
-            signal.alarm(0)
+            _disarm()
             RX.DT_BASE, RX.DT_TARGET, RX.DT_ACCEPT = 0.1, 1.0, 4.0
             print(f"{_utc()} worker {worker}: {spec['id']} interrupted at the wall time and not recorded; "
                   f"stopping after {done} runs", flush=True)
@@ -258,12 +288,13 @@ def work(worker, of, budget_min, sets, wall_min=115.0):
             rec.update({"failed": True, "error": repr(exc), "traceback": traceback.format_exc()})
             RX.DT_BASE, RX.DT_TARGET, RX.DT_ACCEPT = 0.1, 1.0, 4.0
         finally:
-            signal.alarm(0)
+            _disarm()
         rec["started_utc"], rec["finished_utc"] = started, _utc()
         if series is not None:
             np.savez_compressed(os.path.join(SERIES, spec["id"] + ".npz"), **series)
         tmp = path + f".tmp{os.getpid()}"
-        json.dump(rec, open(tmp, "w"), indent=1, default=float)
+        with open(tmp, "w") as fh:
+            json.dump(rec, fh, indent=1, default=float)
         os.replace(tmp, path)
         done += 1
         if rec.get("failed"):
