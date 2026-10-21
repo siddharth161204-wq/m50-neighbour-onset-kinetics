@@ -1,5 +1,5 @@
 # The packages of the machine that registered the Stage 5 predictions, pinned for the laptop's Windows runs (D45).
-# Installed from local wheels by run_stage5_windows.cmd: pip install --no-index --find-links <wheels> -r this file.
+# Installed by run_stage5_windows.cmd, from local wheels if present, otherwise from PyPI.
 numpy==2.5.3
 scipy==1.18.1
 numba==0.68.0
