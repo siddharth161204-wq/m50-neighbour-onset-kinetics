@@ -409,6 +409,10 @@ def run_resolved(model, t1_of_t, g_pos, g_neg, kin=None, kernel="numba", t_amb=N
                 progress(t, Tmax, Tmean, dt)
         if stop is not None:
             break
+    for f in facts.values():                           # D47: PARDISO keeps a factorisation's memory until freed
+        if getattr(f, "kind", "") == "pardiso":
+            f.ps.free_memory(everything=True)
+    facts.clear()
     stored = 2 * (float(model.C @ T) - E0)
     energy = {k: 2 * v for k, v in energy.items()}
     net = energy["in_bus"] + energy["in_gap"] + energy["in_rad"] + energy["in_rxn"] - energy["out_conv"] - energy["out_rad"]

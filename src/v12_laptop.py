@@ -147,8 +147,13 @@ def launch(n):
                 "--budget-min", "1e9", "--wall-min", "1e9"], os.path.join(LOGS, f"laptop_{stamp}_w{k:02d}.log"),
                BELOW | DETACHED)
         pids.append(p.pid)
-    json.dump({"started_utc": utc(), "workers": n, "pids": pids}, open(LOCK, "w"), indent=1)
-    print(f"{utc()} {n} workers started (below-normal priority).")
+    off = 0
+    if WIN:                                            # D46 (1): let them use the fast cores
+        time.sleep(2)
+        import v12_laptop_more
+        off = sum(v12_laptop_more.no_ecoqos(p) for p in pids)
+    json.dump({"started_utc": utc(), "workers": n, "pids": pids, "ecoqos_off": off}, open(LOCK, "w"), indent=1)
+    print(f"{utc()} {n} workers started (below-normal priority, efficiency mode off for {off}).")
     return pids
 
 

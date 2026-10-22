@@ -240,6 +240,12 @@ def _utc():
 
 
 STOP_FILE = os.path.join(RES, "v12_STOP")       # if this file exists, no worker starts another run
+MEM_RETRIES, MEM_WAIT_S = 10, 60                 # D47: a run that fails for want of memory is retried, not recorded
+
+
+def is_memory_failure(text):
+    """MemoryError, or PARDISO's error -2 (not enough memory): a failure of the machine, not of the run (D47)."""
+    return text.startswith("MemoryError") or text.startswith("PyPardisoError(-2)")
 
 
 def machine_info(label):
@@ -281,11 +287,19 @@ def _unclaim(path):
 
 def reset_claims():
     """Removes every claim: run only when no worker is running (a worker that died leaves its claim behind)."""
-    n = 0
+    n = kept = 0
     for f in os.listdir(RUNS) if os.path.isdir(RUNS) else []:
         if f.endswith(".claim"):
-            _unclaim(os.path.join(RUNS, f)); n += 1
-    print(f"{n} claims removed")
+            p = os.path.join(RUNS, f)
+            try:
+                own = open(p).read().startswith("cloud")     # D46 (2): the cloud machine's share stays claimed
+            except OSError:
+                own = False
+            if own:
+                kept += 1
+            else:
+                _unclaim(p); n += 1
+    print(f"{n} claims removed, {kept} of the cloud machine's kept")
 
 
 def work(worker, of, budget_min, sets, wall_min=115.0, queue=False, label="unlabelled", draws=None):
@@ -322,32 +336,45 @@ def work(worker, of, budget_min, sets, wall_min=115.0, queue=False, label="unlab
             continue
         limit_s = int(RUN_LIMIT_MIN[spec["refine"]] * 60)
         wall_s = int(left * 60) - WALL_MARGIN_S
-        started = _utc()
-        _arm(min(limit_s, wall_s), "wall" if wall_s < limit_s else "limit")
-        try:
+        tries = 0
+        while True:
+            started = _utc()
+            _arm(min(limit_s, wall_s), "wall" if wall_s < limit_s else "limit")
             try:
-                rec, series = run_one(spec, ctx, keep_series=spec["set"] in ("grid", "sens", "v3"))
-            except KeyboardInterrupt:                  # the timer thread's interrupt, not a user's Ctrl-C
-                if not _DEADLINE["fired"]:
-                    raise
-                if _DEADLINE["kind"] == "wall":
-                    raise WallTime("the hosting shell's time ran out") from None
-                raise RunTimeLimit("the run exceeded its time limit") from None
-        except WallTime:                               # not a failure: the run is redone whole by the next pass
-            _disarm()
-            RX.DT_BASE, RX.DT_TARGET, RX.DT_ACCEPT = 0.1, 1.0, 4.0
-            if queue:
-                _unclaim(claim)
-            print(f"{_utc()} worker {worker}: {spec['id']} interrupted at the wall time and not recorded; "
-                  f"stopping after {done} runs", flush=True)
-            return
-        except Exception as exc:                       # D43 (3): recorded as failed, never rerun differently
-            import traceback
-            rec, series = dict(spec), None
-            rec.update({"failed": True, "error": repr(exc), "traceback": traceback.format_exc()})
-            RX.DT_BASE, RX.DT_TARGET, RX.DT_ACCEPT = 0.1, 1.0, 4.0
-        finally:
-            _disarm()
+                try:
+                    rec, series = run_one(spec, ctx, keep_series=spec["set"] in ("grid", "sens", "v3"))
+                except KeyboardInterrupt:              # the timer thread's interrupt, not a user's Ctrl-C
+                    if not _DEADLINE["fired"]:
+                        raise
+                    if _DEADLINE["kind"] == "wall":
+                        raise WallTime("the hosting shell's time ran out") from None
+                    raise RunTimeLimit("the run exceeded its time limit") from None
+            except WallTime:                           # not a failure: the run is redone whole by the next pass
+                _disarm()
+                RX.DT_BASE, RX.DT_TARGET, RX.DT_ACCEPT = 0.1, 1.0, 4.0
+                if queue:
+                    _unclaim(claim)
+                print(f"{_utc()} worker {worker}: {spec['id']} interrupted at the wall time and not recorded; "
+                      f"stopping after {done} runs", flush=True)
+                return
+            except Exception as exc:                   # D43 (3): recorded as failed, never rerun differently
+                import gc, traceback
+                RX.DT_BASE, RX.DT_TARGET, RX.DT_ACCEPT = 0.1, 1.0, 4.0
+                if is_memory_failure(repr(exc)) and tries < MEM_RETRIES:      # D47: the machine's, not the run's
+                    tries += 1
+                    _disarm()
+                    gc.collect()
+                    print(f"{_utc()} worker {worker}: {spec['id']} short of memory ({repr(exc)[:60]}); "
+                          f"retry {tries} in {MEM_WAIT_S} s", flush=True)
+                    time.sleep(MEM_WAIT_S)
+                    continue
+                rec, series = dict(spec), None
+                rec.update({"failed": True, "error": repr(exc), "traceback": traceback.format_exc()})
+            finally:
+                _disarm()
+            break
+        if tries:
+            rec["memory_retries"] = tries
         rec["started_utc"], rec["finished_utc"] = started, _utc()
         rec["machine"] = machine
         if series is not None:
