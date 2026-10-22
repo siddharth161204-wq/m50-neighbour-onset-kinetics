@@ -25,15 +25,20 @@ def main():
             fh.write("restart, D47\n")
         print(f"{L.utc()} Stopping {len(live)} running workers; each finishes its current run first.")
         t0 = time.time()
-        while live and time.time() - t0 < 3600:
+        while live and time.time() - t0 < 720:          # a run takes about 7 minutes; give each 12 to finish
             L.keep_awake()
             time.sleep(15)
             live = [p for p in live if L.alive(p, lim.get(p))]
             print(f"\r{time.strftime('%H:%M')}  {len(live)} still running.   ", end="", flush=True)
         print()
-        if live:
-            print("Some workers did not stop within an hour; nothing else was done. Tell Claude.")
-            return 1
+        if live:                                        # D47 (6): workers that did not stop are ended
+            ended = [p for p in live if L.terminate(p)]
+            print(f"{L.utc()} {len(live)} workers had not stopped after 12 minutes; ended {len(ended)} of them.")
+            time.sleep(5)
+            live = [p for p in live if L.alive(p, lim.get(p))]
+            if live:
+                print(f"{len(live)} workers could not be ended (process ids {live}); nothing else was done. Tell Claude.")
+                return 1
     aside = os.path.join(L.RES, "v12_failed_memory")
     os.makedirs(aside, exist_ok=True)
     moved = []

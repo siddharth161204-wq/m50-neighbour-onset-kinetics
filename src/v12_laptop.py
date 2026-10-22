@@ -79,6 +79,22 @@ def worker_start_limits(lock):
     return lim
 
 
+def terminate(pid):
+    """Ends a worker that did not stop (Windows): its run in progress is unrecorded and is made again."""
+    if not WIN:
+        try:
+            os.kill(pid, 9)
+            return True
+        except OSError:
+            return False
+    h = ctypes.windll.kernel32.OpenProcess(0x0001 | 0x1000, False, pid)
+    if not h:
+        return False
+    ok = ctypes.windll.kernel32.TerminateProcess(h, 1)
+    ctypes.windll.kernel32.CloseHandle(h)
+    return bool(ok)
+
+
 def alive(pid, not_after=None):
     if WIN:
         h = ctypes.windll.kernel32.OpenProcess(0x1000, False, pid)
