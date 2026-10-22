@@ -55,7 +55,31 @@ def keep_awake():
         ctypes.windll.kernel32.SetThreadExecutionState(0x80000000 | 0x00000001)
 
 
-def alive(pid):
+def started_epoch(pid):
+    """When the process now holding this pid was created (Windows), so that a reused pid is not taken for a worker."""
+    if not WIN:
+        return None
+    h = ctypes.windll.kernel32.OpenProcess(0x1000, False, pid)
+    if not h:
+        return None
+    c, e, k, u = (ctypes.c_ulonglong() for _ in range(4))
+    ok = ctypes.windll.kernel32.GetProcessTimes(h, ctypes.byref(c), ctypes.byref(e), ctypes.byref(k), ctypes.byref(u))
+    ctypes.windll.kernel32.CloseHandle(h)
+    return (c.value - 116444736000000000) / 1e7 if ok else None
+
+
+def worker_start_limits(lock):
+    """For each worker of a lock file, the latest creation time its process can have (its start plus 10 minutes)."""
+    import calendar
+    ep = lambda s: calendar.timegm(time.strptime(s, "%Y-%m-%dT%H:%M:%SZ"))
+    lim = {p: ep(lock["started_utc"]) + 600 for p in lock.get("pids", [])}
+    for add in lock.get("added", []):
+        for p in add.get("pids", []):
+            lim[p] = ep(add["utc"]) + 600
+    return lim
+
+
+def alive(pid, not_after=None):
     if WIN:
         h = ctypes.windll.kernel32.OpenProcess(0x1000, False, pid)
         if not h:
@@ -63,7 +87,13 @@ def alive(pid):
         code = ctypes.c_ulong()
         ok = ctypes.windll.kernel32.GetExitCodeProcess(h, ctypes.byref(code))
         ctypes.windll.kernel32.CloseHandle(h)
-        return bool(ok) and code.value == 259          # STILL_ACTIVE
+        if not (bool(ok) and code.value == 259):       # STILL_ACTIVE
+            return False
+        if not_after is not None:
+            t0 = started_epoch(pid)
+            if t0 is not None and t0 > not_after:      # the pid now belongs to a later process
+                return False
+        return True
     try:
         os.kill(pid, 0)
         return True
@@ -187,7 +217,8 @@ def main():
     print(f"Stage 5 on this computer: {os.cpu_count()} logical processors, {tot:.1f} GB memory ({avail:.1f} GB free).")
     if os.path.exists(LOCK):
         old = json.load(open(LOCK))
-        if any(alive(p) for p in old["pids"]):
+        lim = worker_start_limits(old)
+        if any(alive(p, lim.get(p)) for p in old["pids"]):
             print("Workers from an earlier start are still running; showing their progress.")
             monitor(old["pids"], total)
             make_zip()

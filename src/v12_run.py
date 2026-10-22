@@ -244,8 +244,10 @@ MEM_RETRIES, MEM_WAIT_S = 10, 60                 # D47: a run that fails for wan
 
 
 def is_memory_failure(text):
-    """MemoryError, or PARDISO's error -2 (not enough memory): a failure of the machine, not of the run (D47)."""
-    return text.startswith("MemoryError") or text.startswith("PyPardisoError(-2)")
+    """MemoryError, PARDISO's error -2 (not enough memory), or Windows out of threads or resources: a failure of the
+    machine, not of the run (D47)."""
+    return (text.startswith("MemoryError") or text.startswith("PyPardisoError(-2)")
+            or "can't start new thread" in text or "WinError 1450" in text or "WinError 1455" in text)
 
 
 def machine_info(label):
@@ -339,9 +341,9 @@ def work(worker, of, budget_min, sets, wall_min=115.0, queue=False, label="unlab
         tries = 0
         while True:
             started = _utc()
-            _arm(min(limit_s, wall_s), "wall" if wall_s < limit_s else "limit")
             try:
                 try:
+                    _arm(min(limit_s, wall_s), "wall" if wall_s < limit_s else "limit")
                     rec, series = run_one(spec, ctx, keep_series=spec["set"] in ("grid", "sens", "v3"))
                 except KeyboardInterrupt:              # the timer thread's interrupt, not a user's Ctrl-C
                     if not _DEADLINE["fired"]:

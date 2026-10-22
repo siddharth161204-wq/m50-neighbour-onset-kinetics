@@ -18,7 +18,8 @@ import v12_run as RUN
 
 def main():
     lock = json.load(open(L.LOCK)) if os.path.exists(L.LOCK) else {"pids": []}
-    live = [p for p in lock["pids"] if L.alive(p)]
+    lim = L.worker_start_limits(lock) if lock.get("started_utc") else {}
+    live = [p for p in lock["pids"] if L.alive(p, lim.get(p))]
     if live:
         with open(RUN.STOP_FILE, "w") as fh:
             fh.write("restart, D47\n")
@@ -27,7 +28,7 @@ def main():
         while live and time.time() - t0 < 3600:
             L.keep_awake()
             time.sleep(15)
-            live = [p for p in live if L.alive(p)]
+            live = [p for p in live if L.alive(p, lim.get(p))]
             print(f"\r{time.strftime('%H:%M')}  {len(live)} still running.   ", end="", flush=True)
         print()
         if live:
