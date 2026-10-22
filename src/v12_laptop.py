@@ -194,7 +194,10 @@ def main():
             return 0
     if not check():
         return 1
-    n = max(1, min(os.cpu_count() or 1, int((avail - 2.0) / GB_PER_WORKER)))
+    want = int(os.environ.get("V12_WORKERS", os.cpu_count() or 1))            # D47 (4): the restart asks for 24
+    per = float(os.environ.get("V12_GB_PER_WORKER", GB_PER_WORKER))
+    n = max(1, min(want, int((avail - 2.0) / per)))
+    print(f"{n} workers ({want} asked for; {per:.2f} GB allowed each, {avail:.1f} GB free).")
     if os.path.exists(v12_run.STOP_FILE):
         os.remove(v12_run.STOP_FILE)
     pids = launch(n)
