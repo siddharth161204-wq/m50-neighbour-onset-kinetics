@@ -1,6 +1,6 @@
 # Fransson et al. (2024): the measured two-cell LG M50 tests
 
-M. Fransson, L. Pfaff, L. Broche, M. Buckwell, C. Kirchner-Burles, H. Reid, T. Schopferer, A. Rack, D.P. Finegan, P.R. Shearing, Exploring thermal runaway propagation in Li-ion batteries through high-speed X-ray imaging and thermal analysis, Journal of Power Sources 617 (2024) 234916, doi:10.1016/j.jpowsour.2024.234916. Open access under CC BY 4.0.
+M. Fransson, J. Pfaff, L. Broche, M. Buckwell, C. Kirchner-Burles, H.T. Reid, S. Schopferer, A. Rack, D.P. Finegan, P.R. Shearing, Exploring thermal runaway propagation in Li-ion batteries through high-speed X-ray imaging and thermal analysis: Impact of cell chemistry and electrical connections, Journal of Power Sources 617 (2024) 234916, doi:10.1016/j.jpowsour.2024.234916. Open access under CC BY 4.0. (Subtitle and three authors' initials corrected on 24 October 2026, DECISIONS.md D59.)
 
 Copies read on 21 October 2026:
 - Version of Record on ORA (University of Oxford): https://ora.ox.ac.uk/objects/uuid:4a6edaf0-c309-40b5-b863-cf32243fa7ec (file s3t945s923);
@@ -21,3 +21,7 @@ Tables 3 (M50, parallel) and 4 (M50, series), one row per test: the test name, t
 - Threshold and heat rate: "a minimum of 150 ◦C is required in the neighboring cell in order for propagation to occur" (from Fig. 3a); "the average heat rate for propagation to occur was 0.4 ◦C/s compared to 0.1 for non propagating cells", the heat rates "calculated from measured temperatures in Section 2".
 - Categories: 1, "Quintessential representation of nail penetration failures in trigger cells"; 2, "Quintessential representation of failure in propagating cells"; 3, "Representation of sidewall melting in trigger and propagating cells"; 4, "Representation of sidewall rupture in trigger cell".
 - Cell movement and outliers: "In 4 of the M50 tests, the cell moved within the FoV and neither failure classification nor speed calculations were not possible." "Due to movement of cells and thermocouples during failure, some outlier temperature values are still represented in the tables for consistency reasons."
+
+## `fig10_section_rates.csv` (Stage 6, DECISIONS.md D52)
+
+The paper's supplementary material (Appendix A, `1-s2.0-S0378775324008681-mmc1.pdf`, 10,240,301 bytes, SHA-256 e96713ef58e8dc13df8810034c7ee8b47fb3e2fdcdb398a5095ecdfb64dfc0ef), read on 23 and 24 October 2026 through its text layer and as rendered. Its Figure 10 shows the thermocouple records of M50_PT_Exp4 (propagated) and M50_PP_Exp3 (not propagated). The caption explains that each record is divided into sections, that the mean heat rate of each cell in each section is computed from them and printed in boxes beside the plot, and that Section I is "the region of TR in the trigger cell"; Section II is the heat exchange while propagation is awaited, Section III the second cell's runaway (only where it occurred), Section IV the cooling. One row per test, section and cell (trigger, propagation): the mean heat rate in C/s as printed.
