@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Stage 5: the registered run records, merged from the two machines by the rule of DECISIONS.md D46 (2).
 
-The fact runs of draws 166 to 200 come from the cloud machine (results/v12_runs_cloud/), every other run from the
+The fact runs of draws 166 to 172 and 176 to 200 come from the cloud machine (results/v12_runs_cloud/), every other run from the
 author's laptop (a folder of its records, unpacked from results_v12_laptop.zip). Every run of the list must be
 present exactly once. Runs that both machines made (the cloud's D45 (3) copies of the grid, sens and v3 sets, and any
 other) are compared field by field as the check across platforms. Writes results/v12_runs/ (the registered records),
@@ -17,12 +17,12 @@ import v12_run as RUN
 
 RES = os.path.join(HERE, "..", "results")
 CLOUD = os.path.join(RES, "v12_runs_cloud")
-CLOUD_SHARE = (166, 200)                 # D46 (2) and (3)
+CLOUD_SHARE = ((166, 172), (176, 200))   # D46 (2) to (4)
 SKIP = ("wall_s", "started_utc", "finished_utc", "machine")
 
 
 def cloud_share(spec):
-    return spec["set"] == "fact" and CLOUD_SHARE[0] <= spec["kin"] <= CLOUD_SHARE[1]
+    return spec["set"] == "fact" and any(a <= spec["kin"] <= b for a, b in CLOUD_SHARE)
 
 
 def flat(d, p=""):
@@ -89,7 +89,7 @@ def main():
         m = json.load(open(f)).get("machine", {}).get("label", "none")
         labels[m] = labels.get(m, 0) + 1
     failed = [i for i, (f, _) in chosen.items() if json.load(open(f)).get("failed")]
-    rec = {"rule": "DECISIONS.md D46 (2) and (3): fact runs of draws 166 to 200 from the cloud machine, every other run from the laptop",
+    rec = {"rule": "DECISIONS.md D46 (2) to (4): fact runs of draws 166 to 172 and 176 to 200 from the cloud machine, every other run from the laptop",
            "runs_in_list": len(runs), "records_chosen": len(chosen), "missing": missing, "failed": failed,
            "by_source": source, "by_machine_label": labels,
            "both_machines": {"n": len(both), "ids": both,
