@@ -30,6 +30,8 @@ The one-page note is `note/neighbour_onset_note.pdf` (source `note/neighbour_ons
    - The merged records, the scoring of P1 to P7, the quoted numbers, Figure 4 and D48 (presentation, records and the exploratory analyses, written after the results) were pushed in commit bd1303b. After the independent check (V4, D49), the corrected `src/v12_numbers.py` and `results/v12_numbers.json`, the reworded D48 (1) and (2) and the texts were pushed in commit 5053b2f.
    - V4, an independent read of every registered Stage 5 number and verdict, was made before the note's Stage 5 lines were finalised (D49).
    - Release v1.2.0 adds Stage 5. No v1.1.0 result changes.
+10. Stage 6, why the model does not propagate where the tests did (brief of 24 October; in version 1.2.0, D58).
+   - The design (D50 to D59), the code, and its tests on synthetic inputs only (D56 (4)) were pushed with the predictions, `predictions_stage6.md`, commit `c9586a8718172d6f545a47e37e104a41d71965ee` (the design is its parent, 44c9e3a), first pushed to this repository at 2026-10-23 20:11:24 UTC (`provenance/github_activity_stage6.json`). That was before any Stage 6 quantity was computed: no Part A crossing, no Stage 6 history of cell 1, no run of the neighbour in the Stage 6 configuration. The file's text has not changed since. It records, prediction by prediction, what Stage 5's published records already fixed.
 
 ## Results
 
