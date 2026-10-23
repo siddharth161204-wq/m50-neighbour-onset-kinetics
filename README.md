@@ -1,10 +1,10 @@
 # Onset kinetics on a resolved neighbour cell: where a whole-cell threshold and a local one disagree
 
-A pilot study. A published two-cell study (Satte 2026, doi:10.5281/zenodo.23253738) solved the neighbour of a failing LG M50 cell twice with identical inputs, as a single temperature (lumped) and as a resolved three-dimensional field, and compared both with fixed onset temperatures. This study replaces the fixed temperatures with decomposition kinetics: the posterior-mean B-CRNN kinetics of Koenig, Zhao and Deng (Chemical Engineering Journal 507 (2025) 160402), integrated along the archived temperature histories of the resolved hottest node, the resolved mean and the lumped node (Stage 1, passive), and then added as a heat source to both models (Stage 2, reactive, one-way). Stage 3 repeats Stage 1 over 200 draws of the kinetics' posterior and 30 draws of the roll's published thermal properties, to see which uncertainty sets each onset. Stage 4 (version 1.1.0) varies each of the posterior's three submodels alone over the same draws, to see which one carries the spread of the lead and what tightening it would buy. Conduction and radiation only between the cells: the ejecta and flame paths are excluded. One geometry, the published two-cell case. This is onset in a neighbour, not propagation.
+A pilot study. A published two-cell study (Satte 2026, doi:10.5281/zenodo.23253738) solved the neighbour of a failing LG M50 cell twice with identical inputs, as a single temperature (lumped) and as a resolved three-dimensional field, and compared both with fixed onset temperatures. This study replaces the fixed temperatures with decomposition kinetics: the posterior-mean B-CRNN kinetics of Koenig, Zhao and Deng (Chemical Engineering Journal 507 (2025) 160402), integrated along the archived temperature histories of the resolved hottest node, the resolved mean and the lumped node (Stage 1, passive), and then added as a heat source to both models (Stage 2, reactive, one-way). Stage 3 repeats Stage 1 over 200 draws of the kinetics' posterior and 30 draws of the roll's published thermal properties, to see which uncertainty sets each onset. Stage 4 (version 1.1.0) varies each of the posterior's three submodels alone over the same draws, to see which one carries the spread of the lead and what tightening it would buy. Stage 5 (version 1.2.0) puts the cans in contact, joins them by welded tabs and sets both neighbours against the measured two-cell propagation tests of Fransson et al. (Journal of Power Sources 617 (2024) 234916). Conduction and radiation only between the cells: venting, ejecta and flame are excluded. Stages 1 to 4 use one geometry, the published two-cell case, and concern onset in a neighbour, not propagation; Stage 5 asks whether the neighbour propagates.
 
 Siddharth Satte, Independent researcher, Pune, India.
 
-Zenodo DOI, reserved for this study: https://doi.org/10.5281/zenodo.23279456. It resolves once the record is published, as version v1.1.0; v1.0.0 was released on GitHub only. Cite as: Satte, S. (2026). Onset kinetics on a resolved neighbour cell: where a whole-cell threshold and a local one disagree (v1.1.0). Zenodo. https://doi.org/10.5281/zenodo.23279456
+Zenodo DOI of this version, v1.2.0, reserved: https://doi.org/10.5281/zenodo.23589793. It resolves once the record is published. Version v1.1.0: https://doi.org/10.5281/zenodo.23279456; all versions: https://doi.org/10.5281/zenodo.23279455; v1.0.0 was released on GitHub only. Cite as: Satte, S. (2026). Onset kinetics on a resolved neighbour cell: where a whole-cell threshold and a local one disagree (v1.2.0). Zenodo. https://doi.org/10.5281/zenodo.23589793
 
 The one-page note is `note/neighbour_onset_note.pdf` (source `note/neighbour_onset_note.md`).
 
@@ -26,6 +26,10 @@ The one-page note is `note/neighbour_onset_note.pdf` (source `note/neighbour_ons
 9. Stage 5, the resolved and the lumped neighbour against measured two-cell propagation (brief of 21 October; version 1.2.0).
    - The Stage 5 model, harness and scoring script, with the checks before the predictions (V1, V2 and the compiled reaction step; D41 and D44), which passed, were pushed first (commit 03af770); the predictions commit made the harness's time limits work on Windows.
    - The design (D33 to D44) and the predictions, `predictions_v12.md`, commit `b4883baeac2220b117cd66c28bd8d38dde2d5d62`, were first pushed to this repository at 2026-10-21 17:22:38 UTC (`provenance/github_activity_stage5.json`). That was before any Stage 5 run, and the file's text has not changed since.
+   - The registered runs went from 2026-10-21 18:08:04 UTC to 2026-10-23 10:39:35 UTC, on the author's laptop and, for 768 fact runs, on a two-core cloud machine. The decisions added after the predictions (D45 to D47: where the runs were made, how the two machines share them, and the runs that failed for want of memory) were each pushed before the registered scoring (`provenance/github_activity_stage5_runs.json`), and none of them changes what a run computes or how it is scored.
+   - The merged records, the scoring of P1 to P7, the quoted numbers, Figure 4 and D48 (presentation, records and the exploratory analyses, written after the results) were pushed in commit bd1303b.
+   - V4, an independent read of every registered Stage 5 number and verdict, was made before the note's Stage 5 lines were finalised (D49).
+   - Release v1.2.0 adds Stage 5. No v1.1.0 result changes.
 
 ## Results
 
@@ -207,6 +211,102 @@ Figure 3 (`src/make_figure_v11.py`).
   - the 109 draws whose anode-electrolyte particle lies in that file's central half (P4);
   - the 108 draws whose particle lies in the central half chosen on the SEI decomposition's rows alone.
 
+## Stage 5 (version 1.2.0): the resolved and the lumped neighbour against measured two-cell propagation
+
+Stages 1 to 4 compared two models of the same neighbour cell; none met a measurement. Fransson et al. (Journal of Power Sources 617 (2024) 234916, CC BY 4.0) ran two-cell propagation tests on LG M50 cells in direct contact, joined by welded tabs, eight in series and eight in parallel, with a thermocouple at the middle of each cell's surface. Stage 5 (brief of 21 October) asks whether the resolved neighbour, the lumped neighbour, or neither, reproduces what they measured. The predictions, `predictions_v12.md` (commit b4883ba), were public before any Stage 5 run.
+
+Every registered Stage 5 quantity is computed by `src/v12_score.py` from the run records (`results/v12_runs/`; `results/v12_runs.csv`, `results/v12_results.json`, `results/v12_scorecard.json`). Every other Stage 5 result quoted here, in the note and in the Zenodo description is computed by `src/v12_numbers.py` (`results/v12_numbers.json`, D48); the checks are quoted from the records that the Verification table names, and the comparison of the two machines from `results/v12_merge.json`.
+
+The measurements (`inputs/fransson2024/m50_tests.csv`, D33, D34):
+
+| Connection | Propagated | Times to propagation (s) | Mean and SD (s) |
+|---|---|---|---|
+| Parallel | 4 of 8 | 272, 152, 147, 275 | 211.5, 71.6 |
+| Series | 5 of 8 | 177, 342, 223, 149, 210 | 220.2, 74.0 |
+
+The paper adds that "a minimum of 150 ◦C is required in the neighboring cell in order for propagation to occur", and that the heat rate of propagating neighbours averaged about 0.4 C/s over its Section 2, against 0.1 C/s where nothing propagated. Time to propagation is read from the trigger cell's thermal runaway to the onset of the neighbour's (D34).
+
+The configuration (D35 to D42), each change from the two-cell study from a source or a declared bracket:
+
+| Path or input | Stage 5 | Source |
+|---|---|---|
+| Cans | In contact along a line; within the 45 degree sector, h(θ) = k_air / (δ(θ) + k_air/h_c), δ = 2R(1 − cos θ) | D36 |
+| Contact conductance h_c | 200, 2,000 and 3,700 W/(m2 K): G = 0.050, 0.170 and 0.233 W/K | Lienhard and Lienhard, A Heat Transfer Textbook, 6th edition, Table 2.1: stainless steel on stainless steel, in air and with evacuated interstices |
+| Tabs | 5, 6.8 and 10 mW/K each; series one at the base, parallel one at the cap and one at the base | The two-cell study's nickel-strip values (its D24) |
+| Radiation | As before, view factor 0.1817 for cans in contact | Incropera's parallel-cylinder formula |
+| Trigger | 33.2 kJ over 10 or 30 s; as a sensitivity, the nail tests' minimum and median, 18.67 and 25.88 kJ (they span 18.67 to 33.22 kJ) | Battery Failure Databank (state of charge assumed 100 %) |
+| Ambient | 25 C; 20 and 30 C | The two-cell study |
+| Kinetics | Posterior mean and the 200 Stage 3 draws, reaction heat fed back one-way | Stage 2 (D13) |
+| Thermocouple | Mid-length surface node toward the trigger (the line of contact) and away from it | The paper does not say which side |
+
+Conduction and radiation only between the cells. The tests include venting, ejecta and flame; the model has none of them, so it should, if anything, propagate later than the tests did.
+
+The design (D43): the posterior-mean kinetics on every combination of the 3 contact conductances, the 3 tab conductances, the 2 releases and the 2 connections (36 runs); 8 sensitivities at the central case; 4 V3 runs; the 200 draws at the central case and the 30 s release in both connections (400); and the brief's factorial, 200 draws × 3 contacts × tab 5 and 10 mW/K × 2 releases × 2 connections (4,800). Each run integrates the resolved and the lumped neighbour on the same cell-1 history, and stops when the neighbour propagates or at 900 s. The author chose the full factorial over three reduced designs.
+
+Where the runs were made (D45 to D47):
+- The author's laptop (24 cores, Windows) made 4,480 of the registered runs, after its check of the environment passed (D45 (1)). This study's two-core cloud machine made the other 768, the fact runs of draws 166 to 172 and 176 to 200 (D46).
+- The cloud machine also repeated the 48 runs of the grid, sens and v3 sets. The 48 runs that both machines made differ by at most 1.6e-10 J in the reaction heat, 2.9e-11 K in any temperature and 7.3e-13 in the energy residual, and in no non-numeric field (`src/v12_merge.py`, `results/v12_merge.json`).
+- On the laptop 848 runs failed for want of memory, through a fault in this study's code that kept each run's sparse factorisations (D47, D48 (4)). They were set aside (`results/v12_failed_memory/`) and made again. No registered run failed.
+- The registered runs went from 2026-10-21 18:08:04 UTC to 2026-10-23 10:39:35 UTC.
+
+Results (`results/v12_runs.csv`, `results/v12_results.json`, `results/v12_scorecard.json`, `results/v12_numbers.json`):
+
+22. **Neither neighbour propagates in any run.** In none of the 5,248 runs does the resolved hottest node or the lumped neighbour reach 255.7 C within 900 s. That holds at every contact conductance, tab conductance, release and connection, under every one of the 200 kinetic draws, and in the sensitivities at the central case (ambient 20 and 30 C, the Databank's smaller nail-test energies). The tests propagated in 9 of 16, at 147 to 342 s.
+    - The highest peak of any run is 226.7 C for the resolved hottest node (high contact, series, 5 mW/K, 10 s release, draw 30), 29.0 K short of 255.7 C.
+    - For the lumped neighbour it is 180.6 C (high contact, parallel, 10 mW/K, 30 s release, draw 30), 75.1 K short.
+23. **The central case** (posterior-mean kinetics, 2,000 W/(m2 K), 6.8 mW/K, 33.2 kJ, 25 C; both releases and both connections):
+    - Cell 1 peaks at 547.3 to 547.6 C, 9.8 s after the start of the 10 s release, and at 520.0 to 520.7 C at 28.6 to 28.7 s with the 30 s release.
+    - The resolved hottest node peaks at 191.5 to 192.3 C, at 27.9 s (10 s release) and 40.7 s (30 s), and then cools. It lies on the line of contact: the probe toward the trigger, the mid-length node on that line, peaks 0.22 to 0.28 K below it, at 191.3 to 192.0 C.
+    - The probe on the face away from the trigger peaks at 133.1 to 136.2 C, at 304 to 320 s. The resolved mean peaks at 137.6 to 141.0 C.
+    - The lumped neighbour peaks at 159.4 to 162.1 C, at 255 to 270 s: 30.0 to 32.4 K below the resolved hottest node and 225 to 232 s after it.
+    - Parallel, with its second tab, peaks 2.0 K higher than series in the lumped neighbour and 2.6 K higher on the face away. The hottest nodes of the two connections differ by at most 0.3 K.
+    - The neighbour's reactions release 176 to 188 J in the resolved cell and 278 to 294 J in the lumped one, against the 33.2 kJ released in cell 1.
+24. **Contact, tabs, ambient and energy** (posterior-mean kinetics):
+    - Over the grid the resolved hottest node peaks at 112.4 to 120.7 C at the low contact conductance (200 W/(m2 K)), 191.3 to 192.4 C at the central one and 225.9 to 226.6 C at the high one (3,700 W/(m2 K)). The lumped neighbour peaks at 104.8 to 115.1, 158.8 to 163.9 and 175.0 to 179.1 C.
+    - At the central contact, 10 mW/K per tab instead of 5 raises the lumped neighbour's peak by 1.5 to 2.9 K and lowers the hottest node's by 0.1 to 0.3 K.
+    - An ambient of 20 or 30 C moves the hottest node's peak by 5.0 K and the lumped neighbour's by 4.1 K.
+    - With the Databank's nail-test minimum energy (18.67 kJ) the hottest node peaks at 119.0 to 119.1 C and the lumped neighbour at 108.3 to 109.4 C; with its median (25.88 kJ), at 154.9 to 155.0 and 135.3 to 136.9 C.
+25. **The kinetic posterior hardly matters here.**
+    - Over the 200 draws at the central case and the 30 s release, the hottest node's peak spans 192.312 to 192.386 C in series and 192.058 to 192.131 C in parallel, 0.073 K in each. The lumped neighbour's spans 159.5 to 161.4 and 161.5 to 163.4 C.
+    - The neighbour's reactions release 67 to 569 J in the resolved cell and 141 to 726 J in the lumped one.
+    - Over the whole factorial the hottest node peaks at 112.2 to 121.5, 191.3 to 192.4 and 225.9 to 226.7 C at the three contacts, and the lumped neighbour at 104.5 to 116.4, 158.3 to 165.2 and 174.5 to 180.6 C.
+26. **Beside the paper's tables** (descriptive, D48 (3)):
+    - Five of the seven tests that did not propagate had neighbour maxima of 71 to 133 C, at or below the model's face away from the trigger in the central case (133.1 to 136.2 C) and below its lumped neighbour (159.4 to 162.1 C). The other two reached 626 and 808 C and stay not propagated, as the paper has them (D33 (3)). The nine that propagated reached 381 to 763 C.
+    - The model's cell 1 peaks at 520 to 548 C in the central case. 13 of the 16 measured trigger cells peaked higher, at 625 to 832 C; the other three peaked at 164, 282 and 507 C.
+27. **Exploratory (D48 (2), written after the results).**
+    - *Heating rate.* The paper reads Section 2 of a test without propagation from the trigger cell's maximum to the neighbour's. Read that way, the central case's face away from the trigger heats at 0.35 to 0.38 C/s and its lumped neighbour at 0.47 to 0.52 C/s (0.17 to 0.44 and 0.19 to 0.68 C/s over the grid). The line of contact, which peaks soon after cell 1, heats at 0.56 to 1.30 C/s (0.10 to 1.65 C/s over the grid). The paper measured 0.1 C/s where nothing propagated and 0.4 C/s where it did. By this measure the face away and the lumped neighbour heat 3.5 to 5.2 times as fast as the tests without propagation, and about as fast as those with it, yet they peak far below 255.7 C.
+    - *150 C.* In the central case the line of contact stays at or above the paper's 150 C for 342 to 355 s (from 8 to 22 s), and the lumped neighbour for 236 to 264 s (from 153 to 171 s), without propagating. The face away never reaches it.
+    - *Where the hot spot is.* In every grid run the hottest node at its peak lies on the line of contact (θ = 0 degrees, r = 10.55 mm, on the can), 12.6 to 30.6 mm above the base (30.6 mm in the central case; mid-length is 35.05 mm).
+28. **What Stage 5 shows.** With conduction and radiation alone, through a steel-on-steel line contact of up to 3,700 W/(m2 K) and the tab bracket, neither the resolved nor the lumped neighbour reproduces the tests. None propagates within 900 s, where 9 of 16 tests did within 342 s.
+    - The model was expected to propagate later than the tests, if at all, because it lacks their venting, ejecta and flame; it does not propagate at all within 900 s.
+    - P2 holds only because the lumped neighbour never propagates. The resolved hot spot on the line of contact peaks 30.0 to 32.4 K above it, and earlier, but it too stays far below 255.7 C.
+    - Every result is conditional on the contact and tab brackets (D36, D37) and on 33.2 kJ at an assumed 100 % state of charge.
+
+| Prediction (Stage 5) | Statement (short form) | Result | Measured |
+|---|---|---|---|
+| P1 | At the central contact with the posterior-mean kinetics, the resolved neighbour propagates in both connections, within 147 to 342 s | Failed | No propagation within 900 s in any of the four central runs; the hottest node peaks at 191.5 to 192.3 C. The study had expected that it might fail |
+| P2 | In both connections the lumped neighbour propagates more than 20 s after the resolved one, or not at all within 900 s | Held | As "not at all": the lumped neighbour peaks at 159.4 to 162.1 C (expected near 145 to 170 C). The resolved one does not propagate either |
+| P3 | At the resolved propagation time the mid-surface temperature lies between 150 and 255.7 C | Failed on both faces (not met) | No propagation, so no propagation time. The probes peak at 191.3 to 192.0 C toward the trigger and 133.1 to 136.2 C away from it |
+| P4 | Over the 60 s before propagation the mean mid-surface heating rate lies between 0.2 and 0.8 C/s | Failed on both faces (not met) | No propagation time |
+| P5 | The series and parallel times differ by less than 30 s | Failed (not met) | Neither connection propagates; their hottest nodes' peaks differ by at most 0.3 K |
+| P6 | The propagation share lies between 30 and 90 % | Failed | 0 of 4,800 factorial runs (0 %, binomial standard error 0); the lumped neighbour's share is 0 % too (measured 9 of 16, 56 %). The study had expected that it might fail low |
+| P7 | The contact and tab range carries more of the spread in the time to propagation than the kinetic posterior does (ratio above 1) | Failed (not met) | No run of either set propagates: none of the 9 grid runs and none of the 200 draws per connection at 30 s |
+
+"Not met": as `predictions_v12.md` scores it, a prediction about a propagation time or a mid-surface value is not met in a run without propagation, and P7 is not met where fewer than two runs of either set propagate.
+
+![](results/v12_figure.png)
+
+Figure 4 (`src/make_figure_v12.py`).
+- (a) Time to propagation by connection.
+  - Black: the nine measured times (Tables 3 and 4), with how many of the eight tests propagated. The grey band is their range, 147 to 342 s.
+  - Orange diamonds (resolved) and blue squares (lumped): the central case, 30 s release filled and 10 s release hollow. A marker in the band at the top did not propagate within 900 s; here every one is there.
+  - The percentages under the model columns are the shares of the factorial's runs that propagate.
+- (b) The central case, series, 30 s release:
+  - cell 1 (grey), the resolved hottest node (orange), the lumped neighbour (blue);
+  - the mid-surface probes toward the trigger (violet, on the line of contact, under the orange line) and away from it (magenta);
+  - the paper's 150 C (dashed) and the propagation level, 255.7 C (dotted);
+  - a slope of 0.4 C/s (black), ending at 150 C at the measured mean time; ticks on the time axis mark the nine measured times.
+
 ## Exploratory, not pre-registered (DECISIONS.md D19 and D20)
 
 Fresh SEI (`src/explore_sei_storage.py`, `results/explore_sei_storage.json`). The mean model's SEI decomposes even at 25 C: stored there under the same kinetics, the neighbour loses 12 % of its SEI in a day, 36 % in three days, 80 % in a week and all of it in a month. Kinetics this slow are beyond what DSC data resolve, as the source paper's Appendix A notes; like the source's own ARC simulation, Stage 1 starts from a fresh SEI. Repeated from the stored states, at 33.2 kJ and 500 mW/K:
@@ -246,10 +346,18 @@ The source's own internal-short trigger. The source paper switches its internal 
 | V6, energy account of the 30 Stage 3b solves (acceptance 1e-9) | Residual at most 6.3e-12 of the heat taken in, pass. The three high-conductivity reruns of the next row, run after the 30 solves, close to 3.9e-9, 8.8e-10 and 2.3e-9, two of them above 1e-9, which D27 applies to the 30 solves (Stage 2's high-conductivity runs of V3 closed to 7.9e-10 and 8.8e-10) |
 | V6, roll conductivity 1e4 W/mK for the draws with the smallest, median and largest roll specific heat (acceptance 1 K) | Hottest node within 0.75 to 0.78 K and mean within 0.14 to 0.15 K of the lumped node at every archived time, pass |
 | V7, Stage 4's step 1 checks, run before the predictions (D29 (3)) | All pass (`results/v11_checks.json`): the particle files match their recorded hashes; each draw's rows, loaded file by file, rebuild the draws' parameter file byte for byte; all 3600 arrays of the grouped models equal the joint model on the varied file's block and the posterior-mean model elsewhere, exactly; through the Stage 4 path the posterior-mean model reproduces Stage 1 on both cases, and the five V5 draws reproduce Stage 3a (largest relative difference 0 in both) |
+| V1, Stage 5, before the predictions (D44) | Every boundary path of the Stage 5 cell on a uniform field equals the lumped formula to 2.3e-16. The analytic steady case (cell 1 held at 100 C, the neighbour isothermal, contact and room convection only) is met to 5.3e-5 of the rise (acceptance 1 %). The energy accounts of a passive and a reactive Stage 5 run on synthetic inputs close to 8.9e-12 and 4.5e-10. Pass (`results/v12_checks.json`) |
+| V2, Stage 5, before the predictions (D44) | With the two-cell configuration switched back, the lumped pair reproduces all 42 archived cell-1 histories character for character, and the resolved model's arrays equal the published model's exactly. Through the Stage 5 loop the archived passive series come back within 1.3e-12 K and Stage 1's onsets to the 0.01 s reported; the five Stage 2 cases come back with the compiled step within 3.2e-14 s and 8.0e-13 K, and the headline case with the published step with identical band entries, peaks, step counts and lumped node (its series within 8.5e-13 K) |
+| The compiled reaction step (D41) | Against the numpy step on synthetic node states, the rates agree to 1.4e-14 relative, and one step is identical in the temperatures and within 1.1e-16 in the amounts |
+| The laptop's environment, before any run there (D45 (1); acceptance 0.01 s and 0.01 K) | In the five Stage 2 cases the band entries agree within 7.8e-14 s and the peaks within 4.3e-12 K, with the same step counts, under PARDISO. Pass (`results/v12_checks_laptop/acceptance.json`) |
+| The two machines (D45 (3)) | The 48 runs both made differ by at most 1.6e-10 J in the reaction heat, 2.9e-11 K in any temperature and 7.3e-13 in the energy residual, and in no non-numeric field (`results/v12_merge.json`) |
+| V3, Stage 5: the central case at 30 s in both connections (D44; acceptance a change below 2 % of the hottest node's peak rise, because the central case does not propagate) | Every mesh spacing halved: 0.27 % and 0.31 % (series, parallel). Every step limit halved: 0.0035 % and 0.0040 %. Pass |
+| Energy accounts of all 5,248 Stage 5 runs (acceptance 1e-9) | Residual at most 8.4e-12 of the heat taken in |
+| V4, Stage 5: an independent read of every registered Stage 5 number and verdict (D49) | Every registered number and verdict reproduced, recomputed from the records with the checker's own scripts. It found nine discrepancies in the draft texts, none in a registered quantity; all were corrected before the release |
 
 ## Contents
 
-- `DECISIONS.md`: every analysis choice not fixed by the brief, with its reason, numbered; D13 to D15 were added after the predictions were public, before Stage 2 ran, and D16 to D21 after it (presentation, records and two exploratory analyses). Stage 3: D22 and D23 before V4 ran, D24 after its first run broke down on 13 draws, D25 after it failed (post hoc, the author's choice), D26 with the Stage 3 predictions, D27 before any Stage 3b solve, and D28 after Stage 3 ran (presentation only). Stage 4: D29 with the Stage 4 predictions, before any grouped run; D30 and D31 after the results (exploratory analyses and presentation); D32 after an independent check of the Stage 4 documents (records and errata).
+- `DECISIONS.md`: every analysis choice not fixed by the brief, with its reason, numbered; D13 to D15 were added after the predictions were public, before Stage 2 ran, and D16 to D21 after it (presentation, records and two exploratory analyses). Stage 3: D22 and D23 before V4 ran, D24 after its first run broke down on 13 draws, D25 after it failed (post hoc, the author's choice), D26 with the Stage 3 predictions, D27 before any Stage 3b solve, and D28 after Stage 3 ran (presentation only). Stage 4: D29 with the Stage 4 predictions, before any grouped run; D30 and D31 after the results (exploratory analyses and presentation); D32 after an independent check of the Stage 4 documents (records and errata). Stage 5: D33 to D44 with the Stage 5 predictions, before any Stage 5 run; D45 to D47 while the runs were going, before any scoring (where the runs were made, and the runs that failed for want of memory); D48 after the results (presentation, records and exploratory analyses); D49 after the independent check (V4).
 - `predictions.md`: the pre-registered predictions and the hand reasoning behind them.
 - `inputs/kinetics/`: the kinetics' source, hashes and page references (`SOURCE.md`), the posterior-mean parameters (`bcrnn_mean_model.json`, and readable as `bcrnn_mean_model_table.md` and `.csv`), the scripts that fetch the supplementary files, recompute the mean model and read Fig. A.1(a), and that reading (`figA1a_mass_basis.json`).
 - `inputs/databank/`: the Battery Failure Databank rows behind the energies, with the Databank's notice (`SOURCE.md` says where they come from).
@@ -270,6 +378,18 @@ The source's own internal-short trigger. The source paper switches its internal 
   - `v11_checks.json`, `v11_onsets.csv` (every grouped run's Stage 1 fields) and `v11_sensitivity.csv` (one row per case, run type and draw, with each particle's distance from the posterior mean).
   - `v11_sensitivity.json` (every Stage 4 metric, with the exploratory analyses of D30 (1) to (3) under "exploratory"), `v11_explore.json` (D30 (4)), `v11_scorecard.json`, `v11_figure.png` and `.pdf`, and `v11_run.log`.
   - The grouped runs' checkpoint files (`results/v11_runs/`) are not committed; `v11_onsets.csv` holds every record in them.
+- `predictions_v12.md`: the Stage 5 predictions, with the brief's wording, the study's expectations and the scoring rules, fixed before any Stage 5 run.
+- `inputs/fransson2024/`: the measured tests of Fransson et al. (2024), one row per test (`m50_tests.csv`), with where they come from and the quotations used (`SOURCE.md`).
+- Stage 5 code:
+  - `src/v12_model.py` (the contact, tab and radiation paths, and the resolved and lumped runs), `src/v12_mesh.py` (the mesh graded toward the line of contact), `src/v12_kernel.py` (the compiled reaction step);
+  - `src/v12_run.py` (the run list and the workers), `src/v12_checks.py` (V1, V2 and the kernel check), `src/v12_merge.py` (the registered records from the two machines), `src/v12_score.py` (the scoring of P1 to P7, V3 and the energy accounts), `src/v12_numbers.py` (every quoted Stage 5 number and the exploratory analyses of D48), `src/make_figure_v12.py` (Figure 4);
+  - for the laptop, `run_stage5_windows.cmd`, `restart_stage5_windows.cmd` and `add_workers_windows.cmd` with `src/v12_laptop.py`, `src/v12_laptop_restart.py` and `src/v12_laptop_more.py`, and `requirements_windows.txt`; for the cloud machine, `src/v12_pass.sh`.
+- Stage 5 results:
+  - `v12_checks.json` with its parts (`v12_checks/`) and the check logs; `v12_checks_laptop/` (D45 (1));
+  - `v12_runs/`, the 5,248 registered records; `v12_runs_cloud/`, the cloud machine's 816; `v12_series/`, the series of the grid, sens and v3 sets (the cloud machine's copies of them are not committed; their records hold every field compared); `v12_merge.json`;
+  - `v12_runs.csv`, `v12_results.json`, `v12_scorecard.json`, `v12_numbers.json`, `v12_figure.png` and `.pdf`;
+  - `v12_failed_memory/` and `v12_failed_memory.json` (the records set aside under D47), `v12_claims_returned/` (the claim files of D46 (4)) and `v12_logs/` (every worker's log).
+- `provenance/github_activity_stage5.json`: the push log after the Stage 5 predictions were pushed, retrieved before any Stage 5 run; `provenance/github_activity_stage5_runs.json`: the push log up to the Stage 5 results, retrieved before they were pushed.
 
 ## Running
 
@@ -313,7 +433,20 @@ Python 3.11 or newer. `pip install -r requirements.txt`, then `./get_published_s
     python3 v11_score.py --out ../results
     python3 v11_explore.py --series ../external/m50-two-cell-pilot/results/resolved_series --out ../results
     python3 make_figure_v11.py --out ../results
+    python3 v12_checks.py v1
+    python3 v12_checks.py kernel
+    python3 v12_checks.py v2-arrays
+    python3 v12_checks.py v2-passive
+    python3 v12_checks.py v2-stage1
+    python3 v12_checks.py v2-reactive
+    python3 v12_checks.py merge
+    python3 v12_run.py work --worker 0 --of 1 --budget-min 1e9 --wall-min 1e9
+    python3 v12_score.py
+    python3 v12_numbers.py --out ../results
+    python3 make_figure_v12.py --out ../results
     cd ../note && ./render_note.sh
+
+A base-mesh Stage 5 run takes some 5 to 7 minutes on one core (median 300 s on the cloud machine, 446 s on the laptop with all its cores busy); the two V3 runs on the refined mesh took about 83 minutes each. `v12_run.py work --queue` lets several processes share the list, as on the laptop (`run_stage5_windows.cmd`), and `python3 v12_run.py status` shows what is left. The registered records were made on two machines and merged with `python3 v12_merge.py --laptop <folder>`, which takes the cloud machine's records from `results/v12_runs_cloud/` and the laptop's from the folder given.
 
 To compare a re-run of V0 to V2 with the committed records, run those three scripts with `--out` set to another folder, then `python3 compare_records.py --a ../results --b <that folder> --files v0_dsc_check.json v1_arc_check.json v1_arc_trace.csv v2_synthetic.json --out ../results/rerun_final_code.json`.
 
@@ -326,6 +459,8 @@ To recompute the kinetic parameters from the publisher's files: `python3 inputs/
 - K. O'Regan, F. Brosa Planella, W.D. Widanage, E. Kendrick, Thermal-electrochemical parameters of a high energy lithium-ion cylindrical battery, Electrochimica Acta 425 (2022) 140700, doi:10.1016/j.electacta.2022.140700: the M50's component conductivities and heat capacities behind the nominal roll properties and one end of each Stage 3b range (read in the authors' accepted manuscript, WRAP 196287).
 - H. Chen, J.E.H. Buston, J. Gill, D. Howard, R.C.E. Williams, E. Read, A. Abaza, B. Cooper, J.X. Wen, A simplified mathematical model for heating-induced thermal runaway of lithium-ion batteries, Journal of The Electrochemical Society 168 (2021) 010502, doi:10.1149/1945-7111/abd64c: the measured jelly roll of a 5 Ah NMC 21700 cell at the other end of the Stage 3b ranges (accepted manuscript, WRAP 146838).
 - A. Gaitonde, A. Nimmagadda, A. Marconnet, Experimental characterization of thermal conductance across the separator-shell interface in dry cylindrical lithium ion batteries, ITHERM 2017, doi:10.1109/ITHERM.2017.7992602: the only published can-to-roll contact values found (dry samples in 18650 cans), cited where that contact is held fixed.
+- M. Fransson, L. Pfaff, L. Broche, M. Buckwell, C. Kirchner-Burles, H. Reid, T. Schopferer, A. Rack, D.P. Finegan, P.R. Shearing, Exploring thermal runaway propagation in Li-ion batteries through high-speed X-ray imaging and thermal analysis, Journal of Power Sources 617 (2024) 234916, doi:10.1016/j.jpowsour.2024.234916, CC BY 4.0: the measured two-cell LG M50 tests of Stage 5 (Tables 3 and 4 and the text quoted in `inputs/fransson2024/SOURCE.md`), read in the Version of Record on ORA (University of Oxford) and on the document server of the National Laboratory of the Rockies.
+- J.H. Lienhard V and J.H. Lienhard IV, A Heat Transfer Textbook, 6th edition (version 6.00), Phlogiston Press, Cambridge, Massachusetts (2024), Table 2.1 (Section 2.3, p. 76): the steel-on-steel interfacial conductances behind the Stage 5 contact (D36).
 - Battery Failure Databank, revision 2 (February 2024), National Renewable Energy Laboratory (now National Laboratory of the Rockies), U.S. Department of Energy; described in D.P. Finegan et al., Journal of Power Sources 597 (2024) 234106. The energies here (8.75, 21.5 and 33.2 kJ through the cell body) come from it through the two-cell study's archived histories; the rows used are copied unchanged from that study into `inputs/databank/` with the Databank's notice, which must accompany every copy (`inputs/databank/SOURCE.md`). The Battery Failure Databank is provided by the U.S. Department of Energy's National Renewable Energy Laboratory, operated by Alliance for Sustainable Energy, LLC (DOE/NREL/ALLIANCE); its notice accompanies the rows used, in `inputs/databank/`.
 
 ## Licence

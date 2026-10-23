@@ -6,7 +6,8 @@ grid, sens and v3 sets) and the measured tests (inputs/fransson2024/m50_tests.cs
 
 Nothing here is scored; the verdicts are v12_score.py's. The quantities under "exploratory" were defined after the
 results (DECISIONS.md D48): the paper's Section 2 heating rate read for runs without propagation, the time each
-probe spends above the paper's 150 C, and where the hottest node is at its peak.
+probe spends at or above the paper's 150 C, and where the hottest node is at its peak, from the series of the grid
+and sens sets.
 Usage: python3 v12_numbers.py --out ../results
 """
 import argparse, csv, glob, json, os, sys
@@ -191,7 +192,8 @@ if os.path.exists(merge):
     N["merge"] = {"by_source": mg["by_source"], "by_machine_label": mg["by_machine_label"], "missing": len(mg["missing"]),
                   "failed": len(mg["failed"]), "both_machines": mg["both_machines"]["n"],
                   "non_numeric_differences": len(mg["both_machines"]["non_numeric_differences"]),
-                  "largest": dict(list(md.items())[:3]), "largest_temperature_difference_K": max(temps) if temps else None}
+                  "largest": dict(list(md.items())[:3]), "largest_temperature_difference_K": max(temps) if temps else None,
+                  "energy_residual_difference": md.get("resolved.energy_residual_rel", {}).get("value")}
 fm = os.path.join(OUT, "v12_failed_memory")
 if os.path.isdir(fm):
     fr = [json.load(open(f)) for f in glob.glob(os.path.join(fm, "*.json"))]
@@ -220,8 +222,7 @@ for f in sorted(glob.glob(os.path.join(OUT, "v12_series", "*.npz"))):
     rec = recs[rid]
     if rec["resolved"]["propagated"]:
         continue
-    t1t, T1 = S["t1_t"], S["t1_T1_C"]
-    i1 = int(np.argmax(T1)); t1m = float(t1t[i1])          # cell 1's maximum: the start of Section 2
+    t1m = float(rec["t_T1max_s"])                        # cell 1's maximum (the record's): the start of Section 2
     tr = {}
     for name, t, T in (("toward", S["probe_t"], S["probe_toward"] - 273.15),
                        ("away", S["probe_t"], S["probe_away"] - 273.15),
@@ -230,10 +231,14 @@ for f in sorted(glob.glob(os.path.join(OUT, "v12_series", "*.npz"))):
         T_at = float(np.interp(t1m, t, T))
         tr[name] = {"t_start_s": t1m, "T_start_C": T_at, "t_end_s": tm, "T_end_C": float(T[j]),
                     "rate_C_per_s": (float(T[j]) - T_at) / (tm - t1m) if tm > t1m else None}
-        above = t[T >= T150]
-        EX["time_above_150C"].setdefault(rid, {})[name] = (
-            {"from_s": float(above[0]), "to_s": float(above[-1]), "duration_s": float(above[-1] - above[0])}
-            if above.size else None)
+        idx = np.where(T >= T150)[0]
+        if idx.size:                                       # crossings interpolated within the step, as D35
+            i0, i1 = int(idx[0]), int(idx[-1])
+            t_on = float(t[i0]) if i0 == 0 else float(t[i0 - 1] + (T150 - T[i0 - 1]) / (T[i0] - T[i0 - 1]) * (t[i0] - t[i0 - 1]))
+            t_off = float(t[i1]) if i1 == len(t) - 1 else float(t[i1] + (T[i1] - T150) / (T[i1] - T[i1 + 1]) * (t[i1 + 1] - t[i1]))
+            EX["time_above_150C"].setdefault(rid, {})[name] = {"from_s": t_on, "to_s": t_off, "duration_s": t_off - t_on}
+        else:
+            EX["time_above_150C"].setdefault(rid, {})[name] = None
     EX["section2_rate_without_propagation"][rid] = tr
     k = int(np.argmax(S["Tmax"]))
     node = int(S["imax"][k])

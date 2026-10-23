@@ -58,6 +58,16 @@ Figure 1. (a) First time each history self-heats at 0.15 K/min, 30 s release, 33
 5. Exploratory: the lead has two modes (starts by 122.4 C, or at 184.9 C and above) and a tighter posterior keeps both; in marginal draws the SEI's heat net of the separator's melting sets the mode.
 6. Scorecard: P1 (SEI submodel over half the lead's variance) held, 0.997 (central 65 %); P2 (shares sum to 0.8 to 1.1) held, 0.998; P3 (under 5 % below 100 C) held, 0 %; P4 (over 40 % narrower) failed, 14.6 %; P5 (same ranking at 100 mW/K) held.
 
+## Stage 5 (v1.2)
+
+1. Against two-cell LG M50 tests of Fransson et al. (J. Power Sources 617 (2024) 234916; 9 of 16 propagated in 147 to 342 s): steel-on-steel contact 200 to 3,700 W/(m^2^ K), nickel-strip tabs, 33.2 kJ; conduction and radiation only (no venting, ejecta or flame); predictions b4883ba.
+2. In none of 5,248 runs, the brief's 4,800-run factorial among them, does either neighbour reach 255.7 C within 900 s.
+3. In the central case the resolved hot spot, on the line of contact, peaks at 192 C by 41 s; the lumped neighbour at 159 to 162 C at 255 to 270 s.
+4. In any run at most 226.7 C (resolved) and 180.6 C (lumped); 13 of 16 trigger cells peaked above the central case's cell 1 (548 C).
+5. Exploratory: over the paper's Section 2 the face away and the lumped neighbour heat at 0.35 to 0.52 C/s (the line of contact faster), 3.5 to 5.2 times the tests without propagation (0.1 C/s) and near those with it (0.4), but not as hot.
+6. Scorecard: P1 (in 147 to 342 s) failed; P6 (30 to 90 %) failed at 0 %; P2 (lumped later or never) held; P3 to P5 and P7 not met, so failed.
+7. Lacking the tests' venting, ejecta and flame, the model was expected to propagate later than they did, if at all; it never does. Conduction and radiation alone do not suffice here, and P2 holds only because nothing propagates: whether a lumped cell can be trusted in a pack stays open.
+
 ## What it means for the thesis
 
 Under DSC-trained kinetics a neighbour heated through copper busbars at 33.2 kJ starts to react where the busbar enters, before a lumped model in all 200 draws of the kinetic posterior (by 15 to 59 s in 95 % of them at the 30 s release); the uncertain kinetics, not the roll's published properties, set when. Next: an aged SEI in a resolved, two-way coupled cell with the cap and tabs.
