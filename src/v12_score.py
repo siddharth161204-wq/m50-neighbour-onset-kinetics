@@ -21,6 +21,8 @@ P4_LO, P4_HI = 0.2, 0.8            # C/s
 P5_MAX = 30.0                      # s
 P6_LO, P6_HI = 0.30, 0.90
 FACES = ("toward", "away")
+# the predictions commit (README); this script was committed before it existed (03af770), so it is recorded here (D48 (1))
+PREDICTIONS_COMMIT = "b4883baeac2220b117cd66c28bd8d38dde2d5d62"
 
 
 def load():
@@ -215,7 +217,7 @@ def main():
         with open(os.path.join(RES, "v12_runs.csv"), "w", newline="") as f:
             w = csv.DictWriter(f, fieldnames=keys); w.writeheader(); w.writerows(rows)
     json.dump(out, open(os.path.join(RES, "v12_results.json"), "w"), indent=1, default=float)
-    card = {"predictions_commit": None, "complete": out["complete"], "counts": out["counts"], "failed_runs": failed,
+    card = {"predictions_commit": PREDICTIONS_COMMIT, "complete": out["complete"], "counts": out["counts"], "failed_runs": failed,
             "scorecard": out["scorecard"], "v3": out["v3"], "energy_residual_max": out["energy_residual_max"]}
     json.dump(card, open(os.path.join(RES, "v12_scorecard.json"), "w"), indent=1, default=float)
     print(json.dumps({"counts": out["counts"], "scorecard": {k: v.get("held") for k, v in out["scorecard"].items()},

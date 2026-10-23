@@ -1,0 +1,179 @@
+{
+ "rule": "DECISIONS.md D46 (2) to (4): fact runs of draws 166 to 172 and 176 to 200 from the cloud machine, every other run from the laptop",
+ "runs_in_list": 5248,
+ "records_chosen": 5248,
+ "missing": [],
+ "failed": [],
+ "by_source": {
+  "laptop": 4480,
+  "cloud": 768
+ },
+ "by_machine_label": {
+  "author-laptop": 4480,
+  "cloud-2core": 768
+ },
+ "both_machines": {
+  "n": 48,
+  "ids": [
+   "grid_mean_parallel_hcentral_gcentral_tau10",
+   "grid_mean_parallel_hcentral_gcentral_tau30",
+   "grid_mean_parallel_hcentral_ghigh_tau10",
+   "grid_mean_parallel_hcentral_ghigh_tau30",
+   "grid_mean_parallel_hcentral_glow_tau10",
+   "grid_mean_parallel_hcentral_glow_tau30",
+   "grid_mean_parallel_hhigh_gcentral_tau10",
+   "grid_mean_parallel_hhigh_gcentral_tau30",
+   "grid_mean_parallel_hhigh_ghigh_tau10",
+   "grid_mean_parallel_hhigh_ghigh_tau30",
+   "grid_mean_parallel_hhigh_glow_tau10",
+   "grid_mean_parallel_hhigh_glow_tau30",
+   "grid_mean_parallel_hlow_gcentral_tau10",
+   "grid_mean_parallel_hlow_gcentral_tau30",
+   "grid_mean_parallel_hlow_ghigh_tau10",
+   "grid_mean_parallel_hlow_ghigh_tau30",
+   "grid_mean_parallel_hlow_glow_tau10",
+   "grid_mean_parallel_hlow_glow_tau30",
+   "grid_mean_series_hcentral_gcentral_tau10",
+   "grid_mean_series_hcentral_gcentral_tau30",
+   "grid_mean_series_hcentral_ghigh_tau10",
+   "grid_mean_series_hcentral_ghigh_tau30",
+   "grid_mean_series_hcentral_glow_tau10",
+   "grid_mean_series_hcentral_glow_tau30",
+   "grid_mean_series_hhigh_gcentral_tau10",
+   "grid_mean_series_hhigh_gcentral_tau30",
+   "grid_mean_series_hhigh_ghigh_tau10",
+   "grid_mean_series_hhigh_ghigh_tau30",
+   "grid_mean_series_hhigh_glow_tau10",
+   "grid_mean_series_hhigh_glow_tau30",
+   "grid_mean_series_hlow_gcentral_tau10",
+   "grid_mean_series_hlow_gcentral_tau30",
+   "grid_mean_series_hlow_ghigh_tau10",
+   "grid_mean_series_hlow_ghigh_tau30",
+   "grid_mean_series_hlow_glow_tau10",
+   "grid_mean_series_hlow_glow_tau30",
+   "sens_mean_parallel_hcentral_gcentral_tau30_Enailmedian",
+   "sens_mean_parallel_hcentral_gcentral_tau30_Enailmin",
+   "sens_mean_parallel_hcentral_gcentral_tau30_amb20",
+   "sens_mean_parallel_hcentral_gcentral_tau30_amb30",
+   "sens_mean_series_hcentral_gcentral_tau30_Enailmedian",
+   "sens_mean_series_hcentral_gcentral_tau30_Enailmin",
+   "sens_mean_series_hcentral_gcentral_tau30_amb20",
+   "sens_mean_series_hcentral_gcentral_tau30_amb30",
+   "v3_mean_parallel_hcentral_gcentral_tau30_dthalf",
+   "v3_mean_parallel_hcentral_gcentral_tau30_refine2",
+   "v3_mean_series_hcentral_gcentral_tau30_dthalf",
+   "v3_mean_series_hcentral_gcentral_tau30_refine2"
+  ],
+  "max_abs_difference": {
+   "resolved.in_rxn_J": {
+    "value": 1.5648993212380446e-10,
+    "run": "v3_mean_parallel_hcentral_gcentral_tau30_refine2"
+   },
+   "resolved.probe_peak.away.T_C": {
+    "value": 2.893330020015128e-11,
+    "run": "v3_mean_series_hcentral_gcentral_tau30_refine2"
+   },
+   "resolved.peak_mean_C": {
+    "value": 2.6147972675971687e-11,
+    "run": "v3_mean_series_hcentral_gcentral_tau30_refine2"
+   },
+   "resolved.peak_hottest_C": {
+    "value": 1.3358203432289883e-11,
+    "run": "grid_mean_series_hlow_ghigh_tau10"
+   },
+   "resolved.probe_peak.toward.T_C": {
+    "value": 1.233502189279534e-11,
+    "run": "grid_mean_series_hlow_gcentral_tau30"
+   },
+   "resolved.energy_residual_rel": {
+    "value": 7.29676904604263e-13,
+    "run": "v3_mean_parallel_hcentral_gcentral_tau30_refine2"
+   },
+   "E_body_J": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "G_contact_W_K": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "G_tab_W_K": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "T1max_C": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "T_amb_K": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "dt_scale": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "g_neg_W_K": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "g_pos_W_K": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "h_c_W_m2K": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "lumped.peak_C": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "lumped.reaction_heat_J": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "lumped.t_end_s": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "lumped.t_peak_s": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "refine": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "resolved.probe_peak.away.t_s": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "resolved.probe_peak.toward.t_s": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "resolved.t_end_s": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "resolved.t_peak_hottest_s": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "t_T1max_s": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   },
+   "tau": {
+    "value": 0.0,
+    "run": "grid_mean_parallel_hcentral_gcentral_tau10"
+   }
+  },
+  "non_numeric_differences": {}
+ },
+ "written": {
+  "records": 5248,
+  "series": 48
+ }
+}

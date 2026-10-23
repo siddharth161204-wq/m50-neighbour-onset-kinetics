@@ -1,0 +1,76 @@
+{
+ "two_E33223_tau10_G0.2": {
+  "kernel": "numba",
+  "wall_s": 502.6634268760681,
+  "cross_s": {
+   "T_onset_low": [
+    null,
+    null
+   ],
+   "T_onset_mean": [
+    null,
+    null
+   ],
+   "T_onset_high": [
+    null,
+    null
+   ]
+  },
+  "peak_Tmax_C": [
+   251.36825601573992,
+   251.36825601574174
+  ],
+  "peak_Tmean_C": [
+   148.25869447883105,
+   148.25869447882695
+  ],
+  "steps": [
+   9000,
+   9000
+  ],
+  "rejected": [
+   0,
+   0
+  ],
+  "max_implicit_nodes": [
+   166,
+   166
+  ],
+  "energy_residual_rel": [
+   1.1987146334057556e-12,
+   1.0765636471556967e-12
+  ],
+  "in_rxn_J": [
+   226.96635566007433,
+   226.96635566003985
+  ],
+  "series_Tmax_max_abs_K": 8.981260180007666e-12,
+  "series_Tmean_max_abs_K": 6.991740519879386e-12,
+  "series_length": [
+   9001,
+   9001
+  ],
+  "lumped_peak_C": [
+   169.07037400694418,
+   169.07037400694418
+  ],
+  "lumped_cross_s": [
+   {
+    "T_onset_low": null,
+    "T_onset_mean": null,
+    "T_onset_high": null
+   },
+   {
+    "T_onset_low": null,
+    "T_onset_mean": null,
+    "T_onset_high": null
+   }
+  ],
+  "lumped_reaction_heat_J": [
+   338.4790753681352,
+   338.4790753681352
+  ],
+  "lumped_series_max_abs_K": 0.0,
+  "identical": false
+ }
+}

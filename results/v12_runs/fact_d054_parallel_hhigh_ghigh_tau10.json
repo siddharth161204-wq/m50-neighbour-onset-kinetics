@@ -1,0 +1,79 @@
+{
+ "id": "fact_d054_parallel_hhigh_ghigh_tau10",
+ "set": "fact",
+ "kin": 54,
+ "connection": "parallel",
+ "h": "high",
+ "g": "high",
+ "tau": 10.0,
+ "E_body_J": 33222.9,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "draw": {
+  "draw": 54,
+  "an_ele_column": 75,
+  "separator_column": 21,
+  "ncm811_column": 183
+ },
+ "h_c_W_m2K": 3700.0,
+ "G_tab_W_K": 0.01,
+ "G_contact_W_K": 0.23322020800529283,
+ "g_pos_W_K": 0.01,
+ "g_neg_W_K": 0.01,
+ "T1max_C": 544.5765190778463,
+ "t_T1max_s": 9.81,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": false,
+  "t_end_s": 900.0,
+  "steps": 9000,
+  "rejected": 0,
+  "max_implicit_nodes": 236,
+  "energy_residual_rel": 9.184103154097624e-13,
+  "peak_hottest_C": 226.03218317953508,
+  "t_peak_hottest_s": 21.5,
+  "peak_mean_C": 149.49523422708455,
+  "probe_peak": {
+   "toward": {
+    "T_C": 225.74139150650234,
+    "t_s": 21.5
+   },
+   "away": {
+    "T_C": 144.27948952764677,
+    "t_s": 283.0
+   }
+  },
+  "in_rxn_J": 363.5625450711289,
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  }
+ },
+ "lumped": {
+  "propagated": false,
+  "peak_C": 178.70437333506771,
+  "t_peak_s": 220.0,
+  "reaction_heat_J": 596.0648459605118,
+  "t_end_s": 900.0
+ },
+ "wall_s": 468.5607228279114,
+ "started_utc": "2026-10-22T06:45:14Z",
+ "finished_utc": "2026-10-22T06:53:02Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ }
+}

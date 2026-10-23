@@ -1,0 +1,33 @@
+{
+ "id": "fact_d084_parallel_hcentral_ghigh_tau30",
+ "set": "fact",
+ "kin": 84,
+ "connection": "parallel",
+ "h": "central",
+ "g": "high",
+ "tau": 30.0,
+ "E_body_J": 33222.9,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "failed": true,
+ "error": "MemoryError((274304,), dtype('int32'))",
+ "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\repo\\src\\v12_run.py\", line 327, in work\n    rec, series = run_one(spec, ctx, keep_series=spec[\"set\"] in (\"grid\", \"sens\", \"v3\"))\n                  ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\repo\\src\\v12_run.py\", line 144, in run_one\n    r = V.run_resolved(model, t1f, g_pos, g_neg, kin=kin, t_amb=spec[\"T_amb_K\"], stop_level=V.LEVEL_PROP,\n                       probes=model.probes, keep_series=keep_series, max_facts=6 if spec[\"refine\"] == 1.0 else 2)\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\repo\\src\\v12_model.py\", line 374, in run_resolved\n    Tn = solver(dt).solve(rhs)\n         ~~~~~~^^^^\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\repo\\src\\v12_model.py\", line 322, in solver\n    facts[key] = RX._solver_class()(A)\n                 ~~~~~~~~~~~~~~~~~~^^^\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\repo\\src\\..\\external\\m50-two-cell-pilot\\src\\resolved_cell2.py\", line 56, in __init__\n    self.Au = sp.triu(A, format=\"csr\")\n              ~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\python\\Lib\\site-packages\\scipy\\sparse\\_extract.py\", line 239, in triu\n    A = coo_sparse(A, copy=False)\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\python\\Lib\\site-packages\\scipy\\sparse\\_coo.py\", line 74, in __init__\n    coo = arg1.tocoo(copy=copy)\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\python\\Lib\\site-packages\\scipy\\sparse\\_csr.py\", line 64, in tocoo\n    A = super().tocoo(copy=copy)\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\python\\Lib\\site-packages\\scipy\\sparse\\_compressed.py\", line 1001, in tocoo\n    major_indices = np.empty(len(minor_indices), dtype=self.indices.dtype)\nnumpy._core._exceptions._ArrayMemoryError: Unable to allocate 1.05 MiB for an array with shape (274304,) and data type int32\n",
+ "started_utc": "2026-10-22T10:36:55Z",
+ "finished_utc": "2026-10-22T10:36:55Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ }
+}

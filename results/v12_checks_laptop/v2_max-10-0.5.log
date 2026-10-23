@@ -1,0 +1,78 @@
+Transforming over 1000 elements to C_CONTIGUOUS.
+two_E33223_tau10_G0.5 {"kernel": "numba", "wall_s": 559.0660271644592, "cross_s": {"T_onset_low": [7.1256127219764185, 7.125612721976391], "T_onset_mean": [7.642842396635802, 7.642842396635782], "T_onset_high": [8.166553627875174, 8.166553627875146]}, "peak_Tmax_C": [365.76182440414334, 365.7618244041447], "peak_Tmean_C": [168.18131471179868, 168.18131471179527], "steps": [9294, 9294], "rejected": [0, 0], "max_implicit_nodes": [1714, 1714], "energy_residual_rel": [1.109399224828904e-12, 9.927965403987416e-13], "in_rxn_J": [419.69662134122126, 419.6966213411772], "series_Tmax_max_abs_K": 8.86757334228605e-12, "series_Tmean_max_abs_K": 5.5138116294983774e-12, "series_length": [9001, 9001], "lumped_peak_C": [222.0665168364696, 222.0665168364696], "lumped_cross_s": [{"T_onset_low": null, "T_onset_mean": null, "T_onset_high": null}, {"T_onset_low": null, "T_onset_mean": null, "T_onset_high": null}], "lumped_reaction_heat_J": [2510.4829238864017, 2510.4829238864017], "lumped_series_max_abs_K": 0.0, "identical": false}
+{
+ "two_E33223_tau10_G0.5": {
+  "kernel": "numba",
+  "wall_s": 559.0660271644592,
+  "cross_s": {
+   "T_onset_low": [
+    7.1256127219764185,
+    7.125612721976391
+   ],
+   "T_onset_mean": [
+    7.642842396635802,
+    7.642842396635782
+   ],
+   "T_onset_high": [
+    8.166553627875174,
+    8.166553627875146
+   ]
+  },
+  "peak_Tmax_C": [
+   365.76182440414334,
+   365.7618244041447
+  ],
+  "peak_Tmean_C": [
+   168.18131471179868,
+   168.18131471179527
+  ],
+  "steps": [
+   9294,
+   9294
+  ],
+  "rejected": [
+   0,
+   0
+  ],
+  "max_implicit_nodes": [
+   1714,
+   1714
+  ],
+  "energy_residual_rel": [
+   1.109399224828904e-12,
+   9.927965403987416e-13
+  ],
+  "in_rxn_J": [
+   419.69662134122126,
+   419.6966213411772
+  ],
+  "series_Tmax_max_abs_K": 8.86757334228605e-12,
+  "series_Tmean_max_abs_K": 5.5138116294983774e-12,
+  "series_length": [
+   9001,
+   9001
+  ],
+  "lumped_peak_C": [
+   222.0665168364696,
+   222.0665168364696
+  ],
+  "lumped_cross_s": [
+   {
+    "T_onset_low": null,
+    "T_onset_mean": null,
+    "T_onset_high": null
+   },
+   {
+    "T_onset_low": null,
+    "T_onset_mean": null,
+    "T_onset_high": null
+   }
+  ],
+  "lumped_reaction_heat_J": [
+   2510.4829238864017,
+   2510.4829238864017
+  ],
+  "lumped_series_max_abs_K": 0.0,
+  "identical": false
+ }
+}

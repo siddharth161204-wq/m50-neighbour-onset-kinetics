@@ -1,0 +1,33 @@
+{
+ "id": "fact_d101_parallel_hlow_glow_tau30",
+ "set": "fact",
+ "kin": 101,
+ "connection": "parallel",
+ "h": "low",
+ "g": "low",
+ "tau": 30.0,
+ "E_body_J": 33222.9,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "failed": true,
+ "error": "MemoryError('Allocation failed (probably too large).')",
+ "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\repo\\src\\v12_run.py\", line 327, in work\n    rec, series = run_one(spec, ctx, keep_series=spec[\"set\"] in (\"grid\", \"sens\", \"v3\"))\n                  ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\repo\\src\\v12_run.py\", line 144, in run_one\n    r = V.run_resolved(model, t1f, g_pos, g_neg, kin=kin, t_amb=spec[\"T_amb_K\"], stop_level=V.LEVEL_PROP,\n                       probes=model.probes, keep_series=keep_series, max_facts=6 if spec[\"refine\"] == 1.0 else 2)\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\repo\\src\\v12_model.py\", line 361, in run_resolved\n    Ts, cs, n_imp = loc.step(T, c, R0, H0, dt)\n                    ~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\repo\\src\\v12_kernel.py\", line 281, in step\n    Tn, cn, imp = substeps(T, np.ascontiguousarray(c), R0, H0, dt, self.m, self.C, *self.p)\n                  ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nMemoryError: Allocation failed (probably too large).\n",
+ "started_utc": "2026-10-22T10:36:55Z",
+ "finished_utc": "2026-10-22T10:36:55Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ }
+}

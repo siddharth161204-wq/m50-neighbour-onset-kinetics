@@ -1,0 +1,33 @@
+{
+ "id": "fact_d092_series_hlow_glow_tau10",
+ "set": "fact",
+ "kin": 92,
+ "connection": "series",
+ "h": "low",
+ "g": "low",
+ "tau": 10.0,
+ "E_body_J": 33222.9,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "failed": true,
+ "error": "MemoryError((13, 19355), dtype('float64'))",
+ "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\repo\\src\\v12_run.py\", line 327, in work\n    rec, series = run_one(spec, ctx, keep_series=spec[\"set\"] in (\"grid\", \"sens\", \"v3\"))\n                  ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\repo\\src\\v12_run.py\", line 144, in run_one\n    r = V.run_resolved(model, t1f, g_pos, g_neg, kin=kin, t_amb=spec[\"T_amb_K\"], stop_level=V.LEVEL_PROP,\n                       probes=model.probes, keep_series=keep_series, max_facts=6 if spec[\"refine\"] == 1.0 else 2)\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\repo\\src\\v12_model.py\", line 309, in run_resolved\n    c = bcrnn.fresh_state(N)\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\repo\\src\\bcrnn.py\", line 159, in fresh_state\n    return np.repeat(C0[:, None], n, axis=1)\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\python\\Lib\\site-packages\\numpy\\_core\\fromnumeric.py\", line 481, in repeat\n    return _wrapfunc(a, 'repeat', repeats, axis=axis)\n  File \"C:\\Users\\Siddharth\\Downloads\\m50_stage5\\python\\Lib\\site-packages\\numpy\\_core\\fromnumeric.py\", line 54, in _wrapfunc\n    return bound(*args, **kwds)\nnumpy._core._exceptions._ArrayMemoryError: Unable to allocate 1.92 MiB for an array with shape (13, 19355) and data type float64\n",
+ "started_utc": "2026-10-22T10:36:55Z",
+ "finished_utc": "2026-10-22T10:36:55Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ }
+}

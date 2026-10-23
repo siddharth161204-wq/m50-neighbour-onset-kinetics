@@ -1,0 +1,78 @@
+{
+ "checked_utc": "2026-10-21T18:08:03Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "tolerance": {
+  "band_entry_s": 0.01,
+  "peak_K": 0.01
+ },
+ "exit_codes": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "cases": {
+  "two_E33223_tau10_G0.2": {
+   "band_entry_max_diff_s": 0.0,
+   "peak_max_diff_K": 4.092726157978177e-12,
+   "steps": [
+    9000,
+    9000
+   ],
+   "identical": false
+  },
+  "two_E33223_tau10_G0.5": {
+   "band_entry_max_diff_s": 2.842170943040401e-14,
+   "peak_max_diff_K": 3.410605131648481e-12,
+   "steps": [
+    9294,
+    9294
+   ],
+   "identical": false
+  },
+  "two_E33223_tau30_G0.2": {
+   "band_entry_max_diff_s": 0.0,
+   "peak_max_diff_K": 4.263256414560601e-12,
+   "steps": [
+    9000,
+    9000
+   ],
+   "identical": false
+  },
+  "two_E33223_tau30_G0.5": {
+   "band_entry_max_diff_s": 7.815970093361102e-14,
+   "peak_max_diff_K": 3.751665644813329e-12,
+   "steps": [
+    9249,
+    9249
+   ],
+   "identical": false
+  },
+  "two_E21495_tau30_G0.5": {
+   "band_entry_max_diff_s": 0.0,
+   "peak_max_diff_K": 3.183231456205249e-12,
+   "steps": [
+    9000,
+    9000
+   ],
+   "identical": false
+  }
+ },
+ "pass": true
+}

@@ -1,0 +1,216 @@
+{
+ "predictions_commit": "b4883baeac2220b117cd66c28bd8d38dde2d5d62",
+ "complete": {
+  "grid": true,
+  "sens": true,
+  "v3": true,
+  "draws": true,
+  "fact": true
+ },
+ "counts": {
+  "grid": {
+   "total": 36,
+   "done": 36,
+   "failed": 0
+  },
+  "sens": {
+   "total": 8,
+   "done": 8,
+   "failed": 0
+  },
+  "v3": {
+   "total": 4,
+   "done": 4,
+   "failed": 0
+  },
+  "draws": {
+   "total": 400,
+   "done": 400,
+   "failed": 0
+  },
+  "fact": {
+   "total": 4800,
+   "done": 4800,
+   "failed": 0
+  }
+ },
+ "failed_runs": [],
+ "scorecard": {
+  "P1": {
+   "held": false,
+   "times_s": {
+    "series_tau10": null,
+    "series_tau30": null,
+    "parallel_tau10": null,
+    "parallel_tau30": null
+   }
+  },
+  "P2": {
+   "held": true,
+   "cases": {
+    "series_tau10": {
+     "held": true,
+     "lumped_minus_resolved_s": null,
+     "lumped_propagated": false,
+     "resolved_propagated": false
+    },
+    "series_tau30": {
+     "held": true,
+     "lumped_minus_resolved_s": null,
+     "lumped_propagated": false,
+     "resolved_propagated": false
+    },
+    "parallel_tau10": {
+     "held": true,
+     "lumped_minus_resolved_s": null,
+     "lumped_propagated": false,
+     "resolved_propagated": false
+    },
+    "parallel_tau30": {
+     "held": true,
+     "lumped_minus_resolved_s": null,
+     "lumped_propagated": false,
+     "resolved_propagated": false
+    }
+   }
+  },
+  "P3": {
+   "held": false,
+   "verdict": "failed",
+   "faces": {
+    "toward": {
+     "held": false,
+     "values": {
+      "series_tau10": null,
+      "series_tau30": null,
+      "parallel_tau10": null,
+      "parallel_tau30": null
+     }
+    },
+    "away": {
+     "held": false,
+     "values": {
+      "series_tau10": null,
+      "series_tau30": null,
+      "parallel_tau10": null,
+      "parallel_tau30": null
+     }
+    }
+   }
+  },
+  "P4": {
+   "held": false,
+   "verdict": "failed",
+   "faces": {
+    "toward": {
+     "held": false,
+     "values": {
+      "series_tau10": null,
+      "series_tau30": null,
+      "parallel_tau10": null,
+      "parallel_tau30": null
+     }
+    },
+    "away": {
+     "held": false,
+     "values": {
+      "series_tau10": null,
+      "series_tau30": null,
+      "parallel_tau10": null,
+      "parallel_tau30": null
+     }
+    }
+   }
+  },
+  "P5": {
+   "held": false,
+   "pairs": {
+    "tau10": {
+     "held": false,
+     "abs_difference_s": null
+    },
+    "tau30": {
+     "held": false,
+     "abs_difference_s": null
+    }
+   }
+  },
+  "P6": {
+   "held": false,
+   "share": 0.0,
+   "n": 4800,
+   "final": true,
+   "binomial_se": 0.0,
+   "by_connection": {
+    "series": 0.0,
+    "parallel": 0.0
+   },
+   "lumped_share": 0.0,
+   "lumped_by_connection": {
+    "series": 0.0,
+    "parallel": 0.0
+   }
+  },
+  "P7": {
+   "held": false,
+   "final": true,
+   "by_connection": {
+    "series": {
+     "held": false,
+     "ratio": null,
+     "sd_thermal_s": null,
+     "sd_kinetic_s": null,
+     "n_thermal": 9,
+     "n_thermal_propagated": 0,
+     "n_kinetic": 200,
+     "n_kinetic_propagated": 0
+    },
+    "parallel": {
+     "held": false,
+     "ratio": null,
+     "sd_thermal_s": null,
+     "sd_kinetic_s": null,
+     "n_thermal": 9,
+     "n_thermal_propagated": 0,
+     "n_kinetic": 200,
+     "n_kinetic_propagated": 0
+    }
+   }
+  }
+ },
+ "v3": {
+  "series_refine2": {
+   "base_propagated": false,
+   "check_propagated": false,
+   "peak_base_C": 192.32275387413898,
+   "peak_check_C": 192.7784052141668,
+   "relative_change_of_peak_rise": 0.002723188146727318,
+   "pass": true
+  },
+  "series_dthalf": {
+   "base_propagated": false,
+   "check_propagated": false,
+   "peak_base_C": 192.32275387413898,
+   "peak_check_C": 192.3168791853576,
+   "relative_change_of_peak_rise": 3.5109921665492047e-05,
+   "pass": true
+  },
+  "parallel_refine2": {
+   "base_propagated": false,
+   "check_propagated": false,
+   "peak_base_C": 192.0681211933918,
+   "peak_check_C": 192.58675551056382,
+   "relative_change_of_peak_rise": 0.003104328422845421,
+   "pass": true
+  },
+  "parallel_dthalf": {
+   "base_propagated": false,
+   "check_propagated": false,
+   "peak_base_C": 192.0681211933918,
+   "peak_check_C": 192.06140992140416,
+   "relative_change_of_peak_rise": 4.017087125710605e-05,
+   "pass": true
+  }
+ },
+ "energy_residual_max": 8.431827773252154e-12
+}

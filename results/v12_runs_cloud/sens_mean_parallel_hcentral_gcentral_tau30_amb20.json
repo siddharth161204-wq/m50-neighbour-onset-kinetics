@@ -1,0 +1,74 @@
+{
+ "id": "sens_mean_parallel_hcentral_gcentral_tau30_amb20",
+ "set": "sens",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 30.0,
+ "E_body_J": 33222.9,
+ "T_amb_K": 293.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 515.4208064179472,
+ "t_T1max_s": 28.650000000000002,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": false,
+  "t_end_s": 900.0,
+  "steps": 9000,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 1.1856892576542436e-12,
+  "peak_hottest_C": 187.0680966832944,
+  "t_peak_hottest_s": 41.1,
+  "peak_mean_C": 136.87927023066038,
+  "probe_peak": {
+   "toward": {
+    "T_C": 186.84998905599986,
+    "t_s": 41.1
+   },
+   "away": {
+    "T_C": 132.14499618856348,
+    "t_s": 316.8
+   }
+  },
+  "in_rxn_J": 167.6607654854144,
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  }
+ },
+ "lumped": {
+  "propagated": false,
+  "peak_C": 157.9167752356921,
+  "t_peak_s": 267.6,
+  "reaction_heat_J": 260.38862589281484,
+  "t_end_s": 900.0
+ },
+ "wall_s": 212.94442868232727,
+ "started_utc": "2026-10-21T19:00:36Z",
+ "finished_utc": "2026-10-21T19:04:09Z",
+ "machine": {
+  "label": "cloud-2core",
+  "system": "Linux",
+  "release": "6.18.44-fc-v139",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "cpu_count": 2,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ }
+}

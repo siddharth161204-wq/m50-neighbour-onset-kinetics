@@ -1,0 +1,55 @@
+{
+ "cool": {
+  "n_nodes": 20000,
+  "rates_max_rel_diff": 1.435702309365713e-14,
+  "heating_max_rel_diff": 4.415562792831009e-16,
+  "dt_0.1": {
+   "implicit_numpy": 0,
+   "implicit_numba": 0,
+   "T_max_abs_diff_K": 0.0,
+   "c_max_abs_diff": 3.970466940254533e-23
+  },
+  "dt_0.0125": {
+   "implicit_numpy": 0,
+   "implicit_numba": 0,
+   "T_max_abs_diff_K": 0.0,
+   "c_max_abs_diff": 4.1359030627651384e-24
+  }
+ },
+ "warm": {
+  "n_nodes": 4000,
+  "rates_max_rel_diff": 1.4282829428588375e-14,
+  "heating_max_rel_diff": 1.785550324278093e-16,
+  "dt_0.1": {
+   "implicit_numpy": 324,
+   "implicit_numba": 324,
+   "T_max_abs_diff_K": 0.0,
+   "c_max_abs_diff": 4.235164736271502e-22
+  },
+  "dt_0.0125": {
+   "implicit_numpy": 239,
+   "implicit_numba": 239,
+   "T_max_abs_diff_K": 0.0,
+   "c_max_abs_diff": 1.0587911840678754e-22
+  }
+ },
+ "hot": {
+  "n_nodes": 1000,
+  "rates_max_rel_diff": 7.26891033911698e-15,
+  "heating_max_rel_diff": 1.2057081630597412e-16,
+  "dt_0.1": {
+   "implicit_numpy": 92,
+   "implicit_numba": 92,
+   "T_max_abs_diff_K": 0.0,
+   "c_max_abs_diff": 1.9852334701272664e-23
+  },
+  "dt_0.0125": {
+   "implicit_numpy": 80,
+   "implicit_numba": 80,
+   "T_max_abs_diff_K": 0.0,
+   "c_max_abs_diff": 2.6469779601696886e-23
+  }
+ },
+ "worst_T_K": 0.0,
+ "worst_c": 4.235164736271502e-22
+}
