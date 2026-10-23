@@ -280,7 +280,37 @@ D48. Written after every Stage 5 run had ended and after the scoring. No registe
 - The run folders, the workers' logs and the records set aside are committed with the results; they were left out of the repository while the runs were going. The cloud machine's series (`results/v12_series_cloud/`) are not committed: its records hold every field that the comparison uses, and the laptop's series of the same runs are the registered ones.
 (5) Figure 4 (`src/make_figure_v12.py`) was written with the scoring script, before the predictions. Two changes for legibility were made while the runs were going (commit 818ccf1), once records without propagation existed: the hottest node, which hides the probe on the line of contact, is drawn over it, and the label for runs without propagation is moved clear of the markers.
 (6) The note gains seven Stage 5 lines without any change to its earlier text, as the brief requires. To keep it on one page only its stylesheet changes:
-- Figure 1 at 44 % of the text width (56 % before);
+- Figure 1 at 44 % of the text width (56 % before), still centred (left margin 28 %, 22 % before);
 - body text and byline at 6.9 pt (7.4 pt), line height 1.12 (1.16);
 - tables at 6.8 pt (7.2 pt);
 - page margins 5 and 4 mm at top and bottom (6 and 5 mm).
+
+## Added after the independent check of the Stage 5 records and documents (23 October)
+
+D49. V4 (brief, checks): an independent read of every registered Stage 5 number and verdict, made before the note's Stage 5 lines were finalised. A separate agent, which had not seen the work being produced, recomputed the run list, the merge, P1 to P7, V3, the energy accounts and every number quoted in the README, the note's draft lines, the release notes and the Zenodo description, from the run records, the series and the measured tables, with scripts of its own and without the study's scoring code.
+(1) Every registered number and verdict reproduced. The 5,248 records are exactly the run list; none failed; each is byte-identical to its source record on the machine that the merge rule names. P1 to P7, V3 and the energy accounts equal `results/v12_scorecard.json`, and V1, V2, the kernel check and the laptop's environment check reproduce from their records.
+(2) It found nine discrepancies in the draft texts, none in a registered quantity. Each was corrected before the release:
+- the lumped neighbour's first crossing of 150 C was taken at the first stored sample at or above it (153.5 s, quoted as 154 s); it is now interpolated within the step, as D35 does (153.49 s), and every 150 C crossing is computed the same way;
+- the spread of the hottest node's peak over the 200 draws was given as "at most 0.07 K"; it is 0.073 K in each connection;
+- the note and the release notes gave cell 1's maximum in the central case (548 C) without saying so; over all runs it reaches 552.5 C;
+- "central contact" labelled numbers that hold for the central case, the central contact with the central tabs;
+- the note's count of runs described the factorial alone;
+- the Section 2 rate left out the face toward the trigger (0.56 to 1.30 C/s in the central case). Section 2 now starts at the record's time of cell 1's maximum rather than at the 0.1 s series' maximum, which moves the other rates by less than 0.01 C/s;
+- the comparison of the two machines said "no other difference", though their energy residuals differ by up to 7.3e-13;
+- the README called D45 to D47 decisions added while the runs were going; D45 came before any run;
+- the README cited D49 before it existed.
+(3) A second pass, on the corrected texts, confirmed the nine corrections and every new number, and found three more problems, corrected likewise:
+- the README's list of decisions still dated D45 to the runs;
+- the status bullet credited the corrected numbers and D48's rewording to bd1303b rather than 5053b2f;
+- the note and the release notes gave the central case's Section 2 rates without saying so.
+(4) Wording that it suggested and the study adopted:
+- the V2 row names what is identical, and the run window is that of the registered runs;
+- the refined V3 runs' length is given, and P6's binomial standard error (0) is reported;
+- "not met, so failed" where the note and the release notes said "not met", and the Stage 5 rows of the Verification table are labelled as such;
+- "if at all" beside the expectation that the model would propagate later than the tests;
+- the sensitivity energies are named as the nail tests' minimum and median;
+- the line of contact's Section 2 rate is given with its scope (it peaks 12 to 18 s after cell 1 in the central case, but 257 to 274 s after it at the low contact);
+- D48 (1), (2) and (6) are reworded in place, as D32 did for Stage 4: the check figures are quoted from their records, the v3 set keeps series too, the Section 2 start and the 150 C crossings are as above, and Figure 1 stays centred.
+(5) Errata found beside the brief:
+- D46 (3) and (4) give their times as 20:10 and 02:00 UTC. They were pushed at 20:08:15 and 01:56:37 UTC (`provenance/github_activity_stage5_runs.json`), before the first runs they affect (20:08:19 and 01:56:42).
+- D47 (1)'s "all 58 fields equal" counted every field of the record, the wall time, the timestamps and the machine among them. On 23 October the grid run `grid_mean_series_hcentral_gcentral_tau30` was made again with the final code, on the cloud machine. Its 42 other fields are identical to the cloud machine's own record of that run, made before the fix (21 October, `results/v12_runs_cloud/`). They lie within 5.2e-11 J and 9.6e-12 K of the laptop's registered record, the round-off between the two machines.
