@@ -1,0 +1,327 @@
+{
+ "measured_trigger_max_range_C": [
+  164.0,
+  832.0
+ ],
+ "measured_trigger_max_median_C": 704.5,
+ "levels": {
+  "tau_s": [
+   17.53315649867374,
+   21.38651984299561,
+   25.23988318731748
+  ],
+  "tau_median_s": 21.38651984299561,
+  "E_body_J": 33222.9,
+  "E_total_J": 107025.11007839296,
+  "E_bracket_J": [
+   91189.42605830925,
+   110833.034304706
+  ]
+ },
+ "durations": {
+  "tests": [
+   {
+    "test": "M50_PP_Exp3",
+    "trigger_max_C": 686.0,
+    "section1_rate_C_per_s": 37.7,
+    "duration_s": 17.53315649867374
+   },
+   {
+    "test": "M50_PT_Exp4",
+    "trigger_max_C": 630.0,
+    "section1_rate_C_per_s": 23.97,
+    "duration_s": 25.23988318731748
+   }
+  ],
+  "min_s": 17.53315649867374,
+  "median_s": 21.38651984299561,
+  "max_s": 25.23988318731748,
+  "release_durations_s": [
+   17.53315649867374,
+   21.38651984299561,
+   25.23988318731748
+  ]
+ },
+ "energies": {
+  "n_nail_tests": 10,
+  "test_ids": [
+   "ESRF18_Oct_Run063",
+   "ESRF18_Oct_Run065",
+   "ESRF18_Oct_Run067",
+   "DLS19_Feb_Run045",
+   "DLS19_Feb_Run047",
+   "SPR2021_ESTA_8B100-01_SOC_RUN194",
+   "SPR2021_ESTA_8B100-01_SOC_RUN195",
+   "SPR2021_ESTA_8B100-01_SOC_RUN196",
+   "SPR2021_ESTA_8B100-01_SOC_RUN197",
+   "SPR2021_ESTA_8B100-01_SOC_RUN198"
+  ],
+  "body_max_J": 33222.9118228995,
+  "body_max_test": "SPR2021_ESTA_8B100-01_SOC_RUN195",
+  "total_min_J": 91189.42605830925,
+  "total_min_test": "DLS19_Feb_Run045",
+  "total_median_J": 107025.11007839296,
+  "total_median_tests": [
+   "SPR2021_ESTA_8B100-01_SOC_RUN194",
+   "ESRF18_Oct_Run065"
+  ],
+  "total_max_J": 110833.034304706,
+  "total_max_test": "SPR2021_ESTA_8B100-01_SOC_RUN197",
+  "total_J_by_test": {
+   "DLS19_Feb_Run045": 91189.42605830925,
+   "DLS19_Feb_Run047": 93707.53050445594,
+   "ESRF18_Oct_Run063": 96891.08927634502,
+   "ESRF18_Oct_Run067": 101948.99657308057,
+   "SPR2021_ESTA_8B100-01_SOC_RUN194": 106454.123159325,
+   "ESRF18_Oct_Run065": 107596.0969974609,
+   "SPR2021_ESTA_8B100-01_SOC_RUN195": 109369.716830584,
+   "SPR2021_ESTA_8B100-01_SOC_RUN198": 109462.838443749,
+   "SPR2021_ESTA_8B100-01_SOC_RUN196": 110490.191280742,
+   "SPR2021_ESTA_8B100-01_SOC_RUN197": 110833.034304706
+  }
+ },
+ "rows": [
+  {
+   "energy": "body",
+   "E_J": 33222.9,
+   "tau_s": 17.53315649867374,
+   "connection": "series",
+   "T1max_C": 536.875094922023,
+   "t_T1max_s": 17.05,
+   "inside_measured_range": true
+  },
+  {
+   "energy": "body",
+   "E_J": 33222.9,
+   "tau_s": 17.53315649867374,
+   "connection": "parallel",
+   "T1max_C": 536.4345764808122,
+   "t_T1max_s": 17.04,
+   "inside_measured_range": true
+  },
+  {
+   "energy": "body",
+   "E_J": 33222.9,
+   "tau_s": 21.38651984299561,
+   "connection": "series",
+   "T1max_C": 531.6885900272313,
+   "t_T1max_s": 20.68,
+   "inside_measured_range": true
+  },
+  {
+   "energy": "body",
+   "E_J": 33222.9,
+   "tau_s": 21.38651984299561,
+   "connection": "parallel",
+   "T1max_C": 531.1686838585101,
+   "t_T1max_s": 20.67,
+   "inside_measured_range": true
+  },
+  {
+   "energy": "body",
+   "E_J": 33222.9,
+   "tau_s": 25.23988318731748,
+   "connection": "series",
+   "T1max_C": 526.6769789085257,
+   "t_T1max_s": 24.27,
+   "inside_measured_range": true
+  },
+  {
+   "energy": "body",
+   "E_J": 33222.9,
+   "tau_s": 25.23988318731748,
+   "connection": "parallel",
+   "T1max_C": 526.0827519340961,
+   "t_T1max_s": 24.26,
+   "inside_measured_range": true
+  },
+  {
+   "energy": "total",
+   "E_J": 107025.11007839296,
+   "tau_s": 17.53315649867374,
+   "connection": "series",
+   "T1max_C": 1494.0907290181199,
+   "t_T1max_s": 15.620000000000001,
+   "inside_measured_range": false
+  },
+  {
+   "energy": "total",
+   "E_J": 107025.11007839296,
+   "tau_s": 17.53315649867374,
+   "connection": "parallel",
+   "T1max_C": 1493.2001250854678,
+   "t_T1max_s": 15.610000000000001,
+   "inside_measured_range": false
+  },
+  {
+   "energy": "total",
+   "E_J": 107025.11007839296,
+   "tau_s": 21.38651984299561,
+   "connection": "series",
+   "T1max_C": 1457.5847204879856,
+   "t_T1max_s": 18.75,
+   "inside_measured_range": false
+  },
+  {
+   "energy": "total",
+   "E_J": 107025.11007839296,
+   "tau_s": 21.38651984299561,
+   "connection": "parallel",
+   "T1max_C": 1456.5885335925486,
+   "t_T1max_s": 18.740000000000002,
+   "inside_measured_range": false
+  },
+  {
+   "energy": "total",
+   "E_J": 107025.11007839296,
+   "tau_s": 25.23988318731748,
+   "connection": "series",
+   "T1max_C": 1425.041594228997,
+   "t_T1max_s": 21.81,
+   "inside_measured_range": false
+  },
+  {
+   "energy": "total",
+   "E_J": 107025.11007839296,
+   "tau_s": 25.23988318731748,
+   "connection": "parallel",
+   "T1max_C": 1423.953173757283,
+   "t_T1max_s": 21.8,
+   "inside_measured_range": false
+  },
+  {
+   "energy": "bracket_min",
+   "E_J": 91189.42605830925,
+   "tau_s": 17.53315649867374,
+   "connection": "series",
+   "T1max_C": 1317.8369769276437,
+   "t_T1max_s": 16.0,
+   "inside_measured_range": false
+  },
+  {
+   "energy": "bracket_min",
+   "E_J": 91189.42605830925,
+   "tau_s": 17.53315649867374,
+   "connection": "parallel",
+   "T1max_C": 1316.9749426668127,
+   "t_T1max_s": 15.99,
+   "inside_measured_range": false
+  },
+  {
+   "energy": "bracket_min",
+   "E_J": 91189.42605830925,
+   "tau_s": 21.38651984299561,
+   "connection": "series",
+   "T1max_C": 1289.8567526555462,
+   "t_T1max_s": 19.240000000000002,
+   "inside_measured_range": false
+  },
+  {
+   "energy": "bracket_min",
+   "E_J": 91189.42605830925,
+   "tau_s": 21.38651984299561,
+   "connection": "parallel",
+   "T1max_C": 1288.8825668209524,
+   "t_T1max_s": 19.240000000000002,
+   "inside_measured_range": false
+  },
+  {
+   "energy": "bracket_min",
+   "E_J": 91189.42605830925,
+   "tau_s": 25.23988318731748,
+   "connection": "series",
+   "T1max_C": 1264.4870709999482,
+   "t_T1max_s": 22.43,
+   "inside_measured_range": false
+  },
+  {
+   "energy": "bracket_min",
+   "E_J": 91189.42605830925,
+   "tau_s": 25.23988318731748,
+   "connection": "parallel",
+   "T1max_C": 1263.4142057768986,
+   "t_T1max_s": 22.42,
+   "inside_measured_range": false
+  },
+  {
+   "energy": "bracket_max",
+   "E_J": 110833.034304706,
+   "tau_s": 17.53315649867374,
+   "connection": "series",
+   "T1max_C": 1534.0599289825518,
+   "t_T1max_s": 15.52,
+   "inside_measured_range": false
+  },
+  {
+   "energy": "bracket_max",
+   "E_J": 110833.034304706,
+   "tau_s": 17.53315649867374,
+   "connection": "parallel",
+   "T1max_C": 1533.1665062300767,
+   "t_T1max_s": 15.52,
+   "inside_measured_range": false
+  },
+  {
+   "energy": "bracket_max",
+   "E_J": 110833.034304706,
+   "tau_s": 21.38651984299561,
+   "connection": "series",
+   "T1max_C": 1495.4670648249994,
+   "t_T1max_s": 18.63,
+   "inside_measured_range": false
+  },
+  {
+   "energy": "bracket_max",
+   "E_J": 110833.034304706,
+   "tau_s": 21.38651984299561,
+   "connection": "parallel",
+   "T1max_C": 1494.469612455708,
+   "t_T1max_s": 18.62,
+   "inside_measured_range": false
+  },
+  {
+   "energy": "bracket_max",
+   "E_J": 110833.034304706,
+   "tau_s": 25.23988318731748,
+   "connection": "series",
+   "T1max_C": 1461.192350390204,
+   "t_T1max_s": 21.66,
+   "inside_measured_range": false
+  },
+  {
+   "energy": "bracket_max",
+   "E_J": 110833.034304706,
+   "tau_s": 25.23988318731748,
+   "connection": "parallel",
+   "T1max_C": 1460.1044427115808,
+   "t_T1max_s": 21.66,
+   "inside_measured_range": false
+  }
+ ],
+ "qualifies_at_every_connection": {
+  "body": {
+   "17.53": true,
+   "21.39": true,
+   "25.24": true
+  },
+  "total": {
+   "17.53": false,
+   "21.39": false,
+   "25.24": false
+  }
+ },
+ "central_matched_case": {
+  "energy": "body",
+  "E_J": 33222.9,
+  "tau_s": 21.38651984299561
+ },
+ "peak_matched_exploratory": {
+  "E_J": 45149.76778168122,
+  "T1max_series_C": 704.4962837448788,
+  "T1max_parallel_C": 703.8265339267599,
+  "iterations": 16,
+  "target_C": 704.5,
+  "tolerance_K": 0.01
+ },
+ "computed_utc": "2026-10-23T20:12:27Z"
+}

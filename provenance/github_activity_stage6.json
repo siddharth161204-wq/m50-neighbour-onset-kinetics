@@ -1,1 +1,23 @@
-[{"activity_type":"push","actor":"siddharth161204-wq","after":"c9586a8718172d6f545a47e37e104a41d71965ee","before":"7e3548c88519321d03b3ba5d799f7a20cad6af9b","id":47563135847,"node_id":"PSH_kwLOVDe1088AAAALEvvbZw","ref":"refs/heads/main","timestamp":"2026-10-23T20:11:24Z"},{"activity_type":"push","actor":"siddharth161204-wq","after":"7e3548c88519321d03b3ba5d799f7a20cad6af9b","before":"5053b2f954579a57f348fe80240dd7544ba0bffe","id":47510756111,"node_id":"PSH_kwLOVDe1088AAAALD9ybDw","ref":"refs/heads/main","timestamp":"2026-10-23T11:27:03Z"}]
+{
+ "source": "GET https://api.github.com/repos/siddharth161204-wq/m50-neighbour-onset-kinetics/activity",
+ "retrieved_utc": "2026-10-23T20:11:40Z",
+ "note": "the push log as the API returned it after the Stage 6 design (44c9e3a) and predictions (c9586a8) were pushed together and before any Stage 6 quantity was computed",
+ "activity": [
+  {
+   "timestamp": "2026-10-23T20:11:24Z",
+   "activity_type": "push",
+   "ref": "refs/heads/main",
+   "before": "7e3548c88519321d03b3ba5d799f7a20cad6af9b",
+   "after": "c9586a8718172d6f545a47e37e104a41d71965ee",
+   "actor": "siddharth161204-wq"
+  },
+  {
+   "timestamp": "2026-10-23T11:27:03Z",
+   "activity_type": "push",
+   "ref": "refs/heads/main",
+   "before": "5053b2f954579a57f348fe80240dd7544ba0bffe",
+   "after": "7e3548c88519321d03b3ba5d799f7a20cad6af9b",
+   "actor": "siddharth161204-wq"
+  }
+ ]
+}

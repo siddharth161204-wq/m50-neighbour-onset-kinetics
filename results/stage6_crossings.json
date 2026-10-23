@@ -1,0 +1,1997 @@
+{
+ "level_C": 150.0,
+ "window_s": [
+  147.0,
+  342.0
+ ],
+ "clocks": [
+  "hot",
+  "mean",
+  "away",
+  "toward",
+  "lumped"
+ ],
+ "compared": [
+  "hot",
+  "mean",
+  "away",
+  "lumped"
+ ],
+ "comparison_face": "away",
+ "n_records": 5248,
+ "n_with_series": 48,
+ "a2_measured": {
+  "times_to_propagation_s": [
+   147.0,
+   149.0,
+   152.0,
+   177.0,
+   210.0,
+   223.0,
+   272.0,
+   275.0,
+   342.0
+  ],
+  "propagated_tests": [
+   "M50_PT_Exp4",
+   "M50_PP_Exp1",
+   "M50_PP_Exp2",
+   "M50_PP_Exp4",
+   "M50_ST_Exp3",
+   "M50_ST_Exp4",
+   "M50_SP_Exp1",
+   "M50_SP_Exp2",
+   "M50_SP_Exp3"
+  ],
+  "neighbour_max_not_propagated_C": [
+   71.0,
+   105.0,
+   118.0,
+   128.0,
+   133.0,
+   626.0,
+   808.0
+  ],
+  "not_propagated_tests": [
+   "M50_PT_Exp1",
+   "M50_PT_Exp2",
+   "M50_PT_Exp3",
+   "M50_PP_Exp3",
+   "M50_ST_Exp1",
+   "M50_ST_Exp2",
+   "M50_SP_Exp4"
+  ],
+  "neighbour_max_propagated_C": [
+   381.0,
+   420.0,
+   523.0,
+   546.0,
+   607.0,
+   698.0,
+   699.0,
+   733.0,
+   763.0
+  ],
+  "trigger_max_C": [
+   164.0,
+   282.0,
+   507.0,
+   625.0,
+   630.0,
+   644.0,
+   679.0,
+   686.0,
+   723.0,
+   728.0,
+   728.0,
+   755.0,
+   756.0,
+   787.0,
+   788.0,
+   832.0
+  ],
+  "trigger_max_range_C": [
+   164.0,
+   832.0
+  ],
+  "trigger_max_median_C": 704.5
+ },
+ "a3_counts_with_series": {
+  "grid": {
+   "all": {
+    "hot": {
+     "n": 36,
+     "cross": 24,
+     "inside": 0,
+     "below": 24,
+     "above": 0,
+     "none": 12,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.765076543403052,
+     "t_cross_max_s": 21.60104298239254
+    },
+    "mean": {
+     "n": 36,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 36,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 36,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 36,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 36,
+     "cross": 24,
+     "inside": 0,
+     "below": 24,
+     "above": 0,
+     "none": 12,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.77678291617501,
+     "t_cross_max_s": 21.633390724533662
+    },
+    "lumped": {
+     "n": 36,
+     "cross": 24,
+     "inside": 11,
+     "below": 13,
+     "above": 0,
+     "none": 12,
+     "unknown_time": 0,
+     "t_cross_min_s": 98.13541685324827,
+     "t_cross_max_s": 174.06404524468581
+    }
+   },
+   "connection=series": {
+    "hot": {
+     "n": 18,
+     "cross": 12,
+     "inside": 0,
+     "below": 12,
+     "above": 0,
+     "none": 6,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.765076543403052,
+     "t_cross_max_s": 21.580947401956127
+    },
+    "mean": {
+     "n": 18,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 18,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 18,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 18,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 18,
+     "cross": 12,
+     "inside": 0,
+     "below": 12,
+     "above": 0,
+     "none": 6,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.77678291617501,
+     "t_cross_max_s": 21.61375302701305
+    },
+    "lumped": {
+     "n": 18,
+     "cross": 12,
+     "inside": 6,
+     "below": 6,
+     "above": 0,
+     "none": 6,
+     "unknown_time": 0,
+     "t_cross_min_s": 103.19758886991465,
+     "t_cross_max_s": 174.06404524468581
+    }
+   },
+   "connection=parallel": {
+    "hot": {
+     "n": 18,
+     "cross": 12,
+     "inside": 0,
+     "below": 12,
+     "above": 0,
+     "none": 6,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.765917561750353,
+     "t_cross_max_s": 21.60104298239254
+    },
+    "mean": {
+     "n": 18,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 18,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 18,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 18,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 18,
+     "cross": 12,
+     "inside": 0,
+     "below": 12,
+     "above": 0,
+     "none": 6,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.7776272756372355,
+     "t_cross_max_s": 21.633390724533662
+    },
+    "lumped": {
+     "n": 18,
+     "cross": 12,
+     "inside": 5,
+     "below": 7,
+     "above": 0,
+     "none": 6,
+     "unknown_time": 0,
+     "t_cross_min_s": 98.13541685324827,
+     "t_cross_max_s": 166.37440303686282
+    }
+   },
+   "h=low": {
+    "hot": {
+     "n": 12,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 12,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "mean": {
+     "n": 12,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 12,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 12,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 12,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 12,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 12,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "lumped": {
+     "n": 12,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 12,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    }
+   },
+   "h=central": {
+    "hot": {
+     "n": 12,
+     "cross": 12,
+     "inside": 0,
+     "below": 12,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 8.296974519228321,
+     "t_cross_max_s": 21.60104298239254
+    },
+    "mean": {
+     "n": 12,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 12,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 12,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 12,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 12,
+     "cross": 12,
+     "inside": 0,
+     "below": 12,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 8.315583511756035,
+     "t_cross_max_s": 21.633390724533662
+    },
+    "lumped": {
+     "n": 12,
+     "cross": 12,
+     "inside": 11,
+     "below": 1,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 145.28396355583897,
+     "t_cross_max_s": 174.06404524468581
+    }
+   },
+   "h=high": {
+    "hot": {
+     "n": 12,
+     "cross": 12,
+     "inside": 0,
+     "below": 12,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.765076543403052,
+     "t_cross_max_s": 18.348240654746686
+    },
+    "mean": {
+     "n": 12,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 12,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 12,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 12,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 12,
+     "cross": 12,
+     "inside": 0,
+     "below": 12,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.77678291617501,
+     "t_cross_max_s": 18.37150455630663
+    },
+    "lumped": {
+     "n": 12,
+     "cross": 12,
+     "inside": 0,
+     "below": 12,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 98.13541685324827,
+     "t_cross_max_s": 115.05349976753513
+    }
+   },
+   "g=low": {
+    "hot": {
+     "n": 12,
+     "cross": 8,
+     "inside": 0,
+     "below": 8,
+     "above": 0,
+     "none": 4,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.765076543403052,
+     "t_cross_max_s": 21.581791511897563
+    },
+    "mean": {
+     "n": 12,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 12,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 12,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 12,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 12,
+     "cross": 8,
+     "inside": 0,
+     "below": 8,
+     "above": 0,
+     "none": 4,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.77678291617501,
+     "t_cross_max_s": 21.613709839837977
+    },
+    "lumped": {
+     "n": 12,
+     "cross": 8,
+     "inside": 4,
+     "below": 4,
+     "above": 0,
+     "none": 4,
+     "unknown_time": 0,
+     "t_cross_min_s": 103.19758886991465,
+     "t_cross_max_s": 174.06404524468581
+    }
+   },
+   "g=central": {
+    "hot": {
+     "n": 12,
+     "cross": 8,
+     "inside": 0,
+     "below": 8,
+     "above": 0,
+     "none": 4,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.76537937675621,
+     "t_cross_max_s": 21.58871185253003
+    },
+    "mean": {
+     "n": 12,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 12,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 12,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 12,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 12,
+     "cross": 8,
+     "inside": 0,
+     "below": 8,
+     "above": 0,
+     "none": 4,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.777087134587266,
+     "t_cross_max_s": 21.62078817009224
+    },
+    "lumped": {
+     "n": 12,
+     "cross": 8,
+     "inside": 4,
+     "below": 4,
+     "above": 0,
+     "none": 4,
+     "unknown_time": 0,
+     "t_cross_min_s": 101.30858799877731,
+     "t_cross_max_s": 171.182254674387
+    }
+   },
+   "g=high": {
+    "hot": {
+     "n": 12,
+     "cross": 8,
+     "inside": 0,
+     "below": 8,
+     "above": 0,
+     "none": 4,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.765917112316333,
+     "t_cross_max_s": 21.60104298239254
+    },
+    "mean": {
+     "n": 12,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 12,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 12,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 12,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 12,
+     "cross": 8,
+     "inside": 0,
+     "below": 8,
+     "above": 0,
+     "none": 4,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.777627294398215,
+     "t_cross_max_s": 21.633390724533662
+    },
+    "lumped": {
+     "n": 12,
+     "cross": 8,
+     "inside": 3,
+     "below": 5,
+     "above": 0,
+     "none": 4,
+     "unknown_time": 0,
+     "t_cross_min_s": 98.13541685324827,
+     "t_cross_max_s": 166.37440303686282
+    }
+   },
+   "tau=10.0": {
+    "hot": {
+     "n": 18,
+     "cross": 12,
+     "inside": 0,
+     "below": 12,
+     "above": 0,
+     "none": 6,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.765076543403052,
+     "t_cross_max_s": 8.303155618303691
+    },
+    "mean": {
+     "n": 18,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 18,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 18,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 18,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 18,
+     "cross": 12,
+     "inside": 0,
+     "below": 12,
+     "above": 0,
+     "none": 6,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.77678291617501,
+     "t_cross_max_s": 8.321886249317094
+    },
+    "lumped": {
+     "n": 18,
+     "cross": 12,
+     "inside": 5,
+     "below": 7,
+     "above": 0,
+     "none": 6,
+     "unknown_time": 0,
+     "t_cross_min_s": 98.13541685324827,
+     "t_cross_max_s": 166.64674502514424
+    }
+   },
+   "tau=30.0": {
+    "hot": {
+     "n": 18,
+     "cross": 12,
+     "inside": 0,
+     "below": 12,
+     "above": 0,
+     "none": 6,
+     "unknown_time": 0,
+     "t_cross_min_s": 18.332587118205463,
+     "t_cross_max_s": 21.60104298239254
+    },
+    "mean": {
+     "n": 18,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 18,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 18,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 18,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 18,
+     "cross": 12,
+     "inside": 0,
+     "below": 12,
+     "above": 0,
+     "none": 6,
+     "unknown_time": 0,
+     "t_cross_min_s": 18.355823106625408,
+     "t_cross_max_s": 21.633390724533662
+    },
+    "lumped": {
+     "n": 18,
+     "cross": 12,
+     "inside": 6,
+     "below": 6,
+     "above": 0,
+     "none": 6,
+     "unknown_time": 0,
+     "t_cross_min_s": 107.37627398114711,
+     "t_cross_max_s": 174.06404524468581
+    }
+   },
+   "series_hlow_glow": {
+    "hot": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "mean": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "lumped": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    }
+   },
+   "series_hlow_gcentral": {
+    "hot": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "mean": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "lumped": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    }
+   },
+   "series_hlow_ghigh": {
+    "hot": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "mean": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "lumped": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    }
+   },
+   "series_hcentral_glow": {
+    "hot": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 8.296974519228321,
+     "t_cross_max_s": 21.571760797192674
+    },
+    "mean": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 8.315583511756035,
+     "t_cross_max_s": 21.6039087201967
+    },
+    "lumped": {
+     "n": 2,
+     "cross": 2,
+     "inside": 2,
+     "below": 0,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 166.64674502514424,
+     "t_cross_max_s": 174.06404524468581
+    }
+   },
+   "series_hcentral_gcentral": {
+    "hot": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 8.297703149389616,
+     "t_cross_max_s": 21.575063946823366
+    },
+    "mean": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 8.316339059382623,
+     "t_cross_max_s": 21.6074500191824
+    },
+    "lumped": {
+     "n": 2,
+     "cross": 2,
+     "inside": 2,
+     "below": 0,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 163.64601765016434,
+     "t_cross_max_s": 171.182254674387
+    }
+   },
+   "series_hcentral_ghigh": {
+    "hot": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 8.298999277753548,
+     "t_cross_max_s": 21.580947401956127
+    },
+    "mean": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 8.317683004423431,
+     "t_cross_max_s": 21.61375302701305
+    },
+    "lumped": {
+     "n": 2,
+     "cross": 2,
+     "inside": 2,
+     "below": 0,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 158.65191240265355,
+     "t_cross_max_s": 166.37440303686282
+    }
+   },
+   "series_hhigh_glow": {
+    "hot": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.765076543403052,
+     "t_cross_max_s": 18.332587118205463
+    },
+    "mean": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.77678291617501,
+     "t_cross_max_s": 18.355823106625408
+    },
+    "lumped": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 105.95768499133014,
+     "t_cross_max_s": 115.05349976753513
+    }
+   },
+   "series_hhigh_gcentral": {
+    "hot": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.76537937675621,
+     "t_cross_max_s": 18.33441616912331
+    },
+    "mean": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.777087134587266,
+     "t_cross_max_s": 18.357706111939176
+    },
+    "lumped": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 104.94497477415102,
+     "t_cross_max_s": 114.06013655849432
+    }
+   },
+   "series_hhigh_ghigh": {
+    "hot": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.765917112316333,
+     "t_cross_max_s": 18.337668962802006
+    },
+    "mean": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.777627294398215,
+     "t_cross_max_s": 18.361054309723663
+    },
+    "lumped": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 103.19758886991465,
+     "t_cross_max_s": 112.34574344516088
+    }
+   },
+   "parallel_hlow_glow": {
+    "hot": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "mean": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "lumped": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    }
+   },
+   "parallel_hlow_gcentral": {
+    "hot": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "mean": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "lumped": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    }
+   },
+   "parallel_hlow_ghigh": {
+    "hot": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "mean": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "lumped": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    }
+   },
+   "parallel_hcentral_glow": {
+    "hot": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 8.299004167200799,
+     "t_cross_max_s": 21.581791511897563
+    },
+    "mean": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 8.317682793419017,
+     "t_cross_max_s": 21.613709839837977
+    },
+    "lumped": {
+     "n": 2,
+     "cross": 2,
+     "inside": 2,
+     "below": 0,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 158.65191240265355,
+     "t_cross_max_s": 166.37440303686282
+    }
+   },
+   "parallel_hcentral_gcentral": {
+    "hot": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 8.300478950745681,
+     "t_cross_max_s": 21.58871185253003
+    },
+    "mean": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 8.319195669280164,
+     "t_cross_max_s": 21.62078817009224
+    },
+    "lumped": {
+     "n": 2,
+     "cross": 2,
+     "inside": 2,
+     "below": 0,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 153.48708794838126,
+     "t_cross_max_s": 161.38830171162775
+    }
+   },
+   "parallel_hcentral_ghigh": {
+    "hot": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 8.303155618303691,
+     "t_cross_max_s": 21.60104298239254
+    },
+    "mean": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 8.321886249317094,
+     "t_cross_max_s": 21.633390724533662
+    },
+    "lumped": {
+     "n": 2,
+     "cross": 2,
+     "inside": 1,
+     "below": 1,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 145.28396355583897,
+     "t_cross_max_s": 153.4437500695926
+    }
+   },
+   "parallel_hhigh_glow": {
+    "hot": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.765917561750353,
+     "t_cross_max_s": 18.337870136489183
+    },
+    "mean": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.7776272756372355,
+     "t_cross_max_s": 18.361044708307446
+    },
+    "lumped": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 103.19758886991465,
+     "t_cross_max_s": 112.34574344516088
+    }
+   },
+   "parallel_hhigh_gcentral": {
+    "hot": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.76652299116187,
+     "t_cross_max_s": 18.341602936531487
+    },
+    "mean": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.778235306926204,
+     "t_cross_max_s": 18.364809700522382
+    },
+    "lumped": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 101.30858799877731,
+     "t_cross_max_s": 110.49179756406069
+    }
+   },
+   "parallel_hhigh_ghigh": {
+    "hot": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.767599764780465,
+     "t_cross_max_s": 18.348240654746686
+    },
+    "mean": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 2,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 6.779316658444746,
+     "t_cross_max_s": 18.37150455630663
+    },
+    "lumped": {
+     "n": 2,
+     "cross": 2,
+     "inside": 0,
+     "below": 2,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 98.13541685324827,
+     "t_cross_max_s": 107.37627398114711
+    }
+   }
+  },
+  "sens": {
+   "all": {
+    "hot": {
+     "n": 8,
+     "cross": 6,
+     "inside": 0,
+     "below": 6,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": 20.90479518521053,
+     "t_cross_max_s": 29.682361800283537
+    },
+    "mean": {
+     "n": 8,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 8,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 8,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 8,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 8,
+     "cross": 6,
+     "inside": 0,
+     "below": 6,
+     "above": 0,
+     "none": 2,
+     "unknown_time": 0,
+     "t_cross_min_s": 20.93484861146146,
+     "t_cross_max_s": 29.840520618772445
+    },
+    "lumped": {
+     "n": 8,
+     "cross": 4,
+     "inside": 3,
+     "below": 1,
+     "above": 0,
+     "none": 4,
+     "unknown_time": 0,
+     "t_cross_min_s": 146.6611292740756,
+     "t_cross_max_s": 192.87979850895283
+    }
+   }
+  },
+  "v3": {
+   "all": {
+    "hot": {
+     "n": 4,
+     "cross": 4,
+     "inside": 0,
+     "below": 4,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 21.501544387028005,
+     "t_cross_max_s": 21.591999934912167
+    },
+    "mean": {
+     "n": 4,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 4,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "away": {
+     "n": 4,
+     "cross": 0,
+     "inside": 0,
+     "below": 0,
+     "above": 0,
+     "none": 4,
+     "unknown_time": 0,
+     "t_cross_min_s": null,
+     "t_cross_max_s": null
+    },
+    "toward": {
+     "n": 4,
+     "cross": 4,
+     "inside": 0,
+     "below": 4,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 21.519320620975556,
+     "t_cross_max_s": 21.62405393250858
+    },
+    "lumped": {
+     "n": 4,
+     "cross": 4,
+     "inside": 4,
+     "below": 0,
+     "above": 0,
+     "none": 0,
+     "unknown_time": 0,
+     "t_cross_min_s": 161.38830171162775,
+     "t_cross_max_s": 171.18441132424593
+    }
+   }
+  }
+ },
+ "a1_crosses_by_set": {
+  "grid": {
+   "n": 36,
+   "hot": 24,
+   "mean": 0,
+   "away": 0,
+   "toward": 24,
+   "lumped": 24,
+   "h=low": {
+    "n": 12,
+    "hot": 0,
+    "mean": 0,
+    "away": 0,
+    "toward": 0,
+    "lumped": 0
+   },
+   "h=central": {
+    "n": 12,
+    "hot": 12,
+    "mean": 0,
+    "away": 0,
+    "toward": 12,
+    "lumped": 12
+   },
+   "h=high": {
+    "n": 12,
+    "hot": 12,
+    "mean": 0,
+    "away": 0,
+    "toward": 12,
+    "lumped": 12
+   }
+  },
+  "sens": {
+   "n": 8,
+   "hot": 6,
+   "mean": 0,
+   "away": 0,
+   "toward": 6,
+   "lumped": 4,
+   "h=central": {
+    "n": 8,
+    "hot": 6,
+    "mean": 0,
+    "away": 0,
+    "toward": 6,
+    "lumped": 4
+   }
+  },
+  "v3": {
+   "n": 4,
+   "hot": 4,
+   "mean": 0,
+   "away": 0,
+   "toward": 4,
+   "lumped": 4,
+   "h=central": {
+    "n": 4,
+    "hot": 4,
+    "mean": 0,
+    "away": 0,
+    "toward": 4,
+    "lumped": 4
+   }
+  },
+  "draws": {
+   "n": 400,
+   "hot": 400,
+   "mean": 0,
+   "away": 0,
+   "toward": 400,
+   "lumped": 400,
+   "h=central": {
+    "n": 400,
+    "hot": 400,
+    "mean": 0,
+    "away": 0,
+    "toward": 400,
+    "lumped": 400
+   }
+  },
+  "fact": {
+   "n": 4800,
+   "hot": 3200,
+   "mean": 85,
+   "away": 0,
+   "toward": 3200,
+   "lumped": 3200,
+   "h=low": {
+    "n": 1600,
+    "hot": 0,
+    "mean": 0,
+    "away": 0,
+    "toward": 0,
+    "lumped": 0
+   },
+   "h=central": {
+    "n": 1600,
+    "hot": 1600,
+    "mean": 0,
+    "away": 0,
+    "toward": 1600,
+    "lumped": 1600
+   },
+   "h=high": {
+    "n": 1600,
+    "hot": 1600,
+    "mean": 85,
+    "away": 0,
+    "toward": 1600,
+    "lumped": 1600
+   }
+  },
+  "all": {
+   "n": 5248,
+   "hot": 3634,
+   "mean": 85,
+   "away": 0,
+   "toward": 3634,
+   "lumped": 3632
+  }
+ },
+ "notes": []
+}
