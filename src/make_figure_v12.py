@@ -61,7 +61,7 @@ fig, axs = plt.subplots(1, 2, figsize=(7.6, 3.0), gridspec_kw={"wspace": 0.24, "
 ax = axs[0]
 ax.axhspan(147, 342, color=BAND, zorder=0)
 ax.axhspan(930, 1040, color="#f7f6f3", zorder=0)
-ax.text(2.62, NONE_Y, "none within\n900 s", ha="right", va="center", fontsize=6.2, color=MUTED)
+ax.text(1.23, NONE_Y, "none within\n900 s", ha="center", va="center", fontsize=5.9, color=MUTED)
 xt, xl = [], []
 for i, conn in enumerate(("series", "parallel")):
     x0 = i * 1.45
@@ -91,7 +91,7 @@ for i, conn in enumerate(("series", "parallel")):
     xt += [x0, x0 + 0.42, x0 + 0.84]
     xl += ["measured", "resolved", "lumped"]
     ax.text(x0 + 0.42, -95, conn.capitalize(), ha="center", va="top", fontsize=7.2, color=INK)
-ax.set_xticks(xt); ax.set_xticklabels(xl, fontsize=6.2)
+ax.set_xticks(xt); ax.set_xticklabels(xl, fontsize=5.9)
 ax.set_xlim(-0.3, 2.65); ax.set_ylim(0, 1040)
 ax.set_ylabel("Time to propagation (s)")
 ax.set_yticks([0, 200, 400, 600, 800])
@@ -106,8 +106,9 @@ cc = R["central_case"]["series_tau30"]
 t_end = float(S["probe_t"][-1])
 tmax = max(400.0, min(900.0, t_end + 40.0))
 ax.plot(S["t1_t"], S["t1_T1_C"], color=GREY, lw=1.0, label="cell 1")
-ax.plot(S["t"], S["Tmax"] - 273.15, color=ORANGE, lw=1.3, label="resolved, hottest node")
-ax.plot(S["probe_t"], S["probe_toward"] - 273.15, color=VIOLET, lw=1.1, label="mid-surface, toward (contact line)")
+ax.plot(S["probe_t"], S["probe_toward"] - 273.15, color=VIOLET, lw=2.4, zorder=2,
+        label="mid-surface, toward (contact line)")
+ax.plot(S["t"], S["Tmax"] - 273.15, color=ORANGE, lw=1.0, zorder=3, label="resolved, hottest node")
 ax.plot(S["probe_t"], S["probe_away"] - 273.15, color=MAGENTA, lw=1.1, label="mid-surface, away")
 ax.plot(S["t_lumped"], S["T_lumped"] - 273.15, color=BLUE, lw=1.3, label="lumped")
 ax.axhline(150, color=INK2, lw=0.8, ls=(0, (4, 3)))
