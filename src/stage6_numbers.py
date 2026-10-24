@@ -161,6 +161,7 @@ if recs:
                    "first_start_utc": min(r["started_utc"] for r in recs), "last_finish_utc": max(r["finished_utc"] for r in recs),
                    "wall_median_base_s": statistics.median(base) if base else None,
                    "wall_refined_s": rng([r["wall_s"] for r in recs if r["refine"] == 2.0]),
+                   "wall_hot_reaches_255_7_s": rng([r["wall_s"] for r in recs if r["resolved"]["propagated"]]),
                    "machines": sorted({r["machine"]["label"] for r in recs}),
                    "memory_retries": sum(r.get("memory_retries", 0) for r in recs)}
 json.dump(out, open(os.path.join(RES, "stage6_numbers.json"), "w"), indent=1, default=float)
