@@ -1,0 +1,126 @@
+{
+ "id": "body_mean_parallel_hlow_ghigh_tau17.53_E33.22",
+ "set": "body",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "low",
+ "g": "high",
+ "tau": 17.53315649867374,
+ "E_body_J": 33222.9,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "draw": null,
+ "h_c_W_m2K": 200.0,
+ "G_tab_W_K": 0.01,
+ "G_contact_W_K": 0.05028471990384173,
+ "g_pos_W_K": 0.01,
+ "g_neg_W_K": 0.01,
+ "T1max_C": 543.9518888623123,
+ "t_T1max_s": 17.16,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": false,
+  "t_end_s": 900.0,
+  "steps": 9000,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 1.2172640105014255e-12,
+  "peak_hottest_C": 120.40993767496212,
+  "t_peak_hottest_s": 286.3,
+  "peak_mean_C": 110.69814408939766,
+  "probe_peak": {
+   "toward": {
+    "T_C": 120.37926426884951,
+    "t_s": 287.7
+   },
+   "away": {
+    "T_C": 107.08200807631897,
+    "t_s": 399.8
+   }
+  },
+  "in_rxn_J": 102.77856596266058,
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  }
+ },
+ "lumped": {
+  "propagated": false,
+  "peak_C": 114.83703527211657,
+  "t_peak_s": 374.0,
+  "reaction_heat_J": 112.72027692156401,
+  "t_end_s": 900.0
+ },
+ "wall_s": 657.4573531150818,
+ "stage6": {
+  "crossings_150C": {
+   "hot": {
+    "peak_C": 120.40993767496212,
+    "t_peak_s": 286.3,
+    "crosses": false,
+    "t_cross_s": null,
+    "t_return_s": null
+   },
+   "mean": {
+    "peak_C": 110.69814408939766,
+    "t_peak_s": 386.6,
+    "crosses": false,
+    "t_cross_s": null,
+    "t_return_s": null
+   },
+   "away": {
+    "peak_C": 107.08200807631897,
+    "t_peak_s": 399.8,
+    "crosses": false,
+    "t_cross_s": null,
+    "t_return_s": null
+   },
+   "toward": {
+    "peak_C": 120.37926426884951,
+    "t_peak_s": 287.7,
+    "crosses": false,
+    "t_cross_s": null,
+    "t_return_s": null
+   },
+   "lumped": {
+    "peak_C": 114.83703527211657,
+    "t_peak_s": 374.0,
+    "crosses": false,
+    "t_cross_s": null,
+    "t_return_s": null
+   }
+  },
+  "reach_255_7C": {
+   "hot_t_s": null,
+   "lumped_t_s": null,
+   "resolved_t_end_s": 900.0,
+   "lumped_t_end_s": 900.0,
+   "resolved_last_stored_C": {
+    "hot": 88.42380612728533,
+    "mean": 86.9590448083191,
+    "away": 85.18181925363297,
+    "toward": 87.71740233989163
+   },
+   "level_C": 255.68157499999995
+  }
+ },
+ "started_utc": "2026-10-24T00:02:42Z",
+ "finished_utc": "2026-10-24T00:13:39Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ }
+}

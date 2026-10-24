@@ -1,0 +1,348 @@
+{
+ "predictions": "predictions_stage6.md",
+ "predictions_commit": "c9586a8718172d6f545a47e37e104a41d71965ee",
+ "P1": {
+  "held": false,
+  "verdict": "failed",
+  "scored_on": "the 36 grid runs (posterior mean, every contact, tab, release and connection)",
+  "lumped": {
+   "crossing": 24,
+   "inside": 11,
+   "share_inside": 0.4583333333333333,
+   "held": false,
+   "times_s": [
+    98.13541685324827,
+    101.30858799877731,
+    103.19758886991465,
+    103.19758886991465,
+    104.94497477415102,
+    105.95768499133014,
+    107.37627398114711,
+    110.49179756406069,
+    112.34574344516088,
+    112.34574344516088,
+    114.06013655849432,
+    115.05349976753513,
+    145.28396355583897,
+    153.4437500695926,
+    153.48708794838126,
+    158.65191240265355,
+    158.65191240265355,
+    161.38830171162775,
+    163.64601765016434,
+    166.37440303686282,
+    166.37440303686282,
+    166.64674502514424,
+    171.182254674387,
+    174.06404524468581
+   ]
+  },
+  "hot": {
+   "crossing": 24,
+   "below_147": 24,
+   "held": true,
+   "times_s": [
+    6.765076543403052,
+    6.76537937675621,
+    6.765917112316333,
+    6.765917561750353,
+    6.76652299116187,
+    6.767599764780465,
+    8.296974519228321,
+    8.297703149389616,
+    8.298999277753548,
+    8.299004167200799,
+    8.300478950745681,
+    8.303155618303691,
+    18.332587118205463,
+    18.33441616912331,
+    18.337668962802006,
+    18.337870136489183,
+    18.341602936531487,
+    18.348240654746686,
+    21.571760797192674,
+    21.575063946823366,
+    21.580947401956127,
+    21.581791511897563,
+    21.58871185253003,
+    21.60104298239254
+   ],
+   "not_crossing": 12,
+   "strict_reading_every_grid_run_held": false
+  },
+  "reported": {
+   "sens": {
+    "n": 8,
+    "lumped_crossing": 4,
+    "lumped_inside": 3,
+    "lumped_share_inside": 0.75,
+    "hot_crossing": 6,
+    "hot_below_147": 6
+   },
+   "v3": {
+    "n": 4,
+    "lumped_crossing": 4,
+    "lumped_inside": 4,
+    "lumped_share_inside": 1.0,
+    "hot_crossing": 4,
+    "hot_below_147": 4
+   },
+   "all_with_series": {
+    "n": 48,
+    "lumped_crossing": 32,
+    "lumped_inside": 18,
+    "lumped_share_inside": 0.5625,
+    "hot_crossing": 34,
+    "hot_below_147": 34
+   }
+  }
+ },
+ "P2": {
+  "held": false,
+  "verdict": "failed",
+  "n": 5248,
+  "above_133": 3326,
+  "share_above": 0.633765243902439,
+  "by_set": {
+   "grid": {
+    "n": 36,
+    "above_133": 22
+   },
+   "sens": {
+    "n": 8,
+    "above_133": 2
+   },
+   "v3": {
+    "n": 4,
+    "above_133": 4
+   },
+   "draws": {
+    "n": 400,
+    "above_133": 400
+   },
+   "fact": {
+    "n": 4800,
+    "above_133": 2898
+   }
+  },
+  "by_contact": {
+   "low": {
+    "n": 1612,
+    "above_133": 0,
+    "away_peak_min_C": 97.20905632360319,
+    "away_peak_max_C": 108.60718507961099
+   },
+   "central": {
+    "n": 2024,
+    "above_133": 1714,
+    "away_peak_min_C": 92.45742044176893,
+    "away_peak_max_C": 140.26661267427284
+   },
+   "high": {
+    "n": 1612,
+    "above_133": 1612,
+    "away_peak_min_C": 138.7709963873172,
+    "away_peak_max_C": 145.90518793239642
+   }
+  },
+  "toward_above_133": 3634
+ },
+ "P3": {
+  "held": false,
+  "verdict": "failed",
+  "reference": {
+   "series": {
+    "stage5_tau10_C": 159.35818015671464,
+    "stage5_tau30_C": 160.05602935464816,
+    "reference_C": 160.05602935464816
+   },
+   "parallel": {
+    "stage5_tau10_C": 161.33763626308627,
+    "stage5_tau30_C": 162.0502674916287,
+    "reference_C": 162.0502674916287
+   }
+  },
+  "runs": {
+   "series_tau17.53": {
+    "lumped_peak_C": 159.628618767349,
+    "above_reference_K": -0.42741058729916404,
+    "held": false
+   },
+   "series_tau21.39": {
+    "lumped_peak_C": 159.76339192355601,
+    "above_reference_K": -0.292637431092146,
+    "held": false
+   },
+   "series_tau25.24": {
+    "lumped_peak_C": 159.8957778676571,
+    "above_reference_K": -0.16025148699105785,
+    "held": false
+   },
+   "parallel_tau17.53": {
+    "lumped_peak_C": 161.61401252734322,
+    "above_reference_K": -0.4362549642854674,
+    "held": false
+   },
+   "parallel_tau21.39": {
+    "lumped_peak_C": 161.75164866540433,
+    "above_reference_K": -0.29861882622435587,
+    "held": false
+   },
+   "parallel_tau25.24": {
+    "lumped_peak_C": 161.88678096820297,
+    "above_reference_K": -0.16348652342571768,
+    "held": false
+   }
+  },
+  "held_in": 0,
+  "of": 6
+ },
+ "P4": {
+  "held": false,
+  "verdict": "failed",
+  "inside": 0,
+  "of": 6,
+  "T1max_C": {
+   "series_tau17.53": 1494.0907290181199,
+   "parallel_tau17.53": 1493.2001250854678,
+   "series_tau21.39": 1457.5847204879856,
+   "parallel_tau21.39": 1456.5885335925486,
+   "series_tau25.24": 1425.041594228997,
+   "parallel_tau25.24": 1423.953173757283
+  },
+  "measured_range_C": [
+   164.0,
+   832.0
+  ],
+  "bracket_T1max_C": {
+   "bracket_min_series_tau17.53": 1317.8369769276437,
+   "bracket_min_parallel_tau17.53": 1316.9749426668127,
+   "bracket_min_series_tau21.39": 1289.8567526555462,
+   "bracket_min_parallel_tau21.39": 1288.8825668209524,
+   "bracket_min_series_tau25.24": 1264.4870709999482,
+   "bracket_min_parallel_tau25.24": 1263.4142057768986,
+   "bracket_max_series_tau17.53": 1534.0599289825518,
+   "bracket_max_parallel_tau17.53": 1533.1665062300767,
+   "bracket_max_series_tau21.39": 1495.4670648249994,
+   "bracket_max_parallel_tau21.39": 1494.469612455708,
+   "bracket_max_series_tau25.24": 1461.192350390204,
+   "bracket_max_parallel_tau25.24": 1460.1044427115808
+  }
+ },
+ "P5": {
+  "held": false,
+  "verdict": "failed",
+  "matched_pairs": [
+   {
+    "energy": "body",
+    "tau_s": 17.53315649867374
+   },
+   {
+    "energy": "body",
+    "tau_s": 21.38651984299561
+   },
+   {
+    "energy": "body",
+    "tau_s": 25.23988318731748
+   }
+  ],
+  "n_runs": 42,
+  "hot_reaches": 0,
+  "lumped_reaches": 0,
+  "hot_runs": [],
+  "lumped_runs": [],
+  "part_hot_held": false,
+  "part_lumped_held": true,
+  "hot_peak_max_C": 226.76479321191567,
+  "lumped_peak_max_C": 178.92036629899695
+ },
+ "P6": {
+  "held": false,
+  "verdict": "failed",
+  "hot_reaches": 0,
+  "n": 400,
+  "share": 0.0,
+  "binomial_se": 0.0,
+  "by_connection": {
+   "series": {
+    "n": 200,
+    "hot_reaches": 0
+   },
+   "parallel": {
+    "n": 200,
+    "hot_reaches": 0
+   }
+  },
+  "lumped_reaches": 0,
+  "hot_peak_min_C": 191.887886415173,
+  "hot_peak_max_C": 192.2174028896453
+ },
+ "P7": {
+  "held": true,
+  "verdict": "held",
+  "n_runs": 506,
+  "lumped_reaches": 50,
+  "violations": [],
+  "registered_sets_only": {
+   "lumped_reaches": 46,
+   "violations": [],
+   "held": true
+  },
+  "lumped_minus_hot_s": {
+   "min": 31.865990212972292,
+   "max": 219.23334774671193
+  },
+  "hot_reaches": 50
+ },
+ "V3": {
+  "cases": {
+   "series_refine2": {
+    "relative_change": 0.0027831052413216117,
+    "quantity": "peak rise of the hottest node",
+    "pass": true,
+    "lumped_peak_relative_change": 0.0,
+    "base": "body_mean_series_hcentral_gcentral_tau21.39_E33.22",
+    "check": "v3_mean_series_hcentral_gcentral_tau21.39_E33.22_refine2"
+   },
+   "series_dthalf": {
+    "relative_change": 3.250354175933196e-05,
+    "quantity": "peak rise of the hottest node",
+    "pass": true,
+    "lumped_peak_relative_change": 3.106805969689706e-05,
+    "base": "body_mean_series_hcentral_gcentral_tau21.39_E33.22",
+    "check": "v3_mean_series_hcentral_gcentral_tau21.39_E33.22_dthalf"
+   },
+   "parallel_refine2": {
+    "relative_change": 0.0031506794131262155,
+    "quantity": "peak rise of the hottest node",
+    "pass": true,
+    "lumped_peak_relative_change": 0.0,
+    "base": "body_mean_parallel_hcentral_gcentral_tau21.39_E33.22",
+    "check": "v3_mean_parallel_hcentral_gcentral_tau21.39_E33.22_refine2"
+   },
+   "parallel_dthalf": {
+    "relative_change": 3.749664660298515e-05,
+    "quantity": "peak rise of the hottest node",
+    "pass": true,
+    "lumped_peak_relative_change": 3.2048807985748195e-05,
+    "base": "body_mean_parallel_hcentral_gcentral_tau21.39_E33.22",
+    "check": "v3_mean_parallel_hcentral_gcentral_tau21.39_E33.22_dthalf"
+   }
+  },
+  "acceptance": 0.01,
+  "pass": true
+ },
+ "energy": {
+  "max_abs_residual_rel": 8.449258244590994e-12,
+  "acceptance": 1e-09,
+  "pass": true
+ },
+ "complete": {
+  "v3": true,
+  "body": true,
+  "total": true,
+  "bracket": true,
+  "peak": true,
+  "draws": true
+ }
+}

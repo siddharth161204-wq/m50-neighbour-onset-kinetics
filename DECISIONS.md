@@ -386,3 +386,14 @@ D60. The selection of D54, made by `src/stage6_run.py trigger` at 20:12 UTC on 2
 (4) V2 passed (`results/stage6_v2.json`): the energies and durations re-derived exactly; cell 1's peaks re-derived within 4.5e-13 K with the same step, and within 0.16 K with a fourth-order Runge-Kutta step ten times smaller; the same selection; the exploratory energy within 0.01 J.
 (5) Part A was computed at 20:12 UTC (`results/stage6_crossings.csv` and `.json`), and V1 passed (`results/stage6_v1.json`): in its three runs every crossing recomputed by hand equals the file's, and every largest stored sample equals the record's peak.
 
+## Added after the Stage 6 results (24 October; presentation and records)
+
+D61. Written after every Stage 6 run had ended and after the scoring. No registered quantity or verdict depends on it.
+(1) Records. The 506 runs ran on the author's laptop with 24 workers, from 00:02:41 to 03:52:01 UTC on 24 October (median 681 s for a run on the base mesh; the refined V3 runs took 8,358 and 8,374 s, within D55 (3)'s 180 min). They are exactly the run list of D60; none failed and none was retried for want of memory. The records, the series and the workers' logs are committed (`results/stage6_runs/`, `results/stage6_series/`, `results/stage6_logs/`). Between D60 (pushed at 20:13 UTC on 23 October) and the first run nothing was computed: the session waited for the author's approval to start the laptop's runs.
+(2) Quoted numbers. Every Stage 6 number that the README, the note, the release notes and the Zenodo description quote is computed by `src/stage6_numbers.py` (`results/stage6_numbers.json`), written while the runs went, from the records; the verdicts, V3 and the energy accounts are `src/stage6_score.py`'s (`results/stage6_scorecard.json`).
+(3) Figure 5 (`src/make_figure_stage6.py`), written before the predictions, changed twice, for legibility only: while the runs went (commit 6ac3b39), a run whose hot spot reaches 255.7 C ends there (D35), so it is drawn as a triangle on that line instead of joining its face away to its hot spot; after the results, a clock that never reaches 150 C is labelled so in panel a.
+(4) The note gains six Stage 6 lines, at most eight as the brief allows, without any change to its earlier text; its header carries the current date and the all-versions DOI (D58). To keep it on one page only its stylesheet changes:
+- body text and byline at 6.5 pt (6.9 pt), line height 1.08 (1.12);
+- tables at 6.4 pt (6.8 pt);
+- Figure 1 at 33 % of the text width (44 % before), still centred.
+

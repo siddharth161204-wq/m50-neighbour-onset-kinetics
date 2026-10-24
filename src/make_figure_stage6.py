@@ -87,8 +87,9 @@ for k, (c, label, col) in enumerate(clocks):
         n_in += LO <= t <= HI
         ax.scatter([t], [y0 + dy[r["h"]]], s=12, marker="o" if r["connection"] == "series" else "s",
                    facecolor=col if r["tau"] == 30.0 else SURF, edgecolor=col, lw=0.8, zorder=3)
-    ax.text(405, y0 + 0.30, f"{n_in} of {n_cross} inside" + (f"; {n_none} never" if n_none else ""), ha="right",
-            va="bottom", fontsize=5.8, color=INK2)
+    label_n = (f"{n_in} of {n_cross} inside" + (f"; {n_none} never reach 150 C" if n_none else "")) if n_cross \
+        else f"none of {n_none} reaches 150 C"
+    ax.text(405, y0 + 0.30, label_n, ha="right", va="bottom", fontsize=5.8, color=INK2)
 y_m = len(clocks)
 mt = M["times_to_propagation_s"]
 ax.scatter(mt, [y_m] * len(mt), s=14, color=INK, zorder=4, lw=0)
