@@ -1,7 +1,7 @@
 # Onset kinetics on a resolved neighbour cell: where a whole-cell threshold and a local one disagree
 
 ::: byline
-Siddharth Satte, Independent researcher, Pune, India, 12 October 2026. A pre-registered pilot: predictions commits b09ef1d (Stages 1, 2) and 2657aee (Stage 3), each public before its kinetics ran on an archived history. [doi.org/10.5281/zenodo.23279456](https://doi.org/10.5281/zenodo.23279456){.nobr}; [github.com/siddharth161204-wq/m50-neighbour-onset-kinetics](https://github.com/siddharth161204-wq/m50-neighbour-onset-kinetics){.nobr}.
+Siddharth Satte, Independent researcher, Pune, India, 24 October 2026. A pre-registered pilot: predictions commits b09ef1d (Stages 1, 2) and 2657aee (Stage 3), each public before its kinetics ran on an archived history. [doi.org/10.5281/zenodo.23279455](https://doi.org/10.5281/zenodo.23279455){.nobr}; [github.com/siddharth161204-wq/m50-neighbour-onset-kinetics](https://github.com/siddharth161204-wq/m50-neighbour-onset-kinetics){.nobr}.
 :::
 
 <div class="headline">
@@ -67,6 +67,15 @@ Figure 1. (a) First time each history self-heats at 0.15 K/min, 30 s release, 33
 5. Exploratory: over the paper's Section 2, in the central case, the face away and the lumped neighbour heat at 0.35 to 0.52 C/s (the line of contact faster), 3.5 to 5.2 times the tests without propagation (0.1 C/s) and near those with it (0.4), but not as hot.
 6. Scorecard: P1 (in 147 to 342 s) failed; P6 (30 to 90 %) failed at 0 %; P2 (lumped later or never) held; P3 to P5 and P7 not met, so failed.
 7. Lacking the tests' venting, ejecta and flame, the model was expected to propagate later than they did, if at all; it never does. Conduction and radiation alone do not suffice here, and P2 holds only because nothing propagates: whether a lumped cell can be trusted in a pack stays open.
+
+## Stage 6 (v1.2)
+
+1. The paper's 150 C criterion on the 36 Stage 5 grid runs (predictions c9586a8): only the lumped neighbour at the central contact crosses inside the measured 147 to 342 s, in 11 of 12 runs; the hot spot crosses at 7 to 22 s; the face away and the resolved mean never reach 150 C.
+2. Trigger matched to the tests (releases of 17.5 to 25.2 s from the paper's supplementary Figure 10, conditional): at 33.2 kJ cell 1 peaks at 526 to 537 C, inside the measured 164 to 832 C; at the Databank's total with ejecta, 107 kJ, at 1,424 to 1,494 C (P4 failed).
+3. Matched case, 442 runs with the 200 draws: neither neighbour reaches 255.7 C (hot spot at most 227 C, lumped 179 C), as in Stage 5.
+4. At 107 kJ the hot spot reaches 255.7 C in every run at 8 to 17 s, the lumped neighbour 32 to 168 s later (P7 held); exploratory, at the tests' median trigger peak (704.5 C, 45.2 kJ) only the high contact ignites (hot spot 17 s, lumped 198 to 236 s).
+5. Scorecard: P1 to P6 failed, five of them foreseeable from Stage 5's records, as the predictions state; P7 held.
+6. A trigger matched to the tests does not ignite the neighbour by conduction and radiation; where the hot spot ignites it does so before any test propagated, the whole cell at times like theirs. Next: the ignition condition (an aged SEI, the internal short as an event), set up, not run.
 
 ## What it means for the thesis
 
