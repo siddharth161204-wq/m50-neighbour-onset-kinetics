@@ -71,11 +71,11 @@ Figure 1. (a) First time each history self-heats at 0.15 K/min, 30 s release, 33
 ## Stage 6 (v1.2)
 
 1. The paper's 150 C criterion on the 36 Stage 5 grid runs (predictions c9586a8): only the lumped neighbour at the central contact crosses inside the measured 147 to 342 s, in 11 of 12 runs; the hot spot crosses at 7 to 22 s; the face away and the resolved mean never reach 150 C.
-2. Trigger matched to the tests (releases of 17.5 to 25.2 s from the paper's supplementary Figure 10, conditional): at 33.2 kJ cell 1 peaks at 526 to 537 C, inside the measured 164 to 832 C; at the Databank's total with ejecta, 107 kJ, at 1,424 to 1,494 C (P4 failed).
+2. Trigger matched to the tests (releases of 17.5 to 25.2 s from the paper's supplementary Figure 10, conditional): at 33.2 kJ cell 1 peaks at 526 to 537 C in the central case, inside the measured 164 to 832 C; at the Databank's total with ejecta, 107 kJ, at 1,424 to 1,494 C (P4 failed).
 3. Matched case, 442 runs with the 200 draws: neither neighbour reaches 255.7 C (hot spot at most 227 C, lumped 179 C), as in Stage 5.
 4. At 107 kJ the hot spot reaches 255.7 C in every run at 8 to 17 s, the lumped neighbour 32 to 168 s later (P7 held); exploratory, at the tests' median trigger peak (704.5 C, 45.2 kJ) only the high contact ignites (hot spot 17 s, lumped 198 to 236 s).
 5. Scorecard: P1 to P6 failed, five of them foreseeable from Stage 5's records, as the predictions state; P7 held.
-6. A trigger matched to the tests does not ignite the neighbour by conduction and radiation; where the hot spot ignites it does so before any test propagated, the whole cell at times like theirs. Next: the ignition condition (an aged SEI, the internal short as an event), set up, not run.
+6. The matched trigger does not ignite the neighbour by conduction and radiation; where the hot spot ignites it does so before any test propagated, the lumped neighbour inside their window in 13 of 50 runs. Next: the ignition condition (aged SEI, internal short as an event), set up, not run.
 
 ## What it means for the thesis
 

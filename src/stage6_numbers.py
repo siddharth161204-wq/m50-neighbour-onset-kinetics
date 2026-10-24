@@ -71,6 +71,9 @@ fact_mean = [r for r in A if r["set"] == "fact" and r["mean_crosses"]]
 out["part_a_mean_reaches_150_fact"] = {"n": len(fact_mean), "contacts": sorted({r["h"] for r in fact_mean}),
                                        "peak_C": rng([r["mean_peak_C"] for r in fact_mean])}
 out["part_a_sets_with_series"] = {s: AJ["a3_counts_with_series"][s]["all"] for s in ("sens", "v3")}
+lag = [r["toward_t_cross_s"] - r["hot_t_cross_s"] for r in grid
+       if r["toward_t_cross_s"] is not None and r["hot_t_cross_s"] is not None]
+out["part_a_toward_after_hot_150C_s"] = rng(lag)
 out["measured"] = {k: v for k, v in AJ["a2_measured"].items()}
 
 # ---------------------------------------------------------------- Part B
@@ -116,6 +119,19 @@ for s in ("body", "total", "bracket", "peak", "draws", "v3"):
     if s == "draws":
         sets["draws_by_connection"] = {c: summary([r for r in rs if r["connection"] == c]) for c in ("series", "parallel")}
 out["part_b_sets"] = sets
+win = {}
+for s_ in ("body", "total", "bracket", "peak", "draws", "v3", "all"):
+    rs = [r for r in B.values() if (s_ == "all" or r["set"] == s_) and r["lumped"]["propagated"]]
+    t = [r["lumped"]["t_prop_s"] for r in rs]
+    win[s_] = {"lumped_reaches": len(t), "inside": sum(LO <= x <= HI for x in t), "before": sum(x < LO for x in t),
+               "after": sum(x > HI for x in t), "inside_range_s": rng([x for x in t if LO <= x <= HI]),
+               "before_range_s": rng([x for x in t if x < LO]),
+               "inside_by_contact": {h: sum(LO <= r["lumped"]["t_prop_s"] <= HI for r in rs if r["h"] == h)
+                                     for h in ("low", "central", "high")}}
+    th = [r["resolved"]["t_prop_s"] for r in B.values() if (s_ == "all" or r["set"] == s_) and r["resolved"]["propagated"]]
+    win[s_]["hot_reaches"] = len(th)
+    win[s_]["hot_range_s"] = rng(th)
+out["part_b_255_7C_against_window"] = win
 L = TR["levels"]
 tm = L["tau_median_s"]
 cmc = {}
