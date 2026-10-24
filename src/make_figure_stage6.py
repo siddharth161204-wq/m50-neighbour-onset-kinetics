@@ -11,7 +11,8 @@ b  Part B. The neighbour's peak against cell 1's (the trigger's) peak: the sixte
    filled, propagated), and the model at the face away (circles) and at the hot spot (diamonds), joined per run, for
    Stage 5's trigger (the reference, grey), the matched trigger (33.2 kJ over the measured durations), the
    Databank's total energy (107.0 kJ, upper bracket) and the exploratory peak-matched energy. A run whose hot spot
-   reaches 255.7 C ends there, so its markers stop at that line. The grey band is the measured trigger range.
+   reaches 255.7 C ends there (D35): it is drawn as a triangle on that line. The grey band is the measured trigger
+   range.
 Colours: orange the hot spot, blue the lumped neighbour, magenta the face away, as in Figure 4; in b the sets.
 Usage: python3 make_figure_stage6.py --res ../results
 """
@@ -128,6 +129,9 @@ for name, label, col in (("body", "matched, 33.2 kJ", ORANGE), ("total", "Databa
                                   for r in rs]))
 for label, col, pts in sets:
     for x, y_away, y_hot, reached in pts:
+        if reached:                      # the resolved run ends at the hot spot's 255.7 C crossing (D35)
+            ax.scatter([x], [255.7], s=16, marker="^", facecolor=col, edgecolor=col, lw=0.6, zorder=3)
+            continue
         ax.plot([x, x], [y_away, y_hot], color=col, lw=0.6, alpha=0.6, zorder=2)
         ax.scatter([x], [y_away], s=10, marker="o", facecolor=SURF, edgecolor=col, lw=0.8, zorder=3)
         ax.scatter([x], [y_hot], s=12, marker="D", facecolor=col, edgecolor=col, lw=0.6, zorder=3)
@@ -145,7 +149,8 @@ hs = [Line2D([], [], ls="", marker="o", mfc=INK, mec=INK, ms=3.8, label="tests, 
       Line2D([], [], ls="", marker="o", mfc=SURF, mec=INK, ms=3.8, label="tests, not propagated")]
 hs += [Line2D([], [], ls="-", lw=0.8, color=col, marker="D", ms=3.2, label=label) for label, col, _ in sets]
 hs += [Line2D([], [], ls="", marker="o", mfc=SURF, mec=INK2, ms=3.4, label="model: face away"),
-       Line2D([], [], ls="", marker="D", mfc=INK2, mec=INK2, ms=3.2, label="model: hot spot")]
+       Line2D([], [], ls="", marker="D", mfc=INK2, mec=INK2, ms=3.2, label="model: hot spot"),
+       Line2D([], [], ls="", marker="^", mfc=INK2, mec=INK2, ms=3.6, label="hot spot reaches 255.7 C")]
 ax.legend(handles=hs, loc="upper right", fontsize=5.3, frameon=False, handlelength=1.4, ncol=1)
 ax.set_title("b", loc="left", fontsize=8.5, fontweight="bold", color=INK)
 fig.subplots_adjust(left=0.105, right=0.99, top=0.93, bottom=0.15)
