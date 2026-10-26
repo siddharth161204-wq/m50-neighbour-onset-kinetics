@@ -298,6 +298,27 @@ def more(out, recs, rows, card, rat, ej, v):
                        "probe_peak": rr.get("probe_peak"), "n_nodes": r.get("n_nodes"), "geom": rr.get("geom")}
         pdx[x] = d
     out["part_d_records"] = pdx
+    # Part D's ranges over the three tests, as the texts quote them
+    lay = [d["layer"] for d in pdx.values() if d.get("layer")]
+    ctl = [d["control"] for d in pdx.values() if d.get("control")]
+    rng = lambda v: [min(v), max(v)] if v else None
+    pa_d = {t: out["part_d"]["per_test"][t]["partA"] for t in pdx if out["part_d"]["per_test"][t].get("partA")}
+    out["part_d_summary"] = {
+        "n_layer_runs": len(lay), "n_control_runs": len(ctl),
+        "layer_C1_any": any(x["C1"] for x in lay) if lay else None,
+        "layer_roll_peak_C": rng([x["roll_peak_C"] for x in lay]), "layer_t_roll_peak_s": rng([x["t_roll_peak_s"] for x in lay]),
+        "layer_roll_peak_where_z_mm": sorted({round(x["where_roll_peak"]["z_mm"], 3) for x in lay}) if lay else None,
+        "layer_can_peak_C": rng([x["can_peak_C"] for x in lay]), "layer_t_can_peak_s": rng([x["t_can_peak_s"] for x in lay]),
+        "layer_wall_all_attempts_min": rng([x["wall_all_attempts_s"] / 60.0 for x in lay]),
+        "layer_attempts": sorted({x["resumed"] + 1 for x in lay}) if lay else None,
+        "layer_factorisations": rng([x["factorisations"] for x in lay]), "layer_steps": rng([x["steps"] for x in lay]),
+        "layer_energy_residual_max": max(x["energy_residual_rel"] for x in lay) if lay else None,
+        "control_t_C1_s": rng([x["t_C1_s"] for x in ctl]),
+        "control_less_partA_s": rng([out["part_d"]["per_test"][t]["split_alone_C1_s"] for t in pdx
+                                      if out["part_d"]["per_test"][t].get("split_alone_C1_s") is not None]),
+        "partA_t_C1_s": rng([x["t_C1_s"] for x in pa_d.values()]), "partA_t_C2_s": rng([x["t_C2_s"] for x in pa_d.values()]),
+        "partA_t_C3_s": rng([x["t_C3_s"] for x in pa_d.values()]),
+        "fC1_without_layer": {t: fsd(by[t]["fC1"]) for t in pdx}}
     # V3's runs beside their base run (D83 (3))
     base = recs.get("first_M50_PT_Exp1_f0.100000000")
     v3 = {"base": {"id": base["id"], "n_nodes": base["n_nodes"], "hot_peak_C": base["resolved"]["peak_hottest_C"],

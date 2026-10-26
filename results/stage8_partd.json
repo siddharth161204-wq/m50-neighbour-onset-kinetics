@@ -50,7 +50,15 @@
    "split_alone_C1_s": 4.1609791411545416e-05
   },
   "M50_ST_Exp2": {
-   "layer": null,
+   "layer": {
+    "C1": false,
+    "t_C1_s": null,
+    "hot_peak_C": 195.99845544677646,
+    "can_peak_C": 1919.6753555747587,
+    "where": null,
+    "factorisations": 29048,
+    "wall_s": 3268.235123157501
+   },
    "control": {
     "C1": true,
     "t_C1_s": 3.5594785447450596,
@@ -86,7 +94,20 @@
   },
   "M50_SP_Exp1": {
    "layer": null,
-   "control": null,
+   "control": {
+    "C1": true,
+    "t_C1_s": 3.542638009335694,
+    "hot_peak_C": 255.79845406500158,
+    "can_peak_C": 255.8275847564314,
+    "where": {
+     "r_mm": 10.55,
+     "theta_deg": 34.2991388235705,
+     "z_mm": 30.604499372999996,
+     "part": "roll"
+    },
+    "factorisations": 6,
+    "wall_s": 40.93414878845215
+   },
    "partA": {
     "C1": true,
     "t_C1_s": 3.542594906299764,
@@ -103,7 +124,8 @@
     "t_C2_s": 10.535303698920448,
     "C3": true,
     "t_C3_s": 7.786060676059256
-   }
+   },
+   "split_alone_C1_s": 4.310303593024756e-05
   }
  },
  "lumped": "unchanged by construction: the lumped neighbour is one node, with no boundary between the roll and the can (D82 (4)); its crossings are those of the first-round run at f = 0.2"
