@@ -1,0 +1,228 @@
+{
+ "V1": {
+  "pass": true,
+  "n_tests": 16,
+  "n_rows": 10,
+  "largest_relative_difference": 5.329070518200751e-15,
+  "central": 3.105285037678727,
+  "low": 2.2184597688106233,
+  "high": 4.156162904930802
+ },
+ "V2": {
+  "pass": true,
+  "tests": [
+   "M50_PT_Exp4",
+   "M50_ST_Exp3",
+   "M50_PT_Exp1"
+  ],
+  "chains": {
+   "M50_PT_Exp4 C1": {
+    "status": "bracket",
+    "lo": 0.0,
+    "hi": 0.0125,
+    "sequence": [
+     [
+      0.1,
+      true
+     ],
+     [
+      0.05,
+      true
+     ],
+     [
+      0.025,
+      true
+     ],
+     [
+      0.0125,
+      true
+     ]
+    ],
+    "series_agree": true,
+    "same_as_scoring": true,
+    "pass_": true
+   },
+   "M50_PT_Exp4 C2": {
+    "status": "bracket",
+    "lo": 0.0375,
+    "hi": 0.05,
+    "sequence": [
+     [
+      0.1,
+      true
+     ],
+     [
+      0.05,
+      true
+     ],
+     [
+      0.025,
+      false
+     ],
+     [
+      0.0375,
+      false
+     ]
+    ],
+    "series_agree": true,
+    "same_as_scoring": true,
+    "pass_": true
+   },
+   "M50_ST_Exp3 C1": {
+    "status": "bracket",
+    "lo": 0.075,
+    "hi": 0.0875,
+    "sequence": [
+     [
+      0.1,
+      true
+     ],
+     [
+      0.05,
+      false
+     ],
+     [
+      0.075,
+      false
+     ],
+     [
+      0.0875,
+      true
+     ]
+    ],
+    "series_agree": true,
+    "same_as_scoring": true,
+    "pass_": true
+   },
+   "M50_ST_Exp3 C2": {
+    "status": "bracket",
+    "lo": 0.225,
+    "hi": 0.2375,
+    "sequence": [
+     [
+      0.1,
+      false
+     ],
+     [
+      0.2,
+      false
+     ],
+     [
+      0.3,
+      true
+     ],
+     [
+      0.25,
+      true
+     ],
+     [
+      0.225,
+      false
+     ],
+     [
+      0.2375,
+      true
+     ]
+    ],
+    "series_agree": true,
+    "same_as_scoring": true,
+    "pass_": true
+   },
+   "M50_PT_Exp1 C1": {
+    "status": "bracket",
+    "lo": 0.15,
+    "hi": 0.1625,
+    "sequence": [
+     [
+      0.1,
+      false
+     ],
+     [
+      0.2,
+      true
+     ],
+     [
+      0.15,
+      false
+     ],
+     [
+      0.175,
+      true
+     ],
+     [
+      0.1625,
+      true
+     ]
+    ],
+    "series_agree": true,
+    "same_as_scoring": true,
+    "pass_": true
+   },
+   "M50_PT_Exp1 C2": {
+    "status": "bracket",
+    "lo": 0.45,
+    "hi": 0.4625,
+    "sequence": [
+     [
+      0.1,
+      false
+     ],
+     [
+      0.2,
+      false
+     ],
+     [
+      0.3,
+      false
+     ],
+     [
+      0.5,
+      true
+     ],
+     [
+      0.4,
+      false
+     ],
+     [
+      0.45,
+      false
+     ],
+     [
+      0.475,
+      true
+     ],
+     [
+      0.4625,
+      true
+     ]
+    ],
+    "series_agree": true,
+    "same_as_scoring": true,
+    "pass_": true
+   }
+  }
+ },
+ "V4": {
+  "pass": true,
+  "largest_relative": {
+   "resolved": 2.966326257254441e-12,
+   "lumped": 3.2359962279049087e-12,
+   "delivery": 0.0,
+   "joule": 0.0
+  },
+  "counts": {
+   "resolved": 128,
+   "lumped": 222,
+   "delivery": 318,
+   "joule": 48,
+   "delivery_whole": 186,
+   "joule_whole": 23
+  },
+  "bad": [],
+  "n_records": 222
+ },
+ "V3": {
+  "pass": null,
+  "missing": "[Errno 2] No such file or directory: '/home/claude/m50-neighbour-onset-kinetics/src/../results/stage8_runs/v3mesh_M50_PT_Exp1_f0.100000000.json'"
+ }
+}

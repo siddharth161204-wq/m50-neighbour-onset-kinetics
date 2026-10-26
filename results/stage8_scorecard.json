@@ -1,0 +1,1844 @@
+{
+ "fractions": [
+  0.1,
+  0.2,
+  0.3
+ ],
+ "criteria": {
+  "C1": "hot spot reaches 255.7 C",
+  "C2": "lumped neighbour reaches 255.7 C",
+  "C3": "lumped neighbour reaches 150 C"
+ },
+ "by_fraction": {
+  "0.1": {
+   "C1": {
+    "per_test": {
+     "M50_PT_Exp1": {
+      "predicted": false,
+      "t_s": null,
+      "class": "correct rejection",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     },
+     "M50_PT_Exp2": {
+      "predicted": true,
+      "t_s": 5.72977087658606,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     },
+     "M50_PT_Exp3": {
+      "predicted": true,
+      "t_s": 7.017315691779485,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     },
+     "M50_PT_Exp4": {
+      "predicted": true,
+      "t_s": 6.035890067386791,
+      "class": "hit",
+      "error_s": -265.9641099326132,
+      "f_actual": 0.1,
+      "measured_s": 272.0
+     },
+     "M50_PP_Exp1": {
+      "predicted": true,
+      "t_s": 5.167369217829129,
+      "class": "hit",
+      "error_s": -146.83263078217087,
+      "f_actual": 0.1,
+      "measured_s": 152.0
+     },
+     "M50_PP_Exp2": {
+      "predicted": true,
+      "t_s": 5.944501614328285,
+      "class": "hit",
+      "error_s": -141.0554983856717,
+      "f_actual": 0.1,
+      "measured_s": 147.0
+     },
+     "M50_PP_Exp3": {
+      "predicted": true,
+      "t_s": 5.688981718574171,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     },
+     "M50_PP_Exp4": {
+      "predicted": true,
+      "t_s": 5.457695914698618,
+      "class": "hit",
+      "error_s": -269.5423040853014,
+      "f_actual": 0.1,
+      "measured_s": 275.0
+     },
+     "M50_ST_Exp1": {
+      "predicted": true,
+      "t_s": 5.166065098098175,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     },
+     "M50_ST_Exp2": {
+      "predicted": true,
+      "t_s": 5.487758319331876,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     },
+     "M50_ST_Exp3": {
+      "predicted": true,
+      "t_s": 10.620998894591066,
+      "class": "hit",
+      "error_s": -166.37900110540895,
+      "f_actual": 0.1,
+      "measured_s": 177.0
+     },
+     "M50_ST_Exp4": {
+      "predicted": true,
+      "t_s": 5.318831990130507,
+      "class": "hit",
+      "error_s": -336.6811680098695,
+      "f_actual": 0.1,
+      "measured_s": 342.0
+     },
+     "M50_SP_Exp1": {
+      "predicted": true,
+      "t_s": 5.461314355316952,
+      "class": "hit",
+      "error_s": -217.53868564468306,
+      "f_actual": 0.1,
+      "measured_s": 223.0
+     },
+     "M50_SP_Exp2": {
+      "predicted": true,
+      "t_s": 5.323739816096479,
+      "class": "hit",
+      "error_s": -143.6762601839035,
+      "f_actual": 0.1,
+      "measured_s": 149.0
+     },
+     "M50_SP_Exp3": {
+      "predicted": true,
+      "t_s": 4.97172087503583,
+      "class": "hit",
+      "error_s": -205.02827912496417,
+      "f_actual": 0.1,
+      "measured_s": 210.0
+     },
+     "M50_SP_Exp4": {
+      "predicted": true,
+      "t_s": 6.073372572049871,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     }
+    },
+    "counts": {
+     "hit": 9,
+     "miss": 0,
+     "false alarm": 6,
+     "correct rejection": 1
+    },
+    "predicted": 15,
+    "score": 10,
+    "n": 16,
+    "errors_s": [
+     -336.6811680098695,
+     -269.5423040853014,
+     -265.9641099326132,
+     -217.53868564468306,
+     -205.02827912496417,
+     -166.37900110540895,
+     -146.83263078217087,
+     -143.6762601839035,
+     -141.0554983856717
+    ],
+    "within_60_s": 0
+   },
+   "C2": {
+    "per_test": {
+     "M50_PT_Exp1": {
+      "predicted": false,
+      "t_s": null,
+      "class": "correct rejection",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     },
+     "M50_PT_Exp2": {
+      "predicted": true,
+      "t_s": 18.885210405850152,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     },
+     "M50_PT_Exp3": {
+      "predicted": true,
+      "t_s": 88.34160253471252,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     },
+     "M50_PT_Exp4": {
+      "predicted": true,
+      "t_s": 23.387509183042894,
+      "class": "hit",
+      "error_s": -248.61249081695712,
+      "f_actual": 0.1,
+      "measured_s": 272.0
+     },
+     "M50_PP_Exp1": {
+      "predicted": true,
+      "t_s": 15.5144702215303,
+      "class": "hit",
+      "error_s": -136.4855297784697,
+      "f_actual": 0.1,
+      "measured_s": 152.0
+     },
+     "M50_PP_Exp2": {
+      "predicted": true,
+      "t_s": 21.427011071718212,
+      "class": "hit",
+      "error_s": -125.57298892828179,
+      "f_actual": 0.1,
+      "measured_s": 147.0
+     },
+     "M50_PP_Exp3": {
+      "predicted": true,
+      "t_s": 18.546144873955953,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     },
+     "M50_PP_Exp4": {
+      "predicted": true,
+      "t_s": 16.997746242094028,
+      "class": "hit",
+      "error_s": -258.002253757906,
+      "f_actual": 0.1,
+      "measured_s": 275.0
+     },
+     "M50_ST_Exp1": {
+      "predicted": true,
+      "t_s": 15.52747053182427,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     },
+     "M50_ST_Exp2": {
+      "predicted": true,
+      "t_s": 17.2055844416932,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     },
+     "M50_ST_Exp3": {
+      "predicted": false,
+      "t_s": null,
+      "class": "miss",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": 177.0
+     },
+     "M50_ST_Exp4": {
+      "predicted": true,
+      "t_s": 16.267121174587103,
+      "class": "hit",
+      "error_s": -325.7328788254129,
+      "f_actual": 0.1,
+      "measured_s": 342.0
+     },
+     "M50_SP_Exp1": {
+      "predicted": true,
+      "t_s": 17.048132007258506,
+      "class": "hit",
+      "error_s": -205.95186799274148,
+      "f_actual": 0.1,
+      "measured_s": 223.0
+     },
+     "M50_SP_Exp2": {
+      "predicted": true,
+      "t_s": 16.292414920948065,
+      "class": "hit",
+      "error_s": -132.70758507905194,
+      "f_actual": 0.1,
+      "measured_s": 149.0
+     },
+     "M50_SP_Exp3": {
+      "predicted": true,
+      "t_s": 14.693491555970018,
+      "class": "hit",
+      "error_s": -195.30650844403,
+      "f_actual": 0.1,
+      "measured_s": 210.0
+     },
+     "M50_SP_Exp4": {
+      "predicted": true,
+      "t_s": 24.612937031848908,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     }
+    },
+    "counts": {
+     "hit": 8,
+     "miss": 1,
+     "false alarm": 6,
+     "correct rejection": 1
+    },
+    "predicted": 14,
+    "score": 9,
+    "n": 16,
+    "errors_s": [
+     -325.7328788254129,
+     -258.002253757906,
+     -248.61249081695712,
+     -205.95186799274148,
+     -195.30650844403,
+     -136.4855297784697,
+     -132.70758507905194,
+     -125.57298892828179
+    ],
+    "within_60_s": 0
+   },
+   "C3": {
+    "per_test": {
+     "M50_PT_Exp1": {
+      "predicted": false,
+      "t_s": null,
+      "class": "correct rejection",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     },
+     "M50_PT_Exp2": {
+      "predicted": true,
+      "t_s": 11.361236548382092,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     },
+     "M50_PT_Exp3": {
+      "predicted": true,
+      "t_s": 14.051107963844277,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     },
+     "M50_PT_Exp4": {
+      "predicted": true,
+      "t_s": 11.913064993328316,
+      "class": "hit",
+      "error_s": -260.0869350066717,
+      "f_actual": 0.1,
+      "measured_s": 272.0
+     },
+     "M50_PP_Exp1": {
+      "predicted": true,
+      "t_s": 10.445224546782107,
+      "class": "hit",
+      "error_s": -141.5547754532179,
+      "f_actual": 0.1,
+      "measured_s": 152.0
+     },
+     "M50_PP_Exp2": {
+      "predicted": true,
+      "t_s": 11.743740720063402,
+      "class": "hit",
+      "error_s": -135.2562592799366,
+      "f_actual": 0.1,
+      "measured_s": 147.0
+     },
+     "M50_PP_Exp3": {
+      "predicted": true,
+      "t_s": 11.29084850112697,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     },
+     "M50_PP_Exp4": {
+      "predicted": true,
+      "t_s": 10.905558669565684,
+      "class": "hit",
+      "error_s": -264.09444133043434,
+      "f_actual": 0.1,
+      "measured_s": 275.0
+     },
+     "M50_ST_Exp1": {
+      "predicted": true,
+      "t_s": 10.447310077353704,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     },
+     "M50_ST_Exp2": {
+      "predicted": true,
+      "t_s": 10.959300243527851,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     },
+     "M50_ST_Exp3": {
+      "predicted": false,
+      "t_s": null,
+      "class": "miss",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": 177.0
+     },
+     "M50_ST_Exp4": {
+      "predicted": true,
+      "t_s": 10.688484315332103,
+      "class": "hit",
+      "error_s": -331.3115156846679,
+      "f_actual": 0.1,
+      "measured_s": 342.0
+     },
+     "M50_SP_Exp1": {
+      "predicted": true,
+      "t_s": 10.91615960736046,
+      "class": "hit",
+      "error_s": -212.08384039263953,
+      "f_actual": 0.1,
+      "measured_s": 223.0
+     },
+     "M50_SP_Exp2": {
+      "predicted": true,
+      "t_s": 10.696231797074597,
+      "class": "hit",
+      "error_s": -138.3037682029254,
+      "f_actual": 0.1,
+      "measured_s": 149.0
+     },
+     "M50_SP_Exp3": {
+      "predicted": true,
+      "t_s": 10.137743507233033,
+      "class": "hit",
+      "error_s": -199.86225649276696,
+      "f_actual": 0.1,
+      "measured_s": 210.0
+     },
+     "M50_SP_Exp4": {
+      "predicted": true,
+      "t_s": 11.990552473091668,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.1,
+      "measured_s": null
+     }
+    },
+    "counts": {
+     "hit": 8,
+     "miss": 1,
+     "false alarm": 6,
+     "correct rejection": 1
+    },
+    "predicted": 14,
+    "score": 9,
+    "n": 16,
+    "errors_s": [
+     -331.3115156846679,
+     -264.09444133043434,
+     -260.0869350066717,
+     -212.08384039263953,
+     -199.86225649276696,
+     -141.5547754532179,
+     -138.3037682029254,
+     -135.2562592799366
+    ],
+    "within_60_s": 0
+   }
+  },
+  "0.2": {
+   "C1": {
+    "per_test": {
+     "M50_PT_Exp1": {
+      "predicted": true,
+      "t_s": 10.223925326559877,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     },
+     "M50_PT_Exp2": {
+      "predicted": true,
+      "t_s": 3.7135378724255514,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     },
+     "M50_PT_Exp3": {
+      "predicted": true,
+      "t_s": 4.533764635853336,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     },
+     "M50_PT_Exp4": {
+      "predicted": true,
+      "t_s": 3.9086451629144308,
+      "class": "hit",
+      "error_s": -268.0913548370856,
+      "f_actual": 0.2,
+      "measured_s": 272.0
+     },
+     "M50_PP_Exp1": {
+      "predicted": true,
+      "t_s": 3.3553204886499457,
+      "class": "hit",
+      "error_s": -148.64467951135006,
+      "f_actual": 0.2,
+      "measured_s": 152.0
+     },
+     "M50_PP_Exp2": {
+      "predicted": true,
+      "t_s": 3.8504051211002257,
+      "class": "hit",
+      "error_s": -143.14959487889976,
+      "f_actual": 0.2,
+      "measured_s": 147.0
+     },
+     "M50_PP_Exp3": {
+      "predicted": true,
+      "t_s": 3.687538713148637,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     },
+     "M50_PP_Exp4": {
+      "predicted": true,
+      "t_s": 3.5402866436215894,
+      "class": "hit",
+      "error_s": -271.4597133563784,
+      "f_actual": 0.2,
+      "measured_s": 275.0
+     },
+     "M50_ST_Exp1": {
+      "predicted": true,
+      "t_s": 3.3544927362090395,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     },
+     "M50_ST_Exp2": {
+      "predicted": true,
+      "t_s": 3.5594349474225253,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     },
+     "M50_ST_Exp3": {
+      "predicted": true,
+      "t_s": 6.828315778760065,
+      "class": "hit",
+      "error_s": -170.17168422123993,
+      "f_actual": 0.2,
+      "measured_s": 177.0
+     },
+     "M50_ST_Exp4": {
+      "predicted": true,
+      "t_s": 3.45183695226786,
+      "class": "hit",
+      "error_s": -338.54816304773215,
+      "f_actual": 0.2,
+      "measured_s": 342.0
+     },
+     "M50_SP_Exp1": {
+      "predicted": true,
+      "t_s": 3.542594906299764,
+      "class": "hit",
+      "error_s": -219.45740509370023,
+      "f_actual": 0.2,
+      "measured_s": 223.0
+     },
+     "M50_SP_Exp2": {
+      "predicted": true,
+      "t_s": 3.454963777239961,
+      "class": "hit",
+      "error_s": -145.54503622276005,
+      "f_actual": 0.2,
+      "measured_s": 149.0
+     },
+     "M50_SP_Exp3": {
+      "predicted": true,
+      "t_s": 3.2305565683635553,
+      "class": "hit",
+      "error_s": -206.76944343163643,
+      "f_actual": 0.2,
+      "measured_s": 210.0
+     },
+     "M50_SP_Exp4": {
+      "predicted": true,
+      "t_s": 3.9325395847036955,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     }
+    },
+    "counts": {
+     "hit": 9,
+     "miss": 0,
+     "false alarm": 7,
+     "correct rejection": 0
+    },
+    "predicted": 16,
+    "score": 9,
+    "n": 16,
+    "errors_s": [
+     -338.54816304773215,
+     -271.4597133563784,
+     -268.0913548370856,
+     -219.45740509370023,
+     -206.76944343163643,
+     -170.17168422123993,
+     -148.64467951135006,
+     -145.54503622276005,
+     -143.14959487889976
+    ],
+    "within_60_s": 0
+   },
+   "C2": {
+    "per_test": {
+     "M50_PT_Exp1": {
+      "predicted": false,
+      "t_s": null,
+      "class": "correct rejection",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     },
+     "M50_PT_Exp2": {
+      "predicted": true,
+      "t_s": 10.942462683948943,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     },
+     "M50_PT_Exp3": {
+      "predicted": true,
+      "t_s": 13.301043546777432,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     },
+     "M50_PT_Exp4": {
+      "predicted": true,
+      "t_s": 11.435926542499951,
+      "class": "hit",
+      "error_s": -260.56407345750006,
+      "f_actual": 0.2,
+      "measured_s": 272.0
+     },
+     "M50_PP_Exp1": {
+      "predicted": true,
+      "t_s": 10.086244688280917,
+      "class": "hit",
+      "error_s": -141.9137553117191,
+      "f_actual": 0.2,
+      "measured_s": 152.0
+     },
+     "M50_PP_Exp2": {
+      "predicted": true,
+      "t_s": 11.28485111205148,
+      "class": "hit",
+      "error_s": -135.71514888794852,
+      "f_actual": 0.2,
+      "measured_s": 147.0
+     },
+     "M50_PP_Exp3": {
+      "predicted": true,
+      "t_s": 10.87926312312518,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     },
+     "M50_PP_Exp4": {
+      "predicted": true,
+      "t_s": 10.52866614806537,
+      "class": "hit",
+      "error_s": -264.4713338519346,
+      "f_actual": 0.2,
+      "measured_s": 275.0
+     },
+     "M50_ST_Exp1": {
+      "predicted": true,
+      "t_s": 10.085304482138486,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     },
+     "M50_ST_Exp2": {
+      "predicted": true,
+      "t_s": 10.575295655624044,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     },
+     "M50_ST_Exp3": {
+      "predicted": false,
+      "t_s": null,
+      "class": "miss",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": 177.0
+     },
+     "M50_ST_Exp4": {
+      "predicted": true,
+      "t_s": 10.318972466839792,
+      "class": "hit",
+      "error_s": -331.6810275331602,
+      "f_actual": 0.2,
+      "measured_s": 342.0
+     },
+     "M50_SP_Exp1": {
+      "predicted": true,
+      "t_s": 10.535303698920448,
+      "class": "hit",
+      "error_s": -212.46469630107956,
+      "f_actual": 0.2,
+      "measured_s": 223.0
+     },
+     "M50_SP_Exp2": {
+      "predicted": true,
+      "t_s": 10.326462200195628,
+      "class": "hit",
+      "error_s": -138.67353779980436,
+      "f_actual": 0.2,
+      "measured_s": 149.0
+     },
+     "M50_SP_Exp3": {
+      "predicted": true,
+      "t_s": 9.785337873011796,
+      "class": "hit",
+      "error_s": -200.2146621269882,
+      "f_actual": 0.2,
+      "measured_s": 210.0
+     },
+     "M50_SP_Exp4": {
+      "predicted": true,
+      "t_s": 11.500411768936996,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     }
+    },
+    "counts": {
+     "hit": 8,
+     "miss": 1,
+     "false alarm": 6,
+     "correct rejection": 1
+    },
+    "predicted": 14,
+    "score": 9,
+    "n": 16,
+    "errors_s": [
+     -331.6810275331602,
+     -264.4713338519346,
+     -260.56407345750006,
+     -212.46469630107956,
+     -200.2146621269882,
+     -141.9137553117191,
+     -138.67353779980436,
+     -135.71514888794852
+    ],
+    "within_60_s": 0
+   },
+   "C3": {
+    "per_test": {
+     "M50_PT_Exp1": {
+      "predicted": false,
+      "t_s": null,
+      "class": "correct rejection",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     },
+     "M50_PT_Exp2": {
+      "predicted": true,
+      "t_s": 8.085017541910913,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     },
+     "M50_PT_Exp3": {
+      "predicted": true,
+      "t_s": 9.476015943411,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     },
+     "M50_PT_Exp4": {
+      "predicted": true,
+      "t_s": 8.422629230730692,
+      "class": "hit",
+      "error_s": -263.5773707692693,
+      "f_actual": 0.2,
+      "measured_s": 272.0
+     },
+     "M50_PP_Exp1": {
+      "predicted": true,
+      "t_s": 7.452815409007546,
+      "class": "hit",
+      "error_s": -144.54718459099246,
+      "f_actual": 0.2,
+      "measured_s": 152.0
+     },
+     "M50_PP_Exp2": {
+      "predicted": true,
+      "t_s": 8.322311936097131,
+      "class": "hit",
+      "error_s": -138.67768806390288,
+      "f_actual": 0.2,
+      "measured_s": 147.0
+     },
+     "M50_PP_Exp3": {
+      "predicted": true,
+      "t_s": 8.039614626400228,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     },
+     "M50_PP_Exp4": {
+      "predicted": true,
+      "t_s": 7.781321571113242,
+      "class": "hit",
+      "error_s": -267.21867842888673,
+      "f_actual": 0.2,
+      "measured_s": 275.0
+     },
+     "M50_ST_Exp1": {
+      "predicted": true,
+      "t_s": 7.451930736396176,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     },
+     "M50_ST_Exp2": {
+      "predicted": true,
+      "t_s": 7.815737523089959,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     },
+     "M50_ST_Exp3": {
+      "predicted": true,
+      "t_s": 13.747497476815875,
+      "class": "hit",
+      "error_s": -163.25250252318412,
+      "f_actual": 0.2,
+      "measured_s": 177.0
+     },
+     "M50_ST_Exp4": {
+      "predicted": true,
+      "t_s": 7.625422120211884,
+      "class": "hit",
+      "error_s": -334.3745778797881,
+      "f_actual": 0.2,
+      "measured_s": 342.0
+     },
+     "M50_SP_Exp1": {
+      "predicted": true,
+      "t_s": 7.786060676059256,
+      "class": "hit",
+      "error_s": -215.21393932394074,
+      "f_actual": 0.2,
+      "measured_s": 223.0
+     },
+     "M50_SP_Exp2": {
+      "predicted": true,
+      "t_s": 7.630957918172348,
+      "class": "hit",
+      "error_s": -141.36904208182764,
+      "f_actual": 0.2,
+      "measured_s": 149.0
+     },
+     "M50_SP_Exp3": {
+      "predicted": true,
+      "t_s": 7.229342576968968,
+      "class": "hit",
+      "error_s": -202.77065742303103,
+      "f_actual": 0.2,
+      "measured_s": 210.0
+     },
+     "M50_SP_Exp4": {
+      "predicted": true,
+      "t_s": 8.464406896754321,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.2,
+      "measured_s": null
+     }
+    },
+    "counts": {
+     "hit": 9,
+     "miss": 0,
+     "false alarm": 6,
+     "correct rejection": 1
+    },
+    "predicted": 15,
+    "score": 10,
+    "n": 16,
+    "errors_s": [
+     -334.3745778797881,
+     -267.21867842888673,
+     -263.5773707692693,
+     -215.21393932394074,
+     -202.77065742303103,
+     -163.25250252318412,
+     -144.54718459099246,
+     -141.36904208182764,
+     -138.67768806390288
+    ],
+    "within_60_s": 0
+   }
+  },
+  "0.3": {
+   "C1": {
+    "per_test": {
+     "M50_PT_Exp1": {
+      "predicted": true,
+      "t_s": 7.852617043282735,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     },
+     "M50_PT_Exp2": {
+      "predicted": true,
+      "t_s": 2.889033177912405,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     },
+     "M50_PT_Exp3": {
+      "predicted": true,
+      "t_s": 3.518125644107371,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     },
+     "M50_PT_Exp4": {
+      "predicted": true,
+      "t_s": 3.038824461038059,
+      "class": "hit",
+      "error_s": -268.9611755389619,
+      "f_actual": 0.3,
+      "measured_s": 272.0
+     },
+     "M50_PP_Exp1": {
+      "predicted": true,
+      "t_s": 2.613740337119275,
+      "class": "hit",
+      "error_s": -149.38625966288072,
+      "f_actual": 0.3,
+      "measured_s": 152.0
+     },
+     "M50_PP_Exp2": {
+      "predicted": true,
+      "t_s": 2.994121763779575,
+      "class": "hit",
+      "error_s": -144.0058782362204,
+      "f_actual": 0.3,
+      "measured_s": 147.0
+     },
+     "M50_PP_Exp3": {
+      "predicted": true,
+      "t_s": 2.86906417059178,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     },
+     "M50_PP_Exp4": {
+      "predicted": true,
+      "t_s": 2.755933750946396,
+      "class": "hit",
+      "error_s": -272.2440662490536,
+      "f_actual": 0.3,
+      "measured_s": 275.0
+     },
+     "M50_ST_Exp1": {
+      "predicted": true,
+      "t_s": 2.613104234882108,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     },
+     "M50_ST_Exp2": {
+      "predicted": true,
+      "t_s": 2.770649106160066,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     },
+     "M50_ST_Exp3": {
+      "predicted": true,
+      "t_s": 5.270404920907521,
+      "class": "hit",
+      "error_s": -171.7295950790925,
+      "f_actual": 0.3,
+      "measured_s": 177.0
+     },
+     "M50_ST_Exp4": {
+      "predicted": true,
+      "t_s": 2.6879510694345905,
+      "class": "hit",
+      "error_s": -339.3120489305654,
+      "f_actual": 0.3,
+      "measured_s": 342.0
+     },
+     "M50_SP_Exp1": {
+      "predicted": true,
+      "t_s": 2.757708112340265,
+      "class": "hit",
+      "error_s": -220.24229188765975,
+      "f_actual": 0.3,
+      "measured_s": 223.0
+     },
+     "M50_SP_Exp2": {
+      "predicted": true,
+      "t_s": 2.690354949044671,
+      "class": "hit",
+      "error_s": -146.30964505095534,
+      "f_actual": 0.3,
+      "measured_s": 149.0
+     },
+     "M50_SP_Exp3": {
+      "predicted": true,
+      "t_s": 2.5177970294420033,
+      "class": "hit",
+      "error_s": -207.482202970558,
+      "f_actual": 0.3,
+      "measured_s": 210.0
+     },
+     "M50_SP_Exp4": {
+      "predicted": true,
+      "t_s": 3.05716319840514,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     }
+    },
+    "counts": {
+     "hit": 9,
+     "miss": 0,
+     "false alarm": 7,
+     "correct rejection": 0
+    },
+    "predicted": 16,
+    "score": 9,
+    "n": 16,
+    "errors_s": [
+     -339.3120489305654,
+     -272.2440662490536,
+     -268.9611755389619,
+     -220.24229188765975,
+     -207.482202970558,
+     -171.7295950790925,
+     -149.38625966288072,
+     -146.30964505095534,
+     -144.0058782362204
+    ],
+    "within_60_s": 0
+   },
+   "C2": {
+    "per_test": {
+     "M50_PT_Exp1": {
+      "predicted": false,
+      "t_s": null,
+      "class": "correct rejection",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     },
+     "M50_PT_Exp2": {
+      "predicted": true,
+      "t_s": 8.962314264881714,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     },
+     "M50_PT_Exp3": {
+      "predicted": true,
+      "t_s": 10.501641968231768,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     },
+     "M50_PT_Exp4": {
+      "predicted": true,
+      "t_s": 9.335993486515042,
+      "class": "hit",
+      "error_s": -262.66400651348494,
+      "f_actual": 0.3,
+      "measured_s": 272.0
+     },
+     "M50_PP_Exp1": {
+      "predicted": true,
+      "t_s": 8.262609067673955,
+      "class": "hit",
+      "error_s": -143.73739093232604,
+      "f_actual": 0.3,
+      "measured_s": 152.0
+     },
+     "M50_PP_Exp2": {
+      "predicted": true,
+      "t_s": 9.224976987888928,
+      "class": "hit",
+      "error_s": -137.77502301211106,
+      "f_actual": 0.3,
+      "measured_s": 147.0
+     },
+     "M50_PP_Exp3": {
+      "predicted": true,
+      "t_s": 8.912134360632423,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     },
+     "M50_PP_Exp4": {
+      "predicted": true,
+      "t_s": 8.626176116939984,
+      "class": "hit",
+      "error_s": -266.37382388306,
+      "f_actual": 0.3,
+      "measured_s": 275.0
+     },
+     "M50_ST_Exp1": {
+      "predicted": true,
+      "t_s": 8.261036818837466,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     },
+     "M50_ST_Exp2": {
+      "predicted": true,
+      "t_s": 8.66361417989872,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     },
+     "M50_ST_Exp3": {
+      "predicted": true,
+      "t_s": 16.670972391629086,
+      "class": "hit",
+      "error_s": -160.32902760837092,
+      "f_actual": 0.3,
+      "measured_s": 177.0
+     },
+     "M50_ST_Exp4": {
+      "predicted": true,
+      "t_s": 8.453011735972884,
+      "class": "hit",
+      "error_s": -333.5469882640271,
+      "f_actual": 0.3,
+      "measured_s": 342.0
+     },
+     "M50_SP_Exp1": {
+      "predicted": true,
+      "t_s": 8.63074866489351,
+      "class": "hit",
+      "error_s": -214.3692513351065,
+      "f_actual": 0.3,
+      "measured_s": 223.0
+     },
+     "M50_SP_Exp2": {
+      "predicted": true,
+      "t_s": 8.459155097331982,
+      "class": "hit",
+      "error_s": -140.54084490266803,
+      "f_actual": 0.3,
+      "measured_s": 149.0
+     },
+     "M50_SP_Exp3": {
+      "predicted": true,
+      "t_s": 8.014620116245966,
+      "class": "hit",
+      "error_s": -201.98537988375404,
+      "f_actual": 0.3,
+      "measured_s": 210.0
+     },
+     "M50_SP_Exp4": {
+      "predicted": true,
+      "t_s": 9.38149975288578,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     }
+    },
+    "counts": {
+     "hit": 9,
+     "miss": 0,
+     "false alarm": 6,
+     "correct rejection": 1
+    },
+    "predicted": 15,
+    "score": 10,
+    "n": 16,
+    "errors_s": [
+     -333.5469882640271,
+     -266.37382388306,
+     -262.66400651348494,
+     -214.3692513351065,
+     -201.98537988375404,
+     -160.32902760837092,
+     -143.73739093232604,
+     -140.54084490266803,
+     -137.77502301211106
+    ],
+    "within_60_s": 0
+   },
+   "C3": {
+    "per_test": {
+     "M50_PT_Exp1": {
+      "predicted": true,
+      "t_s": 17.389886238322767,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     },
+     "M50_PT_Exp2": {
+      "predicted": true,
+      "t_s": 6.6143995788877925,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     },
+     "M50_PT_Exp3": {
+      "predicted": true,
+      "t_s": 7.754900437890446,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     },
+     "M50_PT_Exp4": {
+      "predicted": true,
+      "t_s": 6.891210706435829,
+      "class": "hit",
+      "error_s": -265.10878929356414,
+      "f_actual": 0.3,
+      "measured_s": 272.0
+     },
+     "M50_PP_Exp1": {
+      "predicted": true,
+      "t_s": 6.0964063097860475,
+      "class": "hit",
+      "error_s": -145.90359369021394,
+      "f_actual": 0.3,
+      "measured_s": 152.0
+     },
+     "M50_PP_Exp2": {
+      "predicted": true,
+      "t_s": 6.80896967387413,
+      "class": "hit",
+      "error_s": -140.19103032612588,
+      "f_actual": 0.3,
+      "measured_s": 147.0
+     },
+     "M50_PP_Exp3": {
+      "predicted": true,
+      "t_s": 6.577198948459983,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     },
+     "M50_PP_Exp4": {
+      "predicted": true,
+      "t_s": 6.36541456234373,
+      "class": "hit",
+      "error_s": -268.63458543765626,
+      "f_actual": 0.3,
+      "measured_s": 275.0
+     },
+     "M50_ST_Exp1": {
+      "predicted": true,
+      "t_s": 6.09522742034117,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     },
+     "M50_ST_Exp2": {
+      "predicted": true,
+      "t_s": 6.393246301931846,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     },
+     "M50_ST_Exp3": {
+      "predicted": true,
+      "t_s": 10.689845271620392,
+      "class": "hit",
+      "error_s": -166.31015472837962,
+      "f_actual": 0.3,
+      "measured_s": 177.0
+     },
+     "M50_ST_Exp4": {
+      "predicted": true,
+      "t_s": 6.237196814050145,
+      "class": "hit",
+      "error_s": -335.76280318594985,
+      "f_actual": 0.3,
+      "measured_s": 342.0
+     },
+     "M50_SP_Exp1": {
+      "predicted": true,
+      "t_s": 6.368805977174199,
+      "class": "hit",
+      "error_s": -216.6311940228258,
+      "f_actual": 0.3,
+      "measured_s": 223.0
+     },
+     "M50_SP_Exp2": {
+      "predicted": true,
+      "t_s": 6.241738001900137,
+      "class": "hit",
+      "error_s": -142.75826199809987,
+      "f_actual": 0.3,
+      "measured_s": 149.0
+     },
+     "M50_SP_Exp3": {
+      "predicted": true,
+      "t_s": 5.912789984150548,
+      "class": "hit",
+      "error_s": -204.08721001584945,
+      "f_actual": 0.3,
+      "measured_s": 210.0
+     },
+     "M50_SP_Exp4": {
+      "predicted": true,
+      "t_s": 6.924840335680329,
+      "class": "false alarm",
+      "error_s": null,
+      "f_actual": 0.3,
+      "measured_s": null
+     }
+    },
+    "counts": {
+     "hit": 9,
+     "miss": 0,
+     "false alarm": 7,
+     "correct rejection": 0
+    },
+    "predicted": 16,
+    "score": 9,
+    "n": 16,
+    "errors_s": [
+     -335.76280318594985,
+     -268.63458543765626,
+     -265.10878929356414,
+     -216.6311940228258,
+     -204.08721001584945,
+     -166.31015472837962,
+     -145.90359369021394,
+     -142.75826199809987,
+     -140.19103032612588
+    ],
+    "within_60_s": 0
+   }
+  }
+ },
+ "stage7_f0": {
+  "C1": {
+   "per_test": {
+    "M50_PT_Exp1": {
+     "predicted": false,
+     "t_s": null,
+     "class": "correct rejection",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    },
+    "M50_PT_Exp2": {
+     "predicted": false,
+     "t_s": null,
+     "class": "correct rejection",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    },
+    "M50_PT_Exp3": {
+     "predicted": false,
+     "t_s": null,
+     "class": "correct rejection",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    },
+    "M50_PT_Exp4": {
+     "predicted": false,
+     "t_s": null,
+     "class": "miss",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": 272.0
+    },
+    "M50_PP_Exp1": {
+     "predicted": true,
+     "t_s": 18.147180005881136,
+     "class": "hit",
+     "error_s": -133.85281999411887,
+     "f_actual": 0.0,
+     "measured_s": 152.0
+    },
+    "M50_PP_Exp2": {
+     "predicted": false,
+     "t_s": null,
+     "class": "miss",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": 147.0
+    },
+    "M50_PP_Exp3": {
+     "predicted": false,
+     "t_s": null,
+     "class": "correct rejection",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    },
+    "M50_PP_Exp4": {
+     "predicted": true,
+     "t_s": 21.095099790630037,
+     "class": "hit",
+     "error_s": -253.90490020936997,
+     "f_actual": 0.0,
+     "measured_s": 275.0
+    },
+    "M50_ST_Exp1": {
+     "predicted": true,
+     "t_s": 18.121670677241454,
+     "class": "false alarm",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    },
+    "M50_ST_Exp2": {
+     "predicted": true,
+     "t_s": 21.69415604040123,
+     "class": "false alarm",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    },
+    "M50_ST_Exp3": {
+     "predicted": false,
+     "t_s": null,
+     "class": "miss",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": 177.0
+    },
+    "M50_ST_Exp4": {
+     "predicted": true,
+     "t_s": 19.330230125512834,
+     "class": "hit",
+     "error_s": -322.66976987448714,
+     "f_actual": 0.0,
+     "measured_s": 342.0
+    },
+    "M50_SP_Exp1": {
+     "predicted": true,
+     "t_s": 21.10279661998705,
+     "class": "hit",
+     "error_s": -201.89720338001294,
+     "f_actual": 0.0,
+     "measured_s": 223.0
+    },
+    "M50_SP_Exp2": {
+     "predicted": true,
+     "t_s": 19.376093935883553,
+     "class": "hit",
+     "error_s": -129.62390606411645,
+     "f_actual": 0.0,
+     "measured_s": 149.0
+    },
+    "M50_SP_Exp3": {
+     "predicted": true,
+     "t_s": 16.937252847669065,
+     "class": "hit",
+     "error_s": -193.06274715233093,
+     "f_actual": 0.0,
+     "measured_s": 210.0
+    },
+    "M50_SP_Exp4": {
+     "predicted": false,
+     "t_s": null,
+     "class": "correct rejection",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    }
+   },
+   "counts": {
+    "hit": 6,
+    "miss": 3,
+    "false alarm": 2,
+    "correct rejection": 5
+   },
+   "predicted": 8,
+   "score": 11,
+   "n": 16,
+   "errors_s": [
+    -322.66976987448714,
+    -253.90490020936997,
+    -201.89720338001294,
+    -193.06274715233093,
+    -133.85281999411887,
+    -129.62390606411645
+   ],
+   "within_60_s": 0
+  },
+  "C2": {
+   "per_test": {
+    "M50_PT_Exp1": {
+     "predicted": false,
+     "t_s": null,
+     "class": "correct rejection",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    },
+    "M50_PT_Exp2": {
+     "predicted": false,
+     "t_s": null,
+     "class": "correct rejection",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    },
+    "M50_PT_Exp3": {
+     "predicted": false,
+     "t_s": null,
+     "class": "correct rejection",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    },
+    "M50_PT_Exp4": {
+     "predicted": false,
+     "t_s": null,
+     "class": "miss",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": 272.0
+    },
+    "M50_PP_Exp1": {
+     "predicted": true,
+     "t_s": 277.27239398170724,
+     "class": "hit",
+     "error_s": 125.27239398170724,
+     "f_actual": 0.0,
+     "measured_s": 152.0
+    },
+    "M50_PP_Exp2": {
+     "predicted": false,
+     "t_s": null,
+     "class": "miss",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": 147.0
+    },
+    "M50_PP_Exp3": {
+     "predicted": false,
+     "t_s": null,
+     "class": "correct rejection",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    },
+    "M50_PP_Exp4": {
+     "predicted": false,
+     "t_s": null,
+     "class": "miss",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": 275.0
+    },
+    "M50_ST_Exp1": {
+     "predicted": false,
+     "t_s": null,
+     "class": "correct rejection",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    },
+    "M50_ST_Exp2": {
+     "predicted": false,
+     "t_s": null,
+     "class": "correct rejection",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    },
+    "M50_ST_Exp3": {
+     "predicted": false,
+     "t_s": null,
+     "class": "miss",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": 177.0
+    },
+    "M50_ST_Exp4": {
+     "predicted": false,
+     "t_s": null,
+     "class": "miss",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": 342.0
+    },
+    "M50_SP_Exp1": {
+     "predicted": false,
+     "t_s": null,
+     "class": "miss",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": 223.0
+    },
+    "M50_SP_Exp2": {
+     "predicted": false,
+     "t_s": null,
+     "class": "miss",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": 149.0
+    },
+    "M50_SP_Exp3": {
+     "predicted": true,
+     "t_s": 221.49980754256322,
+     "class": "hit",
+     "error_s": 11.499807542563218,
+     "f_actual": 0.0,
+     "measured_s": 210.0
+    },
+    "M50_SP_Exp4": {
+     "predicted": false,
+     "t_s": null,
+     "class": "correct rejection",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    }
+   },
+   "counts": {
+    "hit": 2,
+    "miss": 7,
+    "false alarm": 0,
+    "correct rejection": 7
+   },
+   "predicted": 2,
+   "score": 9,
+   "n": 16,
+   "errors_s": [
+    11.499807542563218,
+    125.27239398170724
+   ],
+   "within_60_s": 1
+  },
+  "C3": {
+   "per_test": {
+    "M50_PT_Exp1": {
+     "predicted": false,
+     "t_s": null,
+     "class": "correct rejection",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    },
+    "M50_PT_Exp2": {
+     "predicted": true,
+     "t_s": 94.65791525826378,
+     "class": "false alarm",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    },
+    "M50_PT_Exp3": {
+     "predicted": true,
+     "t_s": 182.35165864000084,
+     "class": "false alarm",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    },
+    "M50_PT_Exp4": {
+     "predicted": true,
+     "t_s": 108.42758439802381,
+     "class": "hit",
+     "error_s": -163.5724156019762,
+     "f_actual": 0.0,
+     "measured_s": 272.0
+    },
+    "M50_PP_Exp1": {
+     "predicted": true,
+     "t_s": 73.95027928127054,
+     "class": "hit",
+     "error_s": -78.04972071872946,
+     "f_actual": 0.0,
+     "measured_s": 152.0
+    },
+    "M50_PP_Exp2": {
+     "predicted": true,
+     "t_s": 104.08010608144849,
+     "class": "hit",
+     "error_s": -42.91989391855151,
+     "f_actual": 0.0,
+     "measured_s": 147.0
+    },
+    "M50_PP_Exp3": {
+     "predicted": true,
+     "t_s": 92.97873785643263,
+     "class": "false alarm",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    },
+    "M50_PP_Exp4": {
+     "predicted": true,
+     "t_s": 84.03389596142131,
+     "class": "hit",
+     "error_s": -190.9661040385787,
+     "f_actual": 0.0,
+     "measured_s": 275.0
+    },
+    "M50_ST_Exp1": {
+     "predicted": true,
+     "t_s": 76.61677466577062,
+     "class": "false alarm",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    },
+    "M50_ST_Exp2": {
+     "predicted": true,
+     "t_s": 88.51113496937994,
+     "class": "false alarm",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    },
+    "M50_ST_Exp3": {
+     "predicted": false,
+     "t_s": null,
+     "class": "miss",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": 177.0
+    },
+    "M50_ST_Exp4": {
+     "predicted": true,
+     "t_s": 82.0723405187076,
+     "class": "hit",
+     "error_s": -259.9276594812924,
+     "f_actual": 0.0,
+     "measured_s": 342.0
+    },
+    "M50_SP_Exp1": {
+     "predicted": true,
+     "t_s": 87.47254780171956,
+     "class": "hit",
+     "error_s": -135.52745219828046,
+     "f_actual": 0.0,
+     "measured_s": 223.0
+    },
+    "M50_SP_Exp2": {
+     "predicted": true,
+     "t_s": 82.25314968706574,
+     "class": "hit",
+     "error_s": -66.74685031293426,
+     "f_actual": 0.0,
+     "measured_s": 149.0
+    },
+    "M50_SP_Exp3": {
+     "predicted": true,
+     "t_s": 70.11522716075493,
+     "class": "hit",
+     "error_s": -139.88477283924507,
+     "f_actual": 0.0,
+     "measured_s": 210.0
+    },
+    "M50_SP_Exp4": {
+     "predicted": true,
+     "t_s": 115.33069633425065,
+     "class": "false alarm",
+     "error_s": null,
+     "f_actual": 0.0,
+     "measured_s": null
+    }
+   },
+   "counts": {
+    "hit": 8,
+    "miss": 1,
+    "false alarm": 6,
+    "correct rejection": 1
+   },
+   "predicted": 14,
+   "score": 9,
+   "n": 16,
+   "errors_s": [
+    -259.9276594812924,
+    -190.9661040385787,
+    -163.5724156019762,
+    -139.88477283924507,
+    -135.52745219828046,
+    -78.04972071872946,
+    -66.74685031293426,
+    -42.91989391855151
+   ],
+   "within_60_s": 1
+  }
+ }
+}

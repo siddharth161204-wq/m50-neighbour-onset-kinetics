@@ -1,0 +1,86 @@
+{
+ "what": "exploratory, written after Part A's results; not registered (D87)",
+ "n": 16,
+ "propagated": 9,
+ "constant_model_loglik": -10.965027316423331,
+ "C2": {
+  "mid": {
+   "median_f": 0.026661330234964878,
+   "s": 4.6891071992512545,
+   "loglik": -9.382596051346887,
+   "p_by_test": {
+    "M50_PT_Exp1": 0.27238287976546216,
+    "M50_PT_Exp2": 0.5299212703248681,
+    "M50_PT_Exp3": 0.4060803953014542,
+    "M50_PT_Exp4": 0.4579407518361945,
+    "M50_PP_Exp1": 1.0,
+    "M50_PP_Exp2": 0.4864916744650461,
+    "M50_PP_Exp3": 0.5299212703248681,
+    "M50_PP_Exp4": 0.62147700789166,
+    "M50_ST_Exp1": 0.62147700789166,
+    "M50_ST_Exp2": 0.5299212703248681,
+    "M50_ST_Exp3": 0.32250589613095637,
+    "M50_ST_Exp4": 0.62147700789166,
+    "M50_SP_Exp1": 0.5299212703248681,
+    "M50_SP_Exp2": 0.62147700789166,
+    "M50_SP_Exp3": 1.0,
+    "M50_SP_Exp4": 0.4579407518361945
+   },
+   "fitted": true,
+   "likelihood_ratio_vs_constant": 3.164862530152888,
+   "p_value_chi2_1": 0.07523876989309708
+  },
+  "lo": {
+   "fitted": false,
+   "why": "tests at f* = 0 that did not propagate: M50_ST_Exp1"
+  },
+  "hi": {
+   "median_f": 0.03662005849289493,
+   "s": 4.256949871974756,
+   "loglik": -9.436134548016323,
+   "p_by_test": {
+    "M50_PT_Exp1": 0.2756732806746896,
+    "M50_PT_Exp2": 0.5357252360143522,
+    "M50_PT_Exp3": 0.4189358380676683,
+    "M50_PT_Exp4": 0.47084048088939134,
+    "M50_PP_Exp1": 1.0,
+    "M50_PP_Exp2": 0.4977747555403266,
+    "M50_PP_Exp3": 0.5357252360143522,
+    "M50_PP_Exp4": 0.5996715718330212,
+    "M50_ST_Exp1": 0.5996715718330212,
+    "M50_ST_Exp2": 0.5357252360143522,
+    "M50_ST_Exp3": 0.33026519680029454,
+    "M50_ST_Exp4": 0.5996715718330212,
+    "M50_SP_Exp1": 0.5357252360143522,
+    "M50_SP_Exp2": 0.5996715718330212,
+    "M50_SP_Exp3": 1.0,
+    "M50_SP_Exp4": 0.47084048088939134
+   },
+   "fitted": true,
+   "likelihood_ratio_vs_constant": 3.0577855368140163,
+   "p_value_chi2_1": 0.0803511068308802
+  }
+ },
+ "C1": {
+  "mid": {
+   "fitted": false,
+   "why": "tests at f* = 0 that did not propagate: M50_ST_Exp1, M50_ST_Exp2"
+  },
+  "lo": {
+   "fitted": false,
+   "why": "tests at f* = 0 that did not propagate: M50_PT_Exp2, M50_PP_Exp3, M50_ST_Exp1, M50_ST_Exp2, M50_SP_Exp4"
+  },
+  "hi": {
+   "fitted": false,
+   "why": "tests at f* = 0 that did not propagate: M50_ST_Exp1, M50_ST_Exp2"
+  }
+ },
+ "logistic_in_trigger_energy": {
+  "intercept": -1.5111756353432395,
+  "slope_per_kJ": 0.042764379529210306,
+  "E50_kJ": 35.337251515856266,
+  "loglik": -10.480368918170333,
+  "likelihood_ratio_vs_constant": 0.9693167965059963,
+  "p_value_chi2_1": 0.3248506269850069
+ }
+}
