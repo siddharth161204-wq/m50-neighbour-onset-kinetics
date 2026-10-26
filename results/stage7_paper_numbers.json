@@ -2532,6 +2532,29 @@
   ],
   "memory_retries": 0,
   "worker_peak_memory_MB": null,
-  "worker_peak_memory_note": "None where every record carries 0.0: the reading failed on Windows (D75)"
+  "worker_peak_memory_note": "None where every record carries 0.0: the reading failed on Windows (D75)",
+  "part_a_to_900_s": {
+   "n": 70,
+   "wall_median_s": 704.0153583288193,
+   "wall_range_s": [
+    358.15731954574585,
+    795.8673114776611
+   ]
+  },
+  "part_a_stopped_early": {
+   "n": 58,
+   "wall_range_s": [
+    14.308372497558594,
+    29.457337141036987
+   ]
+  },
+  "part_c_event_runs": {
+   "n": 56,
+   "wall_median_s": 543.7960958480835,
+   "wall_range_s": [
+    463.99576711654663,
+    603.8210952281952
+   ]
+  }
  }
 }

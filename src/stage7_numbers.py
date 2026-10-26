@@ -331,5 +331,14 @@ if recs:
                    "memory_retries": sum(r.get("memory_retries", 0) for r in good),
                    "worker_peak_memory_MB": rng([r.get("worker_peak_memory_MB") or None for r in good]),
                    "worker_peak_memory_note": "None where every record carries 0.0: the reading failed on Windows (D75)"}
+    pa = [r for r in good if r["set"] in ("pertest", "duration", "aged")]
+    w9 = [r["wall_s"] for r in pa if r["resolved"]["t_end_s"] >= 900.0 - 1e-6]
+    ws = [r["wall_s"] for r in pa if r["resolved"]["t_end_s"] < 900.0 - 1e-6]
+    we = [r["wall_s"] for r in good if r["set"] in ("event", "eventlow")]
+    out["runs"]["part_a_to_900_s"] = {"n": len(w9), "wall_median_s": statistics.median(w9) if w9 else None,
+                                      "wall_range_s": rng(w9)}
+    out["runs"]["part_a_stopped_early"] = {"n": len(ws), "wall_range_s": rng(ws)}
+    out["runs"]["part_c_event_runs"] = {"n": len(we), "wall_median_s": statistics.median(we) if we else None,
+                                        "wall_range_s": rng(we)}
 json.dump(out, open(os.path.join(RES, "stage7_paper_numbers.json"), "w"), indent=1, default=float)
 print("wrote stage7_paper_numbers.json")
