@@ -6,9 +6,10 @@
       (stage8_inputs uses the two ejecta columns instead), the median by numpy, the trigger energies read from
       results/stage7_triggers.json; against results/stage8_ejected.csv, within 1e-9 relative.
   V2  the searches of C1 and C2 for three tests fixed in D83 (2), replayed by this script's own rules from the stored
-      records and Stage 7's: from f = 0, each fraction the rules call for is looked up among the records (it must
-      exist), its outcome read from the record and checked against its stored series, until the bracket is at most
-      0.02 wide; the same f* to the interval as stage8_score.py's.
+      records and Stage 7's: from f = 0, the first round's fractions (0.1, 0.2 and 0.3, run for every test, D78 (2);
+      D88 (6)), then each fraction the rules call for, looked up among the records (it must exist), its outcome read
+      from the record and checked against its stored series, until the bracket is at most 0.02 wide; the same f* to
+      the interval as stage8_score.py's.
   V3  the first-round run of M50_PT_Exp1 at f = 0.1 against the same run with every mesh spacing halved (v3mesh) and
       with every step limit halved (v3step): the hot spot's peak rise (its peak less 25 C) changes by under 1 % in
       each; if the base run reaches 255.7 C, its crossing time instead.
@@ -87,11 +88,20 @@ def _outcome(rec, crit, series_dir):
     return met, bool(ok)
 
 
-def replay(points_of, probes=(0.1, 0.2, 0.3, 0.5, 1.0), width=0.02):
-    """This script's own statement of D78's rules: try the probes inside the bracket in order, then halve it, until it
-    is at most `width` wide; points_of(f) returns the outcome at f (None if no record)."""
+def replay(points_of, first=(0.1, 0.2, 0.3), probes=(0.5, 1.0), width=0.02):
+    """This script's own statement of D78's rules: from f = 0; where it does not meet the criterion, the first round's
+    fractions, 0.1, 0.2 and 0.3, which D78 (2) runs for every test (D88 (6)); then 0.5 and 1.0 while the bracket holds
+    them; then halving, until the bracket is at most `width` wide. points_of(f) returns the outcome at f (None if no
+    record). A fraction that meets the criterion below one that does not is reported as broken."""
     pts = {0.0: points_of(0.0)}
     seq = []
+    if pts[0.0] is not True:
+        for p in first:
+            m = points_of(p)
+            if m is None:
+                return {"status": "missing", "missing_f": p, "sequence": seq}
+            pts[p] = m
+            seq.append((p, m))
     while True:
         no = [f for f, m in pts.items() if m is False]
         yes = [f for f, m in pts.items() if m is True]
@@ -99,6 +109,8 @@ def replay(points_of, probes=(0.1, 0.2, 0.3, 0.5, 1.0), width=0.02):
         hi = min(yes) if yes else None
         if hi == 0.0:
             return {"status": "zero", "lo": 0.0, "hi": 0.0, "sequence": seq}
+        if lo is not None and hi is not None and lo > hi:
+            return {"status": "broken", "lo": lo, "hi": hi, "sequence": seq}
         if lo is not None and lo >= 1.0:
             return {"status": "above", "lo": lo, "hi": None, "sequence": seq}
         nxt = None

@@ -58,7 +58,8 @@ def lowering(a, b):
 
 
 def relation(ref, var):
-    """Whether var's f* is established lower than ref's, higher, the same bracket, or equal (both 0)."""
+    """Whether var's f* is established lower than ref's, higher, the same bracket, two brackets that overlap without
+    either being established (D88 (3): the rescaled brackets of the ratio's bracket), or equal (both 0)."""
     if ref["status"] == "zero" and var["status"] == "zero":
         return "equal (both 0)"
     lv = lowering(ref, var)
@@ -74,7 +75,9 @@ def relation(ref, var):
         return "lower"
     if lv[1] <= 1e-12 and lv[0] < -1e-12:
         return "higher"
-    return "same bracket"
+    if ref["status"] == var["status"] == "bracket" and abs(ref["lo"] - var["lo"]) <= 1e-12 and abs(ref["hi"] - var["hi"]) <= 1e-12:
+        return "same bracket"
+    return "overlapping, not established"
 
 
 def measured():
@@ -165,6 +168,11 @@ def write_thresholds(rows, path):
              "ratiohigh_c1", "ratiohigh_c2", "elec05_c1", "elec20_c1"]
     for v in vsets:
         cols += [f"{v}", f"{v}_relation", f"{v}_lowering_min", f"{v}_lowering_max"]
+    # D86 (1), D88 (4): where a variant ended in Part A's own bracket, the relation and lowering above are those of
+    # the refined brackets (both halved on to an eighth), given here, with the comparison at 0.02 beside them
+    for v in ("dur10_c1", "dur10_c2", "dur60_c1", "dur60_c2", "capend_c1"):
+        cols += [f"{v}_refined_partA", f"{v}_refined", f"{v}_unrefined_relation", f"{v}_unrefined_lowering_min",
+                 f"{v}_unrefined_lowering_max"]
     with open(path, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=cols)
         w.writeheader()
@@ -185,6 +193,12 @@ def write_thresholds(rows, path):
                 d[f"{v}_relation"] = x["relation"]
                 if x["lowering"] is not None:
                     d[f"{v}_lowering_min"], d[f"{v}_lowering_max"] = x["lowering"]
+                if "refined" in x:
+                    d[f"{v}_refined_partA"] = fs_text(x["refined_partA"])
+                    d[f"{v}_refined"] = fs_text(x["refined"])
+                    d[f"{v}_unrefined_relation"] = x["unrefined_relation"]
+                    if x["unrefined_lowering"] is not None:
+                        d[f"{v}_unrefined_lowering_min"], d[f"{v}_unrefined_lowering_max"] = x["unrefined_lowering"]
             w.writerow(d)
 
 
@@ -328,7 +342,7 @@ def verdicts(rows, card):
                     rel = relation(grp[i][crit], grp[j][crit])      # j has the larger energy
                     if rel == "higher":
                         inv.append([conn, crit, grp[i]["test"], grp[j]["test"]])
-                    elif rel in ("same bracket", "both above 1"):
+                    elif rel in ("same bracket", "overlapping, not established", "both above 1"):
                         ties.append([conn, crit, grp[i]["test"], grp[j]["test"]])
     v["P6"] = {"holds": not inv, "inversions": inv, "ties_within_the_resolution": ties}
     # P7

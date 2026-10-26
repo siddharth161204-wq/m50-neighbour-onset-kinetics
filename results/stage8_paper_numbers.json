@@ -1976,7 +1976,7 @@
       -0.017496852328,
       0.0125
      ],
-     "relation": "same bracket"
+     "relation": "overlapping, not established"
     },
     "ratiolow_c2": {
      "f": {
@@ -1988,7 +1988,7 @@
       -0.022493704655999997,
       0.0075031476720000025
      ],
-     "relation": "same bracket"
+     "relation": "overlapping, not established"
     },
     "ratiohigh_c1": {
      "f": {
@@ -2000,7 +2000,7 @@
       -0.00933939883,
       0.0125
      ],
-     "relation": "same bracket"
+     "relation": "overlapping, not established"
     },
     "ratiohigh_c2": {
      "f": {
@@ -2012,7 +2012,7 @@
       -0.006178797659999999,
       0.015660601170000003
      ],
-     "relation": "same bracket"
+     "relation": "overlapping, not established"
     },
     "capend_c2": {
      "f": {
@@ -2110,7 +2110,7 @@
       -0.022493704655999997,
       0.0075031476720000025
      ],
-     "relation": "same bracket"
+     "relation": "overlapping, not established"
     },
     "ratiohigh_c1": {
      "f": {
@@ -2134,7 +2134,7 @@
       -0.006178797659999999,
       0.015660601170000003
      ],
-     "relation": "same bracket"
+     "relation": "overlapping, not established"
     },
     "capend_c2": {
      "f": {
@@ -2232,7 +2232,7 @@
       -0.022493704655999997,
       0.0075031476720000025
      ],
-     "relation": "same bracket"
+     "relation": "overlapping, not established"
     },
     "ratiohigh_c1": {
      "f": {
@@ -2256,7 +2256,7 @@
       -0.006178797659999999,
       0.015660601170000003
      ],
-     "relation": "same bracket"
+     "relation": "overlapping, not established"
     },
     "capend_c2": {
      "f": {
@@ -2553,7 +2553,20 @@
   "per_test": {
    "M50_PP_Exp3": {
     "layer": null,
-    "control": null,
+    "control": {
+     "C1": true,
+     "t_C1_s": 3.6875803229400486,
+     "hot_peak_C": 255.83094718925076,
+     "can_peak_C": 255.8595119427905,
+     "where": {
+      "r_mm": 10.55,
+      "theta_deg": 34.2991388235705,
+      "z_mm": 30.604499372999996,
+      "part": "roll"
+     },
+     "factorisations": 6,
+     "wall_s": 48.27388095855713
+    },
     "partA": {
      "C1": true,
      "t_C1_s": 3.687538713148637,
@@ -2570,7 +2583,8 @@
      "t_C2_s": 10.87926312312518,
      "C3": true,
      "t_C3_s": 8.039614626400228
-    }
+    },
+    "split_alone_C1_s": 4.1609791411545416e-05
    },
    "M50_ST_Exp2": {
     "layer": null,
@@ -2948,6 +2962,14 @@
        true
       ],
       [
+       0.2,
+       true
+      ],
+      [
+       0.3,
+       true
+      ],
+      [
        0.05,
        true
       ],
@@ -2974,6 +2996,14 @@
        true
       ],
       [
+       0.2,
+       true
+      ],
+      [
+       0.3,
+       true
+      ],
+      [
        0.05,
        true
       ],
@@ -2997,6 +3027,14 @@
      "sequence": [
       [
        0.1,
+       true
+      ],
+      [
+       0.2,
+       true
+      ],
+      [
+       0.3,
        true
       ],
       [
@@ -3061,6 +3099,10 @@
       ],
       [
        0.2,
+       true
+      ],
+      [
+       0.3,
        true
       ],
       [
@@ -3133,15 +3175,15 @@
     "joule": 0.0
    },
    "counts": {
-    "resolved": 128,
+    "resolved": 129,
     "lumped": 222,
-    "delivery": 318,
+    "delivery": 319,
     "joule": 48,
     "delivery_whole": 186,
     "joule_whole": 23
    },
    "bad": [],
-   "n_records": 222
+   "n_records": 223
   },
   "V3": {
    "pass": null,

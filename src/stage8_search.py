@@ -62,7 +62,8 @@ def state(points, probes=(), width=IN.WIDTH, f_max=IN.F_MAX):
 
 def restart_probes(lo_a, hi_a, status_a):
     """The probes of a chain restarted from Part A's result (A4, Part B): Part A's upper end, then its lower end, then
-    Part A's points above, in order."""
+    the grid's points (0.1, 0.2, 0.3, 0.5 and 1.0) in order, of which `state` tries those the bracket holds, below
+    Part A's lower end as well as above its upper end (D88 (2), which corrects D79 (1) and D80's "points above")."""
     out = []
     if status_a == "bracket":
         out = [hi_a] + ([lo_a] if lo_a and lo_a > 0 else [])
