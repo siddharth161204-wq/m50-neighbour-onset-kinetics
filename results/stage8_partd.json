@@ -7,7 +7,15 @@
  "f": 0.2,
  "per_test": {
   "M50_PP_Exp3": {
-   "layer": null,
+   "layer": {
+    "C1": false,
+    "t_C1_s": null,
+    "hot_peak_C": 192.38423207087254,
+    "can_peak_C": 1885.6107628774912,
+    "where": null,
+    "factorisations": 27226,
+    "wall_s": 3006.0174696445465
+   },
    "control": {
     "C1": true,
     "t_C1_s": 3.6875803229400486,
@@ -43,7 +51,20 @@
   },
   "M50_ST_Exp2": {
    "layer": null,
-   "control": null,
+   "control": {
+    "C1": true,
+    "t_C1_s": 3.5594785447450596,
+    "hot_peak_C": 255.8341731870396,
+    "can_peak_C": 255.86323875720154,
+    "where": {
+     "r_mm": 10.55,
+     "theta_deg": 34.2991388235705,
+     "z_mm": 30.604499372999996,
+     "part": "roll"
+    },
+    "factorisations": 6,
+    "wall_s": 44.81546378135681
+   },
    "partA": {
     "C1": true,
     "t_C1_s": 3.5594349474225253,
@@ -60,7 +81,8 @@
     "t_C2_s": 10.575295655624044,
     "C3": true,
     "t_C3_s": 7.815737523089959
-   }
+   },
+   "split_alone_C1_s": 4.35973225343389e-05
   },
   "M50_SP_Exp1": {
    "layer": null,

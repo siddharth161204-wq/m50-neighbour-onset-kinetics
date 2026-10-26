@@ -165,9 +165,14 @@ def more(out, recs, rows, card, rat, ej, v):
         "facing_half_deg": 90.0, "capend_from_z_over_L": IN.CAPEND_FROM,
         "lumped_heat_capacity_J_per_K": float(V12.LP.C_CELL),
         "E_stored_J": IN.E_STORED_J, "f_e": list(IN.F_E), "E_joule_J": [f * IN.E_STORED_J for f in IN.F_E],
+        "state_of_charge_percent": 100,
+        "prediction_bounds": {"P1_below": 0.3, "P2_below": 0.3, "P2_at_least": 3, "P3_band": [0.05, 0.5], "P3_at_least": 12,
+                              "P4_at_least_predicted": 9, "P4_at_least_within": 4, "P4_window_s": 60.0, "P5_at_most": 12,
+                              "P7_lowering_below": 0.1},
         "sources": {"levels_C": "src/stage8_inputs.py (D35, D67)", "run_end_s": "D35", "P4_window_s": "predictions_stage8.md, P4",
                     "width": "D78", "lumped_heat_capacity_J_per_K": "src/v12_model.py LP.C_CELL (the two-cell study's)",
-                    "E_stored_J": "D68"}}
+                    "E_stored_J": "D68", "state_of_charge_percent": "assumed since Stage 5, as the Databank's nail tests (D53)",
+                    "prediction_bounds": "predictions_stage8.md, P1 to P7 as registered"}}
     # inputs
     ee_lo = sorted(x["E_e_low_J"] for x in ej.values())
     ee_hi = sorted(x["E_e_high_J"] for x in ej.values())
@@ -293,6 +298,21 @@ def more(out, recs, rows, card, rat, ej, v):
                        "probe_peak": rr.get("probe_peak"), "n_nodes": r.get("n_nodes"), "geom": rr.get("geom")}
         pdx[x] = d
     out["part_d_records"] = pdx
+    # V3's runs beside their base run (D83 (3))
+    base = recs.get("first_M50_PT_Exp1_f0.100000000")
+    v3 = {"base": {"id": base["id"], "n_nodes": base["n_nodes"], "hot_peak_C": base["resolved"]["peak_hottest_C"],
+                   "t_hot_peak_s": base["resolved"]["t_peak_hottest_s"], "steps": base["resolved"]["steps"]} if base else None}
+    for vset in ("v3mesh", "v3step"):
+        r = recs.get(f"{vset}_M50_PT_Exp1_f0.100000000")
+        if r is None or r.get("failed") or base is None:
+            v3[vset] = None
+            continue
+        rise_b, rise_v = base["resolved"]["peak_hottest_C"] - 25.0, r["resolved"]["peak_hottest_C"] - 25.0
+        v3[vset] = {"n_nodes": r["n_nodes"], "hot_peak_C": r["resolved"]["peak_hottest_C"],
+                    "t_hot_peak_s": r["resolved"]["t_peak_hottest_s"], "steps": r["resolved"]["steps"],
+                    "relative_change_of_peak_rise": abs(rise_v / rise_b - 1.0), "wall_s": r["wall_s"],
+                    "energy_residual_rel": r["resolved"]["energy_residual_rel"]}
+    out["v3"] = v3
     # the runs, grouped as the texts count them, and their times on the cloud machine
     bs = out["runs"]["by_set"]
     grp = {"first": ["first"], "searches": ["c1", "c2"],

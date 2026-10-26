@@ -29,7 +29,7 @@ def fs_text(fs):
     if fs["status"] == "above":
         return "above 1"
     if fs["status"] == "bracket":
-        return f"({fs['lo']:.6g}, {fs['hi']:.6g}]"
+        return f"({fs['lo']:.10g}, {fs['hi']:.10g}]"
     return fs["status"]
 
 
