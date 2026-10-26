@@ -89,6 +89,22 @@ for c in CRIT:
         pb[c][h]["predicted_tests"] = sorted(r["test"] for r in PT if r["criterion"] == c and r["contact"] == h
                                              and r["predicted"] is True)
 out["part_b"] = pb
+# the levels of D67 (2), and how many runs Part B reads its criteria from (the sixteen tests at three contacts, fresh
+# and aged SEI; the 32 runs with the other two releases enter the sensitivities only)
+out["levels_C"] = {"prop": IN.LEVEL_PROP_C, "150": IN.LEVEL_150_C, "sep": IN.LEVEL_SEP_C}
+out["part_a_runs"] = {"n": sum(1 for r in recs.values() if r["set"] in ("pertest", "duration", "aged")),
+                      "criteria_runs": sum(1 for r in recs.values() if r["set"] in ("pertest", "aged")),
+                      "release_runs": sum(1 for r in recs.values() if r["set"] == "duration")}
+# the time errors within 60 s, criterion by criterion and contact by contact
+for c in CRIT:
+    for h in pb.get(c, {}):
+        pb[c][h]["errors_within_60s_s"] = sorted(r["error_s"] for r in PT if r["criterion"] == c and r["contact"] == h
+                                                 and r["error_s"] is not None and abs(r["error_s"]) <= 60.0)
+# V1, as results/stage7_v1.json records it
+v1p = os.path.join(RES, "stage7_v1.json")
+if os.path.exists(v1p):
+    V1 = json.load(open(v1p))
+    out["V1"] = {k: V1[k] for k in ("pass", "largest_difference_J", "largest_peak_offset_K", "acceptance")}
 out["sensitivities_central"] = SC.get("sensitivities_central")
 
 
