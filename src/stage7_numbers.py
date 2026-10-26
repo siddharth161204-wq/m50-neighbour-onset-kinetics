@@ -248,6 +248,8 @@ for s in ("event", "eventlow"):
             "away_reaches_255_7_after_start_s": rng([a["away_t_prop_after_event_s"] - t0 for a, t0 in ae
                                                      if a["away_t_prop_after_event_s"] is not None])}
 out["part_c_timing"] = tm_
+out["event"] = {"E_J": IN.E_EVENT_J, "E_low_J": IN.E_EVENT_LOW_J, "Wh": [IN.E_EVENT_WH, IN.E_EVENT_LOW_WH],
+                "tau_s": TR["levels"]["tau_median_s"], "level_C": IN.LEVEL_SEP_C}
 # the two timings of one test against each other: an event at the whole cell's melting starts from a hotter cell
 pairs = {}
 for r in recs.values():

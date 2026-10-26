@@ -345,7 +345,8 @@ def main(res, predictions_commit=None, self_heating=True):
                         "t_end_s": r["resolved"]["t_end_s"], "repeats_part_a_until_event": same,
                         "repeat_compared_until_s": span,
                         "peaked_before_end": all(x is not None and x < r["resolved"]["t_end_s"] - 1.0 for x in
-                                                 (q.get("t_hot_s"), q.get("t_lumped_s"), q.get("t_mean_s"), q.get("t_away_s"))),
+                                                 (q.get("t_hot_s"), q.get("t_lumped_s"), q.get("t_mean_s"), q.get("t_away_s"),
+                                                  q.get("t_toward_s"))),       # every clock (D68 (5); D76 (3))
                         "wall_s": r["wall_s"]})
     if ev_rows:
         with open(os.path.join(res, "stage7_events.csv"), "w", newline="") as fh:
@@ -393,8 +394,8 @@ def main(res, predictions_commit=None, self_heating=True):
     allr = list(recs.values())
     res_r = [abs(r["resolved"]["energy_residual_rel"]) for r in allr]
     res_l = [abs(r["lumped"]["energy_residual_rel"]) for r in allr if r["lumped"].get("energy_residual_rel") is not None]
-    dl = [abs(r["resolved"]["event"]["delivered_J"] - r["event"]["E_J"]) / r["event"]["E_J"]
-          for r in allr if r.get("event") and r["resolved"].get("event")]
+    dl = [abs(r[m]["event"]["delivered_J"] - r["event"]["E_J"]) / r["event"]["E_J"]     # resolved and lumped (D76 (3))
+          for r in allr if r.get("event") for m in ("resolved", "lumped") if r[m].get("event")]
     sc["V4"] = {"max_abs_residual_resolved": max(res_r) if res_r else None,
                 "max_abs_residual_lumped": max(res_l) if res_l else None, "n_resolved": len(res_r), "n_lumped": len(res_l),
                 "max_event_delivery_error_rel": max(dl) if dl else None, "acceptance": ENERGY_TOL,
@@ -406,7 +407,9 @@ def main(res, predictions_commit=None, self_heating=True):
                 "event_runs_compared_until_their_part_a_runs_stop": sum(
                     r["repeat_compared_until_s"] is not None and r["repeat_compared_until_s"] < r["t_event_s"] - 0.1
                     for r in ev_rows if r["set"] in ("event", "eventlow")),
-                "pass": bool(res_r) and max(res_r) < ENERGY_TOL and (not res_l or max(res_l) < ENERGY_TOL)}
+                "n_event_deliveries": len(dl),
+                "pass": bool(res_r) and max(res_r) < ENERGY_TOL and (not res_l or max(res_l) < ENERGY_TOL)
+                and (not dl or max(dl) < ENERGY_TOL)}
     # ------------------------------------------------------------ the per-run file
     keys = ("id", "set", "test", "connection", "h", "tau", "E_body_J", "sei0", "refine", "dt_scale", "T1max_C", "t_T1max_s",
             "wall_s", "model")

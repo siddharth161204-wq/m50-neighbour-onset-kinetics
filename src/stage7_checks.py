@@ -9,9 +9,10 @@ V1  The sixteen trigger energies re-derived from the recorded peak-to-energy tab
 V2  The Part B crossings of three runs, fixed before the predictions, recomputed by hand from their archived series:
     each history is scanned sample by sample, the two samples that bracket each level are printed, and the crossing
     is interpolated with the formula written out here; the peaks are compared with the largest stored sample. The
-    runs' own 255.7 C crossings (C1, C2 and C6, interpolated within the step, D35) are not in the stored series,
-    which ends at the last 0.1 s sample before the stop; for them V2 checks that the crossing lies after that sample
-    and no later than the run's end. Compared with the records' Stage 7 quantities and results/stage7_crossings.csv.
+    runs' own 255.7 C crossings (C1, C2 and C6) are interpolated within the step that crossed (D35), and the stored
+    series ends with that step's sample, at or above 255.7 C (D76 (2) corrects D70 (2), which had it end before the
+    stop); for them V2 checks that every sample stored before the crossing lies below 255.7 C and that the run ended
+    within a step of it. Compared with the records' Stage 7 quantities and results/stage7_crossings.csv.
     Acceptance: the same crossings within 1e-9 s.
 Usage: python3 stage7_checks.py v1 | v2 [--res DIR]
 """

@@ -1,7 +1,7 @@
 # Onset kinetics on a resolved neighbour cell: where a whole-cell threshold and a local one disagree
 
 ::: byline
-Siddharth Satte, Independent researcher, Pune, India, 24 October 2026. A pre-registered pilot: predictions commits b09ef1d (Stages 1, 2) and 2657aee (Stage 3), each public before its kinetics ran on an archived history. [doi.org/10.5281/zenodo.23279455](https://doi.org/10.5281/zenodo.23279455){.nobr}; [github.com/siddharth161204-wq/m50-neighbour-onset-kinetics](https://github.com/siddharth161204-wq/m50-neighbour-onset-kinetics){.nobr}.
+Siddharth Satte, Independent researcher, Pune, India, 26 October 2026. A pre-registered pilot: predictions commits b09ef1d (Stages 1, 2) and 2657aee (Stage 3), each public before its kinetics ran on an archived history. [doi.org/10.5281/zenodo.23279455](https://doi.org/10.5281/zenodo.23279455){.nobr}; [github.com/siddharth161204-wq/m50-neighbour-onset-kinetics](https://github.com/siddharth161204-wq/m50-neighbour-onset-kinetics){.nobr}.
 :::
 
 <div class="headline">
@@ -76,6 +76,16 @@ Figure 1. (a) First time each history self-heats at 0.15 K/min, 30 s release, 33
 4. At 107 kJ the hot spot reaches 255.7 C in every run at 8 to 17 s, the lumped neighbour 32 to 168 s later (P7 held); exploratory, at the tests' median trigger peak (704.5 C, 45.2 kJ) only the high contact ignites (hot spot 17 s, lumped 198 to 236 s).
 5. Scorecard: P1 to P6 failed, five of them foreseeable from Stage 5's records, as the predictions state; P7 held.
 6. The matched trigger does not ignite the neighbour by conduction and radiation; where the hot spot ignites it does so before any test propagated, the lumped neighbour inside their window in 13 of 50 runs. Next: the ignition condition (aged SEI, internal short as an event), set up, not run.
+
+## Stage 7 (v1.3)
+
+1. One trigger per test (predictions 714b1fd): the energy that puts cell 1 at each test's measured maximum (9.0 to 54.3 kJ for 164 to 832 C, central case, 21.39 s release); seven ignition conditions read from 128 runs (three contacts, fresh and aged SEI) and scored against the sixteen outcomes, the central contact registered.
+2. The hot spot at 255.7 C (C1) predicts 8 tests: 6 hits and 2 false alarms, 11 of 16 right, but every hit 130 to 323 s before the measured time; the lumped neighbour at 255.7 C (C2) predicts 2, both hits.
+3. The lumped neighbour at the paper's 150 C (C3) and the separator's melting, 138.5 C, at the hot spot (C4) or in the lumped neighbour (C5) each predict the same 14 tests: 8 hits and 6 false alarms, 9 of 16 right; C3's hits come 43 to 260 s early.
+4. An aged SEI (none left) changes no hot-spot verdict at the central contact and raises the first self-heating from 108.4 C to 181.5 to 202.1 C (a cathode reaction); the other two releases and the separator's spread change no verdict.
+5. The internal short as an event (the cell's stored 65.52 kJ released over 21.39 s from the melt, a modelling choice) takes the hot spot to 1,504 to 1,584 C, about twice the hottest propagating neighbour (763 C): none of 28 runs lies in the measured 381 to 763 C, nor any at 63.36 kJ. Nothing in it is a source to a further cell; the geometry ends at the neighbour.
+6. Scorecard: P1 (C1 in fewer than 9), P4 (C4 in more than 9) and P6 (no inversion) held; P2 (9 of 16, one short), P3 (1 of 8 within 60 s), P5 (raised, not lowered), P7 (C1 6 to 2) and P8 (0 of 28) failed, each as its predictions expected.
+7. No criterion reproduces the tests: the whole cell's clocks predict too many (C3, C5) or too few (C2), the hot spot's come minutes early, and the event overshoots without venting or ejecta (in the Databank's nail tests the cell body kept 19 to 31 % of the energy). Exploratory: the hot spot's 255.7 C is a passing peak (262 to 307 C, then cooling), and no threshold on the trigger's peak gets more than 12 of 16 right.
 
 ## What it means for the thesis
 
