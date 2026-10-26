@@ -48,13 +48,14 @@ def series_of(res, rid):
 
 
 def index(recs):
-    """(set, test, contact, tau) -> record, for Part A; Part C by (set, test, contact, criterion)."""
+    """(set, test, contact, tau) -> record, for Part A; Part C by (set, test, contact, criterion, mesh, step), so that
+    V3's two runs of one test keep a row each."""
     a, c = {}, {}
     for r in recs.values():
         if r["set"] in ("pertest", "duration", "aged"):
             a[(r["set"], r["test"], r["h"], round(r["tau"], 2))] = r
         else:
-            c[(r["set"], r["test"], r["h"], r["event"]["criterion"])] = r
+            c[(r["set"], r["test"], r["h"], r["event"]["criterion"], r.get("refine", 1.0), r.get("dt_scale", 1.0))] = r
     return a, c
 
 
@@ -306,12 +307,13 @@ def main(res, predictions_commit=None, self_heating=True):
                     "measured": meas["propagated_by_connection"]}
     # ------------------------------------------------------------ Part C
     ev_rows = []
-    for (s, test, h, crit), r in sorted(C.items()):
+    for (s, test, h, crit, _refine, _dt_scale), r in sorted(C.items()):
         q = r["stage7"].get("after_event") or {}
         t = meas["by_test"][test]
-        # D68 (3): until 0.1 s before its event, an event run repeats the Part A run its event time was read from
+        # D68 (3): until 0.1 s before its event, an event run repeats the Part A run its event time was read from. Not
+        # for V3's runs, whose mesh or steps differ from that run's by design (D75 (3))
         same = None
-        base = recs.get(r["event"].get("from", ""))
+        base = recs.get(r["event"].get("from", "")) if s in ("event", "eventlow") else None
         se, sb = series_of(res, r["id"]), (series_of(res, base["id"]) if base else None)
         if se is not None and sb is not None:
             t0 = r["event"]["t_s"] - 0.1
@@ -387,8 +389,11 @@ def main(res, predictions_commit=None, self_heating=True):
     sc["V4"] = {"max_abs_residual_resolved": max(res_r) if res_r else None,
                 "max_abs_residual_lumped": max(res_l) if res_l else None, "n_resolved": len(res_r), "n_lumped": len(res_l),
                 "max_event_delivery_error_rel": max(dl) if dl else None, "acceptance": ENERGY_TOL,
-                "event_runs_repeating_part_a_until_event": sum(r["repeats_part_a_until_event"] is True for r in ev_rows),
-                "event_runs_compared": sum(r["repeats_part_a_until_event"] is not None for r in ev_rows),
+                "event_runs_repeating_part_a_until_event": sum(r["repeats_part_a_until_event"] is True for r in ev_rows
+                                                               if r["set"] in ("event", "eventlow")),
+                "event_runs_compared": sum(r["repeats_part_a_until_event"] is not None for r in ev_rows
+                                           if r["set"] in ("event", "eventlow")),
+                "event_runs": sum(r["set"] in ("event", "eventlow") for r in ev_rows),
                 "pass": bool(res_r) and max(res_r) < ENERGY_TOL and (not res_l or max(res_l) < ENERGY_TOL)}
     # ------------------------------------------------------------ the per-run file
     keys = ("id", "set", "test", "connection", "h", "tau", "E_body_J", "sei0", "refine", "dt_scale", "T1max_C", "t_T1max_s",

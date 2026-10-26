@@ -137,6 +137,7 @@ if recs:
                    "first_start_utc": min(r["started_utc"] for r in good), "last_finish_utc": max(r["finished_utc"] for r in good),
                    "by_set": by, "machines": sorted({(r.get("machine") or {}).get("label", "unrecorded") for r in good}),
                    "memory_retries": sum(r.get("memory_retries", 0) for r in good),
-                   "worker_peak_memory_MB": rng([r.get("worker_peak_memory_MB") for r in good])}
+                   "worker_peak_memory_MB": rng([r.get("worker_peak_memory_MB") or None for r in good]),
+                   "worker_peak_memory_note": "None where every record carries 0.0: the reading failed on Windows (D75)"}
 json.dump(out, open(os.path.join(RES, "stage7_paper_numbers.json"), "w"), indent=1, default=float)
 print("wrote stage7_paper_numbers.json")
