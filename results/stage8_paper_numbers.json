@@ -98,7 +98,7 @@
   ]
  },
  "runs": {
-  "n": 228,
+  "n": 230,
   "failed": [],
   "by_set": {
    "c1": 24,
@@ -120,14 +120,16 @@
    "dur10_c1": 6,
    "v3mesh": 1,
    "ref_dur10_c1": 3,
-   "gas": 2
+   "gas": 3,
+   "v3step": 1
   },
   "first_started_utc": "2026-10-26T13:59:22Z",
-  "last_finished_utc": "2026-10-26T17:39:13Z",
-  "wall_s_median": 31.620771050453186,
+  "last_finished_utc": "2026-10-26T18:03:03Z",
+  "wall_s_median": 33.18609893321991,
   "wall_s_max": 3637.5674397945404,
   "resumed": {
    "gas_M50_ST_Exp2_f0.200000000": 1,
+   "gas_M50_SP_Exp1_f0.200000000": 1,
    "gas_M50_PP_Exp3_f0.200000000": 1
   },
   "chains_unfinished": [],
@@ -137,10 +139,10 @@
    "a4": 37,
    "refinements": 45,
    "part_b": 24,
-   "part_d": 5,
-   "v3": 1
+   "part_d": 6,
+   "v3": 2
   },
-  "groups_sum": 228,
+  "groups_sum": 230,
   "times_s": {
    "base_to_900_s": {
     "n": 22,
@@ -168,6 +170,11 @@
      "resumed": 1,
      "last_attempt_s": 3268.235123157501
     },
+    "gas_M50_SP_Exp1_f0.200000000": {
+     "wall_all_attempts_s": 4056.154677629471,
+     "resumed": 1,
+     "last_attempt_s": 1056.3744518756866
+    },
     "gasctl_M50_ST_Exp2_f0.200000000": {
      "wall_all_attempts_s": 43.43741416931152,
      "resumed": 0,
@@ -185,7 +192,8 @@
     }
    },
    "v3": {
-    "v3mesh_M50_PT_Exp1_f0.100000000": 3637.5674397945404
+    "v3mesh_M50_PT_Exp1_f0.100000000": 3637.5674397945404,
+    "v3step_M50_PT_Exp1_f0.100000000": 527.5720102787018
    }
   }
  },
@@ -2700,7 +2708,15 @@
     "split_alone_C1_s": 4.35973225343389e-05
    },
    "M50_SP_Exp1": {
-    "layer": null,
+    "layer": {
+     "C1": false,
+     "t_C1_s": null,
+     "hot_peak_C": 196.49054530875827,
+     "can_peak_C": 1924.2747121757511,
+     "where": null,
+     "factorisations": 29201,
+     "wall_s": 1056.3744518756866
+    },
     "control": {
      "C1": true,
      "t_C1_s": 3.542638009335694,
@@ -3281,19 +3297,35 @@
     "joule": 0.0
    },
    "counts": {
-    "resolved": 132,
+    "resolved": 136,
     "lumped": 222,
-    "delivery": 322,
+    "delivery": 326,
     "joule": 48,
-    "delivery_whole": 188,
+    "delivery_whole": 191,
     "joule_whole": 23
    },
    "bad": [],
-   "n_records": 226
+   "n_records": 230
   },
   "V3": {
-   "pass": null,
-   "missing": "[Errno 2] No such file or directory: '/home/claude/m50-neighbour-onset-kinetics/src/../results/stage8_runs/v3step_M50_PT_Exp1_f0.100000000.json'"
+   "base": "first_M50_PT_Exp1_f0.100000000",
+   "v3mesh": {
+    "quantity": "hot spot's peak rise",
+    "base": 150.78474639625955,
+    "variant": 151.56186835159497,
+    "relative_change": 0.005153849934483201,
+    "nodes": 145195,
+    "pass": true
+   },
+   "v3step": {
+    "quantity": "hot spot's peak rise",
+    "base": 150.78474639625955,
+    "variant": 150.7878726013003,
+    "relative_change": 2.0732899815634198e-05,
+    "nodes": 19355,
+    "pass": true
+   },
+   "pass": true
   }
  },
  "definitions": {
@@ -3722,7 +3754,63 @@
    }
   },
   "M50_SP_Exp1": {
-   "layer": null,
+   "layer": {
+    "C1": false,
+    "t_C1_s": null,
+    "roll_peak_C": 196.49054530875827,
+    "t_roll_peak_s": 18.14375,
+    "where_roll_peak": {
+     "r_mm": 10.55,
+     "theta_deg": 20.92306235303362,
+     "z_mm": 0.0,
+     "part": "roll"
+    },
+    "can_peak_C": 1924.2747121757511,
+    "t_can_peak_s": 11.014453125,
+    "where_can_peak": {
+     "r_mm": 10.55,
+     "theta_deg": 42.324784705892625,
+     "z_mm": 51.49550062699999,
+     "part": "can"
+    },
+    "can_at_C1_C": null,
+    "t_end_s": 900.0,
+    "steps": 30192,
+    "factorisations": 29201,
+    "interface_node_steps": {
+     "floor": 11902575,
+     "ramp": 30664424,
+     "max": 37924873
+    },
+    "resumed": 1,
+    "wall_all_attempts_s": 4056.154677629471,
+    "energy_residual_rel": 3.573341936260418e-13,
+    "probe_peak": {
+     "toward": {
+      "T_C": 1537.1536833405057,
+      "t_s": 11.233203125
+     },
+     "away": {
+      "T_C": 143.51795417515012,
+      "t_s": 260.4
+     },
+     "toward_roll": {
+      "T_C": 162.71303039390256,
+      "t_s": 19.45625
+     },
+     "away_roll": {
+      "T_C": 145.84435177200754,
+      "t_s": 260.1
+     }
+    },
+    "n_nodes": 22021,
+    "geom": {
+     "split_nodes": 2666,
+     "A_interface_m2": 0.005213505210758062,
+     "A_interface_heated_m2": 0.0023220243089854204,
+     "A_interface_cold_m2": 0.002891480901772642
+    }
+   },
    "control": {
     "C1": true,
     "t_C1_s": 3.542638009335694,
@@ -3783,12 +3871,12 @@
   }
  },
  "part_d_summary": {
-  "n_layer_runs": 2,
+  "n_layer_runs": 3,
   "n_control_runs": 3,
   "layer_C1_any": false,
   "layer_roll_peak_C": [
    192.38423207087254,
-   195.99845544677646
+   196.49054530875827
   ],
   "layer_t_roll_peak_s": [
    18.140625,
@@ -3800,10 +3888,10 @@
   ],
   "layer_can_peak_C": [
    1885.6107628774912,
-   1919.6753555747587
+   1924.2747121757511
   ],
   "layer_t_can_peak_s": [
-   11.016796875,
+   11.014453125,
    11.03359375
   ],
   "layer_wall_all_attempts_min": [
@@ -3815,11 +3903,11 @@
   ],
   "layer_factorisations": [
    27226,
-   29048
+   29201
   ],
   "layer_steps": [
    27959,
-   29936
+   30192
   ],
   "layer_energy_residual_max": 3.8049390991561046e-13,
   "control_t_C1_s": [
@@ -3877,7 +3965,15 @@
    "wall_s": 3637.5674397945404,
    "energy_residual_rel": 1.9746995008486986e-11
   },
-  "v3step": null
+  "v3step": {
+   "n_nodes": 19355,
+   "hot_peak_C": 175.7878726013003,
+   "t_hot_peak_s": 14.58125,
+   "steps": 21492,
+   "relative_change_of_peak_rise": 2.0732899815634198e-05,
+   "wall_s": 527.5720102787018,
+   "energy_residual_rel": 2.1720342082330704e-12
+  }
  },
  "exploratory": {
   "C2": {

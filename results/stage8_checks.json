@@ -239,18 +239,34 @@
    "joule": 0.0
   },
   "counts": {
-   "resolved": 132,
+   "resolved": 136,
    "lumped": 222,
-   "delivery": 322,
+   "delivery": 326,
    "joule": 48,
-   "delivery_whole": 188,
+   "delivery_whole": 191,
    "joule_whole": 23
   },
   "bad": [],
-  "n_records": 226
+  "n_records": 230
  },
  "V3": {
-  "pass": null,
-  "missing": "[Errno 2] No such file or directory: '/home/claude/m50-neighbour-onset-kinetics/src/../results/stage8_runs/v3step_M50_PT_Exp1_f0.100000000.json'"
+  "base": "first_M50_PT_Exp1_f0.100000000",
+  "v3mesh": {
+   "quantity": "hot spot's peak rise",
+   "base": 150.78474639625955,
+   "variant": 151.56186835159497,
+   "relative_change": 0.005153849934483201,
+   "nodes": 145195,
+   "pass": true
+  },
+  "v3step": {
+   "quantity": "hot spot's peak rise",
+   "base": 150.78474639625955,
+   "variant": 150.7878726013003,
+   "relative_change": 2.0732899815634198e-05,
+   "nodes": 19355,
+   "pass": true
+  },
+  "pass": true
  }
 }

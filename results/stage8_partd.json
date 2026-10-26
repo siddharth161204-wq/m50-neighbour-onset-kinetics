@@ -93,7 +93,15 @@
    "split_alone_C1_s": 4.35973225343389e-05
   },
   "M50_SP_Exp1": {
-   "layer": null,
+   "layer": {
+    "C1": false,
+    "t_C1_s": null,
+    "hot_peak_C": 196.49054530875827,
+    "can_peak_C": 1924.2747121757511,
+    "where": null,
+    "factorisations": 29201,
+    "wall_s": 1056.3744518756866
+   },
    "control": {
     "C1": true,
     "t_C1_s": 3.542638009335694,
