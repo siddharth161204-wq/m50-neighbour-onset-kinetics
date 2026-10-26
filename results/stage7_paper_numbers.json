@@ -845,6 +845,20 @@
    }
   }
  },
+ "definitions": {
+  "self_heating_rate_K_per_min": 0.15,
+  "run_end_s": 900.0,
+  "P3_window_s": 60.0,
+  "dsc_rate_C_per_min": 5.0,
+  "ambient_C": 25.0,
+  "sources": {
+   "self_heating_rate_K_per_min": "src/stage7_criteria.py first_self_heating (Stage 1's 0.15 K/min)",
+   "run_end_s": "the Part A records' end (D66 (2))",
+   "P3_window_s": "predictions_stage7.md, P3",
+   "dsc_rate_C_per_min": "src/v0_dsc_check.py BETA (D5)",
+   "ambient_C": "src/stage7_inputs.py T_AMB_C"
+  }
+ },
  "levels_C": {
   "prop": 255.68157499999995,
   "150": 150.0,

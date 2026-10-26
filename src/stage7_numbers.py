@@ -89,6 +89,19 @@ for c in CRIT:
         pb[c][h]["predicted_tests"] = sorted(r["test"] for r in PT if r["criterion"] == c and r["contact"] == h
                                              and r["predicted"] is True)
 out["part_b"] = pb
+# the design's defining constants that the texts quote, each read from where the study defines it
+import inspect
+import stage7_criteria as CQ7
+import v0_dsc_check as V0
+out["definitions"] = {
+    "self_heating_rate_K_per_min": inspect.signature(CQ7.first_self_heating).parameters["level_K_per_min"].default,
+    "run_end_s": max(r["resolved"]["t_end_s"] for r in recs.values() if r["set"] in ("pertest", "duration", "aged")),
+    "P3_window_s": 60.0,                                   # predictions_stage7.md, P3 ("within 60 s")
+    "dsc_rate_C_per_min": V0.BETA * 60.0,                  # D5: the separator's melting peak at 5 C/min
+    "ambient_C": IN.T_AMB_C,
+    "sources": {"self_heating_rate_K_per_min": "src/stage7_criteria.py first_self_heating (Stage 1's 0.15 K/min)",
+                "run_end_s": "the Part A records' end (D66 (2))", "P3_window_s": "predictions_stage7.md, P3",
+                "dsc_rate_C_per_min": "src/v0_dsc_check.py BETA (D5)", "ambient_C": "src/stage7_inputs.py T_AMB_C"}}
 # the levels of D67 (2), and how many runs Part B reads its criteria from (the sixteen tests at three contacts, fresh
 # and aged SEI; the 32 runs with the other two releases enter the sensitivities only)
 out["levels_C"] = {"prop": IN.LEVEL_PROP_C, "150": IN.LEVEL_150_C, "sep": IN.LEVEL_SEP_C}
