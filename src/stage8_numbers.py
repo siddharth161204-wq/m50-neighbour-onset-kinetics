@@ -166,6 +166,8 @@ def more(out, recs, rows, card, rat, ej, v):
         "lumped_heat_capacity_J_per_K": float(V12.LP.C_CELL),
         "E_stored_J": IN.E_STORED_J, "f_e": list(IN.F_E), "E_joule_J": [f * IN.E_STORED_J for f in IN.F_E],
         "state_of_charge_percent": 100,
+        "R_floor_m2K_per_W": IN.R_FLOOR, "acceptance": {"V1_relative": 1e-9, "V3_relative_change": 0.01,
+                                                         "V4_energy_residual_relative": 1e-9, "V4_source_relative": 1e-9},
         "prediction_bounds": {"P1_below": 0.3, "P2_below": 0.3, "P2_at_least": 3, "P3_band": [0.05, 0.5], "P3_at_least": 12,
                               "P4_at_least_predicted": 9, "P4_at_least_within": 4, "P4_window_s": 60.0, "P5_at_most": 12,
                               "P7_lowering_below": 0.1},
@@ -295,7 +297,8 @@ def more(out, recs, rows, card, rat, ej, v):
                        "t_end_s": rr["t_end_s"], "steps": rr["steps"], "factorisations": rr.get("factorisations"),
                        "interface_node_steps": rr.get("interface_node_steps"), "resumed": rr.get("resumed"),
                        "wall_all_attempts_s": rr.get("wall_all_attempts_s"), "energy_residual_rel": rr["energy_residual_rel"],
-                       "probe_peak": rr.get("probe_peak"), "n_nodes": r.get("n_nodes"), "geom": rr.get("geom")}
+                       "probe_peak": rr.get("probe_peak"), "n_nodes": r.get("n_nodes"), "geom": rr.get("geom"),
+                       "energy_J": rr.get("energy_J"), "stored_J": rr.get("stored_J")}
         pdx[x] = d
     out["part_d_records"] = pdx
     # Part D's ranges over the three tests, as the texts quote them
@@ -313,6 +316,10 @@ def more(out, recs, rows, card, rat, ej, v):
         "layer_attempts": sorted({x["resumed"] + 1 for x in lay}) if lay else None,
         "layer_factorisations": rng([x["factorisations"] for x in lay]), "layer_steps": rng([x["steps"] for x in lay]),
         "layer_energy_residual_max": max(x["energy_residual_rel"] for x in lay) if lay else None,
+        "layer_delivered_J": rng([x["energy_J"]["in_delivery"] for x in lay]),
+        "layer_radiated_out_J": rng([x["energy_J"]["out_rad"] for x in lay]),
+        "layer_convected_out_J": rng([x["energy_J"]["out_conv"] for x in lay]),
+        "layer_stored_J": rng([x["stored_J"] for x in lay]),
         "control_t_C1_s": rng([x["t_C1_s"] for x in ctl]),
         "control_less_partA_s": rng([out["part_d"]["per_test"][t]["split_alone_C1_s"] for t in pdx
                                       if out["part_d"]["per_test"][t].get("split_alone_C1_s") is not None]),
