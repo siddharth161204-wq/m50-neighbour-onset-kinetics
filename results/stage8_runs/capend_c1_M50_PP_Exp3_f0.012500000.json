@@ -1,0 +1,216 @@
+{
+ "id": "capend_c1_M50_PP_Exp3_f0.012500000",
+ "set": "capend_c1",
+ "test": "M50_PP_Exp3",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 43895.36776574396,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.0125,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 136307.62874637014,
+ "E_delivered_J": 1703.8453593296272,
+ "tau_d_s": 21.38651984299561,
+ "geometry": "capend",
+ "f_e": 0.0,
+ "E_joule_J": 0.0,
+ "models": "both",
+ "gas": null,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 685.9999536948258,
+ "t_T1max_s": 20.48,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": true,
+  "t_end_s": 8.90625,
+  "steps": 1666,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 1.4787632164641251e-13,
+  "peak_hottest_C": 255.68943228410797,
+  "t_peak_hottest_s": 8.90625,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 0.0,
+   "z_mm": 62.94269278999999
+  },
+  "peak_mean_C": 35.87639666352226,
+  "probe_peak": {
+   "toward": {
+    "T_C": 81.28902453786509,
+    "t_s": 8.90625
+   },
+   "away": {
+    "T_C": 25.297004518017843,
+    "t_s": 8.90625
+   }
+  },
+  "in_rxn_J": -0.08644911404448012,
+  "cross_s": {
+   "T_onset_low": 8.906065875250475,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "energy_J": {
+   "in_bus": 9.665346999194007,
+   "in_gap": 73.34607098046088,
+   "in_rad": 4.860326318493802,
+   "out_conv": 2.8043534570433972,
+   "out_rad": 4.33924706946902,
+   "in_rxn": -0.08644911404448012,
+   "in_delivery": 590.9757993148103
+  },
+  "stored_J": 671.6174939725024,
+  "net_in_J": 671.617493972402,
+  "sources": {
+   "delivery": {
+    "E_J": 1703.8453593296272,
+    "tau_s": 21.38651984299561,
+    "t0_s": 0.0,
+    "name": "delivery",
+    "delivered_J": 590.9757993148103
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 1666,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 2.3954624970170408e-05,
+   "li_an": 4.4488930339637687e-07,
+   "ele_liq": 2.1150052818593895e-06,
+   "cat1": 1.5805881245417302e-05,
+   "sep": 0.006624977805595832
+  },
+  "max_local_reaction_heating_K_per_s": 3.252308902569406,
+  "t_prop_s": 8.906065875250475,
+  "where": {
+   "r_mm": 10.55,
+   "theta_deg": 0.0,
+   "z_mm": 62.94269278999999
+  },
+  "mean_at_prop_C": 35.87639666352226,
+  "T1_at_prop_C": 268.02873820650314
+ },
+ "lumped": {
+  "propagated": false,
+  "peak_C": 207.93880229795764,
+  "t_peak_s": 245.2,
+  "reaction_heat_J": 1492.214599460525,
+  "t_end_s": 900.0,
+  "energy_J": {
+   "in_link": 10954.750621571222,
+   "in_rad": 2417.321107166686,
+   "out_conv": 5072.781212890606,
+   "out_rad": 6268.906596694824,
+   "in_delivery": 1703.8453593296272,
+   "in_rxn": 1492.214599460525
+  },
+  "energy_residual_rel": 2.4757294198015224e-14,
+  "conversion_end": {
+   "sei": 0.21820187181327744,
+   "li_an": 0.012585837264717403,
+   "ele_liq": 0.05286128583848393,
+   "cat1": 0.20893067948202693,
+   "sep": 0.9999999999999423
+  },
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 1703.8453593296272,
+    "tau_s": 21.38651984299561,
+    "t0_s": 0.0,
+    "name": "delivery",
+    "delivered_J": 1703.8453593296272
+   }
+  },
+  "stored_J": 5226.443877943041,
+  "net_in_J": 5226.443877942631
+ },
+ "wall_s": 56.70294642448425,
+ "stage8": {
+  "levels_C": {
+   "sep": 138.5,
+   "150": 150.0,
+   "prop": 255.68157499999995
+  },
+  "clocks": {
+   "hot": {
+    "peak_C": 255.68943228410797,
+    "t_peak_s": 8.90625,
+    "t_sep_s": 5.713376804274439,
+    "t_150_s": 6.074385598857954,
+    "t_prop_s": null
+   },
+   "mean": {
+    "peak_C": 35.87639666352226,
+    "t_peak_s": 8.9,
+    "t_sep_s": null,
+    "t_150_s": null,
+    "t_prop_s": null
+   },
+   "away": {
+    "peak_C": 25.297004518017843,
+    "t_peak_s": 8.90625,
+    "t_sep_s": null,
+    "t_150_s": null,
+    "t_prop_s": null
+   },
+   "toward": {
+    "peak_C": 81.28902453786509,
+    "t_peak_s": 8.90625,
+    "t_sep_s": null,
+    "t_150_s": null,
+    "t_prop_s": null
+   },
+   "lumped": {
+    "peak_C": 207.93880229795764,
+    "t_peak_s": 245.2,
+    "t_sep_s": 60.132895383932215,
+    "t_150_s": 70.7131020159564,
+    "t_prop_s": null
+   }
+  },
+  "stop": {
+   "hot_t_s": 8.906065875250475,
+   "lumped_t_s": null,
+   "resolved_t_end_s": 8.90625,
+   "lumped_t_end_s": 900.0
+  }
+ },
+ "worker_peak_memory_MB": 677.51171875,
+ "started_utc": "2026-10-26T14:35:28Z",
+ "finished_utc": "2026-10-26T14:36:24Z",
+ "machine": {
+  "label": "cloud-2core",
+  "system": "Linux",
+  "release": "6.18.44-fc-v153",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "cpu_count": 2,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 0
+}

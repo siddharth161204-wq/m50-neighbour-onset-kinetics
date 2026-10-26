@@ -110,7 +110,17 @@ def thresholds(recs, states):
                          "ratiohigh_c1", "ratiohigh_c2"):
                 ref = fa1 if set_.endswith("c1") else fa2
                 v = SR.f_star(states[f"{set_}_{x}"])
-                row["variants"][set_] = {"f": v, "relation": relation(ref, v), "lowering": lowering(ref, v)}
+                d = {"f": v, "relation": relation(ref, v), "lowering": lowering(ref, v)}
+                rv = states.get(f"ref_{set_}_{x}")
+                if rv is not None and rv["status"] not in ("not needed",):
+                    # D79 (3): the variant ended in Part A's own bracket, and both were halved on together
+                    crit = "C1" if set_.endswith("c1") else "C2"
+                    ra = SR.f_star(states[f"refA_{crit}_{x}"])
+                    rvf = SR.f_star(rv)
+                    d.update({"unrefined_relation": d["relation"], "unrefined_lowering": d["lowering"],
+                              "refined_partA": ra, "refined": rvf, "relation": relation(ra, rvf),
+                              "lowering": lowering(ra, rvf)})
+                row["variants"][set_] = d
             row["variants"]["capend_c2"] = {"f": fa2, "relation": "unchanged by construction",
                                             "lowering": (0.0, 0.0) if fa2["status"] != "above" else None}
         if t["connection"] == "parallel":

@@ -1,0 +1,117 @@
+{
+ "id": "dur10_c2_M50_SP_Exp1_f0.025000000",
+ "set": "dur10_c2",
+ "test": "M50_SP_Exp1",
+ "kin": "mean",
+ "connection": "series",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 46811.80403982944,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.025,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 145363.9946716313,
+ "E_delivered_J": 3634.099866790783,
+ "tau_d_s": 10.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "E_joule_J": 0.0,
+ "models": "lumped",
+ "gas": null,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 728.0029814319178,
+ "t_T1max_s": 20.44,
+ "n_nodes": 19355,
+ "resolved": null,
+ "lumped": {
+  "propagated": true,
+  "peak_C": 255.91523012993457,
+  "t_peak_s": 176.6,
+  "reaction_heat_J": 2577.3907337855885,
+  "t_end_s": 176.6,
+  "energy_J": {
+   "in_link": 8863.271530623484,
+   "in_rad": 1856.8425441002562,
+   "out_conv": 1124.100363704988,
+   "out_rad": 1548.4888510727505,
+   "in_delivery": 3634.099866790783,
+   "in_rxn": 2577.3907337855885
+  },
+  "energy_residual_rel": 6.402923439943322e-14,
+  "conversion_end": {
+   "sei": 0.07173449411907584,
+   "li_an": 0.02880741788317387,
+   "ele_liq": 0.1444952222168957,
+   "cat1": 0.7163937326143073,
+   "sep": 0.9999999999999997
+  },
+  "cross_s": {
+   "T_onset_low": 176.50907908838386,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 3634.099866790783,
+    "tau_s": 10.0,
+    "t0_s": 0.0,
+    "name": "delivery",
+    "delivered_J": 3634.099866790783
+   }
+  },
+  "stored_J": 14259.01546052346,
+  "net_in_J": 14259.015460522376,
+  "t_prop_s": 176.50907908838386
+ },
+ "wall_s": 0.14238643646240234,
+ "stage8": {
+  "levels_C": {
+   "sep": 138.5,
+   "150": 150.0,
+   "prop": 255.68157499999995
+  },
+  "clocks": {
+   "lumped": {
+    "peak_C": 255.91523012993457,
+    "t_peak_s": 176.6,
+    "t_sep_s": 39.09654433602598,
+    "t_150_s": 46.90689930763899,
+    "t_prop_s": 176.50907908838386
+   }
+  },
+  "stop": {
+   "lumped_t_s": 176.50907908838386,
+   "lumped_t_end_s": 176.6
+  }
+ },
+ "worker_peak_memory_MB": 382.71484375,
+ "started_utc": "2026-10-26T14:20:16Z",
+ "finished_utc": "2026-10-26T14:20:16Z",
+ "machine": {
+  "label": "cloud-2core-lumped",
+  "system": "Linux",
+  "release": "6.18.44-fc-v153",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "cpu_count": 2,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 2
+}
