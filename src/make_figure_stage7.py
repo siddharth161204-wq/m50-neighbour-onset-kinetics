@@ -139,12 +139,14 @@ for r in E:
     if r["lumped_after_C"] is not None:
         ax.scatter([x], [r["lumped_after_C"]], s=14, marker="o", zorder=3, facecolor=SURF if hol else BLUE,
                    edgecolor=BLUE, lw=0.8)
-ax.axvline(7.5, color=INK2, lw=0.7, ls=(0, (2, 2)))
+ax.axvline(7.5, ymax=0.85, color=INK2, lw=0.7, ls=(0, (2, 2)))
 ax.set_xticks(range(len(order)))
 ax.set_xticklabels([t["test"][4:] for t in order], rotation=90, fontsize=5.4)
 vals = [v for r in E for v in (r["hot_after_C"], r["lumped_after_C"]) if v is not None]
 ymax = max([900.0] + [v for v in vals]) * 1.42
 ax.set_ylim(0, ymax)
+top = max([900.0] + vals)
+ax.set_yticks([250.0 * k for k in range(int(top // 250) + 2)])    # no grid line under the legend
 ax.set_xlim(-0.7, len(order) - 0.3)
 ax.set_ylabel("Neighbour peak (C)")
 ax.text(3.5, ymax * 0.985, "parallel", ha="center", va="top", fontsize=6.0, color=INK2)

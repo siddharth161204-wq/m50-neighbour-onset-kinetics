@@ -1,0 +1,14 @@
+Transforming over 1000 elements to C_CONTIGUOUS.
+2026-10-26T05:55:19Z pertest_M50_PP_Exp1_parallel_hhigh_gcentral_tau21.39_E51.09: cell 1 780.3 C; resolved 15.0 s (peak 256.0 C), lumped 142.7 s (peak 256.0 C), residual 1.8e-13, 21 s
+Transforming over 1000 elements to C_CONTIGUOUS.
+2026-10-26T06:05:38Z pertest_M50_ST_Exp1_series_hlow_gcentral_tau21.39_E51.11: cell 1 801.3 C; resolved none (peak 151.3 C), lumped none (peak 137.6 C), residual 1.0e-12, 619 s
+Transforming over 1000 elements to C_CONTIGUOUS.
+2026-10-26T06:18:12Z duration_M50_PT_Exp2_parallel_hcentral_gcentral_tau17.53_E43.40: cell 1 686.9 C; resolved none (peak 245.2 C), lumped none (peak 193.1 C), residual 8.0e-13, 754 s
+2026-10-26T06:18:33Z aged_M50_PP_Exp1_parallel_hcentral_gcentral_tau21.39_E51.09_aged: cell 1 787.0 C; resolved 18.1 s (peak 256.3 C), lumped none (peak 226.2 C), residual 1.6e-13, 21 s
+C:\Users\Siddharth\Downloads\m50_stage5\python\Lib\site-packages\scipy\integrate\_ivp\bdf.py:421: RuntimeWarning: invalid value encountered in subtract
+  D[order + 2] = d - D[order + 1]
+2026-10-26T06:31:34Z aged_M50_PP_Exp3_parallel_hcentral_gcentral_tau21.39_E43.90_aged: cell 1 686.0 C; resolved none (peak 247.9 C), lumped none (peak 192.6 C), residual 7.9e-13, 782 s
+2026-10-26T06:41:10Z eventlow_M50_PT_Exp4_parallel_hcentral_gcentral_tau21.39_E39.99_C5_ev63.36: cell 1 630.0 C; resolved none (peak 1546.3 C), lumped none (peak 1281.5 C); after the event: hot spot 1546 C, lumped 1281 C, residual 6.3e-14, 576 s
+2026-10-26T06:50:09Z eventlow_M50_ST_Exp2_series_hcentral_gcentral_tau21.39_E46.46_C4_ev63.36: cell 1 723.0 C; resolved none (peak 1468.4 C), lumped none (peak 1230.2 C); after the event: hot spot 1468 C, lumped 1230 C, residual 5.2e-14, 539 s
+2026-10-26T06:58:00Z event_M50_SP_Exp4_series_hcentral_gcentral_tau21.39_E39.60_C4_ev65.52: cell 1 625.0 C; resolved none (peak 1504.5 C), lumped none (peak 1250.3 C); after the event: hot spot 1504 C, lumped 1250 C, residual 5.3e-14, 471 s
+2026-10-26T06:58:00Z worker 14: all runs recorded (8 this pass)

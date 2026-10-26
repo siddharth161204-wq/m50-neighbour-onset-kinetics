@@ -1,0 +1,13 @@
+Transforming over 1000 elements to C_CONTIGUOUS.
+2026-10-26T05:55:23Z pertest_M50_PP_Exp1_parallel_hcentral_gcentral_tau21.39_E51.09: cell 1 787.0 C; resolved 18.1 s (peak 256.3 C), lumped 277.3 s (peak 255.7 C), residual 1.5e-13, 25 s
+Transforming over 1000 elements to C_CONTIGUOUS.
+2026-10-26T05:55:41Z pertest_M50_ST_Exp1_series_hhigh_gcentral_tau21.39_E51.11: cell 1 781.3 C; resolved 15.0 s (peak 256.3 C), lumped 148.7 s (peak 256.0 C), residual 1.9e-13, 18 s
+2026-10-26T06:06:00Z pertest_M50_ST_Exp3_series_hcentral_gcentral_tau21.39_E16.64: cell 1 282.0 C; resolved none (peak 108.9 C), lumped none (peak 100.1 C), residual 1.5e-12, 619 s
+2026-10-26T06:18:27Z duration_M50_PP_Exp2_parallel_hcentral_gcentral_tau25.24_E40.96: cell 1 637.1 C; resolved none (peak 232.3 C), lumped none (peak 186.1 C), residual 8.1e-13, 746 s
+C:\Users\Siddharth\Downloads\m50_stage5\python\Lib\site-packages\scipy\integrate\_ivp\bdf.py:421: RuntimeWarning: invalid value encountered in subtract
+  D[order + 2] = d - D[order + 1]
+2026-10-26T06:31:30Z aged_M50_PP_Exp2_parallel_hcentral_gcentral_tau21.39_E40.96_aged: cell 1 644.0 C; resolved none (peak 232.2 C), lumped none (peak 184.1 C), residual 8.2e-13, 783 s
+2026-10-26T06:41:09Z event_M50_PT_Exp4_parallel_hcentral_gcentral_tau21.39_E39.99_C5_ev65.52: cell 1 630.0 C; resolved none (peak 1583.0 C), lumped none (peak 1304.4 C); after the event: hot spot 1583 C, lumped 1304 C, residual 6.1e-14, 580 s
+2026-10-26T06:50:09Z event_M50_ST_Exp2_series_hcentral_gcentral_tau21.39_E46.46_C4_ev65.52: cell 1 723.0 C; resolved none (peak 1505.1 C), lumped none (peak 1255.1 C); after the event: hot spot 1505 C, lumped 1255 C, residual 5.1e-14, 539 s
+2026-10-26T06:58:21Z eventlow_M50_SP_Exp3_series_hcentral_gcentral_tau21.39_E54.30_C5_ev63.36: cell 1 832.0 C; resolved none (peak 1544.1 C), lumped none (peak 1289.8 C); after the event: hot spot 1544 C, lumped 1290 C, residual 5.6e-14, 492 s
+2026-10-26T06:58:21Z worker 13: all runs recorded (8 this pass)

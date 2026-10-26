@@ -1,0 +1,659 @@
+{
+ "runs": {
+  "pertest_M50_PT_Exp4_parallel_hcentral_gcentral_tau21.39_E39.99": {
+   "hot": {
+    "largest_stored_C": 227.10059280821673,
+    "at_s": 31.3,
+    "record_peak_C": 227.10059280821673,
+    "sep": {
+     "by_hand": {
+      "i": 132,
+      "before": [
+       13.1,
+       138.33356481208017
+      ],
+      "after": [
+       13.2,
+       139.84651974447405
+      ],
+      "t_cross_s": 13.111000670565678
+     },
+     "record_t_s": 13.111000670565678,
+     "file_t_s": 13.111000670565678,
+     "abs_diff_s": 0.0,
+     "agree": true
+    },
+    "150": {
+     "by_hand": {
+      "i": 139,
+      "before": [
+       13.8,
+       148.7386953243731
+      ],
+      "after": [
+       13.9,
+       150.18764386149678
+      ],
+      "t_cross_s": 13.88704965313197
+     },
+     "record_t_s": 13.88704965313197,
+     "file_t_s": 13.88704965313197,
+     "abs_diff_s": 0.0,
+     "agree": true
+    },
+    "prop": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    }
+   },
+   "mean": {
+    "largest_stored_C": 158.0843217245045,
+    "at_s": 287.3,
+    "record_peak_C": 158.0843217245045,
+    "sep": {
+     "by_hand": {
+      "i": 1413,
+      "before": [
+       141.2,
+       138.46687502604993
+      ],
+      "after": [
+       141.3,
+       138.50165421453084
+      ],
+      "t_cross_s": 141.2952436655279
+     },
+     "record_t_s": 141.2952436655279,
+     "file_t_s": 141.2952436655279,
+     "abs_diff_s": 0.0,
+     "agree": true
+    },
+    "150": {
+     "by_hand": {
+      "i": 1855,
+      "before": [
+       185.4,
+       149.98881037163568
+      ],
+      "after": [
+       185.5,
+       150.0074119756593
+      ],
+      "t_cross_s": 185.4601541047219
+     },
+     "record_t_s": 185.4601541047219,
+     "file_t_s": 185.4601541047219,
+     "abs_diff_s": 0.0,
+     "agree": true
+    },
+    "prop": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    }
+   },
+   "away": {
+    "largest_stored_C": 152.4684533222201,
+    "at_s": 297.6,
+    "record_peak_C": 152.4684533222201,
+    "sep": {
+     "by_hand": {
+      "i": 1672,
+      "before": [
+       167.1,
+       138.478425844943
+      ],
+      "after": [
+       167.2,
+       138.50507299902324
+      ],
+      "t_cross_s": 167.1809623233762
+     },
+     "record_t_s": 167.1809623233762,
+     "file_t_s": 167.1809623233762,
+     "abs_diff_s": 0.0,
+     "agree": true
+    },
+    "150": {
+     "by_hand": {
+      "i": 2362,
+      "before": [
+       236.1,
+       149.99705899776797
+      ],
+      "after": [
+       236.2,
+       150.00585728861358
+      ],
+      "t_cross_s": 236.13342697216584
+     },
+     "record_t_s": 236.13342697216584,
+     "file_t_s": 236.13342697216584,
+     "abs_diff_s": 0.0,
+     "agree": true
+    },
+    "prop": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    }
+   },
+   "toward": {
+    "largest_stored_C": 226.8353189871096,
+    "at_s": 31.3,
+    "record_peak_C": 226.8353189871096,
+    "sep": {
+     "by_hand": {
+      "i": 132,
+      "before": [
+       13.1,
+       138.07883091706094
+      ],
+      "after": [
+       13.2,
+       139.58944951284178
+      ],
+      "t_cross_s": 13.127880570523583
+     },
+     "record_t_s": 13.127880570523583,
+     "file_t_s": 13.127880570523583,
+     "abs_diff_s": 0.0,
+     "agree": true
+    },
+    "150": {
+     "by_hand": {
+      "i": 140,
+      "before": [
+       13.9,
+       149.9154318317274
+      ],
+      "after": [
+       14.0,
+       151.35234839365376
+      ],
+      "t_cross_s": 13.905885391713992
+     },
+     "record_t_s": 13.905885391713992,
+     "file_t_s": 13.905885391713992,
+     "abs_diff_s": 0.0,
+     "agree": true
+    },
+    "prop": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    }
+   },
+   "lumped": {
+    "largest_stored_C": 182.96710626290218,
+    "at_s": 249.9,
+    "record_peak_C": 182.96710626290218,
+    "sep": {
+     "by_hand": {
+      "i": 918,
+      "before": [
+       91.7,
+       138.45188788799845
+      ],
+      "after": [
+       91.8,
+       138.5296116893469
+      ],
+      "t_cross_s": 91.7619013882065
+     },
+     "record_t_s": 91.7619013882065,
+     "file_t_s": 91.7619013882065,
+     "abs_diff_s": 0.0,
+     "agree": true
+    },
+    "150": {
+     "by_hand": {
+      "i": 1085,
+      "before": [
+       108.4,
+       149.98321695258664
+      ],
+      "after": [
+       108.5,
+       150.04405948900478
+      ],
+      "t_cross_s": 108.42758439802381
+     },
+     "record_t_s": 108.42758439802381,
+     "file_t_s": 108.42758439802381,
+     "abs_diff_s": 0.0,
+     "agree": true
+    },
+    "prop": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    }
+   },
+   "stop_crossings": {
+    "hot": {
+     "t_prop_s": null,
+     "last_stored_s": 900.0,
+     "last_stored_C": 105.31793765333379,
+     "t_end_s": 900.0,
+     "consistent": 1.0
+    },
+    "lumped": {
+     "t_prop_s": null,
+     "last_stored_s": 900.0,
+     "last_stored_C": 104.83666396701426,
+     "t_end_s": 900.0,
+     "consistent": 1.0
+    }
+   }
+  },
+  "aged_M50_SP_Exp3_series_hhigh_gcentral_tau21.39_E54.30_aged": {
+   "hot": {
+    "largest_stored_C": 258.0394369286696,
+    "at_s": 14.4,
+    "record_peak_C": 258.0394369286696,
+    "sep": {
+     "by_hand": {
+      "i": 100,
+      "before": [
+       9.9,
+       138.0708370047841
+      ],
+      "after": [
+       10.0,
+       140.6048518368085
+      ],
+      "t_cross_s": 9.916936088526091
+     },
+     "record_t_s": 9.916936088526091,
+     "file_t_s": 9.916936088526091,
+     "abs_diff_s": 0.0,
+     "agree": true
+    },
+    "150": {
+     "by_hand": {
+      "i": 104,
+      "before": [
+       10.3,
+       148.40024278335648
+      ],
+      "after": [
+       10.4,
+       151.06384280492284
+      ],
+      "t_cross_s": 10.360059964097116
+     },
+     "record_t_s": 10.360059964097116,
+     "file_t_s": 10.360059964097116,
+     "abs_diff_s": 0.0,
+     "agree": true
+    },
+    "prop": {
+     "by_hand": {
+      "i": 144,
+      "before": [
+       14.3,
+       255.64069301010306
+      ],
+      "after": [
+       14.4,
+       258.0394369286696
+      ],
+      "t_cross_s": 14.301704308224837
+     },
+     "record_t_s": 14.301704308224837,
+     "file_t_s": 14.301704308224837,
+     "abs_diff_s": 0.0,
+     "agree": true
+    }
+   },
+   "mean": {
+    "largest_stored_C": 36.56745493487409,
+    "at_s": 14.4,
+    "record_peak_C": 36.56745493487409,
+    "sep": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    },
+    "150": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    },
+    "prop": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    }
+   },
+   "away": {
+    "largest_stored_C": 25.88929358069231,
+    "at_s": 14.4,
+    "record_peak_C": 25.88929358069231,
+    "sep": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    },
+    "150": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    },
+    "prop": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    }
+   },
+   "toward": {
+    "largest_stored_C": 257.5581213988165,
+    "at_s": 14.4,
+    "record_peak_C": 257.5581213988165,
+    "sep": {
+     "by_hand": {
+      "i": 100,
+      "before": [
+       9.9,
+       137.7922522127369
+      ],
+      "after": [
+       10.0,
+       140.3208485852939
+      ],
+      "t_cross_s": 9.927989749370218
+     },
+     "record_t_s": 9.927989749370218,
+     "file_t_s": 9.927989749370218,
+     "abs_diff_s": 0.0,
+     "agree": true
+    },
+    "150": {
+     "by_hand": {
+      "i": 104,
+      "before": [
+       10.3,
+       148.09969663980456
+      ],
+      "after": [
+       10.4,
+       150.75768677442784
+      ],
+      "t_cross_s": 10.37149399598749
+     },
+     "record_t_s": 10.37149399598749,
+     "file_t_s": 10.37149399598749,
+     "abs_diff_s": 0.0,
+     "agree": true
+    },
+    "prop": {
+     "by_hand": {
+      "i": 144,
+      "before": [
+       14.3,
+       255.16202825675407
+      ],
+      "after": [
+       14.4,
+       257.5581213988165
+      ],
+      "t_cross_s": 14.321683077929045
+     },
+     "record_t_s": 14.321683077929045,
+     "file_t_s": 14.321683077929045,
+     "abs_diff_s": 0.0,
+     "agree": true
+    }
+   },
+   "lumped": {
+    "largest_stored_C": 255.73629561769155,
+    "at_s": 132.4,
+    "record_peak_C": 255.73629561769155,
+    "sep": {
+     "by_hand": {
+      "i": 481,
+      "before": [
+       48.0,
+       138.34384287813953
+      ],
+      "after": [
+       48.1,
+       138.55635527455973
+      ],
+      "t_cross_s": 48.073481417785956
+     },
+     "record_t_s": 48.073481417785956,
+     "file_t_s": 48.073481417785956,
+     "abs_diff_s": 0.0,
+     "agree": true
+    },
+    "150": {
+     "by_hand": {
+      "i": 538,
+      "before": [
+       53.7,
+       149.81843037859346
+      ],
+      "after": [
+       53.8,
+       150.0083269602206
+      ],
+      "t_cross_s": 53.7956150025718
+     },
+     "record_t_s": 53.7956150025718,
+     "file_t_s": 53.7956150025718,
+     "abs_diff_s": 0.0,
+     "agree": true
+    },
+    "prop": {
+     "by_hand": {
+      "i": 1324,
+      "before": [
+       132.3,
+       255.30652655107065
+      ],
+      "after": [
+       132.4,
+       255.73629561769155
+      ],
+      "t_cross_s": 132.38726743687678
+     },
+     "record_t_s": 132.38726743687678,
+     "file_t_s": 132.38726743687678,
+     "abs_diff_s": 0.0,
+     "agree": true
+    }
+   },
+   "stop_crossings": {
+    "hot": {
+     "t_prop_s": 14.301704308224837,
+     "last_stored_s": 14.4,
+     "last_stored_C": 258.0394369286696,
+     "t_end_s": 14.4,
+     "consistent": true
+    },
+    "lumped": {
+     "t_prop_s": 132.38726743687678,
+     "last_stored_s": 132.4,
+     "last_stored_C": 255.73629561769155,
+     "t_end_s": 132.4,
+     "consistent": true
+    }
+   }
+  },
+  "pertest_M50_ST_Exp3_series_hlow_gcentral_tau21.39_E16.64": {
+   "hot": {
+    "largest_stored_C": 74.05881473547976,
+    "at_s": 358.9,
+    "record_peak_C": 74.05881473547976,
+    "sep": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    },
+    "150": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    },
+    "prop": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    }
+   },
+   "mean": {
+    "largest_stored_C": 67.95742581946377,
+    "at_s": 488.0,
+    "record_peak_C": 67.95742581946377,
+    "sep": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    },
+    "150": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    },
+    "prop": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    }
+   },
+   "away": {
+    "largest_stored_C": 66.39385460095872,
+    "at_s": 498.5,
+    "record_peak_C": 66.39385460095872,
+    "sep": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    },
+    "150": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    },
+    "prop": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    }
+   },
+   "toward": {
+    "largest_stored_C": 73.73715031810872,
+    "at_s": 367.4,
+    "record_peak_C": 73.73715031810872,
+    "sep": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    },
+    "150": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    },
+    "prop": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    }
+   },
+   "lumped": {
+    "largest_stored_C": 70.36214785875603,
+    "at_s": 473.6,
+    "record_peak_C": 70.36214785875603,
+    "sep": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    },
+    "150": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    },
+    "prop": {
+     "by_hand": null,
+     "record_t_s": null,
+     "file_t_s": null,
+     "abs_diff_s": null,
+     "agree": true
+    }
+   },
+   "stop_crossings": {
+    "hot": {
+     "t_prop_s": null,
+     "last_stored_s": 900.0,
+     "last_stored_C": 61.76619956770776,
+     "t_end_s": 900.0,
+     "consistent": 1.0
+    },
+    "lumped": {
+     "t_prop_s": null,
+     "last_stored_s": 900.0,
+     "last_stored_C": 61.79887421038052,
+     "t_end_s": 900.0,
+     "consistent": 1.0
+    }
+   }
+  }
+ },
+ "pass": 1.0,
+ "largest_difference_s": 0.0
+}

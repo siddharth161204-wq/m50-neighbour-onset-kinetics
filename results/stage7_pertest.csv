@@ -1,0 +1,337 @@
+test,connection,contact,criterion,criterion_text,role,run,predicted,predicted_time_s,measured,measured_time_s,class,error_s
+M50_PT_Exp1,parallel,low,C1,hot spot reaches 255.7 C,bracket,pertest_M50_PT_Exp1_parallel_hlow_gcentral_tau21.39_E8.98,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,low,C1,hot spot reaches 255.7 C,bracket,pertest_M50_PT_Exp2_parallel_hlow_gcentral_tau21.39_E43.40,No,,No,,correct rejection,
+M50_PT_Exp3,parallel,low,C1,hot spot reaches 255.7 C,bracket,pertest_M50_PT_Exp3_parallel_hlow_gcentral_tau21.39_E31.59,No,,No,,correct rejection,
+M50_PT_Exp4,parallel,low,C1,hot spot reaches 255.7 C,bracket,pertest_M50_PT_Exp4_parallel_hlow_gcentral_tau21.39_E39.99,No,,Yes,272.0,miss,
+M50_PP_Exp1,parallel,low,C1,hot spot reaches 255.7 C,bracket,pertest_M50_PP_Exp1_parallel_hlow_gcentral_tau21.39_E51.09,No,,Yes,152.0,miss,
+M50_PP_Exp2,parallel,low,C1,hot spot reaches 255.7 C,bracket,pertest_M50_PP_Exp2_parallel_hlow_gcentral_tau21.39_E40.96,No,,Yes,147.0,miss,
+M50_PP_Exp3,parallel,low,C1,hot spot reaches 255.7 C,bracket,pertest_M50_PP_Exp3_parallel_hlow_gcentral_tau21.39_E43.90,No,,No,,correct rejection,
+M50_PP_Exp4,parallel,low,C1,hot spot reaches 255.7 C,bracket,pertest_M50_PP_Exp4_parallel_hlow_gcentral_tau21.39_E46.86,No,,Yes,275.0,miss,
+M50_ST_Exp1,series,low,C1,hot spot reaches 255.7 C,bracket,pertest_M50_ST_Exp1_series_hlow_gcentral_tau21.39_E51.11,No,,No,,correct rejection,
+M50_ST_Exp2,series,low,C1,hot spot reaches 255.7 C,bracket,pertest_M50_ST_Exp2_series_hlow_gcentral_tau21.39_E46.46,No,,No,,correct rejection,
+M50_ST_Exp3,series,low,C1,hot spot reaches 255.7 C,bracket,pertest_M50_ST_Exp3_series_hlow_gcentral_tau21.39_E16.64,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,low,C1,hot spot reaches 255.7 C,bracket,pertest_M50_ST_Exp4_series_hlow_gcentral_tau21.39_E48.81,No,,Yes,342.0,miss,
+M50_SP_Exp1,series,low,C1,hot spot reaches 255.7 C,bracket,pertest_M50_SP_Exp1_series_hlow_gcentral_tau21.39_E46.81,No,,Yes,223.0,miss,
+M50_SP_Exp2,series,low,C1,hot spot reaches 255.7 C,bracket,pertest_M50_SP_Exp2_series_hlow_gcentral_tau21.39_E48.73,No,,Yes,149.0,miss,
+M50_SP_Exp3,series,low,C1,hot spot reaches 255.7 C,bracket,pertest_M50_SP_Exp3_series_hlow_gcentral_tau21.39_E54.30,No,,Yes,210.0,miss,
+M50_SP_Exp4,series,low,C1,hot spot reaches 255.7 C,bracket,pertest_M50_SP_Exp4_series_hlow_gcentral_tau21.39_E39.60,No,,No,,correct rejection,
+M50_PT_Exp1,parallel,central,C1,hot spot reaches 255.7 C,registered,pertest_M50_PT_Exp1_parallel_hcentral_gcentral_tau21.39_E8.98,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,central,C1,hot spot reaches 255.7 C,registered,pertest_M50_PT_Exp2_parallel_hcentral_gcentral_tau21.39_E43.40,No,,No,,correct rejection,
+M50_PT_Exp3,parallel,central,C1,hot spot reaches 255.7 C,registered,pertest_M50_PT_Exp3_parallel_hcentral_gcentral_tau21.39_E31.59,No,,No,,correct rejection,
+M50_PT_Exp4,parallel,central,C1,hot spot reaches 255.7 C,registered,pertest_M50_PT_Exp4_parallel_hcentral_gcentral_tau21.39_E39.99,No,,Yes,272.0,miss,
+M50_PP_Exp1,parallel,central,C1,hot spot reaches 255.7 C,registered,pertest_M50_PP_Exp1_parallel_hcentral_gcentral_tau21.39_E51.09,Yes,18.147180005881136,Yes,152.0,hit,-133.85281999411887
+M50_PP_Exp2,parallel,central,C1,hot spot reaches 255.7 C,registered,pertest_M50_PP_Exp2_parallel_hcentral_gcentral_tau21.39_E40.96,No,,Yes,147.0,miss,
+M50_PP_Exp3,parallel,central,C1,hot spot reaches 255.7 C,registered,pertest_M50_PP_Exp3_parallel_hcentral_gcentral_tau21.39_E43.90,No,,No,,correct rejection,
+M50_PP_Exp4,parallel,central,C1,hot spot reaches 255.7 C,registered,pertest_M50_PP_Exp4_parallel_hcentral_gcentral_tau21.39_E46.86,Yes,21.095099790630037,Yes,275.0,hit,-253.90490020936997
+M50_ST_Exp1,series,central,C1,hot spot reaches 255.7 C,registered,pertest_M50_ST_Exp1_series_hcentral_gcentral_tau21.39_E51.11,Yes,18.121670677241454,No,,false alarm,
+M50_ST_Exp2,series,central,C1,hot spot reaches 255.7 C,registered,pertest_M50_ST_Exp2_series_hcentral_gcentral_tau21.39_E46.46,Yes,21.69415604040123,No,,false alarm,
+M50_ST_Exp3,series,central,C1,hot spot reaches 255.7 C,registered,pertest_M50_ST_Exp3_series_hcentral_gcentral_tau21.39_E16.64,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,central,C1,hot spot reaches 255.7 C,registered,pertest_M50_ST_Exp4_series_hcentral_gcentral_tau21.39_E48.81,Yes,19.330230125512834,Yes,342.0,hit,-322.66976987448714
+M50_SP_Exp1,series,central,C1,hot spot reaches 255.7 C,registered,pertest_M50_SP_Exp1_series_hcentral_gcentral_tau21.39_E46.81,Yes,21.10279661998705,Yes,223.0,hit,-201.89720338001294
+M50_SP_Exp2,series,central,C1,hot spot reaches 255.7 C,registered,pertest_M50_SP_Exp2_series_hcentral_gcentral_tau21.39_E48.73,Yes,19.376093935883553,Yes,149.0,hit,-129.62390606411645
+M50_SP_Exp3,series,central,C1,hot spot reaches 255.7 C,registered,pertest_M50_SP_Exp3_series_hcentral_gcentral_tau21.39_E54.30,Yes,16.937252847669065,Yes,210.0,hit,-193.06274715233093
+M50_SP_Exp4,series,central,C1,hot spot reaches 255.7 C,registered,pertest_M50_SP_Exp4_series_hcentral_gcentral_tau21.39_E39.60,No,,No,,correct rejection,
+M50_PT_Exp1,parallel,high,C1,hot spot reaches 255.7 C,bracket,pertest_M50_PT_Exp1_parallel_hhigh_gcentral_tau21.39_E8.98,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,high,C1,hot spot reaches 255.7 C,bracket,pertest_M50_PT_Exp2_parallel_hhigh_gcentral_tau21.39_E43.40,Yes,17.457400244088856,No,,false alarm,
+M50_PT_Exp3,parallel,high,C1,hot spot reaches 255.7 C,bracket,pertest_M50_PT_Exp3_parallel_hhigh_gcentral_tau21.39_E31.59,No,,No,,correct rejection,
+M50_PT_Exp4,parallel,high,C1,hot spot reaches 255.7 C,bracket,pertest_M50_PT_Exp4_parallel_hhigh_gcentral_tau21.39_E39.99,Yes,19.62415191877463,Yes,272.0,hit,-252.37584808122537
+M50_PP_Exp1,parallel,high,C1,hot spot reaches 255.7 C,bracket,pertest_M50_PP_Exp1_parallel_hhigh_gcentral_tau21.39_E51.09,Yes,14.98371377506638,Yes,152.0,hit,-137.01628622493362
+M50_PP_Exp2,parallel,high,C1,hot spot reaches 255.7 C,bracket,pertest_M50_PP_Exp2_parallel_hhigh_gcentral_tau21.39_E40.96,Yes,18.839671963628547,Yes,147.0,hit,-128.16032803637145
+M50_PP_Exp3,parallel,high,C1,hot spot reaches 255.7 C,bracket,pertest_M50_PP_Exp3_parallel_hhigh_gcentral_tau21.39_E43.90,Yes,17.23638921981894,No,,false alarm,
+M50_PP_Exp4,parallel,high,C1,hot spot reaches 255.7 C,bracket,pertest_M50_PP_Exp4_parallel_hhigh_gcentral_tau21.39_E46.86,Yes,16.132639485570813,Yes,275.0,hit,-258.8673605144292
+M50_ST_Exp1,series,high,C1,hot spot reaches 255.7 C,bracket,pertest_M50_ST_Exp1_series_hhigh_gcentral_tau21.39_E51.11,Yes,14.972540315554363,No,,false alarm,
+M50_ST_Exp2,series,high,C1,hot spot reaches 255.7 C,bracket,pertest_M50_ST_Exp2_series_hhigh_gcentral_tau21.39_E46.46,Yes,16.255048909162145,No,,false alarm,
+M50_ST_Exp3,series,high,C1,hot spot reaches 255.7 C,bracket,pertest_M50_ST_Exp3_series_hhigh_gcentral_tau21.39_E16.64,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,high,C1,hot spot reaches 255.7 C,bracket,pertest_M50_ST_Exp4_series_hhigh_gcentral_tau21.39_E48.81,Yes,15.549918983261387,Yes,342.0,hit,-326.45008101673864
+M50_SP_Exp1,series,high,C1,hot spot reaches 255.7 C,bracket,pertest_M50_SP_Exp1_series_hhigh_gcentral_tau21.39_E46.81,Yes,16.139177856630795,Yes,223.0,hit,-206.8608221433692
+M50_SP_Exp2,series,high,C1,hot spot reaches 255.7 C,bracket,pertest_M50_SP_Exp2_series_hhigh_gcentral_tau21.39_E48.73,Yes,15.56931041543148,Yes,149.0,hit,-133.4306895845685
+M50_SP_Exp3,series,high,C1,hot spot reaches 255.7 C,bracket,pertest_M50_SP_Exp3_series_hhigh_gcentral_tau21.39_E54.30,Yes,14.301452323353436,Yes,210.0,hit,-195.69854767664657
+M50_SP_Exp4,series,high,C1,hot spot reaches 255.7 C,bracket,pertest_M50_SP_Exp4_series_hhigh_gcentral_tau21.39_E39.60,Yes,19.97916141896967,No,,false alarm,
+M50_PT_Exp1,parallel,low,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_PT_Exp1_parallel_hlow_gcentral_tau21.39_E8.98,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,low,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_PT_Exp2_parallel_hlow_gcentral_tau21.39_E43.40,No,,No,,correct rejection,
+M50_PT_Exp3,parallel,low,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_PT_Exp3_parallel_hlow_gcentral_tau21.39_E31.59,No,,No,,correct rejection,
+M50_PT_Exp4,parallel,low,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_PT_Exp4_parallel_hlow_gcentral_tau21.39_E39.99,No,,Yes,272.0,miss,
+M50_PP_Exp1,parallel,low,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_PP_Exp1_parallel_hlow_gcentral_tau21.39_E51.09,No,,Yes,152.0,miss,
+M50_PP_Exp2,parallel,low,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_PP_Exp2_parallel_hlow_gcentral_tau21.39_E40.96,No,,Yes,147.0,miss,
+M50_PP_Exp3,parallel,low,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_PP_Exp3_parallel_hlow_gcentral_tau21.39_E43.90,No,,No,,correct rejection,
+M50_PP_Exp4,parallel,low,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_PP_Exp4_parallel_hlow_gcentral_tau21.39_E46.86,No,,Yes,275.0,miss,
+M50_ST_Exp1,series,low,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_ST_Exp1_series_hlow_gcentral_tau21.39_E51.11,No,,No,,correct rejection,
+M50_ST_Exp2,series,low,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_ST_Exp2_series_hlow_gcentral_tau21.39_E46.46,No,,No,,correct rejection,
+M50_ST_Exp3,series,low,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_ST_Exp3_series_hlow_gcentral_tau21.39_E16.64,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,low,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_ST_Exp4_series_hlow_gcentral_tau21.39_E48.81,No,,Yes,342.0,miss,
+M50_SP_Exp1,series,low,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_SP_Exp1_series_hlow_gcentral_tau21.39_E46.81,No,,Yes,223.0,miss,
+M50_SP_Exp2,series,low,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_SP_Exp2_series_hlow_gcentral_tau21.39_E48.73,No,,Yes,149.0,miss,
+M50_SP_Exp3,series,low,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_SP_Exp3_series_hlow_gcentral_tau21.39_E54.30,No,,Yes,210.0,miss,
+M50_SP_Exp4,series,low,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_SP_Exp4_series_hlow_gcentral_tau21.39_E39.60,No,,No,,correct rejection,
+M50_PT_Exp1,parallel,central,C2,lumped neighbour reaches 255.7 C,registered,pertest_M50_PT_Exp1_parallel_hcentral_gcentral_tau21.39_E8.98,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,central,C2,lumped neighbour reaches 255.7 C,registered,pertest_M50_PT_Exp2_parallel_hcentral_gcentral_tau21.39_E43.40,No,,No,,correct rejection,
+M50_PT_Exp3,parallel,central,C2,lumped neighbour reaches 255.7 C,registered,pertest_M50_PT_Exp3_parallel_hcentral_gcentral_tau21.39_E31.59,No,,No,,correct rejection,
+M50_PT_Exp4,parallel,central,C2,lumped neighbour reaches 255.7 C,registered,pertest_M50_PT_Exp4_parallel_hcentral_gcentral_tau21.39_E39.99,No,,Yes,272.0,miss,
+M50_PP_Exp1,parallel,central,C2,lumped neighbour reaches 255.7 C,registered,pertest_M50_PP_Exp1_parallel_hcentral_gcentral_tau21.39_E51.09,Yes,277.27239398170724,Yes,152.0,hit,125.27239398170724
+M50_PP_Exp2,parallel,central,C2,lumped neighbour reaches 255.7 C,registered,pertest_M50_PP_Exp2_parallel_hcentral_gcentral_tau21.39_E40.96,No,,Yes,147.0,miss,
+M50_PP_Exp3,parallel,central,C2,lumped neighbour reaches 255.7 C,registered,pertest_M50_PP_Exp3_parallel_hcentral_gcentral_tau21.39_E43.90,No,,No,,correct rejection,
+M50_PP_Exp4,parallel,central,C2,lumped neighbour reaches 255.7 C,registered,pertest_M50_PP_Exp4_parallel_hcentral_gcentral_tau21.39_E46.86,No,,Yes,275.0,miss,
+M50_ST_Exp1,series,central,C2,lumped neighbour reaches 255.7 C,registered,pertest_M50_ST_Exp1_series_hcentral_gcentral_tau21.39_E51.11,No,,No,,correct rejection,
+M50_ST_Exp2,series,central,C2,lumped neighbour reaches 255.7 C,registered,pertest_M50_ST_Exp2_series_hcentral_gcentral_tau21.39_E46.46,No,,No,,correct rejection,
+M50_ST_Exp3,series,central,C2,lumped neighbour reaches 255.7 C,registered,pertest_M50_ST_Exp3_series_hcentral_gcentral_tau21.39_E16.64,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,central,C2,lumped neighbour reaches 255.7 C,registered,pertest_M50_ST_Exp4_series_hcentral_gcentral_tau21.39_E48.81,No,,Yes,342.0,miss,
+M50_SP_Exp1,series,central,C2,lumped neighbour reaches 255.7 C,registered,pertest_M50_SP_Exp1_series_hcentral_gcentral_tau21.39_E46.81,No,,Yes,223.0,miss,
+M50_SP_Exp2,series,central,C2,lumped neighbour reaches 255.7 C,registered,pertest_M50_SP_Exp2_series_hcentral_gcentral_tau21.39_E48.73,No,,Yes,149.0,miss,
+M50_SP_Exp3,series,central,C2,lumped neighbour reaches 255.7 C,registered,pertest_M50_SP_Exp3_series_hcentral_gcentral_tau21.39_E54.30,Yes,221.49980754256322,Yes,210.0,hit,11.499807542563218
+M50_SP_Exp4,series,central,C2,lumped neighbour reaches 255.7 C,registered,pertest_M50_SP_Exp4_series_hcentral_gcentral_tau21.39_E39.60,No,,No,,correct rejection,
+M50_PT_Exp1,parallel,high,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_PT_Exp1_parallel_hhigh_gcentral_tau21.39_E8.98,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,high,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_PT_Exp2_parallel_hhigh_gcentral_tau21.39_E43.40,No,,No,,correct rejection,
+M50_PT_Exp3,parallel,high,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_PT_Exp3_parallel_hhigh_gcentral_tau21.39_E31.59,No,,No,,correct rejection,
+M50_PT_Exp4,parallel,high,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_PT_Exp4_parallel_hhigh_gcentral_tau21.39_E39.99,No,,Yes,272.0,miss,
+M50_PP_Exp1,parallel,high,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_PP_Exp1_parallel_hhigh_gcentral_tau21.39_E51.09,Yes,142.72851526701407,Yes,152.0,hit,-9.271484732985925
+M50_PP_Exp2,parallel,high,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_PP_Exp2_parallel_hhigh_gcentral_tau21.39_E40.96,No,,Yes,147.0,miss,
+M50_PP_Exp3,parallel,high,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_PP_Exp3_parallel_hhigh_gcentral_tau21.39_E43.90,Yes,259.03063215408775,No,,false alarm,
+M50_PP_Exp4,parallel,high,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_PP_Exp4_parallel_hhigh_gcentral_tau21.39_E46.86,Yes,181.53428470893184,Yes,275.0,hit,-93.46571529106816
+M50_ST_Exp1,series,high,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_ST_Exp1_series_hhigh_gcentral_tau21.39_E51.11,Yes,148.71256614687601,No,,false alarm,
+M50_ST_Exp2,series,high,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_ST_Exp2_series_hhigh_gcentral_tau21.39_E46.46,Yes,199.0447998173874,No,,false alarm,
+M50_ST_Exp3,series,high,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_ST_Exp3_series_hhigh_gcentral_tau21.39_E16.64,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,high,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_ST_Exp4_series_hhigh_gcentral_tau21.39_E48.81,Yes,168.1316959404519,Yes,342.0,hit,-173.8683040595481
+M50_SP_Exp1,series,high,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_SP_Exp1_series_hhigh_gcentral_tau21.39_E46.81,Yes,193.10254400641014,Yes,223.0,hit,-29.89745599358986
+M50_SP_Exp2,series,high,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_SP_Exp2_series_hhigh_gcentral_tau21.39_E48.73,Yes,168.85319579629757,Yes,149.0,hit,19.85319579629757
+M50_SP_Exp3,series,high,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_SP_Exp3_series_hhigh_gcentral_tau21.39_E54.30,Yes,129.64903541430644,Yes,210.0,hit,-80.35096458569356
+M50_SP_Exp4,series,high,C2,lumped neighbour reaches 255.7 C,bracket,pertest_M50_SP_Exp4_series_hhigh_gcentral_tau21.39_E39.60,No,,No,,correct rejection,
+M50_PT_Exp1,parallel,low,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_PT_Exp1_parallel_hlow_gcentral_tau21.39_E8.98,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,low,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_PT_Exp2_parallel_hlow_gcentral_tau21.39_E43.40,No,,No,,correct rejection,
+M50_PT_Exp3,parallel,low,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_PT_Exp3_parallel_hlow_gcentral_tau21.39_E31.59,No,,No,,correct rejection,
+M50_PT_Exp4,parallel,low,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_PT_Exp4_parallel_hlow_gcentral_tau21.39_E39.99,No,,Yes,272.0,miss,
+M50_PP_Exp1,parallel,low,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_PP_Exp1_parallel_hlow_gcentral_tau21.39_E51.09,No,,Yes,152.0,miss,
+M50_PP_Exp2,parallel,low,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_PP_Exp2_parallel_hlow_gcentral_tau21.39_E40.96,No,,Yes,147.0,miss,
+M50_PP_Exp3,parallel,low,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_PP_Exp3_parallel_hlow_gcentral_tau21.39_E43.90,No,,No,,correct rejection,
+M50_PP_Exp4,parallel,low,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_PP_Exp4_parallel_hlow_gcentral_tau21.39_E46.86,No,,Yes,275.0,miss,
+M50_ST_Exp1,series,low,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_ST_Exp1_series_hlow_gcentral_tau21.39_E51.11,No,,No,,correct rejection,
+M50_ST_Exp2,series,low,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_ST_Exp2_series_hlow_gcentral_tau21.39_E46.46,No,,No,,correct rejection,
+M50_ST_Exp3,series,low,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_ST_Exp3_series_hlow_gcentral_tau21.39_E16.64,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,low,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_ST_Exp4_series_hlow_gcentral_tau21.39_E48.81,No,,Yes,342.0,miss,
+M50_SP_Exp1,series,low,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_SP_Exp1_series_hlow_gcentral_tau21.39_E46.81,No,,Yes,223.0,miss,
+M50_SP_Exp2,series,low,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_SP_Exp2_series_hlow_gcentral_tau21.39_E48.73,No,,Yes,149.0,miss,
+M50_SP_Exp3,series,low,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_SP_Exp3_series_hlow_gcentral_tau21.39_E54.30,No,,Yes,210.0,miss,
+M50_SP_Exp4,series,low,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_SP_Exp4_series_hlow_gcentral_tau21.39_E39.60,No,,No,,correct rejection,
+M50_PT_Exp1,parallel,central,C3,lumped neighbour reaches 150 C,registered,pertest_M50_PT_Exp1_parallel_hcentral_gcentral_tau21.39_E8.98,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,central,C3,lumped neighbour reaches 150 C,registered,pertest_M50_PT_Exp2_parallel_hcentral_gcentral_tau21.39_E43.40,Yes,94.65791525826378,No,,false alarm,
+M50_PT_Exp3,parallel,central,C3,lumped neighbour reaches 150 C,registered,pertest_M50_PT_Exp3_parallel_hcentral_gcentral_tau21.39_E31.59,Yes,182.35165864000084,No,,false alarm,
+M50_PT_Exp4,parallel,central,C3,lumped neighbour reaches 150 C,registered,pertest_M50_PT_Exp4_parallel_hcentral_gcentral_tau21.39_E39.99,Yes,108.42758439802381,Yes,272.0,hit,-163.5724156019762
+M50_PP_Exp1,parallel,central,C3,lumped neighbour reaches 150 C,registered,pertest_M50_PP_Exp1_parallel_hcentral_gcentral_tau21.39_E51.09,Yes,73.95027928127054,Yes,152.0,hit,-78.04972071872946
+M50_PP_Exp2,parallel,central,C3,lumped neighbour reaches 150 C,registered,pertest_M50_PP_Exp2_parallel_hcentral_gcentral_tau21.39_E40.96,Yes,104.08010608144849,Yes,147.0,hit,-42.91989391855151
+M50_PP_Exp3,parallel,central,C3,lumped neighbour reaches 150 C,registered,pertest_M50_PP_Exp3_parallel_hcentral_gcentral_tau21.39_E43.90,Yes,92.97873785643263,No,,false alarm,
+M50_PP_Exp4,parallel,central,C3,lumped neighbour reaches 150 C,registered,pertest_M50_PP_Exp4_parallel_hcentral_gcentral_tau21.39_E46.86,Yes,84.03389596142131,Yes,275.0,hit,-190.9661040385787
+M50_ST_Exp1,series,central,C3,lumped neighbour reaches 150 C,registered,pertest_M50_ST_Exp1_series_hcentral_gcentral_tau21.39_E51.11,Yes,76.61677466577062,No,,false alarm,
+M50_ST_Exp2,series,central,C3,lumped neighbour reaches 150 C,registered,pertest_M50_ST_Exp2_series_hcentral_gcentral_tau21.39_E46.46,Yes,88.51113496937994,No,,false alarm,
+M50_ST_Exp3,series,central,C3,lumped neighbour reaches 150 C,registered,pertest_M50_ST_Exp3_series_hcentral_gcentral_tau21.39_E16.64,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,central,C3,lumped neighbour reaches 150 C,registered,pertest_M50_ST_Exp4_series_hcentral_gcentral_tau21.39_E48.81,Yes,82.0723405187076,Yes,342.0,hit,-259.9276594812924
+M50_SP_Exp1,series,central,C3,lumped neighbour reaches 150 C,registered,pertest_M50_SP_Exp1_series_hcentral_gcentral_tau21.39_E46.81,Yes,87.47254780171956,Yes,223.0,hit,-135.52745219828046
+M50_SP_Exp2,series,central,C3,lumped neighbour reaches 150 C,registered,pertest_M50_SP_Exp2_series_hcentral_gcentral_tau21.39_E48.73,Yes,82.25314968706574,Yes,149.0,hit,-66.74685031293426
+M50_SP_Exp3,series,central,C3,lumped neighbour reaches 150 C,registered,pertest_M50_SP_Exp3_series_hcentral_gcentral_tau21.39_E54.30,Yes,70.11522716075493,Yes,210.0,hit,-139.88477283924507
+M50_SP_Exp4,series,central,C3,lumped neighbour reaches 150 C,registered,pertest_M50_SP_Exp4_series_hcentral_gcentral_tau21.39_E39.60,Yes,115.33069633425065,No,,false alarm,
+M50_PT_Exp1,parallel,high,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_PT_Exp1_parallel_hhigh_gcentral_tau21.39_E8.98,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,high,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_PT_Exp2_parallel_hhigh_gcentral_tau21.39_E43.40,Yes,70.25405448507185,No,,false alarm,
+M50_PT_Exp3,parallel,high,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_PT_Exp3_parallel_hhigh_gcentral_tau21.39_E31.59,Yes,117.29489742317278,No,,false alarm,
+M50_PT_Exp4,parallel,high,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_PT_Exp4_parallel_hhigh_gcentral_tau21.39_E39.99,Yes,78.90759460439463,Yes,272.0,hit,-193.09240539560537
+M50_PP_Exp1,parallel,high,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_PP_Exp1_parallel_hhigh_gcentral_tau21.39_E51.09,Yes,56.684613522514994,Yes,152.0,hit,-95.315386477485
+M50_PP_Exp2,parallel,high,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_PP_Exp2_parallel_hhigh_gcentral_tau21.39_E40.96,Yes,76.21186294494875,Yes,147.0,hit,-70.78813705505125
+M50_PP_Exp3,parallel,high,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_PP_Exp3_parallel_hhigh_gcentral_tau21.39_E43.90,Yes,69.17680577239716,No,,false alarm,
+M50_PP_Exp4,parallel,high,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_PP_Exp4_parallel_hhigh_gcentral_tau21.39_E46.86,Yes,63.366472609161995,Yes,275.0,hit,-211.633527390838
+M50_ST_Exp1,series,high,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_ST_Exp1_series_hhigh_gcentral_tau21.39_E51.11,Yes,58.03418467252069,No,,false alarm,
+M50_ST_Exp2,series,high,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_ST_Exp2_series_hhigh_gcentral_tau21.39_E46.46,Yes,65.75528215175467,No,,false alarm,
+M50_ST_Exp3,series,high,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_ST_Exp3_series_hhigh_gcentral_tau21.39_E16.64,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,high,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_ST_Exp4_series_hhigh_gcentral_tau21.39_E48.81,Yes,61.59914226651525,Yes,342.0,hit,-280.40085773348477
+M50_SP_Exp1,series,high,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_SP_Exp1_series_hhigh_gcentral_tau21.39_E46.81,Yes,65.08882645389421,Yes,223.0,hit,-157.91117354610577
+M50_SP_Exp2,series,high,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_SP_Exp2_series_hhigh_gcentral_tau21.39_E48.73,Yes,61.7166382471625,Yes,149.0,hit,-87.2833617528375
+M50_SP_Exp3,series,high,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_SP_Exp3_series_hhigh_gcentral_tau21.39_E54.30,Yes,53.737695037782906,Yes,210.0,hit,-156.2623049622171
+M50_SP_Exp4,series,high,C3,lumped neighbour reaches 150 C,bracket,pertest_M50_SP_Exp4_series_hhigh_gcentral_tau21.39_E39.60,Yes,82.35315150634675,No,,false alarm,
+M50_PT_Exp1,parallel,low,C4,hot spot reaches 138.5 C,bracket,pertest_M50_PT_Exp1_parallel_hlow_gcentral_tau21.39_E8.98,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,low,C4,hot spot reaches 138.5 C,bracket,pertest_M50_PT_Exp2_parallel_hlow_gcentral_tau21.39_E43.40,Yes,216.80729220236654,No,,false alarm,
+M50_PT_Exp3,parallel,low,C4,hot spot reaches 138.5 C,bracket,pertest_M50_PT_Exp3_parallel_hlow_gcentral_tau21.39_E31.59,No,,No,,correct rejection,
+M50_PT_Exp4,parallel,low,C4,hot spot reaches 138.5 C,bracket,pertest_M50_PT_Exp4_parallel_hlow_gcentral_tau21.39_E39.99,No,,Yes,272.0,miss,
+M50_PP_Exp1,parallel,low,C4,hot spot reaches 138.5 C,bracket,pertest_M50_PP_Exp1_parallel_hlow_gcentral_tau21.39_E51.09,Yes,21.640025069030816,Yes,152.0,hit,-130.35997493096917
+M50_PP_Exp2,parallel,low,C4,hot spot reaches 138.5 C,bracket,pertest_M50_PP_Exp2_parallel_hlow_gcentral_tau21.39_E40.96,No,,Yes,147.0,miss,
+M50_PP_Exp3,parallel,low,C4,hot spot reaches 138.5 C,bracket,pertest_M50_PP_Exp3_parallel_hlow_gcentral_tau21.39_E43.90,Yes,179.09889791127125,No,,false alarm,
+M50_PP_Exp4,parallel,low,C4,hot spot reaches 138.5 C,bracket,pertest_M50_PP_Exp4_parallel_hlow_gcentral_tau21.39_E46.86,Yes,70.80050789324298,Yes,275.0,hit,-204.19949210675702
+M50_ST_Exp1,series,low,C4,hot spot reaches 138.5 C,bracket,pertest_M50_ST_Exp1_series_hlow_gcentral_tau21.39_E51.11,Yes,21.566789216541075,No,,false alarm,
+M50_ST_Exp2,series,low,C4,hot spot reaches 138.5 C,bracket,pertest_M50_ST_Exp2_series_hlow_gcentral_tau21.39_E46.46,Yes,100.18824768175305,No,,false alarm,
+M50_ST_Exp3,series,low,C4,hot spot reaches 138.5 C,bracket,pertest_M50_ST_Exp3_series_hlow_gcentral_tau21.39_E16.64,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,low,C4,hot spot reaches 138.5 C,bracket,pertest_M50_ST_Exp4_series_hlow_gcentral_tau21.39_E48.81,Yes,25.90335001642447,Yes,342.0,hit,-316.0966499835755
+M50_SP_Exp1,series,low,C4,hot spot reaches 138.5 C,bracket,pertest_M50_SP_Exp1_series_hlow_gcentral_tau21.39_E46.81,Yes,79.5393838002467,Yes,223.0,hit,-143.4606161997533
+M50_SP_Exp2,series,low,C4,hot spot reaches 138.5 C,bracket,pertest_M50_SP_Exp2_series_hlow_gcentral_tau21.39_E48.73,Yes,26.139191683836323,Yes,149.0,hit,-122.86080831616368
+M50_SP_Exp3,series,low,C4,hot spot reaches 138.5 C,bracket,pertest_M50_SP_Exp3_series_hlow_gcentral_tau21.39_E54.30,Yes,19.349771239058605,Yes,210.0,hit,-190.6502287609414
+M50_SP_Exp4,series,low,C4,hot spot reaches 138.5 C,bracket,pertest_M50_SP_Exp4_series_hlow_gcentral_tau21.39_E39.60,No,,No,,correct rejection,
+M50_PT_Exp1,parallel,central,C4,hot spot reaches 138.5 C,registered,pertest_M50_PT_Exp1_parallel_hcentral_gcentral_tau21.39_E8.98,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,central,C4,hot spot reaches 138.5 C,registered,pertest_M50_PT_Exp2_parallel_hcentral_gcentral_tau21.39_E43.40,Yes,12.504535292979632,No,,false alarm,
+M50_PT_Exp3,parallel,central,C4,hot spot reaches 138.5 C,registered,pertest_M50_PT_Exp3_parallel_hcentral_gcentral_tau21.39_E31.59,Yes,15.413750905074759,No,,false alarm,
+M50_PT_Exp4,parallel,central,C4,hot spot reaches 138.5 C,registered,pertest_M50_PT_Exp4_parallel_hcentral_gcentral_tau21.39_E39.99,Yes,13.111000670565678,Yes,272.0,hit,-258.88899932943434
+M50_PP_Exp1,parallel,central,C4,hot spot reaches 138.5 C,registered,pertest_M50_PP_Exp1_parallel_hcentral_gcentral_tau21.39_E51.09,Yes,11.481739874478516,Yes,152.0,hit,-140.5182601255215
+M50_PP_Exp2,parallel,central,C4,hot spot reaches 138.5 C,registered,pertest_M50_PP_Exp2_parallel_hcentral_gcentral_tau21.39_E40.96,Yes,12.925710007110899,Yes,147.0,hit,-134.0742899928891
+M50_PP_Exp3,parallel,central,C4,hot spot reaches 138.5 C,registered,pertest_M50_PP_Exp3_parallel_hcentral_gcentral_tau21.39_E43.90,Yes,12.426678018333071,No,,false alarm,
+M50_PP_Exp4,parallel,central,C4,hot spot reaches 138.5 C,registered,pertest_M50_PP_Exp4_parallel_hcentral_gcentral_tau21.39_E46.86,Yes,11.99701996474116,Yes,275.0,hit,-263.0029800352588
+M50_ST_Exp1,series,central,C4,hot spot reaches 138.5 C,registered,pertest_M50_ST_Exp1_series_hcentral_gcentral_tau21.39_E51.11,Yes,11.477310490741035,No,,false alarm,
+M50_ST_Exp2,series,central,C4,hot spot reaches 138.5 C,registered,pertest_M50_ST_Exp2_series_hcentral_gcentral_tau21.39_E46.46,Yes,12.049282654705154,No,,false alarm,
+M50_ST_Exp3,series,central,C4,hot spot reaches 138.5 C,registered,pertest_M50_ST_Exp3_series_hcentral_gcentral_tau21.39_E16.64,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,central,C4,hot spot reaches 138.5 C,registered,pertest_M50_ST_Exp4_series_hcentral_gcentral_tau21.39_E48.81,Yes,11.745187883922837,Yes,342.0,hit,-330.2548121160772
+M50_SP_Exp1,series,central,C4,hot spot reaches 138.5 C,registered,pertest_M50_SP_Exp1_series_hcentral_gcentral_tau21.39_E46.81,Yes,12.00106120408928,Yes,223.0,hit,-210.99893879591073
+M50_SP_Exp2,series,central,C4,hot spot reaches 138.5 C,registered,pertest_M50_SP_Exp2_series_hcentral_gcentral_tau21.39_E48.73,Yes,11.75390203028059,Yes,149.0,hit,-137.24609796971941
+M50_SP_Exp3,series,central,C4,hot spot reaches 138.5 C,registered,pertest_M50_SP_Exp3_series_hcentral_gcentral_tau21.39_E54.30,Yes,11.144852457856022,Yes,210.0,hit,-198.85514754214398
+M50_SP_Exp4,series,central,C4,hot spot reaches 138.5 C,registered,pertest_M50_SP_Exp4_series_hcentral_gcentral_tau21.39_E39.60,Yes,13.184530694665693,No,,false alarm,
+M50_PT_Exp1,parallel,high,C4,hot spot reaches 138.5 C,bracket,pertest_M50_PT_Exp1_parallel_hhigh_gcentral_tau21.39_E8.98,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,high,C4,hot spot reaches 138.5 C,bracket,pertest_M50_PT_Exp2_parallel_hhigh_gcentral_tau21.39_E43.40,Yes,11.00968684886484,No,,false alarm,
+M50_PT_Exp3,parallel,high,C4,hot spot reaches 138.5 C,bracket,pertest_M50_PT_Exp3_parallel_hhigh_gcentral_tau21.39_E31.59,Yes,13.052981710603946,No,,false alarm,
+M50_PT_Exp4,parallel,high,C4,hot spot reaches 138.5 C,bracket,pertest_M50_PT_Exp4_parallel_hhigh_gcentral_tau21.39_E39.99,Yes,11.459068930328696,Yes,272.0,hit,-260.54093106967133
+M50_PP_Exp1,parallel,high,C4,hot spot reaches 138.5 C,bracket,pertest_M50_PP_Exp1_parallel_hhigh_gcentral_tau21.39_E51.09,Yes,10.203683288478336,Yes,152.0,hit,-141.79631671152165
+M50_PP_Exp2,parallel,high,C4,hot spot reaches 138.5 C,bracket,pertest_M50_PP_Exp2_parallel_hhigh_gcentral_tau21.39_E40.96,Yes,11.323126825821383,Yes,147.0,hit,-135.6768731741786
+M50_PP_Exp3,parallel,high,C4,hot spot reaches 138.5 C,bracket,pertest_M50_PP_Exp3_parallel_hhigh_gcentral_tau21.39_E43.90,Yes,10.95094239082109,No,,false alarm,
+M50_PP_Exp4,parallel,high,C4,hot spot reaches 138.5 C,bracket,pertest_M50_PP_Exp4_parallel_hhigh_gcentral_tau21.39_E46.86,Yes,10.620997081517753,Yes,275.0,hit,-264.37900291848223
+M50_ST_Exp1,series,high,C4,hot spot reaches 138.5 C,bracket,pertest_M50_ST_Exp1_series_hhigh_gcentral_tau21.39_E51.11,Yes,10.20020546752331,No,,false alarm,
+M50_ST_Exp2,series,high,C4,hot spot reaches 138.5 C,bracket,pertest_M50_ST_Exp2_series_hhigh_gcentral_tau21.39_E46.46,Yes,10.662037221982237,No,,false alarm,
+M50_ST_Exp3,series,high,C4,hot spot reaches 138.5 C,bracket,pertest_M50_ST_Exp3_series_hhigh_gcentral_tau21.39_E16.64,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,high,C4,hot spot reaches 138.5 C,bracket,pertest_M50_ST_Exp4_series_hhigh_gcentral_tau21.39_E48.81,Yes,10.420524773189586,Yes,342.0,hit,-331.5794752268104
+M50_SP_Exp1,series,high,C4,hot spot reaches 138.5 C,bracket,pertest_M50_SP_Exp1_series_hhigh_gcentral_tau21.39_E46.81,Yes,10.624400462988685,Yes,223.0,hit,-212.3755995370113
+M50_SP_Exp2,series,high,C4,hot spot reaches 138.5 C,bracket,pertest_M50_SP_Exp2_series_hhigh_gcentral_tau21.39_E48.73,Yes,10.427553421179939,Yes,149.0,hit,-138.57244657882006
+M50_SP_Exp3,series,high,C4,hot spot reaches 138.5 C,bracket,pertest_M50_SP_Exp3_series_hhigh_gcentral_tau21.39_E54.30,Yes,9.916896826085914,Yes,210.0,hit,-200.08310317391408
+M50_SP_Exp4,series,high,C4,hot spot reaches 138.5 C,bracket,pertest_M50_SP_Exp4_series_hhigh_gcentral_tau21.39_E39.60,Yes,11.513076344869495,No,,false alarm,
+M50_PT_Exp1,parallel,low,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_PT_Exp1_parallel_hlow_gcentral_tau21.39_E8.98,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,low,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_PT_Exp2_parallel_hlow_gcentral_tau21.39_E43.40,No,,No,,correct rejection,
+M50_PT_Exp3,parallel,low,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_PT_Exp3_parallel_hlow_gcentral_tau21.39_E31.59,No,,No,,correct rejection,
+M50_PT_Exp4,parallel,low,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_PT_Exp4_parallel_hlow_gcentral_tau21.39_E39.99,No,,Yes,272.0,miss,
+M50_PP_Exp1,parallel,low,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_PP_Exp1_parallel_hlow_gcentral_tau21.39_E51.09,Yes,224.3349516933482,Yes,152.0,hit,72.33495169334819
+M50_PP_Exp2,parallel,low,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_PP_Exp2_parallel_hlow_gcentral_tau21.39_E40.96,No,,Yes,147.0,miss,
+M50_PP_Exp3,parallel,low,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_PP_Exp3_parallel_hlow_gcentral_tau21.39_E43.90,No,,No,,correct rejection,
+M50_PP_Exp4,parallel,low,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_PP_Exp4_parallel_hlow_gcentral_tau21.39_E46.86,No,,Yes,275.0,miss,
+M50_ST_Exp1,series,low,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_ST_Exp1_series_hlow_gcentral_tau21.39_E51.11,No,,No,,correct rejection,
+M50_ST_Exp2,series,low,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_ST_Exp2_series_hlow_gcentral_tau21.39_E46.46,No,,No,,correct rejection,
+M50_ST_Exp3,series,low,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_ST_Exp3_series_hlow_gcentral_tau21.39_E16.64,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,low,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_ST_Exp4_series_hlow_gcentral_tau21.39_E48.81,No,,Yes,342.0,miss,
+M50_SP_Exp1,series,low,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_SP_Exp1_series_hlow_gcentral_tau21.39_E46.81,No,,Yes,223.0,miss,
+M50_SP_Exp2,series,low,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_SP_Exp2_series_hlow_gcentral_tau21.39_E48.73,No,,Yes,149.0,miss,
+M50_SP_Exp3,series,low,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_SP_Exp3_series_hlow_gcentral_tau21.39_E54.30,Yes,226.98813179566795,Yes,210.0,hit,16.988131795667954
+M50_SP_Exp4,series,low,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_SP_Exp4_series_hlow_gcentral_tau21.39_E39.60,No,,No,,correct rejection,
+M50_PT_Exp1,parallel,central,C5,lumped neighbour reaches 138.5 C,registered,pertest_M50_PT_Exp1_parallel_hcentral_gcentral_tau21.39_E8.98,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,central,C5,lumped neighbour reaches 138.5 C,registered,pertest_M50_PT_Exp2_parallel_hcentral_gcentral_tau21.39_E43.40,Yes,81.24716259157768,No,,false alarm,
+M50_PT_Exp3,parallel,central,C5,lumped neighbour reaches 138.5 C,registered,pertest_M50_PT_Exp3_parallel_hcentral_gcentral_tau21.39_E31.59,Yes,138.20344620854547,No,,false alarm,
+M50_PT_Exp4,parallel,central,C5,lumped neighbour reaches 138.5 C,registered,pertest_M50_PT_Exp4_parallel_hcentral_gcentral_tau21.39_E39.99,Yes,91.7619013882065,Yes,272.0,hit,-180.2380986117935
+M50_PP_Exp1,parallel,central,C5,lumped neighbour reaches 138.5 C,registered,pertest_M50_PP_Exp1_parallel_hcentral_gcentral_tau21.39_E51.09,Yes,64.70570172700589,Yes,152.0,hit,-87.29429827299411
+M50_PP_Exp2,parallel,central,C5,lumped neighbour reaches 138.5 C,registered,pertest_M50_PP_Exp2_parallel_hcentral_gcentral_tau21.39_E40.96,Yes,88.4890301719017,Yes,147.0,hit,-58.5109698280983
+M50_PP_Exp3,parallel,central,C5,lumped neighbour reaches 138.5 C,registered,pertest_M50_PP_Exp3_parallel_hcentral_gcentral_tau21.39_E43.90,Yes,79.93642518445753,No,,false alarm,
+M50_PP_Exp4,parallel,central,C5,lumped neighbour reaches 138.5 C,registered,pertest_M50_PP_Exp4_parallel_hcentral_gcentral_tau21.39_E46.86,Yes,72.85941403043044,Yes,275.0,hit,-202.14058596956954
+M50_ST_Exp1,series,central,C5,lumped neighbour reaches 138.5 C,registered,pertest_M50_ST_Exp1_series_hcentral_gcentral_tau21.39_E51.11,Yes,66.85570662623066,No,,false alarm,
+M50_ST_Exp2,series,central,C5,lumped neighbour reaches 138.5 C,registered,pertest_M50_ST_Exp2_series_hcentral_gcentral_tau21.39_E46.46,Yes,76.41519862638792,No,,false alarm,
+M50_ST_Exp3,series,central,C5,lumped neighbour reaches 138.5 C,registered,pertest_M50_ST_Exp3_series_hcentral_gcentral_tau21.39_E16.64,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,central,C5,lumped neighbour reaches 138.5 C,registered,pertest_M50_ST_Exp4_series_hcentral_gcentral_tau21.39_E48.81,Yes,71.27089040950756,Yes,342.0,hit,-270.72910959049244
+M50_SP_Exp1,series,central,C5,lumped neighbour reaches 138.5 C,registered,pertest_M50_SP_Exp1_series_hcentral_gcentral_tau21.39_E46.81,Yes,75.59051420791636,Yes,223.0,hit,-147.40948579208364
+M50_SP_Exp2,series,central,C5,lumped neighbour reaches 138.5 C,registered,pertest_M50_SP_Exp2_series_hcentral_gcentral_tau21.39_E48.73,Yes,71.41634885261068,Yes,149.0,hit,-77.58365114738932
+M50_SP_Exp3,series,central,C5,lumped neighbour reaches 138.5 C,registered,pertest_M50_SP_Exp3_series_hcentral_gcentral_tau21.39_E54.30,Yes,61.53182604237923,Yes,210.0,hit,-148.46817395762076
+M50_SP_Exp4,series,central,C5,lumped neighbour reaches 138.5 C,registered,pertest_M50_SP_Exp4_series_hcentral_gcentral_tau21.39_E39.60,Yes,96.93169442183651,No,,false alarm,
+M50_PT_Exp1,parallel,high,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_PT_Exp1_parallel_hhigh_gcentral_tau21.39_E8.98,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,high,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_PT_Exp2_parallel_hhigh_gcentral_tau21.39_E43.40,Yes,61.700509958468565,No,,false alarm,
+M50_PT_Exp3,parallel,high,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_PT_Exp3_parallel_hhigh_gcentral_tau21.39_E31.59,Yes,97.02811062965748,No,,false alarm,
+M50_PT_Exp4,parallel,high,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_PT_Exp4_parallel_hhigh_gcentral_tau21.39_E39.99,Yes,68.6392195659987,Yes,272.0,hit,-203.3607804340013
+M50_PP_Exp1,parallel,high,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_PP_Exp1_parallel_hhigh_gcentral_tau21.39_E51.09,Yes,50.516871561630516,Yes,152.0,hit,-101.48312843836948
+M50_PP_Exp2,parallel,high,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_PP_Exp2_parallel_hhigh_gcentral_tau21.39_E40.96,Yes,66.4953670607661,Yes,147.0,hit,-80.5046329392339
+M50_PP_Exp3,parallel,high,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_PP_Exp3_parallel_hhigh_gcentral_tau21.39_E43.90,Yes,60.82557835950352,No,,false alarm,
+M50_PP_Exp4,parallel,high,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_PP_Exp4_parallel_hhigh_gcentral_tau21.39_E46.86,Yes,56.066717855584905,Yes,275.0,hit,-218.9332821444151
+M50_ST_Exp1,series,high,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_ST_Exp1_series_hhigh_gcentral_tau21.39_E51.11,Yes,51.64184483446379,No,,false alarm,
+M50_ST_Exp2,series,high,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_ST_Exp2_series_hhigh_gcentral_tau21.39_E46.46,Yes,58.03760000590353,No,,false alarm,
+M50_ST_Exp3,series,high,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_ST_Exp3_series_hhigh_gcentral_tau21.39_E16.64,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,high,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_ST_Exp4_series_hhigh_gcentral_tau21.39_E48.81,Yes,54.607887053621134,Yes,342.0,hit,-287.39211294637886
+M50_SP_Exp1,series,high,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_SP_Exp1_series_hhigh_gcentral_tau21.39_E46.81,Yes,57.48975025930448,Yes,223.0,hit,-165.5102497406955
+M50_SP_Exp2,series,high,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_SP_Exp2_series_hhigh_gcentral_tau21.39_E48.73,Yes,54.70526004725019,Yes,149.0,hit,-94.29473995274981
+M50_SP_Exp3,series,high,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_SP_Exp3_series_hhigh_gcentral_tau21.39_E54.30,Yes,48.03952382652052,Yes,210.0,hit,-161.9604761734795
+M50_SP_Exp4,series,high,C5,lumped neighbour reaches 138.5 C,bracket,pertest_M50_SP_Exp4_series_hhigh_gcentral_tau21.39_E39.60,Yes,71.39183728964927,No,,false alarm,
+M50_PT_Exp1,parallel,low,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_PT_Exp1_parallel_hlow_gcentral_tau21.39_E8.98_aged,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,low,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_PT_Exp2_parallel_hlow_gcentral_tau21.39_E43.40_aged,No,,No,,correct rejection,
+M50_PT_Exp3,parallel,low,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_PT_Exp3_parallel_hlow_gcentral_tau21.39_E31.59_aged,No,,No,,correct rejection,
+M50_PT_Exp4,parallel,low,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_PT_Exp4_parallel_hlow_gcentral_tau21.39_E39.99_aged,No,,Yes,272.0,miss,
+M50_PP_Exp1,parallel,low,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_PP_Exp1_parallel_hlow_gcentral_tau21.39_E51.09_aged,No,,Yes,152.0,miss,
+M50_PP_Exp2,parallel,low,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_PP_Exp2_parallel_hlow_gcentral_tau21.39_E40.96_aged,No,,Yes,147.0,miss,
+M50_PP_Exp3,parallel,low,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_PP_Exp3_parallel_hlow_gcentral_tau21.39_E43.90_aged,No,,No,,correct rejection,
+M50_PP_Exp4,parallel,low,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_PP_Exp4_parallel_hlow_gcentral_tau21.39_E46.86_aged,No,,Yes,275.0,miss,
+M50_ST_Exp1,series,low,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_ST_Exp1_series_hlow_gcentral_tau21.39_E51.11_aged,No,,No,,correct rejection,
+M50_ST_Exp2,series,low,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_ST_Exp2_series_hlow_gcentral_tau21.39_E46.46_aged,No,,No,,correct rejection,
+M50_ST_Exp3,series,low,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_ST_Exp3_series_hlow_gcentral_tau21.39_E16.64_aged,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,low,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_ST_Exp4_series_hlow_gcentral_tau21.39_E48.81_aged,No,,Yes,342.0,miss,
+M50_SP_Exp1,series,low,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_SP_Exp1_series_hlow_gcentral_tau21.39_E46.81_aged,No,,Yes,223.0,miss,
+M50_SP_Exp2,series,low,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_SP_Exp2_series_hlow_gcentral_tau21.39_E48.73_aged,No,,Yes,149.0,miss,
+M50_SP_Exp3,series,low,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_SP_Exp3_series_hlow_gcentral_tau21.39_E54.30_aged,No,,Yes,210.0,miss,
+M50_SP_Exp4,series,low,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_SP_Exp4_series_hlow_gcentral_tau21.39_E39.60_aged,No,,No,,correct rejection,
+M50_PT_Exp1,parallel,central,C6,"hot spot reaches 255.7 C, aged SEI",registered,aged_M50_PT_Exp1_parallel_hcentral_gcentral_tau21.39_E8.98_aged,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,central,C6,"hot spot reaches 255.7 C, aged SEI",registered,aged_M50_PT_Exp2_parallel_hcentral_gcentral_tau21.39_E43.40_aged,No,,No,,correct rejection,
+M50_PT_Exp3,parallel,central,C6,"hot spot reaches 255.7 C, aged SEI",registered,aged_M50_PT_Exp3_parallel_hcentral_gcentral_tau21.39_E31.59_aged,No,,No,,correct rejection,
+M50_PT_Exp4,parallel,central,C6,"hot spot reaches 255.7 C, aged SEI",registered,aged_M50_PT_Exp4_parallel_hcentral_gcentral_tau21.39_E39.99_aged,No,,Yes,272.0,miss,
+M50_PP_Exp1,parallel,central,C6,"hot spot reaches 255.7 C, aged SEI",registered,aged_M50_PP_Exp1_parallel_hcentral_gcentral_tau21.39_E51.09_aged,Yes,18.148102154324256,Yes,152.0,hit,-133.85189784567575
+M50_PP_Exp2,parallel,central,C6,"hot spot reaches 255.7 C, aged SEI",registered,aged_M50_PP_Exp2_parallel_hcentral_gcentral_tau21.39_E40.96_aged,No,,Yes,147.0,miss,
+M50_PP_Exp3,parallel,central,C6,"hot spot reaches 255.7 C, aged SEI",registered,aged_M50_PP_Exp3_parallel_hcentral_gcentral_tau21.39_E43.90_aged,No,,No,,correct rejection,
+M50_PP_Exp4,parallel,central,C6,"hot spot reaches 255.7 C, aged SEI",registered,aged_M50_PP_Exp4_parallel_hcentral_gcentral_tau21.39_E46.86_aged,Yes,21.098661124082604,Yes,275.0,hit,-253.9013388759174
+M50_ST_Exp1,series,central,C6,"hot spot reaches 255.7 C, aged SEI",registered,aged_M50_ST_Exp1_series_hcentral_gcentral_tau21.39_E51.11_aged,Yes,18.122587229433616,No,,false alarm,
+M50_ST_Exp2,series,central,C6,"hot spot reaches 255.7 C, aged SEI",registered,aged_M50_ST_Exp2_series_hcentral_gcentral_tau21.39_E46.46_aged,Yes,21.69954342464276,No,,false alarm,
+M50_ST_Exp3,series,central,C6,"hot spot reaches 255.7 C, aged SEI",registered,aged_M50_ST_Exp3_series_hcentral_gcentral_tau21.39_E16.64_aged,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,central,C6,"hot spot reaches 255.7 C, aged SEI",registered,aged_M50_ST_Exp4_series_hcentral_gcentral_tau21.39_E48.81_aged,Yes,19.331683399313903,Yes,342.0,hit,-322.6683166006861
+M50_SP_Exp1,series,central,C6,"hot spot reaches 255.7 C, aged SEI",registered,aged_M50_SP_Exp1_series_hcentral_gcentral_tau21.39_E46.81_aged,Yes,21.106553265718265,Yes,223.0,hit,-201.89344673428172
+M50_SP_Exp2,series,central,C6,"hot spot reaches 255.7 C, aged SEI",registered,aged_M50_SP_Exp2_series_hcentral_gcentral_tau21.39_E48.73_aged,Yes,19.377556864911984,Yes,149.0,hit,-129.62244313508802
+M50_SP_Exp3,series,central,C6,"hot spot reaches 255.7 C, aged SEI",registered,aged_M50_SP_Exp3_series_hcentral_gcentral_tau21.39_E54.30_aged,Yes,16.937864734475546,Yes,210.0,hit,-193.06213526552446
+M50_SP_Exp4,series,central,C6,"hot spot reaches 255.7 C, aged SEI",registered,aged_M50_SP_Exp4_series_hcentral_gcentral_tau21.39_E39.60_aged,No,,No,,correct rejection,
+M50_PT_Exp1,parallel,high,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_PT_Exp1_parallel_hhigh_gcentral_tau21.39_E8.98_aged,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,high,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_PT_Exp2_parallel_hhigh_gcentral_tau21.39_E43.40_aged,Yes,17.458087822702844,No,,false alarm,
+M50_PT_Exp3,parallel,high,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_PT_Exp3_parallel_hhigh_gcentral_tau21.39_E31.59_aged,No,,No,,correct rejection,
+M50_PT_Exp4,parallel,high,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_PT_Exp4_parallel_hhigh_gcentral_tau21.39_E39.99_aged,Yes,19.62576388474575,Yes,272.0,hit,-252.37423611525423
+M50_PP_Exp1,parallel,high,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_PP_Exp1_parallel_hhigh_gcentral_tau21.39_E51.09_aged,Yes,14.984023915197278,Yes,152.0,hit,-137.01597608480273
+M50_PP_Exp2,parallel,high,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_PP_Exp2_parallel_hhigh_gcentral_tau21.39_E40.96_aged,Yes,18.840816013296273,Yes,147.0,hit,-128.15918398670374
+M50_PP_Exp3,parallel,high,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_PP_Exp3_parallel_hhigh_gcentral_tau21.39_E43.90_aged,Yes,17.23702972189999,No,,false alarm,
+M50_PP_Exp4,parallel,high,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_PP_Exp4_parallel_hhigh_gcentral_tau21.39_E46.86_aged,Yes,16.133086986714115,Yes,275.0,hit,-258.8669130132859
+M50_ST_Exp1,series,high,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_ST_Exp1_series_hhigh_gcentral_tau21.39_E51.11_aged,Yes,14.972849457976418,No,,false alarm,
+M50_ST_Exp2,series,high,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_ST_Exp2_series_hhigh_gcentral_tau21.39_E46.46_aged,Yes,16.255512273940678,No,,false alarm,
+M50_ST_Exp3,series,high,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_ST_Exp3_series_hhigh_gcentral_tau21.39_E16.64_aged,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,high,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_ST_Exp4_series_hhigh_gcentral_tau21.39_E48.81_aged,Yes,15.550290159481978,Yes,342.0,hit,-326.44970984051804
+M50_SP_Exp1,series,high,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_SP_Exp1_series_hhigh_gcentral_tau21.39_E46.81_aged,Yes,16.13962539617412,Yes,223.0,hit,-206.86037460382587
+M50_SP_Exp2,series,high,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_SP_Exp2_series_hhigh_gcentral_tau21.39_E48.73_aged,Yes,15.569683033446191,Yes,149.0,hit,-133.43031696655382
+M50_SP_Exp3,series,high,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_SP_Exp3_series_hhigh_gcentral_tau21.39_E54.30_aged,Yes,14.301704308224837,Yes,210.0,hit,-195.69829569177517
+M50_SP_Exp4,series,high,C6,"hot spot reaches 255.7 C, aged SEI",bracket,aged_M50_SP_Exp4_series_hhigh_gcentral_tau21.39_E39.60_aged,Yes,19.981033329272762,No,,false alarm,
+M50_PT_Exp1,parallel,low,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_PT_Exp1_parallel_hlow_gcentral_tau21.39_E8.98_aged,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,low,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_PT_Exp2_parallel_hlow_gcentral_tau21.39_E43.40_aged,No,,No,,correct rejection,
+M50_PT_Exp3,parallel,low,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_PT_Exp3_parallel_hlow_gcentral_tau21.39_E31.59_aged,No,,No,,correct rejection,
+M50_PT_Exp4,parallel,low,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_PT_Exp4_parallel_hlow_gcentral_tau21.39_E39.99_aged,No,,Yes,272.0,miss,
+M50_PP_Exp1,parallel,low,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_PP_Exp1_parallel_hlow_gcentral_tau21.39_E51.09_aged,Yes,21.64150513992174,Yes,152.0,hit,-130.35849486007825
+M50_PP_Exp2,parallel,low,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_PP_Exp2_parallel_hlow_gcentral_tau21.39_E40.96_aged,No,,Yes,147.0,miss,
+M50_PP_Exp3,parallel,low,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_PP_Exp3_parallel_hlow_gcentral_tau21.39_E43.90_aged,Yes,184.00098872843228,No,,false alarm,
+M50_PP_Exp4,parallel,low,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_PP_Exp4_parallel_hlow_gcentral_tau21.39_E46.86_aged,Yes,71.4094436477848,Yes,275.0,hit,-203.5905563522152
+M50_ST_Exp1,series,low,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_ST_Exp1_series_hlow_gcentral_tau21.39_E51.11_aged,Yes,21.568201294176077,No,,false alarm,
+M50_ST_Exp2,series,low,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_ST_Exp2_series_hlow_gcentral_tau21.39_E46.46_aged,Yes,101.4626766473341,No,,false alarm,
+M50_ST_Exp3,series,low,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_ST_Exp3_series_hlow_gcentral_tau21.39_E16.64_aged,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,low,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_ST_Exp4_series_hlow_gcentral_tau21.39_E48.81_aged,Yes,25.909402765806416,Yes,342.0,hit,-316.0905972341936
+M50_SP_Exp1,series,low,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_SP_Exp1_series_hlow_gcentral_tau21.39_E46.81_aged,Yes,80.60908320526285,Yes,223.0,hit,-142.39091679473717
+M50_SP_Exp2,series,low,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_SP_Exp2_series_hlow_gcentral_tau21.39_E48.73_aged,Yes,26.14559601957178,Yes,149.0,hit,-122.85440398042822
+M50_SP_Exp3,series,low,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_SP_Exp3_series_hlow_gcentral_tau21.39_E54.30_aged,Yes,19.35031830383402,Yes,210.0,hit,-190.64968169616597
+M50_SP_Exp4,series,low,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_SP_Exp4_series_hlow_gcentral_tau21.39_E39.60_aged,No,,No,,correct rejection,
+M50_PT_Exp1,parallel,central,C7,"hot spot reaches 138.5 C, aged SEI",registered,aged_M50_PT_Exp1_parallel_hcentral_gcentral_tau21.39_E8.98_aged,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,central,C7,"hot spot reaches 138.5 C, aged SEI",registered,aged_M50_PT_Exp2_parallel_hcentral_gcentral_tau21.39_E43.40_aged,Yes,12.504619928523388,No,,false alarm,
+M50_PT_Exp3,parallel,central,C7,"hot spot reaches 138.5 C, aged SEI",registered,aged_M50_PT_Exp3_parallel_hcentral_gcentral_tau21.39_E31.59_aged,Yes,15.413947480810656,No,,false alarm,
+M50_PT_Exp4,parallel,central,C7,"hot spot reaches 138.5 C, aged SEI",registered,aged_M50_PT_Exp4_parallel_hcentral_gcentral_tau21.39_E39.99_aged,Yes,13.111102058852047,Yes,272.0,hit,-258.88889794114795
+M50_PP_Exp1,parallel,central,C7,"hot spot reaches 138.5 C, aged SEI",registered,aged_M50_PP_Exp1_parallel_hcentral_gcentral_tau21.39_E51.09_aged,Yes,11.481801974779236,Yes,152.0,hit,-140.51819802522076
+M50_PP_Exp2,parallel,central,C7,"hot spot reaches 138.5 C, aged SEI",registered,aged_M50_PP_Exp2_parallel_hcentral_gcentral_tau21.39_E40.96_aged,Yes,12.92580591083983,Yes,147.0,hit,-134.07419408916016
+M50_PP_Exp3,parallel,central,C7,"hot spot reaches 138.5 C, aged SEI",registered,aged_M50_PP_Exp3_parallel_hcentral_gcentral_tau21.39_E43.90_aged,Yes,12.426760629475455,No,,false alarm,
+M50_PP_Exp4,parallel,central,C7,"hot spot reaches 138.5 C, aged SEI",registered,aged_M50_PP_Exp4_parallel_hcentral_gcentral_tau21.39_E46.86_aged,Yes,11.997092401548004,Yes,275.0,hit,-263.002907598452
+M50_ST_Exp1,series,central,C7,"hot spot reaches 138.5 C, aged SEI",registered,aged_M50_ST_Exp1_series_hcentral_gcentral_tau21.39_E51.11_aged,Yes,11.47737249372557,No,,false alarm,
+M50_ST_Exp2,series,central,C7,"hot spot reaches 138.5 C, aged SEI",registered,aged_M50_ST_Exp2_series_hcentral_gcentral_tau21.39_E46.46_aged,Yes,12.049356306285855,No,,false alarm,
+M50_ST_Exp3,series,central,C7,"hot spot reaches 138.5 C, aged SEI",registered,aged_M50_ST_Exp3_series_hcentral_gcentral_tau21.39_E16.64_aged,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,central,C7,"hot spot reaches 138.5 C, aged SEI",registered,aged_M50_ST_Exp4_series_hcentral_gcentral_tau21.39_E48.81_aged,Yes,11.745255081624183,Yes,342.0,hit,-330.2547449183758
+M50_SP_Exp1,series,central,C7,"hot spot reaches 138.5 C, aged SEI",registered,aged_M50_SP_Exp1_series_hcentral_gcentral_tau21.39_E46.81_aged,Yes,12.001133865327887,Yes,223.0,hit,-210.9988661346721
+M50_SP_Exp2,series,central,C7,"hot spot reaches 138.5 C, aged SEI",registered,aged_M50_SP_Exp2_series_hcentral_gcentral_tau21.39_E48.73_aged,Yes,11.753969396866072,Yes,149.0,hit,-137.24603060313393
+M50_SP_Exp3,series,central,C7,"hot spot reaches 138.5 C, aged SEI",registered,aged_M50_SP_Exp3_series_hcentral_gcentral_tau21.39_E54.30_aged,Yes,11.144908692935122,Yes,210.0,hit,-198.85509130706487
+M50_SP_Exp4,series,central,C7,"hot spot reaches 138.5 C, aged SEI",registered,aged_M50_SP_Exp4_series_hcentral_gcentral_tau21.39_E39.60_aged,Yes,13.184633837041762,No,,false alarm,
+M50_PT_Exp1,parallel,high,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_PT_Exp1_parallel_hhigh_gcentral_tau21.39_E8.98_aged,No,,No,,correct rejection,
+M50_PT_Exp2,parallel,high,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_PT_Exp2_parallel_hhigh_gcentral_tau21.39_E43.40_aged,Yes,11.009736632437678,No,,false alarm,
+M50_PT_Exp3,parallel,high,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_PT_Exp3_parallel_hhigh_gcentral_tau21.39_E31.59_aged,Yes,13.053074003832988,No,,false alarm,
+M50_PT_Exp4,parallel,high,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_PT_Exp4_parallel_hhigh_gcentral_tau21.39_E39.99_aged,Yes,11.459125823061212,Yes,272.0,hit,-260.5408741769388
+M50_PP_Exp1,parallel,high,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_PP_Exp1_parallel_hhigh_gcentral_tau21.39_E51.09_aged,Yes,10.203724793533166,Yes,152.0,hit,-141.79627520646685
+M50_PP_Exp2,parallel,high,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_PP_Exp2_parallel_hhigh_gcentral_tau21.39_E40.96_aged,Yes,11.323181464086568,Yes,147.0,hit,-135.67681853591344
+M50_PP_Exp3,parallel,high,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_PP_Exp3_parallel_hhigh_gcentral_tau21.39_E43.90_aged,Yes,10.950991374835688,No,,false alarm,
+M50_PP_Exp4,parallel,high,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_PP_Exp4_parallel_hhigh_gcentral_tau21.39_E46.86_aged,Yes,10.621042148086604,Yes,275.0,hit,-264.3789578519134
+M50_ST_Exp1,series,high,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_ST_Exp1_series_hhigh_gcentral_tau21.39_E51.11_aged,Yes,10.200246916958536,No,,false alarm,
+M50_ST_Exp2,series,high,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_ST_Exp2_series_hhigh_gcentral_tau21.39_E46.46_aged,Yes,10.662082847668238,No,,false alarm,
+M50_ST_Exp3,series,high,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_ST_Exp3_series_hhigh_gcentral_tau21.39_E16.64_aged,No,,Yes,177.0,miss,
+M50_ST_Exp4,series,high,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_ST_Exp4_series_hhigh_gcentral_tau21.39_E48.81_aged,Yes,10.420568144633556,Yes,342.0,hit,-331.57943185536647
+M50_SP_Exp1,series,high,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_SP_Exp1_series_hhigh_gcentral_tau21.39_E46.81_aged,Yes,10.624445567172067,Yes,223.0,hit,-212.37555443282793
+M50_SP_Exp2,series,high,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_SP_Exp2_series_hhigh_gcentral_tau21.39_E48.73_aged,Yes,10.427596888835845,Yes,149.0,hit,-138.57240311116416
+M50_SP_Exp3,series,high,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_SP_Exp3_series_hhigh_gcentral_tau21.39_E54.30_aged,Yes,9.916936088526091,Yes,210.0,hit,-200.08306391147391
+M50_SP_Exp4,series,high,C7,"hot spot reaches 138.5 C, aged SEI",bracket,aged_M50_SP_Exp4_series_hhigh_gcentral_tau21.39_E39.60_aged,Yes,11.513134231470692,No,,false alarm,
