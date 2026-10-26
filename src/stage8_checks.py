@@ -14,7 +14,8 @@
       each; if the base run reaches 255.7 C, its crossing time instead.
   V4  every record's energy accounts close with the delivered and the Joule energy in them (resolved, as D44, and
       lumped, under 1e-9 of the heat taken in), and every delivery equals f E_e and every Joule source f_e 65.52 kJ
-      (to 1e-9 relative).
+      (to 1e-9 relative), or, in a run stopped at 255.7 C before its pulse ended (D35), the pulse's integral up to
+      the stop (D86 (3)).
 Writes results/stage8_checks.json.
 """
 import csv, json, os, sys
@@ -69,16 +70,20 @@ def _stage7_outcome(res, test, crit):
 
 
 def _outcome(rec, crit, series_dir):
-    """The record's outcome, checked against its stored series: met if the run stopped before 900 s with its last
-    stored sample below 255.7 C and within a step of the stop, not met if it ran to 900 s with every sample below."""
+    """The record's outcome, checked against its stored series (as Stage 7's V2): met if every sample stored before
+    the crossing lies below 255.7 C and the run ended within a step of it, before 900 s; not met if the run went to
+    900 s and no stored sample reaches 255.7 C."""
     z = np.load(os.path.join(series_dir, rec["id"] + ".npz"))
     if crit == "C1":
         part, t, y = rec["resolved"], z["t"], z["Tmax"]
     else:
         part, t, y = rec["lumped"], z["t_lumped"], z["T_lumped"]
     met = bool(part["propagated"])
-    ok = (np.all(y < LEVEL_K) and part["t_end_s"] < 900.0 - 1e-9 and part["t_prop_s"] <= part["t_end_s"] + 1e-12) \
-        if met else (np.all(y < LEVEL_K) and abs(part["t_end_s"] - 900.0) < 1e-6)
+    if met:
+        tp, te = part["t_prop_s"], part["t_end_s"]
+        ok = bool(np.all(y[t < tp] < LEVEL_K)) and tp <= te + 1e-9 and te - tp <= 0.1 + 1e-9 and te < 900.0 - 1e-9
+    else:
+        ok = bool(np.all(y < LEVEL_K)) and abs(part["t_end_s"] - 900.0) < 1e-6
     return met, bool(ok)
 
 
@@ -164,11 +169,25 @@ def v3(res=RES, runs_dir=None):
     return out
 
 
+def _triangle(E, tau, t):
+    """The energy a triangular pulse of E over tau from t = 0 has released by t (the check's own statement)."""
+    if t <= 0.0:
+        return 0.0
+    if t >= tau:
+        return E
+    if t <= tau / 2:
+        return 2.0 * E * (t / tau) ** 2
+    return E - 2.0 * E * ((tau - t) / tau) ** 2
+
+
 def v4(res=RES, runs_dir=None):
+    """Every account closes, and every source delivered what its pulse releases up to the run's end: f E_e (or f_e
+    65.52 kJ) for a run that went past the pulse's end, the pulse's integral up to the stop for one stopped at
+    255.7 C before it (D35; D86 (3))."""
     runs_dir = os.path.join(res, "stage8_runs") if runs_dir is None else runs_dir
     recs = _records(runs_dir)
     worst = {"resolved": 0.0, "lumped": 0.0, "delivery": 0.0, "joule": 0.0}
-    n = {"resolved": 0, "lumped": 0, "delivery": 0, "joule": 0}
+    n = {"resolved": 0, "lumped": 0, "delivery": 0, "joule": 0, "delivery_whole": 0, "joule_whole": 0}
     bad = []
     for r in recs.values():
         if r.get("failed"):
@@ -179,16 +198,20 @@ def v4(res=RES, runs_dir=None):
                 continue
             n[part] += 1
             worst[part] = max(worst[part], abs(p["energy_residual_rel"]))
-            for name, want in (("delivery", r["E_delivered_J"]), ("joule", r["E_joule_J"])):
+            t_end = p["t_end_s"]
+            for name, E, tau in (("delivery", r["E_delivered_J"], r["tau_d_s"]), ("joule", r["E_joule_J"], r["tau"])):
                 got = p["sources"].get(name, {}).get("delivered_J")
-                if want > 0.0:
+                if E > 0.0:
+                    want = _triangle(E, tau, t_end)
                     n[name] += 1
-                    d = abs(got / want - 1) if got is not None else 1.0
+                    if t_end >= tau:
+                        n[name + "_whole"] += 1
+                    d = abs(got / want - 1) if (got is not None and want > 0) else (0.0 if got == want else 1.0)
                     worst[name] = max(worst[name], d)
                     if d > 1e-9:
                         bad.append([r["id"], part, name, got, want])
                 elif got is not None:
-                    bad.append([r["id"], part, name, got, want])
+                    bad.append([r["id"], part, name, got, 0.0])
     ok = worst["resolved"] < 1e-9 and worst["lumped"] < 1e-9 and not bad
     return {"pass": bool(ok), "largest_relative": worst, "counts": n, "bad": bad, "n_records": len(recs)}
 
