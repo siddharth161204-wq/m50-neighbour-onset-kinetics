@@ -293,6 +293,30 @@ def more(out, recs, rows, card, rat, ej, v):
                        "probe_peak": rr.get("probe_peak"), "n_nodes": r.get("n_nodes"), "geom": rr.get("geom")}
         pdx[x] = d
     out["part_d_records"] = pdx
+    # the runs, grouped as the texts count them, and their times on the cloud machine
+    bs = out["runs"]["by_set"]
+    grp = {"first": ["first"], "searches": ["c1", "c2"],
+           "a4": ["dur10_c1", "dur10_c2", "dur60_c1", "dur60_c2", "capend_c1"],
+           "refinements": [s for s in bs if s.startswith("ref")], "part_b": ["elec05_c1", "elec20_c1"],
+           "part_d": ["gas", "gasctl"], "v3": ["v3mesh", "v3step"]}
+    out["runs"]["groups"] = {g: sum(bs.get(s, 0) for s in ss) for g, ss in grp.items()}
+    out["runs"]["groups_sum"] = sum(out["runs"]["groups"].values())
+    good = [r for r in recs.values() if not r.get("failed")]
+    base900 = [r["wall_s"] for r in good if r.get("resolved") and r.get("models") != "split" and r.get("refine", 1.0) == 1.0
+               and r.get("dt_scale", 1.0) == 1.0 and r["resolved"]["t_end_s"] >= 900.0 - 1e-6]
+    early = [r["wall_s"] for r in good if r.get("resolved") and r.get("models") != "split" and r.get("refine", 1.0) == 1.0
+             and r.get("dt_scale", 1.0) == 1.0 and r["resolved"]["t_end_s"] < 900.0 - 1e-6]
+    lumped_only = [r["wall_s"] for r in good if r.get("resolved") is None and r.get("lumped")]
+    out["runs"]["times_s"] = {
+        "base_to_900_s": {"n": len(base900), "median": statistics.median(base900) if base900 else None,
+                          "min": min(base900) if base900 else None, "max": max(base900) if base900 else None},
+        "base_stopped_early": {"n": len(early), "median": statistics.median(early) if early else None,
+                               "max": max(early) if early else None},
+        "lumped_only": {"n": len(lumped_only), "max": max(lumped_only) if lumped_only else None},
+        "split": {r["id"]: {"wall_all_attempts_s": r["resolved"].get("wall_all_attempts_s"),
+                            "resumed": r["resolved"].get("resumed"), "last_attempt_s": r["wall_s"]}
+                  for r in good if r.get("models") == "split"},
+        "v3": {r["id"]: r["wall_s"] for r in good if r["set"] in ("v3mesh", "v3step")}}
     # the exploratory fit (D87 (3))
     ex_path = os.path.join(RES, "stage8_explore.json")
     if os.path.exists(ex_path):

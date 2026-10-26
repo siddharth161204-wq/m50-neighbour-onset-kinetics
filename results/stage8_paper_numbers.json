@@ -125,7 +125,42 @@
   "wall_s_median": 26.407706022262573,
   "wall_s_max": 384.97714710235596,
   "resumed": {},
-  "chains_unfinished": []
+  "chains_unfinished": [],
+  "groups": {
+   "first": 48,
+   "searches": 68,
+   "a4": 37,
+   "refinements": 45,
+   "part_b": 24,
+   "part_d": 1,
+   "v3": 0
+  },
+  "groups_sum": 223,
+  "times_s": {
+   "base_to_900_s": {
+    "n": 22,
+    "median": 318.7410193681717,
+    "min": 223.2298548221588,
+    "max": 384.97714710235596
+   },
+   "base_stopped_early": {
+    "n": 106,
+    "median": 43.72666299343109,
+    "max": 102.55292010307312
+   },
+   "lumped_only": {
+    "n": 94,
+    "max": 2.6072781085968018
+   },
+   "split": {
+    "gasctl_M50_PP_Exp3_f0.200000000": {
+     "wall_all_attempts_s": 48.23063945770264,
+     "resumed": 0,
+     "last_attempt_s": 48.27388095855713
+    }
+   },
+   "v3": {}
+  }
  },
  "part_a": {
   "per_test": {
