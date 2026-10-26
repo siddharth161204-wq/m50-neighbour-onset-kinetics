@@ -22,9 +22,9 @@
   },
   "v3": {
    "total": 2,
-   "done": 1,
+   "done": 2,
    "failed": 0,
-   "complete": false
+   "complete": true
   },
   "event": {
    "total": 28,
@@ -1595,6 +1595,18 @@
  },
  "V3": {
   "cases": {
+   "refine2": {
+    "base": "event_M50_PT_Exp4_parallel_hcentral_gcentral_tau21.39_E39.99_C4_ev65.52",
+    "check": "v3_M50_PT_Exp4_parallel_hcentral_gcentral_tau21.39_E39.99_C4_ev65.52_refine2",
+    "hot_after_base_C": 1505.139697509016,
+    "hot_after_check_C": 1507.3267931682835,
+    "relative_change_of_rise": 0.001477627863740306,
+    "pass": true,
+    "lumped_after_base_C": 1250.5008532643851,
+    "lumped_after_check_C": 1250.5008532643851,
+    "lumped_relative_change_of_rise": 0.0,
+    "wall_s": 4193.358538866043
+   },
    "dthalf": {
     "base": "event_M50_PT_Exp4_parallel_hcentral_gcentral_tau21.39_E39.99_C4_ev65.52",
     "check": "v3_M50_PT_Exp4_parallel_hcentral_gcentral_tau21.39_E39.99_C4_ev65.52_dthalf",
@@ -1609,13 +1621,13 @@
    }
   },
   "acceptance": 0.01,
-  "pass": false
+  "pass": true
  },
  "V4": {
   "max_abs_residual_resolved": 3.423430100881909e-12,
   "max_abs_residual_lumped": 4.339371372200261e-12,
-  "n_resolved": 185,
-  "n_lumped": 105,
+  "n_resolved": 186,
+  "n_lumped": 106,
   "max_event_delivery_error_rel": 0.0,
   "acceptance": 1e-09,
   "event_runs_repeating_part_a_until_event": 56,

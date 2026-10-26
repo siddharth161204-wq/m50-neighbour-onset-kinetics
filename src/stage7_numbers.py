@@ -229,6 +229,90 @@ for s in ("event", "eventlow", "v3"):
                         "away_after_C": rng([r["away_after_C"] for r in q])}
 out["part_c"] = pc
 
+# Part C's timing, from the records: how long after the event's start each peak comes, and when the lumped neighbour
+# reaches 255.7 C (D68 (5)); and the event's energy against the lumped neighbour's heat capacity, before any loss
+tm_ = {}
+for s in ("event", "eventlow"):
+    for c in ("C4", "C5"):
+        q = [r for r in recs.values() if r["set"] == s and r.get("event", {}).get("criterion") == c]
+        if not q:
+            continue
+        ae = [(r["stage7"]["after_event"], r["event"]["t_s"]) for r in q]
+        tm_[f"{s}_{c}"] = {
+            "n": len(q),
+            "hot_peak_after_start_s": rng([a["t_hot_s"] - t0 for a, t0 in ae]),
+            "lumped_peak_after_start_s": rng([a["t_lumped_s"] - t0 for a, t0 in ae]),
+            "lumped_reaches_255_7_after_start_s": rng([a["lumped_t_prop_after_event_s"] - t0 for a, t0 in ae
+                                                       if a["lumped_t_prop_after_event_s"] is not None]),
+            "lumped_reaches_255_7_s": rng([a["lumped_t_prop_after_event_s"] for a, t0 in ae]),
+            "away_reaches_255_7_after_start_s": rng([a["away_t_prop_after_event_s"] - t0 for a, t0 in ae
+                                                     if a["away_t_prop_after_event_s"] is not None])}
+out["part_c_timing"] = tm_
+# the two timings of one test against each other: an event at the whole cell's melting starts from a hotter cell
+pairs = {}
+for r in recs.values():
+    if r["set"] == "event":
+        pairs.setdefault(r["test"], {})[r["event"]["criterion"]] = r["stage7"]["after_event"]
+both = [p for p in pairs.values() if "C4" in p and "C5" in p]
+out["part_c_c5_minus_c4_K"] = {"tests": len(both),
+                               "hot": rng([p["C5"]["hot_C"] - p["C4"]["hot_C"] for p in both]),
+                               "lumped": rng([p["C5"]["lumped_C"] - p["C4"]["lumped_C"] for p in both]),
+                               "hot_spread_within_C4_K": (lambda v: v[1] - v[0] if v else None)(
+                                   rng([p["C4"]["hot_C"] for p in both])),
+                               "hot_spread_within_C5_K": (lambda v: v[1] - v[0] if v else None)(
+                                   rng([p["C5"]["hot_C"] for p in both]))}
+try:
+    import v12_model as V12
+    C_lumped = float(V12.LP.C_CELL)
+    out["event_energy_over_lumped_heat_capacity_K"] = {"E_J": IN.E_EVENT_J, "C_J_per_K": C_lumped,
+                                                       "rise_K": IN.E_EVENT_J / C_lumped}
+except Exception as e:                                   # the two-cell study's code is not on this machine
+    out["event_energy_over_lumped_heat_capacity_K"] = {"error": repr(e)}
+
+# exploratory, written after the results: the hot spot past its Part A stop. A Part A run stops at the hot spot's
+# 255.7 C crossing (D35); the C5 event runs of the same tests repeat it until their events, which come later (D75 (3)),
+# so their histories show what the hot spot does next
+past = {}
+for r in recs.values():
+    if r["set"] != "event" or r["event"]["criterion"] != "C5":
+        continue
+    base = recs.get(r["event"]["from"])
+    if base is None or not base["resolved"]["propagated"]:
+        continue
+    p = os.path.join(RES, "stage7_series", r["id"] + ".npz")
+    if not os.path.exists(p):
+        continue
+    import numpy as np
+    z = np.load(p)
+    m = z["t"] < r["event"]["t_s"]
+    k = int(np.argmax(z["Tmax"][m]))
+    above = np.where(z["Tmax"][m] >= IN.LEVEL_PROP_C + 273.15)[0]
+    past[r["test"]] = {"part_a_stop_s": base["resolved"]["t_prop_s"], "t_event_s": r["event"]["t_s"],
+                       "hot_peak_before_event_C": float(z["Tmax"][m][k] - 273.15), "t_hot_peak_s": float(z["t"][m][k]),
+                       "last_sample_at_or_above_255_7_s": float(z["t"][m][above[-1]]) if above.size else None,
+                       "hot_at_event_C": float(z["Tmax"][m][-1] - 273.15),
+                       "back_below_255_7_before_event": bool(z["Tmax"][m][-1] < IN.LEVEL_PROP_C + 273.15)}
+out["exploratory_hot_spot_past_its_stop"] = {
+    "tests": past, "n": len(past),
+    "hot_peak_before_event_C": rng([v["hot_peak_before_event_C"] for v in past.values()]),
+    "t_hot_peak_s": rng([v["t_hot_peak_s"] for v in past.values()]),
+    "back_below_255_7_before_event": sum(v["back_below_255_7_before_event"] for v in past.values()),
+    "back_below_by_s": rng([v["last_sample_at_or_above_255_7_s"] for v in past.values()
+                            if v["back_below_255_7_before_event"]])}
+
+# the Databank's ten nail tests of this cell at 100 % state of charge (D53): how much of each test's energy the cell
+# body kept, for the texts
+dbp = os.path.join(HERE, "..", "inputs", "databank", "databank_m50_used.csv")
+if os.path.exists(dbp):
+    import stage6_inputs as IN6
+    ids = set(IN6.energies()["test_ids"])
+    db = [r for r in csv.DictReader(open(dbp)) if r["Test-ID"] in ids]
+    out["databank_nail_tests"] = {
+        "n": len(db),
+        "cell_body_kJ": rng([float(r["Energy-Fraction-Cell-Body-kJ"]) for r in db]),
+        "cell_body_percent": rng([float(r["Energy-Percent-Cell-Body-%"]) for r in db]),
+        "total_kJ": rng([float(r["Corrected-Total-Energy-Yield-kJ"]) for r in db])}
+
 # ---------------------------------------------------------------- the scorecard, V3, V4 and the runs
 out["scorecard"] = {k: (v.get("verdict") if isinstance(v, dict) else v) for k, v in SC.items() if k.startswith("P")}
 out["P_details"] = {k: v for k, v in SC.items() if k.startswith("P")}
