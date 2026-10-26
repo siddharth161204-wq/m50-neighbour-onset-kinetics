@@ -1,0 +1,63 @@
+{
+ "case": "fine3",
+ "E_J": 3000.0,
+ "tau_s": 21.38651984299561,
+ "geometry": "half",
+ "refine": 2.0,
+ "t_end_s": 5.0,
+ "model": "base",
+ "n_nodes": 145195,
+ "started_utc": "2026-10-26T12:45:08Z",
+ "resolved": {
+  "wall_s": 109.97907829284668,
+  "t_end_s": 5.0,
+  "steps": 244,
+  "rejected": 0,
+  "stop": null,
+  "peak": {
+   "Tmax_C": 66.29321183520403,
+   "t_s": 5.0,
+   "imax": 75609,
+   "Tmean_C": 30.091363922896733
+  },
+  "energy_residual_rel": 1.4780554295334094e-12,
+  "delivered_J": 327.95255670772633,
+  "max_implicit_nodes": 0,
+  "in_rxn_J": 0.027794188317036936,
+  "probe_peak": {
+   "toward": {
+    "T_C": 59.51364900137054,
+    "t_s": 5.0
+   },
+   "away": {
+    "T_C": 25.28729544721574,
+    "t_s": 5.0
+   }
+  },
+  "progress": [
+   {
+    "t_s": 2.2,
+    "Tmax_C": 35.99,
+    "Tmean_C": 26.0,
+    "dt_s": 0.025,
+    "wall_s": 43.6
+   },
+   {
+    "t_s": 3.6,
+    "Tmax_C": 49.52,
+    "Tmean_C": 27.66,
+    "dt_s": 0.0125,
+    "wall_s": 74.7
+   },
+   {
+    "t_s": 4.8,
+    "Tmax_C": 63.73,
+    "Tmean_C": 29.7,
+    "dt_s": 0.0125,
+    "wall_s": 104.9
+   }
+  ]
+ },
+ "largest_memory_MB": 2469.18359375,
+ "finished_utc": "2026-10-26T12:46:45Z"
+}

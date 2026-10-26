@@ -1,0 +1,116 @@
+{
+ "case": "base3",
+ "E_J": 3000.0,
+ "tau_s": 21.38651984299561,
+ "geometry": "half",
+ "refine": 1.0,
+ "t_end_s": 900.0,
+ "model": "base",
+ "n_nodes": 19355,
+ "started_utc": "2026-10-26T12:37:33Z",
+ "resolved": {
+  "wall_s": 292.12570667266846,
+  "t_end_s": 900.0,
+  "steps": 10855,
+  "rejected": 0,
+  "stop": null,
+  "peak": {
+   "Tmax_C": 177.27342243162303,
+   "t_s": 13.8625,
+   "imax": 9371,
+   "Tmean_C": 67.75760960389948
+  },
+  "energy_residual_rel": 9.93226481260021e-12,
+  "delivered_J": 3000.0,
+  "max_implicit_nodes": 0,
+  "in_rxn_J": 10.325062754694569,
+  "probe_peak": {
+   "toward": {
+    "T_C": 151.8036783139304,
+    "t_s": 13.8625
+   },
+   "away": {
+    "T_C": 69.56412662178371,
+    "t_s": 31.6
+   }
+  },
+  "progress": [
+   {
+    "t_s": 11.2,
+    "Tmax_C": 163.59,
+    "Tmean_C": 49.77,
+    "dt_s": 0.00625,
+    "wall_s": 31.3
+   },
+   {
+    "t_s": 37.2,
+    "Tmax_C": 69.95,
+    "Tmean_C": 64.48,
+    "dt_s": 0.1,
+    "wall_s": 61.3
+   },
+   {
+    "t_s": 154.3,
+    "Tmax_C": 53.67,
+    "Tmean_C": 51.52,
+    "dt_s": 0.1,
+    "wall_s": 91.3
+   },
+   {
+    "t_s": 264.9,
+    "Tmax_C": 44.84,
+    "Tmean_C": 43.37,
+    "dt_s": 0.1,
+    "wall_s": 121.4
+   },
+   {
+    "t_s": 370.3,
+    "Tmax_C": 39.0,
+    "Tmean_C": 37.96,
+    "dt_s": 0.1,
+    "wall_s": 151.4
+   },
+   {
+    "t_s": 489.4,
+    "Tmax_C": 34.45,
+    "Tmean_C": 33.75,
+    "dt_s": 0.1,
+    "wall_s": 181.4
+   },
+   {
+    "t_s": 599.4,
+    "Tmax_C": 31.58,
+    "Tmean_C": 31.09,
+    "dt_s": 0.1,
+    "wall_s": 211.4
+   },
+   {
+    "t_s": 704.3,
+    "Tmax_C": 29.66,
+    "Tmean_C": 29.32,
+    "dt_s": 0.1,
+    "wall_s": 241.4
+   },
+   {
+    "t_s": 819.8,
+    "Tmax_C": 28.2,
+    "Tmean_C": 27.96,
+    "dt_s": 0.1,
+    "wall_s": 271.4
+   }
+  ]
+ },
+ "lumped": {
+  "wall_s": 0.1548759937286377,
+  "stop": null,
+  "peak": {
+   "T_C": 71.52467537397268,
+   "t_s": 20.9
+  },
+  "energy_residual_rel": -7.99581600579772e-12,
+  "delivered_J": 3000.0,
+  "reaction_heat_J": 10.41739868546523
+ },
+ "largest_memory_MB": 578.7734375,
+ "finished_utc": "2026-10-26T12:42:24Z"
+}
