@@ -35,6 +35,8 @@ The one-page note is `note/neighbour_onset_note.pdf` (source `note/neighbour_ons
    - The selection of the matched case and the exploratory energy (D60), Part A, V1 and V2 were computed after that push and pushed in commit b38568c (20:13:21 UTC), before any run of the neighbour (`provenance/github_activity_stage6_runs.json`).
    - The 506 runs went from 2026-10-24 00:02:41 to 03:52:01 UTC, on the author's laptop; none failed. The records, the scoring of P1 to P7, the quoted numbers, Figure 5 and D61 were pushed in commit 7703d58 (04:09:35 UTC). The commits pushed while the runs went (5e8bdb4, 6d78ff5, 6ac3b39) add the numbers script, correct a citation (D59) and adjust the figure; none touches what a run computes or how it is scored.
    - An independent read of every registered Stage 6 number and verdict was made before the note's Stage 6 lines were finalised (D62). After it, the corrected texts, two more blocks of quoted numbers in `src/stage6_numbers.py` and `results/stage6_numbers.json`, D61 (4) reworded in place and D62 were pushed in commit 6cc799a; a second pass on them found three more problems, corrected in the commit that follows it (D62 (5)).
+11. Stage 7, the ignition condition scored test by test (brief of 26 October; version 1.3.0, D72).
+   - The design (D63 to D73), the code, and its tests on synthetic inputs only (D70 (4)) were pushed with the predictions, `predictions_stage7.md`, commit `714b1fd1161166322977e574bd75234cdbb2c5c0` (the design is its parent, 80c91ad), first pushed to this repository at 2026-10-26 05:48:11 UTC (`provenance/github_activity_stage7.json`). That was before any Stage 7 run: no Stage 7 trigger energy, no history of cell 1 for a Stage 7 trigger, no run of the neighbour in a Stage 7 configuration. To size the runs, one event run with cell 1 held at the ambient temperature, outside every Stage 7 configuration, was computed before them (`provenance/stage7_cost_test.json`, D70 (4)). The file's text has not changed since. It records, prediction by prediction, what the earlier stages' records and an energy balance already fixed.
 
 ## Results
 
@@ -462,6 +464,13 @@ The source's own internal-short trigger. The source paper switches its internal 
   - for the laptop, `run_stage6_windows.cmd` with `src/stage6_laptop.py`.
 - Stage 6 results: `stage6_crossings.csv` and `.json` (Part A), `stage6_trigger.json` (the selection), `stage6_v1.json` and `stage6_v2.json`, `stage6_runs/` (the 506 records), `stage6_series/` (every set but the draws), `stage6_logs/` (the workers' logs), `stage6_matched.csv` and `.json`, `stage6_scorecard.json`, `stage6_numbers.json`, `stage6_figure.png` and `.pdf`.
 - `provenance/github_activity_stage6.json`: the push log after the Stage 6 predictions were pushed, retrieved before any Stage 6 computation; `provenance/github_activity_stage6_runs.json`: the push log up to the Stage 6 results.
+- `predictions_stage7.md`: the Stage 7 predictions, the brief's word for word, with the brief's expectations, what the earlier stages' records already fixed, and the scoring rules, all fixed before any Stage 7 run.
+- `inputs/fransson2024/m50_tests_stage7.csv`: Tables 3 and 4 of Fransson et al. with the column names the tables print (D64).
+- Stage 7 code:
+  - `src/stage7_inputs.py` (the inputs, read from their files), `src/stage7_model.py` (the Stage 5 loops with the initial SEI and the event as arguments), `src/stage7_kernel.py` (the Stage 5 compiled reaction step with its explicit sub-step limit as an argument), `src/stage7_criteria.py` (the Part B quantities and criteria), `src/stage7_run.py` (the triggers, the run lists and the workers, reusing `src/v12_run.py`, `src/v12_model.py` and `src/stage6_crossings.py` unchanged);
+  - `src/stage7_score.py` (Part B, P1 to P8, V3 and V4), `src/stage7_checks.py` (V1 and V2), `src/stage7_numbers.py` (every quoted Stage 7 number), `src/make_figure_stage7.py` (Figure 6), `src/test_stage7.py` (the tests on synthetic inputs);
+  - for the laptop, `run_stage7_windows.cmd` with `src/stage7_laptop.py`.
+- `provenance/stage7_cost_test.json`: the event run with cell 1 held at the ambient temperature that sized the Stage 7 runs (D70 (4)).
 
 ## Running
 
@@ -525,6 +534,14 @@ Python 3.11 or newer. `pip install -r requirements.txt`, then `./get_published_s
     python3 stage6_score.py --predictions-commit c9586a8718172d6f545a47e37e104a41d71965ee
     python3 stage6_numbers.py
     python3 make_figure_stage6.py
+    python3 test_stage7.py
+    python3 stage7_run.py triggers
+    python3 stage7_checks.py v1
+    python3 stage7_run.py work --queue --label <name>
+    python3 stage7_score.py --predictions-commit 714b1fd1161166322977e574bd75234cdbb2c5c0
+    python3 stage7_checks.py v2
+    python3 stage7_numbers.py
+    python3 make_figure_stage7.py
     cd ../note && ./render_note.sh
 
 A base-mesh Stage 5 run takes some 5 to 7 minutes on one core (median 300 s on the cloud machine, 446 s on the laptop with all its cores busy); the two V3 runs on the refined mesh took about 83 minutes each. `v12_run.py work --queue` lets several processes share the list, as on the laptop (`run_stage5_windows.cmd`), and `python3 v12_run.py status` shows what is left. The registered records were made on two machines and merged with `python3 v12_merge.py --laptop <folder>`, which takes the cloud machine's records from `results/v12_runs_cloud/` and the laptop's from the folder given.
