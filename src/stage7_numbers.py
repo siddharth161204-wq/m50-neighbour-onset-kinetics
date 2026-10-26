@@ -91,6 +91,114 @@ for c in CRIT:
 out["part_b"] = pb
 out["sensitivities_central"] = SC.get("sensitivities_central")
 
+
+def verdicts(crit, h):
+    return {r["test"]: r["predicted"] is True for r in PT if r["criterion"] == crit and r["contact"] == h}
+
+
+# the sensitivities, test by test: which central-contact verdicts differ from the registered ones (D67 (6))
+sens_tests = {}
+tm = TR["levels"]["tau_median_s"]
+for tau in TR["levels"]["tau_s"]:
+    if abs(tau - tm) < 1e-9:
+        continue
+    d = {}
+    for crit, (clock, level, source) in {"C1": ("hot", "prop", "stop"), "C2": ("lumped", "prop", "stop"),
+                                          "C3": ("lumped", "150", "series"), "C4": ("hot", "sep", "series"),
+                                          "C5": ("lumped", "sep", "series")}.items():
+        reg = verdicts(crit, "central")
+        alt = {}
+        for r in recs.values():
+            if r["set"] == "duration" and abs(r["tau"] - tau) < 5e-3:
+                q = r["stage7"]
+                t = (q["stop"]["hot_t_s"] if clock == "hot" else q["stop"]["lumped_t_s"]) if source == "stop" \
+                    else q["clocks"][clock][f"t_{level}_s"]
+                alt[r["test"]] = t is not None
+        d[crit] = sorted(t for t in reg if t in alt and alt[t] != reg[t]) if len(alt) == 16 else None
+    sens_tests[f"release_{tau:.2f}s_verdicts_differing"] = d
+if SEP:
+    import numpy as np
+    import stage6_crossings as CR6
+    for name in ("p2.5_C", "p97.5_C"):
+        lv = SEP[name] + 273.15
+        d = {}
+        for crit, (set_, clock) in {"C4": ("pertest", "hot"), "C5": ("pertest", "lumped"), "C7": ("aged", "hot")}.items():
+            reg = verdicts(crit, "central")
+            alt = {}
+            for r in recs.values():
+                if r["set"] == set_ and r["h"] == "central":
+                    p = os.path.join(RES, "stage7_series", r["id"] + ".npz")
+                    if not os.path.exists(p):
+                        continue
+                    z = np.load(p)
+                    hs = CR6.histories({k: z[k] for k in z.files})
+                    alt[r["test"]] = CR6.first_crossing(*hs[clock], lv) is not None
+            d[crit] = sorted(t for t in reg if t in alt and alt[t] != reg[t]) if len(alt) == 16 else None
+        sens_tests[f"melting_{name[:-2]}_{SEP[name]:.2f}C_verdicts_differing"] = d
+out["sensitivities_central_tests"] = sens_tests
+
+# the aged SEI beside the fresh, at each contact (P5 scores the central contact; the rest is reported)
+af = {}
+for h in ("low", "central", "high"):
+    v1, v6, v4, v7 = verdicts("C1", h), verdicts("C6", h), verdicts("C4", h), verdicts("C7", h)
+    pair = {}
+    for r in recs.values():
+        if r["set"] in ("pertest", "aged") and r["h"] == h:
+            pair.setdefault(r["test"], {})[r["set"]] = r
+    full = [p for p in pair.values() if len(p) == 2]
+    dt1 = [abs(p["aged"]["resolved"]["t_prop_s"] - p["pertest"]["resolved"]["t_prop_s"]) for p in full
+           if p["aged"]["resolved"].get("t_prop_s") is not None and p["pertest"]["resolved"].get("t_prop_s") is not None]
+    dt4 = [abs(p["aged"]["stage7"]["clocks"]["hot"]["t_sep_s"] - p["pertest"]["stage7"]["clocks"]["hot"]["t_sep_s"])
+           for p in full if p["aged"]["stage7"]["clocks"]["hot"]["t_sep_s"] is not None
+           and p["pertest"]["stage7"]["clocks"]["hot"]["t_sep_s"] is not None]
+    drop = [p["pertest"]["lumped"]["peak_C"] - p["aged"]["lumped"]["peak_C"] for p in full]
+    af[h] = {"C6_differs_from_C1": sorted(t for t in v1 if v1[t] != v6.get(t)),
+             "C7_differs_from_C4": sorted(t for t in v4 if v4[t] != v7.get(t)),
+             "largest_change_hot_255_7_crossing_s": max(dt1) if dt1 else None,
+             "largest_change_hot_138_5_crossing_s": max(dt4) if dt4 else None,
+             "lumped_reaches_255_7_fresh": sorted(t for t, p in pair.items() if "pertest" in p
+                                                  and p["pertest"]["lumped"]["propagated"]),
+             "lumped_reaches_255_7_aged": sorted(t for t, p in pair.items() if "aged" in p
+                                                 and p["aged"]["lumped"]["propagated"]),
+             "lumped_peak_fresh_minus_aged_K": rng(drop),
+             "lumped_reaction_heat_fresh_J": rng([p["pertest"]["lumped"]["reaction_heat_J"] for p in full]),
+             "lumped_reaction_heat_aged_J": rng([p["aged"]["lumped"]["reaction_heat_J"] for p in full])}
+p5 = SC.get("P5", {}).get("self_heating_0.15Kpm")
+if p5:
+    fr = [v["fresh_T_C"] for v in p5.values() if v["fresh_T_C"] is not None]
+    ag = [v["aged_T_C"] for v in p5.values() if v["aged_T_C"] is not None]
+    af["first_self_heating_central"] = {
+        "fresh_T_C": rng(fr), "fresh_reactions": sorted({v["fresh_reaction"] for v in p5.values() if v["fresh_reaction"]}),
+        "aged_T_C": rng(ag), "aged_reactions": sorted({v["aged_reaction"] for v in p5.values() if v["aged_reaction"]}),
+        "fresh_n": len(fr), "aged_n": len(ag),
+        "neither": sorted(t for t, v in p5.items() if v["fresh_T_C"] is None and v["aged_T_C"] is None),
+        "fresh_only": sorted(t for t, v in p5.items() if v["fresh_T_C"] is not None and v["aged_T_C"] is None),
+        "rise_K": rng([v["aged_T_C"] - v["fresh_T_C"] for v in p5.values()
+                       if v["aged_T_C"] is not None and v["fresh_T_C"] is not None])}
+out["aged_vs_fresh"] = af
+
+# the measured outcomes against the trigger's maximum (Tables 3 and 4), for the texts
+mt = IN.tests()
+out["measured_by_trigger"] = {
+    "propagated_trigger_max_C": sorted(t["trigger_max_C"] for t in mt if t["propagated"]),
+    "not_propagated_trigger_max_C": sorted(t["trigger_max_C"] for t in mt if not t["propagated"]),
+    "not_propagated_neighbour_max_C": sorted(t["neighbour_max_C"] for t in mt if not t["propagated"])}
+
+
+def best_threshold(ts):
+    """Exploratory, written after the results: the most outcomes that the rule 'propagates if the trigger's maximum
+    is at least x' gets right, over every x between and beyond the measured maxima."""
+    v = sorted(t["trigger_max_C"] for t in ts)
+    xs = [v[0] - 1.0] + [(v[i] + v[i + 1]) / 2 for i in range(len(v) - 1) if v[i] != v[i + 1]] + [v[-1] + 1.0]
+    sc_ = [(sum((t["trigger_max_C"] >= x) == t["propagated"] for t in ts), x) for x in xs]
+    n = max(s for s, _ in sc_)
+    return {"right": n, "of": len(ts), "thresholds_C": [x for s, x in sc_ if s == n]}
+
+
+out["exploratory_threshold_on_trigger_max"] = {
+    "both_connections": best_threshold(mt),
+    **{c: best_threshold([t for t in mt if t["connection"] == c]) for c in ("series", "parallel")}}
+
 # clocks of the pertest runs at the central contact
 cen = [r for r in CX if r["set"] == "pertest" and r["h"] == "central"]
 out["clocks_pertest_central"] = {c: {"peak_C": rng([r[f"{c}_peak_C"] for r in cen]),

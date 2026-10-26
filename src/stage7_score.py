@@ -312,14 +312,22 @@ def main(res, predictions_commit=None, self_heating=True):
         t = meas["by_test"][test]
         # D68 (3): until 0.1 s before its event, an event run repeats the Part A run its event time was read from. Not
         # for V3's runs, whose mesh or steps differ from that run's by design (D75 (3))
-        same = None
+        same, span = None, None
         base = recs.get(r["event"].get("from", "")) if s in ("event", "eventlow") else None
         se, sb = series_of(res, r["id"]), (series_of(res, base["id"]) if base else None)
         if se is not None and sb is not None:
+            # compared over the span both runs stored before 0.1 s before the event: a Part A run whose hot spot
+            # reached 255.7 C stopped there (D35) and stored its resolved history only until then (D75 (3))
             t0 = r["event"]["t_s"] - 0.1
-            ke, kb = int((se["t"] < t0).sum()), int((sb["t"] < t0).sum())
-            same = bool(ke == kb and all(np.array_equal(se[k][:ke], sb[k][:kb]) for k in ("t", "Tmax", "Tmean", "T1"))
-                        and np.array_equal(se["T_lumped"][se["t_lumped"] < t0], sb["T_lumped"][sb["t_lumped"] < t0]))
+            tr_, tp_, tl_ = (min(t0, float(sb[k][-1])) for k in ("t", "probe_t", "t_lumped"))
+            me, mb = se["t"] < tr_, sb["t"] < tr_
+            pe, pb_ = se["probe_t"] < tp_, sb["probe_t"] < tp_
+            le, lb = se["t_lumped"] < tl_, sb["t_lumped"] < tl_
+            same = bool(me.sum() == mb.sum() and pe.sum() == pb_.sum() and le.sum() == lb.sum()
+                        and all(np.array_equal(se[k][me], sb[k][mb]) for k in ("t", "Tmax", "Tmean", "T1"))
+                        and all(np.array_equal(se[k][pe], sb[k][pb_]) for k in ("probe_t", "probe_toward", "probe_away"))
+                        and all(np.array_equal(se[k][le], sb[k][lb]) for k in ("t_lumped", "T_lumped")))
+            span = tr_
         ev_rows.append({"run": r["id"], "set": s, "test": test, "connection": r["connection"], "contact": h,
                         "criterion": crit, "E_event_J": r["event"]["E_J"], "t_event_s": r["event"]["t_s"],
                         "hot_after_C": q.get("hot_C"), "t_hot_after_s": q.get("t_hot_s"),
@@ -335,6 +343,7 @@ def main(res, predictions_commit=None, self_heating=True):
                         "residual_lumped": r["lumped"]["energy_residual_rel"],
                         "reaction_heat_resolved_J": r["resolved"]["in_rxn_J"], "reaction_heat_lumped_J": r["lumped"]["reaction_heat_J"],
                         "t_end_s": r["resolved"]["t_end_s"], "repeats_part_a_until_event": same,
+                        "repeat_compared_until_s": span,
                         "peaked_before_end": all(x is not None and x < r["resolved"]["t_end_s"] - 1.0 for x in
                                                  (q.get("t_hot_s"), q.get("t_lumped_s"), q.get("t_mean_s"), q.get("t_away_s"))),
                         "wall_s": r["wall_s"]})
@@ -394,6 +403,9 @@ def main(res, predictions_commit=None, self_heating=True):
                 "event_runs_compared": sum(r["repeats_part_a_until_event"] is not None for r in ev_rows
                                            if r["set"] in ("event", "eventlow")),
                 "event_runs": sum(r["set"] in ("event", "eventlow") for r in ev_rows),
+                "event_runs_compared_until_their_part_a_runs_stop": sum(
+                    r["repeat_compared_until_s"] is not None and r["repeat_compared_until_s"] < r["t_event_s"] - 0.1
+                    for r in ev_rows if r["set"] in ("event", "eventlow")),
                 "pass": bool(res_r) and max(res_r) < ENERGY_TOL and (not res_l or max(res_l) < ENERGY_TOL)}
     # ------------------------------------------------------------ the per-run file
     keys = ("id", "set", "test", "connection", "h", "tau", "E_body_J", "sei0", "refine", "dt_scale", "T1max_C", "t_T1max_s",

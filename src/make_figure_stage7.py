@@ -95,7 +95,7 @@ for i, t in enumerate(order):
 ax.axhline(8, color=INK2, lw=0.9)
 ax.text(-3.35, 12, "parallel", rotation=90, ha="center", va="center", fontsize=6.2, color=INK2)
 ax.text(-3.35, 4, "series", rotation=90, ha="center", va="center", fontsize=6.2, color=INK2)
-ax.text(0.5, nrow + 0.15, "measured", ha="center", va="bottom", fontsize=5.6, color=INK2)
+ax.text(0.5, nrow + 0.15, "Tables\n3 and 4", ha="center", va="bottom", fontsize=5.2, color=INK2, linespacing=1.05)
 for j, c in enumerate(CRIT):
     ax.text(1 + j + 0.5, nrow + 0.15, HEAD[c], ha="center", va="bottom", fontsize=5.2, color=INK2, linespacing=1.05)
 # counts below
