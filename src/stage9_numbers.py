@@ -178,6 +178,110 @@ def part_b(states):
     return out
 
 
+def derived(out, P, states, card):
+    """The derived numbers the texts quote (D100 (1)): ranges, counts and differences read from the blocks above and
+    from the records, each named for what the texts say of it."""
+    f8 = R9.fstar8()
+    prop = [t["test"] for t in R9.tests() if t["propagated"]]
+    d = {}
+    p1 = card["predictions"]["P1"]["rows"]
+    d["C1_latest_crossing_s"] = span(r["latest_crossing_s"] for r in p1)
+    a1 = out["part_a"]["A1"]
+    d["C2_t_c_at_grid_end_s"] = span(a1[x]["C2"]["grid"][-1]["t_c_s"] for x in a1)
+    a2 = out["part_a"]["A2"]
+    found = {x: a2[x]["C2"] for x in a2 if a2[x]["C2"]["found"]}
+    d["C2_found"] = {x: {"status": a["status"], "f_t": a["f_t"], "E_J": a.get("E_J"), "f_t_percent": 100 * a["f_t"],
+                         "dtc_per_0.001_s": -a["dtc_df_s"] / 1000.0 if a.get("dtc_df_s") else None,
+                         "f_t_minus_fs_hi": a.get("f_t_minus_fs_hi")} for x, a in found.items()}
+    d["C2_f_t_percent"] = span(v["f_t_percent"] for v in d["C2_found"].values())
+    d["C2_dtc_per_0.001_s"] = span(v["dtc_per_0.001_s"] for v in d["C2_found"].values())
+    p2 = {r["test"]: r for r in card["predictions"]["P2"]["rows"]}
+    d["P2_largest_abs_dt_s"] = max((abs(r["best_run"]["dt_s"]) for r in p2.values() if r["best_run"]), default=None)
+    thr = {}
+    for x in prop:
+        a = a2[x]["C2"]
+        if a["status"] != "threshold":
+            continue
+        lo = P.entry(R9.TRI21(), x, a["lo"], "lum")
+        thr[x] = {"lo": a["lo"], "hi": a["hi"], "width": a["hi"] - a["lo"], "t_c_at_hi_s": a["t_hi_s"],
+                  "t_m_s": a["t_m_s"], "early_by_s": a["t_m_s"] - a["t_hi_s"],
+                  "lumped_peak_at_lo_C": lo["peak"] if lo else None, "t_lumped_peak_at_lo_s": lo["t_peak"] if lo else None,
+                  "peak_at_lo_before_t_m": (lo["t_peak"] < a["t_m_s"]) if lo else None}
+    d["C2_threshold_tests"] = thr
+    d["C2_threshold_early_by_s"] = span(v["early_by_s"] for v in thr.values())
+    d["C1_status_counts"] = out["part_a"]["summary"]["C1"]["status_counts"]
+    # A3
+    reg = out["part_a"]["A3"]
+    d["A3_relations"] = {"n": 2 * len(IN.REGISTERED_FMAX),
+                         "holding": sum(int(bool(reg[x]["below_fC1"])) + int(bool(reg[x]["below_fC2"]))
+                                        for x in IN.REGISTERED_FMAX)}
+    # Part B
+    pb = out["part_b"]
+    d["B"] = {}
+    allp, alle = [], []
+    c1p, c1e, c1f = [], [], []
+    for k in ("120", "240", "360"):
+        sm = pb[k]["summary"]
+        d["B"][k] = {"C2_found": sm["C2"]["n_found"], "C1_found": sm["C1"]["n_found"],
+                     "C2_power_W": sm["C2"]["power_W"], "C2_E_J": sm["C2"]["E_J"],
+                     "C1_power_W": sm["C1"]["power_W"], "C1_E_J": sm["C1"]["E_J"],
+                     "PT_Exp1_fmax": pb[k]["per_test"]["M50_PT_Exp1"]["fmax"]["f_max"],
+                     "PT_Exp1_fmax_power_W": pb[k]["per_test"]["M50_PT_Exp1"]["fmax"].get("power_W"),
+                     "PT_Exp1_fC1": pb[k]["per_test"]["M50_PT_Exp1"]["fs"]["C1"],
+                     "PT_Exp4": {c: pb[k]["per_test"]["M50_PT_Exp4"][f"ft_{c}"]["status"] for c in IN.CRITERIA},
+                     "PP_Exp1_C2_power_W": pb[k]["per_test"]["M50_PP_Exp1"]["ft_C2"].get("power_W")}
+        for x, r in pb[k]["per_test"].items():
+            if r["propagated"]:
+                a = r["ft_C2"]
+                if a["found"]:
+                    allp.append(a["power_W"])
+                    alle.append(a["E_J"])
+                b = r["ft_C1"]
+                if b["found"]:
+                    c1p.append(b["power_W"])
+                    c1e.append(b["E_J"])
+                    if x != "M50_ST_Exp3":
+                        c1f.append(b["f_t"])
+    d["B_C2_power_W"], d["B_C2_E_J"] = span(allp), span(alle)
+    d["B_C1_power_W"], d["B_C1_E_J"] = span(c1p), span(c1e)
+    d["B_C1_f_t_besides_ST_Exp3"] = span(c1f)
+    fsc1 = {}
+    for x in R9.by_test():
+        a = f8[x]["C1"]
+        if a["status"] != "bracket":
+            continue
+        fsc1[x] = {k: pb[k]["per_test"][x]["fs"]["C1"]["hi"] for k in ("120", "240", "360")}
+        fsc1[x]["21.39"] = a["hi"]
+    d["B_fC1_hi_where_not_zero"] = fsc1
+    d["B_fC1_never_lower"] = all(min(v["120"], v["240"], v["360"]) >= v["21.39"] - 1e-12 for v in fsc1.values())
+    # Part C2, the story: the thermocouple's node at and before the measured time, and its rise over the last 60 s
+    rows = card["story"]
+    tm, tb, rise = {"tri21": [], "long": []}, {"tri21": [], "long": []}, {"tri21": [], "long": []}
+    for r in rows:
+        for k in ("tri21", "120", "240", "360"):
+            e = r[k]
+            if "thermocouple_at_t_m_C" in e:
+                g = "tri21" if k == "tri21" else "long"
+                tm[g].append(e["thermocouple_at_t_m_C"])
+                tb[g].append(e["thermocouple_60s_before_C"])
+                rise[g].append(e["thermocouple_at_t_m_C"] - e["thermocouple_60s_before_C"])
+    d["story_thermocouple_at_t_m_C"] = {"all": span(tm["tri21"] + tm["long"]), "tri21": span(tm["tri21"]),
+                                        "long": span(tm["long"]), "n": len(tm["tri21"] + tm["long"])}
+    d["story_thermocouple_60s_before_C"] = {"all": span(tb["tri21"] + tb["long"]), "tri21": span(tb["tri21"]),
+                                            "long": span(tb["long"])}
+    d["story_rise_last_60s_K"] = {"tri21": span(rise["tri21"]), "long": span(rise["long"])}
+    d["story_E_J"] = {"tri21": out["part_a"]["summary"]["C2"]["E_J"], "long_C2": d["B_C2_E_J"]}
+    # C3
+    sens = card["sensitivities"]
+    d["C3_rescaled_f_t_C2"] = {k: span(v[k] for n, v in sens["rescaled"].items() if n.startswith("ft_C2"))
+                               for k in ("low", "high")}
+    d["C3_aged_change"] = {r["test"]: r["change"] for r in card["predictions"]["P8"]["rows"]}
+    d["sources"] = {"onset_temperatures_C": "Fransson et al. 2024, Fig. 3(a), read as about 168 to 205 C (D89 (4))",
+                    "PT_Exp4_history": "the supplement's Fig. 10(a), read as a steady rise to about 185 C at about 270 s, "
+                                       "then a jump (D89 (4))"}
+    out["derived"] = d
+
+
 def main(res=RES):
     recs, P, states = SC.collect()
     f8 = R9.fstar8()
@@ -217,6 +321,7 @@ def main(res=RES):
     out["verdict_details"] = card["predictions"]
     out["checks"] = chk
     out["unfinished_chains"] = sorted(k for k, s in states.items() if s["status"] in ("searching", "waiting", "broken"))
+    derived(out, P, states, card)
     json.dump(SC.clean(out), open(os.path.join(res, "stage9_paper_numbers.json"), "w"), indent=1, default=float)
     return out
 
