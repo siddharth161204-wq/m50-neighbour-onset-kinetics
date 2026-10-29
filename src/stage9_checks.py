@@ -205,7 +205,7 @@ def v1(states):
                default=0.0) if file is not None else None
     same = file is not None and set(now["chains"]) == set(file["chains"]) and diff <= 1e-6 and \
         now["flagged"] == file["flagged"]
-    # D101 (2): the file's time against the first A2 run's start and the last A1 run's end, to the second the
+    # D101 (3): the file's time against the first A2 run's start and the last A1 run's end, to the second the
     # records keep. By construction (stage9_run.build_runs) the worker that completes the grids writes the file
     # before it lists any A2 run, and an A2 chain lists none while the file is absent.
     recs = _records()

@@ -34,7 +34,7 @@ def ft_result(st):
            "sensitivity": st.get("sensitivity"), "f_run": st.get("f_run"), "t_run": st.get("t_run"),
            "fs": st.get("fs")}
     out["found"] = out["status"] in ("matched", "bracketed")
-    out["across_jump"] = bool(st.get("across_jump"))     # D101 (1): set by jumps(), from the records' histories
+    out["across_jump"] = bool(st.get("across_jump"))     # D101 (2): set by jumps(), from the records' histories
     out["reproduces"] = out["found"] and not out["across_jump"]
     return out
 
@@ -83,7 +83,7 @@ def _series_of(rid):
 
 
 def jumps(P, states):
-    """D101 (1), added after the independent read: for each bracketed f_t, whether the bracket straddles a jump of the
+    """D101 (2), added after the independent read: for each bracketed f_t, whether the bracket straddles a jump of the
     crossing rather than a continuous change. In the run at the bracket's lower end (which crosses at or after the
     measured time t_m), the criterion's history reaches, before t_m, a maximum above its value at t_m: a slightly
     larger fraction then crosses first at that earlier maximum, so the crossing jumps from after t_m to before it

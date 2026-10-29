@@ -354,6 +354,11 @@ def main(res=RES):
     out["verdicts"] = card["verdicts"]
     out["verdict_details"] = card["predictions"]
     out["checks"] = chk
+    out["predictions_estimates"] = {          # as quoted, from predictions_stage9.md ("What was known"), not recomputed
+        "M50_PT_Exp1_f_max_linear_estimate": 0.067,
+        "P6_f_t_C1_240_s_sizing_estimate": {"M50_PP_Exp2": 0.26, "M50_ST_Exp3": 0.52},
+        "P8_aged_change_hand_estimate": [0.0012, 0.0017],
+        "source": "predictions_stage9.md, the section on what was known when the predictions were written"}
     out["unfinished_chains"] = sorted(k for k, s in states.items() if s["status"] in ("searching", "waiting", "broken"))
     derived(out, P, states, card)
     json.dump(SC.clean(out), open(os.path.join(res, "stage9_paper_numbers.json"), "w"), indent=1, default=float)

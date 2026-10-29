@@ -123,7 +123,7 @@ for x, t in tests.items():
     if t["propagated"]:
         for crit, dx in (("C2", 0.0), ("C1", -0.45)):
             st = r.get(f"ft_{crit}_status")
-            if crit == "C2" and st == "threshold":          # D101 (8): no run reproduces the time; its bracket shown
+            if crit == "C2" and st == "threshold":          # D101 (8): no run of the search reproduces the time; its bracket shown
                 lo, hi = num(r["ft_C2_lo"]), num(r["ft_C2_hi"])
                 ax.plot([E + dx] * 2, [lo, hi], color=BLUE, lw=0.9, alpha=0.8, zorder=2)
                 ax.scatter([E + dx], [hi], s=16, marker="s", facecolor=SURF, edgecolor=BLUE, lw=0.9, zorder=3)
