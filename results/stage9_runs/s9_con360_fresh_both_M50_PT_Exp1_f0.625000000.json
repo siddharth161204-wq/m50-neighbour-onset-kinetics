@@ -1,0 +1,168 @@
+{
+ "id": "s9_con360_fresh_both_M50_PT_Exp1_f0.625000000",
+ "stage": 9,
+ "kind": "fstar",
+ "test": "M50_PT_Exp1",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 8976.772248678275,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.625,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 27875.43655047034,
+ "E_delivered_J": 17422.14784404396,
+ "shape": "con",
+ "tau_d_s": 360.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": true,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "con360_fresh",
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 164.00319911033648,
+ "t_T1max_s": 20.91,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 19801,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 7.260631885830138e-13,
+  "peak_hottest_C": 221.6380349201434,
+  "t_peak_hottest_s": 360.0,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 53.98810569612809,
+   "z_mm": 35.05
+  },
+  "peak_mean_C": 201.37345950025815,
+  "probe_peak": {
+   "toward": {
+    "T_C": 191.41939873193223,
+    "t_s": 360.0
+   },
+   "away": {
+    "T_C": 196.91516768374834,
+    "t_s": 364.0
+   }
+  },
+  "in_rxn_J": 540.0271222780212,
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "energy_J": {
+   "in_bus": -509.5196069680073,
+   "in_gap": -6716.609876849558,
+   "in_rad": 229.55192625323372,
+   "out_conv": 3820.8431488662054,
+   "out_rad": 4292.300459812732,
+   "in_rxn": 540.0271222780212,
+   "in_delivery": 17422.14784404396
+  },
+  "stored_J": 2852.453800086674,
+  "net_in_J": 2852.4538000787124,
+  "sources": {
+   "delivery": {
+    "E_J": 17422.14784404396,
+    "tau_s": 360.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 17422.14784404396
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 19801,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 0.11632205736736978,
+   "li_an": 0.0030062524213129624,
+   "ele_liq": 0.012088939359980752,
+   "cat1": 0.0440771009892392,
+   "sep": 0.9999999998536224
+  },
+  "max_local_reaction_heating_K_per_s": 0.31219489844343545
+ },
+ "lumped": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "peak_C": 210.620758864302,
+  "t_peak_s": 360.0,
+  "reaction_heat_J": 803.8830700580652,
+  "t_end_s": 900.0,
+  "energy_J": {
+   "in_link": -7761.392348485507,
+   "in_rad": 229.56039620381176,
+   "out_conv": 3846.7993413975187,
+   "out_rad": 4373.0138678813455,
+   "in_delivery": 17422.14784404396,
+   "in_rxn": 803.8830700580652
+  },
+  "energy_residual_rel": -2.3247920825045016e-13,
+  "conversion_end": {
+   "sei": 0.13219752436376442,
+   "li_an": 0.006020307544747583,
+   "ele_liq": 0.025189990810339458,
+   "cat1": 0.10382800848147833,
+   "sep": 0.9999999999984471
+  },
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 17422.14784404396,
+    "tau_s": 360.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 17422.14784404396
+   }
+  },
+  "stored_J": 2474.3857525371773,
+  "net_in_J": 2474.385752541468
+ },
+ "wall_s": 1379.2286677360535,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T06:36:19Z",
+ "finished_utc": "2026-10-29T06:59:19Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 24
+}

@@ -1,0 +1,168 @@
+{
+ "id": "s9_con240_fresh_both_M50_PP_Exp3_f0.012500000",
+ "stage": 9,
+ "kind": "fstar",
+ "test": "M50_PP_Exp3",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 43895.36776574396,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.0125,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 136307.62874637014,
+ "E_delivered_J": 1703.8453593296272,
+ "shape": "con",
+ "tau_d_s": 240.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": true,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "con240_fresh",
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 685.9999536948258,
+ "t_T1max_s": 20.48,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 9000,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 7.500701794538208e-13,
+  "peak_hottest_C": 253.99738761313495,
+  "t_peak_hottest_s": 30.4,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 0.0,
+   "z_mm": 30.604499372999996
+  },
+  "peak_mean_C": 182.41067873820856,
+  "probe_peak": {
+   "toward": {
+    "T_C": 253.71827851376042,
+    "t_s": 30.5
+   },
+   "away": {
+    "T_C": 175.76654411677782,
+    "t_s": 251.8
+   }
+  },
+  "in_rxn_J": 516.8499507466375,
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "energy_J": {
+   "in_bus": 1005.3013238020096,
+   "in_gap": 9061.229314047428,
+   "in_rad": 2417.321107166686,
+   "out_conv": 4378.357277357473,
+   "out_rad": 5173.342568536483,
+   "in_rxn": 516.8499507466375,
+   "in_delivery": 1703.8453593296272
+  },
+  "stored_J": 5152.8472092094635,
+  "net_in_J": 5152.847209198434,
+  "sources": {
+   "delivery": {
+    "E_J": 1703.8453593296272,
+    "tau_s": 240.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 1703.8453593296272
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 9000,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 0.1405487650245106,
+   "li_an": 0.0014316273995195025,
+   "ele_liq": 0.005249828029219357,
+   "cat1": 0.013344451684959003,
+   "sep": 0.999999988848724
+  },
+  "max_local_reaction_heating_K_per_s": 1.01028651560867
+ },
+ "lumped": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "peak_C": 219.72155632390104,
+  "t_peak_s": 281.8,
+  "reaction_heat_J": 2704.604197832109,
+  "t_end_s": 900.0,
+  "energy_J": {
+   "in_link": 10342.240316648034,
+   "in_rad": 2417.321107166686,
+   "out_conv": 5212.29298962805,
+   "out_rad": 6644.059557005881,
+   "in_delivery": 1703.8453593296272,
+   "in_rxn": 2704.604197832109
+  },
+  "energy_residual_rel": -2.542854016896579e-15,
+  "conversion_end": {
+   "sei": 0.25160439830549663,
+   "li_an": 0.029602086213503798,
+   "ele_liq": 0.1310643093886945,
+   "cat1": 0.5167371892987731,
+   "sep": 0.9999999999999992
+  },
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 1703.8453593296272,
+    "tau_s": 240.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 1703.8453593296272
+   }
+  },
+  "stored_J": 5311.658434342478,
+  "net_in_J": 5311.658434342522
+ },
+ "wall_s": 880.9576678276062,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T05:04:04Z",
+ "finished_utc": "2026-10-29T05:18:45Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 8
+}

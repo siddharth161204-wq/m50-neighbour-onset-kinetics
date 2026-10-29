@@ -1,0 +1,168 @@
+{
+ "id": "s9_con240_fresh_both_ns_M50_ST_Exp3_f0.321875000",
+ "stage": 9,
+ "kind": "story",
+ "test": "M50_ST_Exp3",
+ "kin": "mean",
+ "connection": "series",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 16641.19045346538,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.321875,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 51675.63972430825,
+ "E_delivered_J": 16633.096536261717,
+ "shape": "con",
+ "tau_d_s": 240.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": false,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "con240_fresh",
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 282.0071235552607,
+ "t_T1max_s": 20.87,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": true,
+  "t_prop_s": 176.4814120357203,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 17636,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 3.9877646062401503e-13,
+  "peak_hottest_C": 554.5132926482951,
+  "t_peak_hottest_s": 240.4,
+  "where_peak": {
+   "r_mm": 0.0,
+   "theta_deg": 0.0,
+   "z_mm": 35.05
+  },
+  "peak_mean_C": 524.71567479523,
+  "probe_peak": {
+   "toward": {
+    "T_C": 437.2795782812673,
+    "t_s": 234.6
+   },
+   "away": {
+    "T_C": 496.6248551097,
+    "t_s": 236.075
+   }
+  },
+  "in_rxn_J": 22355.893760977306,
+  "cross_s": {
+   "T_onset_low": 176.4814120357203,
+   "T_onset_mean": 199.2229258372033,
+   "T_onset_high": 210.1862268467064
+  },
+  "energy_J": {
+   "in_bus": -581.6948583106788,
+   "in_gap": -12086.477457172532,
+   "in_rad": 536.8596036222463,
+   "out_conv": 7152.390532221053,
+   "out_rad": 14942.094011669804,
+   "in_rxn": 22355.893760977306,
+   "in_delivery": 16633.096536261717
+  },
+  "stored_J": 4763.193041497911,
+  "net_in_J": 4763.1930414872,
+  "sources": {
+   "delivery": {
+    "E_J": 16633.096536261717,
+    "tau_s": 240.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 16633.096536261717
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 17636,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 0.9999296892185008,
+   "li_an": 1.0000000000000002,
+   "ele_liq": 1.0000000000000002,
+   "cat1": 1.0000000000000002,
+   "sep": 1.0000000000000002
+  },
+  "max_local_reaction_heating_K_per_s": 232.53659979809058
+ },
+ "lumped": {
+  "propagated": true,
+  "t_prop_s": 176.88935150099095,
+  "stopped": false,
+  "peak_C": 523.201902991922,
+  "t_peak_s": 198.9,
+  "reaction_heat_J": 22330.458566237583,
+  "t_end_s": 900.0,
+  "energy_J": {
+   "in_link": -13394.58649989395,
+   "in_rad": 536.8863035271149,
+   "out_conv": 6833.137674821882,
+   "out_rad": 15484.358239870759,
+   "in_delivery": 16633.096536261717,
+   "in_rxn": 22330.458566237583
+  },
+  "energy_residual_rel": -6.147654981301641e-14,
+  "conversion_end": {
+   "sei": 1.0,
+   "li_an": 1.0,
+   "ele_liq": 1.0,
+   "cat1": 1.0,
+   "sep": 1.0
+  },
+  "cross_s": {
+   "T_onset_low": 176.88935150099095,
+   "T_onset_mean": 180.24309032443747,
+   "T_onset_high": 183.2399849382697
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 16633.096536261717,
+    "tau_s": 240.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 16633.096536261717
+   }
+  },
+  "stored_J": 3788.358991437397,
+  "net_in_J": 3788.3589914398253
+ },
+ "wall_s": 1522.6649141311646,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T06:28:12Z",
+ "finished_utc": "2026-10-29T06:53:34Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 1
+}

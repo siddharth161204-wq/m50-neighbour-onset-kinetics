@@ -1,0 +1,168 @@
+{
+ "id": "s9_con360_fresh_both_M50_PT_Exp1_f0.200000000",
+ "stage": 9,
+ "kind": "fstar",
+ "test": "M50_PT_Exp1",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 8976.772248678275,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.2,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 27875.43655047034,
+ "E_delivered_J": 5575.087310094068,
+ "shape": "con",
+ "tau_d_s": 360.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": true,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "con360_fresh",
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 164.00319911033648,
+ "t_T1max_s": 20.91,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 9000,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 1.61037012972955e-12,
+  "peak_hottest_C": 114.1355556803332,
+  "t_peak_hottest_s": 360.0,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 45.0,
+   "z_mm": 35.05
+  },
+  "peak_mean_C": 107.053791524301,
+  "probe_peak": {
+   "toward": {
+    "T_C": 107.09187323533939,
+    "t_s": 360.0
+   },
+   "away": {
+    "T_C": 104.96128737298625,
+    "t_s": 363.8
+   }
+  },
+  "in_rxn_J": 59.41021865424377,
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "energy_J": {
+   "in_bus": 41.54480568674614,
+   "in_gap": -244.3111292460088,
+   "in_rad": 229.56039620381176,
+   "out_conv": 1991.5401245867508,
+   "out_rad": 1676.1401273196336,
+   "in_rxn": 59.41021865424377,
+   "in_delivery": 5575.087310094068
+  },
+  "stored_J": 1993.6113494955935,
+  "net_in_J": 1993.6113494864767,
+  "sources": {
+   "delivery": {
+    "E_J": 5575.087310094068,
+    "tau_s": 360.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 5575.087310094068
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 9000,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 0.017174240020558784,
+   "li_an": 1.4558340376839334e-07,
+   "ele_liq": 2.860276811890389e-07,
+   "cat1": 5.923113618430425e-08,
+   "sep": 0.013950605963352517
+  },
+  "max_local_reaction_heating_K_per_s": 0.003101163704870487
+ },
+ "lumped": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "peak_C": 113.16426263854231,
+  "t_peak_s": 360.0,
+  "reaction_heat_J": 68.1711381456196,
+  "t_end_s": 900.0,
+  "energy_J": {
+   "in_link": -99.60689259314745,
+   "in_rad": 229.56039620381176,
+   "out_conv": 2101.670658106599,
+   "out_rad": 1771.8252002104741,
+   "in_delivery": 5575.087310094068,
+   "in_rxn": 68.1711381456196
+  },
+  "energy_residual_rel": -2.0672168422328273e-12,
+  "conversion_end": {
+   "sei": 0.0198905895817294,
+   "li_an": 3.375532673377535e-07,
+   "ele_liq": 7.013927993959612e-07,
+   "cat1": 1.828237107259767e-07,
+   "sep": 0.03547692921745038
+  },
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 5575.087310094068,
+    "tau_s": 360.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 5575.087310094068
+   }
+  },
+  "stored_J": 1899.7160935211386,
+  "net_in_J": 1899.716093533279
+ },
+ "wall_s": 705.1137037277222,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T05:27:18Z",
+ "finished_utc": "2026-10-29T05:39:03Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 24
+}

@@ -1,0 +1,168 @@
+{
+ "id": "s9_con360_fresh_both_M50_PT_Exp1_f0.300000000",
+ "stage": 9,
+ "kind": "fstar",
+ "test": "M50_PT_Exp1",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 8976.772248678275,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.3,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 27875.43655047034,
+ "E_delivered_J": 8362.630965141101,
+ "shape": "con",
+ "tau_d_s": 360.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": true,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "con360_fresh",
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 164.00319911033648,
+ "t_T1max_s": 20.91,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 12600,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 1.2051794729781923e-12,
+  "peak_hottest_C": 139.45142205801687,
+  "t_peak_hottest_s": 360.0,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 47.71543978734987,
+   "z_mm": 35.05
+  },
+  "peak_mean_C": 129.31220301656924,
+  "probe_peak": {
+   "toward": {
+    "T_C": 126.98986931512934,
+    "t_s": 360.0
+   },
+   "away": {
+    "T_C": 126.73920087242254,
+    "t_s": 363.7
+   }
+  },
+  "in_rxn_J": 90.8587201162321,
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "energy_J": {
+   "in_bus": -89.16608108061938,
+   "in_gap": -1782.3624166999566,
+   "in_rad": 229.55474211043145,
+   "out_conv": 2426.8189813536233,
+   "out_rad": 2184.8552691687814,
+   "in_rxn": 90.8587201162321,
+   "in_delivery": 8362.630965141101
+  },
+  "stored_J": 2199.8416790729934,
+  "net_in_J": 2199.8416790647843,
+  "sources": {
+   "delivery": {
+    "E_J": 8362.630965141101,
+    "tau_s": 360.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 8362.630965141101
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 12600,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 0.028420822978889083,
+   "li_an": 2.1780806155029445e-06,
+   "ele_liq": 5.192913830047707e-06,
+   "cat1": 2.4221699115341022e-06,
+   "sep": 0.24975360176047062
+  },
+  "max_local_reaction_heating_K_per_s": 0.004567384527359206
+ },
+ "lumped": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "peak_C": 135.48276236259505,
+  "t_peak_s": 360.0,
+  "reaction_heat_J": 97.34842913224188,
+  "t_end_s": 900.0,
+  "energy_J": {
+   "in_link": -1882.4387993045088,
+   "in_rad": 229.56039620381176,
+   "out_conv": 2507.7471680531758,
+   "out_rad": 2265.9381416368315,
+   "in_delivery": 8362.630965141101,
+   "in_rxn": 97.34842913224188
+  },
+  "energy_residual_rel": -1.7883140936326791e-12,
+  "conversion_end": {
+   "sei": 0.03245813884789561,
+   "li_an": 4.663659922798935e-06,
+   "ele_liq": 1.1671310782723765e-05,
+   "cat1": 6.57785721103199e-06,
+   "sep": 0.48072384496948395
+  },
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 8362.630965141101,
+    "tau_s": 360.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 8362.630965141101
+   }
+  },
+  "stored_J": 2033.4156814670996,
+  "net_in_J": 2033.4156814826392
+ },
+ "wall_s": 941.1763589382172,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T05:39:03Z",
+ "finished_utc": "2026-10-29T05:54:44Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 24
+}

@@ -1,0 +1,168 @@
+{
+ "id": "s9_con240_fresh_both_M50_PT_Exp4_f0.050000000",
+ "stage": 9,
+ "kind": "fstar",
+ "test": "M50_PT_Exp4",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 39991.283602956886,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.05,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 124184.33460982893,
+ "E_delivered_J": 6209.216730491447,
+ "shape": "con",
+ "tau_d_s": 240.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": true,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "con240_fresh",
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 629.9944580557521,
+ "t_T1max_s": 20.56,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 11400,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 5.758805540204908e-13,
+  "peak_hottest_C": 253.506834542202,
+  "t_peak_hottest_s": 341.0,
+  "where_peak": {
+   "r_mm": 0.0,
+   "theta_deg": 0.0,
+   "z_mm": 35.05
+  },
+  "peak_mean_C": 241.35441617856873,
+  "probe_peak": {
+   "toward": {
+    "T_C": 249.689788844919,
+    "t_s": 36.75
+   },
+   "away": {
+    "T_C": 234.0435767772331,
+    "t_s": 342.4
+   }
+  },
+  "in_rxn_J": 5885.434215207295,
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "energy_J": {
+   "in_bus": 497.2150051423378,
+   "in_gap": 4046.0274475521646,
+   "in_rad": 2080.1048568998103,
+   "out_conv": 5511.458622722747,
+   "out_rad": 7551.240542689416,
+   "in_rxn": 5885.434215207295,
+   "in_delivery": 6209.216730491447
+  },
+  "stored_J": 5655.299089891672,
+  "net_in_J": 5655.299089880893,
+  "sources": {
+   "delivery": {
+    "E_J": 6209.216730491447,
+    "tau_s": 240.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 6209.216730491447
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 11400,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 0.33845870567163444,
+   "li_an": 0.12729352987295406,
+   "ele_liq": 0.5513804141482216,
+   "cat1": 0.9621118872249952,
+   "sep": 1.0000000000000002
+  },
+  "max_local_reaction_heating_K_per_s": 1.5246038063741736
+ },
+ "lumped": {
+  "propagated": true,
+  "t_prop_s": 177.393052984872,
+  "stopped": true,
+  "peak_C": 255.71003222298134,
+  "t_peak_s": 177.4,
+  "reaction_heat_J": 2025.7735789238063,
+  "t_end_s": 177.4,
+  "energy_J": {
+   "in_link": 8460.984981857246,
+   "in_rad": 1356.8526223477531,
+   "out_conv": 941.7739344677233,
+   "out_rad": 1245.1387921819187,
+   "in_delivery": 4589.646033288262,
+   "in_rxn": 2025.7735789238063
+  },
+  "energy_residual_rel": 1.0172367168869223e-13,
+  "conversion_end": {
+   "sei": 0.05391819980602486,
+   "li_an": 0.0194661183058229,
+   "ele_liq": 0.09845540682323906,
+   "cat1": 0.5880700172895605,
+   "sep": 0.9999999999999981
+  },
+  "cross_s": {
+   "T_onset_low": 177.393052984872,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 6209.216730491447,
+    "tau_s": 240.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 4589.646033288262
+   }
+  },
+  "stored_J": 14246.344489769097,
+  "net_in_J": 14246.344489767425
+ },
+ "wall_s": 1137.3092682361603,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T05:01:49Z",
+ "finished_utc": "2026-10-29T05:20:46Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 5
+}

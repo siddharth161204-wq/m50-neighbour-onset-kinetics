@@ -1,0 +1,168 @@
+{
+ "id": "s9_con120_fresh_both_M50_PT_Exp1_f0.400000000",
+ "stage": 9,
+ "kind": "fstar",
+ "test": "M50_PT_Exp1",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 8976.772248678275,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.4,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 27875.43655047034,
+ "E_delivered_J": 11150.174620188136,
+ "shape": "con",
+ "tau_d_s": 120.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": true,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "con120_fresh",
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 164.00319911033648,
+ "t_T1max_s": 20.91,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 17402,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 1.1405595658680457e-12,
+  "peak_hottest_C": 235.50900054671433,
+  "t_peak_hottest_s": 120.0,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 36.974354117677876,
+   "z_mm": 35.05
+  },
+  "peak_mean_C": 179.6685255084456,
+  "probe_peak": {
+   "toward": {
+    "T_C": 214.8927893843554,
+    "t_s": 120.0
+   },
+   "away": {
+    "T_C": 176.38419051590876,
+    "t_s": 127.6
+   }
+  },
+  "in_rxn_J": 192.65488324738973,
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "energy_J": {
+   "in_bus": -234.12966159280083,
+   "in_gap": -3437.490865980118,
+   "in_rad": 229.5388454999392,
+   "out_conv": 2901.2723231049163,
+   "out_rad": 2919.038697305182,
+   "in_rxn": 192.65488324738973,
+   "in_delivery": 11150.174620188136
+  },
+  "stored_J": 2080.436800961459,
+  "net_in_J": 2080.436800952448,
+  "sources": {
+   "delivery": {
+    "E_J": 11150.174620188136,
+    "tau_s": 120.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 11150.174620188136
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 17402,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 0.05647863409333236,
+   "li_an": 0.0004801215118231955,
+   "ele_liq": 0.0019293427996614012,
+   "cat1": 0.007820199961792841,
+   "sep": 0.9999720660055892
+  },
+  "max_local_reaction_heating_K_per_s": 1.0537532029229084
+ },
+ "lumped": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "peak_C": 196.2234325636012,
+  "t_peak_s": 120.0,
+  "reaction_heat_J": 239.5654597813238,
+  "t_end_s": 900.0,
+  "energy_J": {
+   "in_link": -3787.583908923866,
+   "in_rad": 229.56039620381176,
+   "out_conv": 2941.683017049215,
+   "out_rad": 2974.0039401134495,
+   "in_delivery": 11150.174620188136,
+   "in_rxn": 239.5654597813238
+  },
+  "energy_residual_rel": -7.75563115638566e-13,
+  "conversion_end": {
+   "sei": 0.0666289218842544,
+   "li_an": 0.0008476057425346184,
+   "ele_liq": 0.003233873965078682,
+   "cat1": 0.009778896668650172,
+   "sep": 0.9999999849559167
+  },
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 11150.174620188136,
+    "tau_s": 120.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 11150.174620188136
+   }
+  },
+  "stored_J": 1916.0296100777289,
+  "net_in_J": 1916.0296100867404
+ },
+ "wall_s": 1359.3291237354279,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T05:58:28Z",
+ "finished_utc": "2026-10-29T06:21:07Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 19
+}

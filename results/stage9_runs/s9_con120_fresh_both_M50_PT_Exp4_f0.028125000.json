@@ -1,0 +1,168 @@
+{
+ "id": "s9_con120_fresh_both_M50_PT_Exp4_f0.028125000",
+ "stage": 9,
+ "kind": "ft",
+ "test": "M50_PT_Exp4",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 39991.283602956886,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.028125,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 124184.33460982893,
+ "E_delivered_J": 3492.684410901439,
+ "shape": "con",
+ "tau_d_s": 120.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": true,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "con120_fresh",
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 629.9944580557521,
+ "t_T1max_s": 20.56,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 10200,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 7.271109516135209e-13,
+  "peak_hottest_C": 252.87341398627302,
+  "t_peak_hottest_s": 37.8,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 0.0,
+   "z_mm": 30.604499372999996
+  },
+  "peak_mean_C": 182.69566564266154,
+  "probe_peak": {
+   "toward": {
+    "T_C": 252.6630204621057,
+    "t_s": 37.9
+   },
+   "away": {
+    "T_C": 175.7955734684354,
+    "t_s": 233.2
+   }
+  },
+  "in_rxn_J": 551.2272173956951,
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "energy_J": {
+   "in_bus": 866.8419230118895,
+   "in_gap": 7608.940786776799,
+   "in_rad": 2080.0337165345272,
+   "out_conv": 4409.444565338988,
+   "out_rad": 5222.875961977055,
+   "in_rxn": 551.2272173956951,
+   "in_delivery": 3492.684410901439
+  },
+  "stored_J": 4967.407527314921,
+  "net_in_J": 4967.407527304305,
+  "sources": {
+   "delivery": {
+    "E_J": 3492.684410901439,
+    "tau_s": 120.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 3492.684410901439
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 10200,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 0.14397626703204047,
+   "li_an": 0.0018320840996698183,
+   "ele_liq": 0.006932136108028518,
+   "cat1": 0.019271754442105243,
+   "sep": 0.9999999942672954
+  },
+  "max_local_reaction_heating_K_per_s": 1.1200978940201756
+ },
+ "lumped": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "peak_C": 224.3535652291389,
+  "t_peak_s": 270.3,
+  "reaction_heat_J": 3422.763246336528,
+  "t_end_s": 900.0,
+  "energy_J": {
+   "in_link": 8220.300613427215,
+   "in_rad": 2080.159712101354,
+   "out_conv": 5275.34560306274,
+   "out_rad": 6817.926794830664,
+   "in_delivery": 3492.684410901439,
+   "in_rxn": 3422.763246336528
+  },
+  "energy_residual_rel": 4.95533567626513e-14,
+  "conversion_end": {
+   "sei": 0.2688370469964787,
+   "li_an": 0.04313027887584209,
+   "ele_liq": 0.19334563960959694,
+   "cat1": 0.6809922988209123,
+   "sep": 0.9999999999999999
+  },
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 3492.684410901439,
+    "tau_s": 120.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 3492.684410901439
+   }
+  },
+  "stored_J": 5122.635584873986,
+  "net_in_J": 5122.635584873133
+ },
+ "wall_s": 853.4216432571411,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T05:21:42Z",
+ "finished_utc": "2026-10-29T05:35:56Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 3
+}

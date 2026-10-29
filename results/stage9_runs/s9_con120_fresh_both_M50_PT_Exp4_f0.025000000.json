@@ -1,0 +1,168 @@
+{
+ "id": "s9_con120_fresh_both_M50_PT_Exp4_f0.025000000",
+ "stage": 9,
+ "kind": "fstar",
+ "test": "M50_PT_Exp4",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 39991.283602956886,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.025,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 124184.33460982893,
+ "E_delivered_J": 3104.6083652457237,
+ "shape": "con",
+ "tau_d_s": 120.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": true,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "con120_fresh",
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 629.9944580557521,
+ "t_T1max_s": 20.56,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 10200,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 7.308097646134608e-13,
+  "peak_hottest_C": 249.9074644554404,
+  "t_peak_hottest_s": 36.65,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 0.0,
+   "z_mm": 30.604499372999996
+  },
+  "peak_mean_C": 179.59128801602526,
+  "probe_peak": {
+   "toward": {
+    "T_C": 249.689788844919,
+    "t_s": 36.75
+   },
+   "away": {
+    "T_C": 172.85313973217205,
+    "t_s": 239.5
+   }
+  },
+  "in_rxn_J": 502.394138569361,
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "energy_J": {
+   "in_bus": 885.8596258355666,
+   "in_gap": 7828.489026501936,
+   "in_rad": 2080.0337165345272,
+   "out_conv": 4347.153722240304,
+   "out_rad": 5103.2535983865255,
+   "in_rxn": 502.394138569361,
+   "in_delivery": 3104.6083652457237
+  },
+  "stored_J": 4950.97755207081,
+  "net_in_J": 4950.977552060285,
+  "sources": {
+   "delivery": {
+    "E_J": 3104.6083652457237,
+    "tau_s": 120.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 3104.6083652457237
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 10200,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 0.13685998358873971,
+   "li_an": 0.0013651359620808548,
+   "ele_liq": 0.005051877977387912,
+   "cat1": 0.013184918287832132,
+   "sep": 0.9999999779055984
+  },
+  "max_local_reaction_heating_K_per_s": 0.8998669133973616
+ },
+ "lumped": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "peak_C": 212.64852021263965,
+  "t_peak_s": 234.7,
+  "reaction_heat_J": 1888.4017038513364,
+  "t_end_s": 900.0,
+  "energy_J": {
+   "in_link": 9276.9605485505,
+   "in_rad": 2080.159712101354,
+   "out_conv": 5034.669644190831,
+   "out_rad": 6270.7529409681465,
+   "in_delivery": 3104.6083652457237,
+   "in_rxn": 1888.4017038513364
+  },
+  "energy_residual_rel": 3.61569935058421e-14,
+  "conversion_end": {
+   "sei": 0.22491664702311964,
+   "li_an": 0.0179632262318824,
+   "ele_liq": 0.07736953758070608,
+   "cat1": 0.3161241653559491,
+   "sep": 0.9999999999999905
+  },
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 3104.6083652457237,
+    "tau_s": 120.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 3104.6083652457237
+   }
+  },
+  "stored_J": 5044.707744590527,
+  "net_in_J": 5044.707744589936
+ },
+ "wall_s": 972.8571360111237,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T05:03:43Z",
+ "finished_utc": "2026-10-29T05:19:56Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 3
+}

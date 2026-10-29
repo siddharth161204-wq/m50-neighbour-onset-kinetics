@@ -1,0 +1,166 @@
+{
+ "id": "s9_tri21_fresh_both_ns_M50_PP_Exp1_f0.018750000",
+ "stage": 9,
+ "kind": "story",
+ "test": "M50_PP_Exp1",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 51085.41057193381,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.01875,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 158634.7610927011,
+ "E_delivered_J": 2974.4017704881458,
+ "shape": "tri",
+ "tau_d_s": 21.38651984299561,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": false,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "tri21_fresh",
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 786.9945112528877,
+ "t_T1max_s": 20.34,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": true,
+  "t_prop_s": 11.503896386532714,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 11090,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 6.522785835215866e-13,
+  "peak_hottest_C": 373.0229052768891,
+  "t_peak_hottest_s": 19.2875,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 0.0,
+   "z_mm": 30.604499372999996
+  },
+  "peak_mean_C": 204.25114970990035,
+  "probe_peak": {
+   "toward": {
+    "T_C": 372.8236358278823,
+    "t_s": 19.275
+   },
+   "away": {
+    "T_C": 196.3697628782066,
+    "t_s": 258.0
+   }
+  },
+  "in_rxn_J": 1466.371071153067,
+  "cross_s": {
+   "T_onset_low": 11.503896386532714,
+   "T_onset_mean": 12.343707832648478,
+   "T_onset_high": 13.285929786011826
+  },
+  "energy_J": {
+   "in_bus": 991.2950547128776,
+   "in_gap": 8729.18678799494,
+   "in_rad": 3081.0889495682814,
+   "out_conv": 5091.635649249983,
+   "out_rad": 6562.149900523178,
+   "in_rxn": 1466.371071153067,
+   "in_delivery": 2974.4017704881458
+  },
+  "stored_J": 5588.5580841554,
+  "net_in_J": 5588.558084144153,
+  "sources": {
+   "delivery": {
+    "E_J": 2974.4017704881458,
+    "tau_s": 21.38651984299561,
+    "t0_s": 0.0,
+    "name": "delivery",
+    "delivered_J": 2974.4017704881458
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 11090,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 0.22491309063664414,
+   "li_an": 0.013863448185005064,
+   "ele_liq": 0.05450816270703655,
+   "cat1": 0.18396519806468503,
+   "sep": 0.9999999999995675
+  },
+  "max_local_reaction_heating_K_per_s": 35.10785362197475
+ },
+ "lumped": {
+  "propagated": true,
+  "t_prop_s": 143.50426656838374,
+  "stopped": false,
+  "peak_C": 508.15244225136996,
+  "t_peak_s": 168.6,
+  "reaction_heat_J": 22524.12565878334,
+  "t_end_s": 900.0,
+  "energy_J": {
+   "in_link": 2023.612887284018,
+   "in_rad": 3082.8717572797486,
+   "out_conv": 7784.3672658734695,
+   "out_rad": 16982.405717883816,
+   "in_delivery": 2974.4017704881458,
+   "in_rxn": 22524.12565878334
+  },
+  "energy_residual_rel": 1.412457641610404e-13,
+  "conversion_end": {
+   "sei": 1.0,
+   "li_an": 1.0,
+   "ele_liq": 1.0,
+   "cat1": 1.0,
+   "sep": 1.0
+  },
+  "cross_s": {
+   "T_onset_low": 143.50426656838374,
+   "T_onset_mean": 148.76834130818105,
+   "T_onset_high": 152.80804625075538
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 2974.4017704881458,
+    "tau_s": 21.38651984299561,
+    "t0_s": 0.0,
+    "name": "delivery",
+    "delivered_J": 2974.4017704881458
+   }
+  },
+  "stored_J": 5838.239090082291,
+  "net_in_J": 5838.239090077968
+ },
+ "wall_s": 873.0334014892578,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T06:07:40Z",
+ "finished_utc": "2026-10-29T06:22:13Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 18
+}

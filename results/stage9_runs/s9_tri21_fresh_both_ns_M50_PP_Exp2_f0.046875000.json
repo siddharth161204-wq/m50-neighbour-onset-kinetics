@@ -1,0 +1,166 @@
+{
+ "id": "s9_tri21_fresh_both_ns_M50_PP_Exp2_f0.046875000",
+ "stage": 9,
+ "kind": "story",
+ "test": "M50_PP_Exp2",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 40962.019712742374,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.046875,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 127198.74692708027,
+ "E_delivered_J": 5962.441262206888,
+ "shape": "tri",
+ "tau_d_s": 21.38651984299561,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": false,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "tri21_fresh",
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 643.9921410348164,
+ "t_T1max_s": 20.54,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": true,
+  "t_prop_s": 9.256002265234358,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 13768,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 6.768245635273536e-13,
+  "peak_hottest_C": 466.8613577503238,
+  "t_peak_hottest_s": 16.53125,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 0.0,
+   "z_mm": 35.05
+  },
+  "peak_mean_C": 204.50665433676483,
+  "probe_peak": {
+   "toward": {
+    "T_C": 466.8613577503238,
+    "t_s": 16.53125
+   },
+   "away": {
+    "T_C": 196.5929318487237,
+    "t_s": 215.0
+   }
+  },
+  "in_rxn_J": 2097.6239134929,
+  "cross_s": {
+   "T_onset_low": 9.256002265234358,
+   "T_onset_mean": 9.774529469715443,
+   "T_onset_high": 10.224128217610037
+  },
+  "energy_J": {
+   "in_bus": 703.2035054332858,
+   "in_gap": 5757.035685250868,
+   "in_rad": 2161.222629278695,
+   "out_conv": 5040.442209455821,
+   "out_rad": 6497.9058106434395,
+   "in_rxn": 2097.6239134929,
+   "in_delivery": 5962.441262206888
+  },
+  "stored_J": 5143.178975574665,
+  "net_in_J": 5143.1789755633745,
+  "sources": {
+   "delivery": {
+    "E_J": 5962.441262206888,
+    "tau_s": 21.38651984299561,
+    "t0_s": 0.0,
+    "name": "delivery",
+    "delivered_J": 5962.441262206888
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 13768,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 0.220618991537179,
+   "li_an": 0.06230097791319006,
+   "ele_liq": 0.12310387261457668,
+   "cat1": 0.25158375593736965,
+   "sep": 0.9999999999995276
+  },
+  "max_local_reaction_heating_K_per_s": 101.51176629322632
+ },
+ "lumped": {
+  "propagated": true,
+  "t_prop_s": 143.88858038935447,
+  "stopped": false,
+  "peak_C": 500.3540584728871,
+  "t_peak_s": 172.2,
+  "reaction_heat_J": 22639.015800572044,
+  "t_end_s": 900.0,
+  "energy_J": {
+   "in_link": -1557.5222720131003,
+   "in_rad": 2162.2573168623153,
+   "out_conv": 7610.703583956773,
+   "out_rad": 16183.200976294665,
+   "in_delivery": 5962.441262206888,
+   "in_rxn": 22639.015800572044
+  },
+  "energy_residual_rel": 1.1172189533375768e-13,
+  "conversion_end": {
+   "sei": 1.0,
+   "li_an": 1.0,
+   "ele_liq": 1.0,
+   "cat1": 1.0,
+   "sep": 1.0
+  },
+  "cross_s": {
+   "T_onset_low": 143.88858038935447,
+   "T_onset_mean": 151.05607005167738,
+   "T_onset_high": 155.6851309695232
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 5962.441262206888,
+    "tau_s": 21.38651984299561,
+    "t0_s": 0.0,
+    "name": "delivery",
+    "delivered_J": 5962.441262206888
+   }
+  },
+  "stored_J": 5412.287547380146,
+  "net_in_J": 5412.287547376709
+ },
+ "wall_s": 1041.4637286663055,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T06:16:29Z",
+ "finished_utc": "2026-10-29T06:33:51Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 15
+}

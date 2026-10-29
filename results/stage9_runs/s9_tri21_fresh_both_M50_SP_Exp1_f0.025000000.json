@@ -1,0 +1,173 @@
+{
+ "id": "s9_tri21_fresh_both_M50_SP_Exp1_f0.025000000",
+ "stage": 9,
+ "kind": "grid",
+ "test": "M50_SP_Exp1",
+ "kin": "mean",
+ "connection": "series",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 46811.80403982944,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.025,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 145363.9946716313,
+ "E_delivered_J": 3634.099866790783,
+ "shape": "tri",
+ "tau_d_s": 21.38651984299561,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": true,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "tri21_fresh",
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 728.0029814319178,
+ "t_T1max_s": 20.44,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": true,
+  "t_prop_s": 10.98451249609149,
+  "stopped": true,
+  "t_end_s": 10.9875,
+  "steps": 1272,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 4.243755156421092e-15,
+  "peak_hottest_C": 255.78079383803413,
+  "t_peak_hottest_s": 10.9875,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 0.0,
+   "z_mm": 30.604499372999996
+  },
+  "peak_mean_C": 57.55559261530061,
+  "probe_peak": {
+   "toward": {
+    "T_C": 255.66141939346096,
+    "t_s": 10.9875
+   },
+   "away": {
+    "T_C": 32.69998858679321,
+    "t_s": 10.9875
+   }
+  },
+  "in_rxn_J": -0.39107231954148275,
+  "cross_s": {
+   "T_onset_low": 10.98451249609149,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "energy_J": {
+   "in_bus": 9.63213088136933,
+   "in_gap": 95.97173877259623,
+   "in_rad": 14.704389233581239,
+   "out_conv": 10.027794274751244,
+   "out_rad": 15.253064014449935,
+   "in_rxn": -0.39107231954148275,
+   "in_delivery": 1915.6715157159913
+  },
+  "stored_J": 2010.307843994804,
+  "net_in_J": 2010.3078439947953,
+  "sources": {
+   "delivery": {
+    "E_J": 3634.099866790783,
+    "tau_s": 21.38651984299561,
+    "t0_s": 0.0,
+    "name": "delivery",
+    "delivered_J": 1915.6715157159913
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 1272,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 5.852404857724134e-05,
+   "li_an": 8.75736285805065e-07,
+   "ele_liq": 4.029589487878394e-06,
+   "cat1": 2.7496162629367705e-05,
+   "sep": 0.020629830957262455
+  },
+  "max_local_reaction_heating_K_per_s": 2.3037071914282565,
+  "where": {
+   "r_mm": 10.55,
+   "theta_deg": 0.0,
+   "z_mm": 30.604499372999996
+  },
+  "mean_at_prop_C": 57.55559261530061,
+  "T1_at_prop_C": 417.10788236309065
+ },
+ "lumped": {
+  "propagated": true,
+  "t_prop_s": 173.1021997843786,
+  "stopped": true,
+  "peak_C": 255.94092331639501,
+  "t_peak_s": 173.2,
+  "reaction_heat_J": 2543.404172132433,
+  "t_end_s": 173.2,
+  "energy_J": {
+   "in_link": 8831.986288882525,
+   "in_rad": 1843.7934274037648,
+   "out_conv": 1088.0144809637272,
+   "out_rad": 1504.667259458952,
+   "in_delivery": 3634.099866790783,
+   "in_rxn": 2543.404172132433
+  },
+  "energy_residual_rel": 3.3458566490041615e-14,
+  "conversion_end": {
+   "sei": 0.07007341430151504,
+   "li_an": 0.028171087057167088,
+   "ele_liq": 0.1414131732468401,
+   "cat1": 0.7096110796795712,
+   "sep": 0.9999999999999997
+  },
+  "cross_s": {
+   "T_onset_low": 173.1021997843786,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 3634.099866790783,
+    "tau_s": 21.38651984299561,
+    "t0_s": 0.0,
+    "name": "delivery",
+    "delivered_J": 3634.099866790783
+   }
+  },
+  "stored_J": 14260.602014787391,
+  "net_in_J": 14260.602014786828
+ },
+ "wall_s": 99.77406215667725,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T05:51:18Z",
+ "finished_utc": "2026-10-29T05:52:58Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 22
+}

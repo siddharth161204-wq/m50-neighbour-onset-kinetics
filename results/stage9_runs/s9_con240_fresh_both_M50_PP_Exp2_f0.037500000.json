@@ -1,0 +1,168 @@
+{
+ "id": "s9_con240_fresh_both_M50_PP_Exp2_f0.037500000",
+ "stage": 9,
+ "kind": "fstar",
+ "test": "M50_PP_Exp2",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 40962.019712742374,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.0375,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 127198.74692708027,
+ "E_delivered_J": 4769.95300976551,
+ "shape": "con",
+ "tau_d_s": 240.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": true,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "con240_fresh",
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 643.9921410348164,
+ "t_T1max_s": 20.54,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 9324,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 7.089555428333925e-13,
+  "peak_hottest_C": 249.54816635910697,
+  "t_peak_hottest_s": 34.1,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 0.0,
+   "z_mm": 30.604499372999996
+  },
+  "peak_mean_C": 205.96277369062585,
+  "probe_peak": {
+   "toward": {
+    "T_C": 249.3112298228316,
+    "t_s": 34.15
+   },
+   "away": {
+    "T_C": 198.86232193542213,
+    "t_s": 248.7
+   }
+  },
+  "in_rxn_J": 1110.8270130859846,
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "energy_J": {
+   "in_bus": 804.622806522703,
+   "in_gap": 6889.048474990656,
+   "in_rad": 2162.4614251127387,
+   "out_conv": 4716.453338161026,
+   "out_rad": 5853.825389753098,
+   "in_rxn": 1110.8270130859846,
+   "in_delivery": 4769.95300976551
+  },
+  "stored_J": 5166.634001574625,
+  "net_in_J": 5166.634001563468,
+  "sources": {
+   "delivery": {
+    "E_J": 4769.95300976551,
+    "tau_s": 240.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 4769.95300976551
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 9324,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 0.18767543592528688,
+   "li_an": 0.008239568354064718,
+   "ele_liq": 0.034298655500728345,
+   "cat1": 0.1325642937003972,
+   "sep": 0.9999999999983915
+  },
+  "max_local_reaction_heating_K_per_s": 0.8285555550336512
+ },
+ "lumped": {
+  "propagated": true,
+  "t_prop_s": 198.38563222837178,
+  "stopped": true,
+  "peak_C": 255.7309463499455,
+  "t_peak_s": 198.4,
+  "reaction_heat_J": 2253.76693410859,
+  "t_end_s": 198.4,
+  "energy_J": {
+   "in_link": 9100.96292046356,
+   "in_rad": 1484.1049828179648,
+   "out_conv": 1085.6060720062467,
+   "out_rad": 1448.7539830145563,
+   "in_delivery": 3943.161154739488,
+   "in_rxn": 2253.76693410859
+  },
+  "energy_residual_rel": 1.9943637837203746e-14,
+  "conversion_end": {
+   "sei": 0.06363157637835626,
+   "li_an": 0.02295529622474879,
+   "ele_liq": 0.11551486538467182,
+   "cat1": 0.6401961767328138,
+   "sep": 0.9999999999999991
+  },
+  "cross_s": {
+   "T_onset_low": 198.38563222837178,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 4769.95300976551,
+    "tau_s": 240.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 3943.161154739488
+   }
+  },
+  "stored_J": 14247.635937109135,
+  "net_in_J": 14247.6359371088
+ },
+ "wall_s": 786.1333899497986,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T05:23:49Z",
+ "finished_utc": "2026-10-29T05:36:55Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 18
+}

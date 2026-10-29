@@ -1,0 +1,168 @@
+{
+ "id": "s9_con240_fresh_both_M50_SP_Exp4_f0.050000000",
+ "stage": 9,
+ "kind": "fstar",
+ "test": "M50_SP_Exp4",
+ "kin": "mean",
+ "connection": "series",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 39604.00386577766,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.05,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 122981.72063657013,
+ "E_delivered_J": 6149.086031828508,
+ "shape": "con",
+ "tau_d_s": 240.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": true,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "con240_fresh",
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 625.0005796448017,
+ "t_T1max_s": 20.57,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 11400,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 6.312627042938804e-13,
+  "peak_hottest_C": 248.0190765810686,
+  "t_peak_hottest_s": 36.9,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 0.0,
+   "z_mm": 30.604499372999996
+  },
+  "peak_mean_C": 214.78354874353482,
+  "probe_peak": {
+   "toward": {
+    "T_C": 247.72580697863987,
+    "t_s": 36.8
+   },
+   "away": {
+    "T_C": 208.25785917984967,
+    "t_s": 251.1
+   }
+  },
+  "in_rxn_J": 1880.611513528823,
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "energy_J": {
+   "in_bus": 352.6827286505198,
+   "in_gap": 5874.328372883474,
+   "in_rad": 2064.160480341871,
+   "out_conv": 4888.135710877734,
+   "out_rad": 6218.797747241863,
+   "in_rxn": 1880.611513528823,
+   "in_delivery": 6149.086031828508
+  },
+  "stored_J": 5213.935669123901,
+  "net_in_J": 5213.935669113598,
+  "sources": {
+   "delivery": {
+    "E_J": 6149.086031828508,
+    "tau_s": 240.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 6149.086031828508
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 11400,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 0.2160349521892321,
+   "li_an": 0.017977890249730486,
+   "ele_liq": 0.07856389593581567,
+   "cat1": 0.32507059870402977,
+   "sep": 0.9999999999999692
+  },
+  "max_local_reaction_heating_K_per_s": 0.7883840667979403
+ },
+ "lumped": {
+  "propagated": true,
+  "t_prop_s": 186.545507260677,
+  "stopped": true,
+  "peak_C": 255.89708985445793,
+  "t_peak_s": 186.6,
+  "reaction_heat_J": 2096.8672500217817,
+  "t_end_s": 186.6,
+  "energy_J": {
+   "in_link": 8323.397596630222,
+   "in_rad": 1370.7850778592401,
+   "out_conv": 996.2023349834086,
+   "out_rad": 1317.866680763031,
+   "in_delivery": 4780.914389746665,
+   "in_rxn": 2096.8672500217817
+  },
+  "energy_residual_rel": 7.902939842962507e-14,
+  "conversion_end": {
+   "sei": 0.05706453080229623,
+   "li_an": 0.02046908006509285,
+   "ele_liq": 0.10340659311090117,
+   "cat1": 0.6047002513178299,
+   "sep": 0.9999999999999984
+  },
+  "cross_s": {
+   "T_onset_low": 186.545507260677,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 6149.086031828508,
+    "tau_s": 240.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 4780.914389746665
+   }
+  },
+  "stored_J": 14257.895298512778,
+  "net_in_J": 14257.895298511468
+ },
+ "wall_s": 1046.8572335243225,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T05:06:00Z",
+ "finished_utc": "2026-10-29T05:23:27Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 15
+}

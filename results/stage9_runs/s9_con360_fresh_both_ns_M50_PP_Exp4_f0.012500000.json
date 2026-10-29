@@ -1,0 +1,168 @@
+{
+ "id": "s9_con360_fresh_both_ns_M50_PP_Exp4_f0.012500000",
+ "stage": 9,
+ "kind": "story",
+ "test": "M50_PP_Exp4",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 46860.8481986862,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.0125,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 145516.29076431476,
+ "E_delivered_J": 1818.9536345539345,
+ "shape": "con",
+ "tau_d_s": 360.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": false,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "con360_fresh",
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 728.0053671349107,
+ "t_T1max_s": 20.43,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": true,
+  "t_prop_s": 20.335367434398776,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 9000,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 7.279789257495348e-13,
+  "peak_hottest_C": 268.42820847583596,
+  "t_peak_hottest_s": 29.0,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 0.0,
+   "z_mm": 30.604499372999996
+  },
+  "peak_mean_C": 187.17167294458602,
+  "probe_peak": {
+   "toward": {
+    "T_C": 268.12640878583704,
+    "t_s": 29.1
+   },
+   "away": {
+    "T_C": 180.5175940461114,
+    "t_s": 307.2
+   }
+  },
+  "in_rxn_J": 651.170061422009,
+  "cross_s": {
+   "T_onset_low": 20.335367434398776,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "energy_J": {
+   "in_bus": 1034.7946378179333,
+   "in_gap": 9295.422377418618,
+   "in_rad": 2685.254310468187,
+   "out_conv": 4577.01379441324,
+   "out_rad": 5554.029391073617,
+   "in_rxn": 651.170061422009,
+   "in_delivery": 1818.9536345539345
+  },
+  "stored_J": 5354.551836205097,
+  "net_in_J": 5354.551836193824,
+  "sources": {
+   "delivery": {
+    "E_J": 1818.9536345539345,
+    "tau_s": 360.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 1818.9536345539345
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 9000,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 0.16214718219189714,
+   "li_an": 0.0026199388984696663,
+   "ele_liq": 0.00994097494948938,
+   "cat1": 0.028007585444165504,
+   "sep": 0.9999999994265999
+  },
+  "max_local_reaction_heating_K_per_s": 2.5797980660774638
+ },
+ "lumped": {
+  "propagated": true,
+  "t_prop_s": 275.40401148302504,
+  "stopped": false,
+  "peak_C": 474.68342624968284,
+  "t_peak_s": 317.3,
+  "reaction_heat_J": 22851.690630008736,
+  "t_end_s": 900.0,
+  "energy_J": {
+   "in_link": 1520.1141167378917,
+   "in_rad": 2685.2551594633837,
+   "out_conv": 7515.367019818017,
+   "out_rad": 15165.208632857544,
+   "in_delivery": 1818.9536345539345,
+   "in_rxn": 22851.690630008736
+  },
+  "energy_residual_rel": 3.4016270165828986e-13,
+  "conversion_end": {
+   "sei": 1.0,
+   "li_an": 1.0,
+   "ele_liq": 1.0,
+   "cat1": 1.0,
+   "sep": 1.0
+  },
+  "cross_s": {
+   "T_onset_low": 275.40401148302504,
+   "T_onset_mean": 293.22820567244776,
+   "T_onset_high": 299.59254058531604
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 1818.9536345539345,
+    "tau_s": 360.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 1818.9536345539345
+   }
+  },
+  "stored_J": 6195.437888098206,
+  "net_in_J": 6195.437888088383
+ },
+ "wall_s": 647.3620216846466,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T06:24:39Z",
+ "finished_utc": "2026-10-29T06:35:26Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 6
+}
