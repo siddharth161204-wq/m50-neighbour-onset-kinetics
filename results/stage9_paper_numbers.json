@@ -8016,6 +8016,41 @@
    218.74658739381155,
    25191.87436560027
   ],
+  "B_separation": {
+   "120": {
+    "largest_f_max": {
+     "test": "M50_PT_Exp1",
+     "f": 0.0546875
+    },
+    "smallest_f_t_C2": {
+     "test": "M50_SP_Exp3",
+     "f": 0.0012972097898588148
+    },
+    "separate": false
+   },
+   "240": {
+    "largest_f_max": {
+     "test": "M50_PT_Exp1",
+     "f": 0.0361328125
+    },
+    "smallest_f_t_C2": {
+     "test": "M50_SP_Exp3",
+     "f": 0.0015465564151982125
+    },
+    "separate": false
+   },
+   "360": {
+    "largest_f_max": {
+     "test": "M50_PT_Exp1",
+     "f": 0.0439453125
+    },
+    "smallest_f_t_C2": {
+     "test": "M50_SP_Exp3",
+     "f": 0.003125
+    },
+    "separate": false
+   }
+  },
   "brackets_across_a_jump": {
    "B_ft_C1_240_M50_PP_Exp2": {
     "lo": 0.05,

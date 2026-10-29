@@ -251,6 +251,16 @@ def derived(out, P, states, card):
                     if x != "M50_ST_Exp3":
                         c1f.append(b["f_t"])
     d["B_C2_power_W"], d["B_C2_E_J"] = span(allp), span(alle)
+    sep = {}
+    for k in ("120", "240", "360"):                 # Part C1's statistic under each long delivery (not registered)
+        pt = pb[k]["per_test"]
+        fm = [(pt[x]["fmax"]["f_max"], x) for x in IN.REGISTERED_FMAX if pt[x]["fmax"]["found"]]
+        ft = [(pt[x]["ft_C2"]["f_t"], x) for x in pt if pt[x]["propagated"] and pt[x]["ft_C2"]["reproduces"]]
+        if fm and ft:
+            big, small = max(fm), min(ft)
+            sep[k] = {"largest_f_max": {"test": big[1], "f": big[0]}, "smallest_f_t_C2": {"test": small[1], "f": small[0]},
+                      "separate": big[0] < small[0]}
+    d["B_separation"] = sep
     jumps = {}
     for ch in R9.chain_defs():
         st = states.get(ch["name"], {})
