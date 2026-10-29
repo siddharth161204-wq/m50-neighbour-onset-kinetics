@@ -673,6 +673,27 @@ def _recorded(sp, recs):
     return sp["id"] in recs
 
 
+def _put(tmp, path, tries=20, wait_s=0.5):
+    """os.replace with the two Windows refusals of D98 (1): where a record of the run is already there (made by a
+    worker of the first start, whose list was older), that record is kept and this one dropped, the run and so its
+    result being the same; otherwise (a file held for a moment by another program) the replacement is tried again,
+    for up to 10 s, before the worker stops."""
+    for k in range(tries):
+        try:
+            os.replace(tmp, path)
+            return True
+        except PermissionError:
+            if os.path.exists(path):
+                try:
+                    os.remove(tmp)
+                except OSError:
+                    pass
+                return False
+            if k == tries - 1:
+                raise
+            time.sleep(wait_s)
+
+
 def work(worker, budget_min=1e9, wall_min=1e9, label="unlabelled", wait_s=10.0, sets=None, once=False):
     """Stage 8's loop with Stage 9's list, which grows as the chains advance: each pass rebuilds the list from the
     records, takes the first run that is neither recorded nor claimed, and runs it. Claims as D43 (3); a run
@@ -709,8 +730,11 @@ def work(worker, budget_min=1e9, wall_min=1e9, label="unlabelled", wait_s=10.0, 
             claim = os.path.join(RUNS, sp["id"] + ".claim")
             if not RUN._claim(claim, worker):
                 continue
-            started = True
             path, spath = _paths(sp)
+            if os.path.exists(path):             # D98 (1): recorded by another worker since this list was read
+                RUN._unclaim(claim)
+                continue
+            started = True
             wall_s = int(left * 60) - RUN.WALL_MARGIN_S
             limit_s = int(RUN_LIMIT_MIN[sp["refine"]] * 60)
             st_utc = RUN._utc()
@@ -747,7 +771,7 @@ def work(worker, budget_min=1e9, wall_min=1e9, label="unlabelled", wait_s=10.0, 
             tmp = path + f".tmp{os.getpid()}"
             with open(tmp, "w") as fh:
                 json.dump(rec, fh, indent=1, default=float)
-            os.replace(tmp, path)
+            _put(tmp, path)
             RUN._unclaim(claim)
             done += 1
             print(f"{RUN._utc()} {summary(rec)}", flush=True)

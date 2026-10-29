@@ -9,13 +9,15 @@
   - the relation of f_max to f*;
   - the choices of tests against the real data files;
   - the chains to their ends, the V1 file before any A2 run, the scoring, V2's replay and V4, with a made-up run in
-    place of the model (every record written to a scratch directory; no model run).
+    place of the model (every record written to a scratch directory; no model run);
+  - D98 (added while the runs went): a run recorded since a worker read the list, the record's replacement when
+    Windows refuses it, and the helpers of stage9_laptop.py --add.
 Usage: python3 test_stage9.py   (exit status 0 when every test passes)
 """
 import os as _os
 for _k in ("OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "OMP_NUM_THREADS", "NUMBA_NUM_THREADS"):
     _os.environ.setdefault(_k, "1")
-import json, math, os, shutil, sys, tempfile
+import json, math, os, shutil, sys, tempfile, time
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -324,8 +326,97 @@ def test_chains_end_to_end():
         shutil.rmtree(tmp, ignore_errors=True)
 
 
+def test_workers_d98():
+    """D98 (added while the runs went): a worker lets go of a run recorded since it read the list and keeps the
+    record already there; the record's replacement when Windows refuses it; the launcher's helpers of --add."""
+    import subprocess
+    tmp = tempfile.mkdtemp(prefix="stage9_test_")
+    import stage9_run as R
+    real_run, real_load, real_replace = R.run_one, R.load_records, os.replace
+    saved = (R.RUNS, R.SERIES, R.XCHK, R.V1_FILE, R.STOP_FILE)
+    try:
+        R.RUNS, R.SERIES, R.XCHK = (os.path.join(tmp, d) for d in ("runs", "series", "xcheck"))
+        R.V1_FILE, R.STOP_FILE = os.path.join(tmp, "v1.json"), os.path.join(tmp, "STOP")
+        R._RECS.clear()
+        for d in (R.RUNS, R.SERIES, R.XCHK):
+            os.makedirs(d, exist_ok=True)
+        pend = [r for r in R.build_runs(R.load_records()) if r.get("kind") != "xcheck"]
+        kinds = {pend[0]["kind"]}
+        first, second = [r for r in pend if r["kind"] in kinds][:2]
+        path0 = R._paths(first)[0]
+        json.dump({"id": first["id"], "mark": "the first record"}, open(path0, "w"))
+        R.run_one = _fake_run
+        R.load_records = lambda runs_dir=None: {}  # the list as read before that record was made
+        assert R.work(0, once=True, wait_s=0.0, sets=kinds) == 1
+        assert json.load(open(path0))["mark"] == "the first record"
+        assert json.load(open(R._paths(second)[0]))["id"] == second["id"]
+        assert not [f for f in os.listdir(R.RUNS) if f.endswith(".claim") or ".tmp" in f]
+        R.run_one, R.load_records = real_run, real_load
+        a, b = os.path.join(tmp, "a.json"), os.path.join(tmp, "b.json")
+        calls = []
+
+        def refuse(n):
+            def rep(src, dst):
+                calls.append(1)
+                if len(calls) <= n:
+                    raise PermissionError(13, "Access is denied")
+                return real_replace(src, dst)
+            return rep
+        open(a, "w").write("new")
+        open(b, "w").write("old")
+        os.replace = refuse(99)
+        assert R._put(a, b, tries=3, wait_s=0.0) is False and open(b).read() == "old" and not os.path.exists(a)
+        os.remove(b)
+        open(a, "w").write("new")
+        calls.clear()
+        os.replace = refuse(2)
+        assert R._put(a, b, tries=3, wait_s=0.0) is True and open(b).read() == "new"
+        os.remove(b)
+        open(a, "w").write("new")
+        calls.clear()
+        os.replace = refuse(99)
+        try:
+            R._put(a, b, tries=3, wait_s=0.0)
+            raise AssertionError("no error")
+        except PermissionError:
+            pass
+        os.replace = real_replace
+        import stage9_laptop as L
+        L.RES, L.LOGS = tmp, os.path.join(tmp, "logs")
+        os.makedirs(L.LOGS)
+        for name, text in (("laptop_20261029T050011Z_w00.log", "run\nworker 0: nothing left to run (3 this pass)\n"),
+                           ("laptop_20261029T050011Z_w01.log", "run\nTraceback (most recent call last):\n"),
+                           ("laptop_20261029T060000Z_w00.log", "a later start\n")):
+            open(os.path.join(L.LOGS, name), "w").write(text)
+        lock = {"started_utc": "2026-10-29T05:00:14Z", "workers": 2, "pids": [11, 12, 13],
+                "added": [{"utc": "2026-10-29T05:20:00Z", "pids": [13], "logs": ["w24.log"]}]}
+        lg = L._logs(lock)
+        assert lg == {11: os.path.join(L.LOGS, "laptop_20261029T050011Z_w00.log"),
+                      12: os.path.join(L.LOGS, "laptop_20261029T050011Z_w01.log"), 13: "w24.log"}, lg
+        assert L._ended_well(lg[11]) and not L._ended_well(lg[12]) and L._ended_well(None)
+        assert L._ended_well(os.path.join(tmp, "missing.log"))
+        dead = subprocess.Popen(["true"])
+        dead.wait()
+        runs = os.path.join(tmp, "stage9_runs")
+        os.makedirs(runs)
+        now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        open(os.path.join(runs, "x_dead.claim"), "w").write(f"14 {dead.pid} {now}\n")
+        open(os.path.join(runs, "x_live.claim"), "w").write(f"3 {os.getpid()} {now}\n")
+        open(os.path.join(runs, "x_new.claim"), "w").write("")
+        assert L._free_claims() == 1
+        assert sorted(os.listdir(runs)) == ["x_live.claim", "x_new.claim"]
+        ok("D98: a run recorded since the list was read is let go and its record kept; the record's replacement; "
+           "the launcher's logs, normal ends and claims of workers no longer running")
+    finally:
+        os.replace = real_replace
+        R.run_one, R.load_records = real_run, real_load
+        R.RUNS, R.SERIES, R.XCHK, R.V1_FILE, R.STOP_FILE = saved
+        R._RECS.clear()
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 if __name__ == "__main__":
     for t in (test_constant_pulse, test_ft_search, test_fmax_search, test_below, test_choices, test_chains_end_to_end,
-              test_model_bitwise, test_nostop):
+              test_workers_d98, test_model_bitwise, test_nostop):
         t()
     print(f"all {len(PASSED)} tests passed")
