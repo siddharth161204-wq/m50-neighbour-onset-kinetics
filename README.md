@@ -49,6 +49,10 @@ The note is `note/neighbour_onset_note.pdf`, two pages since Stage 7 (source `no
    - The records were pushed as the runs went (from 3dd3eaa). The scoring of P1 to P8, V1, V2 and V4, the exploratory fit, the quoted numbers and Figure 7 were pushed in commit cbf9c44 (16:08:20 UTC), while Part D and V3 still ran; Part D's and V3's records as each run ended, the last with the complete scoring in commit a54474c (18:03:45 UTC); D87 with the texts.
    - An independent read of every registered Stage 8 number and verdict was made before the note's Stage 8 lines were written (D88). The corrections to the scripts it led to were pushed in commits 900e373 and d4d9f67, before the texts, and those to the texts with them; no registered number or verdict changed.
    - Release v1.4.0 adds Stage 8. No v1.3.0 result changes.
+13. Stage 9, the delivered fraction read from each test's time and peak (brief of 29 October; version 1.5.0, D97).
+   - Part A0, what Fransson et al. measured, read again as rendered with the figures and the supplement (D89), was pushed first, in commit 080cc4c (2026-10-29 04:26:23 UTC), before the predictions were written.
+   - The design (D90 to D97), the code, and its tests on synthetic inputs only (D95 (6)) were pushed with the predictions, `predictions_stage9.md`, commit `f4b25e6345c737c392dc08e5d46304a26af63b05`, first pushed to this repository at 2026-10-29 04:54:56 UTC (`provenance/github_activity_stage9.json`). That was before any Stage 9 run: no run of the neighbour in a Stage 9 configuration. To size the runs, three runs with cell 1 held at the ambient temperature, outside every Stage 9 configuration, were made before them, two stopped once their cost was clear (`provenance/stage9_cost_test_*`, D95 (6)). The file records, prediction by prediction, what Stage 7's and Stage 8's records and the sizing runs already fixed.
+   - The run list as it stood before any Stage 9 record (177 runs, those that depend on no Stage 9 record) has the SHA-256 9cc1b14ab3cfd737bc4025809db7e20fe5e6cf93c7a08bcf8be6a85aab70fc07 (`python3 src/stage9_run.py list`); every later run follows from the records by the rules of D91 to D96.
 
 ## Results
 
