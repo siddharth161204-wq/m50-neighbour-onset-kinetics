@@ -1,0 +1,18 @@
+Transforming over 1000 elements to C_CONTIGUOUS.
+2026-10-29T05:00:22Z s9_tri21_fresh_lum_M50_PP_Exp4_f0.037500000; lumped 112.9 s (peak 255.9 C); 9 s
+2026-10-29T05:00:22Z s9_tri21_fresh_lum_M50_ST_Exp3_f0.287500000; lumped 17.6 s (peak 256.3 C); 0 s
+2026-10-29T05:00:22Z s9_con120_fresh_lum_M50_PP_Exp4_f0.100000000; lumped 65.6 s (peak 256.5 C); 0 s
+2026-10-29T05:00:22Z s9_con120_fresh_lum_M50_PP_Exp4_f0.050000000; lumped 96.0 s (peak 255.9 C); 0 s
+2026-10-29T05:00:22Z s9_con120_fresh_lum_M50_PP_Exp4_f0.025000000; lumped 138.1 s (peak 255.7 C); 0 s
+2026-10-29T05:00:23Z s9_con120_fresh_lum_M50_PP_Exp3_f0.050000000; lumped 105.0 s (peak 256.1 C); 0 s
+2026-10-29T05:00:23Z s9_con120_fresh_lum_M50_SP_Exp2_f0.025000000; lumped 130.2 s (peak 255.7 C); 0 s
+2026-10-29T05:00:23Z s9_con120_fresh_lum_M50_PP_Exp2_f0.037500000; lumped 148.9 s (peak 255.7 C); 0 s
+2026-10-29T05:00:24Z s9_tri21_fresh_lum_ns_M50_SP_Exp4_f0.250000000; lumped 10.3 s (peak 777.4 C); 0 s
+Traceback (most recent call last):
+  File "C:\Users\Siddharth\Downloads\m50_stage5\repo9\src\stage9_run.py", line 819, in <module>
+    work(a.worker, a.budget_min, a.wall_min, label=a.label, sets=set(a.sets) if a.sets else None)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Siddharth\Downloads\m50_stage5\repo9\src\stage9_run.py", line 750, in work
+    os.replace(tmp, path)
+    ~~~~~~~~~~^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Siddharth\\Downloads\\m50_stage5\\repo9\\src\\..\\results\\stage9_runs\\s9_con120_fresh_lum_M50_SP_Exp1_f0.015625000.json.tmp7276' -> 'C:\\Users\\Siddharth\\Downloads\\m50_stage5\\repo9\\src\\..\\results\\stage9_runs\\s9_con120_fresh_lum_M50_SP_Exp1_f0.015625000.json'
