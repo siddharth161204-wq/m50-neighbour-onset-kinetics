@@ -1,0 +1,169 @@
+{
+ "id": "s9_con240_fresh_both_ns_M50_SP_Exp4_f0.562500000",
+ "stage": 9,
+ "kind": "fmax",
+ "test": "M50_SP_Exp4",
+ "kin": "mean",
+ "connection": "series",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 39604.00386577766,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.5625,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 122981.72063657013,
+ "E_delivered_J": 69177.2178580707,
+ "shape": "con",
+ "tau_d_s": 240.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": false,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "con240_fresh",
+ "speculative": true,
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 625.0005796448017,
+ "t_T1max_s": 20.57,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": true,
+  "t_prop_s": 10.221414561234749,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 52918,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 1.4251328274046609e-13,
+  "peak_hottest_C": 759.7485605794262,
+  "t_peak_hottest_s": 133.8,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 39.649569411785244,
+   "z_mm": 35.05
+  },
+  "peak_mean_C": 665.3460523155863,
+  "probe_peak": {
+   "toward": {
+    "T_C": 694.7276654977236,
+    "t_s": 95.86875
+   },
+   "away": {
+    "T_C": 608.8976750324356,
+    "t_s": 195.65625
+   }
+  },
+  "in_rxn_J": 21884.766835113518,
+  "cross_s": {
+   "T_onset_low": 10.221414561234749,
+   "T_onset_mean": 11.224552862641051,
+   "T_onset_high": 12.16738487222582
+  },
+  "energy_J": {
+   "in_bus": -767.2541565070951,
+   "in_gap": -19784.72956945542,
+   "in_rad": 2064.102650875293,
+   "out_conv": 11974.64411919738,
+   "out_rad": 54154.18643115815,
+   "in_rxn": 21884.766835113518,
+   "in_delivery": 69177.2178580707
+  },
+  "stored_J": 6445.273067751801,
+  "net_in_J": 6445.273067741458,
+  "sources": {
+   "delivery": {
+    "E_J": 69177.2178580707,
+    "tau_s": 240.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 69177.2178580707
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 52918,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 1.0000000000000002,
+   "li_an": 1.0000000000000002,
+   "ele_liq": 1.0000000000000002,
+   "cat1": 1.0000000000000002,
+   "sep": 1.0000000000000002
+  },
+  "max_local_reaction_heating_K_per_s": 741.8624913032476
+ },
+ "lumped": {
+  "propagated": true,
+  "t_prop_s": 39.362001209409335,
+  "stopped": false,
+  "peak_C": 686.7325498856447,
+  "t_peak_s": 139.8,
+  "reaction_heat_J": 21645.539175498252,
+  "t_end_s": 900.0,
+  "energy_J": {
+   "in_link": -20107.110779807488,
+   "in_rad": 2064.2774459272005,
+   "out_conv": 11882.972461437164,
+   "out_rad": 55195.376876844006,
+   "in_delivery": 69177.2178580707,
+   "in_rxn": 21645.539175498252
+  },
+  "energy_residual_rel": 4.832059047207669e-14,
+  "conversion_end": {
+   "sei": 1.0,
+   "li_an": 1.0,
+   "ele_liq": 1.0,
+   "cat1": 1.0,
+   "sep": 1.0
+  },
+  "cross_s": {
+   "T_onset_low": 39.362001209409335,
+   "T_onset_mean": 40.42750306394981,
+   "T_onset_high": 41.02558557102188
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 69177.2178580707,
+    "tau_s": 240.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 69177.2178580707
+   }
+  },
+  "stored_J": 5701.574361411977,
+  "net_in_J": 5701.574361407489
+ },
+ "wall_s": 3912.628704071045,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T07:55:55Z",
+ "finished_utc": "2026-10-29T09:01:08Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 21
+}

@@ -1,0 +1,168 @@
+{
+ "id": "s9_con120_fresh_both_ns_M50_SP_Exp4_f0.343750000",
+ "stage": 9,
+ "kind": "fmax",
+ "test": "M50_SP_Exp4",
+ "kin": "mean",
+ "connection": "series",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 39604.00386577766,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.34375,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 122981.72063657013,
+ "E_delivered_J": 42274.96646882098,
+ "shape": "con",
+ "tau_d_s": 120.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": false,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "con120_fresh",
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 625.0005796448017,
+ "t_T1max_s": 20.57,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": true,
+  "t_prop_s": 8.343195567610683,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 49251,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 2.880661124908759e-13,
+  "peak_hottest_C": 820.4483100518213,
+  "t_peak_hottest_s": 120.0,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 39.649569411785244,
+   "z_mm": 35.05
+  },
+  "peak_mean_C": 698.6965196386262,
+  "probe_peak": {
+   "toward": {
+    "T_C": 744.3501730410682,
+    "t_s": 94.1375
+   },
+   "away": {
+    "T_C": 634.4607362579263,
+    "t_s": 122.3
+   }
+  },
+  "in_rxn_J": 21809.699270356068,
+  "cross_s": {
+   "T_onset_low": 8.343195567610683,
+   "T_onset_mean": 9.517689112572926,
+   "T_onset_high": 10.3782243738335
+  },
+  "energy_J": {
+   "in_bus": -481.62654666706084,
+   "in_gap": -12120.173080654306,
+   "in_rad": 2063.9742599267843,
+   "out_conv": 10045.834960303817,
+   "out_rad": 37640.16064106249,
+   "in_rxn": 21809.699270356068,
+   "in_delivery": 42274.96646882098
+  },
+  "stored_J": 5860.844770431584,
+  "net_in_J": 5860.844770416159,
+  "sources": {
+   "delivery": {
+    "E_J": 42274.96646882098,
+    "tau_s": 120.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 42274.96646882098
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 49251,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 1.0000000000000002,
+   "li_an": 1.0000000000000002,
+   "ele_liq": 1.0000000000000002,
+   "cat1": 1.0000000000000002,
+   "sep": 1.0000000000000002
+  },
+  "max_local_reaction_heating_K_per_s": 782.2977350215165
+ },
+ "lumped": {
+  "propagated": true,
+  "t_prop_s": 33.70480078338519,
+  "stopped": false,
+  "peak_C": 733.0690357399828,
+  "t_peak_s": 120.0,
+  "reaction_heat_J": 21551.395243961004,
+  "t_end_s": 900.0,
+  "energy_J": {
+   "in_link": -11863.136699967963,
+   "in_rad": 2064.2910153392795,
+   "out_conv": 9933.06860217026,
+   "out_rad": 38750.46827134819,
+   "in_delivery": 42274.96646882098,
+   "in_rxn": 21551.395243961004
+  },
+  "energy_residual_rel": -2.4569502685543846e-15,
+  "conversion_end": {
+   "sei": 1.0,
+   "li_an": 1.0,
+   "ele_liq": 1.0,
+   "cat1": 1.0,
+   "sep": 1.0
+  },
+  "cross_s": {
+   "T_onset_low": 33.70480078338519,
+   "T_onset_mean": 34.67572662219881,
+   "T_onset_high": 35.18346179759066
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 42274.96646882098,
+    "tau_s": 120.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 42274.96646882098
+   }
+  },
+  "stored_J": 5343.979154634695,
+  "net_in_J": 5343.979154634857
+ },
+ "wall_s": 3701.8277637958527,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T07:56:32Z",
+ "finished_utc": "2026-10-29T08:58:13Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 2
+}
