@@ -1,0 +1,169 @@
+{
+ "id": "s9_con360_fresh_both_ns_M50_PT_Exp2_f0.906250000",
+ "stage": 9,
+ "kind": "fmax",
+ "test": "M50_PT_Exp2",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 43404.08058823057,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.90625,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 134782.0420248344,
+ "E_delivered_J": 122146.22558500618,
+ "shape": "con",
+ "tau_d_s": 360.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": false,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "con360_fresh",
+ "speculative": true,
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 678.9954052917614,
+ "t_T1max_s": 20.490000000000002,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": true,
+  "t_prop_s": 8.66767756502895,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 123171,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 2.1870863226041945e-13,
+  "peak_hottest_C": 813.6643654160943,
+  "t_peak_hottest_s": 157.625,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 42.324784705892625,
+   "z_mm": 35.05
+  },
+  "peak_mean_C": 704.545408112563,
+  "probe_peak": {
+   "toward": {
+    "T_C": 743.6812403776579,
+    "t_s": 90.26875
+   },
+   "away": {
+    "T_C": 640.863471877166,
+    "t_s": 215.40625
+   }
+  },
+  "in_rxn_J": 21829.120018259127,
+  "cross_s": {
+   "T_onset_low": 8.66767756502895,
+   "T_onset_mean": 9.612802528164615,
+   "T_onset_high": 10.442556458978384
+  },
+  "energy_J": {
+   "in_bus": -2355.4847283538447,
+   "in_gap": -31631.64672228381,
+   "in_rad": 2373.8201572173516,
+   "out_conv": 15153.119024935904,
+   "out_rad": 89586.81391592578,
+   "in_rxn": 21829.120018259127,
+   "in_delivery": 122146.22558500618
+  },
+  "stored_J": 7622.10136900788,
+  "net_in_J": 7622.101368983305,
+  "sources": {
+   "delivery": {
+    "E_J": 122146.22558500618,
+    "tau_s": 360.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 122146.22558500618
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 123171,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 1.0000000000000002,
+   "li_an": 1.0000000000000002,
+   "ele_liq": 1.0000000000000002,
+   "cat1": 1.0000000000000002,
+   "sep": 1.0000000000000002
+  },
+  "max_local_reaction_heating_K_per_s": 825.9402896039094
+ },
+ "lumped": {
+  "propagated": true,
+  "t_prop_s": 33.81106675214631,
+  "stopped": false,
+  "peak_C": 729.5844934643682,
+  "t_peak_s": 151.1,
+  "reaction_heat_J": 21570.73990213215,
+  "t_end_s": 900.0,
+  "energy_J": {
+   "in_link": -33759.28239415886,
+   "in_rad": 2373.9897000504957,
+   "out_conv": 15206.650383691009,
+   "out_rad": 90533.01914700061,
+   "in_delivery": 122146.22558500618,
+   "in_rxn": 21570.73990213215
+  },
+  "energy_residual_rel": 3.550423965374868e-14,
+  "conversion_end": {
+   "sei": 1.0,
+   "li_an": 1.0,
+   "ele_liq": 1.0,
+   "cat1": 1.0,
+   "sep": 1.0
+  },
+  "cross_s": {
+   "T_onset_low": 33.81106675214631,
+   "T_onset_mean": 34.78123017829989,
+   "T_onset_high": 35.288419880973755
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 122146.22558500618,
+    "tau_s": 360.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 122146.22558500618
+   }
+  },
+  "stored_J": 6592.003262343532,
+  "net_in_J": 6592.003262338345
+ },
+ "wall_s": 4720.00537276268,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T09:17:05Z",
+ "finished_utc": "2026-10-29T10:35:45Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 19
+}

@@ -7,12 +7,12 @@ a  With Stage 8's delivery (21.39 s): each propagated test's crossing time t_c a
    bisection). Each test's measured time to propagation is a short horizontal mark, placed where its C2 line meets
    it if A2 found f_t(C2) there, at the start of its C2 line otherwise. The band is the range of the nine measured
    times.
-b  For each of the sixteen tests, against its trigger energy: f_t(C2) (squares) and f_t(C1) (circles, where found)
-   for the propagated tests, and f_max at the thermocouple node (diamonds) for the not propagated, each with its
-   bracket (a bar from the bracket's lower to its upper end; a matched run's fraction sits on its bar). The two
-   tests with maxima of 626 and 808 C are drawn hollow with a dashed bar (exploratory). The dashed lines mark the
-   largest registered f_max and the smallest f_t(C2), the separation of Part C1. The vertical axis is on a
-   square-root scale.
+b  For each of the sixteen tests, against its trigger energy: f_t(C2) (squares) and f_t(C1) (circles, where A2
+   found any) for the propagated tests, and f_max at the thermocouple node (diamonds) for the not propagated. A
+   fraction whose run came within the search's tolerance (10 s, 5 K) is a point; one interpolated within a bracket
+   has the bracket as a bar. The two tests with maxima of 626 and 808 C are drawn hollow (exploratory). The dashed
+   lines mark the largest registered f_max and the smallest f_t(C2), the separation of Part C1. The vertical axis
+   is on a square-root scale.
 Usage: python3 make_figure_stage9.py [--res ../results] [--out DIR]
 """
 import argparse, csv, json, os, sys
@@ -115,6 +115,7 @@ ax.set_title("a", loc="left", fontsize=8.5, fontweight="bold", color=INK)
 ax = axs[1]
 ax.set_yscale("function", functions=(fwd, inv))
 top = 1.05
+found_c1 = False
 for x, t in tests.items():
     r = frac[x]
     E = t["E_b_J"] / 1e3
@@ -124,7 +125,9 @@ for x, t in tests.items():
             if st not in ("matched", "bracketed"):
                 continue
             lo, hi, ft = num(r[f"ft_{crit}_lo"]), num(r[f"ft_{crit}_hi"]), num(r[f"ft_{crit}"])
-            ax.plot([E + dx] * 2, [lo, hi], color=COL[crit], lw=0.9, alpha=0.8, zorder=2)
+            found_c1 = found_c1 or crit == "C1"
+            if st == "bracketed":
+                ax.plot([E + dx] * 2, [lo, hi], color=COL[crit], lw=0.9, alpha=0.8, zorder=2)
             ax.scatter([E + dx], [ft], s=16, marker=MARK[crit], color=COL[crit], zorder=3, lw=0)
     else:
         st = r.get("fmax_status")
@@ -132,7 +135,8 @@ for x, t in tests.items():
             continue
         expl = x in IN.EXPLORATORY_FMAX
         lo, hi, fm = num(r["fmax_lo"]) or 0.0, num(r["fmax_hi"]) or 0.0, num(r["fmax"])
-        ax.plot([E, E], [lo, hi], color=GREEN, lw=0.9, alpha=0.8, zorder=2, ls=(0, (2, 1.5)) if expl else "-")
+        if st == "bracketed":
+            ax.plot([E, E], [lo, hi], color=GREEN, lw=0.9, alpha=0.8, zorder=2, ls=(0, (2, 1.5)) if expl else "-")
         ax.scatter([E], [fm], s=18, marker="D", zorder=3, facecolor=SURF if expl else GREEN, edgecolor=GREEN,
                    lw=0.9, clip_on=False)
 sep = card["separation"]["C2"]
@@ -151,9 +155,10 @@ ax.grid(True, axis="y", color=GRID, lw=0.7)
 ax.set_axisbelow(True)
 for sp_ in ("top", "right"):
     ax.spines[sp_].set_visible(False)
-hs = [Line2D([], [], ls="", marker="s", color=BLUE, ms=3.6, label="f_t(C2), propagated"),
-      Line2D([], [], ls="", marker="o", color=ORANGE, ms=3.6, label="f_t(C1), propagated"),
-      Line2D([], [], ls="", marker="D", mfc=GREEN, mec=GREEN, ms=3.4, label="f_max, not propagated"),
+hs = [Line2D([], [], ls="", marker="s", color=BLUE, ms=3.6, label="f_t(C2), propagated")]
+if found_c1:
+    hs.append(Line2D([], [], ls="", marker="o", color=ORANGE, ms=3.6, label="f_t(C1), propagated"))
+hs += [Line2D([], [], ls="", marker="D", mfc=GREEN, mec=GREEN, ms=3.4, label="f_max, not propagated"),
       Line2D([], [], ls="", marker="D", mfc=SURF, mec=GREEN, ms=3.4, label="f_max, 626 and 808 C (exploratory)"),
       Line2D([], [], color=GREEN, lw=0.7, ls=(0, (3, 2)), label="largest registered f_max"),
       Line2D([], [], color=BLUE, lw=0.7, ls=(0, (3, 2)), label="smallest f_t(C2)")]

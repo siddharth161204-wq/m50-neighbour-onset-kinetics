@@ -1,0 +1,169 @@
+{
+ "id": "s9_con360_fresh_both_ns_M50_SP_Exp4_f0.937500000",
+ "stage": 9,
+ "kind": "fmax",
+ "test": "M50_SP_Exp4",
+ "kin": "mean",
+ "connection": "series",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 39604.00386577766,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.9375,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 122981.72063657013,
+ "E_delivered_J": 115295.36309678451,
+ "shape": "con",
+ "tau_d_s": 360.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": false,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "con360_fresh",
+ "speculative": true,
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 625.0005796448017,
+ "t_T1max_s": 20.57,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": true,
+  "t_prop_s": 9.37544016187809,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 72044,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 7.990919312724664e-14,
+  "peak_hottest_C": 792.1523962345258,
+  "t_peak_hottest_s": 160.08125,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 42.324784705892625,
+   "z_mm": 35.05
+  },
+  "peak_mean_C": 690.1634792693128,
+  "probe_peak": {
+   "toward": {
+    "T_C": 719.930445529892,
+    "t_s": 94.9375
+   },
+   "away": {
+    "T_C": 628.969359371594,
+    "t_s": 219.925
+   }
+  },
+  "in_rxn_J": 21864.691545452653,
+  "cross_s": {
+   "T_onset_low": 9.37544016187809,
+   "T_onset_mean": 10.3649193694405,
+   "T_onset_high": 11.245424999851595
+  },
+  "energy_J": {
+   "in_bus": -1194.0969063001824,
+   "in_gap": -31543.82151364851,
+   "in_rad": 2064.140221993661,
+   "out_conv": 14872.08392840301,
+   "out_rad": 84015.87846893033,
+   "in_rxn": 21864.691545452653,
+   "in_delivery": 115295.36309678451
+  },
+  "stored_J": 7598.314046957308,
+  "net_in_J": 7598.314046948799,
+  "sources": {
+   "delivery": {
+    "E_J": 115295.36309678451,
+    "tau_s": 360.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 115295.36309678451
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 72044,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 1.0000000000000002,
+   "li_an": 1.0000000000000002,
+   "ele_liq": 1.0000000000000002,
+   "cat1": 1.0000000000000002,
+   "sep": 1.0000000000000002
+  },
+  "max_local_reaction_heating_K_per_s": 763.0184599773571
+ },
+ "lumped": {
+  "propagated": true,
+  "t_prop_s": 36.303929904169365,
+  "stopped": false,
+  "peak_C": 712.4503171598058,
+  "t_peak_s": 153.6,
+  "reaction_heat_J": 21610.634194428996,
+  "t_end_s": 900.0,
+  "energy_J": {
+   "in_link": -32742.091951434246,
+   "in_rad": 2064.2844066867733,
+   "out_conv": 14871.468965889373,
+   "out_rad": 84866.30865435593,
+   "in_delivery": 115295.36309678451,
+   "in_rxn": 21610.634194428996
+  },
+  "energy_residual_rel": 2.5615277016402754e-14,
+  "conversion_end": {
+   "sei": 1.0,
+   "li_an": 1.0,
+   "ele_liq": 1.0,
+   "cat1": 1.0,
+   "sep": 1.0
+  },
+  "cross_s": {
+   "T_onset_low": 36.303929904169365,
+   "T_onset_mean": 37.31858097661696,
+   "T_onset_high": 37.86691446025819
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 115295.36309678451,
+    "tau_s": 360.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 115295.36309678451
+   }
+  },
+  "stored_J": 6490.412126224279,
+  "net_in_J": 6490.412126220719
+ },
+ "wall_s": 3809.7255713939667,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-29T09:02:49Z",
+ "finished_utc": "2026-10-29T10:06:18Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 12
+}
