@@ -9,7 +9,8 @@
   - the relation of f_max to f*;
   - the choices of tests against the real data files;
   - the chains to their ends, the V1 file before any A2 run, the scoring, V2's replay and V4, with a made-up run in
-    place of the model (every record written to a scratch directory; no model run);
+    place of the model (every record written to a scratch directory; no model run), and from those records every
+    output: the scoring's files, the checks, the numbers file and the figure (D99 (2));
   - D98 (added while the runs went): a run recorded since a worker read the list, the record's replacement when
     Windows refuses it, and the helpers of stage9_laptop.py --add.
 Usage: python3 test_stage9.py   (exit status 0 when every test passes)
@@ -273,9 +274,31 @@ def _fake_run(sp, ctx=None, keep_series=True):
                 v["delivered_J"] = pul.cumulative(t_end)
         tl = np.linspace(0.0, t_end, 50)
         series.update({"t_lumped": tl, "T_lumped": np.where(tl < (tc or 1e9), 400.0, 530.0)})
-    if sp.get("kind") == "xcheck":
-        return rec, series
+    # D99 (2): where Stage 7 or Stage 8 already holds the point, the made-up run crosses when that record does, as a
+    # run of the model would (a point held by two records, D95 (4))
+    real = None
+    if sp["shape"] == "none" and f == 0.0:
+        real = R.stage7_records().get((sp["sei"], x))
+    elif sp["cfg"] == R.cfg_key(R.TRI21()):
+        real = _stage8_points().get((x, R.SR8.key(f)))
+    for part in ("resolved", "lumped"):
+        if real is not None and rec.get(part) and real.get(part):
+            t_c = real[part].get("t_prop_s") if real[part]["propagated"] else None
+            rec[part]["propagated"] = bool(real[part]["propagated"])
+            rec[part]["t_prop_s"] = t_c
+            rec[part]["cross_s"] = {"T_onset_low": t_c}
     return rec, series
+
+
+_S8P = {}
+
+
+def _stage8_points():
+    import stage9_run as R
+    if not _S8P:
+        for r in R.stage8_records():
+            _S8P[(r["test"], R.SR8.key(r["f"]))] = r
+    return _S8P
 
 
 def test_chains_end_to_end():
@@ -321,7 +344,42 @@ def test_chains_end_to_end():
         rows = SC.induction_rows(P, states)
         assert rows and all(r["t_c_s"] is None or r["t_c_s"] > 0 for r in rows)
         SC.fraction_rows(states), SC.long_rows(states), SC.sensitivities(states)
-        ok(f"the chains end to end with a made-up run ({n} runs, {len(states)} chains), V1 before any A2 run, the scoring")
+        # D99 (2): the whole of the outputs, as they will be made from the records: the scoring's files, the checks,
+        # the numbers file and the figure, into a scratch results folder that sees the made-up Stage 9 records beside
+        # the real Stage 7 and Stage 8 ones
+        import stage9_checks as CK
+        import stage9_numbers as NU
+        import subprocess
+        res = os.path.join(tmp, "res")
+        os.makedirs(res)
+        real = os.path.join(HERE, "..", "results")
+        for d in ("stage7_runs", "stage7_series", "stage8_runs", "stage8_series"):
+            os.symlink(os.path.abspath(os.path.join(real, d)), os.path.join(res, d))
+        for d, src in (("stage9_runs", R.RUNS), ("stage9_series", R.SERIES), ("stage9_xcheck", R.XCHK)):
+            os.symlink(src, os.path.join(res, d))
+        ck_res = CK.RES
+        CK.RES = res
+        try:
+            card = SC.main(res)
+            CK.main()
+            chk = json.load(open(os.path.join(res, "stage9_checks.json")))
+            assert chk["X"]["pass"] and chk["V4"]["pass"] and chk["V2"]["pass"], {k: chk[k].get("pass") for k in chk}
+            assert chk["V1"]["written_before_A2"] and chk["V1"]["same_as_file"]
+            assert chk["V3"].get("pass") is not None, chk["V3"]
+            nu = NU.main(res)
+            assert not nu["unfinished_chains"], nu["unfinished_chains"]
+            assert set(nu["verdicts"]) == {f"P{i}" for i in range(1, 9)}
+            for f in ("stage9_induction.csv", "stage9_fractions.csv", "stage9_long.csv", "stage9_scorecard.json",
+                      "stage9_states.json", "stage9_checks.json", "stage9_paper_numbers.json"):
+                assert os.path.getsize(os.path.join(res, f)) > 0, f
+            fig = subprocess.run([sys.executable, os.path.join(HERE, "make_figure_stage9.py"), "--res", res],
+                                 capture_output=True, text=True)
+            assert fig.returncode == 0, fig.stderr
+            assert os.path.getsize(os.path.join(res, "stage9_figure.png")) > 0
+        finally:
+            CK.RES = ck_res
+        ok(f"the chains end to end with a made-up run ({n} runs, {len(states)} chains), V1 before any A2 run, the scoring; "
+           f"the scoring's files, the checks, the numbers file and the figure")
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
 

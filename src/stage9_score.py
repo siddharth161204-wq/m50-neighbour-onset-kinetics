@@ -201,7 +201,9 @@ def induction_rows(P, states):
 
 
 def write_csv(path, rows):
-    keys = list(rows[0].keys()) if rows else []
+    keys = []                                  # D99 (1): every row's columns, in the order first met
+    for r in rows:
+        keys += [k for k in r if k not in keys]
     with open(path, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=keys)
         w.writeheader()

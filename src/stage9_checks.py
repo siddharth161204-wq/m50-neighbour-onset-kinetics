@@ -3,7 +3,7 @@
 results/stage9_checks.json.
 
   V1  t_c against f on every A1 grid, read again from the records, against results/stage9_v1.json (written by the
-      workers before any A2 run) and against the scoring.
+      workers before any A2 run) and against the scoring, within 1e-6 s (D99 (4)).
   V2  the searches of A2 (C1 and C2) for M50_PT_Exp4 and M50_ST_Exp3 and of A3 for M50_PT_Exp1, replayed by this
       file's own statement of the rules from the records themselves (found by their ids, not through
       stage9_run's tables), each outcome read from the record and checked against its stored series; acceptance: the
@@ -11,7 +11,8 @@ results/stage9_checks.json.
   V3  the long-delivery run of M50_PP_Exp3 under 240 s at f*_lo(C1) with every mesh spacing halved and with every step
       limit halved: the hot spot's peak rise (its peak less 25 C) within 1 % of the base run's.
   V4  every Stage 9 record's energy accounts under 1e-9 of the heat taken in (resolved and lumped), and every
-      delivery equal to f E_e (or to the pulse's integral up to the run's end, where it ended first) to 1e-9.
+      delivery equal to f E_e (or to the pulse's integral up to the run's end, where it ended first) to 1e-9; where
+      two records hold the same point, their crossing times within 1e-6 s (D95 (4), D99 (5)).
   X   the three Stage 8 runs made again on the laptop against their cloud records: the same outcomes, crossings and
       peaks within 1e-6 s and 1e-6 K, and the series within 1e-6 K.
 Usage: python3 stage9_checks.py
@@ -181,12 +182,31 @@ def v2(states):
     return {"pass": all(v["same"] for v in out.values()), "searches": out}
 
 
+def _tc_diff(a, b):
+    """The largest difference between two lists of crossing times (None where no crossing), inf where they differ in
+    length or in which runs cross."""
+    if len(a) != len(b):
+        return math.inf
+    d = 0.0
+    for x, y in zip(a, b):
+        if (x is None) != (y is None):
+            return math.inf
+        if x is not None:
+            d = max(d, abs(x - y))
+    return d
+
+
 def v1(states):
+    """D99 (4): the grids read now and as the file has them agree within 1e-6 s, the laptop check's tolerance (a point
+    may be held by two records, from two machines, D95 (4))."""
     file = json.load(open(R9.V1_FILE)) if os.path.exists(R9.V1_FILE) else None
     now = R9.v1_payload(states)
-    same = file is not None and all(now["chains"][k]["t_c"] == file["chains"][k]["t_c"] for k in now["chains"])
+    diff = max((_tc_diff(now["chains"][k]["t_c"], file["chains"][k]["t_c"]) for k in now["chains"]),
+               default=0.0) if file is not None else None
+    same = file is not None and set(now["chains"]) == set(file["chains"]) and diff <= 1e-6 and \
+        now["flagged"] == file["flagged"]
     return {"written_before_A2": file is not None, "written_utc": file and file["written_utc"],
-            "flagged": now["flagged"], "same_as_file": same, "chains": now["chains"]}
+            "flagged": now["flagged"], "same_as_file": same, "largest_difference_s": diff, "chains": now["chains"]}
 
 
 def v3(states, P):
@@ -208,7 +228,7 @@ def v3(states, P):
     return out
 
 
-def v4(recs):
+def v4(recs, P=None):
     worst = {"res": 0.0, "lum": 0.0, "delivery": 0.0}
     n = {"res": 0, "lum": 0, "deliveries": 0, "whole": 0}
     for r in recs.values():
@@ -230,8 +250,17 @@ def v4(recs):
                     assert abs(src["E_J"] - r["E_delivered_J"]) <= 1e-9 * max(1.0, r["E_delivered_J"])
                 worst["delivery"] = max(worst["delivery"], abs(src["delivered_J"] - want) / max(want, 1e-30))
                 n["deliveries"] += 1
-    return {"pass": worst["res"] < 1e-9 and worst["lum"] < 1e-9 and worst["delivery"] < 1e-9, "largest": worst,
-            "counts": n}
+    # D95 (4), D99 (5): where two records hold the same point, their crossing times agree (within 1e-6 s)
+    dup = {"n": 0, "largest_s": 0.0, "disagreeing": []}
+    for part, k, a_id, b_id, ta, tb in (P.dups if P is not None else []):
+        dup["n"] += 1
+        d = math.inf if (ta is None) != (tb is None) else (abs(ta - tb) if ta is not None else 0.0)
+        if d > 1e-6:
+            dup["disagreeing"].append({"part": part, "point": list(k), "records": [a_id, b_id], "t_c": [ta, tb]})
+        elif d > dup["largest_s"]:
+            dup["largest_s"] = d
+    return {"pass": worst["res"] < 1e-9 and worst["lum"] < 1e-9 and worst["delivery"] < 1e-9 and not dup["disagreeing"],
+            "largest": worst, "counts": n, "duplicate_points": dup}
 
 
 def xcheck():
@@ -258,7 +287,11 @@ def xcheck():
         zb = np.load(os.path.join(RES, "stage9_xcheck", "xcheck_" + rid + ".npz"))
         diffs = {}
         for k in za.files:
-            if k in zb.files and za[k].shape == zb[k].shape and k not in ("imax",):
+            if k == "imax":                      # D99 (3): the hottest node's index, compared apart, not in the pass
+                if k in zb.files and za[k].shape == zb[k].shape:
+                    d["imax_entries_differing"] = int(np.sum(za[k] != zb[k]))
+                continue
+            if k in zb.files and za[k].shape == zb[k].shape:
                 diffs[k] = float(np.max(np.abs(za[k] - zb[k]))) if za[k].size else 0.0
             elif k in zb.files:
                 diffs[k] = f"shapes {za[k].shape} and {zb[k].shape}"
@@ -271,7 +304,7 @@ def xcheck():
 
 def main():
     recs, P, states = SC.collect()
-    out = {"V1": v1(states), "V2": v2(states), "V3": v3(states, P), "V4": v4(recs), "X": xcheck()}
+    out = {"V1": v1(states), "V2": v2(states), "V3": v3(states, P), "V4": v4(recs, P), "X": xcheck()}
     json.dump(SC.clean(out), open(os.path.join(RES, "stage9_checks.json"), "w"), indent=1, default=float)
     print(json.dumps({k: v.get("pass", v.get("flagged")) for k, v in out.items()}))
     return out
