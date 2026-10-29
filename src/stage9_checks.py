@@ -205,8 +205,23 @@ def v1(states):
                default=0.0) if file is not None else None
     same = file is not None and set(now["chains"]) == set(file["chains"]) and diff <= 1e-6 and \
         now["flagged"] == file["flagged"]
-    return {"written_before_A2": file is not None, "written_utc": file and file["written_utc"],
+    # D101 (2): the file's time against the first A2 run's start and the last A1 run's end, to the second the
+    # records keep. By construction (stage9_run.build_runs) the worker that completes the grids writes the file
+    # before it lists any A2 run, and an A2 chain lists none while the file is absent.
+    recs = _records()
+    a2 = sorted(r["started_utc"] for r in recs if r.get("kind") == "ft" and r.get("cfg") == R9.cfg_key(R9.TRI21())
+                and r.get("started_utc"))
+    a1 = sorted(r["finished_utc"] for r in recs if r.get("kind") == "grid" and r.get("finished_utc"))
+    w = file and file["written_utc"]
+    return {"written_utc": w, "first_A2_started_utc": a2[0] if a2 else None,
+            "last_A1_finished_utc": a1[-1] if a1 else None,
+            "not_after_first_A2": bool(w) and (not a2 or w <= a2[0]),
+            "not_before_last_A1": bool(w) and (not a1 or w >= a1[-1]),
             "flagged": now["flagged"], "same_as_file": same, "largest_difference_s": diff, "chains": now["chains"]}
+
+
+def _records():
+    return [json.load(open(f)) for f in glob.glob(os.path.join(RES, "stage9_runs", "*.json"))]
 
 
 def v3(states, P):

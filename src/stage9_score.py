@@ -4,7 +4,9 @@ deliveries and the verdicts on P1 to P8, from the Stage 9 records and the Stage 
 
 Writes results/stage9_induction.csv (one row per point of every f_t search), results/stage9_fractions.csv (one row
 per test), results/stage9_long.csv (one row per test and duration), results/stage9_scorecard.json (Part C and P1 to
-P8) and results/stage9_states.json (every chain's end).
+P8) and results/stage9_states.json (every chain's end). Added after the independent read (D101): each bracketed f_t
+is flagged where its bracket straddles a jump of the crossing (jumps), P2 reports for every test the run nearest
+in time, and "extended" marks D92 (4)'s extension only, not the exploratory searches.
 Usage: python3 stage9_score.py [--out DIR]
 """
 import argparse, csv, json, math, os, sys
@@ -32,6 +34,8 @@ def ft_result(st):
            "sensitivity": st.get("sensitivity"), "f_run": st.get("f_run"), "t_run": st.get("t_run"),
            "fs": st.get("fs")}
     out["found"] = out["status"] in ("matched", "bracketed")
+    out["across_jump"] = bool(st.get("across_jump"))     # D101 (1): set by jumps(), from the records' histories
+    out["reproduces"] = out["found"] and not out["across_jump"]
     return out
 
 
@@ -63,7 +67,47 @@ def collect(recs=None):
     recs = R9.load_records() if recs is None else recs
     P = R9.points(recs)
     states = R9.all_states(P, os.path.exists(R9.V1_FILE))
+    for name, flag in jumps(P, states).items():
+        states[name]["across_jump"] = flag
     return recs, P, states
+
+
+def _series_of(rid):
+    """A record's stored histories, from Stage 9's, Stage 8's or Stage 7's series."""
+    import numpy as np
+    for d in (R9.SERIES, os.path.join(RES, "stage8_series"), os.path.join(RES, "stage7_series")):
+        p = os.path.join(d, rid + ".npz")
+        if os.path.exists(p):
+            return np.load(p)
+    return None
+
+
+def jumps(P, states):
+    """D101 (1), added after the independent read: for each bracketed f_t, whether the bracket straddles a jump of the
+    crossing rather than a continuous change. In the run at the bracket's lower end (which crosses at or after the
+    measured time t_m), the criterion's history reaches, before t_m, a maximum above its value at t_m: a slightly
+    larger fraction then crosses first at that earlier maximum, so the crossing jumps from after t_m to before it
+    and no fraction in the bracket reproduces t_m. The registered status (D91 (3)) is kept; the flag is reported
+    beside it."""
+    import numpy as np
+    out = {}
+    for ch in R9.chain_defs():
+        if ch["kind"] != "ft":
+            continue
+        st = states.get(ch["name"], {})
+        if st.get("status") != "bracketed":
+            continue
+        part = "res" if ch["crit"] == "C1" else "lum"
+        e = P.entry(ch["cfg"], ch["test"], st["lo"], part)
+        z = _series_of(e["id"]) if e else None
+        if z is None:
+            out[ch["name"]] = None
+            continue
+        t, T = (z["t"], z["Tmax"]) if part == "res" else (z["t_lumped"], z["T_lumped"])
+        tm = st["t_m"]
+        before = T[t <= tm]
+        out[ch["name"]] = bool(before.size and float(before.max()) > float(np.interp(tm, t, T)) + 1e-9)
+    return out
 
 
 # ------------------------------------------------------------------------------------------------ the predictions
@@ -92,10 +136,13 @@ def score(P, states):
                 if fs["lo"] + 1e-12 < f <= fs["hi"] + IN.P2_ABOVE + 1e-12 and t is not None
                 and abs(t - R9.t_meas(x)) <= IN.P2_TOL_S]
         best = min(cand) if cand else None
+        near = min(((abs(t - R9.t_meas(x)), f, t) for f, t in tc.items()
+                    if fs["lo"] + 1e-12 < f <= fs["hi"] + IN.P2_ABOVE + 1e-12 and t is not None), default=None)
         a2 = ft_result(states[f"A2_C2_{x}"])
         f_p3 = a2["f_t"] if a2["found"] else (best[1] if best else None)
         rows.append({"test": x, "t_m": R9.t_meas(x), "fs": fs_result(fs), "match": bool(cand),
                      "best_run": {"f": best[1], "t_c": best[2], "dt_s": best[2] - R9.t_meas(x)} if best else None,
+                     "nearest_run": {"f": near[1], "t_c": near[2], "dt_s": near[2] - R9.t_meas(x)} if near else None,
                      "f_t_A2": a2.get("f_t"), "A2_status": a2["status"], "f_for_P3": f_p3,
                      "above_fs_hi": (f_p3 - fs["hi"]) if f_p3 is not None else None})
     n = sum(r["match"] for r in rows)
@@ -230,13 +277,14 @@ def fraction_rows(states):
                           f"ft_{crit}_minus_fs_lo": (a["f_t"] - fs["lo"]) if a.get("f_t") is not None else None,
                           f"ft_{crit}_dtc_df_s": (a["sensitivity"] or {}).get("dtc_df_s"),
                           f"ft_{crit}_E_J": (a["f_t"] * Ee) if a.get("f_t") is not None else None,
-                          f"ft_{crit}_t_hi_s": a.get("t_hi")})
+                          f"ft_{crit}_t_hi_s": a.get("t_hi"), f"ft_{crit}_across_jump": a["across_jump"]})
         else:
             fm = fmax_result(states[f"A3_{x}"])
             fl = fmax_result(states[f"A3L_{x}"])
             r.update({"fmax_exploratory": x in IN.EXPLORATORY_FMAX, "fmax_status": fm["status"],
                       "fmax": fm.get("f_max"), "fmax_lo": fm.get("lo"), "fmax_hi": fm.get("hi"),
-                      "fmax_overshoot_K": fm.get("overshoot_K"), "fmax_extended": fm.get("extended"),
+                      "fmax_overshoot_K": fm.get("overshoot_K"),
+                      "fmax_extended": bool(fm.get("extended")) and x not in IN.EXPLORATORY_FMAX,   # D101 (6)
                       "fmax_E_J": (fm["f_max"] * Ee) if fm.get("f_max") is not None else None,
                       "fmax_below_fC1": S9.below(fm, f8[x]["C1"]) if fm["found"] else None,
                       "fmax_below_fC2": S9.below(fm, f8[x]["C2"]) if fm["found"] else None,
@@ -266,13 +314,14 @@ def long_rows(states):
                               f"ft_{crit}_lo": a.get("lo"), f"ft_{crit}_hi": a.get("hi"),
                               f"ft_{crit}_E_J": (a["f_t"] * Ee) if a.get("f_t") is not None else None,
                               f"ft_{crit}_power_W": (a["f_t"] * Ee / tau) if a.get("f_t") is not None else None,
-                              f"ft_{crit}_dtc_df_s": (a["sensitivity"] or {}).get("dtc_df_s")})
+                              f"ft_{crit}_dtc_df_s": (a["sensitivity"] or {}).get("dtc_df_s"),
+                              f"ft_{crit}_across_jump": a["across_jump"]})
             else:
                 for nm, ch in (("fmax", f"B_fm_{tau:.0f}_{x}"), ("fmaxL", f"B_fmL_{tau:.0f}_{x}")):
                     fm = fmax_result(states[ch])
                     r.update({f"{nm}_status": fm["status"], nm: fm.get("f_max"), f"{nm}_lo": fm.get("lo"),
                               f"{nm}_hi": fm.get("hi"), f"{nm}_overshoot_K": fm.get("overshoot_K"),
-                              f"{nm}_extended": fm.get("extended"),
+                              f"{nm}_extended": bool(fm.get("extended")) and x not in IN.EXPLORATORY_FMAX,
                               f"{nm}_E_J": (fm["f_max"] * Ee) if fm.get("f_max") is not None else None,
                               f"{nm}_power_W": (fm["f_max"] * Ee / tau) if fm.get("f_max") is not None else None})
                 r["fmax_exploratory"] = x in IN.EXPLORATORY_FMAX

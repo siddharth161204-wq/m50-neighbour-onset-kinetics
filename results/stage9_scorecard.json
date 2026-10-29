@@ -82,6 +82,11 @@
      },
      "match": false,
      "best_run": null,
+     "nearest_run": {
+      "f": 0.040625,
+      "t_c": 215.59086023831244,
+      "dt_s": -56.409139761687555
+     },
      "f_t_A2": null,
      "A2_status": "threshold",
      "f_for_P3": null,
@@ -97,6 +102,11 @@
      },
      "match": true,
      "best_run": {
+      "f": 0.01875,
+      "t_c": 143.50426656838374,
+      "dt_s": -8.495733431616259
+     },
+     "nearest_run": {
       "f": 0.01875,
       "t_c": 143.50426656838374,
       "dt_s": -8.495733431616259
@@ -120,6 +130,11 @@
       "t_c": 143.88858038935447,
       "dt_s": -3.1114196106455267
      },
+     "nearest_run": {
+      "f": 0.046875,
+      "t_c": 143.88858038935447,
+      "dt_s": -3.1114196106455267
+     },
      "f_t_A2": 0.046875,
      "A2_status": "matched",
      "f_for_P3": 0.046875,
@@ -139,6 +154,11 @@
       "t_c": 268.93851367637046,
       "dt_s": -6.061486323629538
      },
+     "nearest_run": {
+      "f": 0.0125,
+      "t_c": 268.93851367637046,
+      "dt_s": -6.061486323629538
+     },
      "f_t_A2": 0.0125,
      "A2_status": "matched",
      "f_for_P3": 0.0125,
@@ -154,6 +174,11 @@
      },
      "match": false,
      "best_run": null,
+     "nearest_run": {
+      "f": 0.234375,
+      "t_c": 95.11518678264407,
+      "dt_s": -81.88481321735593
+     },
      "f_t_A2": null,
      "A2_status": "threshold",
      "f_for_P3": null,
@@ -169,6 +194,11 @@
      },
      "match": false,
      "best_run": null,
+     "nearest_run": {
+      "f": 0.009375,
+      "t_c": 268.7889749148604,
+      "dt_s": -73.21102508513962
+     },
      "f_t_A2": null,
      "A2_status": "threshold",
      "f_for_P3": null,
@@ -184,6 +214,11 @@
      },
      "match": true,
      "best_run": {
+      "f": 0.01875,
+      "t_c": 219.0027203770189,
+      "dt_s": -3.9972796229810967
+     },
+     "nearest_run": {
       "f": 0.01875,
       "t_c": 219.0027203770189,
       "dt_s": -3.9972796229810967
@@ -207,6 +242,11 @@
       "t_c": 148.4537420191933,
       "dt_s": -0.5462579808067005
      },
+     "nearest_run": {
+      "f": 0.025,
+      "t_c": 148.4537420191933,
+      "dt_s": -0.5462579808067005
+     },
      "f_t_A2": 0.025,
      "A2_status": "matched",
      "f_for_P3": 0.025,
@@ -222,6 +262,11 @@
      },
      "match": true,
      "best_run": {
+      "f": 0.001575,
+      "t_c": 209.3118287562846,
+      "dt_s": -0.6881712437154022
+     },
+     "nearest_run": {
       "f": 0.001575,
       "t_c": 209.3118287562846,
       "dt_s": -0.6881712437154022
@@ -473,7 +518,9 @@
        "lo": 0.05,
        "hi": 0.0625
       },
-      "found": false
+      "found": false,
+      "across_jump": false,
+      "reproduces": false
      },
      "exceeds": false
     },
@@ -500,7 +547,9 @@
        "lo": 0.0375,
        "hi": 0.05
       },
-      "found": true
+      "found": true,
+      "across_jump": true,
+      "reproduces": false
      },
      "exceeds": false
     },
@@ -527,7 +576,9 @@
        "lo": 0.2625,
        "hi": 0.275
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      },
      "exceeds": true
     }
@@ -640,7 +691,9 @@
        "lo": 0.0125,
        "hi": 0.025
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      },
      "fresh": {
       "status": "matched",
@@ -663,7 +716,9 @@
        "lo": 0.0,
        "hi": 0.0125
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      },
      "change": 0.0031249999999999993,
      "under": true
@@ -691,7 +746,9 @@
        "lo": 0.0125,
        "hi": 0.025
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      },
      "fresh": {
       "status": "matched",
@@ -714,7 +771,9 @@
        "lo": 0.0125,
        "hi": 0.025
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      },
      "change": 0.002466537796832046,
      "under": true
@@ -742,7 +801,9 @@
        "lo": 0.0,
        "hi": 0.0125
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      },
      "fresh": {
       "status": "matched",
@@ -765,7 +826,9 @@
        "lo": 0.0,
        "hi": 0.0125
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      },
      "change": 0.0031249999999999993,
      "under": true
@@ -1424,7 +1487,9 @@
       "lo": 0.0,
       "hi": 0.0
      },
-     "found": false
+     "found": false,
+     "across_jump": false,
+     "reproduces": false
     },
     "ft_fresh": {
      "status": "early",
@@ -1443,7 +1508,9 @@
       "lo": 0.0,
       "hi": 0.0
      },
-     "found": false
+     "found": false,
+     "across_jump": false,
+     "reproduces": false
     }
    },
    "C2_M50_PP_Exp4": {
@@ -1473,7 +1540,9 @@
       "lo": 0.0125,
       "hi": 0.025
      },
-     "found": true
+     "found": true,
+     "across_jump": false,
+     "reproduces": true
     },
     "ft_fresh": {
      "status": "matched",
@@ -1496,7 +1565,9 @@
       "lo": 0.0,
       "hi": 0.0125
      },
-     "found": true
+     "found": true,
+     "across_jump": false,
+     "reproduces": true
     }
    },
    "C1_M50_SP_Exp1": {
@@ -1522,7 +1593,9 @@
       "lo": 0.0,
       "hi": 0.0
      },
-     "found": false
+     "found": false,
+     "across_jump": false,
+     "reproduces": false
     },
     "ft_fresh": {
      "status": "early",
@@ -1541,7 +1614,9 @@
       "lo": 0.0,
       "hi": 0.0
      },
-     "found": false
+     "found": false,
+     "across_jump": false,
+     "reproduces": false
     }
    },
    "C2_M50_SP_Exp1": {
@@ -1571,7 +1646,9 @@
       "lo": 0.0125,
       "hi": 0.025
      },
-     "found": true
+     "found": true,
+     "across_jump": false,
+     "reproduces": true
     },
     "ft_fresh": {
      "status": "matched",
@@ -1594,7 +1671,9 @@
       "lo": 0.0125,
       "hi": 0.025
      },
-     "found": true
+     "found": true,
+     "across_jump": false,
+     "reproduces": true
     }
    },
    "C1_M50_SP_Exp2": {
@@ -1620,7 +1699,9 @@
       "lo": 0.0,
       "hi": 0.0
      },
-     "found": false
+     "found": false,
+     "across_jump": false,
+     "reproduces": false
     },
     "ft_fresh": {
      "status": "early",
@@ -1639,7 +1720,9 @@
       "lo": 0.0,
       "hi": 0.0
      },
-     "found": false
+     "found": false,
+     "across_jump": false,
+     "reproduces": false
     }
    },
    "C2_M50_SP_Exp2": {
@@ -1669,7 +1752,9 @@
       "lo": 0.0,
       "hi": 0.0125
      },
-     "found": true
+     "found": true,
+     "across_jump": false,
+     "reproduces": true
     },
     "ft_fresh": {
      "status": "matched",
@@ -1692,7 +1777,9 @@
       "lo": 0.0,
       "hi": 0.0125
      },
-     "found": true
+     "found": true,
+     "across_jump": false,
+     "reproduces": true
     }
    }
   }

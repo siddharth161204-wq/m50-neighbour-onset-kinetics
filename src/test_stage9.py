@@ -364,7 +364,7 @@ def test_chains_end_to_end():
             CK.main()
             chk = json.load(open(os.path.join(res, "stage9_checks.json")))
             assert chk["X"]["pass"] and chk["V4"]["pass"] and chk["V2"]["pass"], {k: chk[k].get("pass") for k in chk}
-            assert chk["V1"]["written_before_A2"] and chk["V1"]["same_as_file"]
+            assert chk["V1"]["not_after_first_A2"] and chk["V1"]["same_as_file"], chk["V1"]
             assert chk["V3"].get("pass") is not None, chk["V3"]
             nu = NU.main(res)
             assert not nu["unfinished_chains"], nu["unfinished_chains"]

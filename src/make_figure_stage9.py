@@ -10,7 +10,8 @@ a  With Stage 8's delivery (21.39 s): each propagated test's crossing time t_c a
 b  For each of the sixteen tests, against its trigger energy: f_t(C2) (squares) and f_t(C1) (circles, where A2
    found any) for the propagated tests, and f_max at the thermocouple node (diamonds) for the not propagated. A
    fraction whose run came within the search's tolerance (10 s, 5 K) is a point; one interpolated within a bracket
-   has the bracket as a bar. The two tests with maxima of 626 and 808 C are drawn hollow (exploratory). The dashed
+   has the bracket as a bar. A propagated test whose search ended at the threshold, with no run reproducing its time,
+   is drawn hollow at its bracket (D101). The two tests with maxima of 626 and 808 C are drawn hollow (exploratory). The dashed
    lines mark the largest registered f_max and the smallest f_t(C2), the separation of Part C1. The vertical axis
    is on a square-root scale.
 Usage: python3 make_figure_stage9.py [--res ../results] [--out DIR]
@@ -115,14 +116,20 @@ ax.set_title("a", loc="left", fontsize=8.5, fontweight="bold", color=INK)
 ax = axs[1]
 ax.set_yscale("function", functions=(fwd, inv))
 top = 1.05
-found_c1 = False
+found_c1 = found_thr = False
 for x, t in tests.items():
     r = frac[x]
     E = t["E_b_J"] / 1e3
     if t["propagated"]:
         for crit, dx in (("C2", 0.0), ("C1", -0.45)):
             st = r.get(f"ft_{crit}_status")
-            if st not in ("matched", "bracketed"):
+            if crit == "C2" and st == "threshold":          # D101 (8): no run reproduces the time; its bracket shown
+                lo, hi = num(r["ft_C2_lo"]), num(r["ft_C2_hi"])
+                ax.plot([E + dx] * 2, [lo, hi], color=BLUE, lw=0.9, alpha=0.8, zorder=2)
+                ax.scatter([E + dx], [hi], s=16, marker="s", facecolor=SURF, edgecolor=BLUE, lw=0.9, zorder=3)
+                found_thr = True
+                continue
+            if st not in ("matched", "bracketed") or r.get(f"ft_{crit}_across_jump") == "True":
                 continue
             lo, hi, ft = num(r[f"ft_{crit}_lo"]), num(r[f"ft_{crit}_hi"]), num(r[f"ft_{crit}"])
             found_c1 = found_c1 or crit == "C1"
@@ -156,6 +163,8 @@ ax.set_axisbelow(True)
 for sp_ in ("top", "right"):
     ax.spines[sp_].set_visible(False)
 hs = [Line2D([], [], ls="", marker="s", color=BLUE, ms=3.6, label="f_t(C2), propagated")]
+if found_thr:
+    hs.append(Line2D([], [], ls="", marker="s", mfc=SURF, mec=BLUE, ms=3.6, label="no f_t(C2): its threshold's bracket"))
 if found_c1:
     hs.append(Line2D([], [], ls="", marker="o", color=ORANGE, ms=3.6, label="f_t(C1), propagated"))
 hs += [Line2D([], [], ls="", marker="D", mfc=GREEN, mec=GREEN, ms=3.4, label="f_max, not propagated"),

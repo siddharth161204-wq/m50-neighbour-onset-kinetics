@@ -1130,7 +1130,8 @@
       0.0125,
       0.025
      ],
-     "bisection_runs": [],
+     "across_jump": false,
+     "reproduces": false,
      "fs": {
       "status": "bracket",
       "lo": 0.0,
@@ -1157,7 +1158,8 @@
       0.040625,
       0.04375
      ],
-     "bisection_runs": [],
+     "across_jump": false,
+     "reproduces": false,
      "fs": {
       "status": "bracket",
       "lo": 0.0375,
@@ -1186,7 +1188,8 @@
       null,
       null
      ],
-     "bisection_runs": [],
+     "across_jump": false,
+     "reproduces": false,
      "fs": {
       "status": "zero",
       "lo": 0.0,
@@ -1213,7 +1216,8 @@
       0.0125,
       0.01875
      ],
-     "bisection_runs": [],
+     "across_jump": false,
+     "reproduces": true,
      "fs": {
       "status": "zero",
       "lo": 0.0,
@@ -1245,7 +1249,8 @@
       0.009375,
       0.0125
      ],
-     "bisection_runs": [],
+     "across_jump": false,
+     "reproduces": false,
      "fs": {
       "status": "bracket",
       "lo": 0.0,
@@ -1272,7 +1277,8 @@
       0.04375,
       0.046875
      ],
-     "bisection_runs": [],
+     "across_jump": false,
+     "reproduces": true,
      "fs": {
       "status": "bracket",
       "lo": 0.025,
@@ -1304,7 +1310,8 @@
       null,
       null
      ],
-     "bisection_runs": [],
+     "across_jump": false,
+     "reproduces": false,
      "fs": {
       "status": "zero",
       "lo": 0.0,
@@ -1331,7 +1338,8 @@
       0.0125,
       0.025
      ],
-     "bisection_runs": [],
+     "across_jump": false,
+     "reproduces": true,
      "fs": {
       "status": "bracket",
       "lo": 0.0,
@@ -1363,7 +1371,8 @@
       0.08125,
       0.0875
      ],
-     "bisection_runs": [],
+     "across_jump": false,
+     "reproduces": false,
      "fs": {
       "status": "bracket",
       "lo": 0.075,
@@ -1390,7 +1399,8 @@
       0.234375,
       0.2375
      ],
-     "bisection_runs": [],
+     "across_jump": false,
+     "reproduces": false,
      "fs": {
       "status": "bracket",
       "lo": 0.225,
@@ -1419,7 +1429,8 @@
       null,
       null
      ],
-     "bisection_runs": [],
+     "across_jump": false,
+     "reproduces": false,
      "fs": {
       "status": "zero",
       "lo": 0.0,
@@ -1446,7 +1457,8 @@
       0.009375,
       0.0125
      ],
-     "bisection_runs": [],
+     "across_jump": false,
+     "reproduces": false,
      "fs": {
       "status": "bracket",
       "lo": 0.0,
@@ -1475,7 +1487,8 @@
       null,
       null
      ],
-     "bisection_runs": [],
+     "across_jump": false,
+     "reproduces": false,
      "fs": {
       "status": "zero",
       "lo": 0.0,
@@ -1502,7 +1515,8 @@
       0.015625,
       0.01875
      ],
-     "bisection_runs": [],
+     "across_jump": false,
+     "reproduces": true,
      "fs": {
       "status": "bracket",
       "lo": 0.0125,
@@ -1534,7 +1548,8 @@
       null,
       null
      ],
-     "bisection_runs": [],
+     "across_jump": false,
+     "reproduces": false,
      "fs": {
       "status": "zero",
       "lo": 0.0,
@@ -1561,7 +1576,8 @@
       0.025,
       0.0375
      ],
-     "bisection_runs": [],
+     "across_jump": false,
+     "reproduces": true,
      "fs": {
       "status": "bracket",
       "lo": 0.0,
@@ -1593,7 +1609,8 @@
       null,
       null
      ],
-     "bisection_runs": [],
+     "across_jump": false,
+     "reproduces": false,
      "fs": {
       "status": "zero",
       "lo": 0.0,
@@ -1620,7 +1637,8 @@
       0.001575,
       0.003125
      ],
-     "bisection_runs": [],
+     "across_jump": false,
+     "reproduces": true,
      "fs": {
       "status": "zero",
       "lo": 0.0,
@@ -1645,15 +1663,14 @@
     "hi": 0.075,
     "overshoot_K": null,
     "extended": false,
+    "exploratory": false,
     "M_C": 71.0,
     "f_up": 0.15,
     "f_run": 0.075,
     "peak_run_C": 71.42969783186567,
     "peak_lo_C": null,
     "peak_hi_C": null,
-    "bisection_runs": [],
     "E_J": 2090.6577412852753,
-    "exploratory": false,
     "fC1": {
      "status": "bracket",
      "lo": 0.15,
@@ -1674,16 +1691,15 @@
     "lo": 0.5625,
     "hi": 0.625,
     "overshoot_K": null,
-    "extended": true,
+    "extended": false,
+    "exploratory": true,
     "M_C": 808.0,
     "f_up": 0.0,
     "f_run": 0.5625,
     "peak_run_C": 807.5005525724308,
     "peak_lo_C": null,
     "peak_hi_C": null,
-    "bisection_runs": [],
     "E_J": 75814.89863896935,
-    "exploratory": true,
     "fC1": {
      "status": "bracket",
      "lo": 0.0,
@@ -1705,15 +1721,14 @@
     "hi": 0.0,
     "overshoot_K": 13.75555970977598,
     "extended": false,
+    "exploratory": false,
     "M_C": 118.0,
     "f_up": 0.025,
     "f_run": null,
     "peak_run_C": null,
     "peak_lo_C": null,
     "peak_hi_C": null,
-    "bisection_runs": [],
     "E_J": 0.0,
-    "exploratory": false,
     "fC1": {
      "status": "bracket",
      "lo": 0.025,
@@ -1735,15 +1750,14 @@
     "hi": 0.0,
     "overshoot_K": 56.321667321876134,
     "extended": false,
+    "exploratory": false,
     "M_C": 105.0,
     "f_up": 0.0,
     "f_run": null,
     "peak_run_C": null,
     "peak_lo_C": null,
     "peak_hi_C": null,
-    "bisection_runs": [],
     "E_J": 0.0,
-    "exploratory": false,
     "fC1": {
      "status": "bracket",
      "lo": 0.0,
@@ -1765,15 +1779,14 @@
     "hi": 0.0,
     "overshoot_K": 44.91725553336346,
     "extended": false,
+    "exploratory": false,
     "M_C": 128.0,
     "f_up": 0.0,
     "f_run": null,
     "peak_run_C": null,
     "peak_lo_C": null,
     "peak_hi_C": null,
-    "bisection_runs": [],
     "E_J": 0.0,
-    "exploratory": false,
     "fC1": {
      "status": "zero",
      "lo": 0.0,
@@ -1795,15 +1808,14 @@
     "hi": 0.0,
     "overshoot_K": 30.442654536839427,
     "extended": false,
+    "exploratory": false,
     "M_C": 133.0,
     "f_up": 0.0,
     "f_run": null,
     "peak_run_C": null,
     "peak_lo_C": null,
     "peak_hi_C": null,
-    "bisection_runs": [],
     "E_J": 0.0,
-    "exploratory": false,
     "fC1": {
      "status": "zero",
      "lo": 0.0,
@@ -1824,16 +1836,15 @@
     "lo": 0.265625,
     "hi": 0.28125,
     "overshoot_K": null,
-    "extended": true,
+    "extended": false,
+    "exploratory": true,
     "M_C": 626.0,
     "f_up": 0.0,
     "f_run": 0.265625,
     "peak_run_C": 624.4532246654675,
     "peak_lo_C": null,
     "peak_hi_C": null,
-    "bisection_runs": [],
     "E_J": 32667.01954408894,
-    "exploratory": true,
     "fC1": {
      "status": "bracket",
      "lo": 0.0,
@@ -1857,13 +1868,13 @@
     "hi": 0.0,
     "overshoot_K": null,
     "extended": false,
+    "exploratory": false,
     "M_C": 71.0,
     "f_up": 0.45,
     "f_run": 0.0,
     "peak_run_C": 67.81224852373919,
     "peak_lo_C": null,
     "peak_hi_C": null,
-    "bisection_runs": [],
     "E_J": 0.0
    },
    "M50_PT_Exp2": {
@@ -1873,14 +1884,14 @@
     "lo": 0.2421875,
     "hi": 0.25,
     "overshoot_K": null,
-    "extended": true,
+    "extended": false,
+    "exploratory": true,
     "M_C": 808.0,
     "f_up": 0.0,
     "f_run": 0.2421875,
     "peak_run_C": 806.4579212727164,
     "peak_lo_C": null,
     "peak_hi_C": null,
-    "bisection_runs": [],
     "E_J": 32642.52580288958
    },
    "M50_PT_Exp3": {
@@ -1891,13 +1902,13 @@
     "hi": 0.0,
     "overshoot_K": 38.35210175586758,
     "extended": false,
+    "exploratory": false,
     "M_C": 118.0,
     "f_up": 0.075,
     "f_run": null,
     "peak_run_C": null,
     "peak_lo_C": null,
     "peak_hi_C": null,
-    "bisection_runs": [],
     "E_J": 0.0
    },
    "M50_PP_Exp3": {
@@ -1908,13 +1919,13 @@
     "hi": 0.0,
     "overshoot_K": 89.95236544692204,
     "extended": false,
+    "exploratory": false,
     "M_C": 105.0,
     "f_up": 0.0125,
     "f_run": null,
     "peak_run_C": null,
     "peak_lo_C": null,
     "peak_hi_C": null,
-    "bisection_runs": [],
     "E_J": 0.0
    },
    "M50_ST_Exp1": {
@@ -1925,13 +1936,13 @@
     "hi": 0.0,
     "overshoot_K": 105.24163026054765,
     "extended": false,
+    "exploratory": false,
     "M_C": 128.0,
     "f_up": 0.0,
     "f_run": null,
     "peak_run_C": null,
     "peak_lo_C": null,
     "peak_hi_C": null,
-    "bisection_runs": [],
     "E_J": 0.0
    },
    "M50_ST_Exp2": {
@@ -1942,13 +1953,13 @@
     "hi": 0.0,
     "overshoot_K": 67.16353699129138,
     "extended": false,
+    "exploratory": false,
     "M_C": 133.0,
     "f_up": 0.0125,
     "f_run": null,
     "peak_run_C": null,
     "peak_lo_C": null,
     "peak_hi_C": null,
-    "bisection_runs": [],
     "E_J": 0.0
    },
    "M50_SP_Exp4": {
@@ -1958,14 +1969,14 @@
     "lo": 0.15625,
     "hi": 0.1640625,
     "overshoot_K": null,
-    "extended": true,
+    "extended": false,
+    "exploratory": true,
     "M_C": 626.0,
     "f_up": 0.0,
     "f_run": 0.1640625,
     "peak_run_C": 626.8625899643314,
     "peak_lo_C": null,
     "peak_hi_C": null,
-    "bisection_runs": [],
     "E_J": 20176.688541937285
    }
   },
@@ -2076,13 +2087,13 @@
       "hi": 0.109375,
       "overshoot_K": null,
       "extended": false,
+      "exploratory": false,
       "M_C": 71.0,
       "f_up": 0.4375,
       "f_run": 0.0546875,
       "peak_run_C": 69.67000335245541,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 1524.4379363538467,
       "power_W": 12.703649469615389
      },
@@ -2094,13 +2105,13 @@
       "hi": 0.0,
       "overshoot_K": null,
       "extended": false,
+      "exploratory": false,
       "M_C": 71.0,
       "f_up": 0.4875,
       "f_run": 0.0,
       "peak_run_C": 67.81224852373919,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -2127,14 +2138,14 @@
       "lo": 0.71875,
       "hi": 0.75,
       "overshoot_K": null,
-      "extended": true,
+      "extended": false,
+      "exploratory": true,
       "M_C": 808.0,
       "f_up": 0.0,
       "f_run": 0.71875,
       "peak_run_C": 804.480264689703,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 96874.59270534973,
       "power_W": 807.2882725445811
      },
@@ -2145,14 +2156,14 @@
       "lo": 0.375,
       "hi": 0.40625,
       "overshoot_K": null,
-      "extended": true,
+      "extended": false,
+      "exploratory": true,
       "M_C": 808.0,
       "f_up": 0.0,
       "f_run": 0.40625,
       "peak_run_C": 808.4323738425072,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 54755.20457258898,
       "power_W": 456.2933714382415
      },
@@ -2180,13 +2191,13 @@
       "hi": 0.0,
       "overshoot_K": 13.75555970977598,
       "extended": false,
+      "exploratory": false,
       "M_C": 118.0,
       "f_up": 0.0625,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -2198,13 +2209,13 @@
       "hi": 0.0,
       "overshoot_K": 38.35210175586758,
       "extended": false,
+      "exploratory": false,
       "M_C": 118.0,
       "f_up": 0.0625,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -2240,7 +2251,8 @@
        0.03125,
        0.0375
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "bracket",
        "lo": 0.025,
@@ -2267,7 +2279,8 @@
        0.03125,
        0.0375
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "bracket",
        "lo": 0.025,
@@ -2309,7 +2322,8 @@
        null,
        null
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -2336,7 +2350,8 @@
        0.0,
        0.0125
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -2382,7 +2397,8 @@
        0.028125,
        0.03125
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "bracket",
        "lo": 0.025,
@@ -2409,7 +2425,8 @@
        0.03125,
        0.0375
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.025,
@@ -2447,13 +2464,13 @@
       "hi": 0.0,
       "overshoot_K": 56.321667321876134,
       "extended": false,
+      "exploratory": false,
       "M_C": 105.0,
       "f_up": 0.0,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -2465,13 +2482,13 @@
       "hi": 0.0,
       "overshoot_K": 89.95236544692204,
       "extended": false,
+      "exploratory": false,
       "M_C": 105.0,
       "f_up": 0.0125,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -2507,7 +2524,8 @@
        null,
        null
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -2534,7 +2552,8 @@
        0.009375,
        0.010061
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.0,
@@ -2572,13 +2591,13 @@
       "hi": 0.0,
       "overshoot_K": 44.91725553336346,
       "extended": false,
+      "exploratory": false,
       "M_C": 128.0,
       "f_up": 0.0,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -2590,13 +2609,13 @@
       "hi": 0.0,
       "overshoot_K": 105.24163026054765,
       "extended": false,
+      "exploratory": false,
       "M_C": 128.0,
       "f_up": 0.0,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -2624,13 +2643,13 @@
       "hi": 0.0,
       "overshoot_K": 30.442654536839427,
       "extended": false,
+      "exploratory": false,
       "M_C": 133.0,
       "f_up": 0.0,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -2642,13 +2661,13 @@
       "hi": 0.0,
       "overshoot_K": 67.16353699129138,
       "extended": false,
+      "exploratory": false,
       "M_C": 133.0,
       "f_up": 0.0,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -2684,7 +2703,8 @@
        0.20625,
        0.2125
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "bracket",
        "lo": 0.2,
@@ -2711,7 +2731,8 @@
        0.221875,
        0.225
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "bracket",
        "lo": 0.2125,
@@ -2753,7 +2774,8 @@
        null,
        null
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -2780,7 +2802,8 @@
        0.00625,
        0.0125
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.0,
@@ -2826,7 +2849,8 @@
        null,
        null
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -2853,7 +2877,8 @@
        0.014924,
        0.015625
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.0,
@@ -2899,7 +2924,8 @@
        null,
        null
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -2926,7 +2952,8 @@
        0.0125,
        0.01875
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.0,
@@ -2972,7 +2999,8 @@
        null,
        null
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -2999,7 +3027,8 @@
        0.0,
        0.001297
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -3036,14 +3065,14 @@
       "lo": 0.3125,
       "hi": 0.328125,
       "overshoot_K": null,
-      "extended": true,
+      "extended": false,
+      "exploratory": true,
       "M_C": 626.0,
       "f_up": 0.0,
       "f_run": 0.328125,
       "peak_run_C": 626.6597608192495,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 40353.37708387457,
       "power_W": 336.2781423656214
      },
@@ -3054,14 +3083,14 @@
       "lo": 0.1875,
       "hi": 0.25,
       "overshoot_K": null,
-      "extended": true,
+      "extended": false,
+      "exploratory": true,
       "M_C": 626.0,
       "f_up": 0.0,
       "f_run": 0.1875,
       "peak_run_C": 621.7703362855071,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 23059.0726193569,
       "power_W": 192.15893849464084
      },
@@ -3078,6 +3107,13 @@
      "f_t": null,
      "E_J": null,
      "power_W": null,
+     "n_across_jump": 0,
+     "n_reproduces": 0,
+     "reproducing": {
+      "f_t": null,
+      "E_J": null,
+      "power_W": null
+     },
      "fs_status_counts": {
       "bracket": 8,
       "zero": 8
@@ -3102,6 +3138,22 @@
       1.822888228281763,
       39.74960841471258
      ],
+     "n_across_jump": 0,
+     "n_reproduces": 7,
+     "reproducing": {
+      "f_t": [
+       0.0012972097898588148,
+       0.0375
+      ],
+      "E_J": [
+       218.74658739381155,
+       4769.95300976551
+      ],
+      "power_W": [
+       1.822888228281763,
+       39.74960841471258
+      ]
+     },
      "fs_status_counts": {
       "bracket": 14,
       "zero": 2
@@ -3147,13 +3199,13 @@
       "hi": 0.072265625,
       "overshoot_K": null,
       "extended": false,
+      "exploratory": false,
       "M_C": 71.0,
       "f_up": 0.578125,
       "f_run": 0.0361328125,
       "peak_run_C": 67.92117348379605,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 1007.2179222337916,
       "power_W": 4.196741342640798
      },
@@ -3165,13 +3217,13 @@
       "hi": 0.0,
       "overshoot_K": null,
       "extended": false,
+      "exploratory": false,
       "M_C": 71.0,
       "f_up": 0.5625,
       "f_run": 0.0,
       "peak_run_C": 67.81224852373919,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -3198,46 +3250,14 @@
       "lo": 0.96875,
       "hi": 1.0,
       "overshoot_K": null,
-      "extended": true,
+      "extended": false,
+      "exploratory": true,
       "M_C": 808.0,
       "f_up": 0.0,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
-      "peak_hi_C": null,
-      "bisection_runs": [
-       {
-        "id": "s9_con240_fresh_both_ns_M50_PT_Exp2_f0.984375000",
-        "stage": 9,
-        "kind": "fmax",
-        "test": "M50_PT_Exp2",
-        "kin": "mean",
-        "connection": "parallel",
-        "h": "central",
-        "g": "central",
-        "tau": 21.38651984299561,
-        "E_body_J": 43404.08058823057,
-        "T_amb_K": 298.15,
-        "refine": 1.0,
-        "dt_scale": 1.0,
-        "f": 0.984375,
-        "ratio": "central",
-        "r": 3.1052850376787346,
-        "E_e_J": 134782.0420248344,
-        "E_delivered_J": 132676.07261819637,
-        "shape": "con",
-        "tau_d_s": 240.0,
-        "geometry": "half",
-        "f_e": 0.0,
-        "sei": "fresh",
-        "sei0": null,
-        "models": "both",
-        "stop": false,
-        "t_end_s": 900.0,
-        "max_sub": 4096,
-        "cfg": "con240_fresh"
-       }
-      ]
+      "peak_hi_C": null
      },
      "fmax_lumped": {
       "status": "matched",
@@ -3246,14 +3266,14 @@
       "lo": 0.78125,
       "hi": 0.796875,
       "overshoot_K": null,
-      "extended": true,
+      "extended": false,
+      "exploratory": true,
       "M_C": 808.0,
       "f_up": 0.0,
       "f_run": 0.796875,
       "peak_run_C": 808.7204903152696,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 107404.43973853992,
       "power_W": 447.518498910583
      },
@@ -3281,13 +3301,13 @@
       "hi": 0.0,
       "overshoot_K": 13.75555970977598,
       "extended": false,
+      "exploratory": false,
       "M_C": 118.0,
       "f_up": 0.0875,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -3299,13 +3319,13 @@
       "hi": 0.0,
       "overshoot_K": 38.35210175586758,
       "extended": false,
+      "exploratory": false,
       "M_C": 118.0,
       "f_up": 0.0625,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -3341,7 +3361,8 @@
        0.053125,
        0.05625
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "bracket",
        "lo": 0.05,
@@ -3368,7 +3389,8 @@
        0.028125,
        0.03125
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.025,
@@ -3414,7 +3436,8 @@
        null,
        null
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -3441,7 +3464,8 @@
        0.0125,
        0.025
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -3487,7 +3511,8 @@
        0.05,
        0.053125
       ],
-      "bisection_runs": [],
+      "across_jump": true,
+      "reproduces": false,
       "fs": {
        "status": "bracket",
        "lo": 0.0375,
@@ -3518,7 +3543,8 @@
        0.05625,
        0.059375
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.0125,
@@ -3556,13 +3582,13 @@
       "hi": 0.0,
       "overshoot_K": 56.321667321876134,
       "extended": false,
+      "exploratory": false,
       "M_C": 105.0,
       "f_up": 0.0125,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -3574,13 +3600,13 @@
       "hi": 0.0,
       "overshoot_K": 89.95236544692204,
       "extended": false,
+      "exploratory": false,
       "M_C": 105.0,
       "f_up": 0.0125,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -3616,7 +3642,8 @@
        null,
        null
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -3643,7 +3670,8 @@
        0.009375,
        0.0125
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "bracket",
        "lo": 0.0,
@@ -3677,13 +3705,13 @@
       "hi": 0.0,
       "overshoot_K": 44.91725553336346,
       "extended": false,
+      "exploratory": false,
       "M_C": 128.0,
       "f_up": 0.0,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -3695,13 +3723,13 @@
       "hi": 0.0,
       "overshoot_K": 105.24163026054765,
       "extended": false,
+      "exploratory": false,
       "M_C": 128.0,
       "f_up": 0.0,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -3729,13 +3757,13 @@
       "hi": 0.0,
       "overshoot_K": 30.442654536839427,
       "extended": false,
+      "exploratory": false,
       "M_C": 133.0,
       "f_up": 0.0,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -3747,13 +3775,13 @@
       "hi": 0.0,
       "overshoot_K": 67.16353699129138,
       "extended": false,
+      "exploratory": false,
       "M_C": 133.0,
       "f_up": 0.0,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -3789,7 +3817,8 @@
        0.321875,
        0.325
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.2625,
@@ -3820,7 +3849,8 @@
        0.321875,
        0.325
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.2375,
@@ -3866,7 +3896,8 @@
        null,
        null
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -3893,7 +3924,8 @@
        0.00625,
        0.0125
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "bracket",
        "lo": 0.0,
@@ -3935,7 +3967,8 @@
        null,
        null
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -3962,7 +3995,8 @@
        0.0125,
        0.015625
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.0,
@@ -4008,7 +4042,8 @@
        null,
        null
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -4035,7 +4070,8 @@
        0.025,
        0.0375
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.0,
@@ -4081,7 +4117,8 @@
        null,
        null
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -4108,7 +4145,8 @@
        0.0,
        0.001547
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -4145,14 +4183,14 @@
       "lo": 0.5,
       "hi": 0.625,
       "overshoot_K": null,
-      "extended": true,
+      "extended": false,
+      "exploratory": true,
       "M_C": 626.0,
       "f_up": 0.0,
       "f_run": 0.625,
       "peak_run_C": 628.9693594380341,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 76863.57539785633,
       "power_W": 320.26489749106804
      },
@@ -4163,14 +4201,14 @@
       "lo": 0.375,
       "hi": 0.5,
       "overshoot_K": null,
-      "extended": true,
+      "extended": false,
+      "exploratory": true,
       "M_C": 626.0,
       "f_up": 0.0,
       "f_run": 0.375,
       "peak_run_C": 621.7703362855071,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 46118.1452387138,
       "power_W": 192.15893849464084
      },
@@ -4198,6 +4236,22 @@
       27.22169316243555,
       69.9774287933341
      ],
+     "n_across_jump": 1,
+     "n_reproduces": 1,
+     "reproducing": {
+      "f_t": [
+       0.325,
+       0.325
+      ],
+      "E_J": [
+       16794.582910400182,
+       16794.582910400182
+      ],
+      "power_W": [
+       69.9774287933341,
+       69.9774287933341
+      ]
+     },
      "fs_status_counts": {
       "bracket": 8,
       "zero": 8
@@ -4222,6 +4276,22 @@
       1.0866397654712807,
       69.30456890109049
      ],
+     "n_across_jump": 0,
+     "n_reproduces": 7,
+     "reproducing": {
+      "f_t": [
+       0.0015465564151982125,
+       0.321875
+      ],
+      "E_J": [
+       260.7935437131074,
+       16633.096536261717
+      ],
+      "power_W": [
+       1.0866397654712807,
+       69.30456890109049
+      ]
+     },
      "fs_status_counts": {
       "bracket": 14,
       "zero": 2
@@ -4267,13 +4337,13 @@
       "hi": 0.087890625,
       "overshoot_K": null,
       "extended": false,
+      "exploratory": false,
       "M_C": 71.0,
       "f_up": 0.703125,
       "f_run": 0.0439453125,
       "peak_run_C": 70.14626976877133,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 1224.994770284341,
       "power_W": 3.402763250789836
      },
@@ -4285,13 +4355,13 @@
       "hi": 0.0,
       "overshoot_K": null,
       "extended": false,
+      "exploratory": false,
       "M_C": 71.0,
       "f_up": 0.671875,
       "f_run": 0.0,
       "peak_run_C": 67.81224852373919,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -4318,46 +4388,14 @@
       "lo": 0.96875,
       "hi": 1.0,
       "overshoot_K": null,
-      "extended": true,
+      "extended": false,
+      "exploratory": true,
       "M_C": 808.0,
       "f_up": 0.0,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
-      "peak_hi_C": null,
-      "bisection_runs": [
-       {
-        "id": "s9_con360_fresh_both_ns_M50_PT_Exp2_f0.984375000",
-        "stage": 9,
-        "kind": "fmax",
-        "test": "M50_PT_Exp2",
-        "kin": "mean",
-        "connection": "parallel",
-        "h": "central",
-        "g": "central",
-        "tau": 21.38651984299561,
-        "E_body_J": 43404.08058823057,
-        "T_amb_K": 298.15,
-        "refine": 1.0,
-        "dt_scale": 1.0,
-        "f": 0.984375,
-        "ratio": "central",
-        "r": 3.1052850376787346,
-        "E_e_J": 134782.0420248344,
-        "E_delivered_J": 132676.07261819637,
-        "shape": "con",
-        "tau_d_s": 360.0,
-        "geometry": "half",
-        "f_e": 0.0,
-        "sei": "fresh",
-        "sei0": null,
-        "models": "both",
-        "stop": false,
-        "t_end_s": 900.0,
-        "max_sub": 4096,
-        "cfg": "con360_fresh"
-       }
-      ]
+      "peak_hi_C": null
      },
      "fmax_lumped": {
       "status": "above 1",
@@ -4366,14 +4404,14 @@
       "lo": 0.99609375,
       "hi": 1.0,
       "overshoot_K": null,
-      "extended": true,
+      "extended": false,
+      "exploratory": true,
       "M_C": 808.0,
       "f_up": 0.0,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
-      "peak_hi_C": null,
-      "bisection_runs": []
+      "peak_hi_C": null
      },
      "exploratory": true
     },
@@ -4399,13 +4437,13 @@
       "hi": 0.0,
       "overshoot_K": 13.75555970977598,
       "extended": false,
+      "exploratory": false,
       "M_C": 118.0,
       "f_up": 0.1,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -4417,13 +4455,13 @@
       "hi": 0.0,
       "overshoot_K": 38.35210175586758,
       "extended": false,
+      "exploratory": false,
       "M_C": 118.0,
       "f_up": 0.075,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -4459,7 +4497,8 @@
        0.06875,
        0.071875
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.05,
@@ -4490,7 +4529,8 @@
        0.040625,
        0.04375
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.025,
@@ -4536,7 +4576,8 @@
        null,
        null
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -4563,7 +4604,8 @@
        0.025,
        0.0375
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -4609,7 +4651,8 @@
        0.0734375,
        0.075
       ],
-      "bisection_runs": [],
+      "across_jump": true,
+      "reproduces": false,
       "fs": {
        "status": "bracket",
        "lo": 0.05,
@@ -4640,7 +4683,8 @@
        0.1,
        0.109375
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.025,
@@ -4678,13 +4722,13 @@
       "hi": 0.0,
       "overshoot_K": 56.321667321876134,
       "extended": false,
+      "exploratory": false,
       "M_C": 105.0,
       "f_up": 0.0125,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -4696,13 +4740,13 @@
       "hi": 0.0,
       "overshoot_K": 89.95236544692204,
       "extended": false,
+      "exploratory": false,
       "M_C": 105.0,
       "f_up": 0.0125,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -4738,7 +4782,8 @@
        null,
        null
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -4765,7 +4810,8 @@
        0.0125,
        0.025
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.0,
@@ -4803,13 +4849,13 @@
       "hi": 0.0,
       "overshoot_K": 44.91725553336346,
       "extended": false,
+      "exploratory": false,
       "M_C": 128.0,
       "f_up": 0.0,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -4821,13 +4867,13 @@
       "hi": 0.0,
       "overshoot_K": 105.24163026054765,
       "extended": false,
+      "exploratory": false,
       "M_C": 128.0,
       "f_up": 0.0,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -4855,13 +4901,13 @@
       "hi": 0.0,
       "overshoot_K": 30.442654536839427,
       "extended": false,
+      "exploratory": false,
       "M_C": 133.0,
       "f_up": 0.0,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -4873,13 +4919,13 @@
       "hi": 0.0,
       "overshoot_K": 67.16353699129138,
       "extended": false,
+      "exploratory": false,
       "M_C": 133.0,
       "f_up": 0.0125,
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -4915,7 +4961,8 @@
        0.4859375,
        0.4875
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.3,
@@ -4946,7 +4993,8 @@
        0.4859375,
        0.4875
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.275,
@@ -4992,7 +5040,8 @@
        null,
        null
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -5019,7 +5068,8 @@
        0.009375,
        0.0125
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "bracket",
        "lo": 0.0,
@@ -5061,7 +5111,8 @@
        null,
        null
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -5088,7 +5139,8 @@
        0.0125,
        0.025
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.0,
@@ -5134,7 +5186,8 @@
        null,
        null
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -5161,7 +5214,8 @@
        0.046875,
        0.05
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "bracket",
        "lo": 0.0,
@@ -5207,7 +5261,8 @@
        null,
        null
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": false,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -5234,7 +5289,8 @@
        0.0,
        0.003125
       ],
-      "bisection_runs": [],
+      "across_jump": false,
+      "reproduces": true,
       "fs": {
        "status": "zero",
        "lo": 0.0,
@@ -5271,14 +5327,14 @@
       "lo": 0.875,
       "hi": 0.9375,
       "overshoot_K": null,
-      "extended": true,
+      "extended": false,
+      "exploratory": true,
       "M_C": 626.0,
       "f_up": 0.0,
       "f_run": 0.9375,
       "peak_run_C": 628.969359371594,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 115295.3630967845,
       "power_W": 320.26489749106804
      },
@@ -5289,14 +5345,14 @@
       "lo": 0.5625,
       "hi": 0.625,
       "overshoot_K": null,
-      "extended": true,
+      "extended": false,
+      "exploratory": true,
       "M_C": 626.0,
       "f_up": 0.0,
       "f_run": 0.5625,
       "peak_run_C": 621.7703362855054,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "bisection_runs": [],
       "E_J": 69177.2178580707,
       "power_W": 192.15893849464084
      },
@@ -5323,6 +5379,22 @@
       24.793747361337374,
       69.75314216258622
      ],
+     "n_across_jump": 1,
+     "n_reproduces": 2,
+     "reproducing": {
+      "f_t": [
+       0.071875,
+       0.4859375
+      ],
+      "E_J": [
+       8925.749050081455,
+       25111.13117853104
+      ],
+      "power_W": [
+       24.793747361337374,
+       69.75314216258622
+      ]
+     },
      "fs_status_counts": {
       "bracket": 8,
       "zero": 8
@@ -5346,6 +5418,22 @@
       1.4637893726247897,
       69.97742879333408
      ],
+     "n_across_jump": 0,
+     "n_reproduces": 8,
+     "reproducing": {
+      "f_t": [
+       0.003125,
+       0.4875
+      ],
+      "E_J": [
+       526.9641741449243,
+       25191.87436560027
+      ],
+      "power_W": [
+       1.4637893726247897,
+       69.97742879333408
+      ]
+     },
      "fs_status_counts": {
       "bracket": 14,
       "zero": 2
@@ -6010,7 +6098,9 @@
        "lo": 0.0,
        "hi": 0.0
       },
-      "found": false
+      "found": false,
+      "across_jump": false,
+      "reproduces": false
      },
      "ft_fresh": {
       "status": "early",
@@ -6029,7 +6119,9 @@
        "lo": 0.0,
        "hi": 0.0
       },
-      "found": false
+      "found": false,
+      "across_jump": false,
+      "reproduces": false
      }
     },
     "C2_M50_PP_Exp4": {
@@ -6059,7 +6151,9 @@
        "lo": 0.0125,
        "hi": 0.025
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      },
      "ft_fresh": {
       "status": "matched",
@@ -6082,7 +6176,9 @@
        "lo": 0.0,
        "hi": 0.0125
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      }
     },
     "C1_M50_SP_Exp1": {
@@ -6108,7 +6204,9 @@
        "lo": 0.0,
        "hi": 0.0
       },
-      "found": false
+      "found": false,
+      "across_jump": false,
+      "reproduces": false
      },
      "ft_fresh": {
       "status": "early",
@@ -6127,7 +6225,9 @@
        "lo": 0.0,
        "hi": 0.0
       },
-      "found": false
+      "found": false,
+      "across_jump": false,
+      "reproduces": false
      }
     },
     "C2_M50_SP_Exp1": {
@@ -6157,7 +6257,9 @@
        "lo": 0.0125,
        "hi": 0.025
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      },
      "ft_fresh": {
       "status": "matched",
@@ -6180,7 +6282,9 @@
        "lo": 0.0125,
        "hi": 0.025
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      }
     },
     "C1_M50_SP_Exp2": {
@@ -6206,7 +6310,9 @@
        "lo": 0.0,
        "hi": 0.0
       },
-      "found": false
+      "found": false,
+      "across_jump": false,
+      "reproduces": false
      },
      "ft_fresh": {
       "status": "early",
@@ -6225,7 +6331,9 @@
        "lo": 0.0,
        "hi": 0.0
       },
-      "found": false
+      "found": false,
+      "across_jump": false,
+      "reproduces": false
      }
     },
     "C2_M50_SP_Exp2": {
@@ -6255,7 +6363,9 @@
        "lo": 0.0,
        "hi": 0.0125
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      },
      "ft_fresh": {
       "status": "matched",
@@ -6278,7 +6388,9 @@
        "lo": 0.0,
        "hi": 0.0125
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      }
     }
    }
@@ -6377,6 +6489,11 @@
      },
      "match": false,
      "best_run": null,
+     "nearest_run": {
+      "f": 0.040625,
+      "t_c": 215.59086023831244,
+      "dt_s": -56.409139761687555
+     },
      "f_t_A2": null,
      "A2_status": "threshold",
      "f_for_P3": null,
@@ -6392,6 +6509,11 @@
      },
      "match": true,
      "best_run": {
+      "f": 0.01875,
+      "t_c": 143.50426656838374,
+      "dt_s": -8.495733431616259
+     },
+     "nearest_run": {
       "f": 0.01875,
       "t_c": 143.50426656838374,
       "dt_s": -8.495733431616259
@@ -6415,6 +6537,11 @@
       "t_c": 143.88858038935447,
       "dt_s": -3.1114196106455267
      },
+     "nearest_run": {
+      "f": 0.046875,
+      "t_c": 143.88858038935447,
+      "dt_s": -3.1114196106455267
+     },
      "f_t_A2": 0.046875,
      "A2_status": "matched",
      "f_for_P3": 0.046875,
@@ -6434,6 +6561,11 @@
       "t_c": 268.93851367637046,
       "dt_s": -6.061486323629538
      },
+     "nearest_run": {
+      "f": 0.0125,
+      "t_c": 268.93851367637046,
+      "dt_s": -6.061486323629538
+     },
      "f_t_A2": 0.0125,
      "A2_status": "matched",
      "f_for_P3": 0.0125,
@@ -6449,6 +6581,11 @@
      },
      "match": false,
      "best_run": null,
+     "nearest_run": {
+      "f": 0.234375,
+      "t_c": 95.11518678264407,
+      "dt_s": -81.88481321735593
+     },
      "f_t_A2": null,
      "A2_status": "threshold",
      "f_for_P3": null,
@@ -6464,6 +6601,11 @@
      },
      "match": false,
      "best_run": null,
+     "nearest_run": {
+      "f": 0.009375,
+      "t_c": 268.7889749148604,
+      "dt_s": -73.21102508513962
+     },
      "f_t_A2": null,
      "A2_status": "threshold",
      "f_for_P3": null,
@@ -6479,6 +6621,11 @@
      },
      "match": true,
      "best_run": {
+      "f": 0.01875,
+      "t_c": 219.0027203770189,
+      "dt_s": -3.9972796229810967
+     },
+     "nearest_run": {
       "f": 0.01875,
       "t_c": 219.0027203770189,
       "dt_s": -3.9972796229810967
@@ -6502,6 +6649,11 @@
       "t_c": 148.4537420191933,
       "dt_s": -0.5462579808067005
      },
+     "nearest_run": {
+      "f": 0.025,
+      "t_c": 148.4537420191933,
+      "dt_s": -0.5462579808067005
+     },
      "f_t_A2": 0.025,
      "A2_status": "matched",
      "f_for_P3": 0.025,
@@ -6517,6 +6669,11 @@
      },
      "match": true,
      "best_run": {
+      "f": 0.001575,
+      "t_c": 209.3118287562846,
+      "dt_s": -0.6881712437154022
+     },
+     "nearest_run": {
       "f": 0.001575,
       "t_c": 209.3118287562846,
       "dt_s": -0.6881712437154022
@@ -6768,7 +6925,9 @@
        "lo": 0.05,
        "hi": 0.0625
       },
-      "found": false
+      "found": false,
+      "across_jump": false,
+      "reproduces": false
      },
      "exceeds": false
     },
@@ -6795,7 +6954,9 @@
        "lo": 0.0375,
        "hi": 0.05
       },
-      "found": true
+      "found": true,
+      "across_jump": true,
+      "reproduces": false
      },
      "exceeds": false
     },
@@ -6822,7 +6983,9 @@
        "lo": 0.2625,
        "hi": 0.275
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      },
      "exceeds": true
     }
@@ -6935,7 +7098,9 @@
        "lo": 0.0125,
        "hi": 0.025
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      },
      "fresh": {
       "status": "matched",
@@ -6958,7 +7123,9 @@
        "lo": 0.0,
        "hi": 0.0125
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      },
      "change": 0.0031249999999999993,
      "under": true
@@ -6986,7 +7153,9 @@
        "lo": 0.0125,
        "hi": 0.025
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      },
      "fresh": {
       "status": "matched",
@@ -7009,7 +7178,9 @@
        "lo": 0.0125,
        "hi": 0.025
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      },
      "change": 0.002466537796832046,
      "under": true
@@ -7037,7 +7208,9 @@
        "lo": 0.0,
        "hi": 0.0125
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      },
      "fresh": {
       "status": "matched",
@@ -7060,7 +7233,9 @@
        "lo": 0.0,
        "hi": 0.0125
       },
-      "found": true
+      "found": true,
+      "across_jump": false,
+      "reproduces": true
      },
      "change": 0.0031249999999999993,
      "under": true
@@ -7070,8 +7245,11 @@
  },
  "checks": {
   "V1": {
-   "written_before_A2": true,
    "written_utc": "2026-10-29T05:56:10Z",
+   "first_A2_started_utc": "2026-10-29T05:56:10Z",
+   "last_A1_finished_utc": "2026-10-29T05:56:10Z",
+   "not_after_first_A2": true,
+   "not_before_last_A1": true,
    "flagged": [],
    "same_as_file": true,
    "largest_difference_s": 0.0,
@@ -7736,6 +7914,8 @@
    "120": {
     "C2_found": 7,
     "C1_found": 0,
+    "C2_reproduces": 7,
+    "C1_reproduces": 0,
     "C2_power_W": [
      1.822888228281763,
      39.74960841471258
@@ -7762,6 +7942,8 @@
    "240": {
     "C2_found": 7,
     "C1_found": 2,
+    "C2_reproduces": 7,
+    "C1_reproduces": 1,
     "C2_power_W": [
      1.0866397654712807,
      69.30456890109049
@@ -7794,6 +7976,8 @@
    "360": {
     "C2_found": 8,
     "C1_found": 3,
+    "C2_reproduces": 8,
+    "C1_reproduces": 2,
     "C2_power_W": [
      1.4637893726247897,
      69.97742879333408
@@ -7832,17 +8016,43 @@
    218.74658739381155,
    25191.87436560027
   ],
+  "brackets_across_a_jump": {
+   "B_ft_C1_240_M50_PP_Exp2": {
+    "lo": 0.05,
+    "hi": 0.053125,
+    "t_lo_s": 238.14706177502944,
+    "t_hi_s": 29.046775537760762,
+    "t_m_s": 147.0,
+    "interpolated_f": 0.051362191191473366,
+    "record_lo": "s9_con240_fresh_both_M50_PP_Exp2_f0.050000000",
+    "early_peak_C": 255.46221699544185,
+    "t_early_peak_s": 35.7,
+    "at_t_m_C": 248.55276589933953
+   },
+   "B_ft_C1_360_M50_PP_Exp2": {
+    "lo": 0.0734375,
+    "hi": 0.078125,
+    "t_lo_s": 246.46555163200216,
+    "t_hi_s": 30.243124902404606,
+    "t_m_s": 147.0,
+    "interpolated_f": 0.07559382013906718,
+    "record_lo": "s9_con360_fresh_both_M50_PP_Exp2_f0.073437500",
+    "early_peak_C": 254.96358678191302,
+    "t_early_peak_s": 35.5,
+    "at_t_m_C": 247.5593813534797
+   }
+  },
   "B_C1_power_W": [
    24.793747361337374,
    69.9774287933341
   ],
   "B_C1_E_J": [
-   6533.206358984532,
+   8925.749050081455,
    25111.13117853104
   ],
   "B_C1_f_t_besides_ST_Exp3": [
-   0.051362191191473366,
-   0.07559382013906718
+   0.071875,
+   0.071875
   ],
   "B_fC1_hi_where_not_zero": {
    "M50_PT_Exp1": {

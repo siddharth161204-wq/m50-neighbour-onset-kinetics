@@ -34,7 +34,7 @@ def ft_block(a, fs, Ee, tau=None):
            "f_run": a.get("f_run"), "t_run_s": a.get("t_run"),
            "dtc_df_s": (a.get("sensitivity") or {}).get("dtc_df_s"),
            "sensitivity_runs": [(a.get("sensitivity") or {}).get("f_a"), (a.get("sensitivity") or {}).get("f_b")],
-           "bisection_runs": a.get("runs", [])}
+           "across_jump": a.get("across_jump", False), "reproduces": a.get("reproduces", False)}
     if fs is not None and fs.get("status") in ("zero", "bracket"):
         out["fs"] = fsd(fs)
         if a.get("f_t") is not None:
@@ -49,11 +49,13 @@ def ft_block(a, fs, Ee, tau=None):
     return out
 
 
-def fm_block(m, Ee, tau=None):
+def fm_block(m, Ee, tau=None, exploratory=False):
     out = {"status": m["status"], "found": m.get("found", False), "f_max": m.get("f_max"), "lo": m.get("lo"),
-           "hi": m.get("hi"), "overshoot_K": m.get("overshoot_K"), "extended": m.get("extended"),
+           "hi": m.get("hi"), "overshoot_K": m.get("overshoot_K"),
+           "extended": bool(m.get("extended")) and not exploratory,      # D101 (6): D92 (4)'s extension only
+           "exploratory": exploratory,
            "M_C": m.get("M"), "f_up": m.get("f_up"), "f_run": m.get("f_run"), "peak_run_C": m.get("p_run"),
-           "peak_lo_C": m.get("p_lo"), "peak_hi_C": m.get("p_hi"), "bisection_runs": m.get("runs", [])}
+           "peak_lo_C": m.get("p_lo"), "peak_hi_C": m.get("p_hi")}
     if m.get("f_max") is not None:
         out["E_J"] = m["f_max"] * Ee
         if tau:
@@ -104,11 +106,11 @@ def part_a(P, states, f8):
                 out["A2"][x][crit] = ft_block(SC.ft_result(states[f"A2_{crit}_{x}"]), f8[x][crit], Ee)
         else:
             m = SC.fmax_result(states[f"A3_{x}"])
-            b = fm_block(m, Ee)
+            b = fm_block(m, Ee, exploratory=x in IN.EXPLORATORY_FMAX)
             b.update({"exploratory": x in IN.EXPLORATORY_FMAX, "fC1": fsd(f8[x]["C1"]), "fC2": fsd(f8[x]["C2"]),
                       "below_fC1": _below(m, f8[x]["C1"]), "below_fC2": _below(m, f8[x]["C2"])})
             out["A3"][x] = b
-            out["A3_lumped"][x] = fm_block(SC.fmax_result(states[f"A3L_{x}"]), Ee)
+            out["A3_lumped"][x] = fm_block(SC.fmax_result(states[f"A3L_{x}"]), Ee, exploratory=x in IN.EXPLORATORY_FMAX)
     d = {}
     for crit in IN.CRITERIA:
         a2 = [out["A2"][x][crit] for x in out["A2"]]
@@ -157,8 +159,9 @@ def part_b(states):
                     a = SC.ft_result(states[f"B_ft_{crit}_{tau:.0f}_{x}"])
                     r[f"ft_{crit}"] = ft_block(a, r["fs"][crit], Ee, tau)
             else:
-                r["fmax"] = fm_block(SC.fmax_result(states[f"B_fm_{tau:.0f}_{x}"]), Ee, tau)
-                r["fmax_lumped"] = fm_block(SC.fmax_result(states[f"B_fmL_{tau:.0f}_{x}"]), Ee, tau)
+                ex = x in IN.EXPLORATORY_FMAX
+                r["fmax"] = fm_block(SC.fmax_result(states[f"B_fm_{tau:.0f}_{x}"]), Ee, tau, exploratory=ex)
+                r["fmax_lumped"] = fm_block(SC.fmax_result(states[f"B_fmL_{tau:.0f}_{x}"]), Ee, tau, exploratory=ex)
                 r["exploratory"] = x in IN.EXPLORATORY_FMAX
             out[k]["per_test"][x] = r
         pt = out[k]["per_test"]
@@ -166,9 +169,13 @@ def part_b(states):
         for crit in IN.CRITERIA:
             fts = [pt[x][f"ft_{crit}"] for x in pt if pt[x]["propagated"]]
             found = [a for a in fts if a["found"]]
+            rep = [a for a in found if a["reproduces"]]
             s[crit] = {"status_counts": _count(a["status"] for a in fts), "n_found": len(found),
                        "f_t": span(a["f_t"] for a in found), "E_J": span(a.get("E_J") for a in found),
                        "power_W": span(a.get("power_W") for a in found),
+                       "n_across_jump": len(found) - len(rep), "n_reproduces": len(rep),
+                       "reproducing": {"f_t": span(a["f_t"] for a in rep), "E_J": span(a.get("E_J") for a in rep),
+                                       "power_W": span(a.get("power_W") for a in rep)},
                        "fs_status_counts": _count(pt[x]["fs"][crit]["status"] for x in pt)}
         reg = [pt[x]["fmax"] for x in IN.REGISTERED_FMAX]
         s["fmax_registered"] = {"status_counts": _count(b["status"] for b in reg),
@@ -223,6 +230,7 @@ def derived(out, P, states, card):
     for k in ("120", "240", "360"):
         sm = pb[k]["summary"]
         d["B"][k] = {"C2_found": sm["C2"]["n_found"], "C1_found": sm["C1"]["n_found"],
+                     "C2_reproduces": sm["C2"]["n_reproduces"], "C1_reproduces": sm["C1"]["n_reproduces"],
                      "C2_power_W": sm["C2"]["power_W"], "C2_E_J": sm["C2"]["E_J"],
                      "C1_power_W": sm["C1"]["power_W"], "C1_E_J": sm["C1"]["E_J"],
                      "PT_Exp1_fmax": pb[k]["per_test"]["M50_PT_Exp1"]["fmax"]["f_max"],
@@ -237,12 +245,28 @@ def derived(out, P, states, card):
                     allp.append(a["power_W"])
                     alle.append(a["E_J"])
                 b = r["ft_C1"]
-                if b["found"]:
+                if b["reproduces"]:
                     c1p.append(b["power_W"])
                     c1e.append(b["E_J"])
                     if x != "M50_ST_Exp3":
                         c1f.append(b["f_t"])
     d["B_C2_power_W"], d["B_C2_E_J"] = span(allp), span(alle)
+    jumps = {}
+    for ch in R9.chain_defs():
+        st = states.get(ch["name"], {})
+        if st.get("across_jump"):
+            lo = P.entry(ch["cfg"], ch["test"], st["lo"], "res" if ch["crit"] == "C1" else "lum")
+            jumps[ch["name"]] = {"lo": st["lo"], "hi": st["hi"], "t_lo_s": st.get("t_lo"), "t_hi_s": st.get("t_hi"),
+                                 "t_m_s": st.get("t_m"), "interpolated_f": st.get("f_t"), "record_lo": lo and lo["id"]}
+            z = SC._series_of(lo["id"]) if lo else None
+            if z is not None:
+                import numpy as np
+                t, T = (z["t"], z["Tmax"]) if ch["crit"] == "C1" else (z["t_lumped"], z["T_lumped"])
+                m = t <= st["t_m"]
+                i = int(np.argmax(T[m]))
+                jumps[ch["name"]].update({"early_peak_C": float(T[m][i]) - 273.15, "t_early_peak_s": float(t[m][i]),
+                                          "at_t_m_C": float(np.interp(st["t_m"], t, T)) - 273.15})
+    d["brackets_across_a_jump"] = jumps
     d["B_C1_power_W"], d["B_C1_E_J"] = span(c1p), span(c1e)
     d["B_C1_f_t_besides_ST_Exp3"] = span(c1f)
     fsc1 = {}
