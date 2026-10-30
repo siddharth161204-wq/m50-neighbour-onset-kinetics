@@ -57,6 +57,10 @@ The note is `note/neighbour_onset_note.pdf`, three pages since Stage 9 (source `
    - The records were pushed as the runs went (867e6b2, 38c6072, db6ce12). The scoring of P1 to P8, the checks, the quoted numbers and Figure 8 were pushed in commit dde06c5 (10:49 UTC), while the last two exploratory searches, M50_PT_Exp2's f_max under 240 and 360 s, still ran. The laptop was closed at about 11:48 UTC, by the author's account, and the four runs those searches then had listed, unrecorded, were made again from their start, from 04:33:56 UTC on 30 October, by the workers started again that morning (D100 (4)). Their records, with the complete results, are in 9807b99; D100 is with the texts.
    - An independent read of every registered Stage 9 number and verdict was made before the note's Stage 9 lines were written (D101).
    - Release v1.5.0 adds Stage 9. No v1.4.0 result changes.
+14. Stage 10, what the one published history decides, the thermocouple's angle, and what the sixteen tests can tell a model (brief of 30 October; version 1.6.0, D107).
+   - Part A0 (D102), the measurement, was pushed first, in commit 758d1ef (2026-10-30 08:11:40 UTC), before the predictions were written: no raw series of the two-cell tests is published; M50_PT_Exp4's and M50_PP_Exp3's thermocouple histories were read out of the supplement's vector Figure 10, twice by separate code, and again from its pixels (V1); the three nodes that bracket the thermocouple's angle were fixed.
+   - The design (D103 to D107), the code, and its tests on synthetic inputs and short runs (D106 (3)) were pushed with the predictions, `predictions_stage10.md`, commit `a3a49cab3116741cec7809c48498c3bc600e6885`, first pushed to this repository at 2026-10-30 08:24:01 UTC (`provenance/github_activity_stage10.json`). That was before any Stage 10 run and before any Part C or Part D computation.
+   - The run list as it stood before any Stage 10 record (27 runs) has the SHA-256 123abaadb06e614bb99a4b05021f0eedb6c5846c58428ba2b4973aa893716f52 (`python3 src/stage10_run.py list`); every later run follows from the records by the rules of D104.
 
 ## Results
 
