@@ -1,0 +1,201 @@
+{
+ "id": "s10_tri21_fresh_hcentral_M50_PT_Exp4_f0.009375000_t332",
+ "stage": 10,
+ "kind": "A",
+ "test": "M50_PT_Exp4",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 39991.283602956886,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.009375,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 124184.33460982893,
+ "E_delivered_J": 1164.2281369671462,
+ "shape": "tri",
+ "tau_d_s": 21.38651984299561,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": false,
+ "t_end_s": 332.0,
+ "max_sub": 4096,
+ "cfg": "tri21_fresh",
+ "probes": {
+  "away": 9953,
+  "side": 9938,
+  "facing": 9905,
+  "toward": 9904,
+  "side_out": 9939
+ },
+ "reading": "tri21_C1_lo",
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 629.9944580557521,
+ "t_T1max_s": 20.56,
+ "n_nodes": 19355,
+ "probe_where": {
+  "away": {
+   "r_mm": 10.55,
+   "theta_deg": 180.0,
+   "z_mm": 35.05
+  },
+  "side": {
+   "r_mm": 10.550000000000002,
+   "theta_deg": 88.27711686944409,
+   "z_mm": 35.05
+  },
+  "facing": {
+   "r_mm": 10.549999999999999,
+   "theta_deg": 0.3258527744819848,
+   "z_mm": 35.05
+  },
+  "toward": {
+   "r_mm": 10.55,
+   "theta_deg": 0.0,
+   "z_mm": 35.05
+  },
+  "side_out": {
+   "r_mm": 10.55,
+   "theta_deg": 94.39197574481449,
+   "z_mm": 35.05
+  }
+ },
+ "resolved": {
+  "propagated": false,
+  "t_prop_s": null,
+  "t_end_s": 332.0,
+  "steps": 3958,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 3.418457011202516e-13,
+  "peak_hottest_C": 250.33627140740043,
+  "t_peak_hottest_s": 20.8,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 0.0,
+   "z_mm": 30.604499372999996
+  },
+  "peak_mean_C": 164.28312354246293,
+  "probe_peak": {
+   "away": {
+    "T_C": 158.3483574505114,
+    "t_s": 278.4
+   },
+   "side": {
+    "T_C": 161.9788763561205,
+    "t_s": 260.7
+   },
+   "facing": {
+    "T_C": 249.90849939552038,
+    "t_s": 20.8
+   },
+   "toward": {
+    "T_C": 250.0823948609028,
+    "t_s": 20.8
+   },
+   "side_out": {
+    "T_C": 161.4227985904783,
+    "t_s": 263.3
+   }
+  },
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "energy_J": {
+   "in_bus": 898.5354393361379,
+   "in_gap": 8027.224455247436,
+   "in_rad": 1672.2148995395585,
+   "out_conv": 1536.3157054324988,
+   "out_rad": 1892.7986570758496,
+   "in_rxn": 135.73901464677976,
+   "in_delivery": 1164.2281369671462
+  },
+  "stored_J": 8468.827583232778,
+  "net_in_J": 8468.82758322871,
+  "sources": {
+   "delivery": {
+    "E_J": 1164.2281369671462,
+    "tau_s": 21.38651984299561,
+    "t0_s": 0.0,
+    "name": "delivery",
+    "delivered_J": 1164.2281369671462
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 3958,
+  "conversion_volume_mean_end": {
+   "sei": 0.04625372197195317,
+   "li_an": 0.00021307895223040844,
+   "ele_liq": 0.0007253748199956757,
+   "cat1": 0.001457352853448346,
+   "sep": 0.9999029756114824
+  }
+ },
+ "lumped": {
+  "propagated": false,
+  "t_prop_s": null,
+  "peak_C": 189.87529073252125,
+  "t_peak_s": 236.5,
+  "reaction_heat_J": 352.42964400058975,
+  "t_end_s": 332.0,
+  "energy_J": {
+   "in_link": 10744.693954293658,
+   "in_rad": 1672.9772700773208,
+   "out_conv": 1861.2042507512979,
+   "out_rad": 2324.6119964440622,
+   "in_delivery": 1164.2281369671462,
+   "in_rxn": 352.42964400058975
+  },
+  "energy_residual_rel": 1.0678184299584378e-13,
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 1164.2281369671462,
+    "tau_s": 21.38651984299561,
+    "t0_s": 0.0,
+    "name": "delivery",
+    "delivered_J": 1164.2281369671462
+   }
+  },
+  "stored_J": 9748.512758144841,
+  "net_in_J": 9748.512758143353
+ },
+ "wall_s": 330.91541028022766,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-30T08:30:41Z",
+ "finished_utc": "2026-10-30T08:36:12Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 14
+}
