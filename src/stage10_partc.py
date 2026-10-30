@@ -136,9 +136,50 @@ def firth(x, y, iters=200, tol=1e-13):
         beta, cur, p, W, info = nb, new, p2, W2, info2
         if np.max(np.abs(lam * step)) < tol:
             break
+
+    # D108: near separation the Fisher-scoring steps above zig-zag and converge linearly and slowly (V3 found three
+    # of the six held-out fits short of the maximum after 200 steps). The estimate is therefore finished by Newton
+    # steps on the modified score itself, the gradient of the penalised log-likelihood, with its Jacobian (the
+    # penalised log-likelihood's Hessian) by central differences, halving a step until the score's largest
+    # component falls; the fit counts as converged when that component is at most 1e-10.
+    def score(b):
+        eta = X @ b
+        pp = 1.0 / (1.0 + np.exp(-eta))
+        ww = pp * (1 - pp)
+        inf = X.T @ (ww[:, None] * X)
+        aa = np.sqrt(ww)[:, None] * X
+        hh = np.einsum("ij,jk,ik->i", aa, np.linalg.inv(inf), aa)
+        return X.T @ (y - pp + hh * (0.5 - pp))
+
+    U = score(beta)
+    polish = 0
+    while np.max(np.abs(U)) > 1e-12 and polish < 100:
+        J = np.empty((2, 2))
+        for j in range(2):
+            e = np.zeros(2)
+            e[j] = 1e-6
+            J[:, j] = (score(beta + e) - score(beta - e)) / 2e-6
+        d = -np.linalg.solve(J, U)
+        lam = 1.0
+        while True:
+            nb = beta + lam * d
+            U2 = score(nb)
+            if np.max(np.abs(U2)) < np.max(np.abs(U)) or lam < 1e-6:
+                break
+            lam *= 0.5
+        if not np.max(np.abs(U2)) < np.max(np.abs(U)):
+            break
+        beta, U = nb, U2
+        polish += 1
     b = beta[1] / sd
     a = beta[0] - b * mu
-    return {"a": float(a), "b": float(b), "converged": bool(np.max(np.abs(lam * step)) < 1e-9)}
+    res = float(np.max(np.abs(U)))
+    if res > 1e-10:
+        NOT_CONVERGED.append({"x": x.tolist(), "y": y.tolist(), "score_residual": res})
+    return {"a": float(a), "b": float(b), "converged": res <= 1e-10, "score_residual": res, "newton_steps": polish}
+
+
+NOT_CONVERGED = []                       # D108: every fit, observed or permuted, whose score stays above 1e-10
 
 
 def prob(fit, x):
@@ -185,6 +226,8 @@ def heldout(rows, n_perm=IN.N_PERM, seed=IN.SEED):
                      "band_brier_2.5_97.5": [float(np.percentile(db, 2.5)), float(np.percentile(db, 97.5))],
                      "perm_d_log_mean": float(dl.mean())}
         out["predictors"][name] = pr
+    out["fits_not_converged"] = len(NOT_CONVERGED)         # D108: over every observed and permuted fit
+    out["fits_not_converged_examples"] = NOT_CONVERGED[:5]
     return out
 
 

@@ -121,6 +121,20 @@ def test_firth():
     check("a separating predictor stays finite", math.isfinite(f["b"]) and f["b"] > 0, f"{f['b']:.3f}")
     c = PC.firth(None, np.array([1, 1, 1, 1, 1, 0, 0, 0.0]))
     check("the constant is (k + 1/2) / (n + 1)", abs(c["p"] - 5.5 / 9) < 1e-15)
+    # D108: the near-separating training half on which V3 found the Fisher-scoring steps short of the maximum
+    xs = np.array([0.0, 0.0, 0.08125, 0.0, 0.0, 0.0, 0.0, 0.00625])
+    ys = np.array([0, 0, 1, 1, 1, 1, 1, 0.0])
+    f = PC.firth(xs, ys)
+
+    def neg2(b):
+        eta = b[0] + b[1] * xs
+        p = 1 / (1 + np.exp(-eta))
+        X = np.column_stack([np.ones(8), xs])
+        I = X.T @ ((p * (1 - p))[:, None] * X)
+        return -(np.sum(ys * eta - np.logaddexp(0, eta)) + 0.5 * np.linalg.slogdet(I)[1])
+    o = minimize(neg2, [0.27, 8.8], method="Nelder-Mead", options={"xatol": 1e-12, "fatol": 1e-15, "maxiter": 40000})
+    check("Firth's logistic converges near separation (D108)", f["converged"] and abs(f["a"] - o.x[0]) < 1e-7
+          and abs(f["b"] - o.x[1]) < 1e-5, f"{f['a']:.9f},{f['b']:.7f} vs {o.x[0]:.9f},{o.x[1]:.7f}")
 
 
 def test_heldout_rank():
