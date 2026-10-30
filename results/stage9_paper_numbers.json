@@ -396,7 +396,7 @@
   }
  },
  "runs": {
-  "n": 653,
+  "n": 670,
   "failed": [],
   "by_kind": {
    "con_360_fresh_lumped_stopped_mesh1_step1": 88,
@@ -406,9 +406,9 @@
    "con_240_fresh_lumped_stopped_mesh1_step1": 87,
    "con_120_fresh_lumped_stopped_mesh1_step1": 77,
    "con_120_fresh_both_stopped_mesh1_step1": 44,
-   "con_360_fresh_both_to900_mesh1_step1": 27,
+   "con_360_fresh_both_to900_mesh1_step1": 35,
    "tri_21_fresh_lumped_stopped_mesh1_step1": 45,
-   "con_240_fresh_both_to900_mesh1_step1": 23,
+   "con_240_fresh_both_to900_mesh1_step1": 32,
    "tri_21_fresh_both_to900_mesh1_step1": 27,
    "con_240_fresh_lumped_to900_mesh1_step1": 9,
    "tri_21_fresh_lumped_to900_mesh1_step1": 14,
@@ -424,7 +424,7 @@
    "author-laptop"
   ],
   "first_started_utc": "2026-10-29T05:00:13Z",
-  "last_finished_utc": "2026-10-29T10:35:58Z",
+  "last_finished_utc": "2026-10-30T05:49:36Z",
   "wall_s": {
    "lumped": {
     "n": 361,
@@ -433,10 +433,10 @@
     "sum_h": 0.039206678801112706
    },
    "both": {
-    "n": 290,
-    "median": 731.5030784606934,
+    "n": 307,
+    "median": 766.8713200092316,
     "max": 7383.605130910873,
-    "sum_h": 116.51455424514081
+    "sum_h": 129.06415608902773
    },
    "resolved": {
     "n": 2,
@@ -458,9 +458,21 @@
     }
    ],
    "replaced": 1,
-   "restart": null
+   "restart": {
+    "utc": "2026-10-30T04:33:56Z",
+    "workers": 24,
+    "first_start_last_finished_utc": "2026-10-29T11:37:00Z",
+    "records": [
+     "s9_con240_fresh_both_ns_M50_PT_Exp2_f1.000000000",
+     "s9_con360_fresh_both_ns_M50_PT_Exp2_f0.994140625",
+     "s9_con360_fresh_both_ns_M50_PT_Exp2_f0.996093750",
+     "s9_con360_fresh_both_ns_M50_PT_Exp2_f0.998046875",
+     "s9_con360_fresh_both_ns_M50_PT_Exp2_f1.000000000"
+    ],
+    "speculative": 2
+   }
   },
-  "speculative_recorded": 45,
+  "speculative_recorded": 59,
   "wall_s_by_category": {
    "lumped_only": {
     "n": 361,
@@ -475,15 +487,15 @@
     "max": 1124.6012215614319
    },
    "both_to_900_s": {
-    "n": 161,
-    "median": 1217.5356633663177,
+    "n": 178,
+    "median": 1369.2788957357407,
     "min": 609.4949712753296,
     "max": 7383.605130910873
    },
    "both_stop_lifted_exploratory": {
-    "n": 65,
-    "median": 4471.6124355793,
-    "min": 2216.805538415909,
+    "n": 82,
+    "median": 3977.4206606149673,
+    "min": 1933.370769739151,
     "max": 7383.605130910873
    },
    "both_stop_lifted_other": {
@@ -3319,10 +3331,10 @@
       }
      },
      "fmax": {
-      "status": "searching",
+      "status": "above 1",
       "found": false,
       "f_max": null,
-      "lo": 0.96875,
+      "lo": 0.99609375,
       "hi": 1.0,
       "overshoot_K": null,
       "extended": false,
@@ -3333,7 +3345,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "peak_at_end_C": null
+      "peak_at_end_C": 747.5876565346877
      },
      "fmax_lumped": {
       "status": "matched",
@@ -4471,10 +4483,10 @@
       }
      },
      "fmax": {
-      "status": "searching",
+      "status": "above 1",
       "found": false,
       "f_max": null,
-      "lo": 0.96875,
+      "lo": 0.99609375,
       "hi": 1.0,
       "overshoot_K": null,
       "extended": false,
@@ -4485,7 +4497,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
-      "peak_at_end_C": null
+      "peak_at_end_C": 660.847340334439
      },
      "fmax_lumped": {
       "status": "above 1",
@@ -7801,13 +7813,13 @@
     "delivery": 0.0
    },
    "counts": {
-    "res": 292,
-    "lum": 651,
-    "deliveries": 939,
-    "whole": 540
+    "res": 309,
+    "lum": 668,
+    "deliveries": 973,
+    "whole": 574
    },
    "duplicate_points": {
-    "n": 186,
+    "n": 190,
     "largest_s": 0.0,
     "disagreeing": []
    }
@@ -7904,10 +7916,7 @@
   ],
   "source": "predictions_stage9.md, the section on what was known when the predictions were written"
  },
- "unfinished_chains": [
-  "B_fm_240_M50_PT_Exp2",
-  "B_fm_360_M50_PT_Exp2"
- ],
+ "unfinished_chains": [],
  "derived": {
   "C1_latest_crossing_s": [
    13.763389619396623,

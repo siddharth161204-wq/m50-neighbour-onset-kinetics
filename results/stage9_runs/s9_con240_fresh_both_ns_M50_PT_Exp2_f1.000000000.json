@@ -1,0 +1,168 @@
+{
+ "id": "s9_con240_fresh_both_ns_M50_PT_Exp2_f1.000000000",
+ "stage": 9,
+ "kind": "fmax",
+ "test": "M50_PT_Exp2",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 43404.08058823057,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 1.0,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 134782.0420248344,
+ "E_delivered_J": 134782.0420248344,
+ "shape": "con",
+ "tau_d_s": 240.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "both",
+ "stop": false,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "cfg": "con240_fresh",
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 678.9954052917614,
+ "t_T1max_s": 20.490000000000002,
+ "n_nodes": 19355,
+ "resolved": {
+  "propagated": true,
+  "t_prop_s": 3.555116365479386,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 91556,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "energy_residual_rel": 1.65341654203679e-13,
+  "peak_hottest_C": 1006.5270409357278,
+  "t_peak_hottest_s": 202.09375,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 42.324784705892625,
+   "z_mm": 35.05
+  },
+  "peak_mean_C": 844.859990991158,
+  "probe_peak": {
+   "toward": {
+    "T_C": 895.4239223101928,
+    "t_s": 93.4625
+   },
+   "away": {
+    "T_C": 747.5876565346877,
+    "t_s": 240.9
+   }
+  },
+  "in_rxn_J": 21664.612491794716,
+  "cross_s": {
+   "T_onset_low": 3.555116365479386,
+   "T_onset_mean": 4.205764600832298,
+   "T_onset_high": 4.837552331926694
+  },
+  "energy_J": {
+   "in_bus": -2163.204511719495,
+   "in_gap": -29877.099463228566,
+   "in_rad": 2373.7641694007657,
+   "out_conv": 14530.275258258533,
+   "out_rad": 105476.33955010645,
+   "in_rxn": 21664.612491794716,
+   "in_delivery": 134782.0420248344
+  },
+  "stored_J": 6773.4999027378,
+  "net_in_J": 6773.499902716838,
+  "sources": {
+   "delivery": {
+    "E_J": 134782.0420248344,
+    "tau_s": 240.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 134782.0420248344
+   }
+  },
+  "max_sub": 4096,
+  "steps_with_max_sub": 91556,
+  "implicit_node_steps_with_max_sub": 0,
+  "conversion_volume_mean_end": {
+   "sei": 1.0000000000000002,
+   "li_an": 1.0000000000000002,
+   "ele_liq": 1.0000000000000002,
+   "cat1": 1.0000000000000002,
+   "sep": 1.0000000000000002
+  },
+  "max_local_reaction_heating_K_per_s": 905.2110517297971
+ },
+ "lumped": {
+  "propagated": true,
+  "t_prop_s": 22.779160195179074,
+  "stopped": false,
+  "peak_C": 880.9098910486804,
+  "t_peak_s": 163.5,
+  "reaction_heat_J": 21355.29548494022,
+  "t_end_s": 900.0,
+  "energy_J": {
+   "in_link": -30925.283104538063,
+   "in_rad": 2374.2369769792863,
+   "out_conv": 14561.268338919112,
+   "out_rad": 107061.30853768614,
+   "in_delivery": 134782.0420248344,
+   "in_rxn": 21355.29548494022
+  },
+  "energy_residual_rel": 2.0363160905084912e-14,
+  "conversion_end": {
+   "sei": 1.0,
+   "li_an": 1.0,
+   "ele_liq": 1.0,
+   "cat1": 1.0,
+   "sep": 1.0
+  },
+  "cross_s": {
+   "T_onset_low": 22.779160195179074,
+   "T_onset_mean": 23.546195105608252,
+   "T_onset_high": 23.89840249248853
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 134782.0420248344,
+    "tau_s": 240.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 134782.0420248344
+   }
+  },
+  "stored_J": 5963.714505613822,
+  "net_in_J": 5963.714505610595
+ },
+ "wall_s": 2049.935840368271,
+ "worker_peak_memory_MB": null,
+ "started_utc": "2026-10-30T04:33:56Z",
+ "finished_utc": "2026-10-30T05:08:06Z",
+ "machine": {
+  "label": "author-laptop",
+  "system": "Windows",
+  "release": "11",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "cpu_count": 24,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 5
+}
