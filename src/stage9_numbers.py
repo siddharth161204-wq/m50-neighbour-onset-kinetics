@@ -55,7 +55,8 @@ def fm_block(m, Ee, tau=None, exploratory=False):
            "extended": bool(m.get("extended")) and not exploratory,      # D101 (6): D92 (4)'s extension only
            "exploratory": exploratory,
            "M_C": m.get("M"), "f_up": m.get("f_up"), "f_run": m.get("f_run"), "peak_run_C": m.get("p_run"),
-           "peak_lo_C": m.get("p_lo"), "peak_hi_C": m.get("p_hi")}
+           "peak_lo_C": m.get("p_lo"), "peak_hi_C": m.get("p_hi"),
+           "peak_at_end_C": m.get("peak_at_end")}           # D100 (5): the node's peak at f = 1 where it falls short
     if m.get("f_max") is not None:
         out["E_J"] = m["f_max"] * Ee
         if tau:
@@ -77,6 +78,17 @@ def runs_block(recs):
     fi = sorted(r["finished_utc"] for r in recs.values() if r.get("finished_utc"))
     lock = os.path.join(RES, "stage9_laptop_workers.json")
     lk = json.load(open(lock)) if os.path.exists(lock) else {}
+    rlock = os.path.join(RES, "stage9_laptop_workers_restart_20261030.json")     # D100 (4): the second start's
+    rk = json.load(open(rlock)) if os.path.exists(rlock) else {}
+    restart = None
+    if rk.get("started_utc"):
+        after = sorted((r["started_utc"], k) for k, r in recs.items() if (r.get("started_utc") or "") >= rk["started_utc"])
+        before = [r["finished_utc"] for r in recs.values()
+                  if r.get("finished_utc") and (r.get("started_utc") or "") < rk["started_utc"]]
+        restart = {"utc": rk["started_utc"], "workers": rk.get("workers"),
+                   "first_start_last_finished_utc": max(before) if before else None,
+                   "records": [k for _, k in after],
+                   "speculative": sum(1 for _, k in after if recs[k].get("speculative"))}
     machines = sorted({(r.get("machine") or {}).get("label", "") for r in recs.values()})
 
     def cat(sel):                                  # D100 (4): the run times the texts quote, by kind of run
@@ -101,7 +113,7 @@ def runs_block(recs):
             "workers": {"started_utc": lk.get("started_utc"), "first_start": lk.get("workers"),
                         "added": [{"utc": a.get("utc"), "n": len(a.get("pids", [])), "replacing": a.get("replacing")}
                                   for a in lk.get("added", [])],
-                        "replaced": len(lk.get("replaced", []))},
+                        "replaced": len(lk.get("replaced", [])), "restart": restart},
             "speculative_recorded": sum(1 for r in recs.values() if r.get("speculative")),
             "wall_s_by_category": by_category}
 

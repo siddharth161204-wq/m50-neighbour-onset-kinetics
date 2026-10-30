@@ -457,7 +457,8 @@
      ]
     }
    ],
-   "replaced": 1
+   "replaced": 1,
+   "restart": null
   },
   "speculative_recorded": 45,
   "wall_s_by_category": {
@@ -1714,6 +1715,7 @@
     "peak_run_C": 71.42969783186567,
     "peak_lo_C": null,
     "peak_hi_C": null,
+    "peak_at_end_C": null,
     "E_J": 2090.6577412852753,
     "fC1": {
      "status": "bracket",
@@ -1743,6 +1745,7 @@
     "peak_run_C": 807.5005525724308,
     "peak_lo_C": null,
     "peak_hi_C": null,
+    "peak_at_end_C": null,
     "E_J": 75814.89863896935,
     "fC1": {
      "status": "bracket",
@@ -1772,6 +1775,7 @@
     "peak_run_C": null,
     "peak_lo_C": null,
     "peak_hi_C": null,
+    "peak_at_end_C": null,
     "E_J": 0.0,
     "fC1": {
      "status": "bracket",
@@ -1801,6 +1805,7 @@
     "peak_run_C": null,
     "peak_lo_C": null,
     "peak_hi_C": null,
+    "peak_at_end_C": null,
     "E_J": 0.0,
     "fC1": {
      "status": "bracket",
@@ -1830,6 +1835,7 @@
     "peak_run_C": null,
     "peak_lo_C": null,
     "peak_hi_C": null,
+    "peak_at_end_C": null,
     "E_J": 0.0,
     "fC1": {
      "status": "zero",
@@ -1859,6 +1865,7 @@
     "peak_run_C": null,
     "peak_lo_C": null,
     "peak_hi_C": null,
+    "peak_at_end_C": null,
     "E_J": 0.0,
     "fC1": {
      "status": "zero",
@@ -1888,6 +1895,7 @@
     "peak_run_C": 624.4532246654675,
     "peak_lo_C": null,
     "peak_hi_C": null,
+    "peak_at_end_C": null,
     "E_J": 32667.01954408894,
     "fC1": {
      "status": "bracket",
@@ -1919,6 +1927,7 @@
     "peak_run_C": 67.81224852373919,
     "peak_lo_C": null,
     "peak_hi_C": null,
+    "peak_at_end_C": null,
     "E_J": 0.0
    },
    "M50_PT_Exp2": {
@@ -1936,6 +1945,7 @@
     "peak_run_C": 806.4579212727164,
     "peak_lo_C": null,
     "peak_hi_C": null,
+    "peak_at_end_C": null,
     "E_J": 32642.52580288958
    },
    "M50_PT_Exp3": {
@@ -1953,6 +1963,7 @@
     "peak_run_C": null,
     "peak_lo_C": null,
     "peak_hi_C": null,
+    "peak_at_end_C": null,
     "E_J": 0.0
    },
    "M50_PP_Exp3": {
@@ -1970,6 +1981,7 @@
     "peak_run_C": null,
     "peak_lo_C": null,
     "peak_hi_C": null,
+    "peak_at_end_C": null,
     "E_J": 0.0
    },
    "M50_ST_Exp1": {
@@ -1987,6 +1999,7 @@
     "peak_run_C": null,
     "peak_lo_C": null,
     "peak_hi_C": null,
+    "peak_at_end_C": null,
     "E_J": 0.0
    },
    "M50_ST_Exp2": {
@@ -2004,6 +2017,7 @@
     "peak_run_C": null,
     "peak_lo_C": null,
     "peak_hi_C": null,
+    "peak_at_end_C": null,
     "E_J": 0.0
    },
    "M50_SP_Exp4": {
@@ -2021,6 +2035,7 @@
     "peak_run_C": 626.8625899643314,
     "peak_lo_C": null,
     "peak_hi_C": null,
+    "peak_at_end_C": null,
     "E_J": 20176.688541937285
    }
   },
@@ -2138,6 +2153,7 @@
       "peak_run_C": 69.67000335245541,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 1524.4379363538467,
       "power_W": 12.703649469615389
      },
@@ -2156,6 +2172,7 @@
       "peak_run_C": 67.81224852373919,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -2190,6 +2207,7 @@
       "peak_run_C": 804.480264689703,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 96874.59270534973,
       "power_W": 807.2882725445811
      },
@@ -2208,6 +2226,7 @@
       "peak_run_C": 808.4323738425072,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 54755.20457258898,
       "power_W": 456.2933714382415
      },
@@ -2242,6 +2261,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -2260,6 +2280,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -2515,6 +2536,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -2533,6 +2555,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -2642,6 +2665,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -2660,6 +2684,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -2694,6 +2719,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -2712,6 +2738,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -3117,6 +3144,7 @@
       "peak_run_C": 626.6597608192495,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 40353.37708387457,
       "power_W": 336.2781423656214
      },
@@ -3135,6 +3163,7 @@
       "peak_run_C": 621.7703362855071,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 23059.0726193569,
       "power_W": 192.15893849464084
      },
@@ -3250,6 +3279,7 @@
       "peak_run_C": 67.92117348379605,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 1007.2179222337916,
       "power_W": 4.196741342640798
      },
@@ -3268,6 +3298,7 @@
       "peak_run_C": 67.81224852373919,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -3301,7 +3332,8 @@
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
-      "peak_hi_C": null
+      "peak_hi_C": null,
+      "peak_at_end_C": null
      },
      "fmax_lumped": {
       "status": "matched",
@@ -3318,6 +3350,7 @@
       "peak_run_C": 808.7204903152696,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 107404.43973853992,
       "power_W": 447.518498910583
      },
@@ -3352,6 +3385,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -3370,6 +3404,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -3633,6 +3668,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -3651,6 +3687,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -3756,6 +3793,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -3774,6 +3812,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -3808,6 +3847,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -3826,6 +3866,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -4235,6 +4276,7 @@
       "peak_run_C": 628.9693594380341,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 76863.57539785633,
       "power_W": 320.26489749106804
      },
@@ -4253,6 +4295,7 @@
       "peak_run_C": 621.7703362855071,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 46118.1452387138,
       "power_W": 192.15893849464084
      },
@@ -4388,6 +4431,7 @@
       "peak_run_C": 70.14626976877133,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 1224.994770284341,
       "power_W": 3.402763250789836
      },
@@ -4406,6 +4450,7 @@
       "peak_run_C": 67.81224852373919,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -4439,7 +4484,8 @@
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
-      "peak_hi_C": null
+      "peak_hi_C": null,
+      "peak_at_end_C": null
      },
      "fmax_lumped": {
       "status": "above 1",
@@ -4455,7 +4501,8 @@
       "f_run": null,
       "peak_run_C": null,
       "peak_lo_C": null,
-      "peak_hi_C": null
+      "peak_hi_C": null,
+      "peak_at_end_C": 756.3733678195459
      },
      "exploratory": true
     },
@@ -4488,6 +4535,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -4506,6 +4554,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -4773,6 +4822,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -4791,6 +4841,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -4900,6 +4951,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -4918,6 +4970,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -4952,6 +5005,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -4970,6 +5024,7 @@
       "peak_run_C": null,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 0.0,
       "power_W": 0.0
      },
@@ -5379,6 +5434,7 @@
       "peak_run_C": 628.969359371594,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 115295.3630967845,
       "power_W": 320.26489749106804
      },
@@ -5397,6 +5453,7 @@
       "peak_run_C": 621.7703362855054,
       "peak_lo_C": null,
       "peak_hi_C": null,
+      "peak_at_end_C": null,
       "E_J": 69177.2178580707,
       "power_W": 192.15893849464084
      },
