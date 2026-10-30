@@ -1,0 +1,43 @@
+{
+ "what": "V1 (D102 (5)): the measured histories read a second time from pixels",
+ "dpi": 1200,
+ "panels": {
+  "a": {
+   "file": "pt_exp4_history.csv",
+   "calibration": {
+    "t0": -9.726345150359444,
+    "t_per_px": 0.09549013451259313,
+    "T0": 781.6275564999479,
+    "T_per_px": -0.5190950769692702,
+    "max_residual_s": 0.045011079988739766,
+    "max_residual_K": 0.24107029436578387
+   },
+   "pixel_K": 0.5190950769692702,
+   "pixel_s": 0.09549013451259313,
+   "seconds_read": 164,
+   "seconds_in_window": 267,
+   "largest_difference_K": 3.029652152484786,
+   "outside_tolerance": [],
+   "pass": true
+  },
+  "b": {
+   "file": "pp_exp3_history.csv",
+   "calibration": {
+    "t0": -9.726345150359444,
+    "t_per_px": 0.09549013451259313,
+    "T0": 784.2862866081291,
+    "T_per_px": -0.5176237027510477,
+    "max_residual_s": 0.045011079988739766,
+    "max_residual_K": 0.20949916685168546
+   },
+   "pixel_K": 0.5176237027510477,
+   "pixel_s": 0.09549013451259313,
+   "seconds_read": 188,
+   "seconds_in_window": 305,
+   "largest_difference_K": 2.4547987525818797,
+   "outside_tolerance": [],
+   "pass": true
+  }
+ },
+ "pass": true
+}
