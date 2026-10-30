@@ -1,0 +1,409 @@
+{
+ "V2": {
+  "pass": true,
+  "records": 30,
+  "bad": [],
+  "distances_from_line": {
+   "away": {
+    "theta_deg": 180.0,
+    "arc_mm": 33.14380249537232,
+    "chord_mm": 21.1
+   },
+   "side": {
+    "theta_deg": 88.277117,
+    "arc_mm": 16.254662948382634,
+    "chord_mm": 14.693953878657306
+   },
+   "facing": {
+    "theta_deg": 0.325853,
+    "arc_mm": 0.060000041525136424,
+    "chord_mm": 0.059999960664283813
+   },
+   "toward": {
+    "theta_deg": 0.0,
+    "arc_mm": 0.0,
+    "chord_mm": 0.0
+   },
+   "side_out": {
+    "theta_deg": 94.391976,
+    "arc_mm": 17.380605609399577,
+    "chord_mm": 15.480696244114581
+   }
+  }
+ },
+ "V4": {
+  "pass": true,
+  "largest": {
+   "res": 2.4635900086291857e-12,
+   "lum": 3.302181383316324e-12,
+   "delivery": 0.0
+  },
+  "counts": {
+   "res": 30,
+   "lum": 30,
+   "deliveries": 36,
+   "whole": 32
+  },
+  "duplicate_points": {
+   "n": 0,
+   "largest_s": 0.0,
+   "disagreeing": []
+  }
+ },
+ "X": {
+  "pass": true,
+  "pairs": 24,
+  "largest_K": 0.0,
+  "pairs_list": [
+   {
+    "stage10": "s10_con240_fresh_hcentral_M50_PT_Exp4_f0.053125000_t332",
+    "other": "s9_con240_fresh_both_M50_PT_Exp4_f0.053125000",
+    "source": "stage9",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_none_fresh_hcentral_M50_SP_Exp3_f0.000000000_t900",
+    "other": "pertest_M50_SP_Exp3_series_hcentral_gcentral_tau21.39_E54.30",
+    "source": "stage7",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_none_fresh_hcentral_M50_ST_Exp2_f0.000000000_t900",
+    "other": "s9_none_fresh_both_ns_M50_ST_Exp2_f0.000000000",
+    "source": "stage9",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_none_fresh_hcentral_M50_ST_Exp2_f0.000000000_t900",
+    "other": "pertest_M50_ST_Exp2_series_hcentral_gcentral_tau21.39_E46.46",
+    "source": "stage7",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_con120_fresh_hcentral_M50_PT_Exp4_f0.031250000_t332",
+    "other": "s9_con120_fresh_both_M50_PT_Exp4_f0.031250000",
+    "source": "stage9",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_tri21_fresh_hcentral_M50_PT_Exp4_f0.037500000_t332",
+    "other": "s9_tri21_fresh_both_M50_PT_Exp4_f0.037500000",
+    "source": "stage9",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_none_fresh_hcentral_M50_PT_Exp3_f0.000000000_t900",
+    "other": "pertest_M50_PT_Exp3_parallel_hcentral_gcentral_tau21.39_E31.59",
+    "source": "stage7",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_none_fresh_hcentral_M50_PT_Exp1_f0.000000000_t900",
+    "other": "pertest_M50_PT_Exp1_parallel_hcentral_gcentral_tau21.39_E8.98",
+    "source": "stage7",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_con240_fresh_hcentral_M50_PT_Exp4_f0.050000000_t332",
+    "other": "s9_con240_fresh_both_M50_PT_Exp4_f0.050000000",
+    "source": "stage9",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_none_fresh_hcentral_M50_PT_Exp4_f0.000000000_t332",
+    "other": "pertest_M50_PT_Exp4_parallel_hcentral_gcentral_tau21.39_E39.99",
+    "source": "stage7",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_con120_fresh_hcentral_M50_PT_Exp4_f0.028125000_t332",
+    "other": "s9_con120_fresh_both_M50_PT_Exp4_f0.028125000",
+    "source": "stage9",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_none_fresh_hcentral_M50_ST_Exp4_f0.000000000_t900",
+    "other": "pertest_M50_ST_Exp4_series_hcentral_gcentral_tau21.39_E48.81",
+    "source": "stage7",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_con360_fresh_hcentral_M50_PT_Exp4_f0.040625000_t332",
+    "other": "s9_con360_fresh_both_ns_M50_PT_Exp4_f0.040625000",
+    "source": "stage9",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_con240_fresh_hcentral_M50_PT_Exp4_f0.028125000_t332",
+    "other": "s9_con240_fresh_both_ns_M50_PT_Exp4_f0.028125000",
+    "source": "stage9",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_none_fresh_hcentral_M50_SP_Exp1_f0.000000000_t900",
+    "other": "pertest_M50_SP_Exp1_series_hcentral_gcentral_tau21.39_E46.81",
+    "source": "stage7",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_none_fresh_hcentral_M50_PP_Exp3_f0.000000000_t900",
+    "other": "pertest_M50_PP_Exp3_parallel_hcentral_gcentral_tau21.39_E43.90",
+    "source": "stage7",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_none_fresh_hcentral_M50_SP_Exp2_f0.000000000_t900",
+    "other": "pertest_M50_SP_Exp2_series_hcentral_gcentral_tau21.39_E48.73",
+    "source": "stage7",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_none_fresh_hcentral_M50_PP_Exp4_f0.000000000_t900",
+    "other": "pertest_M50_PP_Exp4_parallel_hcentral_gcentral_tau21.39_E46.86",
+    "source": "stage7",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_none_fresh_hcentral_M50_PP_Exp1_f0.000000000_t900",
+    "other": "pertest_M50_PP_Exp1_parallel_hcentral_gcentral_tau21.39_E51.09",
+    "source": "stage7",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_con360_fresh_hcentral_M50_PT_Exp4_f0.071875000_t332",
+    "other": "s9_con360_fresh_both_M50_PT_Exp4_f0.071875000",
+    "source": "stage9",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_none_fresh_hcentral_M50_ST_Exp1_f0.000000000_t900",
+    "other": "s9_none_fresh_both_ns_M50_ST_Exp1_f0.000000000",
+    "source": "stage9",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_none_fresh_hcentral_M50_ST_Exp1_f0.000000000_t900",
+    "other": "pertest_M50_ST_Exp1_series_hcentral_gcentral_tau21.39_E51.11",
+    "source": "stage7",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_tri21_fresh_hcentral_M50_PT_Exp1_f0.075000000_t900",
+    "other": "s9_tri21_fresh_both_ns_M50_PT_Exp1_f0.075000000",
+    "source": "stage9",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   },
+   {
+    "stage10": "s10_tri21_fresh_hcentral_M50_PT_Exp4_f0.009375000_t332",
+    "other": "s9_tri21_fresh_both_M50_PT_Exp4_f0.009375000",
+    "source": "stage9",
+    "largest_K": 0.0,
+    "by_series": {
+     "Tmax": 0.0,
+     "probe_away": 0.0,
+     "probe_toward": 0.0,
+     "T_lumped": 0.0
+    }
+   }
+  ]
+ },
+ "V3": {
+  "pass": false,
+  "largest_score_difference": 0.0001358929775807649,
+  "largest_rho_difference": 1.1102230246251565e-16,
+  "p_values": [
+   {
+    "what": "fC1 series_to_parallel log",
+    "p": 0.662033796620338,
+    "p_scoring": 0.6598340165983402,
+    "ok": 1.0
+   },
+   {
+    "what": "fC1 parallel_to_series log",
+    "p": 0.7423257674232576,
+    "p_scoring": 0.7517248275172482,
+    "ok": 1.0
+   },
+   {
+    "what": "fC2 series_to_parallel log",
+    "p": 0.5947405259474052,
+    "p_scoring": 0.5986401359864013,
+    "ok": 1.0
+   },
+   {
+    "what": "fC2 parallel_to_series log",
+    "p": 0.6176382361763824,
+    "p_scoring": 0.6183381661833817,
+    "ok": 1.0
+   },
+   {
+    "what": "f9 series_to_parallel log",
+    "p": 0.23977602239776022,
+    "p_scoring": 0.22647735226477353,
+    "ok": 1.0
+   },
+   {
+    "what": "f9 parallel_to_series log",
+    "p": 0.3564643535646435,
+    "p_scoring": 0.35496450354964504,
+    "ok": 1.0
+   }
+  ],
+  "seed": 20261130
+ },
+ "V1": {
+  "pass": true,
+  "panels": {
+   "a": {
+    "seconds_read": 164,
+    "seconds_in_window": 267,
+    "largest_difference_K": 3.029652152484786,
+    "pass": true
+   },
+   "b": {
+    "seconds_read": 188,
+    "seconds_in_window": 305,
+    "largest_difference_K": 2.4547987525818797,
+    "pass": true
+   }
+  }
+ }
+}
