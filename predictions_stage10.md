@@ -1,0 +1,48 @@
+# Stage 10 predictions: what the one published history decides, and what the sixteen tests can tell a model
+
+Written on 30 October 2026, after Part A0 (DECISIONS.md D102, pushed before this file was written, in commit 758d1ef) and before any Stage 10 run and any Part C or Part D computation. This file, the Stage 10 decisions (D103 to D107), the code that will make the runs (`src/stage10_run.py`, `src/stage10_inputs.py`, `src/stage10_laptop.py`, `run_stage10_windows.cmd`), the scoring (`src/stage10_score.py`, `src/stage10_partc.py`) and the checks (`src/stage10_checks.py`) are committed and pushed to the public repository before any Stage 10 run; the commit and its push time are recorded in the README.
+
+On the author's answer of 30 October, all of Part A0 came first, the digitisation of M50_PT_Exp4's history included, so these predictions were written with the measured record in hand (D102). The model's histories of Part A were not in hand for the short delivery, but Stage 7's and Stage 9's records hold the thermocouple node's history for the baseline and the long deliveries, and Stage 7's records the no-delivery peaks at the line of contact; the next section says what they fix, prediction by prediction, so that a verdict that was foreseeable is read as one. No Part C quantity and no Part D search was computed or made before this file was written.
+
+## The inputs
+
+- **Measured** (D102). M50_PT_Exp4's thermocouple record, read out of the supplement's vector Figure 10(a) (`inputs/fransson2024/pt_exp4_history.csv`, every 0.5 s, uncertainty 2.47 K and 0.45 s), on the paper's time axis from the trigger's runaway; the onset the figure marks at 271.50 s (Table 3: 272 s). M50_PP_Exp3's record from Figure 10(b), the one published history of a test that did not propagate. The thermocouple sits in the middle of the cell's surface, at an angle the paper does not give.
+- **The nodes** (D102 (4)): at mid-length on the can, the away node (theta = 180 degrees, the Stage 9 node), the side node (88.3 degrees) and the facing node (0.33 degrees, 0.06 mm from the line of contact).
+- **The readings of M50_PT_Exp4** (Stage 9, `results/stage9_states.json`): the short delivery's C2 threshold bracket, f = 0.0375 to 0.040625 over 21.39 s; the long deliveries' f_t, C2 over 240 s (0.028125) and 360 s (0.040625) and C1 over 360 s (0.071875).
+- **Stage 8's and Stage 9's per-test fractions** for Part C: f*(C1), f*(C2) (`results/stage8_thresholds.csv`), f_t(C2) and f_max (`results/stage9_fractions.csv`), as published in v1.4.0 and v1.5.0.
+
+## What was known when these were written
+
+- **The measured history** (D102 (2)). At the onset, 271.50 s, the neighbour's thermocouple reads 197.3 C; 60 s before, 174.5 C: it rises by 22.8 K over the last 60 s before propagation (28.7 K from 212 to 272 s, on Table 3's time). The record rises steadily and slowly from about 45 s (141.0 C) and then jumps (274.7 C at 273 s): a steady rise, then a jump, with no plateau. Its first 3 s hold a spike to 102.0 C, as the trigger runs away, which the model's conduction cannot follow; it passes 100 C first at 2.7 s and 150 C at 84.0 s. So P3's first clause, a rise of more than 30 K over the last 60 s, does not hold, and P3 fails whatever the runs give.
+- **The baseline and the long deliveries at the away node** (Stage 7's run at f = 0 and Stage 9's runs at these fractions, which Stage 10's runs repeat at that node, D106 (3); computed with D103 (2)'s metric): with no delivery the root mean square over the window is 47.4 K and the model is 45.2 K below the record at 271.50 s; over 240 s at f_t(C2) it is 36.7 K (15.9 K below), over 360 s at f_t(C2) 36.9 K (11.9 K below) and at f_t(C1) 37.2 K (30.0 K above). The long readings' rises over the last 60 s are 4.8, 10.0 and 28.5 K. So P2 holds if, and only if, the short reading's root mean square at its better end exceeds 37.2 K, and P1 needs that end below 25 K, well under every reading the records hold.
+- **The short reading at the away node.** No record holds it: Stage 9's run at 0.0375 stopped at the hot spot's crossing, at 10.3 s, and its run at 0.040625 was of the lumped neighbour alone.
+- **The no-delivery peaks at the line of contact** (Stage 7's runs to 900 s, and Stage 9's two with the stop lifted; the toward probe, 0.06 mm from the facing node): 70.9 C in M50_PT_Exp1 (measured 71 C), 183.3 C in PT_Exp3 (118 C), 247.7 C in PP_Exp3 (105 C), 288.1 C in ST_Exp1 (128 C) and 262.0 C in ST_Exp2 (133 C); at the away node 60.2, 131.8, 161.3, 172.9 and 163.4 C. If the facing node reads within 4.9 K of the line node, M50_PT_Exp1's f_max there is 0 (within 5 K below its 71 C), and so are the other four: P4's second clause would then hold, all five f_max at the facing node would be 0, and the groups would separate there, below M50_SP_Exp3's 0.00158, so that P5 would fail. The side node lies in no record.
+- **Part C and Part D.** Nothing was computed. The predictors are the published fractions above; which way they point for the outcomes is what Stage 8 and Stage 9 reported (the groups overlap under every criterion and fraction, Stage 8 P2, Stage 9 P5).
+
+## Definitions used for scoring
+
+The window, the root mean square, the rises and the passages are D103 (2)'s; the registered comparison is at the away node and the central contact. f_max at the side and facing nodes is Stage 9's search (D104 (1)); the separation is D104 (2)'s. Part C's predictors, scores, permutations and ranks are D105's; the survey's record is D106 (1)'s.
+
+## The predictions
+
+The brief's predictions, word for word, each with its expectation as the brief gives it; they are not scored here.
+
+- **P1.** Over the window before propagation, the short-delivery reading at its threshold bracket fits the measured M50_PT_Exp4 history at the Stage 9 node with a root-mean-square difference below 25 K at one of the two bracket ends. Expectation: uncertain.
+- **P2.** The long-delivery readings fit it with a smaller root-mean-square difference than the short-delivery reading. Expectation: uncertain; the measured history's shape decides, and A0.2 is recorded before this prediction is scored, not before it is written.
+- **P3.** The measured history rises by more than 30 K over the last 60 s before propagation (a jump, not a plateau's end), which the short-delivery reading reproduces within a factor of two and the 360 s delivery does not. Expectation: uncertain.
+- **P4.** f_max is 0 at all three nodes in the same four low-maximum tests as at the Stage 9 node, and M50_PT_Exp1's f_max at the facing node is below its Stage 9 value. Expectation: likely (the far face is the coolest of the three).
+- **P5.** The separation fails at every node: the largest registered f_max exceeds the smallest f_t(C2) at the Stage 9 node, the 90 degree node and the facing node alike. Expectation: likely.
+- **P6.** Held out, no predictor beats one probability for every test by more than 0.1 in the mean log score in either direction of the split, and no permutation p-value in C1 lies below 0.05. Expectation: likely.
+- **P7.** No model quantity in C2 correlates with the measured outcome or time at p below 0.05 after the permutation test, and the connection splits none of them. Expectation: likely.
+- **P8.** The survey finds at least one dataset with per-test outcomes and times for cells in direct contact, and none whose cell this study's parameters cover without an invented value. Expectation: uncertain.
+
+### How each is scored
+
+- **P1.** M50_PT_Exp4, the away node, the central contact, the window 0 to 271.50 s. Holds if the root mean square at f = 0.0375 or at f = 0.040625 (the 21.39 s delivery) is below 25 K. Both are reported, with every node and contact.
+- **P2.** The same node, contact and window. Holds if each of the three long readings' root mean square (C2 over 240 and 360 s, C1 over 360 s) is below the short reading's, the smaller of its two ends'. All five are reported.
+- **P3.** Holds if the measured rise from 211.50 to 271.50 s exceeds 30 K, the short reading's rise over the same 60 s at one of its two ends lies between half and twice the measured rise, and both 360 s readings' rises lie outside that range. Each part is reported.
+- **P4.** Holds if f_max is 0 at the away, side and facing nodes in M50_PT_Exp3, PP_Exp3, ST_Exp1 and ST_Exp2 (the away node's is Stage 9's), and M50_PT_Exp1's f_max at the facing node is below 0.075. Each f_max is reported with its search's end and the overshoot at f = 0.
+- **P5.** Holds if, at each of the three nodes, the largest of the five f_max is not smaller than 0.00158, M50_SP_Exp3's f_t(C2). The largest at each node and the margin are reported.
+- **P6.** Holds if, for each predictor (f*(C1), f*(C2), Stage 9's fraction) and both directions (series to parallel, parallel to series), the logistic's mean log score exceeds the constant's by at most 0.1 and neither permutation p-value (log score, Brier score) lies below 0.05. Every score, difference, p-value and band is reported.
+- **P7.** Holds if, for each quantity (f*(C1), f*(C2), Stage 9's fraction, the no-delivery peak at the away node, the hot spot's crossing at f = 0), the permutation p-values of its Spearman correlation with the outcome and with the measured time are not below 0.05, and its connection test's is not either. Every rho and p-value, the correlations with E_b among them, is reported, with the number of tests.
+- **P8.** From the survey's record (`results/stage10_survey.json`): holds if at least one dataset reports per-test outcomes and times for cells in direct contact, and none has a cell this study's parameters cover without an invented value.
