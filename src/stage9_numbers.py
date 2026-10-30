@@ -78,6 +78,21 @@ def runs_block(recs):
     lock = os.path.join(RES, "stage9_laptop_workers.json")
     lk = json.load(open(lock)) if os.path.exists(lock) else {}
     machines = sorted({(r.get("machine") or {}).get("label", "") for r in recs.values()})
+
+    def cat(sel):                                  # D100 (4): the run times the texts quote, by kind of run
+        v = sorted(r["wall_s"] for r in good if sel(r) and r.get("wall_s") is not None)
+        return {"n": len(v), "median": statistics.median(v) if v else None, "min": v[0] if v else None,
+                "max": v[-1] if v else None}
+    expl = set(IN.EXPLORATORY_FMAX)
+    by_category = {
+        "lumped_only": cat(lambda r: r.get("models") == "lumped"),
+        "both_stopped_at_crossing": cat(lambda r: r.get("models") == "both" and r.get("stop")
+                                        and (r.get("resolved") or {}).get("t_end_s", 900.0) < 900.0 - 1e-9),
+        "both_to_900_s": cat(lambda r: r.get("models") == "both" and (r.get("resolved") or {}).get("t_end_s", 0.0) >= 900.0 - 1e-9),
+        "both_stop_lifted_exploratory": cat(lambda r: r.get("models") == "both" and not r.get("stop") and r.get("test") in expl),
+        "both_stop_lifted_other": cat(lambda r: r.get("models") == "both" and not r.get("stop") and r.get("test") not in expl),
+        "v3_refined_mesh": cat(lambda r: r.get("models") == "resolved" and r.get("refine", 1.0) == 2.0),
+        "v3_halved_steps": cat(lambda r: r.get("models") == "resolved" and r.get("dt_scale", 1.0) == 0.5)}
     return {"n": len(recs), "failed": sorted(k for k, r in recs.items() if r.get("failed")), "by_kind": by,
             "machines": machines, "first_started_utc": st[0] if st else None,
             "last_finished_utc": fi[-1] if fi else None,
@@ -87,7 +102,8 @@ def runs_block(recs):
                         "added": [{"utc": a.get("utc"), "n": len(a.get("pids", [])), "replacing": a.get("replacing")}
                                   for a in lk.get("added", [])],
                         "replaced": len(lk.get("replaced", []))},
-            "speculative_recorded": sum(1 for r in recs.values() if r.get("speculative"))}
+            "speculative_recorded": sum(1 for r in recs.values() if r.get("speculative")),
+            "wall_s_by_category": by_category}
 
 
 def part_a(P, states, f8):
