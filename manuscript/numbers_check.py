@@ -61,6 +61,7 @@ def reference_values(loose=False):
     per-test tables; with loose=True every results file (which makes chance matches likely and is for diagnosis)."""
     vals = []
     jfiles = sorted(glob.glob(os.path.join(RES, "*.json"))) if loose else [os.path.join(RES, f) for f in CURATED_JSON]
+    jfiles.append(os.path.join(ROOT, "inputs", "fransson2024", "fig10_extraction.json"))
     for f in jfiles:
         if not os.path.exists(f):
             continue
