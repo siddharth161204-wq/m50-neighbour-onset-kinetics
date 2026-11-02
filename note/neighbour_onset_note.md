@@ -1,7 +1,7 @@
 # Onset kinetics on a resolved neighbour cell: where a whole-cell threshold and a local one disagree
 
 ::: byline
-Siddharth Satte, Independent researcher, Pune, India, 30 October 2026. A pre-registered pilot: predictions commits b09ef1d (Stages 1, 2) and 2657aee (Stage 3), each public before its kinetics ran on an archived history. [doi.org/10.5281/zenodo.23279455](https://doi.org/10.5281/zenodo.23279455){.nobr}; [github.com/siddharth161204-wq/m50-neighbour-onset-kinetics](https://github.com/siddharth161204-wq/m50-neighbour-onset-kinetics){.nobr}.
+Siddharth Satte, Independent researcher, Pune, India, 2 November 2026. A pre-registered pilot: predictions commits b09ef1d (Stages 1, 2) and 2657aee (Stage 3), each public before its kinetics ran on an archived history. [doi.org/10.5281/zenodo.23279455](https://doi.org/10.5281/zenodo.23279455){.nobr}; [github.com/siddharth161204-wq/m50-neighbour-onset-kinetics](https://github.com/siddharth161204-wq/m50-neighbour-onset-kinetics){.nobr}.
 :::
 
 <div class="headline">
@@ -107,6 +107,16 @@ Figure 1. (a) First time each history self-heats at 0.15 K/min, 30 s release, 33
 5. Not registered: in the runs at f_t(C2) the thermocouple's node reads 171.6 to 204.6 C at the measured time, within the onset temperatures of the paper's Fig. 3(a), about 168 to 205 C. What would tell the two readings apart is the neighbour's surface history before propagation, which the paper publishes for one test, M50_PT_Exp4.
 6. Scorecard: P1 (no C1 time within 30 s), P2 (six of nine), P3 (every f_t(C2) at most 0.019 above f\*_hi), P7 (factors 0.75 and 1.40, P5 unchanged) and P8 (the aged SEI moves f_t(C2) by at most 0.003125) held; P4 (M50_ST_Exp1 and ST_Exp2 are met by C1 at f = 0), P5 and P6 (under 240 s only M50_ST_Exp3's hot spot reproduces its time, at 0.325; M50_PT_Exp4's 272 s lies after the delivery, and M50_PP_Exp2's crossing jumps past its 147 s) failed, each as its predictions expected.
 7. Near its threshold the whole cell's clock has an induction of the measured order and the hot spot's has none; a few kJ in 21.39 s and 1 to 70 W for minutes each reproduce most measured times, and neither reading separates the tests that propagated from those that did not. f_t and f_max are fractions a conduction-and-delivery model needs, not measurements of what reached the neighbour.
+
+## Stage 10 (v1.6)
+
+1. M50_PT_Exp4's published history (predictions a3a49ca), read from the supplement's vector Figure 10 to 2.47 K and 0.45 s: the neighbour's thermocouple reaches 141.0 C by 45 s and rises steadily to 197.3 C at the onset, 271.5 s (22.8 K over the last 60 s), then jumps.
+2. At the Stage 9 node the short delivery at its C2 bracket (f = 0.0375 and 0.040625 over 21.39 s) lies 16.3 and 16.8 K from it (root mean square to the onset), the long deliveries at their f_t 36.7 to 37.2 K, no delivery 47.4 K. Exploratory: the difference is the first 100 s, which only the short delivery follows; after it the short and the long C2 readings lie 8.8 to 12.0 K from the record, and none has its last rise. One test's history decides between the readings for that test only.
+3. With no delivery the far face lies 41.7 K above the record of M50_PP_Exp3, which did not propagate, on average over 500 s (peaks 161.3 against 102.0 C).
+4. The thermocouple's angle: the four low maxima need no delivery at the far face, at 88.3 degrees or facing the trigger (overshoot 13.8 to 159.9 K), and M50_PT_Exp1 needs 0.075, 0.0375 and 0 there; only facing the trigger, all five at 0, do the fractions separate the groups.
+5. Held out, eight tests a side, no predictor (Stage 8's f\*, Stage 9's fraction) beats one probability for every test by more than 0.062 in the mean log score (permutation p 0.23 to 0.75; for the Brier score 0.20 to 0.75), and no model quantity ranks with the outcomes or the times (p at least 0.13): the sixteen tests cannot adjudicate between these models. The fraction a conduction model needs varies 42- to 208-fold from test to test.
+6. Survey (26 searches): one other dataset has the LG M50 with per-test outcomes and times, Read, Jones and Marco 2024 (seven cells 3 mm apart), and its three propagated tests followed the trigger's sidewall rupture, the neighbours at 132 C within 2 to 5 s, which this model does not represent.
+7. Scorecard: P1, P4, P6 and P7 held; P2, P3, P5 and P8 failed, P3 and P5 as the predictions foresaw.
 
 ## What it means for the thesis
 

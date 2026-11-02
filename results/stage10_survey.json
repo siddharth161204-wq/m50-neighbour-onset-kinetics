@@ -394,7 +394,7 @@
    "reported": [
     "sidewall rupture",
     "propagation",
-    "each secondary cell's time to 132 C from penetration (Table 4)",
+    "each secondary cell's time from the penetration to a surface temperature of 132 C (Table 4)",
     "every cell's maximum surface temperature (Tables 2 and 3)",
     "histories in figures"
    ],
@@ -454,7 +454,13 @@
     "the FR4 sheets' contact with the cans, not reported (a bracket)",
     "an axial trigger through the positive terminal in place of the side nail",
     "no term for sidewall-rupture ejecta: only the three tests without rupture, and the split by rupture, lie within a conduction model"
-   ]
+   ],
+   "evidence_of_cell": {
+    "quote": "Commercially available LG INR21700-M50 cells were used for this study.",
+    "where": "Section 2.3 of the full text (https://wrap.warwick.ac.uk/id/eprint/188615/1/1-s2.0-S2666248524000283-main.pdf)",
+    "read": "2026-10-30, twice; a re-read on 2026-11-02 failed (the repository's server returned errors, the publisher's page refused the fetch)"
+   },
+   "covered_means": "the cell is covered by this study's parameters; a run would still need the values listed in needs_beyond_study_parameters"
   },
   {
    "name": "Read, Mathew, Charmer, Dowson, Lorincz, Örökös-Tóth, Dobson and Marco 2024",
@@ -503,7 +509,7 @@
    "reference": "J. Power Sources 283 (2015) 517, with SAND2014-17053",
    "cell": "unnamed COTS 18650 (2.2 Ah) and pouch (3.0 Ah)",
    "chemistry": "LiCoO2 with graphite",
-   "n_tests": 5,
+   "n_tests": "one result per configuration in the report (five), the number of tests not stated",
    "arrangement": "18650: 10S1P and 1S10P, limited contact, shared copper collectors; pouch: 5S1P (centre and end initiation) and 1S5P, faces in direct contact, fibre-board fixtures",
    "contact": "direct (pouch modules)",
    "spacing_mm": 0.0,
@@ -626,5 +632,6 @@
   "first_clause_holds": true,
   "second_clause_holds": false,
   "holds": false
- }
+ },
+ "pages_not_read_hosts": 7
 }

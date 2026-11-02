@@ -33,6 +33,8 @@ def measured():
             "rise_last_60_s_K": at(IN.T_PROP_S) - at(IN.T_PROP_S - IN.LAST_S),
             "at_45_s_C": at(45.0), "at_100_s_C": at(100.0), "at_268_s_C": at(268.0), "at_273_s_C": at(273.0),
             "rise_268_to_onset_K": at(IN.T_PROP_S) - at(268.0),
+            "spike_on_the_samples_C": max(T[i] for i in range(len(t)) if t[i] <= 10.0),     # D110: 0.5 s samples
+            "spike_on_the_samples_t_s": t[max((i for i in range(len(t)) if t[i] <= 10.0), key=lambda i: T[i])],
             "PP_Exp3": {"peak_C": Tb[pk], "peak_t_s": tb[pk], "section_II_end_s": IN.T_SECTION_II_END_B_S}}
 
 
@@ -101,8 +103,19 @@ def segments(h):
         for name, (a, b) in parts.items():
             s = (tm >= a - 1e-9) & (tm <= b + 1e-9)
             d = Tmod[s] - Tm[s]
-            out[key][name] = {"rms_K": float(np.sqrt(np.trapezoid(d ** 2, tm[s]) / (tm[s][-1] - tm[s][0]))),
-                              "max_abs_K": float(np.max(np.abs(d))), "mean_K": float(np.mean(d))}
+            span_s = tm[s][-1] - tm[s][0]
+            out[key][name] = {"rms_K": float(np.sqrt(np.trapezoid(d ** 2, tm[s]) / span_s)),
+                              "max_abs_K": float(np.max(np.abs(d))),
+                              "mean_K": float(np.trapezoid(d, tm[s]) / span_s),          # D110: the time average
+                              "first_s": float(tm[s][0]), "last_s": float(tm[s][-1])}
+        # D110: the share of the squared difference over the window that lies before 24.16 s (to the sample at 24 s)
+        w = tm <= IN.T_PROP_S + 1e-9
+        d2 = (Tmod[w] - Tm[w]) ** 2
+        k = int(np.where(tm[w] <= IN.T_SECTION_I_END_S)[0][-1])
+        part = float(np.trapezoid(d2[:k + 1], tm[w][:k + 1]))
+        tot = float(np.trapezoid(d2, tm[w]))
+        out[key]["section_I"] = {"share_of_squared_difference": part / tot, "to_s": float(tm[w][k]),
+                                 "rms_K": float(np.sqrt(part / tm[w][k]))}
     return out
 
 
@@ -190,16 +203,21 @@ def runs():
     for r in recs:
         kinds.setdefault(r["kind"], 0)
         kinds[r["kind"]] += 1
+    stamps = sorted({os.path.basename(p).split("_")[1] for p in glob.glob(os.path.join(RES, "stage10_logs", "laptop_*.log"))})
     return {"records": len(recs), "failed": sum(1 for r in recs if r.get("failed")), "by_part": kinds,
             "wall_s": span(walls), "wall_median_s": statistics.median(walls) if walls else None,
-            "wall_total_s": sum(walls), "started_utc": lock["started_utc"], "workers": lock["workers"],
+            "wall_total_s": sum(walls), "logs_stamped_utc": stamps,                 # D110: when the workers started
+            "first_record_started_utc": min(r["started_utc"] for r in recs),
+            "workers_file_written_utc": lock["started_utc"], "workers": lock["workers"],
             "last_finished_utc": ends[-1] if ends else None}
 
 
 def checks():
     c = J("stage10_checks.json")
+    rec = json.load(open(sorted(glob.glob(os.path.join(RES, "stage10_runs", "s10_*.json")))[0]))
+    exact = {n: IN.arc_mm(w["theta_deg"], w["r_mm"]) for n, w in rec["probe_where"].items()}   # D110
     return {"V1": c["V1"], "V2": {"pass": c["V2"]["pass"], "records": c["V2"]["records"],
-                                  "distances_from_line_mm": {n: d["arc_mm"] for n, d in c["V2"]["distances_from_line"].items()}},
+                                  "distances_from_line_mm": exact},
             "V3": {k: c["V3"][k] for k in ("pass", "largest_score_difference", "largest_rho_difference", "seed")},
             "V4": {"pass": c["V4"]["pass"]}, "X": {k: c["X"][k] for k in ("pass", "pairs", "largest_K")}}
 
@@ -214,7 +232,10 @@ def main():
            "readings": {k: {kk: vv for kk, vv in v.items()} for k, v in IN.READINGS.items()},
            "part_a": a, "part_a_summary": a_sum, "part_a_segments_exploratory": segments(h), "part_a3": part_a3(h),
            "part_b": b, "part_b_summary": b_sum,
-           "separation": card["separation"], "part_c": part_c(), "part_d": part_d(), "runs": runs(), "checks": checks(),
+           "separation": card["separation"],
+           "separation_largest_f_max_tied": {n: sorted(t_ for t_ in b if b[t_][n]["f_max"] == max(b[u][n]["f_max"] for u in b))
+                                             for n in ("away", "side", "facing")},          # D110
+           "part_c": part_c(), "part_d": part_d(), "runs": runs(), "checks": checks(),
            "verdicts": card["verdicts"],
            "held": [k for k, v in card["verdicts"].items() if v == "held"],
            "failed": [k for k, v in card["verdicts"].items() if v == "failed"]}

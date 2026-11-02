@@ -39,27 +39,65 @@ def v2(recs):
 
 
 # ------------------------------------------------------------------------------------------------ V3
+ROOT_CACHE = {}
+
+
 def firth_root(x, y):
+    """V3's Firth fit, by separate code: roots of the penalised score by scipy (hybr) on the predictor's own scale,
+    from 0 and from slopes of +-(0.5 to 64) over the predictor's spread through the outcomes' mean (D110), the root
+    with the largest penalised likelihood among those that are maxima kept; one fit per training half (cached)."""
     from scipy.optimize import root
     y = np.asarray(y, float)
     if x is None or np.std(x) == 0.0:
         return None
     x = np.asarray(x, float)
+    key = (x.tobytes(), y.tobytes())
+    if key in ROOT_CACHE:
+        return ROOT_CACHE[key]
     X = np.column_stack([np.ones(len(y)), x])
 
-    def score(b):
+    def parts(b):
         p = 1.0 / (1.0 + np.exp(-(X @ b)))
         W = p * (1 - p)
         I = X.T @ (W[:, None] * X)
         A = np.sqrt(W)[:, None] * X
         h = np.einsum("ij,jk,ik->i", A, np.linalg.inv(I), A)
-        return X.T @ (y - p + h * (0.5 - p))
-    s = root(score, np.zeros(2), method="hybr", tol=1e-14)
-    return s.x
+        U = X.T @ (y - p + h * (0.5 - p))
+        eta = X @ b
+        v = float(np.sum(y * eta - np.logaddexp(0, eta)) + 0.5 * np.linalg.slogdet(I)[1])
+        return U, v
+    ybar = min(max(y.mean(), 0.05), 0.95)
+    starts = [np.zeros(2)]
+    for k in (0.5, 1, 2, 4, 8, 16, 32, 64):
+        for s in (1.0, -1.0):
+            b = s * k / np.std(x)
+            starts.append(np.array([np.log(ybar / (1 - ybar)) - b * x.mean(), b]))
+    best = None
+    for s0 in starts:
+        with np.errstate(over="ignore", divide="ignore", invalid="ignore"):
+            try:
+                r = root(lambda b: parts(b)[0], s0, method="hybr", tol=1e-14)
+                U, v = parts(r.x)
+            except np.linalg.LinAlgError:
+                continue
+            if not (np.all(np.isfinite(r.x)) and np.isfinite(v)) or np.max(np.abs(U)) > 1e-8:
+                continue
+            J = np.empty((2, 2))
+            for j in range(2):
+                e = np.zeros(2)
+                e[j] = 1e-6 * max(1.0, abs(r.x[j]))
+                J[:, j] = (parts(r.x + e)[0] - parts(r.x - e)[0]) / (2 * e[j])
+        if np.all(np.linalg.eigvals(0.5 * (J + J.T)).real < 0) and (best is None or v > best[0]):
+            best = (v, r.x)
+    out = None if best is None else best[1]
+    ROOT_CACHE[key] = out
+    return out
 
 
 def v3(scored_held, scored_rank, n_perm=IN.N_PERM, seed=IN.SEED + 100):
-    from scipy.stats import spearmanr
+    """Part C recomputed by separate code: every observed score and rho, and every p-value of C1 (the log and the
+    Brier score's) and of C2 (with the outcome, the time and E_b, and the connection's), with its own relabellings."""
+    from scipy.stats import spearmanr, rankdata
     rows = scored_held["table"]
     y = np.array([r["y"] for r in rows], float)
     ser = np.array([r["connection"] == "series" for r in rows])
@@ -68,7 +106,7 @@ def v3(scored_held, scored_rank, n_perm=IN.N_PERM, seed=IN.SEED + 100):
     rng = np.random.default_rng(seed)
     perms = np.array([rng.permutation(y) for _ in range(n_perm)])
 
-    def d_log(x, yy, tr, te):
+    def d_scores(x, yy, tr, te):
         k, n = yy[tr].sum(), tr.sum()
         pc = (k + 0.5) / (n + 1.0)
         b = firth_root(x[tr], yy[tr])
@@ -78,19 +116,26 @@ def v3(scored_held, scored_rank, n_perm=IN.N_PERM, seed=IN.SEED + 100):
             pg = 1.0 / (1.0 + np.exp(-(b[0] + b[1] * x[te])))
         ls = lambda p: float(np.mean(yy[te] * np.log(p) + (1 - yy[te]) * np.log(1 - p)))
         return ls(pg) - ls(np.full(te.sum(), pc)), float(np.mean((pg - yy[te]) ** 2) - np.mean((pc - yy[te]) ** 2))
+
+    def ok_p(p, q):
+        se = math.sqrt(max(p * (1 - p), 1.0 / n_perm) / n_perm)
+        return abs(p - q) <= 4 * se + 1.0 / n_perm
+
     for name in PC.PREDICTORS:
         x = np.array([r[name] for r in rows], float)
         for d, (tr, te) in {"series_to_parallel": (ser, ~ser), "parallel_to_series": (~ser, ser)}.items():
             o = scored_held["predictors"][name][d]
-            dl, db = d_log(x, y, tr, te)
+            dl, db = d_scores(x, y, tr, te)
             worst = max(worst, abs(dl - o["observed"]["d_log"]), abs(db - o["observed"]["d_brier"]))
-            sl = np.array([d_log(x, perms[k], tr, te)[0] for k in range(n_perm)])
-            p = (1 + np.sum(sl >= dl - 1e-12)) / (1 + n_perm)
-            se = math.sqrt(max(p * (1 - p), 1.0 / n_perm) / n_perm)
-            pv.append({"what": f"{name} {d} log", "p": p, "p_scoring": o["p_log"], "ok": abs(p - o["p_log"]) <= 4 * se + 1.0 / n_perm})
+            sc = np.array([d_scores(x, perms[k], tr, te) for k in range(n_perm)])
+            p_l = (1 + np.sum(sc[:, 0] >= dl - 1e-12)) / (1 + n_perm)
+            p_b = (1 + np.sum(sc[:, 1] <= db + 1e-12)) / (1 + n_perm)
+            pv.append({"what": f"{name} {d} log", "p": p_l, "p_scoring": o["p_log"], "ok": ok_p(p_l, o["p_log"])})
+            pv.append({"what": f"{name} {d} brier", "p": p_b, "p_scoring": o["p_brier"], "ok": ok_p(p_b, o["p_brier"])})
     rho_worst = 0.0
     big = lambda v: [1e30 if a is None else a for a in v]
     prop = [r for r in rows if r["y"]]
+    rng2 = np.random.default_rng(seed + 1)
     for q, dd in scored_rank["quantities"].items():
         if "outcome" not in dd:
             continue
@@ -100,9 +145,23 @@ def v3(scored_held, scored_rank, n_perm=IN.N_PERM, seed=IN.SEED + 100):
                            ("E_b", v, [r["E_b_J"] for r in rows])):
             rho = spearmanr(a, b)[0]
             rho_worst = max(rho_worst, abs(rho - dd[what]["rho"]))
+            b = np.asarray(b, float)
+            cnt = sum(abs(spearmanr(a, b[rng2.permutation(len(b))])[0]) >= abs(rho) - 1e-12 for _ in range(n_perm))
+            p = (1 + cnt) / (1 + n_perm)
+            pv.append({"what": f"{q} {what}", "p": p, "p_scoring": dd[what]["p"], "ok": ok_p(p, dd[what]["p"])})
+        rk = rankdata(v)
+        g = np.array([r["connection"] == "series" for r in rows])
+        obs = abs(rk[g].mean() - rk[~g].mean())
+        cnt = 0
+        for _ in range(n_perm):
+            gg = rng2.permutation(g)
+            cnt += abs(rk[gg].mean() - rk[~gg].mean()) >= obs - 1e-12
+        p = (1 + cnt) / (1 + n_perm)
+        pv.append({"what": f"{q} connection", "p": p, "p_scoring": dd["connection"]["p"],
+                   "ok": ok_p(p, dd["connection"]["p"])})
     ok = worst < 1e-10 and rho_worst < 1e-10 and all(x["ok"] for x in pv)
     return {"pass": ok, "largest_score_difference": worst, "largest_rho_difference": rho_worst, "p_values": pv,
-            "seed": seed}
+            "p_values_compared": len(pv), "seed": seed}
 
 
 # ------------------------------------------------------------------------------------------------ X

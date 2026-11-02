@@ -91,24 +91,11 @@ def table():
 
 
 # ------------------------------------------------------------------------------------------------ C1
-def firth(x, y, iters=200, tol=1e-13):
-    """Firth's penalised maximum likelihood for p = 1 / (1 + exp(-(a + b x))), by Newton steps on the modified score
-    X'(y - p + h (1/2 - p)), h the hat matrix's diagonal, with step halving on the penalised log-likelihood. The
-    predictor is standardised for the iteration and the coefficients returned on its own scale. x None: the constant."""
-    y = np.asarray(y, float)
-    n = len(y)
-    if x is None:
-        p = (y.sum() + 0.5) / (n + 1.0)
-        return {"a": math.log(p / (1.0 - p)), "b": 0.0, "p": p}
-    x = np.asarray(x, float)
-    mu, sd = x.mean(), x.std()
-    if sd == 0.0:                                   # a predictor constant over the training half: the constant
-        c = firth(None, y)
-        return {"a": c["a"], "b": 0.0, "p": c["p"], "degenerate": True, "converged": True}
-    z = (x - mu) / sd
-    X = np.column_stack([np.ones(n), z])
-    beta = np.zeros(2)
-
+def _firth_from(X, y, beta, iters=200, tol=1e-13):
+    """Firth's penalised likelihood maximised from the start beta: Fisher-scoring steps on the modified score
+    X'(y - p + h (1/2 - p)), h the hat matrix's diagonal, with step halving on the penalised log-likelihood, finished
+    by Newton steps on the modified score with its Jacobian by central differences (D108 (3)). Returns the estimate,
+    its penalised log-likelihood and the score's largest component."""
     def pll(b):
         eta = X @ b
         p = 1.0 / (1.0 + np.exp(-eta))
@@ -137,11 +124,10 @@ def firth(x, y, iters=200, tol=1e-13):
         if np.max(np.abs(lam * step)) < tol:
             break
 
-    # D108: near separation the Fisher-scoring steps above zig-zag and converge linearly and slowly (V3 found three
-    # of the six held-out fits short of the maximum after 200 steps). The estimate is therefore finished by Newton
-    # steps on the modified score itself, the gradient of the penalised log-likelihood, with its Jacobian (the
-    # penalised log-likelihood's Hessian) by central differences, halving a step until the score's largest
-    # component falls; the fit counts as converged when that component is at most 1e-10.
+    # D108 (3): near separation the Fisher-scoring steps above zig-zag and converge linearly and slowly, so the
+    # estimate is finished by Newton steps on the modified score itself, the gradient of the penalised
+    # log-likelihood, with its Jacobian (the Hessian) by central differences, halving a step until the score's
+    # largest component falls.
     def score(b):
         eta = X @ b
         pp = 1.0 / (1.0 + np.exp(-eta))
@@ -171,15 +157,81 @@ def firth(x, y, iters=200, tol=1e-13):
             break
         beta, U = nb, U2
         polish += 1
+    return beta, float(pll(beta)[0]), float(np.max(np.abs(U))), polish
+
+
+# D110: the penalised likelihood can have two maxima (the independent read found them in some training halves of
+# the relabellings); the estimate is the global maximum, found from the start at 0 and from starts on the
+# standardised slope at +-1, 2, 4, 8, 16 and 32, each with its intercept set to the best at that slope, the
+# converged maximum with the largest penalised likelihood kept. A fit depends only on the training half's
+# predictor and outcomes, so each is computed once (FIT_CACHE).
+START_SLOPES = (1.0, -1.0, 2.0, -2.0, 4.0, -4.0, 8.0, -8.0, 16.0, -16.0, 32.0, -32.0)
+FIT_CACHE = {}
+
+
+def firth(x, y):
+    """Firth's penalised maximum likelihood (the Jeffreys prior) for p = 1 / (1 + exp(-(a + b x))), its global
+    maximum (D110). The predictor is standardised for the search and the coefficients returned on its own scale.
+    x None: the constant, (k + 1/2) / (n + 1)."""
+    y = np.asarray(y, float)
+    n = len(y)
+    if x is None:
+        p = (y.sum() + 0.5) / (n + 1.0)
+        return {"a": math.log(p / (1.0 - p)), "b": 0.0, "p": p}
+    x = np.asarray(x, float)
+    key = (x.tobytes(), y.tobytes())
+    if key in FIT_CACHE:
+        return FIT_CACHE[key]
+    mu, sd = x.mean(), x.std()
+    if sd == 0.0:                                   # a predictor constant over the training half: the constant
+        c = firth(None, y)
+        out = {"a": c["a"], "b": 0.0, "p": c["p"], "degenerate": True, "converged": True}
+        FIT_CACHE[key] = out
+        return out
+    z = (x - mu) / sd
+    X = np.column_stack([np.ones(n), z])
+
+    def pll_ab(a, b):
+        eta = a + b * z
+        p = 1.0 / (1.0 + np.exp(-eta))
+        W = p * (1 - p)
+        info = X.T @ (W[:, None] * X)
+        return float(np.sum(y * eta - np.logaddexp(0.0, eta)) + 0.5 * np.linalg.slogdet(info)[1])
+
+    from scipy.optimize import minimize_scalar
+    starts = [np.zeros(2)]
+    for b0 in START_SLOPES:
+        r = minimize_scalar(lambda a: -pll_ab(a, b0), bounds=(-60.0, 60.0), method="bounded",
+                            options={"xatol": 1e-6})
+        starts.append(np.array([r.x, b0]))
+    found = []
+    for s0 in starts:
+        try:
+            with np.errstate(over="ignore", divide="ignore", invalid="ignore"):
+                beta, v, res, steps = _firth_from(X, y, s0.copy())
+        except np.linalg.LinAlgError:
+            continue
+        if np.all(np.isfinite(beta)) and np.isfinite(v) and res <= 1e-10:
+            found.append((v, beta, res, steps, bool(not s0.any())))
+    if not found:
+        NOT_CONVERGED.append({"x": x.tolist(), "y": y.tolist()})
+        beta, v, res, steps = _firth_from(X, y, np.zeros(2))
+        found = [(v, beta, res, steps, True)]
+    v, beta, res, steps, from_zero = max(found, key=lambda f: f[0])
+    zero = [f for f in found if f[4]]
+    second = bool(zero) and zero[0][0] < v - 1e-9          # the start at 0 found a lower maximum
+    if second:
+        LOWER_FROM_ZERO.append({"x": x.tolist(), "y": y.tolist(), "pll_zero": zero[0][0], "pll": v})
     b = beta[1] / sd
     a = beta[0] - b * mu
-    res = float(np.max(np.abs(U)))
-    if res > 1e-10:
-        NOT_CONVERGED.append({"x": x.tolist(), "y": y.tolist(), "score_residual": res})
-    return {"a": float(a), "b": float(b), "converged": res <= 1e-10, "score_residual": res, "newton_steps": polish}
+    out = {"a": float(a), "b": float(b), "converged": res <= 1e-10, "score_residual": res, "newton_steps": steps,
+           "penalised_loglik": v, "lower_maximum_from_zero": second}
+    FIT_CACHE[key] = out
+    return out
 
 
 NOT_CONVERGED = []                       # D108: every fit, observed or permuted, whose score stays above 1e-10
+LOWER_FROM_ZERO = []                     # D110: every distinct fit in which the start at 0 ends at a lower maximum
 
 
 def prob(fit, x):
@@ -226,8 +278,11 @@ def heldout(rows, n_perm=IN.N_PERM, seed=IN.SEED):
                      "band_brier_2.5_97.5": [float(np.percentile(db, 2.5)), float(np.percentile(db, 97.5))],
                      "perm_d_log_mean": float(dl.mean())}
         out["predictors"][name] = pr
-    out["fits_not_converged"] = len(NOT_CONVERGED)         # D108: over every observed and permuted fit
+    out["fits_not_converged"] = len(NOT_CONVERGED)         # D108: over every distinct fit, observed and permuted
     out["fits_not_converged_examples"] = NOT_CONVERGED[:5]
+    out["distinct_fits"] = len(FIT_CACHE)                  # D110
+    out["distinct_fits_with_a_lower_maximum_from_zero"] = len(LOWER_FROM_ZERO)
+    out["lower_maximum_examples"] = LOWER_FROM_ZERO[:5]
     return out
 
 
@@ -315,8 +370,8 @@ def spread(rows):
                     s = states[f"A2_{crit}_{x}"] if d == "tri21" else states[f"B_ft_{crit}_{d}_{x}"]
                     if s["status"] in ("matched", "bracketed") and not s.get("across_jump"):
                         vals[x] = s["f_t"]
-                    else:
-                        none.append((x, s["status"]))
+                    else:                                  # D110: a bracket across a jump is named as such
+                        none.append((x, "bracketed across a jump" if s.get("across_jump") else s["status"]))
                 else:
                     s = states[f"A3_{x}"] if d == "tri21" else states[f"B_fm_{d}_{x}"]
                     if x in IN.IN9.EXPLORATORY_FMAX:

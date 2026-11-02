@@ -78,7 +78,9 @@ def part_a(recs):
             Tn = s["probe_" + n] - 273.15
             out[key]["nodes"][n] = {"window": metrics(tm, Tm, tp, Tn),
                                     "after_section_I": metrics(tm, Tm, tp, Tn, IN.T_SECTION_I_END_S, IN.T_PROP_S)}
-            cols[f"{key}_{n}_C"] = np.interp(np.asarray(tm), tp, Tn)
+            col = np.interp(np.asarray(tm), tp, Tn)
+            col[np.asarray(tm) > tp[-1] + 1e-9] = np.nan          # D110: empty after the run's end, not held
+            cols[f"{key}_{n}_C"] = col
     return out, cols
 
 
@@ -213,7 +215,8 @@ def write_history_csv(cols):
     with open(os.path.join(RES, "stage10_history.csv"), "w") as f:
         f.write("t_s,measured_neighbour_C,measured_trigger_C," + ",".join(names) + "\n")
         for i, t in enumerate(tm):
-            f.write(f"{t:.1f},{Tm[i]:.4f},{Tg[i]:.4f}," + ",".join(f"{cols[n][i]:.4f}" for n in names) + "\n")
+            f.write(f"{t:.1f},{Tm[i]:.4f},{Tg[i]:.4f}," + ",".join("" if np.isnan(cols[n][i]) else f"{cols[n][i]:.4f}"
+                                                                for n in names) + "\n")
 
 
 def write_fmax_csv(fm):
