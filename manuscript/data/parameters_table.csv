@@ -1,0 +1,28 @@
+group,quantity,value,source
+Geometry,Cell diameter and length,21.1 and 70.1 mm,two-cell study~\cite{satte2026twocell}
+Geometry,"Can: wall, conductivity; mass and specific heat","0.25 mm, 15 W\,m$^{-1}$\,K$^{-1}$; 9 g, 500 J\,kg$^{-1}$\,K$^{-1}$",two-cell study~\cite{satte2026twocell}
+Geometry,Resolved neighbour,"half model, 19,355 nodes (145,195 halved)",this study (D42)
+Thermal properties,"Roll conductivity, across and along the layers","1.3 and 25 W\,m$^{-1}$\,K$^{-1}$ (draws 0.998 to 1.38; 24.9 to 25.8)","\cite{oregan2022thermal,chen2021simplified}; D27"
+Thermal properties,Cell heat capacity,"61.75 J\,K$^{-1}$ (65 g at 950 J\,kg$^{-1}$\,K$^{-1}$; roll draws 842 to 1110 J\,kg$^{-1}$\,K$^{-1}$)",two-cell study~\cite{satte2026twocell}; \cite{oregan2022thermal}; D27
+Paths,"Contact conductance between the cans, $h_c$","200, 2,000, 3,700 W\,m$^{-2}$\,K$^{-1}$",\cite{lienhard2024heat}; D36
+Paths,Air in the wedge,"0.03 W\,m$^{-1}$\,K$^{-1}$",two-cell study~\cite{satte2026twocell}
+Paths,"Tabs (series one, parallel two)","5, 6.8, 10 mW\,K$^{-1}$ per tab",two-cell study~\cite{satte2026twocell}; D37
+Paths,View factor between the cans,0.1817,\cite{bergman2011fundamentals}; D38
+Paths,Emissivity; room convection; ambient,"0.8; 10 W\,m$^{-2}$\,K$^{-1}$; 25\textdegree C",two-cell study~\cite{satte2026twocell}; D38
+Trigger,Model and release,"one temperature; triangular over 21.39 s (17.53, 25.24 s)",two-cell study~\cite{satte2026twocell}; supplement of \cite{fransson2024exploring} with a 25\textdegree C start; D52
+Trigger,"Body energy $E_\mathrm{b}$, one per test",9.0 to 54.3 kJ,"Tables 3, 4 of \cite{fransson2024exploring}; D65"
+Trigger,Stage 5 energy; with the ejecta (Stage 6),33.2 kJ; 107.0 kJ,"\cite{finegan2024databank}; D38, D53"
+Kinetics,Model and posterior,"B-CRNN, mean and 200 joint draws","\cite{koenig2025uncertainty}; D1, D3, D22"
+Kinetics,Reactant masses,per 720 g reference cell,\cite{koenig2025uncertainty}; D4
+Kinetics,Initial SEI amount,0.15 (fresh); 0 (aged),\cite{koenig2025uncertainty}; D66
+Kinetics,Separator's melting heat,absorbed,"\cite{koenig2025uncertainty}, Fig. 3(e); D5"
+Levels,"Propagation (C1, C2)",255.7\textdegree C within 900 s,internal-short band of \cite{koenig2025uncertainty}; D35
+Levels,The paper's criterion (C3),150\textdegree C,\cite{fransson2024exploring}
+Levels,"Separator's melting (C4, C5, C7)",138.5\textdegree C,"\cite{koenig2025uncertainty}; D5, D71"
+Levels,Self-heating onset,"0.15 K\,min$^{-1}$",\cite{koenig2025uncertainty}
+Event (Stage 7),Stored energy released from the separator's melting,65.52 kJ (63.36 kJ) over 21.39 s,cell's rating; D68
+Delivery (Stage 8 on),Ejected-to-body ratio $r$,3.105 (2.218 to 4.156),\cite{finegan2024databank}; D77
+Delivery (Stage 8 on),"Shape, duration, region","triangular, 21.39 s (10, 60 s), facing half (cap-end quarter)",D77
+Delivery (Stage 8 on),Joule heat in the parallel tests,"5 and 20\,\% of 65.52 kJ",D80
+Delivery (Stage 8 on),"Gas layer, largest resistance","0.03077 (facing half), 0.00962 m$^2$\,K\,W$^{-1}$",\cite{hoelle2023simulation}; D82
+Nodes,Thermocouple bracket at mid-length,"0.33\textdegree, 88.28\textdegree, 180\textdegree",D102

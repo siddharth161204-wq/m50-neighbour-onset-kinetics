@@ -30,12 +30,12 @@
 \address{Independent researcher, Pune, India}
 \end{frontmatter}
 
-Every record, script and decision named here is in the study's repository at version 1.7.0~\cite{Satte2026repo}; the decisions log is \texttt{DECISIONS.md}, and an entry is cited by its number (D1 to D118).
+Every record, script and decision named here is in the study's repository at version 1.7.0~\cite{satte2026repo}; the decisions log is \texttt{DECISIONS.md}, and an entry is cited by its number (D1 to D118).
 
 \section{The digitisation of the published histories}
 \label{sec:s-digitisation}
 
-No raw temperature series of the two-cell tests is published: the Battery Failure Databank holds one row of summary values per single-cell test and no multi-cell test, and the article's data statement offers the data on request (D102 (1)). The supplement of Fransson et al.~\cite{Fransson2024} draws the thermocouple records of two tests in its Figure~10: (a) PT\_Exp4, which propagated, and (b) PP\_Exp3, which did not. The figure is a vector drawing, each of its four curves a stroked path of 7,359 to 8,307 points, so the series were read out of the paths rather than off pixels.
+No raw temperature series of the two-cell tests is published: the Battery Failure Databank holds one row of summary values per single-cell test and no multi-cell test, and the article's data statement offers the data on request (D102 (1)). The supplement of Fransson et al.~\cite{fransson2024exploring} draws the thermocouple records of two tests in its Figure~10: (a) PT\_Exp4, which propagated, and (b) PP\_Exp3, which did not. The figure is a vector drawing, each of its four curves a stroked path of 7,359 to 8,307 points, so the series were read out of the paths rather than off pixels.
 
 The reading (D102 (2), \texttt{inputs/fransson2024/extract\_fig10.py}) was made twice, by separate code and separate calibrations. The first uses the path objects of pdfplumber, with each panel's axes fitted by least squares to its 21 vertical and 8 horizontal major grid lines, labelled by the tick labels read as text; the second parses the figure's drawing operators with pypdf and takes the axes from the plot area's frame. Each reading is resampled every 0.5~s from 0 to 500~s. The two differ by at most 0.0005~K on PT\_Exp4's neighbour curve and 0.0002~K on PP\_Exp3's; the figure's resolution, half the curves' stroke width, is 2.47 and 2.46~K and 0.45~s, and the recorded uncertainty is the larger of the two. The time axis starts at the trigger's runaway, from which the paper counts the time to propagation; the figure marks PT\_Exp4's onset at 271.50~s (Table~3 of the paper: 272~s).
 
@@ -44,7 +44,11 @@ A check (V1 of Stage~10, D102 (5)) rendered the page at 1200~dpi without anti-al
 \section{The predictions of Stages 1 to 11}
 \label{sec:s-predictions}
 
-\PH{the full prediction table, written from manuscript/data/predictions\_by\_stage.csv}
+Each stage's predictions file was committed and pushed before any of the stage's runs, with the expectation held for each prediction; Table~\ref{tab:s-predictions} lists all 70, shortened from the files (\texttt{manuscript/data/predictions\_by\_stage.csv}, which gives the file and line of each). Through Stage~10, 64 were committed and 32 failed; Stage~11 adds six, of which four failed.
+
+A failure is counted as foreseen when the predictions file, before the runs, recorded it as expected, as already fixed by earlier records or an energy balance, or as following from a condition it named that then held; a hedged ``may fail'' does not count. By that rule 21 of the 32 failures through Stage~10 were foreseen, and one of Stage~11's (P4, fixed by Stage~7's runs at the low contact). The stages' own texts label 17 of the 21 so; the other four are Stage~3's P3 and P6 (``expected to fail'' in the file's central estimates), Stage~6's P4 (fixed by an energy balance, where the texts counted Stage~5's records only) and Stage~9's P6 (failing under the condition the file named, on which the note and the README differ). Counting the three ``may fail'' expectations too (Stage~4's P4 and Stage~5's P1 and P6) would give 24.
+
+\IfFileExists{tables/s2_predictions.tex}{\input{tables/s2_predictions.tex}}{}
 
 \section{Mesh and step convergence}
 \label{sec:s-convergence}
@@ -56,7 +60,7 @@ Each stage that ran the resolved neighbour halved every mesh spacing, and separa
 \footnotesize
 \caption{Mesh and step convergence, by stage (the repository's verification table).}
 \label{tab:s-convergence}
-\begin{tabular}{p{0.32\textwidth}p{0.3\textwidth}p{0.28\textwidth}}
+\begin{tabular}{p{0.3\textwidth}p{0.29\textwidth}p{0.29\textwidth}}
 \toprule
 Stage and run & Mesh spacing halved & Step limits halved \\
 \midrule
@@ -102,30 +106,30 @@ Stage & Runs & Largest residual \\
 \section{The delivery's brackets}
 \label{sec:s-delivery}
 
-The registered delivery is a triangular pulse of $f\,\Ee$ over 21.39~s through the half of the neighbour's can facing the trigger. Stage~8 ran its brackets on the three tests nearest the median trigger energy and on PT\_Exp1 (D79, not registered). A delivery over 10~s lowers PT\_Exp1's $\fs$(C1) to $(0.1, 0.1125]$, and one over 60~s raises it to $(0.275, 0.2875]$; delivering the same energy through the quarter of the facing half nearest the cap lowers it to $(0.0375, 0.05]$. The ratio's two ends scale every $\fs$ by 0.75 to 1.40. In the eight parallel tests, Joule heat of 20\,\% of the stored 65.52~kJ over the trigger's release takes every hot spot to 255.7\degC{} with no delivery (D80). With the gas layer between the roll and the can of Hoelle, Zimmermann and Hinrichsen~\cite{Hoelle2023} (their Eq.~28 and 29, Tables~V and VI), at $f=0.2$ in the three tests nearest the median trigger, the hot spot peaks at 192.4 to 196.5\degC{} and does not reach 255.7\degC{} within 900~s, where without the layer it does at 3.5 to 3.7~s, while the can reaches 1,886 to 1,924\degC{} with no melting or venting in the model (D82). Stage~9 delivered the same energy as a constant power over 120, 240 or 360~s from the start of the release (D93): 1.1 to 70.0~W reproduces seven or eight of the nine measured times through C2. Stage~10 bracketed the thermocouple's angle with three nodes at mid-length (D102 (4)): facing the trigger (0.33\textdegree, 0.06~mm from the line of contact along the surface), at the side (88.28\textdegree, 16.25~mm) and at the far face (180\textdegree, 33.14~mm).
+The registered delivery is a triangular pulse of $f\,\Ee$ over 21.39~s through the half of the neighbour's can facing the trigger. Stage~8 ran its brackets on the three tests nearest the median trigger energy and on PT\_Exp1 (D79, not registered). A delivery over 10~s lowers PT\_Exp1's $\fs$(C1) to $(0.1, 0.1125]$, and one over 60~s raises it to $(0.275, 0.2875]$; delivering the same energy through the quarter of the facing half nearest the cap lowers it to $(0.0375, 0.05]$. The ratio's two ends scale every $\fs$ by 0.75 to 1.40. In the eight parallel tests, Joule heat of 20\,\% of the stored 65.52~kJ over the trigger's release takes every hot spot to 255.7\degC{} with no delivery (D80). With the gas layer between the roll and the can of Hoelle, Zimmermann and Hinrichsen~\cite{hoelle2023simulation} (their Eq.~28 and 29, Tables~V and VI), at $f=0.2$ in the three tests nearest the median trigger, the hot spot peaks at 192.4 to 196.5\degC{} and does not reach 255.7\degC{} within 900~s, where without the layer it does at 3.5 to 3.7~s, while the can reaches 1,886 to 1,924\degC{} with no melting or venting in the model (D82). Stage~9 delivered the same energy as a constant power over 120, 240 or 360~s from the start of the release (D93): 1.1 to 70.0~W reproduces seven or eight of the nine measured times through C2. Stage~10 bracketed the thermocouple's angle with three nodes at mid-length (D102 (4)): facing the trigger (0.33\textdegree, 0.06~mm from the line of contact along the surface), at the side (88.28\textdegree, 16.25~mm) and at the far face (180\textdegree, 33.14~mm).
 
 \section{The survey of other datasets}
 \label{sec:s-survey}
 
-Stage~10 surveyed the published datasets with per-test outcomes and times for cell-to-cell propagation in cells in contact or at a stated spacing, and asked whether this study's parameters cover their cell without an invented value: an LG M50, or a 21700 NMC cell with published thermal and kinetic parameters (\texttt{results/stage10\_survey.md}, D106 (1)). It made 26 web searches and read each candidate on its publisher's or repository's page where that page could be fetched. Table~\ref{tab:s-survey} lists what it found. One other dataset has a cell this study's parameters cover: Read, Jones and Marco~\cite{Read2024}, seven LG M50 cells 3~mm apart. Its three propagated tests followed the trigger's sidewall rupture, the neighbours reaching 132\degC{} at their surface 2 to 5~s after the penetration, a path this model does not represent; the survey stopped there, and the decision on a further stage is taken separately.
+Stage~10 surveyed the published datasets with per-test outcomes and times for cell-to-cell propagation in cells in contact or at a stated spacing, and asked whether this study's parameters cover their cell without an invented value: an LG M50, or a 21700 NMC cell with published thermal and kinetic parameters (\texttt{results/stage10\_survey.md}, D106 (1)). It made 26 web searches and read each candidate on its publisher's or repository's page where that page could be fetched. Table~\ref{tab:s-survey} lists what it found. One other dataset has a cell this study's parameters cover: Read, Jones and Marco~\cite{read2024sidewall}, seven LG M50 cells 3~mm apart. Its three propagated tests followed the trigger's sidewall rupture, the neighbours reaching 132\degC{} at their surface 2 to 5~s after the penetration, a path this model does not represent; the survey stopped there, and the decision on a further stage is taken separately.
 
 \begin{table}[h]
 \centering
 \footnotesize
 \caption{The datasets the survey found (Stage~10, Part~D).}
 \label{tab:s-survey}
-\begin{tabular}{p{0.3\textwidth}p{0.22\textwidth}p{0.18\textwidth}p{0.2\textwidth}}
+\begin{tabular}{p{0.3\textwidth}p{0.21\textwidth}p{0.17\textwidth}p{0.17\textwidth}}
 \toprule
 Dataset & Cell & Arrangement & This study's parameters cover the cell \\
 \midrule
-Fransson et al. 2024~\cite{Fransson2024}, M50 tests (this study) & LG M50, NMC & two cells in contact & yes \\
+Fransson et al. 2024~\cite{fransson2024exploring}, M50 tests (this study) & LG M50, NMC & two cells in contact & yes \\
 Fransson et al. 2024, P42A tests & Molicel P42A, NCA & two cells in contact & no \\
-Read, Jones and Marco 2024~\cite{Read2024} & LG M50, NMC 811 & seven cells, 3~mm gaps & yes \\
+Read, Jones and Marco 2024~\cite{read2024sidewall} & LG M50, NMC 811 & seven cells, 3~mm gaps & yes \\
 Read et al. 2024, J. Energy Storage 95, 112491 & unnamed, M50 specification & 34 cells, 1~mm gaps & not established \\
 Allen et al. 2025, J. Power Sources 660, 238522 & Molicel P45B & seven cells, 3~mm & no \\
-Lamb et al. 2015~\cite{Lamb2015} & LiCoO$_2$, 18650 and pouch & cells in contact & no \\
-Said, Lee, Stoliarov and Marshall 2019~\cite{Said2019} & LiCoO$_2$, 18650 & arrays & no \\
-Hoelle, Zimmermann and Hinrichsen 2023~\cite{Hoelle2023} & prismatic & five-cell stack & no \\
+Lamb et al. 2015~\cite{lamb2015failure} & LiCoO$_2$, 18650 and pouch & cells in contact & no \\
+Said, Lee, Stoliarov and Marshall 2019~\cite{said2019cascading} & LiCoO$_2$, 18650 & arrays & no \\
+Hoelle, Zimmermann and Hinrichsen 2023~\cite{hoelle2023simulation} & prismatic & five-cell stack & no \\
 Sch\"oberl et al. 2024, eTransportation 19, 100305 & prismatic NMC and LFP & braced stack & no \\
 Torres-Castro et al. 2020, J. Electrochem. Soc. 167, 090515 & pouch & stacks & no \\
 \bottomrule

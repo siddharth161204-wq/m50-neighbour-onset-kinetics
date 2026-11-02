@@ -147,14 +147,17 @@ def panel_times(ax, res, fs=7.0):
                 continue
             t = num(r["t_draw_s"])
             if t is None:
-                ax.scatter([x], [880], s=18, marker="^", facecolor=SURF, edgecolor=BLUE, lw=0.9, zorder=3)
+                ax.scatter([x], [945], s=18, marker="^", facecolor=SURF, edgecolor=BLUE, lw=0.9, zorder=3,
+                           clip_on=False)
             else:
                 ax.scatter([x], [t], s=13, marker="o", color=BLUE, zorder=3, lw=0)
     ax.set_xticks(range(len(tests)))
     ax.set_xticklabels([SHORT.get(t, t.replace("M50_", "")) for t in tests], rotation=45, ha="right",
                        rotation_mode="anchor")
     ax.set_xlim(-0.5, len(tests) - 0.5)
-    ax.set_ylim(0, 920)
+    ax.set_ylim(0, 990)
+    ax.axhline(900.0, color=MUTED, lw=0.7, ls=(0, (3, 2)), zorder=1)
+    ax.text(-0.4, 905, "900 s", fontsize=fs, color=INK2, va="bottom", ha="left")
     ax.set_ylabel("Crossing of C2 (s)")
     _tidy(ax)
     hs = [Line2D([], [], color=INK, lw=1.6, label="measured"),

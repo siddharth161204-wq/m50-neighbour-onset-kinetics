@@ -49,8 +49,8 @@ def t1(res, out):
     tests = {r["test"]: r for r in rows(os.path.join(ROOT, "inputs", "fransson2024", "m50_tests.csv"))}
     trig = {r["test"]: r for r in rows(os.path.join(res, "stage7_triggers.csv")) if r["kind"] == "test"}
     ej = {r["id"]: r for r in rows(os.path.join(res, "stage8_ejected.csv")) if r["kind"] == "test"}
-    lines = [r"\begin{table}[t]", r"\centering", r"\small",
-             r"\caption{The sixteen two-cell LG M50 tests of Fransson et al.~\cite{Fransson2024} (Tables 3 and 4 of the paper), "
+    lines = [r"\begin{table}[t]", r"\centering", r"\footnotesize", r"\setlength{\tabcolsep}{4pt}",
+             r"\caption{The sixteen two-cell LG M50 tests of Fransson et al.~\cite{fransson2024exploring} (Tables 3 and 4 of the paper), "
              r"with the trigger's body energy $E_\mathrm{b}$ that puts the model's trigger at the measured peak at the central "
              r"contact over 21.39~s, and the ejected energy $E_\mathrm{e}=3.105\,E_\mathrm{b}$. Times run from the trigger's "
              r"runaway to the neighbour's onset. The two maxima marked $^{a}$ may not be the neighbour's surface and are read as "
@@ -77,7 +77,7 @@ def t1(res, out):
 def t3(res, out):
     fr = {r["test"]: r for r in rows(os.path.join(res, "stage9_fractions.csv"))}
     s11 = os.path.exists(os.path.join(res, "stage11_bands.json"))
-    bands = json.load(open(os.path.join(res, "stage11_bands.json"))) if s11 else {}
+    bands = json.load(open(os.path.join(res, "stage11_bands.json")))["A2_B2"] if s11 else {}
     ov = rows(os.path.join(res, "stage11_overshoot.csv")) if s11 else []
     tr = rows(os.path.join(res, "stage11_times.csv")) if s11 else []
 
@@ -89,11 +89,11 @@ def t3(res, out):
         if any(v in (None, "above 1") for v in vals):
             return "above 1" if "above 1" in vals else ""
         lo, hi = min(vals), max(vals)
-        return fnum(lo) if lo == hi else f"{fnum(lo)} to {fnum(hi)}"
+        return fnum(lo) if lo == hi else f"{fnum(lo)}--{fnum(hi)}"
 
     def over(t):
         vs = [float(r["overshoot_K"]) for r in ov if r["test"] == t and r["overshoot_K"] not in ("", None)]
-        return "" if not vs else f"{min(vs):.1f} to {max(vs):.1f}"
+        return "" if not vs else f"${min(vs):.1f}$ to ${max(vs):.1f}$"
 
     def cross(t):
         rs = [r for r in tr if r["test"] == t]
@@ -102,23 +102,25 @@ def t3(res, out):
         vs = [r["t_draw_s"] for r in rs]
         n_none = sum(1 for v in vs if v in ("", None))
         num = [float(v) for v in vs if v not in ("", None)]
-        s = f"{min(num):.0f} to {max(num):.0f}" if num else ""
+        s = f"{min(num):.0f}--{max(num):.0f}" if num else ""
         return s + (f" ({n_none} none)" if n_none else "")
 
-    lines = [r"\begin{table}[t]", r"\centering", r"\footnotesize",
-             r"\caption{The fractions of the ejected energy each test needs in the model. $f^*$(C1) and $f^*$(C2): the threshold "
-             r"bracket $(\mathrm{lo},\mathrm{hi}]$ at which the hot spot (C1) or the lumped neighbour (C2) reaches 255.7\textdegree C "
-             r"with the 21.39~s delivery, 0 where no delivery is needed. $f_\mathrm{t}$(C2): the fraction at which the lumped "
-             r"neighbour's crossing comes at the measured time ($^{b}$ the search ended at the threshold, its bracket given). "
-             r"$f_\mathrm{max}$: the fraction at which the far face peaks at the measured maximum ($^{a}$ exploratory). The last "
-             r"three columns give Stage 11's ranges where it ran: $f^*$(C2) over the posterior mean and the eight draws; the far "
-             r"face's peak at $f=0$ less the measured maximum over the central case, the four thermal draws and the two contact "
-             r"brackets; and the lumped neighbour's crossing at $f_\mathrm{t}$(C2) under the four kinetic draws, with the number "
-             r"that do not cross within 900~s.}",
+    def band1(crit, t):
+        return band(crit, t)
+
+    lines = [r"\begin{table}[p]", r"\centering", r"\scriptsize",
+             r"\caption{The fractions of the ejected energy each test needs in the model, and Stage 11's ranges. (a) $f^*$(C1) "
+             r"and $f^*$(C2): the threshold bracket $(\mathrm{lo},\mathrm{hi}]$ at which the hot spot (C1) or the lumped "
+             r"neighbour (C2) reaches 255.7\textdegree C with the 21.39~s delivery, 0 where no delivery is needed. "
+             r"$f_\mathrm{t}$(C2): the fraction at which the lumped neighbour's crossing comes at the measured time ($^{b}$ the "
+             r"search ended at the threshold, its bracket given). $f_\mathrm{max}$: the fraction at which the far face peaks at "
+             r"the measured maximum ($^{a}$ exploratory). (b) Over the posterior mean and Stage 11's draws: $f^*$(C1) and "
+             r"$f^*$(C2) over the nine (four kinetic, four thermal, the mean), the far face's peak at $f=0$ less the measured "
+             r"maximum over the central case, the four thermal draws and the two contact brackets, and the lumped neighbour's "
+             r"crossing at $f_\mathrm{t}$(C2) under the four kinetic draws, with the number that do not cross within 900~s.}",
              r"\label{tab:fractions}",
-             r"\begin{tabular}{lllllll}", r"\toprule",
-             r"Test & $f^*$(C1) & $f^*$(C2) & $f_\mathrm{t}$(C2) or $f_\mathrm{max}$ & $f^*$(C2), & Far face at & C2 crossing, \\",
-             r" & & & & 8 draws & $f=0$ (K) & kinetic (s) \\", r"\midrule"]
+             r"\begin{tabular}{llll}", r"\multicolumn{4}{l}{(a) Stages 8 and 9, at the posterior mean} \\", r"\toprule",
+             r"Test & $f^*$(C1) & $f^*$(C2) & $f_\mathrm{t}$(C2) or $f_\mathrm{max}$ \\", r"\midrule"]
     for t in ORDER:
         r = fr[t]
         prop = r["propagated"] == "True"
@@ -130,9 +132,19 @@ def t3(res, out):
                 read = fnum(r["ft_C2"], 4 if float(r["ft_C2"]) < 0.01 else None)
         else:
             read = fnum(r["fmax"]) + (r"$^{a}$" if r["fmax_exploratory"] == "True" else "")
-        lines.append(f"{short(t)} & {bracket(r['fC1_stage8'])} & {bracket(r['fC2_stage8'])} & {read} & "
-                     f"{band('C2', t)} & {over(t)} & {cross(t)} \\\\")
-    lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}"]
+        lines.append(f"{short(t)} & {bracket(r['fC1_stage8'])} & {bracket(r['fC2_stage8'])} & {read} \\\\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    if s11:
+        lines += [r"\par\bigskip", r"\begin{tabular}{lllll}",
+                  r"\multicolumn{5}{l}{(b) Stage 11: ranges over the posterior mean and the draws} \\", r"\toprule",
+                  r"Test & $f^*$(C1) & $f^*$(C2) & Far face at & C2 crossing, \\",
+                  r" & & & $f=0$ (K) & kinetic draws (s) \\", r"\midrule"]
+        for t in ORDER:
+            b1, b2, o, c = band1("C1", t), band1("C2", t), over(t), cross(t)
+            if any((b1, b2, o, c)):
+                lines.append(f"{short(t)} & {b1} & {b2} & {o} & {c} \\\\")
+        lines += [r"\bottomrule", r"\end{tabular}"]
+    lines += [r"\end{table}"]
     open(os.path.join(out, "t3_fractions.tex"), "w").write("\n".join(lines) + "\n")
     print("wrote t3_fractions.tex")
 
@@ -142,11 +154,14 @@ def t2(res, out):
     if not os.path.exists(p):
         print("no parameters_table.csv yet")
         return
-    lines = [r"\begin{table}[p]", r"\centering", r"\footnotesize",
-             r"\caption{The model's parameters, with their sources. Brackets are run as sensitivities; the thermal ranges are those "
-             r"of the 30 Latin hypercube draws.}",
+    lines = [r"\begin{table}[p]", r"\centering", r"\scriptsize",
+             r"\caption{The model's parameters and their sources: a published source, the two-cell study whose geometry and "
+             r"solver this study takes~\cite{satte2026twocell}, or an entry of this study's decisions log (D, in the "
+             r"repository~\cite{satte2026repo}). Values in parentheses are brackets run as sensitivities or the ranges of the "
+             r"thermal draws.}",
              r"\label{tab:params}",
-             r"\begin{tabular}{p{0.42\textwidth}p{0.25\textwidth}p{0.25\textwidth}}", r"\toprule",
+             r"\renewcommand{\arraystretch}{0.92}",
+             r"\begin{tabular}{p{0.29\textwidth}p{0.37\textwidth}p{0.24\textwidth}}", r"\toprule",
              r"Quantity & Value & Source \\", r"\midrule"]
     group = None
     for r in rows(p):
@@ -170,12 +185,14 @@ def t4(res, out):
              6: "6: the paper's 150\\textdegree C criterion; matched trigger", 7: "7: seven criteria, test by test",
              8: "8: the delivered fraction $f^*$", 9: "9: fractions from times and peaks",
              10: "10: one history; held-out scores", 11: "11: bands under the draws"}
-    lines = [r"\begin{table}[t]", r"\centering", r"\small",
-             r"\caption{The predictions by stage: committed before the stage's runs, held, failed, and of the failures those the "
-             r"predictions file had recorded, before the runs, as already fixed by earlier records or an energy balance "
-             r"(foreseen). Every prediction, its expectation and its verdict are in the supplement.}",
+    lines = [r"\begin{table}[t]", r"\centering", r"\footnotesize",
+             r"\caption{The predictions by stage: committed before the stage's runs, held, failed, and of the failures those "
+             r"foreseen, which the predictions file had recorded before the runs as expected to fail, as already fixed by earlier "
+             r"records or an energy balance, or as failing under a condition it named that then held. The stages' own texts "
+             r"label 17 of the 21 through Stage 10 so (Supplement S2). Every prediction, its expectation and its verdict are in "
+             r"the supplement.}",
              r"\label{tab:predictions}",
-             r"\begin{tabular}{lrrrr}", r"\toprule",
+             r"\begin{tabular}{p{0.44\textwidth}rrrr}", r"\toprule",
              r"Stage & Committed & Held & Failed & Foreseen \\", r"\midrule"]
     tot = [0, 0, 0, 0]
     for st in (1, 3, 4, 5, 6, 7, 8, 9, 10, 11):
@@ -203,10 +220,11 @@ def s2(res, out):
         print("no predictions_by_stage.csv yet")
         return
     esc = lambda x: (x or "").replace("&", r"\&").replace("%", r"\%").replace("_", r"\_").replace("#", r"\#")
-    lines = [r"\begin{longtable}{p{0.07\textwidth}p{0.05\textwidth}p{0.5\textwidth}p{0.14\textwidth}p{0.13\textwidth}}",
+    lines = [r"{\sloppy\footnotesize", r"\begin{longtable}{>{\raggedright\arraybackslash}p{0.04\textwidth}>{\raggedright\arraybackslash}p{0.07\textwidth}>{\raggedright\arraybackslash}p{0.43\textwidth}>{\raggedright\arraybackslash}p{0.2\textwidth}>{\raggedright\arraybackslash}p{0.1\textwidth}}",
              r"\caption{Every prediction, as its predictions file states it (shortened), with the expectation recorded before the "
-             r"runs and the verdict. Foreseen: a failure the predictions file recorded, before the runs, as already fixed by "
-             r"earlier records or an energy balance.}\label{tab:s-predictions}\\",
+             r"runs and the verdict. Foreseen: a failure the predictions file recorded before the runs as expected to fail, as "
+             r"already fixed by earlier records or an energy balance, or as failing under a condition it named that then "
+             r"held. The verdicts of Stage 11 are its scorecard's.}\label{tab:s-predictions}\\",
              r"\toprule", r"Stage & & Prediction & Expectation & Verdict \\", r"\midrule", r"\endfirsthead",
              r"\toprule", r"Stage & & Prediction & Expectation & Verdict \\", r"\midrule", r"\endhead"]
     for r in rows(p):
@@ -214,7 +232,7 @@ def s2(res, out):
         if v == "failed" and r.get("foreseen") == "yes":
             v = "failed, foreseen"
         lines.append(f"{r['stage']} & {esc(r['prediction'])} & {esc(r['statement'])} & {esc(r['expectation'])} & {v} \\\\")
-    lines += [r"\bottomrule", r"\end{longtable}"]
+    lines += [r"\bottomrule", r"\end{longtable}", r"}"]
     open(os.path.join(out, "s2_predictions.tex"), "w").write("\n".join(lines) + "\n")
     print("wrote s2_predictions.tex")
 

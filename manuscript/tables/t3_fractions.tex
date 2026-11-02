@@ -1,29 +1,52 @@
-\begin{table}[t]
+\begin{table}[p]
 \centering
-\footnotesize
-\caption{The fractions of the ejected energy each test needs in the model. $f^*$(C1) and $f^*$(C2): the threshold bracket $(\mathrm{lo},\mathrm{hi}]$ at which the hot spot (C1) or the lumped neighbour (C2) reaches 255.7\textdegree C with the 21.39~s delivery, 0 where no delivery is needed. $f_\mathrm{t}$(C2): the fraction at which the lumped neighbour's crossing comes at the measured time ($^{b}$ the search ended at the threshold, its bracket given). $f_\mathrm{max}$: the fraction at which the far face peaks at the measured maximum ($^{a}$ exploratory). The last three columns give Stage 11's ranges where it ran: $f^*$(C2) over the posterior mean and the eight draws; the far face's peak at $f=0$ less the measured maximum over the central case, the four thermal draws and the two contact brackets; and the lumped neighbour's crossing at $f_\mathrm{t}$(C2) under the four kinetic draws, with the number that do not cross within 900~s.}
+\scriptsize
+\caption{The fractions of the ejected energy each test needs in the model, and Stage 11's ranges. (a) $f^*$(C1) and $f^*$(C2): the threshold bracket $(\mathrm{lo},\mathrm{hi}]$ at which the hot spot (C1) or the lumped neighbour (C2) reaches 255.7\textdegree C with the 21.39~s delivery, 0 where no delivery is needed. $f_\mathrm{t}$(C2): the fraction at which the lumped neighbour's crossing comes at the measured time ($^{b}$ the search ended at the threshold, its bracket given). $f_\mathrm{max}$: the fraction at which the far face peaks at the measured maximum ($^{a}$ exploratory). (b) Over the posterior mean and Stage 11's draws: $f^*$(C1) and $f^*$(C2) over the nine (four kinetic, four thermal, the mean), the far face's peak at $f=0$ less the measured maximum over the central case, the four thermal draws and the two contact brackets, and the lumped neighbour's crossing at $f_\mathrm{t}$(C2) under the four kinetic draws, with the number that do not cross within 900~s.}
 \label{tab:fractions}
-\begin{tabular}{lllllll}
+\begin{tabular}{llll}
+\multicolumn{4}{l}{(a) Stages 8 and 9, at the posterior mean} \\
 \toprule
-Test & $f^*$(C1) & $f^*$(C2) & $f_\mathrm{t}$(C2) or $f_\mathrm{max}$ & $f^*$(C2), & Far face at & C2 crossing, \\
- & & & & 8 draws & $f=0$ (K) & kinetic (s) \\
+Test & $f^*$(C1) & $f^*$(C2) & $f_\mathrm{t}$(C2) or $f_\mathrm{max}$ \\
 \midrule
-PT\_Exp1 & (0.15, 0.1625] & (0.45, 0.4625] & 0.075 &  &  &  \\
-PT\_Exp2 & (0, 0.0125] & (0.0125, 0.025] & 0.5625$^{a}$ &  &  &  \\
-PT\_Exp3 & (0.025, 0.0375] & (0.075, 0.0875] & 0 &  &  &  \\
-PT\_Exp4 & (0, 0.0125] & (0.0375, 0.05] & (0.0375, 0.040625]$^{b}$ &  &  &  \\
-PP\_Exp1 & 0 & 0 & 0.01875 &  &  &  \\
-PP\_Exp2 & (0, 0.0125] & (0.025, 0.0375] & 0.046875 &  &  &  \\
-PP\_Exp3 & (0, 0.0125] & (0.0125, 0.025] & 0 &  &  &  \\
-PP\_Exp4 & 0 & (0, 0.0125] & 0.0125 &  &  &  \\
-ST\_Exp1 & 0 & (0, 0.0125] & 0 &  &  &  \\
-ST\_Exp2 & 0 & (0.0125, 0.025] & 0 &  &  &  \\
-ST\_Exp3 & (0.075, 0.0875] & (0.225, 0.2375] & (0.23125, 0.234375]$^{b}$ &  &  &  \\
-ST\_Exp4 & 0 & (0, 0.0125] & (0.00625, 0.009375]$^{b}$ &  &  &  \\
-SP\_Exp1 & 0 & (0.0125, 0.025] & 0.01875 &  &  &  \\
-SP\_Exp2 & 0 & (0, 0.0125] & 0.025 &  &  &  \\
-SP\_Exp3 & 0 & 0 & 0.0016 &  &  &  \\
-SP\_Exp4 & (0, 0.0125] & (0.0375, 0.05] & 0.265625$^{a}$ &  &  &  \\
+PT\_Exp1 & (0.15, 0.1625] & (0.45, 0.4625] & 0.075 \\
+PT\_Exp2 & (0, 0.0125] & (0.0125, 0.025] & 0.5625$^{a}$ \\
+PT\_Exp3 & (0.025, 0.0375] & (0.075, 0.0875] & 0 \\
+PT\_Exp4 & (0, 0.0125] & (0.0375, 0.05] & (0.0375, 0.040625]$^{b}$ \\
+PP\_Exp1 & 0 & 0 & 0.01875 \\
+PP\_Exp2 & (0, 0.0125] & (0.025, 0.0375] & 0.046875 \\
+PP\_Exp3 & (0, 0.0125] & (0.0125, 0.025] & 0 \\
+PP\_Exp4 & 0 & (0, 0.0125] & 0.0125 \\
+ST\_Exp1 & 0 & (0, 0.0125] & 0 \\
+ST\_Exp2 & 0 & (0.0125, 0.025] & 0 \\
+ST\_Exp3 & (0.075, 0.0875] & (0.225, 0.2375] & (0.23125, 0.234375]$^{b}$ \\
+ST\_Exp4 & 0 & (0, 0.0125] & (0.00625, 0.009375]$^{b}$ \\
+SP\_Exp1 & 0 & (0.0125, 0.025] & 0.01875 \\
+SP\_Exp2 & 0 & (0, 0.0125] & 0.025 \\
+SP\_Exp3 & 0 & 0 & 0.0016 \\
+SP\_Exp4 & (0, 0.0125] & (0.0375, 0.05] & 0.265625$^{a}$ \\
+\bottomrule
+\end{tabular}
+\par\bigskip
+\begin{tabular}{lllll}
+\multicolumn{5}{l}{(b) Stage 11: ranges over the posterior mean and the draws} \\
+\toprule
+Test & $f^*$(C1) & $f^*$(C2) & Far face at & C2 crossing, \\
+ & & & $f=0$ (K) & kinetic draws (s) \\
+\midrule
+PT\_Exp1 & 0.14375--0.15625 & 0.39375--0.49375 & $-20.9$ to $-8.4$ &  \\
+PT\_Exp3 &  &  & $-17.6$ to $21.3$ &  \\
+PT\_Exp4 &  &  &  & 191--197 (2 none) \\
+PP\_Exp1 &  &  &  & 140--150 \\
+PP\_Exp2 &  &  &  & 138--155 \\
+PP\_Exp3 & 0--0.00625 & 0.00625--0.03125 & $16.6$ to $66.7$ &  \\
+PP\_Exp4 &  &  &  & 230--237 (2 none) \\
+ST\_Exp1 &  &  & $-1.0$ to $57.3$ &  \\
+ST\_Exp2 & 0 & 0--0.01875 & $-12.8$ to $41.2$ &  \\
+ST\_Exp3 &  &  &  & 77--80 (2 none) \\
+ST\_Exp4 &  &  &  & 233--240 (2 none) \\
+SP\_Exp1 &  &  &  & 201--275 \\
+SP\_Exp2 &  &  &  & 144--157 \\
+SP\_Exp3 & 0 & 0--0.00625 &  & 198--230 \\
 \bottomrule
 \end{tabular}
 \end{table}

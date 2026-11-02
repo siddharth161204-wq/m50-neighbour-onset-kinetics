@@ -621,7 +621,40 @@ def fig7(res, out):
     save(fig, out, "fig7")
 
 
-FIGS = {1: fig1, 2: fig2, 3: fig3, 4: fig4, 5: fig5, 6: fig6, 7: fig7}
+# ------------------------------------------------------------------------------------------------------------ F8
+def fig8(res, out):
+    import make_figure_stage11 as F11
+    fig = plt.figure(figsize=(W_IN, 5.6))
+    ax = fig.add_axes([0.12, 0.6, 0.86, 0.37])
+    F11.panel_fstar(ax, res, fs=FS_SMALL)
+    letter(ax, "a", x=-0.08)
+    ax = fig.add_axes([0.12, 0.1, 0.38, 0.38])
+    F11.panel_overshoot(ax, res, fs=FS_SMALL)
+    ax.set_ylabel("Far face at $f$ = 0, less\nthe measured maximum (K)")
+    for lab in ax.get_xticklabels():
+        lab.set_rotation(45); lab.set_ha("right"); lab.set_rotation_mode("anchor")
+    ax.legend_.remove()
+    hs = [Line2D([], [], color=INK, lw=1.6, label="central"),
+          Line2D([], [], ls="", marker="D", mfc=SURF, mec=AQUA, ms=3.6, label="thermal"),
+          Line2D([], [], ls="", marker="v", color=AQUA, ms=4, label="low"),
+          Line2D([], [], ls="", marker="^", color=AQUA, ms=4, label="high")]
+    ax.legend(handles=hs, loc="upper left", frameon=False, fontsize=FS_SMALL, handletextpad=0.3, borderaxespad=0.1,
+              labelspacing=0.25, ncol=2, columnspacing=0.6)
+    letter(ax, "b", x=-0.2)
+    ax = fig.add_axes([0.62, 0.1, 0.36, 0.38])
+    F11.panel_times(ax, res, fs=FS_SMALL)
+    ax.legend_.remove()
+    hs = [Line2D([], [], color=INK, lw=1.6, label="measured"),
+          Line2D([], [], color=BLUE, lw=1.6, label="mean"),
+          Line2D([], [], ls="", marker="o", color=BLUE, ms=3.6, label="draws"),
+          Line2D([], [], ls="", marker="^", mfc=SURF, mec=BLUE, ms=4, label="none")]
+    ax.legend(handles=hs, loc="upper left", bbox_to_anchor=(0.0, 0.86), frameon=False, fontsize=FS_SMALL,
+              handletextpad=0.3, borderaxespad=0.1, labelspacing=0.25, ncol=2, columnspacing=0.6)
+    letter(ax, "c", x=-0.2)
+    save(fig, out, "fig8")
+
+
+FIGS = {1: fig1, 2: fig2, 3: fig3, 4: fig4, 5: fig5, 6: fig6, 7: fig7, 8: fig8}
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()

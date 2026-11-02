@@ -93,9 +93,26 @@
    "failed": 0
   },
   "stage11": {
-   "records": 0,
+   "records": 216,
    "failed": 0
   }
  },
- "predictions": null
+ "predictions": {
+  "through_stage10": {
+   "committed": 64,
+   "held": 32,
+   "failed": 32,
+   "foreseen": 21
+  },
+  "stage11": {
+   "committed": 6,
+   "held": 2,
+   "failed": 4
+  },
+  "all": {
+   "committed": 70,
+   "held": 34,
+   "failed": 36
+  }
+ }
 }
