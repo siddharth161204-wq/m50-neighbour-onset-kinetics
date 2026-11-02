@@ -196,6 +196,29 @@ def t4(res, out):
     print("wrote t4_predictions.tex")
 
 
+def s2(res, out):
+    """The supplement's full prediction table: every prediction of Stages 1 to 11, its expectation and its verdict."""
+    p = os.path.join(ROOT, "manuscript", "data", "predictions_by_stage.csv")
+    if not os.path.exists(p):
+        print("no predictions_by_stage.csv yet")
+        return
+    esc = lambda x: (x or "").replace("&", r"\&").replace("%", r"\%").replace("_", r"\_").replace("#", r"\#")
+    lines = [r"\begin{longtable}{p{0.07\textwidth}p{0.05\textwidth}p{0.5\textwidth}p{0.14\textwidth}p{0.13\textwidth}}",
+             r"\caption{Every prediction, as its predictions file states it (shortened), with the expectation recorded before the "
+             r"runs and the verdict. Foreseen: a failure the predictions file recorded, before the runs, as already fixed by "
+             r"earlier records or an energy balance.}\label{tab:s-predictions}\\",
+             r"\toprule", r"Stage & & Prediction & Expectation & Verdict \\", r"\midrule", r"\endfirsthead",
+             r"\toprule", r"Stage & & Prediction & Expectation & Verdict \\", r"\midrule", r"\endhead"]
+    for r in rows(p):
+        v = r["verdict"]
+        if v == "failed" and r.get("foreseen") == "yes":
+            v = "failed, foreseen"
+        lines.append(f"{r['stage']} & {esc(r['prediction'])} & {esc(r['statement'])} & {esc(r['expectation'])} & {v} \\\\")
+    lines += [r"\bottomrule", r"\end{longtable}"]
+    open(os.path.join(out, "s2_predictions.tex"), "w").write("\n".join(lines) + "\n")
+    print("wrote s2_predictions.tex")
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--res", default=os.path.join(ROOT, "results"))
@@ -203,6 +226,6 @@ if __name__ == "__main__":
     ap.add_argument("--only", default="")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
-    only = [int(x) for x in a.only.split(",") if x] or [1, 2, 3, 4]
+    only = [int(x) for x in a.only.split(",") if x] or [1, 2, 3, 4, 5]
     for k in only:
-        {1: t1, 2: t2, 3: t3, 4: t4}[k](a.res, a.out)
+        {1: t1, 2: t2, 3: t3, 4: t4, 5: s2}[k](a.res, a.out)

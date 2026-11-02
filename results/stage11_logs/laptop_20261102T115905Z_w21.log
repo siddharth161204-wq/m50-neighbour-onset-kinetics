@@ -1,0 +1,13 @@
+2026-11-02T11:59:08Z s11_d40_central_hcentral_lum_M50_PP_Exp3_f0.025000000; lumped none; 1 s
+2026-11-02T11:59:08Z s11_mean_kr_max_hcentral_lum_M50_PT_Exp1_f0.462500000; lumped none; 0 s
+2026-11-02T11:59:08Z s11_d188_central_hcentral_lum_M50_PP_Exp1_f0.018750000; lumped 140.0 s; 0 s
+Traceback (most recent call last):
+  File "C:\Users\Siddharth\Downloads\m50_stage5\repo9\src\stage11_run.py", line 587, in <module>
+    work(a.worker, label=a.label)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Siddharth\Downloads\m50_stage5\repo9\src\stage11_run.py", line 485, in work
+    if not RUN._claim(claim, worker):
+           ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Siddharth\Downloads\m50_stage5\repo9\src\v12_run.py", line 275, in _claim
+    fd = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\Siddharth\\Downloads\\m50_stage5\\repo9\\src\\..\\results\\stage11_runs\\s11_d83_central_hcentral_lum_M50_PP_Exp1_f0.018750000.claim'

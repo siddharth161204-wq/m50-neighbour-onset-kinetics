@@ -1,0 +1,36 @@
+test,thermal,contact,M_C,peak_f0_C,overshoot_K,exceeds,f_max_zero,source
+M50_PT_Exp1,central,central,71.0,60.18424702518479,-10.815752974815211,False,False,stage10_fmax_nodes.csv (Stage 7 and Stage 9 runs)
+M50_PT_Exp1,kr_min,central,71.0,59.32261741711568,-11.67738258288432,False,False,s11_mean_kr_min_hcentral_both_ns_M50_PT_Exp1_f0.000000000
+M50_PT_Exp1,kr_max,central,71.0,60.00194023150857,-10.99805976849143,False,False,s11_mean_kr_max_hcentral_both_ns_M50_PT_Exp1_f0.000000000
+M50_PT_Exp1,c_min,central,71.0,62.579307498233504,-8.420692501766496,False,False,s11_mean_c_min_hcentral_both_ns_M50_PT_Exp1_f0.000000000
+M50_PT_Exp1,c_max,central,71.0,58.83595004527194,-12.164049954728057,False,False,s11_mean_c_max_hcentral_both_ns_M50_PT_Exp1_f0.000000000
+M50_PT_Exp1,central,low,71.0,50.06083453637541,-20.93916546362459,False,False,pertest_M50_PT_Exp1_parallel_hlow_gcentral_tau21.39_E8.98
+M50_PT_Exp1,central,high,71.0,61.8755921070275,-9.1244078929725,False,False,pertest_M50_PT_Exp1_parallel_hhigh_gcentral_tau21.39_E8.98
+M50_PT_Exp3,central,central,118.0,131.75555970977598,13.75555970977598,True,True,stage10_fmax_nodes.csv (Stage 7 and Stage 9 runs)
+M50_PT_Exp3,kr_min,central,118.0,128.98950754230384,10.98950754230384,True,True,s11_mean_kr_min_hcentral_both_ns_M50_PT_Exp3_f0.000000000
+M50_PT_Exp3,kr_max,central,118.0,131.1874116558813,13.187411655881306,True,True,s11_mean_kr_max_hcentral_both_ns_M50_PT_Exp3_f0.000000000
+M50_PT_Exp3,c_min,central,118.0,139.32311050609275,21.323110506092746,True,True,s11_mean_c_min_hcentral_both_ns_M50_PT_Exp3_f0.000000000
+M50_PT_Exp3,c_max,central,118.0,127.48120841718566,9.481208417185655,True,True,s11_mean_c_max_hcentral_both_ns_M50_PT_Exp3_f0.000000000
+M50_PT_Exp3,central,low,118.0,100.3890385857876,-17.610961414212397,False,False,pertest_M50_PT_Exp3_parallel_hlow_gcentral_tau21.39_E31.59
+M50_PT_Exp3,central,high,118.0,137.87334398011387,19.873343980113873,True,True,pertest_M50_PT_Exp3_parallel_hhigh_gcentral_tau21.39_E31.59
+M50_PP_Exp3,central,central,105.0,161.32166732187613,56.321667321876134,True,True,stage10_fmax_nodes.csv (Stage 7 and Stage 9 runs)
+M50_PP_Exp3,kr_min,central,105.0,157.57371666056514,52.57371666056514,True,True,s11_mean_kr_min_hcentral_both_ns_M50_PP_Exp3_f0.000000000
+M50_PP_Exp3,kr_max,central,105.0,160.54524879699386,55.54524879699386,True,True,s11_mean_kr_max_hcentral_both_ns_M50_PP_Exp3_f0.000000000
+M50_PP_Exp3,c_min,central,105.0,171.7370315963899,66.7370315963899,True,True,s11_mean_c_min_hcentral_both_ns_M50_PP_Exp3_f0.000000000
+M50_PP_Exp3,c_max,central,105.0,155.54525220122684,50.545252201226845,True,True,s11_mean_c_max_hcentral_both_ns_M50_PP_Exp3_f0.000000000
+M50_PP_Exp3,central,low,105.0,121.62874117322332,16.628741173223318,True,True,pertest_M50_PP_Exp3_parallel_hlow_gcentral_tau21.39_E43.90
+M50_PP_Exp3,central,high,105.0,169.9245365691957,64.92453656919571,True,True,s11_mean_central_hhigh_both_ns_M50_PP_Exp3_f0.000000000
+M50_ST_Exp1,central,central,128.0,172.91725553336346,44.91725553336346,True,True,stage10_fmax_nodes.csv (Stage 7 and Stage 9 runs)
+M50_ST_Exp1,kr_min,central,128.0,168.50664907687428,40.50664907687428,True,True,s11_mean_kr_min_hcentral_both_ns_M50_ST_Exp1_f0.000000000
+M50_ST_Exp1,kr_max,central,128.0,172.05148928385006,44.05148928385006,True,True,s11_mean_kr_max_hcentral_both_ns_M50_ST_Exp1_f0.000000000
+M50_ST_Exp1,c_min,central,128.0,185.3186887464948,57.318688746494786,True,True,s11_mean_c_min_hcentral_both_ns_M50_ST_Exp1_f0.000000000
+M50_ST_Exp1,c_max,central,128.0,166.30318453063398,38.303184530633985,True,True,s11_mean_c_max_hcentral_both_ns_M50_ST_Exp1_f0.000000000
+M50_ST_Exp1,central,low,128.0,126.96414526511182,-1.0358547348881757,False,True,pertest_M50_ST_Exp1_series_hlow_gcentral_tau21.39_E51.11
+M50_ST_Exp1,central,high,128.0,183.67959812718271,55.679598127182715,True,True,s11_mean_central_hhigh_both_ns_M50_ST_Exp1_f0.000000000
+M50_ST_Exp2,central,central,133.0,163.44265453683943,30.442654536839427,True,True,stage10_fmax_nodes.csv (Stage 7 and Stage 9 runs)
+M50_ST_Exp2,kr_min,central,133.0,159.41413351177425,26.414133511774253,True,True,s11_mean_kr_min_hcentral_both_ns_M50_ST_Exp2_f0.000000000
+M50_ST_Exp2,kr_max,central,133.0,162.6734765188097,29.673476518809707,True,True,s11_mean_kr_max_hcentral_both_ns_M50_ST_Exp2_f0.000000000
+M50_ST_Exp2,c_min,central,133.0,174.21716551199728,41.21716551199728,True,True,s11_mean_c_min_hcentral_both_ns_M50_ST_Exp2_f0.000000000
+M50_ST_Exp2,c_max,central,133.0,157.42482689791376,24.42482689791376,True,True,s11_mean_c_max_hcentral_both_ns_M50_ST_Exp2_f0.000000000
+M50_ST_Exp2,central,low,133.0,120.15382039441471,-12.846179605585291,False,False,pertest_M50_ST_Exp2_series_hlow_gcentral_tau21.39_E46.46
+M50_ST_Exp2,central,high,133.0,172.95059621187585,39.95059621187585,True,True,s11_mean_central_hhigh_both_ns_M50_ST_Exp2_f0.000000000

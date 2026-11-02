@@ -1,0 +1,97 @@
+{
+ "V1": {
+  "pass": true,
+  "kinetic": {
+   "5": 188,
+   "50": 83,
+   "151": 40,
+   "196": 184
+  },
+  "thermal": {
+   "kr_min": 2,
+   "kr_max": 1,
+   "c_min": 20,
+   "c_max": 27
+  },
+  "onsets_s": {
+   "188": 6.248589710752523,
+   "83": 10.230756055919572,
+   "40": 16.040798608938687,
+   "184": 17.015686859100438
+  }
+ },
+ "V2": {
+  "pass": true,
+  "largest": {
+   "res": 6.1288263557105344e-12,
+   "lum": 3.5567133919470325e-12,
+   "delivery": 0.0
+  },
+  "counts": {
+   "res": 88,
+   "lum": 216,
+   "deliveries": 214,
+   "whole": 189
+  },
+  "duplicate_points": {
+   "n": 0,
+   "largest_s": 0.0,
+   "disagreeing": []
+  }
+ },
+ "V3": {
+  "pass": true,
+  "largest_relative_difference": 5.551115123125783e-17,
+  "disagreeing": [],
+  "compared": "E1, E2, E3 (zeros), E4"
+ },
+ "V4": {
+  "pass": true,
+  "runs": {
+   "c1_M50_PP_Exp3_f0.012500000": {
+    "repeat": "s11_mean_central_hcentral_both_M50_PP_Exp3_f0.012500000",
+    "machine": "author-laptop",
+    "resolved": {
+     "same_outcome": true,
+     "crossing_diff_s": 8.526512829121202e-14,
+     "peak_diff_K": 1.0231815394945443e-12,
+     "toward_peak_diff_K": 2.2737367544323206e-13,
+     "away_peak_diff_K": 7.958078640513122e-13
+    },
+    "lumped": {
+     "same_outcome": true,
+     "crossing_diff_s": 0.0,
+     "peak_diff_K": 0.0
+    },
+    "pass": true
+   },
+   "c2_M50_PT_Exp1_f0.462500000": {
+    "repeat": "s11_mean_central_hcentral_lum_M50_PT_Exp1_f0.462500000",
+    "machine": "author-laptop",
+    "lumped": {
+     "same_outcome": true,
+     "crossing_diff_s": 0.0,
+     "peak_diff_K": 0.0
+    },
+    "pass": true
+   },
+   "s9_tri21_fresh_both_ns_M50_SP_Exp3_f0.001575000": {
+    "repeat": "s11_mean_central_hcentral_both_ns_M50_SP_Exp3_f0.001575000",
+    "machine": "author-laptop",
+    "resolved": {
+     "same_outcome": true,
+     "crossing_diff_s": 0.0,
+     "peak_diff_K": 0.0,
+     "toward_peak_diff_K": 0.0,
+     "away_peak_diff_K": 0.0
+    },
+    "lumped": {
+     "same_outcome": true,
+     "crossing_diff_s": 0.0,
+     "peak_diff_K": 0.0
+    },
+    "pass": true
+   }
+  }
+ }
+}

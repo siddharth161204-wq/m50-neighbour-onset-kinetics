@@ -117,6 +117,8 @@ def panel_overshoot(ax, res, fs=7.0):
             v = num(r["overshoot_K"]) if r else None
             if v is not None:
                 ax.scatter([i + x], [v], s=18, marker=mk, color=AQUA, zorder=3, lw=0)
+    vals = [num(r["overshoot_K"]) for r in ov if num(r["overshoot_K"]) is not None]
+    ax.set_ylim(min(vals) - 6.0, max(vals) + 30.0)
     ax.set_xticks(range(len(tests)))
     ax.set_xticklabels([SHORT[t] for t in tests])
     ax.set_xlim(-0.5, len(tests) - 0.5)

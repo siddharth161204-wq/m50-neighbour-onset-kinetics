@@ -1,0 +1,293 @@
+{
+ "verdicts": {
+  "P1": "failed",
+  "P2": "held",
+  "P3": "held",
+  "P4": "failed",
+  "P5": "failed",
+  "P6": "failed"
+ },
+ "predictions": {
+  "P1": {
+   "criterion": "C2",
+   "holds": false,
+   "detail": {
+    "M50_PT_Exp1": {
+     "d188": {
+      "f_star": 0.45625000000000004,
+      "within": true
+     },
+     "d83": {
+      "f_star": 0.45625000000000004,
+      "within": true
+     },
+     "d40": {
+      "f_star": 0.46875,
+      "within": true
+     },
+     "d184": {
+      "f_star": 0.46875,
+      "within": true
+     },
+     "mean": 0.45625000000000004
+    },
+    "M50_PP_Exp3": {
+     "d188": {
+      "f_star": 0.018750000000000003,
+      "within": true
+     },
+     "d83": {
+      "f_star": 0.018750000000000003,
+      "within": true
+     },
+     "d40": {
+      "f_star": 0.03125,
+      "within": true
+     },
+     "d184": {
+      "f_star": 0.03125,
+      "within": true
+     },
+     "mean": 0.018750000000000003
+    },
+    "M50_ST_Exp2": {
+     "d188": {
+      "f_star": 0.00625,
+      "within": false
+     },
+     "d83": {
+      "f_star": 0.00625,
+      "within": false
+     },
+     "d40": {
+      "f_star": 0.018750000000000003,
+      "within": true
+     },
+     "d184": {
+      "f_star": 0.018750000000000003,
+      "within": true
+     },
+     "mean": 0.018750000000000003
+    },
+    "M50_SP_Exp3": {
+     "d188": {
+      "f_star": 0.0,
+      "within": true
+     },
+     "d83": {
+      "f_star": 0.0,
+      "within": true
+     },
+     "d40": {
+      "f_star": 0.0,
+      "within": true
+     },
+     "d184": {
+      "f_star": 0.0,
+      "within": true
+     },
+     "mean": 0.0
+    }
+   },
+   "expectation": "likely"
+  },
+  "P2": {
+   "criterion": "C1",
+   "holds": true,
+   "detail": {
+    "M50_PT_Exp1": {
+     "d188": {
+      "f_star": 0.15625,
+      "within": true
+     },
+     "d83": {
+      "f_star": 0.15625,
+      "within": true
+     },
+     "d40": {
+      "f_star": 0.15625,
+      "within": true
+     },
+     "d184": {
+      "f_star": 0.15625,
+      "within": true
+     },
+     "mean": 0.15625
+    },
+    "M50_PP_Exp3": {
+     "d188": {
+      "f_star": 0.00625,
+      "within": true
+     },
+     "d83": {
+      "f_star": 0.00625,
+      "within": true
+     },
+     "d40": {
+      "f_star": 0.00625,
+      "within": true
+     },
+     "d184": {
+      "f_star": 0.00625,
+      "within": true
+     },
+     "mean": 0.00625
+    },
+    "M50_ST_Exp2": {
+     "d188": {
+      "f_star": 0.0,
+      "within": true
+     },
+     "d83": {
+      "f_star": 0.0,
+      "within": true
+     },
+     "d40": {
+      "f_star": 0.0,
+      "within": true
+     },
+     "d184": {
+      "f_star": 0.0,
+      "within": true
+     },
+     "mean": 0.0
+    },
+    "M50_SP_Exp3": {
+     "d188": {
+      "f_star": 0.0,
+      "within": true
+     },
+     "d83": {
+      "f_star": 0.0,
+      "within": true
+     },
+     "d40": {
+      "f_star": 0.0,
+      "within": true
+     },
+     "d184": {
+      "f_star": 0.0,
+      "within": true
+     },
+     "mean": 0.0
+    }
+   },
+   "expectation": "uncertain"
+  },
+  "P3": {
+   "holds": true,
+   "range_across_tests_J": {
+    "d188": 12718.167926152093,
+    "d83": 12718.167926152093,
+    "d40": 13066.61088303297,
+    "d184": 13066.61088303297,
+    "kr_min": 13066.61088303297,
+    "kr_max": 13066.61088303297,
+    "c_min": 10975.953141747697,
+    "c_max": 12709.568448504882,
+    "mean": 12718.167926152093
+   },
+   "largest_within_test_band_J": 3407.6907186592534,
+   "largest_band_test": "M50_PP_Exp3",
+   "expectation": "likely"
+  },
+  "P4": {
+   "holds": false,
+   "detail": {
+    "M50_PT_Exp3": {
+     "draws_exceeding": 4,
+     "low_contact_exceeds": false,
+     "high_contact_exceeds": true,
+     "holds": false
+    },
+    "M50_PP_Exp3": {
+     "draws_exceeding": 4,
+     "low_contact_exceeds": true,
+     "high_contact_exceeds": true,
+     "holds": true
+    },
+    "M50_ST_Exp1": {
+     "draws_exceeding": 4,
+     "low_contact_exceeds": false,
+     "high_contact_exceeds": true,
+     "holds": false
+    },
+    "M50_ST_Exp2": {
+     "draws_exceeding": 4,
+     "low_contact_exceeds": false,
+     "high_contact_exceeds": true,
+     "holds": false
+    }
+   },
+   "expectation": "uncertain"
+  },
+  "P5": {
+   "holds": false,
+   "detail": {
+    "M50_PT_Exp1": {
+     "band_kinetic": 0.012499999999999956,
+     "band_thermal": 0.09999999999999998,
+     "narrower": false
+    },
+    "M50_PP_Exp3": {
+     "band_kinetic": 0.012499999999999997,
+     "band_thermal": 0.025,
+     "narrower": false
+    },
+    "M50_ST_Exp2": {
+     "band_kinetic": 0.012500000000000002,
+     "band_thermal": 0.018750000000000003,
+     "narrower": false
+    },
+    "M50_SP_Exp3": {
+     "band_kinetic": 0.0,
+     "band_thermal": 0.00625,
+     "narrower": false
+    }
+   },
+   "expectation": "uncertain"
+  },
+  "P6": {
+   "holds": false,
+   "tests_moving": 1,
+   "detail": {
+    "M50_PP_Exp1": {
+     "draws_moving": [],
+     "complete": true
+    },
+    "M50_PP_Exp2": {
+     "draws_moving": [],
+     "complete": true
+    },
+    "M50_PP_Exp4": {
+     "draws_moving": [
+      "d40",
+      "d184"
+     ],
+     "complete": true
+    },
+    "M50_SP_Exp1": {
+     "draws_moving": [],
+     "complete": true
+    },
+    "M50_SP_Exp2": {
+     "draws_moving": [],
+     "complete": true
+    },
+    "M50_SP_Exp3": {
+     "draws_moving": [],
+     "complete": true
+    }
+   },
+   "six": [
+    "M50_PP_Exp1",
+    "M50_PP_Exp2",
+    "M50_PP_Exp4",
+    "M50_SP_Exp1",
+    "M50_SP_Exp2",
+    "M50_SP_Exp3"
+   ],
+   "expectation": "likely"
+  }
+ }
+}

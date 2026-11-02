@@ -1,0 +1,154 @@
+\documentclass[preprint,12pt]{elsarticle}
+% Supplementary material of manuscript/main.tex (Brief 20, M5). Its numbers come from the results files named in each
+% section; the prediction table is written by src/make_manuscript_tables.py from manuscript/data/predictions_by_stage.csv.
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{textcomp}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\newcommand{\degC}{\,\textdegree C}
+\newcommand{\fs}{f^{*}}
+\newcommand{\ft}{f_{\mathrm{t}}}
+\newcommand{\fmax}{f_{\mathrm{max}}}
+\newcommand{\Eb}{E_{\mathrm{b}}}
+\newcommand{\Ee}{E_{\mathrm{e}}}
+\newcommand{\PH}[1]{\textcolor{red}{[#1]}}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\biboptions{sort&compress}
+
+\begin{document}
+
+\begin{frontmatter}
+\title{Supplementary material for: Neither conduction nor a fixed delivered energy fraction reproduces sixteen two-cell propagation tests: a pre-registered kinetic study}
+\author{Siddharth Satte}
+\address{Independent researcher, Pune, India}
+\end{frontmatter}
+
+Every record, script and decision named here is in the study's repository at version 1.7.0~\cite{Satte2026repo}; the decisions log is \texttt{DECISIONS.md}, and an entry is cited by its number (D1 to D118).
+
+\section{The digitisation of the published histories}
+\label{sec:s-digitisation}
+
+No raw temperature series of the two-cell tests is published: the Battery Failure Databank holds one row of summary values per single-cell test and no multi-cell test, and the article's data statement offers the data on request (D102 (1)). The supplement of Fransson et al.~\cite{Fransson2024} draws the thermocouple records of two tests in its Figure~10: (a) PT\_Exp4, which propagated, and (b) PP\_Exp3, which did not. The figure is a vector drawing, each of its four curves a stroked path of 7,359 to 8,307 points, so the series were read out of the paths rather than off pixels.
+
+The reading (D102 (2), \texttt{inputs/fransson2024/extract\_fig10.py}) was made twice, by separate code and separate calibrations. The first uses the path objects of pdfplumber, with each panel's axes fitted by least squares to its 21 vertical and 8 horizontal major grid lines, labelled by the tick labels read as text; the second parses the figure's drawing operators with pypdf and takes the axes from the plot area's frame. Each reading is resampled every 0.5~s from 0 to 500~s. The two differ by at most 0.0005~K on PT\_Exp4's neighbour curve and 0.0002~K on PP\_Exp3's; the figure's resolution, half the curves' stroke width, is 2.47 and 2.46~K and 0.45~s, and the recorded uncertainty is the larger of the two. The time axis starts at the trigger's runaway, from which the paper counts the time to propagation; the figure marks PT\_Exp4's onset at 271.50~s (Table~3 of the paper: 272~s).
+
+A check (V1 of Stage~10, D102 (5)) rendered the page at 1200~dpi without anti-aliasing, calibrated the axes on the grid lines found in the pixels and traced the dashed curve column by column, at 164 and 188 whole seconds: every pixel reading lies within the recorded uncertainty plus one pixel, at most 3.03 and 2.45~K from the vector reading. PT\_Exp4's record: 32.2\degC{} at 0~s; a spike to 102.0\degC{} at 3.1~s as the trigger runs away, back to 79.9\degC{} at 8.4~s; 141.0\degC{} at 45~s; a slow rise to 197.3\degC{} at 271.50~s; then the jump. The main text reads the first 8.5~s as the thermocouple's exposure at the trigger's runaway rather than the can's temperature (Fig.~7a). PP\_Exp3's plotted maxima fall 2.9 and 14.6~K short of the paper's table, more than the figure's resolution, which the paper does not explain.
+
+\section{The predictions of Stages 1 to 11}
+\label{sec:s-predictions}
+
+\PH{the full prediction table, written from manuscript/data/predictions\_by\_stage.csv}
+
+\section{Mesh and step convergence}
+\label{sec:s-convergence}
+
+Each stage that ran the resolved neighbour halved every mesh spacing, and separately every step limit, on one run near its threshold, and accepted the configuration if the hot spot's peak rise (or a crossing time) moved by less than its acceptance (Table~\ref{tab:s-convergence}). The passive integrations of Stages 1, 3 and 4 halved the tolerances, the largest step and the evaluation grid instead.
+
+\begin{table}[h]
+\centering
+\footnotesize
+\caption{Mesh and step convergence, by stage (the repository's verification table).}
+\label{tab:s-convergence}
+\begin{tabular}{p{0.32\textwidth}p{0.3\textwidth}p{0.28\textwidth}}
+\toprule
+Stage and run & Mesh spacing halved & Step limits halved \\
+\midrule
+1: synthetic histories and archived cases & \multicolumn{2}{l}{onsets move by at most $1.1\times10^{-4}$ of themselves} \\
+2: headline case, 1 and 4~K limits halved & & band entries move by at most $7.5\times10^{-5}$ of themselves \\
+3: five draws on nine cases & \multicolumn{2}{l}{first times move by at most $6.7\times10^{-5}$ of themselves} \\
+5: central case, 30~s, both connections & 0.27\,\% and 0.31\,\% & 0.0035\,\% and 0.0040\,\% \\
+6: matched case, both connections & 0.28\,\% and 0.32\,\% & 0.0033\,\% and 0.0037\,\% \\
+7: event run of PT\_Exp4, 65.52~kJ & 0.15\,\% & 0.0008\,\% \\
+8: PT\_Exp1 at $f=0.1$ (145,195 nodes when halved) & 0.52\,\% & 0.0021\,\% \\
+9: PP\_Exp3, 240~s delivery at 0.0125 & 0.32\,\% & 0.0006\,\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{The energy accounts}
+\label{sec:s-energy}
+
+Every run's energy account closes: the heat taken in through the boundary paths and the reaction heat (and, from Stage~7, the event and the delivered energy) equal the change in stored heat to the residuals of Table~\ref{tab:s-energy}, against an acceptance of $10^{-9}$ of the heat taken in. Every delivery equals $f\,\Ee$, or the pulse's integral up to a run's stop.
+
+\begin{table}[h]
+\centering
+\footnotesize
+\caption{The largest energy residual of each stage's runs, as a fraction of the heat taken in.}
+\label{tab:s-energy}
+\begin{tabular}{lll}
+\toprule
+Stage & Runs & Largest residual \\
+\midrule
+2 & 7 & $1.35\times10^{-12}$ \\
+3 (thermal draws) & 30 & $6.3\times10^{-12}$ \\
+5 & 5,248 & $8.5\times10^{-12}$ \\
+6 & 506 & $8.5\times10^{-12}$ \\
+7 & 186 & $3.42\times10^{-12}$ (resolved), $4.34\times10^{-12}$ (lumped) \\
+8 & 230 & $1.97\times10^{-11}$ (resolved), $3.24\times10^{-12}$ (lumped) \\
+9 & 670 & $6.8\times10^{-12}$ (resolved), $4.0\times10^{-12}$ (lumped) \\
+10 & 30 & $2.5\times10^{-12}$ (resolved), $3.3\times10^{-12}$ (lumped) \\
+11 & \PH{n} & \PH{V2} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{The delivery's brackets}
+\label{sec:s-delivery}
+
+The registered delivery is a triangular pulse of $f\,\Ee$ over 21.39~s through the half of the neighbour's can facing the trigger. Stage~8 ran its brackets on the three tests nearest the median trigger energy and on PT\_Exp1 (D79, not registered). A delivery over 10~s lowers PT\_Exp1's $\fs$(C1) to $(0.1, 0.1125]$, and one over 60~s raises it to $(0.275, 0.2875]$; delivering the same energy through the quarter of the facing half nearest the cap lowers it to $(0.0375, 0.05]$. The ratio's two ends scale every $\fs$ by 0.75 to 1.40. In the eight parallel tests, Joule heat of 20\,\% of the stored 65.52~kJ over the trigger's release takes every hot spot to 255.7\degC{} with no delivery (D80). With the gas layer between the roll and the can of Hoelle, Zimmermann and Hinrichsen~\cite{Hoelle2023} (their Eq.~28 and 29, Tables~V and VI), at $f=0.2$ in the three tests nearest the median trigger, the hot spot peaks at 192.4 to 196.5\degC{} and does not reach 255.7\degC{} within 900~s, where without the layer it does at 3.5 to 3.7~s, while the can reaches 1,886 to 1,924\degC{} with no melting or venting in the model (D82). Stage~9 delivered the same energy as a constant power over 120, 240 or 360~s from the start of the release (D93): 1.1 to 70.0~W reproduces seven or eight of the nine measured times through C2. Stage~10 bracketed the thermocouple's angle with three nodes at mid-length (D102 (4)): facing the trigger (0.33\textdegree, 0.06~mm from the line of contact along the surface), at the side (88.28\textdegree, 16.25~mm) and at the far face (180\textdegree, 33.14~mm).
+
+\section{The survey of other datasets}
+\label{sec:s-survey}
+
+Stage~10 surveyed the published datasets with per-test outcomes and times for cell-to-cell propagation in cells in contact or at a stated spacing, and asked whether this study's parameters cover their cell without an invented value: an LG M50, or a 21700 NMC cell with published thermal and kinetic parameters (\texttt{results/stage10\_survey.md}, D106 (1)). It made 26 web searches and read each candidate on its publisher's or repository's page where that page could be fetched. Table~\ref{tab:s-survey} lists what it found. One other dataset has a cell this study's parameters cover: Read, Jones and Marco~\cite{Read2024}, seven LG M50 cells 3~mm apart. Its three propagated tests followed the trigger's sidewall rupture, the neighbours reaching 132\degC{} at their surface 2 to 5~s after the penetration, a path this model does not represent; the survey stopped there, and the decision on a further stage is taken separately.
+
+\begin{table}[h]
+\centering
+\footnotesize
+\caption{The datasets the survey found (Stage~10, Part~D).}
+\label{tab:s-survey}
+\begin{tabular}{p{0.3\textwidth}p{0.22\textwidth}p{0.18\textwidth}p{0.2\textwidth}}
+\toprule
+Dataset & Cell & Arrangement & This study's parameters cover the cell \\
+\midrule
+Fransson et al. 2024~\cite{Fransson2024}, M50 tests (this study) & LG M50, NMC & two cells in contact & yes \\
+Fransson et al. 2024, P42A tests & Molicel P42A, NCA & two cells in contact & no \\
+Read, Jones and Marco 2024~\cite{Read2024} & LG M50, NMC 811 & seven cells, 3~mm gaps & yes \\
+Read et al. 2024, J. Energy Storage 95, 112491 & unnamed, M50 specification & 34 cells, 1~mm gaps & not established \\
+Allen et al. 2025, J. Power Sources 660, 238522 & Molicel P45B & seven cells, 3~mm & no \\
+Lamb et al. 2015~\cite{Lamb2015} & LiCoO$_2$, 18650 and pouch & cells in contact & no \\
+Said, Lee, Stoliarov and Marshall 2019~\cite{Said2019} & LiCoO$_2$, 18650 & arrays & no \\
+Hoelle, Zimmermann and Hinrichsen 2023~\cite{Hoelle2023} & prismatic & five-cell stack & no \\
+Sch\"oberl et al. 2024, eTransportation 19, 100305 & prismatic NMC and LFP & braced stack & no \\
+Torres-Castro et al. 2020, J. Electrochem. Soc. 167, 090515 & pouch & stacks & no \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{The decisions that fix an input}
+\label{sec:s-decisions}
+
+The entries of the decisions log that fix an input of a result reported in the main text, by number:
+
+\begin{itemize}
+\item The kinetics: the model and why (D1), the posterior mean (D3), the reactant masses (D4), the separator's heat sign (D5), the neighbour's density and heat capacity (D7), the histories integrated (D9), the reactive scheme and where the reactants sit (D13, D14).
+\item The posterior and the thermal draws: the 200 kinetic draws (D22), the 30 thermal draws and their published ranges (D27).
+\item The tests and the configuration with the cans in contact: the measurements (D33), the reading of the time to propagation (D34), propagation in the model (D35), the contact (D36), the tabs (D37), radiation, room losses, trigger and ambient (D38), the thermocouple (D39), the reaction heat (D40), the mesh (D42).
+\item The trigger: the release durations (D52), the Databank's energies (D53), the matched case (D54), one trigger per test (D65), the aged SEI and the event (D66 to D68), the separator's spread (D71).
+\item The delivery and the thresholds: the ratio, the ejected energy and the delivery (D77), the search (D78), the electrical path (D80), the common fractions (D81), the gas layer (D82).
+\item The readings: what the paper measured (D89), $\ft$ (D91), $\fmax$ (D92), the long deliveries (D93).
+\item The history, the nodes and the held-out scores: the digitisation and the nodes (D102), Part~B (D104), Part~C (D105).
+\item The bands: the draws, the tests and the runs that exist (D111), the design (D112 to D115), the scoring rules (D116).
+\end{itemize}
+
+\bibliographystyle{elsarticle-num}
+\bibliography{references}
+
+\end{document}
