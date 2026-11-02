@@ -24,6 +24,41 @@ def num(s):
     return None if s in ("", None, "None") else float(s)
 
 
+def exact_e4():
+    """E4's p-values by full enumeration (D119 (c)): every relabelling of the sixteen outcomes (C(16, 9) = 11,440) and
+    every permutation of the nine times (9! = 362,880), the share with |rho| at least the observed's."""
+    import itertools
+    import numpy as np
+    from scipy.stats import rankdata
+    rows = json.load(open(os.path.join(RES, "stage10_heldout.json")))["table"]
+
+    def rho(x, y):
+        rx, ry = rankdata(x), rankdata(y)
+        rx, ry = rx - rx.mean(), ry - ry.mean()
+        return float((rx * ry).sum() / np.sqrt((rx * rx).sum() * (ry * ry).sum()))
+    E = np.array([r["E_b_J"] for r in rows])
+    y = np.array([1.0 if r["y"] else 0.0 for r in rows])
+    r0 = rho(E, y)
+    n1 = int(y.sum())
+    cnt = tot = 0
+    for idx in itertools.combinations(range(len(rows)), n1):
+        yy = np.zeros(len(rows)); yy[list(idx)] = 1.0
+        tot += 1
+        cnt += abs(rho(E, yy)) >= abs(r0) - 1e-12
+    prop = [r for r in rows if r["y"]]
+    Ep, tp = np.array([r["E_b_J"] for r in prop]), np.array([r["time_s"] for r in prop])
+    rt = rho(Ep, tp)
+    rE = rankdata(Ep) - rankdata(Ep).mean()
+    c2 = t2 = 0
+    for perm in itertools.permutations(rankdata(tp)):
+        pp = np.array(perm) - np.mean(perm)
+        r = float((rE * pp).sum() / np.sqrt((rE * rE).sum() * (pp * pp).sum()))
+        t2 += 1
+        c2 += abs(r) >= abs(rt) - 1e-12
+    return {"outcome": {"rho": r0, "p": cnt / tot, "count": cnt, "of": tot},
+            "time": {"rho": rt, "p": c2 / t2, "count": c2, "of": t2}}
+
+
 def main():
     th = rows("stage11_thresholds.csv")
     ov = rows("stage11_overshoot.csv")
@@ -37,8 +72,9 @@ def main():
     therm = list(IN.THERMAL_DRAWS)
     out = {"what": "Stage 11's quoted numbers (brief of 2 November; predictions_stage11.md; DECISIONS.md D111 to D118)"}
 
-    out["draws"] = {r["label"]: {k: (num(v) if k not in ("kind", "label") else v) for k, v in r.items() if v != ""}
-                    for r in dr}
+    ints = ("stage3_draw", "rank", "an_ele_column", "separator_column", "ncm811_column")
+    out["draws"] = {r["label"]: {k: (v if k in ("kind", "label") else int(float(v)) if k in ints else num(v))
+                                 for k, v in r.items() if v != ""} for r in dr}
     walls = [r["wall_s"] for r in recs if not r.get("failed")]
     out["runs"] = {"records": len(recs), "failed": sum(1 for r in recs if r.get("failed")),
                    "resolved": sum(1 for r in recs if r.get("resolved")), "lumped": sum(1 for r in recs if r.get("lumped")),
@@ -122,6 +158,23 @@ def main():
                     "no_crossing_tests": sorted({t for t in per if per[t]["no_crossing"]}),
                     "no_crossing_draws": sorted({d for t in per for d in per[t]["no_crossing"]})}
 
+    # the clock's uncrossed runs: how close they came (D119 (c))
+    unc = []
+    for r in recs:
+        if r.get("failed") or not r.get("lumped") or r["thermal"] != "central" or r["h"] != "central":
+            continue
+        if r["kin"] == "mean" or r["lumped"]["propagated"]:
+            continue
+        key = (r["test"], round(r["f"], 9))
+        if key in {(t, round(v["f"], 9)) for t, v in per.items()}:
+            unc.append({"id": r["id"], "peak_C": r["lumped"]["peak_C"], "t_peak_s": r["lumped"]["t_peak_s"]})
+    out["clock"]["uncrossed_runs"] = unc
+    if unc:
+        out["clock"]["uncrossed_peak_C_range"] = [min(u["peak_C"] for u in unc), max(u["peak_C"] for u in unc)]
+        out["clock"]["uncrossed_t_peak_s_range"] = [min(u["t_peak_s"] for u in unc), max(u["t_peak_s"] for u in unc)]
+    out["clock"]["p6_margin_s"] = 60.0 - max(abs(x) for t in stable for x in per[t]["shift_from_mean_s"].values()
+                                             if x is not None)
+
     # E
     e1 = B["E1"]["C2"]
     rng = {k: v for k, v in e1["range_across_tests_J"].items()}
@@ -141,7 +194,8 @@ def main():
                  "C1": {"largest_factor": B["E2"]["C1"]["largest_factor"],
                         "largest_factor_test": B["E2"]["C1"]["largest_factor_test"]}}
     out["E3"] = {k: {"verdict": v["verdict"], "per_test": v["per_test"]} for k, v in B["E3"].items()}
-    out["E4"] = B["E4"]
+    out["E4"] = dict(B["E4"])
+    out["E4"]["exact"] = exact_e4()
     out["verdicts"] = S["verdicts"]
     P = S["predictions"]
     out["P_details"] = {
@@ -152,6 +206,8 @@ def main():
     out["checks"] = {"V1": C["V1"]["pass"], "V2": {"pass": C["V2"]["pass"], "largest": C["V2"]["largest"],
                                                    "counts": C["V2"]["counts"]},
                      "V3": {"pass": C["V3"]["pass"], "largest_relative_difference": C["V3"]["largest_relative_difference"]},
+                     "V2_duplicate_points": C["V2"].get("duplicate_points"),
+                     "V4_series_largest_K": max(r.get("series_largest_diff", 0.0) for r in C["V4"]["runs"].values()),
                      "V4": {"pass": C["V4"]["pass"],
                             "largest_K": max(abs(x) for r in C["V4"]["runs"].values() for side in ("resolved", "lumped")
                                              if side in r for k, x in r[side].items() if k.endswith("_K")),

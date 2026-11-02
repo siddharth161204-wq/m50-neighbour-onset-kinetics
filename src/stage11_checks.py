@@ -125,7 +125,7 @@ def v3(bands):
         fac = {}
         for t in E:
             nz = [v / ee[t] for v in E[t].values() if v > 0 and not math.isinf(v)]
-            if len(nz) >= 2:
+            if nz:
                 fac[t] = max(nz) / min(nz)
         W = max(fac.values()) if fac else None
         cmp(f"E2 {crit} largest factor", W, bands["E2"][crit]["largest_factor"])
@@ -211,7 +211,7 @@ def v4_repeats():
                     dd = abs(pa["probe_peak"][pr]["T_C"] - pb["probe_peak"][pr]["T_C"])
                     res[part][f"{pr}_peak_diff_K"] = dd
                     ok &= dd <= 1e-6
-        sa = C9._series(d, rid)
+        sa = C9._series(d.replace("_runs", "_series"), rid)      # the earlier series are in the series folders (D119 (4))
         sb = np.load(os.path.join(SERIES, sp["id"] + ".npz")) if os.path.exists(os.path.join(SERIES, sp["id"] + ".npz")) else None
         if sa is not None and sb is not None:
             worst = 0.0
@@ -228,10 +228,47 @@ def v4_repeats():
     return {"pass": bool(ok_all), "runs": out}
 
 
+def duplicate_points(recs):
+    """Where two records hold the same point (draw, properties, contact, test, f), their crossings agree within 1e-6 s:
+    the hot spot's where both ran the resolved neighbour, the lumped neighbour's where both ran it (Stage 9's V4)."""
+    import stage11_run as R
+    groups = {}
+    for r in recs.values():
+        if r.get("failed"):
+            continue
+        groups.setdefault(R.pkey(r["kin"], r["thermal"], r["h"], r["test"], r["f"]), []).append(r)
+    out = {"n": 0, "n_resolved": 0, "n_lumped": 0, "largest_s": 0.0, "disagreeing": []}
+    for k, rs in groups.items():
+        if len(rs) < 2:
+            continue
+        for part, key in (("resolved", "n_resolved"), ("lumped", "n_lumped")):
+            have = [r for r in rs if r.get(part)]
+            for i in range(len(have)):
+                for j in range(i + 1, len(have)):
+                    a, b = have[i][part], have[j][part]
+                    # a run stopped at its crossing and one that went on agree up to the stop
+                    ta = a["t_prop_s"] if a["propagated"] else None
+                    tb = b["t_prop_s"] if b["propagated"] else None
+                    out["n"] += 1
+                    out[key] += 1
+                    if (ta is None) != (tb is None):
+                        if min(a["t_end_s"], b["t_end_s"]) >= 900.0 - 1e-9:
+                            out["disagreeing"].append([have[i]["id"], have[j]["id"], part])
+                        continue
+                    if ta is not None:
+                        d = abs(ta - tb)
+                        out["largest_s"] = max(out["largest_s"], d)
+                        if d > 1e-6:
+                            out["disagreeing"].append([have[i]["id"], have[j]["id"], part])
+    return out
+
+
 def main():
     import stage11_run as R
     recs = R.load_records()
     out = {"V1": v1(), "V2": C9.v4(recs)}
+    out["V2"]["duplicate_points"] = duplicate_points(recs)      # D119 (7): Stage 9's V4 needs Stage 9's point list
+    out["V2"]["pass"] = bool(out["V2"]["pass"] and not out["V2"]["duplicate_points"]["disagreeing"])
     bp = os.path.join(RES, "stage11_bands.json")
     if os.path.exists(bp):
         out["V3"] = v3(json.load(open(bp)))

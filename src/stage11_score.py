@@ -226,7 +226,7 @@ def e2(rows, crit):
         nz = [x for x in v if x is not None and x > 0 and not math.isinf(x)]
         fac[t] = {"n_nonzero": len(nz), "n_zero": sum(1 for x in v if x == 0.0), "n_missing": sum(1 for x in v if x is None),
                   "n_above_1": sum(1 for x in v if x is not None and math.isinf(x)),
-                  "factor": (max(nz) / min(nz)) if len(nz) >= 2 else None}
+                  "factor": (max(nz) / min(nz)) if nz else None}       # one non-zero value: 1.0 (D119 (8))
     known = {t: x["factor"] for t, x in fac.items() if x["factor"] is not None}
     W = max(known.values()) if known else None
     sp = json.load(open(os.path.join(RES, "stage10_rank.json")))["spread"]
