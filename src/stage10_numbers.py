@@ -35,7 +35,22 @@ def measured():
             "rise_268_to_onset_K": at(IN.T_PROP_S) - at(268.0),
             "spike_on_the_samples_C": max(T[i] for i in range(len(t)) if t[i] <= 10.0),     # D110: 0.5 s samples
             "spike_on_the_samples_t_s": t[max((i for i in range(len(t)) if t[i] <= 10.0), key=lambda i: T[i])],
-            "PP_Exp3": {"peak_C": Tb[pk], "peak_t_s": tb[pk], "section_II_end_s": IN.T_SECTION_II_END_B_S}}
+            "PP_Exp3": {"peak_C": Tb[pk], "peak_t_s": tb[pk], "section_II_end_s": IN.T_SECTION_II_END_B_S,
+                        "uncertainty_K": json.load(open(IN.EXTRACTION))["panels"]["b"]["uncertainty_K"]},
+            # D109 (6): the two vector readings' agreement, curve by curve, and the record's dip after its spike
+            "readings_agree_K": {pn: {c: v["digitisation_uncertainty_K"] for c, v in pv["curves"].items()}
+                                 for pn, pv in json.load(open(IN.EXTRACTION))["panels"].items()},
+            **_after_spike(t, T)}
+
+
+def _after_spike(t, T):
+    """D109 (6): the record's minimum between its spike and the end of Section I, and its range from there to it."""
+    ip = max((i for i in range(len(t)) if t[i] <= 10.0), key=lambda i: T[i])
+    sec = [i for i in range(len(t)) if t[ip] <= t[i] <= IN.T_SECTION_I_END_S]
+    im = min(sec, key=lambda i: T[i])
+    after = [T[i] for i in sec if t[i] >= t[im]]
+    return {"dip_after_spike_C": T[im], "dip_after_spike_t_s": t[im],
+            "from_dip_to_section_I_end_C": [min(after), max(after)]}
 
 
 def part_a(h):
@@ -116,6 +131,13 @@ def segments(h):
         tot = float(np.trapezoid(d2, tm[w]))
         out[key]["section_I"] = {"share_of_squared_difference": part / tot, "to_s": float(tm[w][k]),
                                  "rms_K": float(np.sqrt(part / tm[w][k]))}
+        # D109 (6): the same share split at the record's dip after its spike
+        dip = _after_spike(list(tm), list(Tm))["dip_after_spike_t_s"]
+        j = int(np.where(tm[w] <= dip + 1e-9)[0][-1])
+        first = float(np.trapezoid(d2[:j + 1], tm[w][:j + 1]))
+        out[key]["section_I"]["split_at_s"] = float(tm[w][j])
+        out[key]["section_I"]["share_to_dip"] = first / tot
+        out[key]["section_I"]["share_dip_to_end"] = (part - first) / tot
     return out
 
 
@@ -126,6 +148,27 @@ def part_a3(h):
                                              ("rms_K", "mean_K", "max_abs_K", "model_peak_C", "model_peak_t_s",
                                               "measured_peak_C", "measured_peak_t_s", "diff_at_section_II_end_K")}
                                          for n in v["nodes"]}}
+    out["below_the_record"] = _a3_below()
+    return out
+
+
+def _a3_below():
+    """D109 (6): at each node, where the run at f = 0 lies below M50_PP_Exp3's record (the 0.5 s samples to 500 s):
+    the last sample below it, and the largest amount below."""
+    import numpy as np
+    tb, Tb, _ = IN.history("b")
+    tb, Tb = np.array(tb), np.array(Tb)
+    s = tb <= 500.0 + 1e-9
+    tb, Tb = tb[s], Tb[s]
+    z = np.load(os.path.join(RES, "stage10_series", "s10_none_fresh_hcentral_M50_PP_Exp3_f0.000000000_t900.npz"))
+    out = {}
+    for n in ("away", "side", "facing"):
+        d = np.interp(tb, z["probe_t"], z["probe_" + n] - 273.15) - Tb
+        i = int(np.argmin(d))
+        below = tb[d < 0]
+        out[n] = {"last_sample_below_s": float(below.max()) if len(below) else None,
+                  "first_sample_above_after_s": float(tb[tb > below.max()][0]) if len(below) else None,
+                  "largest_below_K": float(-d[i]), "largest_below_t_s": float(tb[i])}
     return out
 
 
@@ -143,7 +186,18 @@ def part_b():
                 "PT_Exp1_f_max": {n: by["M50_PT_Exp1"][n]["f_max"] for n in ("away", "side", "facing")},
                 "PT_Exp1_peak_f0_C": {n: by["M50_PT_Exp1"][n]["peak_f0_C"] for n in ("away", "side", "facing")},
                 "PT_Exp1_energy_J": {n: by["M50_PT_Exp1"][n]["f_max"] * _ee("M50_PT_Exp1")
-                                     for n in ("away", "side", "facing")}}
+                                     for n in ("away", "side", "facing")},
+                "PT_Exp1_side_peaks_C": _side_peaks()}                                # D109 (6)
+
+
+def _side_peaks():
+    """D109 (6): M50_PT_Exp1's side node's peak over 900 s in each run of its Part B search."""
+    import numpy as np
+    out = {}
+    for p in sorted(glob.glob(os.path.join(RES, "stage10_series", "s10_tri21_fresh_hcentral_M50_PT_Exp1_f*_t900.npz"))):
+        f = float(os.path.basename(p).split("_f")[-1].split("_t")[0])
+        out[f"{f:g}"] = float(np.max(np.load(p)["probe_side"]) - 273.15)
+    return out
 
 
 def _ee(test):
@@ -185,7 +239,13 @@ def part_c():
 def part_d():
     s = J("stage10_survey.json")
     q = [d for d in s["datasets"] if d.get("qualifies")][0]
-    return {"searches": len([x for x in s["searches"] if x["tool"] == "web search"]), "pages_read": len(s["pages_read"]),
+    others = [d for d in s["datasets"] if "this study's dataset" not in d.get("name", "") and "M50 tests" not in d.get("name", "")]
+    return {"searches": len([x for x in s["searches"] if x["tool"] == "web search"]),
+            "searches_other": len([x for x in s["searches"] if x["tool"] != "web search"]),          # D109 (6)
+            "datasets_other": len(others),
+            "datasets_other_in_contact_or_at_a_stated_spacing": len([d for d in others
+                                                                     if d.get("contact") != "not established"]),
+            "pages_read": len(s["pages_read"]),
             "pages_not_read": len(s["pages_not_read"]), "datasets_listed": len(s["datasets"]),
             "datasets_scored": len([d for d in s["datasets"] if d.get("scored")]),
             "found_outside": len(s["found_outside_the_question"]), "qualifying": s["qualifying_dataset"],
@@ -218,8 +278,12 @@ def checks():
     exact = {n: IN.arc_mm(w["theta_deg"], w["r_mm"]) for n, w in rec["probe_where"].items()}   # D110
     return {"V1": c["V1"], "V2": {"pass": c["V2"]["pass"], "records": c["V2"]["records"],
                                   "distances_from_line_mm": exact},
-            "V3": {k: c["V3"][k] for k in ("pass", "largest_score_difference", "largest_rho_difference", "seed")},
-            "V4": {"pass": c["V4"]["pass"]}, "X": {k: c["X"][k] for k in ("pass", "pairs", "largest_K")}}
+            "V3": {**{k: c["V3"][k] for k in ("pass", "largest_score_difference", "largest_rho_difference", "seed",
+                                                 "p_values_compared")},
+                   "largest_p_gap": max(abs(q["p"] - q["p_scoring"]) for q in c["V3"]["p_values"])},      # D109 (6)
+            "V4": {"pass": c["V4"]["pass"], "largest": c["V4"]["largest"], "counts": c["V4"]["counts"]},  # D109 (6)
+            "X": {k: c["X"][k] for k in ("pass", "pairs", "largest_K")},
+            "probes_deg": {n: w["theta_deg"] for n, w in rec["probe_where"].items()}}                    # D109 (6)
 
 
 def main():

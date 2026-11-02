@@ -1,0 +1,45 @@
+# python3 src/test_stage10.py, run on 2026-11-02T06:17:39Z at the code of the release v1.6.0 (src/ as committed with D109 (6)); the 'Transforming' lines are the solver's notices
+ok   a history 3 K above has a root mean square of 3 K
+ok   the rise over the last 60 s
+ok   the first passes of 100 and 150 C
+ok   a model on its own time grid  1.4136
+ok   each Part B chain starts at f = 0
+ok   f_max = 0 at both nodes where f = 0 exceeds every maximum
+ok   within 5 K at f = 0 is f_max = 0 (facing)
+ok   short at f = 0 asks for f*_lo(C1) next (side)
+ok   the runs are listed once
+ok   Firth's logistic against a direct maximisation (0)  -0.457249,1.943029 vs -0.457249,1.943029
+ok   Firth's logistic against a direct maximisation (1)  -0.160591,1.761294 vs -0.160591,1.761294
+ok   Firth's logistic against a direct maximisation (2)  -1.333995,1.413017 vs -1.333995,1.413017
+ok   Firth's logistic against a direct maximisation (3)  -0.769787,1.424426 vs -0.769787,1.424426
+ok   Firth's logistic against a direct maximisation (4)  0.055498,1.900024 vs 0.055498,1.900024
+/usr/local/lib/python3.13/dist-packages/scipy/optimize/_optimize.py:2357: RuntimeWarning: invalid value encountered in scalar multiply
+  q = (xf - fulc) * (fx - fnfc)
+/usr/local/lib/python3.13/dist-packages/scipy/optimize/_optimize.py:2358: RuntimeWarning: invalid value encountered in scalar subtract
+  p = (xf - fulc) * q - (xf - nfc) * r
+ok   a separating predictor stays finite  4.394
+ok   the constant is (k + 1/2) / (n + 1)
+ok   Firth's logistic converges near separation (D108)  0.266417141,8.8397968 vs 0.266417141,8.8397969
+ok   a predictor equal to the outcome beats the constant held out
+ok   a constant predictor does not
+ok   Spearman's rho with ties against scipy's
+ok   a crossing that did not happen ranks above every number
+ok   the ranking runs on every quantity
+ok   P1 holds at one bracket end below 25 K
+ok   P2 needs every long reading below the short one's best
+ok   P3 fails where the measured rise is not above 30 K
+Transforming over 1000 elements to C_CONTIGUOUS.
+ok   the probes' nodes at the low contact
+Transforming over 1000 elements to C_CONTIGUOUS.
+ok   the probes' nodes at the central contact
+Transforming over 1000 elements to C_CONTIGUOUS.
+ok   the probes' nodes at the high contact
+Transforming over 1000 elements to C_CONTIGUOUS.
+ok   the side node is the mid-length surface node nearest 90 degrees
+ok   the facing node is the first mid-length surface node off the line
+Transforming over 1000 elements to C_CONTIGUOUS.
+ok   a Stage 10 run equals Stage 9's at the shared probes, bitwise
+ok   the energy accounts are the same
+ok   the new probes are recorded
+all tests passed
+# exit status 0

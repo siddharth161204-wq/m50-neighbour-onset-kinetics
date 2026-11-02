@@ -18,8 +18,25 @@
   "PP_Exp3": {
    "peak_C": 102.037,
    "peak_t_s": 309.0,
-   "section_II_end_s": 309.72
-  }
+   "section_II_end_s": 309.72,
+   "uncertainty_K": 2.4642456347420696
+  },
+  "readings_agree_K": {
+   "a": {
+    "neighbour": 0.00048596066733352927,
+    "trigger": 0.0013890738362647426
+   },
+   "b": {
+    "neighbour": 0.0001979156031346463,
+    "trigger": 0.0022941399212186298
+   }
+  },
+  "dip_after_spike_C": 80.0339,
+  "dip_after_spike_t_s": 8.5,
+  "from_dip_to_section_I_end_C": [
+   80.0339,
+   113.2956
+  ]
  },
  "nodes": {
   "away": {
@@ -2087,7 +2104,10 @@
    "section_I": {
     "share_of_squared_difference": 0.168505266614539,
     "to_s": 24.0,
-    "rms_K": 65.40113292390573
+    "rms_K": 65.40113292390573,
+    "split_at_s": 8.5,
+    "share_to_dip": 0.04971000654930123,
+    "share_dip_to_end": 0.11879526006523777
    }
   },
   "tri21_C2_lo_hcentral": {
@@ -2115,7 +2135,10 @@
    "section_I": {
     "share_of_squared_difference": 0.7164804917792614,
     "to_s": 24.0,
-    "rms_K": 46.2784991669998
+    "rms_K": 46.2784991669998,
+    "split_at_s": 8.5,
+    "share_to_dip": 0.41156718490815364,
+    "share_dip_to_end": 0.30491330687110785
    }
   },
   "tri21_C2_hi_hcentral": {
@@ -2143,7 +2166,10 @@
    "section_I": {
     "share_of_squared_difference": 0.6366352104238279,
     "to_s": 24.0,
-    "rms_K": 45.17865585892132
+    "rms_K": 45.17865585892132,
+    "split_at_s": 8.5,
+    "share_to_dip": 0.3829264375648389,
+    "share_dip_to_end": 0.25370877285898896
    }
   },
   "con240_C2_hcentral": {
@@ -2171,7 +2197,10 @@
    "section_I": {
     "share_of_squared_difference": 0.2671268118929796,
     "to_s": 24.0,
-    "rms_K": 63.816706901598586
+    "rms_K": 63.816706901598586,
+    "split_at_s": 8.5,
+    "share_to_dip": 0.08230323205999654,
+    "share_dip_to_end": 0.18482357983298303
    }
   },
   "con360_C2_hcentral": {
@@ -2199,7 +2228,10 @@
    "section_I": {
     "share_of_squared_difference": 0.26474545923419635,
     "to_s": 24.0,
-    "rms_K": 63.87502923122809
+    "rms_K": 63.87502923122809,
+    "split_at_s": 8.5,
+    "share_to_dip": 0.08143752071045972,
+    "share_dip_to_end": 0.1833079385237366
    }
   },
   "con360_C1_hcentral": {
@@ -2227,7 +2259,10 @@
    "section_I": {
     "share_of_squared_difference": 0.2508037263066099,
     "to_s": 24.0,
-    "rms_K": 62.734017831918734
+    "rms_K": 62.734017831918734,
+    "split_at_s": 8.5,
+    "share_to_dip": 0.07966213208275409,
+    "share_dip_to_end": 0.17114159422385583
    }
   }
  },
@@ -2285,6 +2320,26 @@
      "measured_peak_t_s": 309.0,
      "diff_at_section_II_end_K": 61.93197886698633
     }
+   }
+  },
+  "below_the_record": {
+   "away": {
+    "last_sample_below_s": 57.0,
+    "first_sample_above_after_s": 57.5,
+    "largest_below_K": 41.14873812616739,
+    "largest_below_t_s": 2.5
+   },
+   "side": {
+    "last_sample_below_s": 31.0,
+    "first_sample_above_after_s": 31.5,
+    "largest_below_K": 41.14629330437535,
+    "largest_below_t_s": 2.5
+   },
+   "facing": {
+    "last_sample_below_s": 7.0,
+    "first_sample_above_after_s": 7.5,
+    "largest_below_K": 38.92005848363476,
+    "largest_below_t_s": 2.0
    }
   }
  },
@@ -2464,6 +2519,11 @@
    "away": 2090.6577412852753,
    "side": 1045.3288706426376,
    "facing": 0.0
+  },
+  "PT_Exp1_side_peaks_C": {
+   "0.0375": 66.13441906499804,
+   "0.075": 93.37328293616434,
+   "0.15": 159.7718589396291
   }
  },
  "separation": {
@@ -2807,6 +2867,9 @@
  },
  "part_d": {
   "searches": 26,
+  "searches_other": 1,
+  "datasets_other": 9,
+  "datasets_other_in_contact_or_at_a_stated_spacing": 7,
   "pages_read": 40,
   "pages_not_read": 8,
   "datasets_listed": 10,
@@ -2932,15 +2995,35 @@
    "pass": true,
    "largest_score_difference": 4.884981308350689e-15,
    "largest_rho_difference": 1.1102230246251565e-16,
-   "seed": 20261130
+   "seed": 20261130,
+   "p_values_compared": 32,
+   "largest_p_gap": 0.014298570142985717
   },
   "V4": {
-   "pass": true
+   "pass": true,
+   "largest": {
+    "res": 2.4635900086291857e-12,
+    "lum": 3.302181383316324e-12,
+    "delivery": 0.0
+   },
+   "counts": {
+    "res": 30,
+    "lum": 30,
+    "deliveries": 36,
+    "whole": 32
+   }
   },
   "X": {
    "pass": true,
    "pairs": 24,
    "largest_K": 0.0
+  },
+  "probes_deg": {
+   "away": 180.0,
+   "side": 88.27711686944409,
+   "facing": 0.3258527744819848,
+   "toward": 0.0,
+   "side_out": 94.39197574481449
   }
  },
  "verdicts": {
