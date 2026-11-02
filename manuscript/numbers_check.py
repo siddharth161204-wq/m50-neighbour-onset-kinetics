@@ -51,7 +51,7 @@ def json_numbers(obj, out, path=""):
 CURATED_JSON = ["note_numbers.json", "stage3_numbers.json", "v11_sensitivity.json", "v12_numbers.json",
                 "stage6_numbers.json", "stage7_paper_numbers.json", "stage8_paper_numbers.json",
                 "stage9_paper_numbers.json", "stage10_paper_numbers.json", "stage11_paper_numbers.json",
-                "manuscript_numbers.json", "stage11_bands.json", "stage11_scorecard.json"]
+                "manuscript_numbers.json", "stage11_bands.json", "stage11_scorecard.json", "stage10_v1.json"]
 CURATED_CSV = ["stage7_triggers.csv", "stage8_ejected.csv", "stage8_thresholds.csv", "stage9_fractions.csv",
                "stage11_thresholds.csv", "stage11_overshoot.csv", "stage11_times.csv", "stage11_draws.csv"]
 
@@ -141,6 +141,8 @@ def structural(v, raw, before, ctx):
         return "year"
     if re.search(r"(Stages|stages) [\d, and to]*$", before):
         return "label"
+    if re.search(r"\b\d{1,3},\s*$", before) and re.search(r"(J\.|Sources|Storage|eTransportation|Soc\.|Adv\.)", ctx):
+        return "reference"           # an article number after a journal's volume, in a table of the literature
     return None
 
 

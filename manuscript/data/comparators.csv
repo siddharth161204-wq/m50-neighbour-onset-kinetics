@@ -1,0 +1,42 @@
+key,quantity,value,unit,conditions,where_read
+walker2019decoupling,"share of the total energy released through the casing, low",20,%,18650 cells of several makes; fractional thermal runaway calorimetry,abstract (comparators.md 3)
+walker2019decoupling,"share of the total energy released through the casing, high",30,%,as above,abstract
+coman2017modelling,share of the electrical energy that leaves with the effluent,28,%,"18650 NCA/graphite, 2.4 Ah, internal short-circuit device",abstract (comparators.md 2)
+coman2017modelling,capacity,2.4,Ah,as above,abstract
+said2019cascading,chemical heat per cell,56.6,kJ,"LCO 18650, 2.6 Ah, fully charged; arrays of 12 to 18 cells in a wind tunnel",abstract (comparators.md 8)
+said2019cascading,"chemical heat per cell, uncertainty",2.5,kJ,as above,abstract
+said2019cascading,"heat of flaming combustion of the ejecta per cell, in air",60.1,kJ,as above,abstract
+said2019cascading,"heat of flaming combustion, uncertainty",17.5,kJ,as above,abstract
+said2019cascading,row-to-row propagation speed in nitrogen,0.08,1/s,as above,abstract
+said2019cascading,"row-to-row propagation speed in air, late stages",0.7,1/s,as above,abstract
+said2019cascading,"cells per array, fewest",12,,as above,abstract
+said2019cascading,"cells per array, most",18,,as above,abstract
+said2019cascading,capacity,2.6,Ah,as above,abstract
+finegan2024databank,heat per gram of ejected mass,2.6,kJ/g,commercial cylindrical cells at 100 % state of charge,conclusions (comparators.md 9)
+finegan2024databank,heat per gram of the cell body,0.21,kJ/g,as above,conclusions
+torrescastro2020passive,"energy the next cell absorbs before it fails, mean",2.0,kJ,"five 3 Ah LiCoO2/graphite pouch cells at 100 % state of charge, no plates, cell 1 nailed","discussion, Cell heating during gap-crossing (references_verified.json)"
+torrescastro2020passive,nominal stored energy per cell,45,kJ,as above,"discussion, Propagation speed"
+torrescastro2020passive,"gap-crossing time, no plates",10,s,as above,"discussion, Propagation speed"
+torrescastro2020passive,time to consume the five-cell string,90,s,as above,"results, baseline"
+torrescastro2020passive,capacity,3,Ah,as above,results
+torrescastro2020passive,cells in the stack,5,,as above,results
+lamb2015failure,"time for failure to propagate through a pouch module, shortest",60,s,"stacked pouch cells in direct contact, series and parallel; one cell nailed",abstract (comparators.md 7)
+lamb2015failure,"time for failure to propagate through a pouch module, longest",80,s,as above,abstract
+lamb2015failure,cells in the 18650 modules (10S1P did not propagate),10,,"18650 modules, 10S1P and 1S10P",abstract
+read2024sidewall,"time from penetration to a neighbour's runaway, shortest",2,s,"LG INR21700-M50 at 100 % state of charge, seven cells 3 mm apart, not connected, nail through the positive terminal; tests with sidewall rupture",Table 4 (comparators.md 10)
+read2024sidewall,"time from penetration to a neighbour's runaway, longest",5,s,as above,Table 4
+read2024sidewall,gap between cells,3,mm,as above,Section 2
+read2024sidewall,cells in the module,7,,as above,Section 2
+read2024sidewall,neighbours that ran away when the sidewall ruptured,6,,as above,abstract
+mishra2021multimode,"neighbour's runaway after the trigger's, natural convection modelled, cell 2",40,s,"simulated 5 by 5 array of 18650 cells, 1 mm gap, interstitial air, external h 10 W m-2 K-1, corner trigger heated at 4e5 W m-2 for 400 s",Fig. 13 discussion (comparators.md 5)
+mishra2021multimode,"neighbour's runaway after the trigger's, natural convection modelled, cell 7",90,s,as above,Fig. 13 discussion
+mishra2021multimode,"neighbour's runaway after the trigger's, no natural convection, cell 2",95,s,as above,Fig. 13 discussion
+mishra2021multimode,"neighbour's runaway after the trigger's, no natural convection, cell 7",310,s,as above,Fig. 13 discussion
+mishra2021multimode,gap between cells,1,mm,as above,Fig. 13 caption
+feng2015propagation,"electrical energy of the internal short, as a share of its value, that stops propagation in the model",75,%,lumped model of six fully charged 25 Ah NCM cells,abstract (comparators.md 1)
+feng2015propagation,capacity,25,Ah,as above,abstract
+feng2015propagation,cells in the model,6,,as above,abstract
+hoelle2023simulation,cells in the stack,5,,prismatic cells above 60 Ah,abstract (comparators.md 6)
+hoelle2023simulation,"capacity, lower bound",60,Ah,as above,abstract
+fransson2024exploring,"M50 time to propagation, shortest",147,s,"two LG M50 cells in contact, welded tabs, nail trigger",Tables 3 and 4
+fransson2024exploring,"M50 time to propagation, longest",342,s,as above,Tables 3 and 4

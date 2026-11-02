@@ -624,7 +624,7 @@ def fig7(res, out):
 # ------------------------------------------------------------------------------------------------------------ F8
 def fig8(res, out):
     import make_figure_stage11 as F11
-    fig = plt.figure(figsize=(W_IN, 5.6))
+    fig = plt.figure(figsize=(W_IN, 5.05))
     ax = fig.add_axes([0.12, 0.6, 0.86, 0.37])
     F11.panel_fstar(ax, res, fs=FS_SMALL)
     letter(ax, "a", x=-0.08)

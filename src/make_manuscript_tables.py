@@ -220,7 +220,7 @@ def s2(res, out):
         print("no predictions_by_stage.csv yet")
         return
     esc = lambda x: (x or "").replace("&", r"\&").replace("%", r"\%").replace("_", r"\_").replace("#", r"\#")
-    lines = [r"{\sloppy\footnotesize", r"\begin{longtable}{>{\raggedright\arraybackslash}p{0.04\textwidth}>{\raggedright\arraybackslash}p{0.07\textwidth}>{\raggedright\arraybackslash}p{0.43\textwidth}>{\raggedright\arraybackslash}p{0.2\textwidth}>{\raggedright\arraybackslash}p{0.1\textwidth}}",
+    lines = [r"{\sloppy\footnotesize", r"\begin{longtable}{>{\raggedright\arraybackslash}p{0.062\textwidth}>{\raggedright\arraybackslash}p{0.07\textwidth}>{\raggedright\arraybackslash}p{0.408\textwidth}>{\raggedright\arraybackslash}p{0.2\textwidth}>{\raggedright\arraybackslash}p{0.1\textwidth}}",
              r"\caption{Every prediction, as its predictions file states it (shortened), with the expectation recorded before the "
              r"runs and the verdict. Foreseen: a failure the predictions file recorded before the runs as expected to fail, as "
              r"already fixed by earlier records or an energy balance, or as failing under a condition it named that then "

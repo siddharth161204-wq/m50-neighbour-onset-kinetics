@@ -8,6 +8,7 @@
 \usepackage{longtable}
 \usepackage{array}
 \usepackage{textcomp}
+\usepackage{xurl}
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
 \newcommand{\degC}{\,\textdegree C}
@@ -21,6 +22,7 @@
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\thefigure}{S\arabic{figure}}
 \biboptions{sort&compress}
+\setlength{\emergencystretch}{1.5em}
 
 \begin{document}
 
@@ -44,7 +46,7 @@ A check (V1 of Stage~10, D102 (5)) rendered the page at 1200~dpi without anti-al
 \section{The predictions of Stages 1 to 11}
 \label{sec:s-predictions}
 
-Each stage's predictions file was committed and pushed before any of the stage's runs, with the expectation held for each prediction; Table~\ref{tab:s-predictions} lists all 70, shortened from the files (\texttt{manuscript/data/predictions\_by\_stage.csv}, which gives the file and line of each). Through Stage~10, 64 were committed and 32 failed; Stage~11 adds six, of which four failed.
+Each stage's predictions file was committed and pushed before any of the stage's runs, with the expectation held for each prediction; Table~\ref{tab:s-predictions} lists all 70, shortened from the files (\path{manuscript/data/predictions_by_stage.csv}, which gives the file and line of each). Through Stage~10, 64 were committed and 32 failed; Stage~11 adds six, of which four failed.
 
 A failure is counted as foreseen when the predictions file, before the runs, recorded it as expected, as already fixed by earlier records or an energy balance, or as following from a condition it named that then held; a hedged ``may fail'' does not count. By that rule 21 of the 32 failures through Stage~10 were foreseen, and one of Stage~11's (P4, fixed by Stage~7's runs at the low contact). The stages' own texts label 17 of the 21 so; the other four are Stage~3's P3 and P6 (``expected to fail'' in the file's central estimates), Stage~6's P4 (fixed by an energy balance, where the texts counted Stage~5's records only) and Stage~9's P6 (failing under the condition the file named, on which the note and the README differ). Counting the three ``may fail'' expectations too (Stage~4's P4 and Stage~5's P1 and P6) would give 24.
 
