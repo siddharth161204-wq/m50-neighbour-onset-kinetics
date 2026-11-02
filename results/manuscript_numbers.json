@@ -102,17 +102,184 @@
    "committed": 64,
    "held": 32,
    "failed": 32,
-   "foreseen": 21
+   "foreseen": 21,
+   "unforeseen": 11
   },
   "stage11": {
    "committed": 6,
    "held": 2,
-   "failed": 4
+   "failed": 4,
+   "foreseen": 1,
+   "unforeseen": 3
   },
   "all": {
    "committed": 70,
    "held": 34,
-   "failed": 36
+   "failed": 36,
+   "foreseen": 22,
+   "unforeseen": 14
+  }
+ },
+ "after_review": {
+  "what": "derived for the manuscript after the reviewer's read (DECISIONS.md D121); not registered",
+  "trigger_vs_databank": {
+   "databank_nail_tests": 10,
+   "body_max_J": 33222.9118228995,
+   "ejecta_max_J": 89337.77972329674,
+   "n_tests_Eb_above_body_max": 13,
+   "n_tests_Ee_above_ejecta_max": 14,
+   "n_tests": 16,
+   "C1_met_at_f0_tests": [
+    "M50_PP_Exp1",
+    "M50_PP_Exp4",
+    "M50_SP_Exp1",
+    "M50_SP_Exp2",
+    "M50_SP_Exp3",
+    "M50_ST_Exp1",
+    "M50_ST_Exp2",
+    "M50_ST_Exp4"
+   ],
+   "C1_met_at_f0_Eb_J": [
+    46456.65668259084,
+    54303.722099672086
+   ],
+   "others_Eb_J": [
+    8976.772248678275,
+    43895.36776574396
+   ]
+  },
+  "categories": {
+   "": [
+    "M50_PP_Exp3",
+    "M50_SP_Exp4"
+   ],
+   "1": [
+    "M50_PT_Exp2",
+    "M50_ST_Exp1",
+    "M50_ST_Exp3",
+    "M50_ST_Exp4"
+   ],
+   "2": [
+    "M50_PP_Exp2",
+    "M50_PP_Exp4",
+    "M50_SP_Exp1"
+   ],
+   "4": [
+    "M50_PT_Exp3",
+    "M50_PT_Exp4",
+    "M50_ST_Exp2"
+   ],
+   "cell movement": [
+    "M50_PP_Exp1",
+    "M50_PT_Exp1",
+    "M50_SP_Exp2",
+    "M50_SP_Exp3"
+   ]
+  },
+  "spread": {
+   "C2_tri21": {
+    "fraction_ratio": 47.60453728424297,
+    "fraction_largest_test": "M50_PT_Exp1",
+    "fraction_smallest_test": "M50_SP_Exp3",
+    "fraction_smallest": 0.0015754800756108784,
+    "energy_ratio": 22.44295970028124,
+    "energy_largest_test": "M50_PP_Exp2",
+    "energy_smallest_test": "M50_SP_Exp3",
+    "energy_J": [
+     265.6708982163422,
+     5962.441262206888
+    ],
+    "n_nonzero": 7,
+    "zero_tests": [
+     "M50_PP_Exp3",
+     "M50_PT_Exp3",
+     "M50_ST_Exp1",
+     "M50_ST_Exp2"
+    ]
+   },
+   "C2_120": {
+    "fraction_ratio": 42.15779161360789,
+    "fraction_largest_test": "M50_PT_Exp1",
+    "fraction_smallest_test": "M50_SP_Exp3",
+    "fraction_smallest": 0.0012972097898588148,
+    "energy_ratio": 21.805839654897646,
+    "energy_largest_test": "M50_PP_Exp2",
+    "energy_smallest_test": "M50_SP_Exp3",
+    "energy_J": [
+     218.74658739381155,
+     4769.95300976551
+    ],
+    "n_nonzero": 8,
+    "zero_tests": [
+     "M50_PP_Exp3",
+     "M50_PT_Exp3",
+     "M50_ST_Exp1",
+     "M50_ST_Exp2"
+    ]
+   },
+   "C2_240": {
+    "fraction_ratio": 208.12367194425772,
+    "fraction_largest_test": "M50_ST_Exp3",
+    "fraction_smallest_test": "M50_SP_Exp3",
+    "fraction_smallest": 0.0015465564151982125,
+    "energy_ratio": 63.778789533836694,
+    "energy_largest_test": "M50_ST_Exp3",
+    "energy_smallest_test": "M50_SP_Exp3",
+    "energy_J": [
+     260.7935437131074,
+     16633.096536261717
+    ],
+    "n_nonzero": 8,
+    "zero_tests": [
+     "M50_PP_Exp3",
+     "M50_PT_Exp3",
+     "M50_ST_Exp1",
+     "M50_ST_Exp2"
+    ]
+   },
+   "C2_360": {
+    "fraction_ratio": 156.0,
+    "fraction_largest_test": "M50_ST_Exp3",
+    "fraction_smallest_test": "M50_SP_Exp3",
+    "fraction_smallest": 0.003125,
+    "energy_ratio": 47.80566801619434,
+    "energy_largest_test": "M50_ST_Exp3",
+    "energy_smallest_test": "M50_SP_Exp3",
+    "energy_J": [
+     526.9641741449243,
+     25191.87436560027
+    ],
+    "n_nonzero": 9,
+    "zero_tests": [
+     "M50_PP_Exp3",
+     "M50_PT_Exp3",
+     "M50_ST_Exp1",
+     "M50_ST_Exp2"
+    ]
+   }
+  },
+  "spread_energy_ratio_range": [
+   21.805839654897646,
+   63.778789533836694
+  ],
+  "spread_fraction_smallest_range": [
+   0.0012972097898588148,
+   0.003125
+  ],
+  "trigger_vs_databank_kJ": {
+   "body_max": 33.2229118228995,
+   "ejecta_max": 89.33777972329675,
+   "C1_met_at_f0_Eb": [
+    46.45665668259084,
+    54.303722099672086
+   ]
+  },
+  "record": {
+   "stage11_partial_scoring_records": 178,
+   "stage11_records": 216,
+   "source": "DECISIONS.md D118 (1): the scoring run once on a copy of 178 of the 216 records",
+   "ai_use_first_commit_date": "2026-10-10",
+   "ai_use_last_date": "2026-11-02"
   }
  }
 }

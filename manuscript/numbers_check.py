@@ -51,7 +51,7 @@ def json_numbers(obj, out, path=""):
 CURATED_JSON = ["note_numbers.json", "stage3_numbers.json", "v11_sensitivity.json", "v12_numbers.json",
                 "stage6_numbers.json", "stage7_paper_numbers.json", "stage8_paper_numbers.json",
                 "stage9_paper_numbers.json", "stage10_paper_numbers.json", "stage11_paper_numbers.json",
-                "manuscript_numbers.json", "stage11_bands.json", "stage11_scorecard.json", "stage10_v1.json"]
+                "manuscript_numbers.json", "stage11_bands.json", "stage11_scorecard.json", "stage10_v1.json", "stage2_checks.json", "explore_sei_storage.json"]
 CURATED_CSV = ["stage7_triggers.csv", "stage8_ejected.csv", "stage8_thresholds.csv", "stage9_fractions.csv",
                "stage11_thresholds.csv", "stage11_overshoot.csv", "stage11_times.csv", "stage11_draws.csv"]
 

@@ -38,7 +38,7 @@
     "location": "Abstract"
    }
   ],
-  "notes": "The ScienceDirect full-text URL listed on IDEAS refused; the /abs/ page returned by a search was read. RePEc/IDEAS (https://ideas.repec.org/a/eee/appene/v154y2015icp74-91.html) and EconPapers agree on every field but spell the title '25Ah'. Applied Energy volumes have no issue number (RePEc shows 'C'). According to the abstract page, the module experiments were penetration-triggered. The .bib keeps the formula as the plain string; typeset the subscripts if wanted."
+  "notes": "The ScienceDirect full-text URL listed on IDEAS refused; the /abs/ page returned by a search was read. RePEc/IDEAS (https://ideas.repec.org/a/eee/appene/v154y2015icp74-91.html) and EconPapers agree on every field but spell the title '25Ah'. Applied Energy volumes have no issue number (RePEc shows 'C'). According to the abstract page, the module experiments were penetration-triggered. The .bib keeps the formula as the plain string; typeset the subscripts if wanted. The 75 % is one of four design targets that stop propagation in the model (the electrical energy released by the internal short cut to 75 % of its value), not a share of energy that leaves a cell; the manuscript words it so (D121)."
  },
  {
   "n": 2,
@@ -191,7 +191,7 @@
   "verified": true,
   "differences_from_hint": "The metadata match. The paper is a review and comparison of three empirical heat-release approaches for a five-cell stack of prismatic cells above 60 Ah. The abstract describes the can-roll feature as a gas layer between the jelly roll and the can, formed by electrolyte vaporisation, which the model needed to reproduce the experiment.",
   "comparator_numbers": null,
-  "notes": "The source is the TUM research portal (the authors' institution), which gives initials only in every citation format. mediaTUM refused (bot protection), and the DOI link refused (robots). The simulations used Simcenter STAR-CCM+. The time-dependent and the spatially resolved, temperature-dependent heat-release approaches both reproduced the test."
+  "notes": "The source is the TUM research portal (the authors' institution), which gives initials only in every citation format. mediaTUM refused (bot protection), and the DOI link refused (robots). The simulations used Simcenter STAR-CCM+. The time-dependent and the spatially resolved, temperature-dependent heat-release approaches both reproduced the test. The gas-layer model itself (its Eqs. 28 and 29 and Tables V and VI) was read in full on 26 October 2026 from the authors' copy, as DECISIONS.md D82 records; the 2 November check of the bibliographic fields read only the TUM portal's abstract (reconciled after the review, D121)."
  },
  {
   "n": 7,
@@ -267,7 +267,7 @@
     "location": "Abstract"
    }
   ],
-  "notes": "The ScienceDirect full-text link listed on IDEAS refused, and two further searches returned no other publisher URL. No Crossref or DOAJ record was reachable. Every field is from the RePEc/IDEAS record, which carries Elsevier's series data. This item is verified from a secondary index only. The abstract gives no share of energy passed to neighbours. 0.08 s-1 inverts to about 12.5 s per row; that inversion is mine, not the paper's."
+  "notes": "The ScienceDirect full-text link listed on IDEAS refused, and two further searches returned no other publisher URL. No Crossref or DOAJ record was reachable. Every field is from the RePEc/IDEAS record, which carries Elsevier's series data. This item is verified from a secondary index only. The abstract gives no share of energy passed to neighbours. 0.08 s-1 inverts to about 12.5 s per row; that inversion is mine, not the paper's. The abstract says the chemical heat 'was computed' and the flaming heat was found 'during air tests'; the manuscript words them so (D121)."
  },
  {
   "n": 9,
@@ -417,7 +417,7 @@
   "verified": true,
   "differences_from_hint": "None.",
   "comparator_numbers": null,
-  "notes": "DOAJ gives the authors, title, journal, volume, article number and year. The DOI is from the University of Warwick WRAP record, which names the second author 'Jones, Simon Benedict' and gives publication on 24 November 2024 (issue dated December 2024). The publisher route (doi.org to linkinghub.elsevier.com) was blocked by an unanswered permission prompt. Abstract: seven 21700 cells, hexagonal, 3 mm apart; the centre cell was nailed through its positive terminal. A 35 mm penetration caused sidewall rupture and propagation to all six neighbours in 3 of 3 tests; a 10 mm penetration caused neither in 3 of 3; no times are given. The abstract and keywords do not name the LG M50 or NMC 811 and give no neighbour temperatures or times. The supplement's 'LG M50, NMC 811' and '132 C at 2 to 5 s' therefore need checking against the full text. The draft's key 'Read2024' is ambiguous with item 16."
+  "notes": "DOAJ gives the authors, title, journal, volume, article number and year. The DOI is from the University of Warwick WRAP record, which names the second author 'Jones, Simon Benedict' and gives publication on 24 November 2024 (issue dated December 2024). The publisher route (doi.org to linkinghub.elsevier.com) was blocked by an unanswered permission prompt. Abstract: seven 21700 cells, hexagonal, 3 mm apart; the centre cell was nailed through its positive terminal. A 35 mm penetration caused sidewall rupture and propagation to all six neighbours in 3 of 3 tests; a 10 mm penetration caused neither in 3 of 3; no times are given. The abstract and keywords do not name the LG M50 or NMC 811 and give no neighbour temperatures or times. The supplement's 'LG M50, NMC 811' and '132 C at 2 to 5 s' therefore need checking against the full text. The draft's key 'Read2024' is ambiguous with item 16. For the comparator numbers the open-access full text (CC BY 4.0) was read from the WRAP PDF (https://wrap.warwick.ac.uk/id/eprint/188615/1/1-s2.0-S2666248524000283-main.pdf): the cell, the 3 mm gaps, the open circuit, 100 % state of charge and the 2 to 5 s of its Table 4 are recorded verbatim in data/comparators.md, section 10 (reconciled after the review, D121)."
  },
  {
   "n": 14,
@@ -633,7 +633,7 @@
   "verified": true,
   "differences_from_hint": "The current edition is the 6th (Version 6.00, released 19 April 2024; copyright 2000-2024), Phlogiston Press, Cambridge, MA. It lists Lienhard V first and Lienhard IV second, the reverse of the hint. The hint's order is that of the 5th edition (Dover print, Mineola, NY, December 2019, ISBN 9780486837352).",
   "comparator_numbers": null,
-  "notes": "The source is the book's own site, run by the authors (Phlogiston Press is their imprint): its BibTeX page and home page. The version 6.00 PDF could not be fetched, so the section on contact conductance was not checked. The draft main.tex cites 'Lienhard2020' for steel-on-steel contact conductances of 200, 2,000 and 3,700 W m-2 K-1. 2020 is not the current edition's year. A search returned AHTTv510.pdf in the site's 2020/08 upload folder, which suggests version 5.10 of the 5th edition. Check the values against whichever edition is cited."
+  "notes": "The source is the book's own site, run by the authors (Phlogiston Press is their imprint): its BibTeX page and home page. The version 6.00 PDF could not be fetched, so the section on contact conductance was not checked. The draft main.tex cites 'Lienhard2020' for steel-on-steel contact conductances of 200, 2,000 and 3,700 W m-2 K-1. 2020 is not the current edition's year. A search returned AHTTv510.pdf in the site's 2020/08 upload folder, which suggests version 5.10 of the 5th edition. Check the values against whichever edition is cited. The contact conductances themselves were read on 21 October 2026 in this edition (version 6.00, Table 2.1, Section 2.3, p. 76), as DECISIONS.md D36 (2) records; only the 2 November re-reading failed, so the manuscript cites Table 2.1 of this edition (reconciled after the review, D121)."
  },
  {
   "n": 21,

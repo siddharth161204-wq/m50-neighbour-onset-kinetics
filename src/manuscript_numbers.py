@@ -73,13 +73,75 @@ def predictions():
     rows = list(csv.DictReader(open(p)))
     through10 = [r for r in rows if int(r["stage"]) <= 10]
     s11 = [r for r in rows if int(r["stage"]) == 11]
-    return {"through_stage10": {"committed": len(through10), "held": sum(r["verdict"] == "held" for r in through10),
-                                "failed": sum(r["verdict"] == "failed" for r in through10),
-                                "foreseen": sum(r["verdict"] == "failed" and r["foreseen"] == "yes" for r in through10)},
-            "stage11": {"committed": len(s11), "held": sum(r["verdict"] == "held" for r in s11),
-                        "failed": sum(r["verdict"] == "failed" for r in s11)},
-            "all": {"committed": len(rows), "held": sum(r["verdict"] == "held" for r in rows),
-                    "failed": sum(r["verdict"] == "failed" for r in rows)}}
+    def counts(rs):
+        failed = [r for r in rs if r["verdict"] == "failed"]
+        foreseen = sum(r["foreseen"] == "yes" for r in failed)
+        return {"committed": len(rs), "held": sum(r["verdict"] == "held" for r in rs), "failed": len(failed),
+                "foreseen": foreseen, "unforeseen": len(failed) - foreseen}
+    return {"through_stage10": counts(through10), "stage11": counts(s11), "all": counts(rows)}
+
+
+def after_review(res):
+    """Quantities the manuscript states after the reviewer's read (DECISIONS.md D121), computed here from the inputs
+    and the registered results files. None is registered; each restates or combines registered values."""
+    tests = {r["test"]: r for r in csv.DictReader(open(os.path.join(ROOT, "inputs", "fransson2024", "m50_tests.csv")))}
+    trig = {}
+    for r in csv.DictReader(open(os.path.join(res, "stage7_triggers.csv"))):
+        if r["kind"] == "test":
+            trig.setdefault(r["test"], float(r["E_J"]))
+    ee = {r["test"]: float(r["E_e_J"]) for r in csv.DictReader(open(os.path.join(res, "stage9_fractions.csv")))}
+    db = [r for r in csv.DictReader(open(os.path.join(ROOT, "inputs", "databank", "databank_m50_used.csv")))
+          if r["Trigger-Mechanism"] == "Nail"]
+    body_max = max(float(r["Energy-Fraction-Cell-Body-kJ"]) for r in db) * 1e3
+    ej_max = max(float(r["Energy-Fraction-Positive-Ejecta-kJ"]) + float(r["Energy-Fraction-Negative-Ejecta-kJ"])
+                 for r in db) * 1e3
+    c1 = json.load(open(os.path.join(res, "stage7_paper_numbers.json")))["part_b"]["C1"]["central"]["predicted_tests"]
+    out = {"what": "derived for the manuscript after the reviewer's read (DECISIONS.md D121); not registered",
+           "trigger_vs_databank": {
+               "databank_nail_tests": len(db), "body_max_J": body_max, "ejecta_max_J": ej_max,
+               "n_tests_Eb_above_body_max": sum(e > body_max for e in trig.values()),
+               "n_tests_Ee_above_ejecta_max": sum(ee[t] > ej_max for t in trig),
+               "n_tests": len(trig),
+               "C1_met_at_f0_tests": sorted(c1), "C1_met_at_f0_Eb_J": [min(trig[t] for t in c1), max(trig[t] for t in c1)],
+               "others_Eb_J": [min(v for t, v in trig.items() if t not in c1), max(v for t, v in trig.items() if t not in c1)]},
+           "categories": {c: sorted(t for t, r in tests.items() if r["failure_category"] == c)
+                          for c in sorted(set(r["failure_category"] for r in tests.values()))}}
+    rank = json.load(open(os.path.join(res, "stage10_rank.json")))
+
+    def find(o):
+        if isinstance(o, dict):
+            if isinstance(o.get("spread"), dict) and "C2_tri21" in o["spread"]:
+                return o["spread"]
+            for v in o.values():
+                r = find(v)
+                if r:
+                    return r
+        return None
+    sp = find(rank)
+    spread = {}
+    for k in ("C2_tri21", "C2_120", "C2_240", "C2_360"):
+        nz = {t: x for t, x in sp[k]["fractions"].items() if x > 0}
+        en = {t: x * ee[t] for t, x in nz.items()}
+        spread[k] = {"fraction_ratio": max(nz.values()) / min(nz.values()),
+                     "fraction_largest_test": max(nz, key=nz.get), "fraction_smallest_test": min(nz, key=nz.get),
+                     "fraction_smallest": min(nz.values()),
+                     "energy_ratio": max(en.values()) / min(en.values()),
+                     "energy_largest_test": max(en, key=en.get), "energy_smallest_test": min(en, key=en.get),
+                     "energy_J": [min(en.values()), max(en.values())],
+                     "n_nonzero": len(nz), "zero_tests": sorted(t for t, x in sp[k]["fractions"].items() if x == 0)}
+    out["spread"] = spread
+    out["spread_energy_ratio_range"] = [min(v["energy_ratio"] for v in spread.values()),
+                                        max(v["energy_ratio"] for v in spread.values())]
+    out["spread_fraction_smallest_range"] = [min(v["fraction_smallest"] for v in spread.values()),
+                                             max(v["fraction_smallest"] for v in spread.values())]
+    tv = out["trigger_vs_databank"]
+    out["trigger_vs_databank_kJ"] = {"body_max": tv["body_max_J"] / 1e3, "ejecta_max": tv["ejecta_max_J"] / 1e3,
+                                     "C1_met_at_f0_Eb": [x / 1e3 for x in tv["C1_met_at_f0_Eb_J"]]}
+    # Facts of the record that the manuscript states, with their source (not computed here)
+    out["record"] = {"stage11_partial_scoring_records": 178, "stage11_records": 216,
+                     "source": "DECISIONS.md D118 (1): the scoring run once on a copy of 178 of the 216 records",
+                     "ai_use_first_commit_date": "2026-10-10", "ai_use_last_date": "2026-11-02"}
+    return out
 
 
 def main():
@@ -87,7 +149,7 @@ def main():
     ap.add_argument("--res", default=os.path.join(ROOT, "results"))
     a = ap.parse_args()
     out = {"constants": constants(), "kinetics_band": kinetics_band(a.res), "runs": run_counts(a.res),
-           "predictions": predictions()}
+           "predictions": predictions(), "after_review": after_review(a.res)}
     json.dump(out, open(os.path.join(a.res, "manuscript_numbers.json"), "w"), indent=1, default=float)
     print(json.dumps(out, default=float)[:1500])
 

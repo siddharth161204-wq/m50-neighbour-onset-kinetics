@@ -422,3 +422,13 @@ Statements:
 - Energy release diagram (S1, joined): "A novel energy release diagram, which can quantify the reaction kinetics for all the battery component materials, is proposed to interpret the mechanisms of the chain reactions during thermal runaway."
 
 Not found in what could be read: anything on the share of thermal runaway heat carried away by ejecta, or a ratio of heat passed to neighbours. The abstract has none, and the full text was not reached.
+
+## 13. Torres-Castro, Kurzawski, Hewson, Lamb 2020, J. Electrochem. Soc. 167(9), 090515
+
+Added after the review (DECISIONS.md D121). The numbers below were read on the open-access IOP article page (https://iopscience.iop.org/article/10.1149/1945-7111/ab84fa) for references_verified.json, item 18, and are copied from its comparator_numbers; they are not re-quoted verbatim here.
+
+- Conditions: five 3 Ah LiCoO2/graphite pouch cells (203 Wh/kg) at 100 % state of charge, cell 1 nailed; stacks without plates, and with aluminium or copper plates of 0.8, 1.6 and 3.2 mm between the cells.
+- Total time, no plates: the entire five-cell string consumed within about 90 s (Results, baseline, Fig. 2).
+- Gap crossing (one cell's failure to the next's): around 10 s without plates at 100 % state of charge; 20 to 30 s at 80 %; usually over 30 s with plates (Discussion, "Propagation speed", Fig. 11).
+- Energy the next cell absorbs before it fails: 2.0 kJ on average without plates; with 0.8 mm plates 2.6 kJ (Al) or 2.5 kJ (Cu) in the next cell and about 3.2 kJ (Al) or 4.1 kJ (Cu) in the plates (Discussion, "Cell heating during gap-crossing"). The paper gives a nominal 45 kJ stored per cell ("Propagation speed") but does not express the 2.0 kJ as a fraction.
+- How the manuscript uses it: as the closest published estimate of what reaches a neighbour, beside this study's 0.27 to 5.96 kJ, for a different cell and stack; an order-of-magnitude comparison only.

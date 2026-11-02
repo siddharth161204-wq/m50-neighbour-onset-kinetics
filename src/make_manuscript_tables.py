@@ -45,28 +45,34 @@ def bracket(s):
     return f"({fnum(lo)}, {fnum(hi)}]"
 
 
+def cat(c):
+    return {"cell movement": "c.m.", "": "--"}.get(c, c)
+
+
 def t1(res, out):
     tests = {r["test"]: r for r in rows(os.path.join(ROOT, "inputs", "fransson2024", "m50_tests.csv"))}
     trig = {r["test"]: r for r in rows(os.path.join(res, "stage7_triggers.csv")) if r["kind"] == "test"}
     ej = {r["id"]: r for r in rows(os.path.join(res, "stage8_ejected.csv")) if r["kind"] == "test"}
-    lines = [r"\begin{table}[t]", r"\centering", r"\footnotesize", r"\setlength{\tabcolsep}{4pt}",
-             r"\caption{The sixteen two-cell LG M50 tests of Fransson et al.~\cite{fransson2024exploring} (Tables 3 and 4 of the paper), "
+    lines = [r"\begin{table}[t]", r"\centering", r"\footnotesize", r"\setlength{\tabcolsep}{2.7pt}",
+             r"\caption{The sixteen two-cell LG M50 tests of Fransson et al.~\cite{fransson2024exploring} (their Tables 3 and 4), "
              r"with the trigger's body energy $E_\mathrm{b}$ that puts the model's trigger at the measured peak at the central "
              r"contact over 21.39~s, and the ejected energy $E_\mathrm{e}=3.105\,E_\mathrm{b}$. Times run from the trigger's "
              r"runaway to the neighbour's onset. The two maxima marked $^{a}$ may not be the neighbour's surface and are read as "
-             r"exploratory.}",
+             r"exploratory. Category, Fransson et al.'s failure category: 1, the trigger's nail-penetration failure; 2, failure "
+             r"in the propagating cell; 4, sidewall rupture of the trigger; c.m., ``cell movement'' in the X-ray camera's "
+             r"field of view, given in place of a category; a dash, none given.}",
              r"\label{tab:tests}",
-             r"\begin{tabular}{llrrrlrr}", r"\toprule",
+             r"\begin{tabular}{llrrrlrrc}", r"\toprule",
              r"Test & Connection & \multicolumn{1}{c}{Trigger} & \multicolumn{1}{c}{$E_\mathrm{b}$} & "
-             r"\multicolumn{1}{c}{$E_\mathrm{e}$} & Propagated & \multicolumn{1}{c}{Time} & \multicolumn{1}{c}{Neighbour} \\",
-             r" & & peak (\textdegree C) & (kJ) & (kJ) & & (s) & max. (\textdegree C) \\", r"\midrule"]
+             r"\multicolumn{1}{c}{$E_\mathrm{e}$} & Propagated & \multicolumn{1}{c}{Time} & \multicolumn{1}{c}{Neighbour} & Category \\",
+             r" & & peak (\textdegree C) & (kJ) & (kJ) & & (s) & max. (\textdegree C) & \\", r"\midrule"]
     for t in ORDER:
         r = tests[t]
         prop = r["propagated"] == "Yes"
         nm = r["neighbour_max_C"] + (r"$^{a}$" if (not prop and float(r["neighbour_max_C"]) > 500) else "")
         lines.append(f"{short(t)} & {r['connection']} & {r['trigger_max_C']} & {float(trig[t]['E_J']) / 1e3:.1f} & "
                      f"{float(ej[t]['E_e_J']) / 1e3:.1f} & {'yes' if prop else 'no'} & "
-                     f"{r['time_to_propagation_s'] if prop else ''} & {nm} \\\\")
+                     f"{r['time_to_propagation_s'] if prop else ''} & {nm} & {cat(r['failure_category'])} \\\\")
         if t in ("M50_PP_Exp4",):
             lines.append(r"\midrule")
     lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}"]
