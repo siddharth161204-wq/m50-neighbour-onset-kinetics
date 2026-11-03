@@ -1,7 +1,7 @@
 # Onset kinetics on a resolved neighbour cell: where a whole-cell threshold and a local one disagree
 
 ::: byline
-Siddharth Satte, Independent researcher, Pune, India, 2 November 2026. A pre-registered study: predictions commits b09ef1d (Stages 1, 2) and 2657aee (Stage 3), each public before its kinetics ran on an archived history. [doi.org/10.5281/zenodo.23279455](https://doi.org/10.5281/zenodo.23279455){.nobr}; [github.com/siddharth161204-wq/m50-neighbour-onset-kinetics](https://github.com/siddharth161204-wq/m50-neighbour-onset-kinetics){.nobr}.
+Siddharth Satte, Independent researcher, Pune, India, 3 November 2026. A pre-registered study: predictions commits b09ef1d (Stages 1, 2) and 2657aee (Stage 3), each public before its kinetics ran on an archived history. [doi.org/10.5281/zenodo.23279455](https://doi.org/10.5281/zenodo.23279455){.nobr}; [github.com/siddharth161204-wq/m50-neighbour-onset-kinetics](https://github.com/siddharth161204-wq/m50-neighbour-onset-kinetics){.nobr}.
 :::
 
 <div class="headline">
@@ -125,6 +125,13 @@ Figure 1. (a) First time each history self-heats at 0.15 K/min, 30 s release, 33
 3. With no delivery the far face peaks above the four low maxima under every thermal draw (by 9.5 to 66.7 K) and at the high contact (19.9 to 64.9 K); at the low contact only M50_PP_Exp3's does (16.6 K), M50_ST_Exp1's coming within 1.0 K of its 128 C. The overshoot rests on the contact as much as on the roll, and under no draw or contact do the fractions separate the two groups.
 4. At the posterior mean's f_t(C2) the kinetic draws move five of the six times the clock reproduced within 10 s by 1.5 to 56.3 s, and the two that start latest leave M50_PP_Exp4 and the three tests at their threshold uncrossed; within 10 s two to four of the nine are reproduced, against six. A time reproduced near a threshold belongs to the fraction and the kinetics together.
 5. Scorecard: P2 (f\*(C1) unchanged) and P3 held; P1 (M50_ST_Exp2's f\*(C2) a third of its value under the two earliest draws), P4 (the low contact, foreseen from Stage 7's runs), P5 (the thermal bands the wider in all four tests) and P6 (only M50_PP_Exp4 loses its crossing; the other five move by less than 60 s) failed.
+
+## Stage 12 (v1.8)
+
+1. The trigger held to the calorimetry (predictions 981c1e6; ten runs): with its body energy capped at the Databank's largest for this cell, 33.2 kJ, the eight tests the fitted triggers ignite with no delivery ignite nothing; the hot spot peaks at 191.9 to 192.2 C at the central contact and 226.4 to 226.7 C at the high one, 63.5 to 63.8 and 29.0 to 29.3 K short of 255.7 C.
+2. With one ejected energy for every test, the Databank's median (76.74 kJ), a test's fraction is its delivered energy over that energy. The searches match seven of the nine times (M50_ST_Exp4's newly, 337.6 against 342 s); the fractions read from the tests vary 22.6-fold (263.5 to 5,962.4 J; 47.6-fold as shares of 3.105 E_b) and the thresholds f\*(C2) 14.0-fold (73.0-fold), and the groups still overlap (M50_PT_Exp1's f_max 0.0272 against M50_SP_Exp3's f_t 0.0034).
+3. So the conduction result does not rest on the fitted triggers, and the spread and the overlap of the delivered fraction survive a measured ejected energy; part of the larger spreads was the ejected energy's scaling with the fitted trigger.
+4. Scorecard: P1 to P4 held, P1, P3 and P4 fixed by Stages 6 and 9's records before the runs, as the predictions recorded. Through Stage 12: 74 predictions, 36 failed.
 
 ## What it means for the thesis
 

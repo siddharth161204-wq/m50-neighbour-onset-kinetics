@@ -250,7 +250,7 @@ def t4(res, out):
              r"\caption{The predictions by stage: committed before the stage's runs, held, failed, and of the failures those "
              r"foreseen, which the predictions file had recorded before the runs as expected to fail, as already fixed by earlier "
              r"records or an energy balance, or as failing under a condition it named that then held. The stages' own texts "
-             r"label 17 of the 21 through Stage 10 so (Supplement S2). Every prediction, its expectation and its verdict are in "
+             r"label 17 of the 21 through Stage 10 so. Every prediction, its expectation and its verdict, and the rule for a foreseen failure, are in "
              r"the supplement.}",
              r"\label{tab:predictions}",
              r"\begin{tabular}{p{0.44\textwidth}rrrr}", r"\toprule",
