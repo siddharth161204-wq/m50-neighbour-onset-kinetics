@@ -1,0 +1,683 @@
+\documentclass[preprint,12pt]{elsarticle}
+% Single-file source for submission, written by src/make_submission_files.py from manuscript/main.tex.
+% Manuscript of the study in this repository (Brief 20, Part M; prepared for the Journal of The Electrochemical Society
+% by Brief 21, M1 to M6). Every number in the text is traced to a numbers or
+% results file by manuscript/numbers_check.py; the figures are built by src/make_manuscript_figures.py and the tables
+% by src/make_manuscript_tables.py from the results files.
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}  % Type 1 text fonts (Latin Modern) rather than bitmap EC fonts
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{textcomp}
+\usepackage{xurl}
+\usepackage[hidelinks,draft]{hyperref}  % no hyperlinks in the submitted file (the journal's instructions)
+\usepackage{xcolor}
+\newcommand{\degC}{\,\textdegree C}
+\newcommand{\fs}{f^{*}}
+\newcommand{\ft}{f_{\mathrm{t}}}
+\newcommand{\fmax}{f_{\mathrm{max}}}
+\newcommand{\Eb}{E_{\mathrm{b}}}
+\newcommand{\Ee}{E_{\mathrm{e}}}
+\newcommand{\PH}[1]{\textcolor{red}{[#1]}}
+\biboptions{sort&compress}
+\setlength{\emergencystretch}{1.5em}
+\setcounter{secnumdepth}{0}  % sections are not numbered (the journal's instructions)
+\journal{Journal of The Electrochemical Society}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Neither conduction nor a fixed delivered fraction reproduces sixteen two-cell propagation tests: a pre-registered study}
+
+\author{Siddharth Satte\textsuperscript{z}}
+% The corresponding author's e-mail address is added by the author at submission; it is not committed to the public repository.
+\address{Independent researcher, Pune, India\\[4pt]\textsuperscript{z}E-mail: \PH{the author's e-mail, added at submission}}
+
+\begin{abstract}
+%ABSTRACT-START
+Pack models of thermal runaway propagation are seldom tested against many tests. A published Bayesian decomposition kinetic model was integrated in resolved and lumped neighbour LG M50 cells and set, in twelve pre-registered stages, against sixteen two-cell propagation tests. The neighbours disagree on when the chemistry starts; the kinetics set both. With the largest body energy calorimetry gives for this cell and the cans in contact, conduction and radiation ignite neither neighbour in any test. With triggers fitted to each test's peak, a local criterion gets the most outcomes right but almost no times; the whole-cell clock can match times but predicts few propagations. A delivered share of the trigger's ejected energy is needed; it varies 42- to 208-fold between tests (22- to 64-fold in energy), overlapping between propagated and non-propagated ones. Without delivery the far face exceeds four of five low maxima at the central contact. The one published neighbour history best follows a short delivery near threshold. Held out, nothing beats a constant probability by the registered margin. Kinetic and thermal draws move four tests' non-zero thresholds at most fivefold. Of 74 pre-committed predictions, 36 failed. Pack models should carry the delivered share as a distribution.
+%ABSTRACT-END
+\end{abstract}
+
+% Keywords are entered in the journal's submission system (manuscript/submission/keywords.txt), not in the manuscript.
+
+\end{frontmatter}
+
+%BODY-START
+\section{Introduction}
+\label{sec:intro}
+
+Thermal runaway in one cell of a pack can spread to its neighbours, and models of the pack are used to judge whether and when it does~\cite{feng2015propagation,coman2017modelling,mishra2021multimode,hoelle2023simulation}. They represent each cell as one temperature or resolve it, and let a neighbour run away when its temperature reaches an onset value or when Arrhenius heat sources outrun its losses. Their heat paths are conduction through contacts, tabs and holders, radiation and convection, the last two of which Mishra and Jain showed to matter by switching them off in a simulated pack~\cite{mishra2021multimode}. Some represent what the failing cell vents, as the share of its energy carried off with the ejecta~\cite{coman2017modelling} or as the vent gas and its reactions~\cite{kim2021venting}, and some the gas layer that the vaporising electrolyte forms between the roll and the can~\cite{hoelle2023simulation}. Propagation tests in modules of pouch and cylindrical cells report the order and timing of failures in a few configurations~\cite{lamb2015failure,said2019cascading,torrescastro2020passive}, and models have been compared with such tests one configuration at a time~\cite{feng2015propagation,hoelle2023simulation}.
+
+Calorimetry has shown how much of a failing cell's energy does not stay in it. Fractional thermal runaway calorimetry of 18650 cells finds that typically 20 to 30\,\% of the total energy leaves through the casing and the rest with the ejecta~\cite{walker2019decoupling}, and the Battery Failure Databank collects such measurements for many cells, the LG M50 among them~\cite{finegan2024databank}. A model that heats a neighbour by conduction and radiation from the failing cell's body therefore omits most of the energy, and a model that represents the ejecta must choose how much of them reaches the neighbour.
+
+The tests that could check that choice report little per test. Fransson et al.~\cite{fransson2024exploring} ran sixteen two-cell propagation tests of LG M50 cells in direct contact, joined by welded tabs, eight in series and eight in parallel; for each they report whether the neighbour propagated, when, and the two cells' maximum surface temperatures, from one thermocouple per cell. Nine propagated, at 147 to 342~s, and Fransson et al.\ infer from their records that propagation needed at least 150\degC{} in the neighbour. Read, Jones and Marco~\cite{read2024sidewall} report tests of a seven-cell module of the same cell, in which propagation followed the trigger's sidewall rupture. Such datasets allow a comparison test by test, which the timing of one configuration cannot give.
+
+The chemistry that turns heating into runaway is a network of decomposition reactions of the SEI, the electrolyte, the electrodes and the separator~\cite{feng2018mechanism}. Koenig, Zhao and Deng~\cite{koenig2025uncertainty} inferred such a network from calorimetry with a Bayesian chemical reaction neural network and published the posterior over its parameters. That makes it possible to ask how much of a model's prediction the kinetic uncertainty could move, beside the uncertainty of the thermal properties~\cite{oregan2022thermal,chen2021simplified}. The author's earlier two-cell study, archived on Zenodo and not peer reviewed~\cite{satte2026twocell}, solved the neighbour of a failing LG M50 cell both as one temperature and as a resolved field, with identical inputs, and compared both with fixed onset temperatures; its geometry and solver are this study's starting point.
+
+Three questions have not been put to a model against a set of tests. Do a resolved and a lumped neighbour, given the same kinetics, agree on when the chemistry starts, and what sets it? Do conduction and radiation alone account for the measured outcomes, and if not, what must be delivered, and how much? And does the criterion that decides ignition, local at the hottest point or the whole cell's, predict which tests propagate and when? Answering them needs predictions fixed before the runs, because a model with a free delivered energy can be made to reproduce any one test.
+
+This paper reports a study that put these questions to the model in twelve pre-registered stages. Its contributions are:
+\begin{itemize}
+\item the decomposition kinetics integrated in a resolved and a lumped neighbour, over 200 draws of their posterior and 30 draws of the roll's thermal properties over literature ranges, with the finding that the two neighbours disagree on the onset and that the kinetics set both;
+\item a test of conduction and radiation, with each test's trigger fitted to its peak and held to the calorimetry's largest body energy, and of seven ignition criteria, against the sixteen measured tests, test by test;
+\item the inverse reading: the fraction of the trigger's ejected energy each test needs, read from its outcome, its time and its peak, as a share of the test's fitted ejected energy and of one measured ejected energy for every test;
+\item the one published neighbour history set against those readings, and held-out scores of every predictor against one probability for every test;
+\item bands of the central numbers under kinetic and thermal draws chosen by rank before the runs;
+\item a pre-registration record: 74 predictions committed before their stages' registered runs, 36 of which failed, 14 of them not foreseen in their predictions files, every verdict reported (Table~\ref{tab:predictions}).
+\end{itemize}
+
+The answers, in the order the paper reports them, are these. The two neighbours disagree on when the chemistry starts, and the kinetics set both. With body energies up to the largest calorimetry gives for this cell and the cans in contact, conduction and radiation ignite neither, in any test. With triggers fitted to each test's peak, the local criterion gets the most outcomes right but almost none of the times, and the whole-cell clock can match the times but predicts few propagations. The fraction of the ejected energy each test needs varies 42- to 208-fold, 22- to 64-fold in energy and so as a share of one measured ejected energy, and overlaps between the two groups; at the central contact and with no delivery the far face already overheats four of the five low maxima; the one published history follows a short delivery near its threshold most closely; held out, nothing beats one probability for every test by the registered margin; and in four tests the draws move the non-zero thresholds at most fivefold.
+
+
+\section{Methods}
+\label{sec:methods}
+
+The study ran in twelve stages. Each stage's predictions, with the expectation held for each, were committed to a public repository and pushed before any run of its registered list, and the stage's inputs were recorded in a decisions log before they were used; the record and its two departures are given at the end of this part. The methods below are those of the stages whose results this paper reports, in the order of the claims.
+
+The symbols and terms used throughout are listed in Table~\ref{tab:terms}.
+
+\begin{table}[!tbp]
+\centering
+\footnotesize
+\caption{Symbols and terms.}
+\label{tab:terms}
+\begin{tabular}{@{}p{0.27\textwidth}p{0.68\textwidth}@{}}
+\toprule
+Symbol or term & Meaning \\
+\midrule
+Trigger; neighbour & The failing cell (cell~1, one temperature); the cell beside it (cell~2) \\
+Lumped neighbour & Cell~2 as one temperature \\
+Resolved neighbour & Cell~2 as a three-dimensional temperature field (half model, 19,355 nodes) \\
+Hot spot & The resolved neighbour's hottest node at each time \\
+Far face & The resolved neighbour's surface node at mid-length opposite the line of contact \\
+C1, the local criterion & The hot spot reaches 255.7\degC{} \\
+C2, the whole-cell clock & The lumped neighbour reaches 255.7\degC{} \\
+C3 to C7 & The lumped neighbour reaches 150\degC{} (C3); the separator melts, 138.5\degC, at the hot spot (C4) or in the lumped neighbour (C5); C1 and C4 with the aged SEI (C6, C7) \\
+$\Eb$ & The trigger's body energy, released in cell~1 as a triangular pulse over 21.39~s \\
+$\Ee=r\,\Eb$ & The energy the trigger ejects; $r=3.105$, the Databank's median ratio of ejected to body energy \\
+$E_{\mathrm{fix}}$ & One ejected energy for every test, the Databank's median for this cell, 76.74~kJ (Stage~12) \\
+$f$ & The fraction of $\Ee$ delivered to the neighbour through the half of its can facing the trigger, over 21.39~s \\
+$\fs$; $E^{*}=\fs\Ee$ & A test's threshold for a criterion, the smallest $f$ at which it is met; the energy delivered there \\
+$\ft$ & The $f$ at which a criterion is met at a propagated test's measured time \\
+$\fmax$ & The $f$ at which the far face peaks at a non-propagated test's measured maximum \\
+Low, central, high contact & The steel-on-steel contact conductance $h_c$: 200, 2,000 and 3,700~W\,m$^{-2}$\,K$^{-1}$ \\
+Kinetic draw; thermal draw & One of 200 samples of the kinetic posterior; one of 30 samples of the roll's thermal properties over literature ranges \\
+Stage & One pre-registered step of the study, with its own predictions committed before its runs \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Two cells, two neighbours}
+\label{sec:geometry}
+
+The geometry is that of the author's earlier two-cell study~\cite{satte2026twocell}: two LG M50 cylindrical cells (21700 format, 21.1~mm in diameter and 70.1~mm long) side by side with parallel axes (Fig.~\ref{fig:geometry}a). The trigger (cell~1) is one temperature, which releases its body energy $\Eb$ inside itself as a triangular pulse. The neighbour (cell~2) is solved twice from the same history of the trigger: as one temperature, the lumped neighbour, and as a three-dimensional field, the resolved neighbour, a half model on 19,355 nodes with its symmetry plane through both axes. The resolved roll conducts 1.3~W\,m$^{-1}$\,K$^{-1}$ across its layers and 25~W\,m$^{-1}$\,K$^{-1}$ along them, inside a 0.25~mm steel can; both neighbours hold the cell's heat capacity, 61.75~J\,K$^{-1}$. In Stages~1 to 4 the cells stand 2~mm apart joined by busbars, as the two-cell study archived them: Stage~1 integrates the kinetics along its archived temperature histories, Stage~2 feeds their heat back into both solvers (one-way), and Stages~3 and 4 repeat Stage~1 over the posterior. From Stage~5 on, the cans touch along a line, as in the tests~\cite{fransson2024exploring}. Within 45\textdegree{} of the line of contact the conductance per unit area is a steel-on-steel contact conductance $h_c$ in series with the air wedge, $h(\theta)=k_{\mathrm{air}}/(\delta(\theta)+k_{\mathrm{air}}/h_c)$ with $\delta=2R(1-\cos\theta)$, and $h_c$ is 200, 2,000 or 3,700~W\,m$^{-2}$\,K$^{-1}$ for the low, central and high contact, steel-on-steel values from a textbook table~\cite[Table~2.1]{lienhard2024heat}, since no conductance between cylindrical cells in contact was found; nickel-strip tabs join the cells (5, 6.8 and 10~mW\,K$^{-1}$ each, one in series and two in parallel)~\cite{satte2026twocell}; the cans radiate to each other (view factor 0.1817~\cite{bergman2011fundamentals}) and to the room, and lose heat to it by convection, at 25\degC. A step splits the reaction, integrated node by node, from the backward-Euler conduction step, at a length that keeps any node's reaction heating within 1~K a step. Table~\ref{tab:params} lists the parameters and their sources.
+
+\begin{table}[p]
+\centering
+\scriptsize
+\caption{The model's parameters and their sources: a published source, the two-cell study whose geometry and solver this study takes~\cite{satte2026twocell}, or an entry of this study's decisions log (D, in the repository~\cite{satte2026repo}). Values in parentheses are brackets run as sensitivities or the ranges of the thermal draws.}
+\label{tab:params}
+\renewcommand{\arraystretch}{0.92}
+\begin{tabular}{p{0.29\textwidth}p{0.37\textwidth}p{0.24\textwidth}}
+\toprule
+Quantity & Value & Source \\
+\midrule
+\multicolumn{3}{l}{\textit{Geometry}} \\
+Cell diameter and length & 21.1 and 70.1 mm & two-cell study~\cite{satte2026twocell} \\
+Can: wall, conductivity; mass and specific heat & 0.25 mm, 15 W\,m$^{-1}$\,K$^{-1}$; 9 g, 500 J\,kg$^{-1}$\,K$^{-1}$ & two-cell study~\cite{satte2026twocell} \\
+Resolved neighbour & half model, 19,355 nodes (145,195 halved) & this study (D42) \\
+\multicolumn{3}{l}{\textit{Thermal properties}} \\
+Roll conductivity, across and along the layers & 1.3 and 25 W\,m$^{-1}$\,K$^{-1}$ (draws 0.998 to 1.38; 24.9 to 25.8) & \cite{oregan2022thermal,chen2021simplified}; D27 \\
+Cell heat capacity & 61.75 J\,K$^{-1}$ (65 g at 950 J\,kg$^{-1}$\,K$^{-1}$; roll draws 842 to 1110 J\,kg$^{-1}$\,K$^{-1}$) & two-cell study~\cite{satte2026twocell}; \cite{oregan2022thermal}; D27 \\
+\multicolumn{3}{l}{\textit{Paths}} \\
+Contact conductance between the cans, $h_c$ & 200, 2,000, 3,700 W\,m$^{-2}$\,K$^{-1}$ & \cite{lienhard2024heat}; D36 \\
+Air in the wedge & 0.03 W\,m$^{-1}$\,K$^{-1}$ & two-cell study~\cite{satte2026twocell} \\
+Tabs (series one, parallel two) & 5, 6.8, 10 mW\,K$^{-1}$ per tab & two-cell study~\cite{satte2026twocell}; D37 \\
+View factor between the cans & 0.1817 & \cite{bergman2011fundamentals}; D38 \\
+Emissivity; room convection; ambient & 0.8; 10 W\,m$^{-2}$\,K$^{-1}$; 25\textdegree C & two-cell study~\cite{satte2026twocell}; D38 \\
+\multicolumn{3}{l}{\textit{Trigger}} \\
+Model and release & one temperature; triangular over 21.39 s (17.53, 25.24 s) & two-cell study~\cite{satte2026twocell}; supplement of \cite{fransson2024exploring} with a 25\textdegree C start; D52 \\
+Body energy $E_\mathrm{b}$, one per test & 9.0 to 54.3 kJ & Tables 3, 4 of \cite{fransson2024exploring}; D65 \\
+Stage 5 energy; with the ejecta (Stage 6) & 33.2 kJ; 107.0 kJ & \cite{finegan2024databank}; D38, D53 \\
+\multicolumn{3}{l}{\textit{Kinetics}} \\
+Model and posterior & B-CRNN, mean and 200 joint draws & \cite{koenig2025uncertainty}; D1, D3, D22 \\
+Reactant masses & per 720 g reference cell & \cite{koenig2025uncertainty}; D4 \\
+Initial SEI amount & 0.15 (fresh); 0 (aged) & \cite{koenig2025uncertainty}; D66 \\
+Separator's melting heat & absorbed & \cite{koenig2025uncertainty}, Fig. 3(e); D5 \\
+\multicolumn{3}{l}{\textit{Levels}} \\
+Propagation (C1, C2) & 255.7\textdegree C within 900 s & internal-short band of \cite{koenig2025uncertainty}; D35 \\
+The paper's criterion (C3) & 150\textdegree C & \cite{fransson2024exploring} \\
+Separator's melting (C4, C5, C7) & 138.5\textdegree C & \cite{koenig2025uncertainty}; D5, D71 \\
+Self-heating onset & 0.15 K\,min$^{-1}$ & \cite{koenig2025uncertainty} \\
+\multicolumn{3}{l}{\textit{Event (Stage 7)}} \\
+Stored energy released from the separator's melting & 65.52 kJ (63.36 kJ) over 21.39 s & cell's rating; D68 \\
+\multicolumn{3}{l}{\textit{Delivery (Stage 8 on)}} \\
+Ejected-to-body ratio $r$ & 3.105 (2.218 to 4.156) & \cite{finegan2024databank}; D77 \\
+Shape, duration, region & triangular, 21.39 s (10, 60 s), facing half (cap-end quarter) & D77 \\
+Joule heat in the parallel tests & 5 and 20\,\% of 65.52 kJ & D80 \\
+Gas layer, largest resistance & 0.03077 (facing half), 0.00962 m$^2$\,K\,W$^{-1}$ & \cite{hoelle2023simulation}; D82 \\
+\multicolumn{3}{l}{\textit{Nodes}} \\
+Thermocouple bracket at mid-length & 0.33\textdegree, 88.28\textdegree, 180\textdegree & D102 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{figure1.pdf}
+\caption{The two cells and the kinetics. (a) Cross-section at mid-length. The trigger (cell~1, one temperature) releases its body energy $\Eb$ over 21.39~s; the neighbour (cell~2) is solved as one temperature and as a resolved half model (symmetry plane dash-dotted), the cans touching along the line of contact. From Stage~8 a fraction $f$ of the ejected energy $\Ee$ enters through the half of the neighbour's can facing the trigger (red). The three nodes at mid-length bracket the thermocouple's unreported angle. (b) Heat release rate of each submodel of the kinetics in a 5~K\,min$^{-1}$ ramp from 25\degC, per kilogram of cell: the posterior mean (lines) and the 2.5 to 97.5\,\% band over the 200 posterior draws; the separator's melting absorbs heat, and its magnitude is shown. Dotted: a self-heating rate of 0.15~K\,min$^{-1}$ at the cell's specific heat. The schematic and every figure were drawn by scripts, written with a generative AI model, from the results files; no generative image tool was used.}
+\label{fig:geometry}
+\end{figure}
+
+\subsection{The kinetics, their posterior and the SEI}
+\label{sec:kinetics}
+
+The decomposition kinetics are the Bayesian chemical reaction neural network of Koenig, Zhao and Deng~\cite{koenig2025uncertainty}, trained on calorimetry of NCM811 and graphite: seven anode, electrolyte, SEI and binder reactions, three cathode reactions and the separator's melting, each an Arrhenius rate with learned orders, whose heat enters per unit cell mass at the reactant mass fractions of the source's reference cell. The model is the mean of each parameter over the source's posterior particles; its DSC curves reproduce the source's at 5~K\,min$^{-1}$, and Fig.~\ref{fig:geometry}b shows each submodel's heat release in such a ramp. The posterior enters as 200 joint draws, each one particle of each submodel's file taken independently with replacement, which treats the three submodels as independent. The SEI starts fresh, at the source's initial amount; the aged SEI of Stage~7 starts at none. A node starts to self-heat when its reaction heat alone heats it at 0.15~K\,min$^{-1}$, and it propagates in the model when it reaches 255.7\degC, the lower edge of the source's internal-short band~\cite{koenig2025uncertainty}, the source's own level; lower levels are scored as C3 to C5 (below). An emulation of the source's accelerating-rate test gives a self-heating onset of 179.3\degC, inside the source's band of 169.0 to 198.0\degC; its internal-short trigger temperature at the stated rate is 199.8\degC, below the source's band of 255.7 to 302.1\degC, a mismatch this study does not resolve.
+
+\subsection{The tests, the triggers and the ejected energy}
+\label{sec:tests}
+
+Fransson et al.~\cite{fransson2024exploring} ran sixteen two-cell propagation tests of LG M50 cells in direct contact, joined by welded tabs, eight in parallel and eight in series, the trigger penetrated by a nail and a thermocouple fastened at the middle of each cell's surface (Table~\ref{tab:tests}; tests are named here without the prefix M50). Nine propagated, at 147 to 342~s from the trigger's runaway. The neighbours of five of the seven that did not peaked at 71 to 133\degC; the other two report 626 and 808\degC, which may not be the neighbour's surface, and are read as exploratory. The model's clock starts with the trigger's release, read as the start of its runaway. Each test gets its own trigger: the body energy $\Eb$ that puts cell~1's peak at the test's measured trigger maximum at the central contact, released over 21.39~s, the mean of the trigger's rise times in the two tests whose records Fransson et al.'s supplement draws~\cite{fransson2024exploring}, computed from the mean heating rates it prints with a 25\degC{} start. $\Eb$ runs from 9.0~kJ (PT\_Exp1, 164\degC) to 54.3~kJ (SP\_Exp3, 832\degC); in 13 of the 16 tests it exceeds the largest body energy the Databank measured for this cell, 33.2~kJ, probably because the trigger's flame heats the thermocouple the energy is matched to. The energy a trigger ejects as vent gas, ejecta and flame is $\Ee=r\,\Eb$, with $r=3.105$ the median ejected-to-body ratio of the ten LG M50 nail tests of the Battery Failure Databank~\cite{finegan2024databank}, bracketed by their smallest and largest, 2.218 and 4.156; $\Ee$ runs from 27.9 to 168.6~kJ, above the largest ejected energy the Databank measured, 89.3~kJ, in 14 tests. Fransson et al.\ classify each test's failure: in three tests the trigger's sidewall ruptured, which the model does not represent, and four carry ``cell movement'' in place of a category (Table~\ref{tab:tests}).
+
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.7pt}
+\caption{The sixteen two-cell LG M50 tests of Fransson et al.~\cite{fransson2024exploring} (their Tables 3 and 4), with the trigger's body energy $E_\mathrm{b}$ that puts the model's trigger at the measured peak at the central contact over 21.39~s, and the ejected energy $E_\mathrm{e}=3.105\,E_\mathrm{b}$. Times run from the trigger's runaway to the neighbour's onset. The two maxima marked $^{a}$ may not be the neighbour's surface and are read as exploratory. Category, Fransson et al.'s failure category: 1, the trigger's nail-penetration failure; 2, failure in the propagating cell; 4, sidewall rupture of the trigger; c.m., ``cell movement'' in the X-ray camera's field of view, given in place of a category; a dash, none given.}
+\label{tab:tests}
+\begin{tabular}{llrrrlrrc}
+\toprule
+Test & Connection & \multicolumn{1}{c}{Trigger} & \multicolumn{1}{c}{$E_\mathrm{b}$} & \multicolumn{1}{c}{$E_\mathrm{e}$} & Propagated & \multicolumn{1}{c}{Time} & \multicolumn{1}{c}{Neighbour} & Category \\
+ & & peak (\textdegree C) & (kJ) & (kJ) & & (s) & max. (\textdegree C) & \\
+\midrule
+PT\_Exp1 & parallel & 164 & 9.0 & 27.9 & no &  & 71 & c.m. \\
+PT\_Exp2 & parallel & 679 & 43.4 & 134.8 & no &  & 808$^{a}$ & 1 \\
+PT\_Exp3 & parallel & 507 & 31.6 & 98.1 & no &  & 118 & 4 \\
+PT\_Exp4 & parallel & 630 & 40.0 & 124.2 & yes & 272 & 607 & 4 \\
+PP\_Exp1 & parallel & 787 & 51.1 & 158.6 & yes & 152 & 381 & c.m. \\
+PP\_Exp2 & parallel & 644 & 41.0 & 127.2 & yes & 147 & 699 & 2 \\
+PP\_Exp3 & parallel & 686 & 43.9 & 136.3 & no &  & 105 & -- \\
+PP\_Exp4 & parallel & 728 & 46.9 & 145.5 & yes & 275 & 523 & 2 \\
+\midrule
+ST\_Exp1 & series & 788 & 51.1 & 158.7 & no &  & 128 & 1 \\
+ST\_Exp2 & series & 723 & 46.5 & 144.3 & no &  & 133 & 4 \\
+ST\_Exp3 & series & 282 & 16.6 & 51.7 & yes & 177 & 763 & 1 \\
+ST\_Exp4 & series & 756 & 48.8 & 151.6 & yes & 342 & 733 & 1 \\
+SP\_Exp1 & series & 728 & 46.8 & 145.4 & yes & 223 & 546 & 2 \\
+SP\_Exp2 & series & 755 & 48.7 & 151.3 & yes & 149 & 698 & c.m. \\
+SP\_Exp3 & series & 832 & 54.3 & 168.6 & yes & 210 & 420 & c.m. \\
+SP\_Exp4 & series & 625 & 39.6 & 123.0 & no &  & 626$^{a}$ & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The criteria}
+\label{sec:criteria}
+
+Stage~7 read seven candidate ignition criteria from each run with no new physics: the hot spot reaches 255.7\degC{} (C1); the lumped neighbour reaches 255.7\degC{} (C2); the lumped neighbour reaches 150\degC, Fransson et al.'s criterion (C3); the separator's melting, 138.5\degC, at the hot spot (C4) or in the lumped neighbour (C5); and C1 and C4 with the aged SEI (C6, C7). A criterion predicts propagation when it is met within 900~s, and its time when it is met. From Stage~8 on, C1 is the local criterion and C2 the whole-cell clock. Stage~7 also ran the internal short as an event: the neighbour's stored 65.52~kJ released over 21.39~s from its separator's melting, a modelling choice.
+
+\subsection{The delivery and its brackets}
+\label{sec:delivery}
+
+From Stage~8 on, a fraction $f$ of the trigger's ejected energy reaches the neighbour as a triangular pulse over 21.39~s from the start of the release, a uniform flux through the half of the can facing the trigger (Fig.~\ref{fig:geometry}a); the lumped neighbour receives the same energy. $f$ is a model quantity, the fraction a conduction-and-delivery model needs, not a measurement of what reached the neighbour. The brackets, run as sensitivities, are a delivery over 10 or 60~s, the quarter of the facing half nearest the cap, the ratio's two ends, Joule heat of 5 or 20\,\% of the stored energy in the parallel tests, the gas layer between the roll and the can of Hoelle, Zimmermann and Hinrichsen~\cite{hoelle2023simulation}, and, in Stage~9, a constant power over 120, 240 or 360~s.
+
+\subsection{The readings: \texorpdfstring{$\fs$, $\ft$ and $\fmax$}{f*, f\_t and f\_max}}
+\label{sec:readings}
+
+$\fs$, a test's threshold for a criterion, is the bracket $(\mathrm{lo},\mathrm{hi}]$ of the smallest fraction at which the model meets it, from $f=0$ through 0.1, 0.2 and 0.3, then 0.5 and 1, halving to a width of at most 0.02; it is 0 where the run with no delivery already meets it, and its value is the bracket's midpoint. A propagated test's outcome is reproduced at $\fs$ and above, a non-propagated test's below it. Stage~9 read each test's own measurement as a fraction: $\ft$, at which a criterion is met at the measured time, for the propagated tests (bisection to 0.005, or a run within 10~s), and $\fmax$, at which the far face peaks at the measured maximum, for the others (bisection to 0.005, or a peak within 5~K, over 900~s). A propagated test is read by its time only and a non-propagated test by its peak only, because after ignition the model's temperatures are not comparable with the measured maxima.
+
+\subsection{The history and the thermocouple's angle}
+\label{sec:history}
+
+No raw series of the tests is published. Stage~10 read the one published history of a neighbour before propagation, PT\_Exp4's, and the one of a test that did not propagate, PP\_Exp3's, out of the vector paths of the supplement's Figure~10~\cite{fransson2024exploring}, twice by separate code, to 2.47 and 2.46~K and 0.45~s, and checked them against the page's pixels. Each model history at the far face was compared with PT\_Exp4's record by the root mean square of the difference over 0 to 271.5~s, the onset the figure marks. The paper places the thermocouple at the middle of the surface at an angle it does not give, so three nodes at mid-length bracket it: facing the trigger (0.33\textdegree{} from the line of contact), at the side (88.28\textdegree) and at the far face (180\textdegree).
+
+\subsection{Held-out scores and ranks}
+\label{sec:heldout}
+
+Each predictor ($\fs$(C1), $\fs$(C2), and Stage~9's fraction, $\ft$(C2) or $\fmax$, the two exploratory maxima included) was fitted on the eight series tests and scored on the eight parallel ones, and the other way round: a penalised logistic regression~\cite{firth1993bias} of the outcome on the predictor, against one probability for every test, $(k+0.5)/(n+1)$, by the mean log score and the Brier score, with permutation $p$-values and bands from 10,000 relabellings of the outcomes. A predictor counted as better if it beat the constant by 0.1 in the mean log score, a margin registered before the scoring. Spearman's correlation ranked each quantity against the outcomes and the measured times.
+
+\subsection{The bands of Stage 11 and the calorimetry's energies of Stage 12}
+\label{sec:draws}
+
+Stage~11 asked how much of the central numbers the kinetic and the thermal uncertainty could account for. Four kinetic draws were chosen by rank, before its predictions, from Stage~3's 200 draws ranked by the hottest node's onset in the headline passive case of the busbar geometry (ranks 5, 50, 151 and 196); in Stage~3's emulation of the source's accelerating-rate test, three of them (ranks 5, 151 and 196) are among the 10.5\,\% of draws that show no internal short. Four thermal draws came from Stage~3's 30 Latin hypercube draws of the roll's properties over literature ranges, spanning a jelly roll measured in a 21700 cell~\cite{chen2021simplified} and combinations, made in the two-cell study, of the M50's component values~\cite{oregan2022thermal}: the smallest and largest conductivity across the layers and the smallest and largest heat capacity. A thermal draw sets the neighbour's roll; the trigger's history stays central. For four tests (the smallest and largest trigger energy, and the two tied nearest the median) $\fs$(C1) and $\fs$(C2) were searched under each draw from Stage~8's bracket; the far face at $f=0$ was run under each thermal draw and at the low and high contacts for the five low-maximum tests; and the nine propagated tests were run at their $\ft$(C2) under each kinetic draw. Stage~12 held the trigger's energies to the calorimetry: it ran the eight tests in which the fitted trigger ignites the hot spot with no delivery with the body energy capped at the Databank's largest for this cell, 33.2~kJ, at the central and the high contact, where a run depends on the test only through its connection, so that four runs stand for the eight. It then read the same four tests' thresholds and the nine propagated tests' $\ft$(C2) as fractions of $E_{\mathrm{fix}}$, the Databank's median ejected energy for this cell, in place of $r\Eb$, narrowing Stage~8's and Stage~9's brackets to 0.02 and 0.005 of it; since a run depends on $f$ and $\Ee$ only through the delivered energy $f\Ee$, a fraction of $E_{\mathrm{fix}}$ is a delivered energy over 76.74~kJ.
+
+\subsection{Pre-registration and verification}
+\label{sec:prereg}
+
+Each stage's predictions file was committed and pushed before any run of the stage's registered list; its commit, push time and the hash of its run list are in the repository's record~\cite{satte2026repo}, and the files were not changed afterwards. Two departures are recorded there. While Stage~11's code was tested, one full run under a kinetic draw was made before its predictions, and its result is stated in them; and while its runs went, the scoring was once run on 178 of its 216 records to test a figure's script, and the verdicts it printed were seen, after which no code, rule or run changed. Through Stage~10 the study registered 64 predictions, of which 32 failed; Stage~11 registered six more, of which four failed, and Stage~12 four, all of which held. Of the 36 failures, 22 were foreseen in their predictions files and 14 were not (Table~\ref{tab:predictions}; every prediction, its expectation and its verdict in the supplement). Every stage closed the energy account of every run (the largest residual $2\times10^{-11}$ of the heat taken in); each stage that changed the model's configuration halved the mesh spacing and the step limits on a run near its threshold (the hot spot's peak rise moved by at most 0.52\,\%), and Stages~10 and 11 ran Stage~9's configuration unchanged; the stages recomputed their registered numbers by separate code; and from Stage~5 on every registered number and verdict was read again, before the stage's texts were written, by a check that had not drafted them. Use of generative AI: the study's code was written, its runs launched and checked, the sources it uses read, and its decisions log, the texts of this paper and its supplement, and the scripts that draw the figures and tables from the results files drafted by a generative AI model, Claude Opus 5.5, made by Anthropic and used through the Claude application with code execution, from 10 October to 3 November 2026, stage by stage under the author's direction; no generative image tool was used. Each of those checks was made by another instance of the same model that had not drafted the stage's texts, so it is an internal check, not an independent review. \PH{After the author's pass: the author revised the text of this paper, and no finding or interpretation was accepted without the author's validation.} The decisions log and every stage's predictions are archived with the code, and the author keeps the instructions given to the model; every result is reproducible from the archived code and records~\cite{satte2026repo}.
+
+\section{Results}
+\label{sec:results}
+
+\subsection{The resolved and the lumped neighbour disagree on when the chemistry starts, and the kinetics set both}
+\label{sec:res-onset}
+
+Under the posterior-mean kinetics every history that self-heats first does so at 108.4\degC, by decomposition of the fresh SEI (Fig.~\ref{fig:geometry}b); over the 200 draws the hottest node's onset runs from 45.2 to 216.6\degC, and in 37 draws a cathode reaction starts first. With copper busbars (500~mW\,K$^{-1}$) and the largest Databank energy, 33.2~kJ, the resolved neighbour's hottest node starts 23.4 and 26.4~s before the lumped node (10 and 30~s releases). Over the 200 posterior draws the lumped node never starts first in any of 42 cases, and at the headline case the lead runs from 15.4 to 58.9~s (2.5 to 97.5\,\%), with two modes (Fig.~\ref{fig:lead}a). Over the literature ranges of the roll's conductivity and heat capacity the hottest node's onset varies 0.027 times as much as over the kinetic posterior, and the lumped node's 0.11 times: the kinetics set both onsets, and the anode-electrolyte submodel, which holds the SEI, carries 0.997 of the lead's variance. Fed back, the reaction heat moves the hot spot's entry into the internal-short band by at most 0.02~s (19.24 to 19.23~s at the 30~s release): conduction from the busbar sets it.
+
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{figure2.pdf}
+\caption{The onset in the published two-cell geometry (cells 2~mm apart, busbars), 33.2~kJ released over 30~s. (a) The hottest node's lead over the lumped node (the lumped node's onset at 0.15~K\,min$^{-1}$ less the hottest node's) at 500~mW\,K$^{-1}$: over the 200 kinetic draws at the central thermal properties, the 30 thermal draws at the posterior-mean kinetics and the 210 combined pairs; dotted, the posterior mean. (b) Onset against the busbar conductance: median (lines) and 2.5 to 97.5\,\% band over the 200 kinetic draws, and the posterior mean (markers). A band that reaches the end of the run holds draws in which that node does not start within 900~s.}
+\label{fig:lead}
+\end{figure}
+
+\subsection{With the trigger's body energy and the cans in contact, conduction and radiation do not ignite the neighbour}
+\label{sec:res-conduction}
+
+With body energies up to the largest the Databank gives for this cell, 33.2~kJ, conduction and radiation alone take neither neighbour to 255.7\degC{} within 900~s in any of 5,248 runs with the cans in contact, across the contact, tab, release and connection brackets and the 200 kinetic draws, and in sensitivities to the ambient temperature and to the Databank's smaller energies; the hot spot peaks at most at 226.7\degC{} and the lumped neighbour at 180.6\degC. With the trigger's release matched to the tests' durations the trigger peaks at 526 to 537\degC, inside the measured 164 to 832\degC, and neither neighbour ignites in 442 runs with the draws (Fig.~\ref{fig:passive}b). Only the Databank's total energy with the ejecta, 107~kJ, which puts the trigger at 1,424 to 1,494\degC{} at the central contact, takes the neighbour to 255.7\degC: the hot spot in every run at 8 to 17~s, and the lumped neighbour at 40 to 180~s. By Fransson et al.'s 150\degC{} criterion only the lumped neighbour at the central contact crosses inside the measured window (Fig.~\ref{fig:passive}a). The measured trigger peaks reach 832\degC, and putting the model's trigger at each test's own peak takes up to 54.3~kJ (Table~\ref{tab:tests}); only with those larger triggers, beyond the calorimetry's body energies, does conduction ignite the neighbour, as the next result shows. Held to 33.2~kJ, the eight tests in which it then ignites the hot spot ignite neither neighbour (Stage~12): the hot spot peaks at 191.9 to 192.2\degC{} at the central contact and at 226.4 to 226.7\degC{} at the high contact, 63.5 to 63.8 and 29.0 to 29.3~K short of 255.7\degC, and the lumped neighbour at 159.8 to 161.8 and 175.9 to 177.4\degC.
+
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{figure3.pdf}
+\caption{Conduction and radiation only, the cans in contact. (a) First crossing of 150\degC, Fransson et al.'s criterion, by four clocks of the neighbour in 36 runs at the posterior-mean kinetics (three contacts, three tab conductances, releases of 10 and 30~s, both connections; within a row, the low, central and high contact from the bottom), against the nine measured times (top; shaded, their range). (b) The neighbour's peak against the trigger's: the sixteen tests (black) and the model's far face (circles) and hot spot (diamonds), joined per run, for the two-cell study's trigger, the trigger released over the tests' durations, and the Databank's total energy with the ejecta, 107.0~kJ; a run whose hot spot reaches 255.7\degC{} ends there (triangles). Shaded: the range of the measured trigger peaks.}
+\label{fig:passive}
+\end{figure}
+
+\subsection{The local criterion gets the most outcomes right but almost none of the times; the whole-cell clock can match the times but predicts few propagations}
+\label{sec:res-criteria}
+
+With each test's own trigger and no delivery, the hot spot at 255.7\degC{} (C1) predicts propagation in eight tests, those with the largest fitted triggers (46.5 to 54.3~kJ), six of them hits, and gets 11 of 16 outcomes right, the most of any criterion, as many as C6, its counterpart with the aged SEI (Fig.~\ref{fig:criteria}); every hit comes 130 to 323~s before the measured time, because the hot spot crosses by 21.7~s. The lumped neighbour at 255.7\degC{} (C2) predicts two tests, both hits, 11.5 and 125.3~s after the measured times; at 150\degC{} (C3) and at the separator's melting (C4, C5) the criteria predict fourteen and get nine right. The aged SEI changes no hot-spot verdict. The internal short as an event overshoots: it takes the hot spot to 1,504 to 1,584\degC, about twice the hottest propagating neighbour, 763\degC. Near its own threshold the whole-cell clock has the induction the tests show and the hot spot none (Fig.~\ref{fig:fractions}a): with the 21.39~s delivery, C2 reproduces six of the nine measured times within 10~s, at $\ft$(C2) of 0.0016 to 0.047 (0.27 to 5.96~kJ), and a seventh, ST\_Exp4's, when Stage~12 narrowed its search (337.6 against 342~s, at 1.18~kJ), while C1, wherever it crosses, does so by 21.1~s and reproduces none. Delivered as a constant power over 240 or 360~s, the fraction lets C1 reproduce one and two of the nine times.
+
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{figure4.pdf}
+\caption{The sixteen tests (rows; parallel above, series below, each in order of the trigger's measured peak) against the seven criteria at the central contact, each test with its own trigger: the time in seconds, from the start of the trigger's release, at which the criterion is met, or no. Shading: a hit or a correct rejection (blue tints), a false alarm (orange), a miss (pink). The first column gives the measured outcome and time; the bottom rows count the classes.}
+\label{fig:criteria}
+\end{figure}
+
+\subsection{A delivered part of the ejected energy is needed, and what each test needs varies 42- to 208-fold}
+\label{sec:res-fraction}
+
+For the hot spot, $\fs$(C1) is 0 in eight tests and at most 0.1625 in all; for the lumped neighbour, $\fs$(C2) is at most 0.05 in thirteen tests and at most 0.4625 in all, both highest in PT\_Exp1, the smallest trigger (Fig.~\ref{fig:thresholds}a, Table~\ref{tab:fractions}). The two groups overlap: the nine propagated tests need $\fs$(C1) of 0 to 0.0875 and the seven that did not reach it at 0 to 0.1625 ($\fs$(C2): 0 to 0.2375 against 0 to 0.4625), so no single fraction reproduces the sixteen outcomes. At a common fraction of 0.1, 0.2 or 0.3 every clock crosses by 88.3~s after the release and every hit comes 126 to 339~s early (Fig.~\ref{fig:thresholds}b). Read from each test's own measurement, $\ft$(C2) where it propagated and $\fmax$ where it did not, the fraction varies between tests by a factor of 47.6 with the 21.39~s delivery and of 42.2 to 208.1 with the constant powers, the largest non-zero value over the smallest; four tests need none, and the propagated and non-propagated tests overlap in it too (Fig.~\ref{fig:fractions}b). The smallest is SP\_Exp3's in every reading (0.0013 to 0.0031), the largest PT\_Exp1's or ST\_Exp3's, and SP\_Exp3 and PT\_Exp1 are two of the four tests Fransson et al.\ mark ``cell movement''. In energy the same readings vary 22- to 64-fold, and the thresholds $\fs$(C2) themselves 73- to 109-fold among the tests that need a delivery. Among the brackets, the ratio's ends scale every $\fs$ by 0.75 to 1.40; with the gas layer of Hoelle et al.~\cite{hoelle2023simulation} the hot spot of the three tests nearest the median trigger stays below 255.7\degC{} at $f=0.2$ (192.4 to 196.5\degC), where without it it crosses at 3.5 to 3.7~s; but in those runs the can, insulated from the roll by the layer, reaches 1,886 to 1,924\degC, so the bracket shows the layer's direction, not its size.
+
+Stage~12 read the same quantities as fractions of $E_{\mathrm{fix}}=76.74$~kJ, one ejected energy for every test, the Databank's median for this cell, so that a test's fraction is its delivered energy over a measured value rather than over a share of its fitted trigger (Table~\ref{tab:fractions-fixed}). With the 21.39~s delivery the nine propagated tests' searches end with seven $\ft$(C2) within 10~s of the measured times and two at the threshold (PT\_Exp4, 4.66 to 4.85~kJ; ST\_Exp3, 11.95 to 12.11~kJ). With the registered $\fmax$, the fraction then varies 22.6-fold between tests, from SP\_Exp3's 0.0034 (263.5~J) to PP\_Exp2's 0.0777 (5,962.4~J), against 47.6-fold as a share of $r\Eb$; with one ejected energy this is also the spread in energy, which Stage~10's readings put at 22- to 64-fold over the four deliveries, and four tests still need none. The smallest is again SP\_Exp3's, marked ``cell movement''; the largest, PP\_Exp2's, is not. The groups still overlap: PT\_Exp1's $\fmax$, 0.0272 (2.09~kJ), is 7.9 times SP\_Exp3's $\ft$(C2), and the thresholds $\fs$(C2) reach 0 to 0.160 in the propagated tests and 0 to 0.168 in the others ($\fs$(C1): 0 to 0.0589 against 0 to 0.0590). As fractions of $E_{\mathrm{fix}}$ the thresholds $\fs$(C2) vary 14.0-fold by their brackets' midpoints, from PP\_Exp4's (0, 0.0237] to PT\_Exp1's (0.1635, 0.1680], against 73.0-fold as shares of $r\Eb$: part of each spread was the ejected energy's scaling with the fitted trigger. Counted at their brackets, the two tests left at the threshold would widen the readings' spread to 45.4- to 46.0-fold.
+
+\begin{table}[p]
+\centering
+\scriptsize
+\caption{The fractions of the ejected energy each test needs in the model, and Stage 11's ranges. (a) $f^*$(C1) and $f^*$(C2): the threshold bracket $(\mathrm{lo},\mathrm{hi}]$ at which the hot spot (C1) or the lumped neighbour (C2) reaches 255.7\textdegree C with the 21.39~s delivery, 0 where no delivery is needed. $f_\mathrm{t}$(C2): the fraction at which the lumped neighbour's crossing comes at the measured time ($^{b}$ the search ended at the threshold, its bracket given). $f_\mathrm{max}$: the fraction at which the far face peaks at the measured maximum ($^{a}$ exploratory). (b) Over the posterior mean and Stage 11's draws: $f^*$(C1) and $f^*$(C2) over the nine (four kinetic, four thermal, the mean), the far face's peak at $f=0$ less the measured maximum over the central case, the four thermal draws and the two contact brackets, and the lumped neighbour's crossing at $f_\mathrm{t}$(C2) under the four kinetic draws, with the number that do not cross within 900~s. Table~\ref{tab:fractions-fixed} gives (a) as fractions of one measured ejected energy (Stage 12).}
+\label{tab:fractions}
+\begin{tabular}{llll}
+\multicolumn{4}{l}{(a) Stages 8 and 9, at the posterior mean} \\
+\toprule
+Test & $f^*$(C1) & $f^*$(C2) & $f_\mathrm{t}$(C2) or $f_\mathrm{max}$ \\
+\midrule
+PT\_Exp1 & (0.15, 0.1625] & (0.45, 0.4625] & 0.075 \\
+PT\_Exp2 & (0, 0.0125] & (0.0125, 0.025] & 0.5625$^{a}$ \\
+PT\_Exp3 & (0.025, 0.0375] & (0.075, 0.0875] & 0 \\
+PT\_Exp4 & (0, 0.0125] & (0.0375, 0.05] & (0.0375, 0.040625]$^{b}$ \\
+PP\_Exp1 & 0 & 0 & 0.01875 \\
+PP\_Exp2 & (0, 0.0125] & (0.025, 0.0375] & 0.046875 \\
+PP\_Exp3 & (0, 0.0125] & (0.0125, 0.025] & 0 \\
+PP\_Exp4 & 0 & (0, 0.0125] & 0.0125 \\
+ST\_Exp1 & 0 & (0, 0.0125] & 0 \\
+ST\_Exp2 & 0 & (0.0125, 0.025] & 0 \\
+ST\_Exp3 & (0.075, 0.0875] & (0.225, 0.2375] & (0.23125, 0.234375]$^{b}$ \\
+ST\_Exp4 & 0 & (0, 0.0125] & (0.00625, 0.009375]$^{b}$ \\
+SP\_Exp1 & 0 & (0.0125, 0.025] & 0.01875 \\
+SP\_Exp2 & 0 & (0, 0.0125] & 0.025 \\
+SP\_Exp3 & 0 & 0 & 0.0016 \\
+SP\_Exp4 & (0, 0.0125] & (0.0375, 0.05] & 0.265625$^{a}$ \\
+\bottomrule
+\end{tabular}
+\par\bigskip
+\begin{tabular}{lllll}
+\multicolumn{5}{l}{(b) Stage 11: ranges over the posterior mean and the draws} \\
+\toprule
+Test & $f^*$(C1) & $f^*$(C2) & Far face at & C2 crossing, \\
+ & & & $f=0$ (K) & kinetic draws (s) \\
+\midrule
+PT\_Exp1 & 0.14375--0.15625 & 0.39375--0.49375 & $-20.9$ to $-8.4$ &  \\
+PT\_Exp3 &  &  & $-17.6$ to $21.3$ &  \\
+PT\_Exp4 &  &  &  & 191--197 (2 none) \\
+PP\_Exp1 &  &  &  & 140--150 \\
+PP\_Exp2 &  &  &  & 138--155 \\
+PP\_Exp3 & 0--0.00625 & 0.00625--0.03125 & $16.6$ to $66.7$ &  \\
+PP\_Exp4 &  &  &  & 230--237 (2 none) \\
+ST\_Exp1 &  &  & $-1.0$ to $57.3$ &  \\
+ST\_Exp2 & 0 & 0--0.01875 & $-12.8$ to $41.2$ &  \\
+ST\_Exp3 &  &  &  & 77--80 (2 none) \\
+ST\_Exp4 &  &  &  & 233--240 (2 none) \\
+SP\_Exp1 &  &  &  & 201--275 \\
+SP\_Exp2 &  &  &  & 144--157 \\
+SP\_Exp3 & 0 & 0--0.00625 &  & 198--230 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!tbp]
+\centering
+\scriptsize
+\caption{The readings of Table~\ref{tab:fractions}(a) as fractions of one ejected energy for every test, the Databank's median for this cell, $E_\mathrm{fix}=76.74$~kJ, in place of $3.105\,E_\mathrm{b}$ (Stage~12). A run depends on $f$ and the ejected energy only through the delivered energy, so each entry restates Table~\ref{tab:fractions}(a) at the same delivered energy, except those marked $^{c}$, which Stage~12's runs narrowed (brackets halved to at most 0.02 of $E_\mathrm{fix}$) or found ($f_\mathrm{t}$(C2) to 0.005 of it, or a run within 10~s of the measured time). $^{a}$ exploratory; $^{b}$ the search ended at the threshold, its bracket given.}
+\label{tab:fractions-fixed}
+\begin{tabular}{llll}
+\toprule
+Test & $f^*$(C1) & $f^*$(C2) & $f_\mathrm{t}$(C2) or $f_\mathrm{max}$ \\
+\midrule
+PT\_Exp1 & (0.0545, 0.0590] & (0.1635, 0.1680] & 0.0272 \\
+PT\_Exp2 & (0, 0.0220] & (0.0220, 0.0439] & 0.9879$^{a}$ \\
+PT\_Exp3 & (0.0320, 0.0479] & (0.0959, 0.1118] & 0 \\
+PT\_Exp4 & (0, 0.0202] & (0.0607, 0.0809] & (0.0607, 0.0632]$^{b,c}$ \\
+PP\_Exp1 & 0 & 0 & 0.0388 \\
+PP\_Exp2 & (0, 0.0207] & (0.0414, 0.0622] & 0.0777 \\
+PP\_Exp3 & (0, 0.0111]$^{c}$ & (0.0333, 0.0444]$^{c}$ & 0 \\
+PP\_Exp4 & 0 & (0, 0.0237] & 0.0237 \\
+ST\_Exp1 & 0 & (0, 0.0258] & 0 \\
+ST\_Exp2 & 0 & (0.0235, 0.0352]$^{c}$ & 0 \\
+ST\_Exp3 & (0.0505, 0.0589] & (0.1515, 0.1599] & (0.1557, 0.1578]$^{b}$ \\
+ST\_Exp4 & 0 & (0, 0.0247] & 0.0154$^{c}$ \\
+SP\_Exp1 & 0 & (0.0237, 0.0474] & 0.0355 \\
+SP\_Exp2 & 0 & (0, 0.0247] & 0.0493 \\
+SP\_Exp3 & 0 & 0 & 0.0034$^{c}$ \\
+SP\_Exp4 & (0, 0.0200] & (0.0601, 0.0801] & 0.4257$^{a}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{figure5.pdf}
+\caption{The delivered fraction the outcomes require. (a) $\fs$(C1) (circles) and $\fs$(C2) (squares) of the sixteen tests against the trigger's body energy, each as its bracket from the largest fraction that does not meet the criterion to the smallest that does (marker); filled, propagated; hollow, not. The bars at the right mark where the ranges of the two groups overlap. Square-root scale. (b) At a fraction common to every test, $f=0.2$: each criterion's predicted time against the measured time for the propagated tests it predicts (a missed test below the axis) and, at the right, the predicted times of its false alarms, with their number. The line is equality, the band 60~s either side.}
+\label{fig:thresholds}
+\end{figure}
+
+\subsection{At the central contact, conduction alone overheats the far face in four of the five low maxima}
+\label{sec:res-farface}
+
+Of the seven tests that did not propagate, five report low neighbour maxima. At the central contact and with no delivery the far face already peaks 13.8 to 56.3~K above the measured maxima of PT\_Exp3, PP\_Exp3, ST\_Exp1 and ST\_Exp2, so their $\fmax$ is 0; PT\_Exp1, the smallest trigger, needs 0.075 (2.09~kJ) for its 71\degC. That 0.075 lies above the smallest $\ft$(C2), SP\_Exp3's 0.0016, while the four zeros lie below every $\ft$: the fractions read from the times and the peaks do not separate the groups either. The thermocouple's angle does not remove the overshoot: at 88.3\textdegree{} or facing the trigger the four low maxima still need no delivery (overshoot 16.6 to 159.9~K), and only facing the trigger, with all five at 0, do the fractions separate the groups. The contact conductance can: at the low contact only PP\_Exp3's overshoot remains. In PP\_Exp3's published record, the far face with no delivery lies 41.7~K above the measurement on average over 500~s (peaks 161.3 against 102.0\degC).
+
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{figure6.pdf}
+\caption{The fractions read from each test's own measurement. (a) With the 21.39~s delivery, each propagated test's crossing time against the fraction above the lower end of its threshold bracket, for the hot spot (C1) and the lumped neighbour (C2), one line per test and criterion; black bars, the measured times; shaded, their range. Square-root scale. (b) Against the trigger's energy: $\ft$(C2) for the propagated tests (hollow where the search ended at the threshold, shown with its bracket) and $\fmax$ at the far face for the others (hollow, the two exploratory maxima). Dashed: the largest registered $\fmax$ and the smallest $\ft$(C2).}
+\label{fig:fractions}
+\end{figure}
+
+\subsection{The one published neighbour history is followed most closely by a short delivery near its threshold}
+\label{sec:res-history}
+
+PT\_Exp4's thermocouple reaches 141.0\degC{} by 45~s and rises steadily to 197.3\degC{} at the onset, 271.5~s (Fig.~\ref{fig:history}a). At the far face, the 21.39~s delivery at the two ends of its C2 bracket ($f=0.0375$ and 0.040625), neither of which reproduces the test's time (at the lower end the lumped neighbour does not cross, at the upper it crosses 56.4~s early), lies 16.3 and 16.8~K from the record (root mean square to the onset), the constant powers at their $\ft$ 36.7 to 37.2~K, and no delivery 47.4~K. The difference comes from the first 100~s, the record's rise to 141\degC{} by 45~s, which only the short delivery follows; after 100~s the short and the long C2 readings lie 8.8 to 12.0~K from the record, over the last 60~s the long ones lie closer (2.1 and 3.0 against 4.4 and 4.8~K, exploratory), and none has its last rise. The record's first 8.5~s, a spike to 102\degC, is read as the thermocouple's exposure at the trigger's runaway rather than the can's temperature; it holds 41.2\,\% of the short delivery's squared difference (an exploratory reading). One test's history decides between the readings for that test only.
+
+\subsection{Held out, nothing the model yields beats one probability for every test by the registered margin}
+\label{sec:res-heldout}
+
+Fitted on one connection and scored on the other, no predictor beats one probability for every test by the registered margin of 0.1 in the mean log score; the largest gain is 0.062, Stage~9's fraction fitted on the series tests, and the permutation $p$-values run from 0.23 to 0.75 (Brier score, 0.20 to 0.75) (Fig.~\ref{fig:history}b). No model quantity ranks with the outcomes or the times ($p$ at least 0.13), while $\fs$(C1) and $\fs$(C2) rank with the trigger's energy ($\rho=-0.92$ and $-0.97$): the thresholds mostly restate the trigger. The sixteen tests cannot adjudicate between these models.
+
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{figure7.pdf}
+\caption{(a) PT\_Exp4's measured thermocouple record (black; band, its 2.47~K reading uncertainty) and the model's far face at the central contact under the readings Stage~9 found for that test, each with its root mean square difference from the record up to the onset, 271.5~s (vertical line). Shaded at the left, the record's first 8.5~s, a spike read as the thermocouple's exposure at the trigger's runaway, not the can; at the right, the last 60~s before the onset. (b) Held out: the mean log score of the logistic fit in each predictor less that of one probability for every test, fitted on one connection and scored on the other (markers), with the 2.5 to 97.5\,\% band over 10,000 relabellings of the outcomes. Dashed: the registered margin of 0.1.}
+\label{fig:history}
+\end{figure}
+
+\subsection{How much of this the kinetic and thermal uncertainty could account for}
+\label{sec:res-bands}
+
+Stage~11 asked whether the kinetic posterior and the thermal ranges could account for three of the numbers above: the spread of the fraction between tests, the far face's overshoot and the clock's reproduced times (Fig.~\ref{fig:bands}). The hot spot's threshold $\fs$(C1) did not move under any kinetic draw; it fell by one step of the search only under the smallest radial conductivity and the smallest heat capacity, to (0.1375, 0.15] in PT\_Exp1 and to 0 in PP\_Exp3. The whole cell's $\fs$(C2) moved by at most one step, 0.0125, under the kinetic draws, and further under the heat capacity, its band up to 0.1 wide (PT\_Exp1, 0.39 to 0.49). Within a test the non-zero values of $\fs$(C2) span at most a factor of 5.0 (PP\_Exp3), 0.30 to 0.43 in logarithm of the 42- to 208-fold spread between tests, though the heat capacity's ends take ST\_Exp2's to 0 and SP\_Exp3's from 0. Under every draw the four tests' $\fs\Ee$ for C2 differ by 10,976 to 13,067~J between the smallest and the largest trigger, at least 3.2 times the largest band within one test, 3,408~J: in these tests the spread is not an artefact of the draws. With no delivery the far face peaks above the four low maxima under every thermal draw, by 9.5 to 66.7~K, and at the high contact, by 19.9 to 64.9~K; at the low contact only PP\_Exp3's does, by 16.6~K, ST\_Exp1's coming within 1.0~K of its 128\degC. Under no draw or contact do the fractions separate the two groups. At each propagated test's posterior-mean $\ft$(C2), the kinetic draws move five of the six times the clock reproduced within 10~s by 1.5 to 56.3~s; the two draws whose hottest node starts latest leave PP\_Exp4, and the three tests whose search ended at the threshold, uncrossed by 900~s, the lumped neighbour peaking at 226.7 to 240.8\degC{} and cooling. Within 10~s the draws reproduce two to four of the nine times, against six at the posterior mean. The trigger's body energy ranks with neither the outcome ($\rho=0.34$, $p=0.21$) nor the measured time ($\rho=0.07$, $p=0.88$). These are bands over four draws a side, chosen by rank; the posterior band the study has is that of the onset lead, above.
+
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{figure8.pdf}
+\caption{Stage~11's bands, over four kinetic draws chosen by rank and the four thermal draws at the ends of the roll's property ranges. (a) $\fs$(C1) (orange) and $\fs$(C2) (blue) of the four tests, in order of the trigger's energy, under the posterior mean (black bar), the four kinetic draws (filled circles, ranks 5, 50, 151 and 196 from the left) and the four thermal draws (hollow diamonds: the smallest and the largest radial conductivity, then the smallest and the largest heat capacity), each draw's threshold as its bracket with the marker at the midpoint; a test met with no delivery sits at 0. Square-root scale. (b) For the five low-maximum tests, the far face's peak at $f=0$ less the measured maximum: the central case (black bar), the four thermal draws at the central contact (hollow diamonds) and the low and high contacts at the central properties (triangles down and up). (c) For the nine propagated tests, in order of the measured time, the lumped neighbour's crossing of 255.7\degC{} at the test's posterior-mean $\ft$(C2): measured (black bar), posterior mean (blue bar) and the four kinetic draws (circles); a triangle above the dashed line marks a draw under which it does not cross within 900~s.}
+\label{fig:bands}
+\end{figure}
+
+\subsection{The predictions that failed, and what each failure taught}
+\label{sec:res-failed}
+
+Of the 74 predictions, 36 failed (Table~\ref{tab:predictions}); Stage~12's four held, three of them fixed by earlier records before its runs, as its predictions file states. Twenty-two of the failures were foreseen in their predictions files, mostly because an earlier stage's records already fixed them, and are reported as failures all the same; the other 14 each taught something. In Stage~2 the reaction heat was predicted to push the hottest region into the internal-short band at 200~mW\,K$^{-1}$; it added 0.6 and 0.7~K, so conduction sets the hot spot's peak. In Stage~3 the roll's thermal properties were predicted to set the hottest node's onset more than the kinetics; they move it 0.027 times as much. In Stage~4 the central half of the anode-electrolyte submodel's posterior, standing in for a tighter posterior, was predicted to narrow the lead by over 40\,\%; it narrows it by 14.6\,\%, and the lead has two modes, which the central half keeps (an exploratory finding). In Stage~5 the resolved neighbour was predicted to propagate inside the measured window and in 30 to 90\,\% of the factorial runs; it propagated in none, four predictions about a propagation failed with it, and that led to the delivered energy. In Stage~10 the long deliveries were predicted to follow PT\_Exp4's history better than the short one; the short one followed it more closely, through the rise to 141\degC{} by 45~s; and the survey found a second dataset whose cell the model covers, against the prediction. In Stage~11 the whole cell's threshold was predicted to stay within a factor of two under every kinetic draw; in ST\_Exp2 it fell to a third, by a single step of the search, which near zero is a large factor. The thermal draws were predicted to move it less than the kinetic ones; they moved it more in all four tests, the heat capacity most. And the reproduced times were predicted to sit on a knife edge; five of the six moved by less than 60~s, one lost its crossing under two draws, and the agreement within 10~s fell from six tests to two to four.
+
+
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{The predictions by stage: committed before the stage's runs, held, failed, and of the failures those foreseen, which the predictions file had recorded before the runs as expected to fail, as already fixed by earlier records or an energy balance, or as failing under a condition it named that then held. The stages' own texts label 17 of the 21 through Stage 10 so (Supplement S2). Every prediction, its expectation and its verdict are in the supplement.}
+\label{tab:predictions}
+\begin{tabular}{p{0.44\textwidth}rrrr}
+\toprule
+Stage & Committed & Held & Failed & Foreseen \\
+\midrule
+1 and 2: passive and reactive onset & 7 & 6 & 1 & 0 \\
+3: onset over the posterior and thermal draws & 6 & 3 & 3 & 2 \\
+4: which submodel sets the lead & 5 & 4 & 1 & 0 \\
+5: neighbours against the tests & 7 & 1 & 6 & 0 \\
+6: the paper's 150\textdegree C criterion; matched trigger & 7 & 1 & 6 & 6 \\
+7: seven criteria, test by test & 8 & 3 & 5 & 5 \\
+8: the delivered fraction $f^*$ & 8 & 5 & 3 & 3 \\
+9: fractions from times and peaks & 8 & 5 & 3 & 3 \\
+10: one history; held-out scores & 8 & 4 & 4 & 2 \\
+\midrule
+Stages 1 to 10 & 64 & 32 & 32 & 21 \\
+\midrule
+11: bands under the draws & 6 & 2 & 4 & 1 \\
+12: the trigger held to the calorimetry & 4 & 4 & 0 & 0 \\
+\midrule
+All stages & 74 & 38 & 36 & 22 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Two clocks}
+\label{sec:disc-clocks}
+
+The two neighbours disagree because they average differently. The lumped neighbour holds the cell's whole inventory at one temperature, so its own reaction heat adds to what it receives, and near its threshold it approaches 255.7\degC{} slowly: its crossing stretches from tens of seconds to minutes as the delivered fraction falls toward the threshold (Fig.~\ref{fig:fractions}a). That induction is what lets it reproduce delays of 147 to 275~s with a few kilojoules delivered in 21.39~s. The hot spot sits on the line of contact and under the delivered flux, and its crossing is set by conduction, not by its own reaction: in Stage~2 the reaction heat moved its entry into the internal-short band by at most 0.02~s, and in Stage~11 its threshold did not move under any kinetic draw. It crosses within the delivery or not at all. A local criterion therefore answers whether the facing surface can be driven to the internal-short temperature, and the whole-cell clock how long the bulk takes once enough energy is in; neither alone is a model of the neighbour's runaway, which in the one published history began 271.5~s after the trigger's (Fig.~\ref{fig:history}a).
+
+\subsection{The delivered energy as the missing term}
+\label{sec:disc-energy}
+
+Calorimetry of cylindrical cells finds that most of a failing cell's heat leaves with its ejecta, though the sources do not share a basis. In fractional thermal runaway calorimetry of 18650 cells of several makes, typically 20 to 30\,\% of the total energy leaves through the casing and the rest with the ejecta~\cite{walker2019decoupling}; in the ten LG M50 nail tests of the Battery Failure Databank used here the body keeps 19 to 31\,\% (computed from the Databank's rows), and across the Databank's cylindrical cells the ejected mass releases about 2.6~kJ\,g$^{-1}$ against 0.21~kJ\,g$^{-1}$ for the body~\cite{finegan2024databank}. Coman et al.\ found that 28\,\% of the electrical energy of a 2.4~Ah NCA 18650 cell, triggered by an internal short-circuit device, leaves with the effluent, a share of the electrical energy, not of the total heat~\cite{coman2017modelling}. For fully charged 2.6~Ah LCO 18650 cells in arrays of 12 to 18, Said et al.\ computed a chemical heat of 56.6~$\pm$~2.5~kJ per cell and found, in their tests in air, 60.1~$\pm$~17.5~kJ per cell more from the flaming combustion of the ejecta, which raised the row-to-row propagation speed in the late stages from 0.08~s$^{-1}$ in nitrogen to 0.7~s$^{-1}$~\cite{said2019cascading}. None of these papers, as far as they could be read, reports what part of that energy reaches a neighbour. The closest is Torres-Castro et al.'s estimate that the next cell of a stack of five 3~Ah LCO pouch cells at 100\,\% state of charge, with no barrier, absorbed 2.0~kJ on average before it failed, of a nominal 45~kJ stored per cell~\cite{torrescastro2020passive}. Coman et al.'s efficiency factor carries the energy that leaves as a fixed share~\cite{coman2017modelling}; in Feng et al.'s model of six 25~Ah cells, cutting the electrical energy released by the internal short to 75\,\% of its value is one of four design changes that stop propagation~\cite{feng2015propagation}.
+
+This study's inverse readings put a number on the part that reaches the neighbour for one rig, as a model quantity. A conduction-and-delivery model of the M50 pair needs 0.26 to 5.96~kJ delivered over 21.39~s, 0.0034 to 0.078 of the Databank's median ejected energy for this cell, to reproduce seven of the nine measured times with the whole-cell clock; that range contains Torres-Castro et al.'s 2.0~kJ, for a different cell and stack, and is a small part of the 69 to 81\,\% of this cell's energy that the Databank finds in the ejecta. What a fixed share cannot represent is the variation: the fraction these tests need varies 42- to 208-fold between them as a share of each test's fitted ejected energy, and 22- to 64-fold in energy, which is its spread as a share of one measured ejected energy. The path matters as much as the amount. In a module of seven M50 cells 3~mm apart, not connected and at 100\,\% state of charge, Read, Jones and Marco found that all six neighbours ran away 2 to 5~s after the trigger's penetration when its sidewall ruptured, and none when it did not~\cite{read2024sidewall}, and Kim et al.'s simulations tie such breaches to a higher state of charge~\cite{kim2021venting}. Torres-Castro et al.'s pouch stack crossed each gap in about 10~s and burned through five cells within about 90~s~\cite{torrescastro2020passive}, and Lamb et al.'s modules of pouch cells in contact within 60 to 80~s, while a module of ten 18650 cells in series did not propagate~\cite{lamb2015failure}. The two-cell tests here took 147 to 342~s~\cite{fransson2024exploring}, nearer the times Mishra and Jain simulated for the neighbours of a heated 18650 cell in an array 1~mm apart: about 40 and 90~s with natural convection, 95 and 310~s without~\cite{mishra2021multimode}. Hoelle, Zimmermann and Hinrichsen found a gas layer between the roll and the can necessary to reproduce a stack of five prismatic cells above 60~Ah~\cite{hoelle2023simulation}; in this geometry it keeps the hot spot of three tests below 255.7\degC{} at $f=0.2$, though with an unphysical can temperature. The energy delivered to the neighbour, its amount and its path, is the term a conduction model of these tests lacks, and the tests do not measure it.
+
+\subsection{What sixteen tests cannot constrain}
+\label{sec:disc-tests}
+
+Each test reports one outcome, one time where it propagated and two maxima, from one thermocouple at an unreported angle. That is enough to show that no fixed fraction reproduces the outcomes, but not enough to tell the models apart: held out, nothing the model yields beats one probability for every test by the registered margin, and the one published history decides between the readings for its own test only. Four reports would change that: the neighbour's surface history before propagation, which separates a short delivery near threshold from a long low power, as PT\_Exp4's did; the thermocouple's angle, which decides whether the far face's overshoot is real; the energy each trigger released and ejected, measured as fractional calorimetry measures it~\cite{walker2019decoupling,finegan2024databank}, which would replace a trigger fitted to a thermocouple's peak and turn $\fs$ and $\ft$ from fitted fractions into tested predictions; and replicates at one trigger energy, which would measure the probability of propagation that the overlap of the two groups implies, as sixteen single tests at sixteen energies cannot.
+
+\subsection{What a pack model should do}
+\label{sec:disc-pack}
+
+These are implications of the results, not tested recommendations: no pack model built on them was run. A pack model that ignites a neighbour at a fixed delivered fraction will reproduce some of these tests and not others, because the fraction they need varies 42- to 208-fold between them, and 22- to 64-fold in energy. It would do better to carry a distribution of delivered fraction and to report propagation as a probability. Of the two criteria, the whole-cell clock is the one whose induction matches the measured delays, while the local criterion says only whether the facing surface can be driven to the internal-short temperature; held out, neither's threshold predicted the outcomes better than one probability for every test. And a time reproduced near a threshold is not a validation: under the kinetic draws the reproduced times move by up to 56.3~s, one test loses its crossing, and the agreement within 10~s falls from six tests to two to four.
+
+\subsection{Limits}
+\label{sec:limits}
+
+One dataset carries the comparison: sixteen tests of one cell, in one rig. One history was digitised, from a figure, and its first 8.5~s are read as the thermocouple's exposure rather than the can. The delivery's place, shape and duration are choices, bracketed but not measured, and the trigger's release over 21.39~s rests on a 25\degC{} start: the later reading of the same figure ends the trigger's rise at 15.82 and 24.16~s, with PT\_Exp4's trigger starting at 28.9\degC. The trigger's body energy is fitted to one surface thermocouple's peak, which the trigger's own flame may heat: it exceeds the largest body energy the Databank measured for this cell in 13 of the 16 tests, and the ejected energy the largest it measured in 14, so each fraction is a share of more ejected energy than calorimetry gives, and the eight tests in which conduction alone ignites the hot spot have the largest fitted triggers; Stage~12 held both energies to the calorimetry (below). The model has no sidewall rupture, which Fransson et al.\ record for the trigger in three tests, no venting, no gas phase and no runaway of the neighbour as a whole, and its reaction heat is fed back one way; the two tests at the ends of the fractions' spread are among the four marked ``cell movement''. The far face's overshoot rests on a textbook's contact conductance and on an unreported thermocouple angle. The kinetics were trained on NCM811 and graphite, not on the M50's silicon-graphite negative, and the draws treat their three submodels as independent; the posterior-mean SEI decomposes even at 25\degC{} (80\,\% in a week, an exploratory reading), so a fresh SEI is an idealisation; the emulation of the source's accelerating-rate test failed the acceptance set for it over the posterior and passed only as amended. The thermal properties are literature ranges, not measured uncertainties of this cell, and Stage~11's bands are over four draws a side, ranked in another geometry.
+
+The cap and the fixed ejected energy of Stage~12 are sensitivities, not corrections. The fitted triggers reproduce the measured trigger peaks, which the tests support; the capped trigger reproduces the calorimetry's largest body energy, which the tests do not measure, and it peaks at 526.4 to 531.7\degC{} where those eight tests measured 723 to 832\degC, so neither trigger is both. Held to 33.2~kJ, conduction and radiation ignite no neighbour at the central or the high contact: the finding that conduction alone does not ignite the neighbour at the calorimetry's energies does not rest on the fitted triggers, while the eight ignitions with no delivery do. With one measured ejected energy for every test, the fractions still vary 22.6-fold at 21.39~s and still overlap between the groups, but the larger spreads quoted as shares of $r\Eb$ partly restate the fitted triggers (47.6- to 22.6-fold for the readings, 73.0- to 14.0-fold for the thresholds), and the delivered energies themselves were read with the fitted triggers' body energies, which Stage~12 did not change. What the tests' triggers released and ejected, which calorimetry of the tests themselves would give, remains the input this comparison most lacks. The module study, with more neighbours and more paths, is the next question.
+
+
+\section{Conclusions}
+\label{sec:conclusions}
+
+The study gives the following. Under no kinetic draw does the lumped neighbour start to react before the resolved neighbour's hottest node, and at the headline case the kinetics, not the roll's thermal properties, set both onsets. With body energies up to the largest calorimetry gives for this cell and the cans in contact, conduction and radiation ignite neither neighbour, in any test. With triggers fitted to each test's peak, the local criterion gets the most outcomes right but almost none of the times, and the whole-cell clock can match the times near its threshold but predicts few propagations. A delivered part of the ejected energy is needed, and the fraction each test needs varies 42- to 208-fold, 22- to 64-fold in energy and so as a share of one measured ejected energy, overlapping between the tests that propagated and those that did not, so no fixed fraction reproduces the outcomes; the spread rests on a near-zero smallest value, and the delivered energies on triggers fitted beyond the calorimetry's body energies. At the central contact and with no delivery the far face exceeds four of the five low maxima, an overshoot the low contact removes in three. The one published history is followed most closely by a short delivery near its threshold. Held out, nothing the model yields beats one probability for every test by the registered margin. The kinetic and thermal draws move four tests' non-zero thresholds at most fivefold, and the kinetic draws move the reproduced times by up to 56.3~s, one test losing its crossing.
+
+For tests, four reports would make such a comparison decisive: the neighbour's surface history, the thermocouple's position, the energy each trigger released and ejected, and replicates at one trigger energy. For pack models, the results suggest carrying the delivered fraction as a distribution and propagation as a probability, and not reading a time reproduced near a threshold as a validation.
+
+\section*{Acknowledgments}
+
+% The journal's form (Brief 21, M6): conflicts, funding, the author's contributions, the data statement and the use of
+% generative AI in the Acknowledgments; the AI use also in the Methods. The AI paragraph's last sentences are reworded
+% after the author's pass to say what is then true.
+The measured tests are those of Fransson et al.~\cite{fransson2024exploring}, published under CC~BY~4.0. The kinetic posterior files are the supplementary data of Koenig, Zhao and Deng~\cite{koenig2025uncertainty}. The Battery Failure Databank is provided by the U.S. Department of Energy's National Renewable Energy Laboratory, operated by Alliance for Sustainable Energy, LLC (DOE/\allowbreak NREL/\allowbreak ALLIANCE)~\cite{finegan2024databank}.
+
+\paragraph{Conflicts of interest} The author declares no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+\paragraph{Funding} This work received no specific grant from any funding agency in the public, commercial or not-for-profit sectors.
+
+% Drafted for the author's approval: the roles below are the author's own; the software, the formal analysis, the figures and the original draft were produced with the AI model under his direction (the Methods and the paragraph below).
+\paragraph{Author contributions (CRediT)} \textbf{Siddharth Satte:} Conceptualization, Methodology, Investigation, Resources, Validation, Supervision, Project administration, Writing~-- review \& editing.
+
+\paragraph{Data availability} The code, inputs, run records, checks and decisions of every stage are archived at Zenodo, \url{https://doi.org/10.5281/zenodo.23279455} (all versions; this paper uses version 1.8.0), and in the repository \url{https://github.com/siddharth161204-wq/m50-neighbour-onset-kinetics}~\cite{satte2026repo}. The two-cell geometry is archived at \url{https://doi.org/10.5281/zenodo.23253738}~\cite{satte2026twocell}.
+
+\paragraph{Use of generative AI} Claude (Anthropic), model Claude Opus 5.5, used through the Claude application with code execution from 10 October to 3 November 2026, wrote the study's code, launched and checked its runs, read its sources, and drafted its decisions log, the text of this paper and its supplement, and the scripts that draw the figures and tables from the results files, under the author's direction, as the Methods describe; no generative image tool was used. \PH{After the author's pass: The author revised the text, and no finding or interpretation was accepted without the author's validation.} The author takes full responsibility for the content of this paper.
+
+%BODY-END
+
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{feng2015propagation}
+X.~Feng, X.~He, M.~Ouyang, L.~Lu, P.~Wu, C.~Kulp, S.~Prasser, Thermal runaway
+  propagation model for designing a safer battery pack with 25 {Ah}
+  {LiNi$_x$Co$_y$Mn$_z$O$_2$} large format lithium ion battery, Appl. Energy
+  154 (2015) 74--91.
+\newblock \href {https://doi.org/10.1016/j.apenergy.2015.04.118}
+  {\path{doi:10.1016/j.apenergy.2015.04.118}}.
+
+\bibitem{coman2017modelling}
+P.~T. Coman, E.~C. Darcy, C.~T. Veje, R.~E. White, Modelling {Li}-ion cell
+  thermal runaway triggered by an internal short circuit device using an
+  efficiency factor and {Arrhenius} formulations, J. Electrochem. Soc. 164~(4)
+  (2017) A587--A593.
+\newblock \href {https://doi.org/10.1149/2.0341704jes}
+  {\path{doi:10.1149/2.0341704jes}}.
+
+\bibitem{mishra2021multimode}
+D.~Mishra, A.~Jain, Multi-mode heat transfer simulations of the onset and
+  propagation of thermal runaway in a pack of cylindrical {Li}-ion cells, J.
+  Electrochem. Soc. 168~(2) (2021) 020504.
+\newblock \href {https://doi.org/10.1149/1945-7111/abdc7b}
+  {\path{doi:10.1149/1945-7111/abdc7b}}.
+
+\bibitem{hoelle2023simulation}
+S.~Hoelle, S.~Zimmermann, O.~Hinrichsen, {3D} thermal simulation of thermal
+  runaway propagation in lithium-ion battery cell stack: Review and comparison
+  of modeling approaches, J. Electrochem. Soc. 170~(6) (2023) 060516.
+\newblock \href {https://doi.org/10.1149/1945-7111/acd966}
+  {\path{doi:10.1149/1945-7111/acd966}}.
+
+\bibitem{kim2021venting}
+J.~Kim, A.~Mallarapu, D.~Finegan, S.~Santhanagopalan, Modeling cell venting and
+  gas-phase reactions in 18650 lithium ion batteries during thermal runaway, J.
+  Power Sources 489 (2021) 229496.
+\newblock \href {https://doi.org/10.1016/j.jpowsour.2021.229496}
+  {\path{doi:10.1016/j.jpowsour.2021.229496}}.
+
+\bibitem{lamb2015failure}
+J.~Lamb, C.~J. Orendorff, L.~A.~M. Steele, S.~W. Spangler, Failure propagation
+  in multi-cell lithium ion batteries, J. Power Sources 283 (2015) 517--523.
+\newblock \href {https://doi.org/10.1016/j.jpowsour.2014.10.081}
+  {\path{doi:10.1016/j.jpowsour.2014.10.081}}.
+
+\bibitem{said2019cascading}
+A.~O. Said, C.~Lee, S.~I. Stoliarov, A.~W. Marshall, Comprehensive analysis of
+  dynamics and hazards associated with cascading failure in 18650 lithium ion
+  cell arrays, Appl. Energy 248 (2019) 415--428.
+\newblock \href {https://doi.org/10.1016/j.apenergy.2019.04.141}
+  {\path{doi:10.1016/j.apenergy.2019.04.141}}.
+
+\bibitem{torrescastro2020passive}
+L.~Torres-Castro, A.~J. Kurzawski, J.~C. Hewson, J.~Lamb, Passive mitigation of
+  cascading propagation in multi-cell lithium ion batteries, J. Electrochem.
+  Soc. 167~(9) (2020) 090515.
+\newblock \href {https://doi.org/10.1149/1945-7111/ab84fa}
+  {\path{doi:10.1149/1945-7111/ab84fa}}.
+
+\bibitem{walker2019decoupling}
+W.~Q. Walker, J.~J. Darst, D.~P. Finegan, G.~A. Bayles, K.~L. Johnson, E.~C.
+  Darcy, S.~L. Rickman, Decoupling of heat generated from ejected and
+  non-ejected contents of 18650-format lithium-ion cells using statistical
+  methods, J. Power Sources 415 (2019) 207--218.
+\newblock \href {https://doi.org/10.1016/j.jpowsour.2018.10.099}
+  {\path{doi:10.1016/j.jpowsour.2018.10.099}}.
+
+\bibitem{finegan2024databank}
+D.~P. Finegan, J.~Billman, J.~Darst, P.~Hughes, J.~Trillo, M.~Sharp, A.~Benson,
+  M.~Pham, I.~Kesuma, M.~Buckwell, H.~T. Reid, C.~Kirchner-Burles, M.~Fransson,
+  D.~Petrushenko, T.~M. Heenan, R.~Jervis, R.~Owen, D.~Patel, L.~Broche,
+  A.~Rack, O.~Magdysyuk, M.~Keyser, W.~Walker, P.~Shearing, E.~Darcy, The
+  battery failure databank: Insights from an open-access database of thermal
+  runaway behaviors of {Li}-ion cells and a resource for benchmarking risks, J.
+  Power Sources 597 (2024) 234106.
+\newblock \href {https://doi.org/10.1016/j.jpowsour.2024.234106}
+  {\path{doi:10.1016/j.jpowsour.2024.234106}}.
+
+\bibitem{fransson2024exploring}
+M.~Fransson, J.~Pfaff, L.~Broche, M.~Buckwell, C.~Kirchner-Burles, H.~T. Reid,
+  S.~Schopferer, A.~Rack, D.~P. Finegan, P.~R. Shearing, Exploring thermal
+  runaway propagation in {Li}-ion batteries through high-speed {X}-ray imaging
+  and thermal analysis: Impact of cell chemistry and electrical connections, J.
+  Power Sources 617 (2024) 234916.
+\newblock \href {https://doi.org/10.1016/j.jpowsour.2024.234916}
+  {\path{doi:10.1016/j.jpowsour.2024.234916}}.
+
+\bibitem{read2024sidewall}
+E.~Read, S.~Jones, J.~Marco, The effect of sidewall rupture on the propensity
+  for thermal runaway propagation in a small lithium-ion battery module, J.
+  Power Sources Adv. 30 (2024) 100162.
+\newblock \href {https://doi.org/10.1016/j.powera.2024.100162}
+  {\path{doi:10.1016/j.powera.2024.100162}}.
+
+\bibitem{feng2018mechanism}
+X.~Feng, M.~Ouyang, X.~Liu, L.~Lu, Y.~Xia, X.~He, Thermal runaway mechanism of
+  lithium ion battery for electric vehicles: A review, Energy Storage Mater. 10
+  (2018) 246--267.
+\newblock \href {https://doi.org/10.1016/j.ensm.2017.05.013}
+  {\path{doi:10.1016/j.ensm.2017.05.013}}.
+
+\bibitem{koenig2025uncertainty}
+B.~C. Koenig, P.~Zhao, S.~Deng, Comprehensive thermal-kinetic uncertainty
+  quantification of lithium-ion battery thermal runaway via bayesian chemical
+  reaction neural networks, Chem. Eng. J. 507 (2025) 160402.
+\newblock \href {https://doi.org/10.1016/j.cej.2025.160402}
+  {\path{doi:10.1016/j.cej.2025.160402}}.
+
+\bibitem{oregan2022thermal}
+K.~O'Regan, F.~Brosa~Planella, W.~D. Widanage, E.~Kendrick,
+  Thermal-electrochemical parameters of a high energy lithium-ion cylindrical
+  battery, Electrochim. Acta 425 (2022) 140700.
+\newblock \href {https://doi.org/10.1016/j.electacta.2022.140700}
+  {\path{doi:10.1016/j.electacta.2022.140700}}.
+
+\bibitem{chen2021simplified}
+H.~Chen, J.~E.~H. Buston, J.~Gill, D.~Howard, R.~C.~E. Williams, E.~Read,
+  A.~Abaza, B.~Cooper, J.~X. Wen, A simplified mathematical model for
+  heating-induced thermal runaway of lithium-ion batteries, J. Electrochem.
+  Soc. 168~(1) (2021) 010502.
+\newblock \href {https://doi.org/10.1149/1945-7111/abd64c}
+  {\path{doi:10.1149/1945-7111/abd64c}}.
+
+\bibitem{satte2026twocell}
+S.~Satte, Where and when a neighbour cell first reaches thermal-runaway onset
+  temperatures: resolved against lumped, a pre-registered two-cell {LG M50}
+  pilot, Zenodo, software, version v1.0.0 (2026).
+\newblock \href {https://doi.org/10.5281/zenodo.23253738}
+  {\path{doi:10.5281/zenodo.23253738}}.
+
+\bibitem{lienhard2024heat}
+J.~H. {Lienhard V}, J.~H. {Lienhard IV}, \href{https://ahtt.mit.edu}{A Heat
+  Transfer Textbook}, 6th Edition, Phlogiston Press, Cambridge, MA, 2024,
+  version 6.00.
+\newline\urlprefix\url{https://ahtt.mit.edu}
+
+\bibitem{bergman2011fundamentals}
+T.~L. Bergman, A.~S. Lavine, F.~P. Incropera, D.~P. DeWitt, Fundamentals of
+  Heat and Mass Transfer, 7th Edition, John Wiley \& Sons, Hoboken, NJ, 2011.
+
+\bibitem{satte2026repo}
+S.~Satte, Onset kinetics on a resolved neighbour cell: where a whole-cell
+  threshold and a local one disagree, Zenodo, software, all versions; version
+  v1.7.0 used here (2026).
+\newblock \href {https://doi.org/10.5281/zenodo.23279455}
+  {\path{doi:10.5281/zenodo.23279455}}.
+
+\bibitem{firth1993bias}
+D.~Firth, Bias reduction of maximum likelihood estimates, Biometrika 80~(1)
+  (1993) 27--38.
+\newblock \href {https://doi.org/10.1093/biomet/80.1.27}
+  {\path{doi:10.1093/biomet/80.1.27}}.
+
+\end{thebibliography}
+
+\end{document}

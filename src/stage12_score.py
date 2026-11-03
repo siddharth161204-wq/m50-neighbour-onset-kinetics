@@ -27,7 +27,9 @@ import stage12_run as R12                # noqa: E402
 
 ROOT = os.path.join(HERE, "..")
 RES = os.path.join(ROOT, "results")
-T_ONSET_C = 255.7                        # D35: C1 and C2 are met when the hot spot or the lumped neighbour reaches it
+import stage7_inputs as IN7              # noqa: E402  (unchanged)
+T_ONSET_C = IN7.LEVEL_PROP_C             # D35: 255.68 C, quoted as 255.7 C; C1 and C2 are met when the hot spot or the
+                                         # lumped neighbour reaches it
 DELIVERIES = ("tri21", "120", "240", "360")
 
 
@@ -253,7 +255,11 @@ def part_c(B1, B2):
     fs1 = fixed_thresholds("C1")
     mids = {t: v["mid_fixed"] for t, v in fs.items() if v["mid_fixed"] > 0}
     fs_ratio = max(mids.values()) / min(mids.values())
+    expl = {r["test"]: {"f_r_Eb": float(r["fmax"]), "E_J": float(r["fmax_E_J"]),
+                        "f_fixed": float(r["fmax_E_J"]) / IN.E_FIX_J}
+            for r in rows(os.path.join(RES, "stage9_fractions.csv")) if r["fmax_exploratory"] == "True"}
     return {"set": "Stage 10 C3's (C2, 21.39 s): f_t(C2) where B2 ends matched or bracketed, the registered f_max",
+            "exploratory_f_max_fixed": expl,
             "fractions_fixed": frac, "energies_J": energy, "no_fraction": none,
             "ratio_largest_to_smallest_nonzero": ratio,
             "largest": {"test": big, "f_fixed": nz[big], "E_J": energy[big], "category": cat[big],

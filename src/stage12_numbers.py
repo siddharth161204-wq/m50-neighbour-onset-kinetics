@@ -70,7 +70,7 @@ def main():
                  "f_fixed_bracket": [round(x, 4) for x in v["f_fixed_bracket"]],
                  "E_bracket_kJ": [round(x / 1e3, 3) for x in v["E_bracket_J"]],
                  "t_run_s": None if v["t_run_s"] is None else round(v["t_run_s"], 1), "stage12_runs": len(v["runs"])}
-    pbs = rows(os.path.join(ROOT, "manuscript", "data", "predictions_by_stage.csv"))
+    pbs = [r for r in rows(os.path.join(ROOT, "manuscript", "data", "predictions_by_stage.csv")) if int(r["stage"]) <= 11]
     through11 = {"committed": len(pbs), "failed": sum(1 for r in pbs if r["verdict"] == "failed"),
                  "foreseen": sum(1 for r in pbs if r["foreseen"] == "yes")}
     n12_fail = card["failed"]

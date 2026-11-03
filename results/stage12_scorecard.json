@@ -26,8 +26,8 @@
      "mean_peak_C": 140.71902347946644,
      "trigger_peak_C": 531.1686838585101,
      "h_c_W_m2K": 2000.0,
-     "shortfall_hot_spot_K": 63.80246430116057,
-     "shortfall_lumped_K": 93.94835133459566,
+     "shortfall_hot_spot_K": 63.78403930116053,
+     "shortfall_lumped_K": 93.92992633459562,
      "t_end_s": 900.0
     },
     "series_central": {
@@ -51,8 +51,8 @@
      "mean_peak_C": 137.87663667714742,
      "trigger_peak_C": 531.6885900272313,
      "h_c_W_m2K": 2000.0,
-     "shortfall_hot_spot_K": 63.53924234220335,
-     "shortfall_lumped_K": 95.93660807644397,
+     "shortfall_hot_spot_K": 63.520817342203316,
+     "shortfall_lumped_K": 95.91818307644394,
      "t_end_s": 900.0
     }
    },
@@ -71,8 +71,8 @@
     135.96183065856417
    ],
    "shortfall_hot_spot_K": [
-    63.53924234220335,
-    63.80246430116057
+    63.520817342203316,
+    63.78403930116053
    ],
    "foreseen_by_records": true,
    "statement": "With E_b capped at 33.2 kJ, conduction and radiation alone meet C1 in none of the eight tests at the central contact."
@@ -97,8 +97,8 @@
      "mean_peak_C": 147.4786786628453,
      "trigger_peak_C": 526.4267972599231,
      "h_c_W_m2K": 3700.0,
-     "shortfall_hot_spot_K": 29.309223081085975,
-     "shortfall_lumped_K": 78.29992004342478,
+     "shortfall_hot_spot_K": 29.29079808108594,
+     "shortfall_lumped_K": 78.28149504342474,
      "t_end_s": 900.0
     },
     "series_high": {
@@ -122,8 +122,8 @@
      "mean_peak_C": 144.97945224890015,
      "trigger_peak_C": 526.9306259216422,
      "h_c_W_m2K": 3700.0,
-     "shortfall_hot_spot_K": 29.01226438302882,
-     "shortfall_lumped_K": 79.7839807526691,
+     "shortfall_hot_spot_K": 28.993839383028785,
+     "shortfall_lumped_K": 79.76555575266906,
      "t_end_s": 900.0
     }
    },
@@ -142,8 +142,8 @@
     142.42287406345378
    ],
    "shortfall_hot_spot_K": [
-    29.01226438302882,
-    29.309223081085975
+    28.993839383028785,
+    29.29079808108594
    ],
    "foreseen_by_records": false,
    "statement": "At the high contact the same holds."
@@ -811,6 +811,18 @@
  },
  "part_c": {
   "set": "Stage 10 C3's (C2, 21.39 s): f_t(C2) where B2 ends matched or bracketed, the registered f_max",
+  "exploratory_f_max_fixed": {
+   "M50_PT_Exp2": {
+    "f_r_Eb": 0.5625,
+    "E_J": 75814.89863896935,
+    "f_fixed": 0.9879288521684735
+   },
+   "M50_SP_Exp4": {
+    "f_r_Eb": 0.265625,
+    "E_J": 32667.01954408894,
+    "f_fixed": 0.42567742886051296
+   }
+  },
   "fractions_fixed": {
    "M50_PP_Exp1": 0.0387588373757427,
    "M50_PP_Exp2": 0.07769538518206574,
@@ -1430,7 +1442,7 @@
    "SPR2021_ESTA_8B100-01_SOC_RUN195",
    33222.9118228995
   ],
-  "T_onset_C": 255.7,
+  "T_onset_C": 255.68157499999995,
   "records": 10
  }
 }

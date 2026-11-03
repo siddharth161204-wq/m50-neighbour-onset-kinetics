@@ -26,7 +26,7 @@ def words(tex):
 
 def main():
     tex = open(os.path.join(HERE, "main.tex")).read()
-    body = tex[tex.index(r"\section{Introduction}"):tex.index(r"\section*{Declarations}")]
+    body = tex[tex.index(r"\section{Introduction}"):tex.index(r"\section*{Acknowledgments}")]
     parts = re.split(r"(?=\\section\{)", body)
     out, total = [], 0
     for p in parts:

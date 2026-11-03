@@ -53,7 +53,8 @@ def run_counts(res):
     out = {}
     for name, pat in (("stage5", "v12_runs/*.json"), ("stage6", "stage6_runs/*.json"), ("stage7", "stage7_runs/*.json"),
                       ("stage8", "stage8_runs/*.json"), ("stage9", "stage9_runs/*.json"),
-                      ("stage10", "stage10_runs/*.json"), ("stage11", "stage11_runs/*.json")):
+                      ("stage10", "stage10_runs/*.json"), ("stage11", "stage11_runs/*.json"),
+                      ("stage12", "stage12_runs/*.json")):
         fs = glob.glob(os.path.join(res, pat))
         n_failed = 0
         for f in fs:
@@ -73,12 +74,15 @@ def predictions():
     rows = list(csv.DictReader(open(p)))
     through10 = [r for r in rows if int(r["stage"]) <= 10]
     s11 = [r for r in rows if int(r["stage"]) == 11]
+    s12 = [r for r in rows if int(r["stage"]) == 12]
+    through11 = [r for r in rows if int(r["stage"]) <= 11]
     def counts(rs):
         failed = [r for r in rs if r["verdict"] == "failed"]
         foreseen = sum(r["foreseen"] == "yes" for r in failed)
         return {"committed": len(rs), "held": sum(r["verdict"] == "held" for r in rs), "failed": len(failed),
                 "foreseen": foreseen, "unforeseen": len(failed) - foreseen}
-    return {"through_stage10": counts(through10), "stage11": counts(s11), "all": counts(rows)}
+    return {"through_stage10": counts(through10), "stage11": counts(s11), "through_stage11": counts(through11),
+            "stage12": counts(s12), "all": counts(rows)}
 
 
 def after_review(res):
@@ -140,7 +144,7 @@ def after_review(res):
     # Facts of the record that the manuscript states, with their source (not computed here)
     out["record"] = {"stage11_partial_scoring_records": 178, "stage11_records": 216,
                      "source": "DECISIONS.md D118 (1): the scoring run once on a copy of 178 of the 216 records",
-                     "ai_use_first_commit_date": "2026-10-10", "ai_use_last_date": "2026-11-02"}
+                     "ai_use_first_commit_date": "2026-10-10", "ai_use_last_date": "2026-11-03"}
     return out
 
 

@@ -95,6 +95,10 @@
   "stage11": {
    "records": 216,
    "failed": 0
+  },
+  "stage12": {
+   "records": 10,
+   "failed": 0
   }
  },
  "predictions": {
@@ -112,9 +116,23 @@
    "foreseen": 1,
    "unforeseen": 3
   },
-  "all": {
+  "through_stage11": {
    "committed": 70,
    "held": 34,
+   "failed": 36,
+   "foreseen": 22,
+   "unforeseen": 14
+  },
+  "stage12": {
+   "committed": 4,
+   "held": 4,
+   "failed": 0,
+   "foreseen": 0,
+   "unforeseen": 0
+  },
+  "all": {
+   "committed": 74,
+   "held": 38,
    "failed": 36,
    "foreseen": 22,
    "unforeseen": 14
@@ -279,7 +297,7 @@
    "stage11_records": 216,
    "source": "DECISIONS.md D118 (1): the scoring run once on a copy of 178 of the 216 records",
    "ai_use_first_commit_date": "2026-10-10",
-   "ai_use_last_date": "2026-11-02"
+   "ai_use_last_date": "2026-11-03"
   }
  }
 }

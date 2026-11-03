@@ -2,6 +2,7 @@
 % Supplementary material of manuscript/main.tex (Brief 20, M5). Its numbers come from the results files named in each
 % section; the prediction table is written by src/make_manuscript_tables.py from manuscript/data/predictions_by_stage.csv.
 \usepackage[T1]{fontenc}
+\usepackage{lmodern}  % Type 1 text fonts (Latin Modern) rather than bitmap EC fonts
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{booktabs}
@@ -27,12 +28,12 @@
 \begin{document}
 
 \begin{frontmatter}
-\title{Supplementary material for: Neither conduction nor a fixed delivered energy fraction reproduces sixteen two-cell propagation tests: a pre-registered kinetic study}
+\title{Supplementary material for: Neither conduction nor a fixed delivered fraction reproduces sixteen two-cell propagation tests: a pre-registered study}
 \author{Siddharth Satte}
 \address{Independent researcher, Pune, India}
 \end{frontmatter}
 
-Every record, script and decision named here is in the study's repository at version 1.7.0~\cite{satte2026repo}; the decisions log is \texttt{DECISIONS.md}, and an entry is cited by its number (D1 to D121).
+Every record, script and decision named here is in the study's repository at version 1.8.0~\cite{satte2026repo}; the decisions log is \texttt{DECISIONS.md}, and an entry is cited by its number (D1 to D126).
 
 \section{The digitisation of the published histories}
 \label{sec:s-digitisation}
@@ -43,10 +44,10 @@ The reading (D102 (2), \texttt{inputs/fransson2024/extract\_fig10.py}) was made 
 
 A check (V1 of Stage~10, D102 (5)) rendered the page at 1200~dpi without anti-aliasing, calibrated the axes on the grid lines found in the pixels and traced the dashed curve column by column, at 164 and 188 whole seconds: every pixel reading lies within the recorded uncertainty plus one pixel, at most 3.03 and 2.45~K from the vector reading. PT\_Exp4's record: 32.2\degC{} at 0~s; a spike to 102.0\degC{} at 3.1~s as the trigger runs away, back to 79.9\degC{} at 8.4~s; 141.0\degC{} at 45~s; a slow rise to 197.3\degC{} at 271.50~s; then the jump. The main text reads the first 8.5~s as the thermocouple's exposure at the trigger's runaway rather than the can's temperature (Fig.~7a). PP\_Exp3's plotted maxima fall 2.9 and 14.6~K short of the paper's table, more than the figure's resolution, which the paper does not explain.
 
-\section{The predictions of Stages 1 to 11}
+\section{The predictions of Stages 1 to 12}
 \label{sec:s-predictions}
 
-Each stage's predictions file was committed and pushed before any of the stage's runs, with the expectation held for each prediction; Table~\ref{tab:s-predictions} lists all 70, shortened from the files (\path{manuscript/data/predictions_by_stage.csv}, which gives the file and line of each). Through Stage~10, 64 were committed and 32 failed; Stage~11 adds six, of which four failed.
+Each stage's predictions file was committed and pushed before any of the stage's runs, with the expectation held for each prediction; Table~\ref{tab:s-predictions} lists all 74, shortened from the files (\path{manuscript/data/predictions_by_stage.csv}, which gives the file and line of each). Through Stage~10, 64 were committed and 32 failed; Stage~11 adds six, of which four failed, and Stage~12 four, all of which held.
 
 A failure is counted as foreseen when the predictions file, before the runs, recorded it as expected, as already fixed by earlier records or an energy balance, or as following from a condition it named that then held; a hedged ``may fail'' does not count. By that rule 21 of the 32 failures through Stage~10 were foreseen, and one of Stage~11's (P4, fixed by Stage~7's runs at the low contact). The stages' own texts label 17 of the 21 so; the other four are Stage~3's P3 and P6 (``expected to fail'' in the file's central estimates), Stage~6's P4 (fixed by an energy balance, where the texts counted Stage~5's records only) and Stage~9's P6 (failing under the condition the file named, on which the note and the README differ). Counting the three ``may fail'' expectations too (Stage~4's P4 and Stage~5's P1 and P6) would give 24.
 
@@ -78,6 +79,15 @@ Stage and run & Mesh spacing halved & Step limits halved \\
 \end{tabular}
 \end{table}
 
+\section{Stage 12: the trigger held to the calorimetry}
+\label{sec:s-stage12}
+
+Stage~12 (D122 to D124; \path{predictions_stage12.md}, committed and pushed at 09:30:26~UTC on 3 November 2026, 34~s before its first run) held the trigger's energies to the Battery Failure Databank's measurements for this cell~\cite{finegan2024databank}. Part~A capped the trigger's body energy at the largest of the ten LG M50 nail tests, 33,222.9~J (row 15, RUN195), in the eight tests in which the fitted trigger meets C1 with no delivery; with the cap a run depends on the test only through its connection, so four runs, series and parallel at the central and the high contact, stand for the eight, and the two central ones repeat Stage~6's records at the same energy and release to $9.2\times10^{-12}$~K. Part~B read the four Stage~11 tests' thresholds (B1) and the nine propagated tests' $\ft$(C2) (B2) as fractions of one ejected energy for every test, the median of the ten nail tests' ejected energies, $E_\mathrm{fix}=76{,}741.25$~J (64.16 to 89.34~kJ over the ten), in place of $3.105\,\Eb$. A run depends on $f$ and $\Ee$ only through the delivered energy, so a fraction of $E_\mathrm{fix}$ is a delivered energy over 76,741.25~J, and the searches continued Stage~8's and Stage~9's brackets in energy, to 0.02 and 0.005 of $E_\mathrm{fix}$ or a run within 10~s of the measured time. The ten runs are in Table~\ref{tab:s-stage12}; the checks recomputed the cap and the median from the Databank's columns, every energy account and delivery (one run cut at its C1 stop at 19.0~s, having released the pulse's share to that time), and Part~C by separate code.
+
+The four predictions held: no run meets C1 at the central contact (P1) or the high contact (P2), the hot spot peaking 63.5 to 63.8 and 29.0 to 29.3~K short of 255.7\degC; the delivered energies at $\ft$(C2) span 22.6-fold over the seven tests whose searches ended matched, from 263.5 to 5,962.4~J (P3); and PT\_Exp1's $\fmax$, 0.0272 of $E_\mathrm{fix}$, lies above SP\_Exp3's $\ft$(C2), 0.0034 (P4). The predictions file recorded P1, P3 and P4 as fixed by Stage~6's and Stage~9's records before the runs, and P2 as close to fixed; they are counted as committed predictions all the same (Table~\ref{tab:s-predictions}).
+
+\IfFileExists{tables/s3_stage12.tex}{\input{tables/s3_stage12.tex}}{}
+
 \section{The energy accounts}
 \label{sec:s-energy}
 
@@ -101,6 +111,7 @@ Stage & Runs & Largest residual \\
 9 & 670 & $6.8\times10^{-12}$ (resolved), $4.0\times10^{-12}$ (lumped) \\
 10 & 30 & $2.5\times10^{-12}$ (resolved), $3.3\times10^{-12}$ (lumped) \\
 11 & 216 & $6.1\times10^{-12}$ (resolved), $3.6\times10^{-12}$ (lumped) \\
+12 & 10 & $1.2\times10^{-12}$ (resolved), $1.0\times10^{-12}$ (lumped) \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -152,6 +163,7 @@ The entries of the decisions log that fix an input of a result reported in the m
 \item The readings: what the paper measured (D89), $\ft$ (D91), $\fmax$ (D92), the long deliveries (D93).
 \item The history, the nodes and the held-out scores: the digitisation and the nodes (D102), Part~B (D104), Part~C (D105).
 \item The bands: the draws, the tests and the runs that exist (D111), the design (D112 to D115), the scoring rules (D116).
+\item The calorimetry's energies: the cap, the fixed ejected energy, the eight tests and what the earlier records hold (D122), the design (D123), the runs and results (D124).
 \end{itemize}
 
 \bibliographystyle{elsarticle-num}
