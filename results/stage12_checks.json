@@ -1,0 +1,114 @@
+{
+ "V1": {
+  "ok": true,
+  "cap_J": 33222.9118228995,
+  "cap_test": "SPR2021_ESTA_8B100-01_SOC_RUN195",
+  "n_rows": 17,
+  "n_nail": 10,
+  "median_ejected_J": 76741.25365663526,
+  "ejected_J": [
+   64159.76630037904,
+   73378.01508087438,
+   75036.07881834802,
+   76146.8050076849,
+   76251.25032234118,
+   77231.25699092935,
+   79232.23234492002,
+   83449.31024121225,
+   84723.79665011319,
+   89337.77972329674
+  ],
+  "part_a_records": 4,
+  "part_b_records": 6
+ },
+ "V2": {
+  "ok": true,
+  "records": 10,
+  "worst_relative": {
+   "lumped": 1.0082640196329625e-12,
+   "resolved": 1.1947477421042297e-12,
+   "delivery": 1.3685570493484473e-16,
+   "fixed": 0.0
+  },
+  "counts": {
+   "deliveries": 7,
+   "whole": 6,
+   "cut_at_stop": 1
+  },
+  "problems": []
+ },
+ "V3": {
+  "ok": true,
+  "ratio": 22.62939894113983,
+  "smallest": "M50_SP_Exp3",
+  "largest": "M50_PP_Exp2",
+  "zeros": [
+   "M50_PP_Exp3",
+   "M50_PT_Exp3",
+   "M50_ST_Exp1",
+   "M50_ST_Exp2"
+  ],
+  "p3_ratio": 22.62939894113983,
+  "p4_fmax_fixed": 0.02724294485257619,
+  "p4_ft_fixed": 0.0034333826269162173,
+  "stage10_energy": [
+   21.805839654897646,
+   63.778789533836694
+  ],
+  "stage10_fraction": [
+   42.15779161360789,
+   208.12367194425772
+  ],
+  "fstar_C2_fixed_ratio": 13.984048504096142,
+  "parts": {
+   "spread": true,
+   "cell_movement": true,
+   "P3_P4": true,
+   "stage10": true,
+   "fstar": true
+  }
+ },
+ "X": {
+  "ok": true,
+  "worst_K": 9.15179043659009e-12,
+  "differences": {
+   "series": {
+    "hot_spot_peak_C": 1.5347723092418164e-12,
+    "mean_peak_C": 9.038103598868474e-12,
+    "lumped_peak_C": 0.0,
+    "trigger_peak_C": 0.0,
+    "propagated": [
+     false,
+     false,
+     false,
+     false
+    ],
+    "t_peak_s": [
+     34.9,
+     34.9,
+     265.5,
+     265.5
+    ]
+   },
+   "parallel": {
+    "hot_spot_peak_C": 1.5916157281026244e-12,
+    "mean_peak_C": 9.15179043659009e-12,
+    "lumped_peak_C": 0.0,
+    "trigger_peak_C": 0.0,
+    "propagated": [
+     false,
+     false,
+     false,
+     false
+    ],
+    "t_peak_s": [
+     34.9,
+     34.9,
+     260.9,
+     260.9
+    ]
+   }
+  }
+ },
+ "all_pass": true
+}
