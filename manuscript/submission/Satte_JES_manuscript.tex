@@ -24,6 +24,9 @@
 \setlength{\emergencystretch}{1.5em}
 \setcounter{secnumdepth}{0}  % sections are not numbered (the journal's instructions)
 \journal{Journal of The Electrochemical Society}
+\makeatletter
+\def\ps@pprintTitle{\let\@oddhead\@empty\let\@evenhead\@empty\def\@oddfoot{\reset@font\hfil\thepage\hfil}\let\@evenfoot\@oddfoot}  % no "Preprint submitted to" line
+\makeatother
 
 \begin{document}
 
@@ -32,8 +35,7 @@
 \title{Neither conduction nor a fixed delivered fraction reproduces sixteen two-cell propagation tests: a pre-registered study}
 
 \author{Siddharth Satte\textsuperscript{z}}
-% The corresponding author's e-mail address is added by the author at submission; it is not committed to the public repository.
-\address{Independent researcher, Pune, India\\[4pt]\textsuperscript{z}E-mail: \PH{the author's e-mail, added at submission}}
+\address{Independent researcher, Pune, India\\[4pt]\textsuperscript{z}E-mail: siddharth161204@gmail.com}
 
 \begin{abstract}
 %ABSTRACT-START
@@ -247,7 +249,7 @@ Stage~11 asked how much of the central numbers the kinetic and the thermal uncer
 \subsection{Pre-registration and verification}
 \label{sec:prereg}
 
-Each stage's predictions file was committed and pushed before any run of the stage's registered list; its commit, push time and the hash of its run list are in the repository's record~\cite{satte2026repo}, and the files were not changed afterwards. Two departures are recorded there. While Stage~11's code was tested, one full run under a kinetic draw was made before its predictions, and its result is stated in them; and while its runs went, the scoring was once run on 178 of its 216 records to test a figure's script, and the verdicts it printed were seen, after which no code, rule or run changed. Through Stage~10 the study registered 64 predictions, of which 32 failed; Stage~11 registered six more, of which four failed, and Stage~12 four, all of which held. Of the 36 failures, 22 were foreseen in their predictions files and 14 were not (Table~\ref{tab:predictions}; every prediction, its expectation and its verdict in the supplement). Every stage closed the energy account of every run (the largest residual $2\times10^{-11}$ of the heat taken in); each stage that changed the model's configuration halved the mesh spacing and the step limits on a run near its threshold (the hot spot's peak rise moved by at most 0.52\,\%), and Stages~10 and 11 ran Stage~9's configuration unchanged; the stages recomputed their registered numbers by separate code; and from Stage~5 on every registered number and verdict was read again, before the stage's texts were written, by a check that had not drafted them. Use of generative AI: the study's code was written, its runs launched and checked, the sources it uses read, and its decisions log, the texts of this paper and its supplement, and the scripts that draw the figures and tables from the results files drafted by a generative AI model, Claude Opus 5.5, made by Anthropic and used through the Claude application with code execution, from 10 October to 3 November 2026, stage by stage under the author's direction; no generative image tool was used. Each of those checks was made by another instance of the same model that had not drafted the stage's texts, so it is an internal check, not an independent review. \PH{After the author's pass: the author revised the text of this paper, and no finding or interpretation was accepted without the author's validation.} The decisions log and every stage's predictions are archived with the code, and the author keeps the instructions given to the model; every result is reproducible from the archived code and records~\cite{satte2026repo}.
+Each stage's predictions file was committed and pushed before any run of the stage's registered list; its commit, push time and the hash of its run list are in the repository's record~\cite{satte2026repo}, and the files were not changed afterwards. Two departures are recorded there. While Stage~11's code was tested, one full run under a kinetic draw was made before its predictions, and its result is stated in them; and while its runs went, the scoring was once run on 178 of its 216 records to test a figure's script, and the verdicts it printed were seen, after which no code, rule or run changed. Through Stage~10 the study registered 64 predictions, of which 32 failed; Stage~11 registered six more, of which four failed, and Stage~12 four, all of which held. Of the 36 failures, 22 were foreseen in their predictions files and 14 were not (Table~\ref{tab:predictions}; every prediction, its expectation and its verdict in the supplement). Every stage closed the energy account of every run (the largest residual $2\times10^{-11}$ of the heat taken in); each stage that changed the model's configuration halved the mesh spacing and the step limits on a run near its threshold (the hot spot's peak rise moved by at most 0.52\,\%), and Stages~10 and 11 ran Stage~9's configuration unchanged; the stages recomputed their registered numbers by separate code; and from Stage~5 on every registered number and verdict was read again, before the stage's texts were written, by a check that had not drafted them. Use of generative AI: the study's code was written, its runs launched and checked, the sources it uses read, and its decisions log, the texts of this paper and its supplement, and the scripts that draw the figures and tables from the results files drafted by a generative AI model, Claude Opus 5.5, made by Anthropic and used through the Claude application with code execution, from 10 October to 3 November 2026, stage by stage under the author's direction; no generative image tool was used. Each of those checks was made by another instance of the same model that had not drafted the stage's texts, so it is an internal check, not an independent review. The author set each stage's questions and inputs, read its results and its texts, and decided what the next stage asked, and reviewed this paper before its submission; the author takes responsibility for every statement in it. The decisions log and every stage's predictions are archived with the code, and the author keeps the instructions given to the model; every result is reproducible from the archived code and records~\cite{satte2026repo}.
 
 \section{Results}
 \label{sec:results}
@@ -512,11 +514,11 @@ The measured tests are those of Fransson et al.~\cite{fransson2024exploring}, pu
 \paragraph{Funding} This work received no specific grant from any funding agency in the public, commercial or not-for-profit sectors.
 
 % Drafted for the author's approval: the roles below are the author's own; the software, the formal analysis, the figures and the original draft were produced with the AI model under his direction (the Methods and the paragraph below).
-\paragraph{Author contributions (CRediT)} \textbf{Siddharth Satte:} Conceptualization, Methodology, Investigation, Resources, Validation, Supervision, Project administration, Writing~-- review \& editing.
+\paragraph{Author contributions (CRediT)} \textbf{Siddharth Satte:} Conceptualization, Methodology, Investigation, Resources, Validation, Project administration, Writing~-- review \& editing.
 
 \paragraph{Data availability} The code, inputs, run records, checks and decisions of every stage are archived at Zenodo, \url{https://doi.org/10.5281/zenodo.23279455} (all versions; this paper uses version 1.8.0), and in the repository \url{https://github.com/siddharth161204-wq/m50-neighbour-onset-kinetics}~\cite{satte2026repo}. The two-cell geometry is archived at \url{https://doi.org/10.5281/zenodo.23253738}~\cite{satte2026twocell}.
 
-\paragraph{Use of generative AI} Claude (Anthropic), model Claude Opus 5.5, used through the Claude application with code execution from 10 October to 3 November 2026, wrote the study's code, launched and checked its runs, read its sources, and drafted its decisions log, the text of this paper and its supplement, and the scripts that draw the figures and tables from the results files, under the author's direction, as the Methods describe; no generative image tool was used. \PH{After the author's pass: The author revised the text, and no finding or interpretation was accepted without the author's validation.} The author takes full responsibility for the content of this paper.
+\paragraph{Use of generative AI} Claude (Anthropic), model Claude Opus 5.5, used through the Claude application with code execution from 10 October to 3 November 2026, wrote the study's code, launched and checked its runs, read its sources, and drafted its decisions log, the text of this paper and its supplement, and the scripts that draw the figures and tables from the results files, under the author's direction, as the Methods describe; no generative image tool was used. The author directed the work stage by stage, reviewed this paper before its submission, and takes full responsibility for its content.
 
 %BODY-END
 
@@ -668,7 +670,7 @@ T.~L. Bergman, A.~S. Lavine, F.~P. Incropera, D.~P. DeWitt, Fundamentals of
 \bibitem{satte2026repo}
 S.~Satte, Onset kinetics on a resolved neighbour cell: where a whole-cell
   threshold and a local one disagree, Zenodo, software, all versions; version
-  v1.7.0 used here (2026).
+  v1.8.0 used here (2026).
 \newblock \href {https://doi.org/10.5281/zenodo.23279455}
   {\path{doi:10.5281/zenodo.23279455}}.
 
