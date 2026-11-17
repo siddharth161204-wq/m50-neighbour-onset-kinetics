@@ -43,6 +43,7 @@ class Hold(Constant):
     shape = "hold"
 
     def __init__(self, P_W, t0_s, t_end_s):
+        assert t_end_s > t0_s, (t0_s, t_end_s)
         super().__init__(P_W * (t_end_s - t0_s), t_end_s - t0_s, t0_s)
         self.P = float(P_W)
 

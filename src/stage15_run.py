@@ -102,7 +102,7 @@ def run_one(sp, ctx, keep_series=True):
     for j, d in enumerate(sp["deliveries"]):
         nm = "delivery" if j == 0 else f"delivery{j + 1}"
         if d["shape"] == "hold":
-            d = dict(d, t_until_s=sp["t_end_s"])
+            d = dict(d, t_until_s=max(sp["t_end_s"], IN.T_END))      # both neighbours: the lumped twin runs to 900 s
         if d.get("E_J", 1.0) > 0.0 and d.get("P_W", 1.0) > 0.0:
             src_r.append(M15.Source(nm, _pulse(d), share))
             src_l.append(M15.Source(nm, _pulse(d)))

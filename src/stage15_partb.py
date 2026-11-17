@@ -229,14 +229,15 @@ def pending(recs):
     p4, res4 = b4_state(recs)
     out += p4
     st1, br = states["M50_PT_Exp4"]
+    v4 = []
     if st1 == "done":
         for side in ("lo_id", "hi_id"):
             base = recs[br[side]]
             for v in ("refine", "dt"):
                 sp = v4_spec({k: base[k] for k in R.spec("x", "M50_PT_Exp4", [], "x")}, v)
                 if sp["id"] not in recs:
-                    out.append(sp)
-    return out
+                    v4.append(sp)
+    return v4 + out          # the longest runs (V4's refined mesh) first, once they are due: an order, not a result
 
 
 def registered_list():

@@ -1,0 +1,52 @@
+{
+ "t_c8_s": 16.36452259631974,
+ "t_c1_s": 2.374599162457446,
+ "t_end_s": 16.37,
+ "peak_mean_C": 255.7691634707611,
+ "t_peak_mean_s": 16.37,
+ "peak_max_C": 747.1804530277916,
+ "t_peak_max_s": 16.37,
+ "peak_far_C": 160.11021060832093,
+ "t_peak_far_s": 16.37,
+ "mean_end_C": 255.7691634707611,
+ "rxn_J": 3919.168917092056,
+ "delivered_J": 11491.573062286834,
+ "base_steps": 1637,
+ "steps": 1839,
+ "rejected": 0,
+ "max_implicit_nodes": 0,
+ "case": {
+  "test": "M50_PT_Exp2",
+  "deliveries": [
+   {
+    "shape": "con",
+    "E_J": 84238.776266,
+    "tau_s": 120.0,
+    "t0_s": 0.0
+   }
+  ],
+  "t_end_s": 900.0,
+  "h": "central",
+  "kin": "mean",
+  "sei0": null,
+  "shift_K": 0.0,
+  "stop": true,
+  "dt": [
+   0.01,
+   0.1,
+   30.0
+  ],
+  "key": "879a51ed6dd9a8010724",
+  "archived": "s9_con120_fresh_both_ns_M50_PT_Exp2_f0.625000000"
+ },
+ "C8": true,
+ "far_jump": [
+  -3.635477403680259,
+  25.0,
+  "20 s before C8"
+ ],
+ "far_at_45_C": null,
+ "far_at_271.5_C": null,
+ "wall_s": 29.431543827056885,
+ "mean_at_271.5_C": null
+}

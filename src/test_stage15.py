@@ -145,13 +145,74 @@ def test_section_v3():
     ok(f"V3: the reactive cross-section with the reaction off is Stage 13's model (largest difference {d:.1e} K)")
 
 
+def test_partb_chains():
+    """Part B's chains to their ends with a made-up model in place of the runs (no run is made)."""
+    import stage15_partb as PB
+    import stage15_inputs as IN
+    a2 = {"M50_PT_Exp4": 8000.0, "M50_PP_Exp2": 6000.0, "M50_SP_Exp3": 9000.0, "M50_ST_Exp3": 15000.0}
+    true = {"M50_PT_Exp4": 1.12, "M50_PP_Exp2": 0.71, "M50_SP_Exp3": 1.0, "M50_ST_Exp3": 1.31}
+    saved = (PB.a2_value, PB.b3_start)
+    PB.a2_value = lambda t, xs=None: a2[t]
+    PB.b3_start = lambda xs=None: 10.0
+    try:
+        recs = {}
+
+        def fake(sp):
+            res = {"C8": False, "t_C8_s": None, "far_jump": None, "peak_mean_C": 200.0}
+            d = sp["deliveries"]
+            if sp["kind"] == "B1":
+                E = d[0]["E_J"]
+                if E >= true[sp["test"]] * a2[sp["test"]]:
+                    res.update(C8=True, t_C8_s=300.0)
+            elif sp["kind"] == "B3":
+                P = d[1]["P_W"]
+                t = 300.0 - 4.0 * (P - 10.0)
+                res.update(C8=True, t_C8_s=t)
+            elif sp["kind"] == "B4":
+                if sp["shift_K"] >= 12.0:
+                    res.update(C8=True, t_C8_s=250.0)
+            elif sp["kind"] == "B2":
+                res.update(C8=sp["deliveries"][0]["f"] > 0.048, t_C8_s=400.0)
+            elif sp["kind"] == "V4":
+                pass
+            return dict(sp, resolved=res, E_delivered_J=sp["E_delivered_J"])
+
+        for _ in range(200):
+            pend = PB.pending(recs)
+            if not pend:
+                break
+            for sp in pend:
+                r = fake(sp)
+                if sp["kind"] == "V4":
+                    base = recs[sp["id"].replace("_r1.5", "").replace("_dt0.5", "")]
+                    r["resolved"] = dict(base["resolved"])
+                recs[sp["id"]] = r
+        assert not PB.pending(recs)
+        st, _, br = PB.b1_state("M50_PT_Exp4", recs)
+        assert st == "done" and br["lo_step"] == 1 and br["hi_step"] == 3, (st, br)
+        st, _, br = PB.b1_state("M50_PP_Exp2", recs)
+        assert st == "done" and br["lo_step"] == -7 and br["hi_step"] == -5, (st, br)
+        st, _, br = PB.b1_state("M50_SP_Exp3", recs)
+        assert st == "done" and br["lo_step"] == -1 and br["hi_step"] == 1, (st, br)
+        st, _, br = PB.b1_state("M50_ST_Exp3", recs)
+        assert st == "done" and br["lo_step"] == 5 and br["hi_step"] == 7, (st, br)
+        st, _, res = PB.b3_state(recs)
+        assert st == "matched" and abs(res["P_W"] - 15.0) < 1e-9, (st, res)
+        _, res4 = PB.b4_state(recs)
+        assert res4["status"] == "found" and res4["least_shift_K"] == 12.5, res4
+        assert sum(1 for k in recs if k.endswith(("_r1.5", "_dt0.5"))) == 4
+    finally:
+        PB.a2_value, PB.b3_start = saved
+    ok("Part B's chains end where their rules say on a made-up model (B1's four brackets, B3's 15 W, B4's 12.5 K, V4)")
+
+
 def run_all():
     test_shift_and_hold()
     test_lumped_bitwise_and_shift()
     test_resolved_bitwise()
     test_resolved_stop_mean_and_accounts()
-    if os.path.exists(os.path.join(HERE, "stage15_section.py")):
-        test_section_v3()
+    test_section_v3()
+    test_partb_chains()
     print(len(PASSED), "passed")
 
 
