@@ -1,0 +1,1307 @@
+{
+ "repeats": {
+  "acc_PT_Exp4": {
+   "repeat": "s15_rep_acc_PT_Exp4",
+   "archived": "s10_none_fresh_hcentral_M50_PT_Exp4_f0.000000000_t332",
+   "worst_history_K": 1.0459189070388675e-11,
+   "worst_account_rel": 2.749093766525229e-13,
+   "C8_archived_s": null,
+   "C8_difference_s": null,
+   "same_end": true,
+   "passed": true,
+   "wall_s_here": 113.61789178848267,
+   "wall_s_archived": 278.3022117614746,
+   "machine_archived": "author-laptop",
+   "steps": 3320,
+   "C8": false,
+   "t_C8_s": null
+  },
+  "acc_PP_Exp3": {
+   "repeat": "s15_rep_acc_PP_Exp3",
+   "archived": "s10_none_fresh_hcentral_M50_PP_Exp3_f0.000000000_t900",
+   "worst_history_K": 1.4267698134062812e-11,
+   "worst_account_rel": 3.113656771266858e-13,
+   "C8_archived_s": null,
+   "C8_difference_s": null,
+   "same_end": true,
+   "passed": true,
+   "wall_s_here": 251.42867159843445,
+   "wall_s_archived": 643.6698687076569,
+   "machine_archived": "author-laptop",
+   "steps": 9000,
+   "C8": false,
+   "t_C8_s": null
+  },
+  "acc_ST_Exp2": {
+   "repeat": "s15_rep_acc_ST_Exp2",
+   "archived": "s10_none_fresh_hcentral_M50_ST_Exp2_f0.000000000_t900",
+   "worst_history_K": 1.5006662579253316e-11,
+   "worst_account_rel": 3.161020308701486e-13,
+   "C8_archived_s": null,
+   "C8_difference_s": null,
+   "same_end": true,
+   "passed": true,
+   "wall_s_here": 249.63412976264954,
+   "wall_s_archived": 647.3264873027802,
+   "machine_archived": "author-laptop",
+   "steps": 9000,
+   "C8": false,
+   "t_C8_s": null
+  },
+  "size_PT_Exp4_con240": {
+   "repeat": "s15_rep_size_PT_Exp4_con240",
+   "archived": "s10_con240_fresh_hcentral_M50_PT_Exp4_f0.053125000_t332",
+   "worst_history_K": 2.922888597822748e-10,
+   "worst_account_rel": null,
+   "C8_archived_s": 263.22724096086677,
+   "C8_difference_s": 1.1112888387287967e-10,
+   "same_end": false,
+   "passed": true,
+   "wall_s_here": 211.2130024433136,
+   "wall_s_archived": 787.1092057228088,
+   "machine_archived": "author-laptop",
+   "steps": 5033,
+   "C8": true,
+   "t_C8_s": 263.22724096075564
+  },
+  "size_PT_Exp4_tri21": {
+   "repeat": "s15_rep_size_PT_Exp4_tri21",
+   "archived": "s10_tri21_fresh_hcentral_M50_PT_Exp4_f0.040625000_t332",
+   "worst_history_K": 1.2789769243681803e-11,
+   "worst_account_rel": 2.506637171066816e-13,
+   "C8_archived_s": null,
+   "C8_difference_s": null,
+   "same_end": true,
+   "passed": true,
+   "wall_s_here": 258.0478711128235,
+   "wall_s_archived": 585.4830555915833,
+   "machine_archived": "author-laptop",
+   "steps": 7038,
+   "C8": false,
+   "t_C8_s": null
+  }
+ },
+ "accounts": {
+  "acc_PT_Exp4": {
+   "test": "M50_PT_Exp4",
+   "t_end_s": 332.0,
+   "tab_share_of_link": 0.0740291323323023,
+   "rows": [
+    {
+     "t_s": 10.0,
+     "resolved": {
+      "contact_and_wedge": 131.60571696998863,
+      "tabs": 12.628569715270308,
+      "radiation_in": 7.081108407906288,
+      "convection_out": 0.17368558735930886,
+      "radiation_out": 0.5559571193287928,
+      "reaction": 0.0524430754656318,
+      "stored": 150.6381954619428,
+      "T_C": 27.43948494675211
+     },
+     "lumped": {
+      "contact_and_wedge": 159.72345203659842,
+      "tabs": 12.76950385833609,
+      "radiation_in": 7.081108407906288,
+      "convection_out": 0.30967161556703926,
+      "radiation_out": 0.184304371929978,
+      "reaction": 0.0527755482542176,
+      "stored": 179.13286386359803,
+      "T_C": 27.900937066616972
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 28.117735066609782,
+      "tabs": 0.1409341430657829,
+      "radiation_in": 0.0,
+      "convection_out": 0.1359860282077304,
+      "radiation_out": -0.37165274739881476,
+      "reaction": 0.0003324727885857942,
+      "stored": 28.494668401655247,
+      "T_C": 0.46145211986486245
+     }
+    },
+    {
+     "t_s": 21.4,
+     "resolved": {
+      "contact_and_wedge": 868.2147704328313,
+      "tabs": 88.71356622423957,
+      "radiation_in": 162.26836932680737,
+      "convection_out": 4.171215187051646,
+      "radiation_out": 9.93044442026297,
+      "reaction": 0.12251485814933871,
+      "stored": 1105.2175612347128,
+      "T_C": 42.89826010096701
+     },
+     "lumped": {
+      "contact_and_wedge": 1118.1736272920004,
+      "tabs": 89.39527831343851,
+      "radiation_in": 162.26836932680737,
+      "convection_out": 5.760357755409324,
+      "radiation_out": 3.7271419996586865,
+      "reaction": 0.15979753443745606,
+      "stored": 1360.5095727116156,
+      "T_C": 47.0325436876375
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 249.95885685916915,
+      "tabs": 0.681712089198939,
+      "radiation_in": 0.0,
+      "convection_out": 1.589142568357678,
+      "radiation_out": -6.203302420604285,
+      "reaction": 0.03728267628811735,
+      "stored": 255.29201147690287,
+      "T_C": 4.134283586670492
+     }
+    },
+    {
+     "t_s": 30.0,
+     "resolved": {
+      "contact_and_wedge": 1458.042541063933,
+      "tabs": 153.80973515862962,
+      "radiation_in": 319.52124350964425,
+      "convection_out": 13.039578816708886,
+      "radiation_out": 25.73009983271668,
+      "reaction": 0.2802109845340962,
+      "stored": 1892.8840520673152,
+      "T_C": 55.653992746029395
+     },
+     "lumped": {
+      "contact_and_wedge": 1927.1976408565713,
+      "tabs": 154.0747923796144,
+      "radiation_in": 319.52124350964425,
+      "convection_out": 16.73135070570517,
+      "radiation_out": 11.547640956850575,
+      "reaction": 0.35248000208063957,
+      "stored": 2372.867165085355,
+      "T_C": 63.42699862486405
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 469.15509979263834,
+      "tabs": 0.26505722098477236,
+      "radiation_in": 0.0,
+      "convection_out": 3.6917718889962856,
+      "radiation_out": -14.182458875866104,
+      "reaction": 0.07226901754654336,
+      "stored": 479.9831130180396,
+      "T_C": 7.7730058788346525
+     }
+    },
+    {
+     "t_s": 60.0,
+     "resolved": {
+      "contact_and_wedge": 3136.1110938969023,
+      "tabs": 343.36766973352627,
+      "radiation_in": 710.205418543334,
+      "convection_out": 76.60278790125,
+      "radiation_out": 109.68247591100211,
+      "reaction": 2.0433094168166215,
+      "stored": 4005.442227778327,
+      "T_C": 89.86546117859639
+     },
+     "lumped": {
+      "contact_and_wedge": 4220.697642988243,
+      "tabs": 337.4345730059656,
+      "radiation_in": 710.205418543334,
+      "convection_out": 94.64110743151662,
+      "radiation_out": 77.25704908160613,
+      "reaction": 2.8449697216886136,
+      "stored": 5099.284447746109,
+      "T_C": 107.57950522665764
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 1084.586549091341,
+      "tabs": -5.933096727560667,
+      "radiation_in": 0.0,
+      "convection_out": 18.03831953026662,
+      "radiation_out": -32.42542682939599,
+      "reaction": 0.8016603048719921,
+      "stored": 1093.8422199677825,
+      "T_C": 17.714044048061254
+     }
+    },
+    {
+     "t_s": 100.0,
+     "resolved": {
+      "contact_and_wedge": 4771.756646282072,
+      "tabs": 527.2672901828424,
+      "radiation_in": 1023.7894248021894,
+      "convection_out": 213.63055972565556,
+      "radiation_out": 271.4649849204895,
+      "reaction": 7.591724489226861,
+      "stored": 5845.309541110186,
+      "T_C": 119.66088325684511
+     },
+     "lumped": {
+      "contact_and_wedge": 6359.808569168217,
+      "tabs": 508.45132024609615,
+      "radiation_in": 1023.7894248021894,
+      "convection_out": 266.6685186872738,
+      "radiation_out": 252.0693972057722,
+      "reaction": 8.068020424152479,
+      "stored": 7381.379418747609,
+      "T_C": 144.5365088056293
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 1588.051922886145,
+      "tabs": -18.815969936746285,
+      "radiation_in": 0.0,
+      "convection_out": 53.037958961618216,
+      "radiation_out": -19.395587714717294,
+      "reaction": 0.47629593492561817,
+      "stored": 1536.069877637423,
+      "T_C": 24.875625548784186
+     }
+    },
+    {
+     "t_s": 150.0,
+     "resolved": {
+      "contact_and_wedge": 6187.927594554995,
+      "tabs": 684.4918175931056,
+      "radiation_in": 1263.3155466852431,
+      "convection_out": 435.25760351374834,
+      "radiation_out": 532.3571088807603,
+      "reaction": 16.95406037545048,
+      "stored": 7185.074306814286,
+      "T_C": 141.35747865286294
+     },
+     "lumped": {
+      "contact_and_wedge": 8096.394076850014,
+      "tabs": 647.2871333838693,
+      "radiation_in": 1263.3155466852431,
+      "convection_out": 545.5577466371668,
+      "radiation_out": 576.8867498163913,
+      "reaction": 15.304610819373636,
+      "stored": 8899.856871284945,
+      "T_C": 169.12723678194243
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 1908.466482295019,
+      "tabs": -37.204684209236234,
+      "radiation_in": 0.0,
+      "convection_out": 110.30014312341848,
+      "radiation_out": 44.52964093563105,
+      "reaction": -1.6494495560768456,
+      "stored": 1714.782564470659,
+      "T_C": 27.76975812907949
+     }
+    },
+    {
+     "t_s": 200.0,
+     "resolved": {
+      "contact_and_wedge": 7152.759939974465,
+      "tabs": 790.2974841665085,
+      "radiation_in": 1421.3747164855467,
+      "convection_out": 687.8806581762326,
+      "radiation_out": 833.738295670143,
+      "reaction": 25.37032797502389,
+      "stored": 7868.183514755167,
+      "T_C": 152.4199759474521
+     },
+     "lumped": {
+      "contact_and_wedge": 9186.430804664335,
+      "tabs": 734.4329346051177,
+      "radiation_in": 1421.3747164855467,
+      "convection_out": 860.4577227321103,
+      "radiation_out": 972.4341711172095,
+      "reaction": 69.89283070410217,
+      "stored": 9579.239392609783,
+      "T_C": 180.1293828762718
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 2033.6708646898696,
+      "tabs": -55.864549561390845,
+      "radiation_in": 0.0,
+      "convection_out": 172.57706455587766,
+      "radiation_out": 138.69587544706656,
+      "reaction": 44.522502729078276,
+      "stored": 1711.0558778546156,
+      "T_C": 27.709406928819703
+     }
+    },
+    {
+     "t_s": 250.0,
+     "resolved": {
+      "contact_and_wedge": 7824.211828984985,
+      "tabs": 863.0099155432986,
+      "radiation_in": 1536.2225203635016,
+      "convection_out": 955.2142671320939,
+      "radiation_out": 1154.0917445485031,
+      "reaction": 49.129620983529975,
+      "stored": 8163.267874194718,
+      "T_C": 157.19867002744482
+     },
+     "lumped": {
+      "contact_and_wedge": 9875.868520956612,
+      "tabs": 789.5518133046551,
+      "radiation_in": 1536.2225203635016,
+      "convection_out": 1189.0729891568435,
+      "radiation_out": 1397.2647435184094,
+      "reaction": 139.16365189784733,
+      "stored": 9754.468773847364,
+      "T_C": 182.96710564935003
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 2051.656691971627,
+      "tabs": -73.4581022386435,
+      "radiation_in": 0.0,
+      "convection_out": 233.85872202474957,
+      "radiation_out": 243.1729989699063,
+      "reaction": 90.03403091431736,
+      "stored": 1591.2008996526456,
+      "T_C": 25.768435621905212
+     }
+    },
+    {
+     "t_s": 300.0,
+     "resolved": {
+      "contact_and_wedge": 8298.674699929692,
+      "tabs": 913.654018201056,
+      "radiation_in": 1625.2366591194675,
+      "convection_out": 1227.3843071188362,
+      "radiation_out": 1478.448935402056,
+      "reaction": 80.7590119449827,
+      "stored": 8212.491146674307,
+      "T_C": 157.9958080433086
+     },
+     "lumped": {
+      "contact_and_wedge": 10312.25752988531,
+      "tabs": 824.4400595965875,
+      "radiation_in": 1625.2366591194675,
+      "convection_out": 1518.0968945610568,
+      "radiation_out": 1823.0289496057762,
+      "reaction": 208.79775074828908,
+      "stored": 9629.60615518282,
+      "T_C": 180.9450389503291
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 2013.5828299556179,
+      "tabs": -89.21395860446853,
+      "radiation_in": 0.0,
+      "convection_out": 290.71258744222064,
+      "radiation_out": 344.58001420372034,
+      "reaction": 128.0387388033064,
+      "stored": 1417.1150085085137,
+      "T_C": 22.94923090702048
+     }
+    },
+    {
+     "t_s": 332.0,
+     "resolved": {
+      "contact_and_wedge": 8528.544488377998,
+      "tabs": 937.8563315329166,
+      "radiation_in": 1672.9772700773208,
+      "convection_out": 1401.0656986327936,
+      "radiation_out": 1683.3053008240704,
+      "reaction": 101.26633265869323,
+      "stored": 8156.273423190066,
+      "T_C": 157.08539956583104
+     },
+     "lumped": {
+      "contact_and_wedge": 10502.682490998784,
+      "tabs": 839.6640748846168,
+      "radiation_in": 1672.9772700773208,
+      "convection_out": 1725.0766182127293,
+      "radiation_out": 2087.7320334500832,
+      "reaction": 248.7924799110999,
+      "stored": 9451.307664209009,
+      "T_C": 178.0576139952876
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 1974.1380026207862,
+      "tabs": -98.1922566482998,
+      "radiation_in": 0.0,
+      "convection_out": 324.0109195799357,
+      "radiation_out": 404.42673262601284,
+      "reaction": 147.52614725240664,
+      "stored": 1295.0342410189432,
+      "T_C": 20.972214429456557
+     }
+    }
+   ],
+   "lumped_peak_C": 182.96710626290218,
+   "t_lumped_peak_s": 249.9,
+   "resolved_mean_peak_C": 158.08432172451393,
+   "t_resolved_mean_peak_s": 287.3
+  },
+  "acc_PP_Exp3": {
+   "test": "M50_PP_Exp3",
+   "t_end_s": 900.0,
+   "tab_share_of_link": 0.0740291323323023,
+   "rows": [
+    {
+     "t_s": 10.0,
+     "resolved": {
+      "contact_and_wedge": 144.39525106336544,
+      "tabs": 13.859917944283588,
+      "radiation_in": 8.391243955341494,
+      "convection_out": 0.19123429733483502,
+      "radiation_out": 0.617755487828418,
+      "reaction": 0.052656506104182134,
+      "stored": 165.89007968393142,
+      "T_C": 27.686479023221562
+     },
+     "lumped": {
+      "contact_and_wedge": 175.29481636512966,
+      "tabs": 14.0143967925758,
+      "radiation_in": 8.391243955341494,
+      "convection_out": 0.3404815923901162,
+      "radiation_out": 0.2027972723081134,
+      "reaction": 0.05298395820770452,
+      "stored": 197.21016220655645,
+      "T_C": 28.19368683735314
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 30.899565301764227,
+      "tabs": 0.1544788482922126,
+      "radiation_in": 0.0,
+      "convection_out": 0.1492472950552812,
+      "radiation_out": -0.41495821552030465,
+      "reaction": 0.000327452103522384,
+      "stored": 31.32008252262503,
+      "T_C": 0.5072078141315792
+     }
+    },
+    {
+     "t_s": 21.4,
+     "resolved": {
+      "contact_and_wedge": 947.773134168702,
+      "tabs": 97.16831553440649,
+      "radiation_in": 205.64627213758422,
+      "convection_out": 4.658287141939552,
+      "radiation_out": 11.54910860081671,
+      "reaction": 0.11068385249280689,
+      "stored": 1234.4910099504293,
+      "T_C": 44.9917572461608
+     },
+     "lumped": {
+      "contact_and_wedge": 1224.4104213407118,
+      "tabs": 97.8886531698211,
+      "radiation_in": 205.64627213758422,
+      "convection_out": 6.398524506544011,
+      "radiation_out": 4.172175786214848,
+      "reaction": 0.16773118577225715,
+      "stored": 1517.5423775411305,
+      "T_C": 49.575585061394825
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 276.6372871720098,
+      "tabs": 0.7203376354146087,
+      "radiation_in": 0.0,
+      "convection_out": 1.740237364604459,
+      "radiation_out": -7.3769328146018625,
+      "reaction": 0.05704733327945026,
+      "stored": 283.05136759070115,
+      "T_C": 4.583827815234024
+     }
+    },
+    {
+     "t_s": 30.0,
+     "resolved": {
+      "contact_and_wedge": 1584.8737087293084,
+      "tabs": 168.02765569412352,
+      "radiation_in": 403.8608945054557,
+      "convection_out": 14.601568067327966,
+      "radiation_out": 30.191474798696113,
+      "reaction": 0.4755433826764687,
+      "stored": 2112.4447594455396,
+      "T_C": 59.20963173191157
+     },
+     "lumped": {
+      "contact_and_wedge": 2104.1343344025595,
+      "tabs": 168.22045328355614,
+      "radiation_in": 403.8608945054557,
+      "convection_out": 18.636106733821848,
+      "radiation_out": 13.051317201215639,
+      "reaction": 0.39258848968465543,
+      "stored": 2644.920846746219,
+      "T_C": 67.83272626309667
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 519.2606256732511,
+      "tabs": 0.19279758943261527,
+      "radiation_in": 0.0,
+      "convection_out": 4.034538666493882,
+      "radiation_out": -17.140157597480474,
+      "reaction": -0.08295489299181324,
+      "stored": 532.4760873006794,
+      "T_C": 8.623094531185103
+     }
+    },
+    {
+     "t_s": 60.0,
+     "resolved": {
+      "contact_and_wedge": 3379.11304076726,
+      "tabs": 372.15314940254075,
+      "radiation_in": 880.6420186600105,
+      "convection_out": 85.22952862971731,
+      "radiation_out": 127.66593421708936,
+      "reaction": 3.127152062054157,
+      "stored": 4422.139898045058,
+      "T_C": 96.61360158777421
+     },
+     "lumped": {
+      "contact_and_wedge": 4569.112998762568,
+      "tabs": 365.2895384048122,
+      "radiation_in": 880.6420186600105,
+      "convection_out": 104.97296924760103,
+      "radiation_out": 88.33676275767901,
+      "reaction": 3.5270156450497865,
+      "stored": 5625.261839467161,
+      "T_C": 116.09735772416455
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 1189.9999579953083,
+      "tabs": -6.863610997728529,
+      "radiation_in": 0.0,
+      "convection_out": 19.74344061788372,
+      "radiation_out": -39.32917145941035,
+      "reaction": 0.3998635829956294,
+      "stored": 1203.1219414221032,
+      "T_C": 19.48375613639034
+     }
+    },
+    {
+     "t_s": 100.0,
+     "resolved": {
+      "contact_and_wedge": 5107.435043117124,
+      "tabs": 567.3419104433871,
+      "radiation_in": 1248.7856392526533,
+      "convection_out": 235.61233521707877,
+      "radiation_out": 312.78295469491997,
+      "reaction": 9.947768675362054,
+      "stored": 6385.115071576528,
+      "T_C": 128.4026732239114
+     },
+     "lumped": {
+      "contact_and_wedge": 6833.140401362599,
+      "tabs": 546.2930559487186,
+      "radiation_in": 1248.7856392526533,
+      "convection_out": 293.53646492472376,
+      "radiation_out": 288.9409934261401,
+      "reaction": 0.8851276506289452,
+      "stored": 8046.626765863735,
+      "T_C": 155.30974519617385
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 1725.7053582454746,
+      "tabs": -21.04885449466849,
+      "radiation_in": 0.0,
+      "convection_out": 57.924129707644994,
+      "radiation_out": -23.84196126877987,
+      "reaction": -9.062641024733109,
+      "stored": 1661.5116942872073,
+      "T_C": 26.907071972262457
+     }
+    },
+    {
+     "t_s": 150.0,
+     "resolved": {
+      "contact_and_wedge": 6588.523349452207,
+      "tabs": 732.1890407007638,
+      "radiation_in": 1522.353849378881,
+      "convection_out": 476.3550059701477,
+      "radiation_out": 608.5797890576357,
+      "reaction": 17.465616563652294,
+      "stored": 7775.59706106772,
+      "T_C": 150.92060017923433
+     },
+     "lumped": {
+      "contact_and_wedge": 8645.548019906506,
+      "tabs": 691.1906635497058,
+      "radiation_in": 1522.353849378881,
+      "convection_out": 596.3957990651003,
+      "radiation_out": 660.2781764675108,
+      "reaction": 33.1936002998752,
+      "stored": 9635.612157602358,
+      "T_C": 181.04230214740662
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 2057.0246704542988,
+      "tabs": -40.99837715105798,
+      "radiation_in": 0.0,
+      "convection_out": 120.04079309495256,
+      "radiation_out": 51.69838740987507,
+      "reaction": 15.727983736222907,
+      "stored": 1860.0150965346384,
+      "T_C": 30.12170196817229
+     }
+    },
+    {
+     "t_s": 200.0,
+     "resolved": {
+      "contact_and_wedge": 7589.071060432577,
+      "tabs": 842.0480052384844,
+      "radiation_in": 1699.7212990895614,
+      "convection_out": 748.741696331279,
+      "radiation_out": 947.7576520853905,
+      "reaction": 35.66410462504106,
+      "stored": 8470.005120968992,
+      "T_C": 162.16607483350595
+     },
+     "lumped": {
+      "contact_and_wedge": 9766.623784978196,
+      "tabs": 780.8179607627025,
+      "radiation_in": 1699.7212990895614,
+      "convection_out": 936.4299799335084,
+      "radiation_out": 1110.600283129721,
+      "reaction": 123.55003584158496,
+      "stored": 10323.682817608817,
+      "T_C": 192.18514684386747
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 2177.5527245456187,
+      "tabs": -61.23004447578194,
+      "radiation_in": 0.0,
+      "convection_out": 187.6882836022295,
+      "radiation_out": 162.84263104433046,
+      "reaction": 87.8859312165439,
+      "stored": 1853.6776966398247,
+      "T_C": 30.019072010361526
+     }
+    },
+    {
+     "t_s": 250.0,
+     "resolved": {
+      "contact_and_wedge": 8279.928530026793,
+      "tabs": 916.8386467495279,
+      "radiation_in": 1827.2194658582766,
+      "convection_out": 1035.8006575454967,
+      "radiation_out": 1306.5457652790353,
+      "reaction": 74.32748346287076,
+      "stored": 8755.967703272936,
+      "T_C": 166.79704782628235
+     },
+     "lumped": {
+      "contact_and_wedge": 10463.11038088518,
+      "tabs": 836.5003803467454,
+      "radiation_in": 1827.2194658582766,
+      "convection_out": 1290.2266412128588,
+      "radiation_out": 1592.7164814176863,
+      "reaction": 250.42536255771307,
+      "stored": 10494.31246701737,
+      "T_C": 194.94838003266995
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 2183.1818508583874,
+      "tabs": -80.33826640278255,
+      "radiation_in": 0.0,
+      "convection_out": 254.42598366736206,
+      "radiation_out": 286.17071613865096,
+      "reaction": 176.0978790948423,
+      "stored": 1738.3447637444333,
+      "T_C": 28.151332206387593
+     }
+    },
+    {
+     "t_s": 300.0,
+     "resolved": {
+      "contact_and_wedge": 8764.51121524615,
+      "tabs": 968.4868223972951,
+      "radiation_in": 1925.3161160114687,
+      "convection_out": 1327.0473600788325,
+      "radiation_out": 1668.0249500138011,
+      "reaction": 116.47138662929893,
+      "stored": 8779.713230191579,
+      "T_C": 167.18159077233327
+     },
+     "lumped": {
+      "contact_and_wedge": 10892.510748995617,
+      "tabs": 870.8299017003205,
+      "radiation_in": 1925.3161160114687,
+      "convection_out": 1643.9862578017708,
+      "radiation_out": 2074.793673732616,
+      "reaction": 376.1361756473804,
+      "stored": 10346.0130108204,
+      "T_C": 192.54676940599836
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 2127.9995337494674,
+      "tabs": -97.65692069697457,
+      "radiation_in": 0.0,
+      "convection_out": 316.93889772293824,
+      "radiation_out": 406.7687237188147,
+      "reaction": 259.6647890180815,
+      "stored": 1566.2997806288204,
+      "T_C": 25.365178633665096
+     }
+    },
+    {
+     "t_s": 332.0,
+     "resolved": {
+      "contact_and_wedge": 8997.925767937944,
+      "tabs": 992.9958900641966,
+      "radiation_in": 1977.6824563691346,
+      "convection_out": 1512.4388832118375,
+      "radiation_out": 1895.3865849538572,
+      "reaction": 142.90975297907028,
+      "stored": 8703.68839918465,
+      "T_C": 165.95041941999432
+     },
+     "lumped": {
+      "contact_and_wedge": 11074.570984074775,
+      "tabs": 885.3851773636602,
+      "radiation_in": 1977.6824563691346,
+      "convection_out": 1866.2231437706441,
+      "radiation_out": 2373.583958461526,
+      "reaction": 442.992906275953,
+      "stored": 10140.824421851352,
+      "T_C": 189.22387727694496
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 2076.6452161368306,
+      "tabs": -107.6107127005364,
+      "radiation_in": 0.0,
+      "convection_out": 353.78426055880664,
+      "radiation_out": 478.1973735076688,
+      "reaction": 300.0831532968827,
+      "stored": 1437.136022666702,
+      "T_C": 23.273457856950643
+     }
+    },
+    {
+     "t_s": 450.0,
+     "resolved": {
+      "contact_and_wedge": 9534.90499968085,
+      "tabs": 1047.659568549698,
+      "radiation_in": 2126.3853932944194,
+      "convection_out": 2170.631684761349,
+      "radiation_out": 2677.106198854828,
+      "reaction": 227.3665267915685,
+      "stored": 8088.578604700357,
+      "T_C": 155.98912720162522
+     },
+     "lumped": {
+      "contact_and_wedge": 11401.442347264458,
+      "tabs": 911.5177526380402,
+      "radiation_in": 2126.3853932944194,
+      "convection_out": 2635.273069875546,
+      "radiation_out": 3363.2220753747756,
+      "reaction": 601.102412394486,
+      "stored": 9041.952760341082,
+      "T_C": 171.42838478285154
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 1866.5373475836077,
+      "tabs": -136.14181591165777,
+      "radiation_in": 0.0,
+      "convection_out": 464.64138511419696,
+      "radiation_out": 686.1158765199475,
+      "reaction": 373.7358856029175,
+      "stored": 953.3741556407258,
+      "T_C": 15.439257581226315
+     }
+    },
+    {
+     "t_s": 600.0,
+     "resolved": {
+      "contact_and_wedge": 9830.641945028377,
+      "tabs": 1075.1421211445333,
+      "radiation_in": 2255.89822305259,
+      "convection_out": 2921.771463462342,
+      "radiation_out": 3509.030372292753,
+      "reaction": 301.34026110255024,
+      "stored": 7032.220714572955,
+      "T_C": 138.88211683518955
+     },
+     "lumped": {
+      "contact_and_wedge": 11486.4815515977,
+      "tabs": 918.3164314419165,
+      "radiation_in": 2255.89822305259,
+      "convection_out": 3476.7867417878933,
+      "radiation_out": 4347.488305026535,
+      "reaction": 701.485474157776,
+      "stored": 7537.906633435557,
+      "T_C": 147.07136248478633
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 1655.8396065693232,
+      "tabs": -156.82568970261684,
+      "radiation_in": 0.0,
+      "convection_out": 555.0152783255512,
+      "radiation_out": 838.4579327337824,
+      "reaction": 400.1452130552258,
+      "stored": 505.6859188626013,
+      "T_C": 8.189245649596785
+     }
+    },
+    {
+     "t_s": 900.0,
+     "resolved": {
+      "contact_and_wedge": 9989.66613086925,
+      "tabs": 1085.0943588163364,
+      "radiation_in": 2417.321107166686,
+      "convection_out": 4115.571214065834,
+      "radiation_out": 4687.216165843809,
+      "reaction": 375.8943519867145,
+      "stored": 5065.188568929343,
+      "T_C": 107.02734524581932
+     },
+     "lumped": {
+      "contact_and_wedge": 11445.454312783238,
+      "tabs": 915.03640288219,
+      "radiation_in": 2417.321107166686,
+      "convection_out": 4752.5950926215855,
+      "radiation_out": 5639.758777969305,
+      "reaction": 785.6463020469041,
+      "stored": 5171.104254288127,
+      "T_C": 108.74257901681177
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 1455.7881819139893,
+      "tabs": -170.05795593414632,
+      "radiation_in": 0.0,
+      "convection_out": 637.0238785557513,
+      "radiation_out": 952.5426121254959,
+      "reaction": 409.7519500601896,
+      "stored": 105.91568535878378,
+      "T_C": 1.7152337709924552
+     }
+    }
+   ],
+   "lumped_peak_C": 194.95236544692204,
+   "t_lumped_peak_s": 248.0,
+   "resolved_mean_peak_C": 167.42155639707704,
+   "t_resolved_mean_peak_s": 279.9
+  },
+  "acc_ST_Exp2": {
+   "test": "M50_ST_Exp2",
+   "t_end_s": 900.0,
+   "tab_share_of_link": 0.03843730638664837,
+   "rows": [
+    {
+     "t_s": 10.0,
+     "resolved": {
+      "contact_and_wedge": 152.82083221493,
+      "tabs": 7.336696671377094,
+      "radiation_in": 9.338126596372122,
+      "convection_out": 0.18785657030054242,
+      "radiation_out": 0.6522183250363461,
+      "reaction": 0.052719877189880325,
+      "stored": 168.7083004645322,
+      "T_C": 27.73211822614627
+     },
+     "lumped": {
+      "contact_and_wedge": 185.6101653512804,
+      "tabs": 7.419542003313601,
+      "radiation_in": 9.338126596372122,
+      "convection_out": 0.3480308558623838,
+      "radiation_out": 0.20732487254515056,
+      "reaction": 0.05303522580661024,
+      "stored": 201.8655134483652,
+      "T_C": 28.269077140864212
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 32.78933313635039,
+      "tabs": 0.08284533193650656,
+      "radiation_in": 0.0,
+      "convection_out": 0.16017428556184138,
+      "radiation_out": -0.4448934524911956,
+      "reaction": 0.00031534861672991715,
+      "stored": 33.157212983833006,
+      "T_C": 0.5369589147179425
+     }
+    },
+    {
+     "t_s": 21.4,
+     "resolved": {
+      "contact_and_wedge": 999.8740438662968,
+      "tabs": 51.38241275476446,
+      "radiation_in": 238.65684995522702,
+      "convection_out": 4.805559308758545,
+      "radiation_out": 12.62653568877716,
+      "reaction": 0.1495958836843939,
+      "stored": 1272.630807462437,
+      "T_C": 45.609405788865374
+     },
+     "lumped": {
+      "contact_and_wedge": 1295.4032931687957,
+      "tabs": 51.78218082348334,
+      "radiation_in": 238.65684995522702,
+      "convection_out": 6.610962664684482,
+      "radiation_out": 4.322481661382554,
+      "reaction": 0.17056068846894445,
+      "stored": 1575.0794403099078,
+      "T_C": 50.50735935724547
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 295.5292493024989,
+      "tabs": 0.3997680687188776,
+      "radiation_in": 0.0,
+      "convection_out": 1.8054033559259377,
+      "radiation_out": -8.304054027394606,
+      "reaction": 0.020964804784550567,
+      "stored": 302.4486328474709,
+      "T_C": 4.897953568380096
+     }
+    },
+    {
+     "t_s": 30.0,
+     "resolved": {
+      "contact_and_wedge": 1667.7309779409084,
+      "tabs": 88.72026207358303,
+      "radiation_in": 467.95743858821777,
+      "convection_out": 15.207572358514026,
+      "radiation_out": 33.186109634293906,
+      "reaction": 0.9333226962782767,
+      "stored": 2176.948319306179,
+      "T_C": 60.25422379443205
+     },
+     "lumped": {
+      "contact_and_wedge": 2223.30271714337,
+      "tabs": 88.87383869685615,
+      "radiation_in": 467.95743858821777,
+      "convection_out": 19.32333481908182,
+      "radiation_out": 13.607435892814689,
+      "reaction": 0.40863099734967534,
+      "stored": 2747.611854713897,
+      "T_C": 69.49573853787687
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 555.5717392024617,
+      "tabs": 0.15357662327312482,
+      "radiation_in": 0.0,
+      "convection_out": 4.115762460567792,
+      "radiation_out": -19.578673741479218,
+      "reaction": -0.5246916989286013,
+      "stored": 570.663535407718,
+      "T_C": 9.241514743444824
+     }
+    },
+    {
+     "t_s": 60.0,
+     "resolved": {
+      "contact_and_wedge": 3542.2045343469304,
+      "tabs": 195.67414567479497,
+      "radiation_in": 1009.4632762396631,
+      "convection_out": 88.54936829029671,
+      "radiation_out": 138.28729238321193,
+      "reaction": 4.525432207993078,
+      "stored": 4525.030727795872,
+      "T_C": 98.27984984284812
+     },
+     "lumped": {
+      "contact_and_wedge": 4812.825778380125,
+      "tabs": 192.38689297938004,
+      "radiation_in": 1009.4632762396631,
+      "convection_out": 108.78747954471979,
+      "radiation_out": 92.58337815366404,
+      "reaction": 3.7958209813553054,
+      "stored": 5817.100910882139,
+      "T_C": 119.2040633341237
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 1270.6212440331942,
+      "tabs": -3.287252695414935,
+      "radiation_in": 0.0,
+      "convection_out": 20.238111254423075,
+      "radiation_out": -45.70391422954789,
+      "reaction": -0.7296112266377728,
+      "stored": 1292.0701830862672,
+      "T_C": 20.92421349127558
+     }
+    },
+    {
+     "t_s": 100.0,
+     "resolved": {
+      "contact_and_wedge": 5347.221720317254,
+      "tabs": 297.3976369980857,
+      "radiation_in": 1418.8322343843665,
+      "convection_out": 242.89159310997772,
+      "radiation_out": 332.99263741319567,
+      "reaction": 11.993637220850662,
+      "stored": 6499.560998397384,
+      "T_C": 130.25604855704265
+     },
+     "lumped": {
+      "contact_and_wedge": 7184.711487639437,
+      "tabs": 287.2001571861259,
+      "radiation_in": 1418.8322343843665,
+      "convection_out": 303.2623346005841,
+      "radiation_out": 302.86606813663525,
+      "reaction": -2.2016803954983573,
+      "stored": 8282.413796077213,
+      "T_C": 159.12815864092653
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 1837.489767322183,
+      "tabs": -10.197479811959795,
+      "radiation_in": 0.0,
+      "convection_out": 60.37074149060638,
+      "radiation_out": -30.126569276560417,
+      "reaction": -14.19531761634902,
+      "stored": 1782.8527976798296,
+      "T_C": 28.872110083883882
+     }
+    },
+    {
+     "t_s": 150.0,
+     "resolved": {
+      "contact_and_wedge": 6899.089241703927,
+      "tabs": 383.29315361749826,
+      "radiation_in": 1718.4716168296138,
+      "convection_out": 488.27890417914557,
+      "radiation_out": 639.8600586662784,
+      "reaction": 19.99384294173624,
+      "stored": 7892.708892247351,
+      "T_C": 152.81714805258866
+     },
+     "lumped": {
+      "contact_and_wedge": 9084.701073236563,
+      "tabs": 363.14994425471997,
+      "radiation_in": 1718.4716168296138,
+      "convection_out": 614.7247511321859,
+      "radiation_out": 691.8079950966413,
+      "reaction": 42.24165101342089,
+      "stored": 9902.03153910549,
+      "T_C": 185.3567860583885
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 2185.6118315326366,
+      "tabs": -20.143209362778293,
+      "radiation_in": 0.0,
+      "convection_out": 126.44584695304036,
+      "radiation_out": 51.947936430362915,
+      "reaction": 22.247808071684652,
+      "stored": 2009.3226468581388,
+      "T_C": 32.539638005799844
+     }
+    },
+    {
+     "t_s": 200.0,
+     "resolved": {
+      "contact_and_wedge": 7953.360587940347,
+      "tabs": 440.7697534453882,
+      "radiation_in": 1910.6405142538777,
+      "convection_out": 765.1231831384132,
+      "radiation_out": 989.5542155690498,
+      "reaction": 41.74141989491573,
+      "stored": 8591.834876827064,
+      "T_C": 164.13902634537757
+     },
+     "lumped": {
+      "contact_and_wedge": 10262.94037424463,
+      "tabs": 410.2486361137535,
+      "radiation_in": 1910.6405142538777,
+      "convection_out": 964.1579718467696,
+      "radiation_out": 1163.7521566448845,
+      "reaction": 157.70248511778033,
+      "stored": 10613.621881238387,
+      "T_C": 196.8805162953585
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 2309.5797863042835,
+      "tabs": -30.521117331634684,
+      "radiation_in": 0.0,
+      "convection_out": 199.03478870835636,
+      "radiation_out": 174.1979410758347,
+      "reaction": 115.96106522286459,
+      "stored": 2021.7870044113224,
+      "T_C": 32.74148994998092
+     }
+    },
+    {
+     "t_s": 250.0,
+     "resolved": {
+      "contact_and_wedge": 8686.126140490926,
+      "tabs": 480.146180837958,
+      "radiation_in": 2047.678930437715,
+      "convection_out": 1056.6142662818384,
+      "radiation_out": 1358.5598798265785,
+      "reaction": 83.23591398000528,
+      "stored": 8882.013019638185,
+      "T_C": 168.83826752450503
+     },
+     "lumped": {
+      "contact_and_wedge": 10995.004367044125,
+      "tabs": 439.51200934231383,
+      "radiation_in": 2047.678930437715,
+      "convection_out": 1328.308505275191,
+      "radiation_out": 1670.7430101748712,
+      "reaction": 332.6888220924056,
+      "stored": 10815.832613466497,
+      "T_C": 200.15518402374894
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 2308.878226553199,
+      "tabs": -40.63417149564418,
+      "radiation_in": 0.0,
+      "convection_out": 271.69423899335266,
+      "radiation_out": 312.1831303482927,
+      "reaction": 249.4529081124003,
+      "stored": 1933.8195938283116,
+      "T_C": 31.316916499243916
+     }
+    },
+    {
+     "t_s": 300.0,
+     "resolved": {
+      "contact_and_wedge": 9203.83786771735,
+      "tabs": 507.551280009888,
+      "radiation_in": 2152.4364510224786,
+      "convection_out": 1352.3149303763498,
+      "radiation_out": 1729.976416020648,
+      "reaction": 128.12517223544722,
+      "stored": 8909.659424588164,
+      "T_C": 169.28598258442372
+     },
+     "lumped": {
+      "contact_and_wedge": 11443.33870696386,
+      "tabs": 457.43363265570747,
+      "radiation_in": 2152.4364510224786,
+      "convection_out": 1693.3952562078014,
+      "radiation_out": 2180.067648836018,
+      "reaction": 510.0336831062242,
+      "stored": 10689.77956870445,
+      "T_C": 198.11383916930285
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 2239.5008392465097,
+      "tabs": -50.11764735418052,
+      "radiation_in": 0.0,
+      "convection_out": 341.08032583145155,
+      "radiation_out": 450.0912328153702,
+      "reaction": 381.908510870777,
+      "stored": 1780.1201441162866,
+      "T_C": 28.82785658487913
+     }
+    },
+    {
+     "t_s": 332.0,
+     "resolved": {
+      "contact_and_wedge": 9454.784850013411,
+      "tabs": 520.6490254705385,
+      "radiation_in": 2208.1022732777124,
+      "convection_out": 1540.5789832576652,
+      "radiation_out": 1963.5418821515223,
+      "reaction": 156.2681482080099,
+      "stored": 8835.683431560486,
+      "T_C": 168.0879907945018
+     },
+     "lumped": {
+      "contact_and_wedge": 11631.328968331472,
+      "tabs": 464.9483161203288,
+      "radiation_in": 2208.1022732777124,
+      "convection_out": 1923.128741445205,
+      "radiation_out": 2496.549448226286,
+      "reaction": 602.1436407137596,
+      "stored": 10486.845008771781,
+      "T_C": 194.8274495347657
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 2176.544118318061,
+      "tabs": -55.700709350209706,
+      "radiation_in": 0.0,
+      "convection_out": 382.54975818753974,
+      "radiation_out": 533.0075660747639,
+      "reaction": 445.8754925057497,
+      "stored": 1651.1615772112946,
+      "T_C": 26.7394587402639
+     }
+    },
+    {
+     "t_s": 450.0,
+     "resolved": {
+      "contact_and_wedge": 10038.243779501669,
+      "tabs": 550.2376110979197,
+      "radiation_in": 2365.1603591174617,
+      "convection_out": 2209.435341562196,
+      "radiation_out": 2766.791535617547,
+      "reaction": 245.94850236472496,
+      "stored": 8223.363374902034,
+      "T_C": 158.17187651663212
+     },
+     "lumped": {
+      "contact_and_wedge": 11960.515566651604,
+      "tabs": 478.10715248331405,
+      "radiation_in": 2365.1603591174617,
+      "convection_out": 2718.361788181155,
+      "radiation_out": 3544.0712684511805,
+      "reaction": 801.26562974577,
+      "stored": 9342.615651365813,
+      "T_C": 176.29741945531683
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 1922.2717871499353,
+      "tabs": -72.13045861460569,
+      "radiation_in": 0.0,
+      "convection_out": 508.9264466189593,
+      "radiation_out": 777.2797328336333,
+      "reaction": 555.317127381045,
+      "stored": 1119.2522764637797,
+      "T_C": 18.125542938684703
+     }
+    },
+    {
+     "t_s": 600.0,
+     "resolved": {
+      "contact_and_wedge": 10366.510267529688,
+      "tabs": 565.5699948728729,
+      "radiation_in": 2500.7279919626553,
+      "convection_out": 2973.7962705137547,
+      "radiation_out": 3622.211500946794,
+      "reaction": 324.2387275545346,
+      "stored": 7161.039210459203,
+      "T_C": 140.96824632322597
+     },
+     "lumped": {
+      "contact_and_wedge": 12036.368945367843,
+      "tabs": 481.1392996095949,
+      "radiation_in": 2500.7279919626553,
+      "convection_out": 3586.636178877217,
+      "radiation_out": 4579.432643195345,
+      "reaction": 914.3324424466641,
+      "stored": 7766.499857314197,
+      "T_C": 150.77327704152543
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 1669.858677838156,
+      "tabs": -84.43069526327804,
+      "radiation_in": 0.0,
+      "convection_out": 612.8399083634622,
+      "radiation_out": 957.2211422485511,
+      "reaction": 590.0937148921296,
+      "stored": 605.4606468549937,
+      "T_C": 9.805030718299463
+     }
+    },
+    {
+     "t_s": 900.0,
+     "resolved": {
+      "contact_and_wedge": 10550.407962277453,
+      "tabs": 571.7445766762339,
+      "radiation_in": 2668.2432494363416,
+      "convection_out": 4190.755667225837,
+      "radiation_out": 4834.138656727236,
+      "reaction": 402.9904563297156,
+      "stored": 5168.491920766671,
+      "T_C": 108.7002740205129
+     },
+     "lumped": {
+      "contact_and_wedge": 11978.829823266535,
+      "tabs": 478.839242754107,
+      "radiation_in": 2668.2432494363416,
+      "convection_out": 4898.444530392247,
+      "radiation_out": 5926.435305725288,
+      "reaction": 1005.6138319721233,
+      "stored": 5306.6463113115715,
+      "T_C": 110.93759208601735
+     },
+     "lumped_less_resolved": {
+      "contact_and_wedge": 1428.4218609890813,
+      "tabs": -92.90533392212694,
+      "radiation_in": 0.0,
+      "convection_out": 707.6888631664096,
+      "radiation_out": 1092.2966489980527,
+      "reaction": 602.6233756424077,
+      "stored": 138.1543905449007,
+      "T_C": 2.2373180655044536
+     }
+    }
+   ],
+   "lumped_peak_C": 200.16353699129138,
+   "t_lumped_peak_s": 252.8,
+   "resolved_mean_peak_C": 169.50238936062254,
+   "t_resolved_mean_peak_s": 280.9
+  }
+ }
+}

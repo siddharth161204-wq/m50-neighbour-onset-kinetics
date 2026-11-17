@@ -1,0 +1,119 @@
+{
+ "archive": {
+  "continued_runs": 199,
+  "wall_median_s": {
+   "no C8": 643.6698687076569,
+   "C8": 3758.6880123615265
+  },
+  "n": {
+   "no C8": 107,
+   "C8": 92
+  },
+  "machines": [
+   "author-laptop",
+   "cloud-2core"
+  ],
+  "share_of_steps_before_C8": {
+   "median": 0.13119046077991353,
+   "min": 0.07450139568752781,
+   "max": 0.7091319052987599
+  },
+  "max_implicit_nodes": {
+   "runs_above_0": 30,
+   "largest": 812.0,
+   "all_without_delivery": true
+  },
+  "implicit_node_steps_with_max_sub": {
+   "runs_above_0": 0
+  },
+  "rejected_steps": {
+   "runs_above_0": 1,
+   "largest": 2.0
+  },
+  "max_sub_values": [
+   "4096"
+  ]
+ },
+ "repeats_here": {
+  "acc_PT_Exp4": {
+   "repeat": "s15_rep_acc_PT_Exp4",
+   "archived": "s10_none_fresh_hcentral_M50_PT_Exp4_f0.000000000_t332",
+   "worst_history_K": 1.0459189070388675e-11,
+   "worst_account_rel": 2.749093766525229e-13,
+   "C8_archived_s": null,
+   "C8_difference_s": null,
+   "same_end": true,
+   "passed": true,
+   "wall_s_here": 113.61789178848267,
+   "wall_s_archived": 278.3022117614746,
+   "machine_archived": "author-laptop",
+   "steps": 3320,
+   "C8": false,
+   "t_C8_s": null
+  },
+  "acc_PP_Exp3": {
+   "repeat": "s15_rep_acc_PP_Exp3",
+   "archived": "s10_none_fresh_hcentral_M50_PP_Exp3_f0.000000000_t900",
+   "worst_history_K": 1.4267698134062812e-11,
+   "worst_account_rel": 3.113656771266858e-13,
+   "C8_archived_s": null,
+   "C8_difference_s": null,
+   "same_end": true,
+   "passed": true,
+   "wall_s_here": 251.42867159843445,
+   "wall_s_archived": 643.6698687076569,
+   "machine_archived": "author-laptop",
+   "steps": 9000,
+   "C8": false,
+   "t_C8_s": null
+  },
+  "acc_ST_Exp2": {
+   "repeat": "s15_rep_acc_ST_Exp2",
+   "archived": "s10_none_fresh_hcentral_M50_ST_Exp2_f0.000000000_t900",
+   "worst_history_K": 1.5006662579253316e-11,
+   "worst_account_rel": 3.161020308701486e-13,
+   "C8_archived_s": null,
+   "C8_difference_s": null,
+   "same_end": true,
+   "passed": true,
+   "wall_s_here": 249.63412976264954,
+   "wall_s_archived": 647.3264873027802,
+   "machine_archived": "author-laptop",
+   "steps": 9000,
+   "C8": false,
+   "t_C8_s": null
+  },
+  "size_PT_Exp4_con240": {
+   "repeat": "s15_rep_size_PT_Exp4_con240",
+   "archived": "s10_con240_fresh_hcentral_M50_PT_Exp4_f0.053125000_t332",
+   "worst_history_K": 2.922888597822748e-10,
+   "worst_account_rel": null,
+   "C8_archived_s": 263.22724096086677,
+   "C8_difference_s": 1.1112888387287967e-10,
+   "same_end": false,
+   "passed": true,
+   "wall_s_here": 211.2130024433136,
+   "wall_s_archived": 787.1092057228088,
+   "machine_archived": "author-laptop",
+   "steps": 5033,
+   "C8": true,
+   "t_C8_s": 263.22724096075564
+  },
+  "size_PT_Exp4_tri21": {
+   "repeat": "s15_rep_size_PT_Exp4_tri21",
+   "archived": "s10_tri21_fresh_hcentral_M50_PT_Exp4_f0.040625000_t332",
+   "worst_history_K": 1.2789769243681803e-11,
+   "worst_account_rel": 2.506637171066816e-13,
+   "C8_archived_s": null,
+   "C8_difference_s": null,
+   "same_end": true,
+   "passed": true,
+   "wall_s_here": 258.0478711128235,
+   "wall_s_archived": 585.4830555915833,
+   "machine_archived": "author-laptop",
+   "steps": 7038,
+   "C8": false,
+   "t_C8_s": null
+  }
+ }
+}
