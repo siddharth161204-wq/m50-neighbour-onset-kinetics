@@ -1,6 +1,8 @@
 """Stage 14 figure: each path's upper bound on a logarithmic energy axis, with the tests' needs marked.
 
-Reads results/stage14_bounds.json and results/stage14_needs.csv; writes results/stage14_figure.png and .pdf.
+Reads results/stage14_bounds.json, results/stage14_corrections.json (the bounds after the independent read,
+D162) and results/stage14_needs.csv; writes results/stage14_figure.png and .pdf. The bars are the corrected
+bounds; the registered A1 and A2 within 21.39 s are marked beside them.
 Every lower bound is 0, which a logarithmic axis cannot show; the bars start at the axis's left edge.
 Colours: the reference palette's first two categorical slots (blue for the bound within 21.39 s, orange
 for the total), text in ink colours, the needs in dark grey.
@@ -22,6 +24,9 @@ SURFACE = "#fcfcfb"
 
 def main():
     bj = json.load(open(os.path.join(ROOT, "results", "stage14_bounds.json")))
+    cj = json.load(open(os.path.join(ROOT, "results", "stage14_corrections.json")))
+    corrected = {"A1": {k: x["corrected"] for k, x in cj["A1"]["by_window"].items()},
+                 "A2": {k: x["corrected"] for k, x in cj["A2"]["by_window"].items()}}
     with open(os.path.join(ROOT, "results", "stage14_needs.csv"), newline="") as fh:
         needs = list(csv.DictReader(fh))
 
@@ -50,17 +55,22 @@ def main():
             ax.text(xmin * 1.15, y, "not determinable; energy conservation alone caps it at the hatched bar's end", va="center", ha="left",
                     fontsize=7.5, color=INK2, bbox=dict(facecolor=SURFACE, edgecolor="none", pad=1.5))
             continue
-        b = bj[p]["bounds_J"]
+        b = corrected.get(p, bj[p]["bounds_J"])
         u21, ut = b["21.39"], b["total"]
+        if p in corrected:
+            reg = bj[p]["bounds_J"]["21.39"]
+            ax.plot([reg], [y - h / 2 - 0.01], marker="D", markersize=5, linestyle="none", markerfacecolor=SURFACE,
+                    markeredgecolor=INK, markeredgewidth=1.0)
+            ax.text(reg * 0.92, y - h / 2 - 0.01, f"registered {reg / 1000:.1f} kJ", ha="right", va="center", fontsize=6.5, color=SURFACE)
         ax.barh(y - h / 2 - 0.01, u21 - xmin, left=xmin, height=h, color=BLUE, linewidth=0)
         ax.barh(y + h / 2 + 0.01, ut - xmin, left=xmin, height=h, color=ORANGE, linewidth=0)
         ax.text(u21 * 1.08, y - h / 2, f"{u21 / 1000:.1f} kJ", va="center", fontsize=7, color=INK2)
         ax.text(ut * 1.08, y + h / 2, f"{ut / 1000:.1f} kJ", va="center", fontsize=7, color=INK2)
         if p == "A1":
             # beside the bound, not part of it: a flame held on the vent's axis, and P1's line (2 % of 76.74 kJ)
-            xa = bj["A1"]["conditional_axis_J"]
+            xa = 849.0   # D162 (5): the largest on the vent's axis, about 843 to 849 J
             ax.plot([xa, xa], [y - h - 0.08, y + h + 0.08], color=INK, linewidth=1.2)
-            ax.text(xa * 0.93, y + h + 0.2, f"flame held on the vent's axis: {xa / 1000:.2f} kJ", ha="right", va="center", fontsize=6.5, color=INK2)
+            ax.text(xa * 0.93, y + h + 0.2, "flame held on the vent's axis: about 0.85 kJ", ha="right", va="center", fontsize=6.5, color=INK2)
             xp = 0.02 * bj["inputs"]["E_fix_J"]
             ax.plot([xp, xp], [y - h - 0.08, y + h + 0.08], color=INK, linewidth=0.9, linestyle=(0, (2, 2)))
             ax.text(xp * 1.07, y - h - 0.2, f"P1's line, {xp / 1000:.2f} kJ", ha="left", va="center", fontsize=6.5, color=INK2)
@@ -101,7 +111,7 @@ def main():
     from matplotlib.patches import Patch
     ax.legend(handles=[Patch(color=BLUE, label="within 21.39 s"), Patch(color=ORANGE, label="in total")],
               loc="lower right", fontsize=8, frameon=False)
-    ax.set_title("Stage 14: what published inputs allow each path to deliver to the neighbour's facing half",
+    ax.set_title("Stage 14: what published inputs allow each path to deliver to the neighbour's facing half\n(the bounds after the independent read, D162)",
                  fontsize=9.5, color=INK, loc="left")
     fig.tight_layout()
     for ext in ("png", "pdf"):

@@ -212,6 +212,17 @@ def rows():
         "Vendra2022", "manuscript pp. 15-16 (composition, amount); p. 12 (9717 cm3 at STP)",
         "\"The peak number of moles for the vent gases released is 0.53\"",
         "21700 NMC, 4.8 Ah, 100 % SOC, canister under argon or nitrogen", "other cell")
+    # Added after the independent read (D162): survey values that a statement relies on, read once with their pages.
+    add("sharp_both_vents", "A1 (both ends)", "both vents of the LG 21700 M50 activated", "the pressure rose and opened both vents", "", "", "",
+        "Sharp2022", "Results, 'Mass ejection from cells and correlation with heat output' (sixth page of the copy)",
+        "\"the pressure rose and activated both the positive and negative vents\"", "LG 21700-M50, nail, 100 % SOC, FTRC", "this cell")
+    add("sharp_copper", "B3", "molten copper seen in the radiographs", "in 90 % of the LG 21700 tests", "", "", "",
+        "Sharp2022", "Results, 'Internal temperature estimations' (eighth page of the copy)",
+        "\"molten copper being visible in 90 percent, 93.3 percent and 100 percent of the tests\" (the first for the LG 21700)",
+        "LG 21700-M50 and two other cells, nail, 100 % SOC", "this cell")
+    add("sharp_mass", "survey", "ejected mass of the LG 21700 cells", "", "g", 30.0, 54.0,
+        "Sharp2022", "Results, 'Mass ejection from cells and correlation with heat output' (third page of the copy)",
+        "\"spanning from roughly 30 g to 54 g across trials\"", "LG 21700-M50, nail, 100 % SOC, FTRC", "this cell")
     add("vendra_internal_T", "survey", "peak internal temperatures", "1109.3 and 1051.5", "C", 1051.5, 1109.3,
         "Vendra2022", "manuscript p. 13", "\"The peak internal temperatures were 1109.3 °C and 1051.5 °C.\"",
         "21700 NMC, 4.8 Ah, 100 % SOC", "other cell")
@@ -351,7 +362,7 @@ def main():
             verd = {r["key"]: r["verdict"] for r in csv.DictReader(fh)}
         names = {"agree": "agrees", "corrected": "corrected; the correction is applied", "could not trace": "no source to trace (a limit)"}
         for r in R:
-            r["second_reading"] = names.get(verd.get(r["key"], ""), "not read")
+            r["second_reading"] = names.get(verd.get(r["key"], ""), "added after the independent read (D162); read once")
     out = os.path.join(ROOT, "results", "stage14_inputs.csv")
     with open(out, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(R[0].keys()))

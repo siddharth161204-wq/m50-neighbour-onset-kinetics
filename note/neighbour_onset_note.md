@@ -133,6 +133,13 @@ Figure 1. (a) First time each history self-heats at 0.15 K/min, 30 s release, 33
 3. So the conduction result does not rest on the fitted triggers, and the spread and the overlap of the delivered fraction survive a measured ejected energy; part of the larger spreads was the ejected energy's scaling with the fitted trigger.
 4. Scorecard: P1 to P4 held, P1, P3 and P4 fixed by Stages 6 and 9's records before the runs, as the predictions recorded. Through Stage 12: 74 predictions, 36 failed.
 
+## Stage 14 (branch stage14)
+
+1. Path by path, from published inputs alone (predictions 4dcc174; bounds as corrected after the independent read, D162), the energy each path can deliver to the neighbour's facing half within 21.39 s is at most 27.9 kJ by radiation from the vent's flame, 195.5 kJ by gas beside the neighbour, 225.8 kJ (all the ejecta can release in an open rig) by a breach's jet facing it or by solids and melt, and 65.5 kJ by the neighbour's own discharge in parallel; the holder's conduction is not determinable, and every lower bound is 0.
+2. Every need the tests read lies inside more than one path's bound. Radiation is bounded by geometry only once the flame is placed (held on the vent's axis, at most about 0.85 kJ), and no source places it.
+3. So the delivered fraction is bounded only by the ejected energy itself; what would bound it is a measurement (the flame's position, the gas beside the line of contact, where breaches face), not a further source.
+4. Scorecard: P3 to P6 held and P1 and P2 failed, all six as the design fixed them before the bounds; P5 rests on the wording of the rule for what is determinable.
+
 ## What it means for the thesis
 
 Under DSC-trained kinetics a neighbour heated through copper busbars at 33.2 kJ starts to react where the busbar enters, before a lumped model in all 200 draws of the kinetic posterior (by 15 to 59 s in 95 % of them at the 30 s release); the uncertain kinetics, not the roll's published properties, set when. Next: an aged SEI in a resolved, two-way coupled cell with the cap and tabs.
