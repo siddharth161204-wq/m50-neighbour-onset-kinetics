@@ -86,14 +86,14 @@ def kinetic_arrays(kin=None):
             "cat": np.array([kin.lnA[j], kin.b[j], kin.Ea[j], kin.order[B1.I_CAT1, j], LP.M_CELL * kin.h_mass[j]])}
 
 
-def params(test, h="central", g="central", dE_body=0.0, C=None, t_level=None, dT_ign=0.0, h_c=None):
+def params(test, h="central", g="central", dE_body=0.0, C=None, t_level=None, dT_ign=0.0, h_c=None, dT_kin=0.0):
     t = IN.tests()[test]
     gp, gn = V.tabs(t["connection"], V.G_TAB[g])
     G = V.g_contact(V.H_CONTACT[h] if h_c is None else float(h_c)) + gp + gn
     C = LP.C_CELL if C is None else C
     return np.array([C, G, LP.H_CONV * LP.A_CONV, IN.T_AMB, LP.EPS * LP.SIGMA * LP.A_CELL,
                      LP.EPS ** 2 * LP.SIGMA * V.F_TOUCH * LP.A_LAT, IN.T_LEVEL if t_level is None else t_level,
-                     900.0, dT_ign])
+                     900.0, dT_ign, dT_kin])
 
 
 # ------------------------------------------------------------------------------------------------ implementation 1
@@ -154,10 +154,11 @@ def _fa(t, Ti, I, th, P, tab, E, tau, shape, cat, kA, kb, kE, khM, kfix, kn, kac
     T1 = _t1a(t, tab)
     dT = (G * (T1 - Ti) + gi * (T1 ** 4 - Ta ** 4) - hA * (Ti - Ta) - wr * (Ti ** 4 - Ta ** 4)
           + _pa(t, E, tau, shape)) / C
-    dI = math.exp(cat[0] + cat[1] * math.log(Ti) - cat[2] / (8.314462618 * Ti))
+    Tk = Ti - P[9]                     # the rate law shifted in temperature (C2), zero otherwise
+    dI = math.exp(cat[0] + cat[1] * math.log(Tk) - cat[2] / (8.314462618 * Tk))
     n = cat[3]
     c = (1.0 + (n - 1.0) * I) ** (-1.0 / (n - 1.0))
-    q = _qa(Ti, c, kA, kb, kE, khM, kfix, kn, kact, jcat)[0]
+    q = _qa(Tk, c, kA, kb, kE, khM, kfix, kn, kact, jcat)[0]
     dth = (q - (G + hA + 4.0 * wr * Ti ** 3) * th) / C
     return dT, dI, dth
 
@@ -171,7 +172,7 @@ def _marga(t, Ti, I, th, P, tab, cat, kA, kb, kE, khM, kfix, kn, kact, jcat):
     Tc = Ti + th
     Te = Tc - dTi
     T1 = _t1a(t, tab)
-    q, dq, qc = _qa(Te, c, kA, kb, kE, khM, kfix, kn, kact, jcat)
+    q, dq, qc = _qa(Te - P[9], c, kA, kb, kE, khM, kfix, kn, kact, jcat)
     L = G * (Te - T1) + hA * (Te - Ta) + wr * (Te ** 4 - Ta ** 4) - gi * (T1 ** 4 - Ta ** 4)
     dL = G + hA + 4.0 * wr * Te ** 3
     M = q - L
@@ -184,9 +185,9 @@ def _marga(t, Ti, I, th, P, tab, cat, kA, kb, kE, khM, kfix, kn, kact, jcat):
     if TL > Tc:
         for k in range(4):
             Tk = 0.5 * (TL + Tc) + 0.5 * (TL - Tc) * _GLX[k]
-            qk, dqk, qck = _qa(Tk, c, kA, kb, kE, khM, kfix, kn, kact, jcat)
+            qk, dqk, qck = _qa(Tk - P[9], c, kA, kb, kE, khM, kfix, kn, kact, jcat)
             sbar += 0.5 * _GLW[k] * qck / qk
-    q0, dq0, qc0 = _qa(Tc, c, kA, kb, kE, khM, kfix, kn, kact, jcat)
+    q0, dq0, qc0 = _qa(Tc - P[9], c, kA, kb, kE, khM, kfix, kn, kact, jcat)
     need = sbar * C * max(TL - Tc, 0.0) + (qc0 / q0) * C * q0 / dq0
     return True, cat[4] * c - need, M, dM
 
@@ -455,8 +456,9 @@ def _fb(t, y, P, tab, E, tau, shape, cat, K):
     c = math.exp(-math.log(1.0 + (cat[3] - 1.0) * y[1]) / (cat[3] - 1.0))
     out = np.empty(3)
     out[0] = net / P[0]
-    out[1] = math.exp(cat[0] + cat[1] * math.log(Ti) - cat[2] / (8.314462618 * Ti))
-    out[2] = (_heat_b(Ti, c, K)[0] - (P[1] + P[2] + 4.0 * P[4] * Ti * Ti * Ti) * y[2]) / P[0]
+    Tk = Ti - P[9]
+    out[1] = math.exp(cat[0] + cat[1] * math.log(Tk) - cat[2] / (8.314462618 * Tk))
+    out[2] = (_heat_b(Tk, c, K)[0] - (P[1] + P[2] + 4.0 * P[4] * Ti * Ti * Ti) * y[2]) / P[0]
     return out
 
 
@@ -468,7 +470,7 @@ def _mb(t, y, P, tab, cat, K):
     Tc = y[0] + y[2]
     Te = Tc - P[8]
     T1 = _t1b(t, tab)
-    hq = _heat_b(Te, c, K)
+    hq = _heat_b(Te - P[9], c, K)
     M = hq[0] - (P[1] * (Te - T1) + P[2] * (Te - Ta) + P[4] * (Te ** 4 - Ta ** 4) - P[5] * (T1 ** 4 - Ta ** 4))
     dM = hq[1] - (P[1] + P[2] + 4.0 * P[4] * Te ** 3)
     if M < 0.0 or dM <= 0.0:
@@ -479,9 +481,9 @@ def _mb(t, y, P, tab, cat, K):
         mid, half = 0.5 * (TL + Tc), 0.5 * (TL - Tc)
         for r in range(2):
             for sgn in (-1.0, 1.0):
-                hk = _heat_b(mid + sgn * half * _GL[r, 0], c, K)
+                hk = _heat_b(mid + sgn * half * _GL[r, 0] - P[9], c, K)
                 mean_share += 0.5 * _GL[r, 1] * hk[2] / hk[0]
-    h0 = _heat_b(Tc, c, K)
+    h0 = _heat_b(Tc - P[9], c, K)
     need = mean_share * P[0] * (TL - Tc if TL > Tc else 0.0) + P[0] * h0[2] / h0[1]
     return True, cat[4] * c - need, c, M
 
@@ -666,12 +668,12 @@ class Case:
     """One case of B2: a test, contact and tab levels, the body energy's shift, the delivery's shape and duration."""
 
     def __init__(self, test, tau_d=None, shape="tri", h="central", g="central", dE_body=0.0, kin=None, C=None,
-                 t_level=None, dT_ign=0.0, impl="rk4", h_c=None):
+                 t_level=None, dT_ign=0.0, impl="rk4", h_c=None, dT_kin=0.0):
         self.test, self.h, self.g, self.dE_body = test, h, g, float(dE_body)
         self.tau_d = IN.TAU_TRIGGER if tau_d is None else float(tau_d)
         self.shape = 0 if shape == "tri" else 1
         self.tab = trigger(test, h, g, dE_body, h_c)["T1_K"]
-        self.P = params(test, h, g, dE_body, C=C, t_level=t_level, dT_ign=dT_ign, h_c=h_c)
+        self.P = params(test, h, g, dE_body, C=C, t_level=t_level, dT_ign=dT_ign, h_c=h_c, dT_kin=dT_kin)
         ka = kinetic_arrays(kin)
         self.k = (ka["cat"], ka["lnA"], ka["b"], ka["Ea"], ka["hM"], ka["fixed"], ka["ncat"], ka["act"])
         iscat = np.zeros(len(ka["lnA"]))

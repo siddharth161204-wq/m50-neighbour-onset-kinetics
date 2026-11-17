@@ -51,8 +51,8 @@ def panel_a(ax):
     ax.errorbar([], [], yerr=[], fmt="D", color=C_RUN, ms=5, label="resolved runs (Stage 13)")
     ax.errorbar([], [], yerr=[], fmt="d", color=MUTED, mfc="white", ms=4, label="resolved runs (archived)")
     ax.set_xscale("log")
-    ax.set_xlabel("delivery duration tau_d (s)")
-    ax.set_ylabel("local threshold f*(C1), PT_Exp1")
+    ax.set_xlabel(r"delivery duration $\tau_d$ (s)")
+    ax.set_ylabel(r"local threshold $f^*$(C1), PT_Exp1")
     ax.set_title("(a) the local threshold", loc="left", fontsize=10)
     ax.legend(fontsize=7, frameon=False, loc="upper left")
 
@@ -71,12 +71,13 @@ def panel_b(ax):
             lo, hi = float(r["lum_lo_J"]) / 1e3, float(r["lum_hi_J"]) / 1e3
             ax.errorbar(float(r["E_b_J"]) / 1e3, 0.5 * (lo + hi), yerr=0.5 * (hi - lo), fmt="s", color=C_H[h],
                         ms=3.5, capsize=2, lw=1)
-    ax.errorbar([], [], yerr=[], fmt="s", color=MUTED, ms=3.5, label="lumped runs (brackets)")
-    ax.set_xlabel("trigger's body energy E_b (kJ)")
+    ax.errorbar([], [], yerr=[], fmt="s", color=MUTED, ms=3.5, label="lumped runs (central: archived)")
+    ax.set_xlabel(r"trigger's body energy $E_b$ (kJ)")
     ax.set_ylabel("delivered energy at the whole-cell threshold (kJ)")
     ax.set_title("(b) the whole-cell threshold", loc="left", fontsize=10)
-    ax.legend(fontsize=7, frameon=False, loc="upper right")
-    ins = ax.inset_axes([0.12, 0.10, 0.36, 0.33])
+    ax.set_ylim(-0.5, 16.0)
+    ax.legend(fontsize=7, frameon=False, loc="upper right", ncol=2)
+    ins = ax.inset_axes([0.14, 0.16, 0.34, 0.30])
     t = [float(r["T_ign_C"]) for r in _rows("stage13_tign.csv") if r["kinetics"] != "mean" and r["trigger"] == "own"
          and r["connection"] == "parallel" and r["T_ign_C"] not in ("", "None")]
     if t:
@@ -84,7 +85,7 @@ def panel_b(ax):
         m = [float(r["T_ign_C"]) for r in _rows("stage13_tign.csv") if r["kinetics"] == "mean"
              and r["trigger"] == "own" and r["connection"] == "parallel"][0]
         ins.axvline(m, color=INK, lw=1)
-    ins.set_xlabel("T_ign over the draws (C)", fontsize=7)
+    ins.set_xlabel(r"$T_{ign}$ over the 200 draws (C)", fontsize=7)
     ins.tick_params(labelsize=6)
     ins.set_yticks([])
 
@@ -110,8 +111,8 @@ def panel_c(ax):
     ax.axhline(1.0, color=MUTED, lw=0.8, ls="--")
     ax.set_xscale("log")
     ax.set_xlim(0.02, 3.0)
-    ax.set_xlabel("Fourier number alpha_r tau / a^2")
-    ax.set_ylabel("f*(C2) / f*(C1), PT_Exp1")
+    ax.set_xlabel(r"Fourier number $\alpha_r \tau / a^2$")
+    ax.set_ylabel(r"$f^*$(C2) / $f^*$(C1), PT_Exp1")
     ax.set_title("(c) the two thresholds' ratio", loc="left", fontsize=10)
     ax.legend(fontsize=7, frameon=False, loc="upper right", bbox_to_anchor=(1.0, 0.9))
 

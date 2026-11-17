@@ -270,15 +270,22 @@ def summary(rec):
             f"(peak {pk:.2f} C); {rec['wall_s']:.0f} s")
 
 
-def work(worker, models="all", wait_s=10.0):
+def work(worker, models="all", wait_s=10.0, max_minutes=None):
+    """Make runs until none is left; with max_minutes, start no new run after that many minutes (so that a worker
+    held by a time limit ends between runs, never inside one)."""
     os.makedirs(RUNS, exist_ok=True)
     os.makedirs(SERIES, exist_ok=True)
     ctx = Context()
     machine = RUN.machine_info(f"stage13-{worker}")
     done = 0
+    t_start = time.time()
     while True:
         if os.path.exists(STOP_FILE):
             print(f"{RUN._utc()} worker {worker}: stop file, {done} runs", flush=True)
+            return done
+        if max_minutes is not None and time.time() - t_start > 60.0 * max_minutes:
+            print(f"{RUN._utc()} worker {worker}: {max_minutes} minutes, ending between runs ({done} runs)",
+                  flush=True)
             return done
         recs = load_records()
         pend = pending_runs(recs, models)
@@ -335,9 +342,10 @@ if __name__ == "__main__":
     ap.add_argument("cmd")
     ap.add_argument("--worker", type=int, default=1)
     ap.add_argument("--models", default="all")
+    ap.add_argument("--max-minutes", type=float, default=None)
     a = ap.parse_args()
     if a.cmd == "work":
-        work(a.worker, a.models)
+        work(a.worker, a.models, max_minutes=a.max_minutes)
     elif a.cmd == "status":
         status()
     elif a.cmd == "list":

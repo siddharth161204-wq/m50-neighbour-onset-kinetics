@@ -74,13 +74,23 @@ def balance(kin, T, T1_mode, G, c=None):
     return q_gen(kin, T, c) - loss(T, T1, G)
 
 
+def _balance_grid(kin, Ts, T1_mode, G, c=None):
+    """Q - L on a grid of temperatures in one call of the rate law (the scan of t_ign)."""
+    c = state_molten() if c is None else c
+    r = kin.rates(Ts, np.repeat(c.reshape(-1, 1), len(Ts), axis=1))
+    q = LP.M_CELL * (kin.h_mass[:, None] * r).sum(axis=0)
+    T1 = np.full_like(Ts, IN.T_AMB) if T1_mode == "ambient" else (Ts if T1_mode == "own" else
+                                                                     np.full_like(Ts, float(T1_mode)))
+    return q - loss(Ts, T1, G)
+
+
 def t_ign(kin, T1_mode="own", G=None, c=None, hi=None):
     """T_ign (K): the last upward zero of Q - L below T_L (None if Q > L throughout or nowhere)."""
     from scipy.optimize import brentq
     G = g_link("parallel") if G is None else G
     hi = IN.T_LEVEL if hi is None else hi
     Ts = np.arange(T_SCAN_LO, hi + 1e-9, T_SCAN_STEP)
-    f = np.array([balance(kin, T, T1_mode, G, c) for T in Ts])
+    f = _balance_grid(kin, Ts, T1_mode, G, c)
     up = np.where((f[:-1] <= 0) & (f[1:] > 0))[0]
     if len(up) == 0 or f[-1] <= 0:
         return None

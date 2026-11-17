@@ -233,8 +233,16 @@ def skin_table(B, recs, red):
         row(test, "half", T21, _arch_br(arch[test]["fC1"]), "archived (Stage 8)")
     for test in ("M50_PP_Exp3", "M50_ST_Exp2", "M50_SP_Exp1", "M50_SP_Exp3"):
         for tau in (10.0, 60.0):
-            row(test, "half", tau, _arch_br(arch[test][f"dur{tau:g}_c1"]), "archived (Stage 8)")
+            ref = (arch[test].get(f"dur{tau:g}_c1_refined") or "").strip()
+            if ref:
+                row(test, "half", tau, _arch_br(ref), "archived (Stage 8)")
+                rows[-1]["res_note"] = "the archive's refined bracket"
+            else:
+                row(test, "half", tau, _arch_br(arch[test][f"dur{tau:g}_c1"]), "archived (Stage 8)")
     return rows
+
+
+ARCH_RUNS = list(csv.DictReader(open(os.path.join(IN.RES, "stage13_archive_runs.csv"))))
 
 
 def twobody_table(B, red):
@@ -269,6 +277,12 @@ def twobody_table(B, red):
             r.update({"lum_lo_J": br[0] * Ee, "lum_hi_J": br[1] * Ee, "lum_mid_J": 0.5 * (br[0] + br[1]) * Ee,
                       "lum_source": "archived (Stage 8" + (", refined)" if t == PT1 else ")"),
                       "B2_minus_mid_J": v["E_star_J"] - 0.5 * (br[0] + br[1]) * Ee})
+            # the archived crossing time at the bracket's upper end (the lumped neighbour of that run)
+            hit = [a for a in ARCH_RUNS if a["test"] == t and a["source"] == "stage8_runs" and a["f"] not in ("", None)
+                   and abs(float(a["f"]) - br[1]) < 1e-9 and a["lum_propagated"] == "True"
+                   and a["lum_t_prop_s"] not in ("", None)]
+            if hit:
+                r["archived_t_cross_s"] = float(hit[0]["lum_t_prop_s"])
         rows.append(r)
     return rows
 
@@ -279,6 +293,8 @@ MANUSCRIPT_DELIVERIES = ((10.0, "10 s pulse"), (T21, "21.39 s pulse"), (60.0, "6
 
 def map_table(B, red):
     Ee = IN.e_e(PT1)
+    post = os.path.join(IN.RES, "stage13_reduced_post.json")
+    red = dict(red, **(json.load(open(post)) if os.path.exists(post) else {}))
     rows = []
     for tau in (5.0, 10.0, T21, 40.0, 60.0, 120.0, 240.0, 360.0):
         a = red[f"A2_{PT1}_half_tau{tau:.4f}_r1_dt1"]["f_star"]

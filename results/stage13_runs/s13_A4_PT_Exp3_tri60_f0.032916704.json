@@ -1,0 +1,120 @@
+{
+ "id": "s13_A4_PT_Exp3_tri60_f0.032916704",
+ "stage": 13,
+ "search": "A4_PT_Exp3_tri60",
+ "kind": "search",
+ "test": "M50_PT_Exp3",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 31587.820659535195,
+ "dE_body_J": 0.0,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.032916704,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 98089.18686693386,
+ "E_delivered_J": 3228.772729699549,
+ "shape": "tri",
+ "tau_d_s": 60.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "resolved",
+ "reaction": true,
+ "stop": true,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "h_c_W_m2K": 2000.0,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 506.9960346152668,
+ "t_T1max_s": 20.69,
+ "resolved": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "t_end_s": 900.0,
+  "steps": 10795,
+  "energy_residual_rel": 1.0984580307463476e-12,
+  "peak_hottest_C": 255.28167587422763,
+  "t_peak_hottest_s": 36.2,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 0.0,
+   "z_mm": 30.604499372999996
+  },
+  "peak_mean_C": 155.1534084079206,
+  "probe_peak": {
+   "toward": {
+    "T_C": 255.175018995762,
+    "t_s": 36.2125
+   },
+   "away": {
+    "T_C": 149.68843390633344,
+    "t_s": 247.6
+   }
+  },
+  "in_rxn_J": 267.40465715968514,
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "energy_J": {
+   "in_bus": 739.1008763437716,
+   "in_gap": 6499.929596825241,
+   "in_rad": 1422.7625193767897,
+   "out_conv": 3768.244985707547,
+   "out_rad": 4061.579968730219,
+   "in_rxn": 267.40465715968514,
+   "in_delivery": 3228.772729699549
+  },
+  "stored_J": 4328.145424980623,
+  "net_in_J": 4328.145424967268,
+  "sources": {
+   "delivery": {
+    "E_J": 3228.772729699549,
+    "tau_s": 60.0,
+    "t0_s": 0.0,
+    "name": "delivery",
+    "delivered_J": 3228.772729699549
+   }
+  },
+  "max_local_reaction_heating_K_per_s": 2.1268609850839333,
+  "conversion_volume_mean_end": {
+   "sei": 0.0843654840488297,
+   "li_an": 0.00015082151836932046,
+   "ele_liq": 0.0005250910040503904,
+   "cat1": 0.0014087112025602522,
+   "sep": 0.9990217309508604
+  },
+  "n_nodes": 19355
+ },
+ "lumped": null,
+ "wall_s": 362.8404083251953,
+ "started_utc": "2026-11-17T04:16:54Z",
+ "finished_utc": "2026-11-17T04:22:57Z",
+ "machine": {
+  "label": "stage13-1",
+  "system": "Linux",
+  "release": "6.18.44-fc-v553",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "cpu_count": 2,
+  "python": "3.13.18",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 1
+}

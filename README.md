@@ -778,6 +778,49 @@ Results (`results/stage12_capped.csv`, `results/stage12_fixed_ejecta.csv`, `resu
 
 P1, P3 and P4 were fixed by Stages 6 and 9's records before the runs, and P2 nearly so, as `predictions_stage12.md` records; they are counted as committed predictions all the same. Through Stage 12 the study has committed 74 predictions, of which 38 held and 36 failed.
 
+## Stage 13 (version 1.9.0, branch stage13): the mechanism of each threshold
+
+Stages 8 to 12 read two thresholds from the resolved and the lumped neighbour: f\*(C1), the fraction of a test's ejected energy at which the resolved neighbour's hottest node reaches 255.7 C, and f\*(C2), the fraction at which the lumped neighbour does. Stage 13 (brief of 16 November) asks whether each has a simple mechanism: the local threshold conduction into a thin skin, the whole-cell one an energy balance to an ignition temperature. It builds four reduced models from the archive's own inputs and rate law, with no parameter fitted, states their numbers before any new run, and scores ten predictions against 71 new resolved runs and 343 new lumped runs. Nothing of Stages 1 to 12 is edited, nothing under `manuscript/` is opened, and the stage is on the branch `stage13`, not merged, tagged or released.
+
+The reduced models (DECISIONS.md D131 to D133):
+
+| Model | What it is | Source |
+|---|---|---|
+| A1 | The closed form of a half-space with the roll's across-layer properties (effusivity 1,743 J/(m2 K s^0.5)), the can as a surface layer of 841.7 J/(m2 K) and a linear surface loss, under the archive's triangular flux; its peak is Phi E''/(e sqrt(tau)), Phi = 1.2284 at two thirds of the pulse without the can and the loss | `src/stage13_skin.py`, D131 (1) |
+| A2 | Linear conduction in r and theta at mid-height with the can, the contact and wedge to the trigger's history, convection and radiation as the code holds them, and no reaction or axial direction; the trigger's conduction superposed on the delivery's response | `src/stage13_section.py`, D131 (2) |
+| B1 | The ignition temperature T_ign, where the cell's reaction heat with the separator molten equals the lumped neighbour's loss | `src/stage13_tign.py`, D132 |
+| B2 | The archive's two-cell pair and the lumped neighbour with the reaction off, the first cathode reaction's consumption in closed form along the path, the self-heating to first order, and a crossing rule: the neighbour at T_ign with enough of that reaction's heat left to reach 255.7 C | `src/stage13_twobody.py`, D133 |
+
+Every registered quantity is computed by `src/stage13_score.py` from the records (`results/stage13_runs/`) and `results/stage13_reduced.json`; the checks by `src/stage13_checks.py`; the conditioning by `src/stage13_conditioning.py`; the quoted numbers are gathered in `results/stage13_paper_numbers.json`.
+
+The predictions (`predictions_stage13.md`) were committed and pushed at 12:52 UTC on 16 November (fe10115), with every reduced number they state, before any Stage 13 run. The 343 lumped runs were made that minute. The 46 resolved runs were made on 17 November, after the first workers had stopped with the cloud machine before finishing a run; the searches resumed from their records (D139).
+
+Results (`results/stage13_skin.csv`, `stage13_tign.csv`, `stage13_twobody.csv`, `stage13_map.csv`, `stage13_conditioning.csv`, `stage13_scorecard.json`, `stage13_paper_numbers.json`):
+
+79. **The reduced models against the archive, explanatory.** A2 lies inside all sixteen archived f\*(C1) brackets at 21.39 s, giving zero for exactly the eight tests whose trigger alone carries the hot spot to the level, and inside 22 of the 23 archived brackets in all (PP_Exp3's refined 10 s bracket is missed by 10.6 %); it gives PP_Exp3's pattern of a shorter delivery raising the threshold and a longer one lowering it. A1 agrees with A2 to 0.05 % at 5 s and falls to 0.73 of it by 120 s, as spreading along the layers grows. B2 lies inside eleven of the sixteen archived f\*(C2) brackets; PT_Exp1 is 2.7 % below its refined bracket and ST_Exp3 0.2 % below its own.
+80. **The local threshold is conduction into a skin.** For PT_Exp1, the new resolved thresholds are (0.0771, 0.0794] at 5 s, (0.2112, 0.2178] at 40 s, (0.4021, 0.4145] at 120 s and (0.6122, 0.6331] at 360 s; at 21.39 s the archived bracket is refined to (0.15625, 0.1625]. From 5 to 120 s, and for ST_Exp3 and PT_Exp3 at 10 and 60 s, A2's value is one end of every final bracket, so the threshold lies within 3 % of A2 for Fourier numbers 0.025 to 0.60. With the reaction switched off at the upper end of each such search, the hot spot still reaches the level or falls short by at most 1.14 K. At 360 s the threshold lies 10.5 % below A2: without the reaction the hot spot peaks 18.9 K short, and with it the run crosses at 316.5 s on the line of contact, a runaway of the reaction. The trigger's conduction lowers PT_Exp1's local threshold by 0.1 % at 5 s, 3.5 % at 21.39 s and 14.2 % at 360 s, and PT_Exp3's by up to 62 %.
+81. **The whole-cell threshold is an energy balance to an ignition temperature.** T_ign, where the cell's reaction heat with the separator molten equals the lumped neighbour's loss, is 218.48 C with the trigger at the neighbour's own temperature and 230.38 C with it at 25 C. Over the 200 posterior draws its central 95 % is 215.26 to 221.39 C, a span of 6.14 K, carried by the first cathode reaction in every draw. B2 lies within the larger of 10 % and 300 J of the lumped model's new thresholds in all 32 searches at the low and the high contact. Across the 4 kJ between shifted triggers, the needed delivery falls by 456, 435 and 393 J per kJ (PP_Exp3, ST_Exp2, PT_Exp3), against the 150 to 300 J per kJ that P10 expected; B2 had stated 435, 418 and 367.
+82. **The two together.** PT_Exp1's ratio f\*(C2)/f\*(C1) is 2.90 at 21.39 s (Fourier number 0.107), 1.16 at 120 s (0.600) and 0.94 at 360 s (1.80); the reduced models' ratio falls from 5.91 at 5 s to 0.87 at 360 s, within 7 % of the runs where both exist. One 0.0125 step of the archived f\*(C2) brackets corresponds, in B2, to 3.3 to 5.4 kJ of a trigger's body energy, 33 to 61 % of the contact conductance or an 18 to 20 K shift of the kinetics in thirteen of the tests. From the triggers' energies alone, B2's f\*(C2) spans 475-fold at 21.39 s against the archive's 73.0: the spread measures how near zero the smallest threshold falls.
+83. **What Stage 13 shows.**
+    - Each clock has a mechanism that a reduced model holds to the precision the brackets allow. The local threshold is the heat conducted into the can and the outer layers until the skin reaches 255.7 C, decided by conduction up to a Fourier number of about 0.6. The whole-cell threshold is the heat that brings the lumped neighbour to the point where the first cathode reaction's heat overtakes its losses, with enough of that reaction's heat left to finish the climb.
+    - Because the whole-cell threshold is a difference near its zero, the tests constrain the model's inputs less than the spreads of f\*(C2) suggest: one archived bracket spans several kilojoules of a trigger's unmeasured body energy, or a shift of the kinetics three times the posterior's spread of T_ign.
+    - The reduced models compute a threshold in about a minute and were registered before every run; their limit is marked, the cross-section model overstating the local threshold by 12 % at 360 s, where the reaction runs away.
+
+| Prediction (Stage 13) | Statement (short form) | Result | Measured |
+|---|---|---|---|
+| P1 | PT_Exp1 at 5 s: resolved f\*(C1) within 10 % of A1 | Held | 0.07821 against 0.07701, 1.55 % |
+| P2 | At 40 s, A2 within 5 % of the resolved midpoint | Held | 0.21775 against 0.21449, 1.52 % |
+| P3 | At 120 s, the resolved threshold more than 5 % below A2 | Failed | 1.50 % below (0.40828 against 0.41450) |
+| P4 | ST_Exp3 and PT_Exp3 at 10 and 60 s: A2 within 10 % and the direction from 21.39 s in all four | Held | 1.48 to 1.52 %; all four directions |
+| P5 | Whole lateral surface: 1.8 to 2.2 times the facing half's energy | Failed | 1.681 (A2 had stated 1.683) |
+| P6 | Eighth nearest the cap: energy per area at least 25 % above the facing half's | Held | 1.396 |
+| P7 | T_ign's mean 215 to 240 C (known at registration, not counted) and the draws' 95 % span under 40 K | Held | 218.48 C; span 6.14 K |
+| P8 | B2 within the larger of 10 % and 300 J of the lumped model in at least 28 of 32 | Held | 32 of 32 |
+| P9 | PT_Exp1's f\*(C2)/f\*(C1) falls from 21.39 to 120 to 360 s and is below 1.5 at 360 s | Held | 2.90, 1.16, 0.94 |
+| P10 | The needed delivery falls by 150 to 300 J per kJ of body energy (PP_Exp3, ST_Exp2, PT_Exp3) | Failed | 456, 435 and 393 J per kJ |
+
+Through Stage 13 the study has committed 84 predictions, of which 45 held and 39 failed. The checks V1 to V6 all hold (D143), and the Stage 13 counts for `manuscript/data/predictions_by_stage.csv` are left to the main chat (D144).
+
 ## Exploratory, not pre-registered (DECISIONS.md D19 and D20)
 
 Fresh SEI (`src/explore_sei_storage.py`, `results/explore_sei_storage.json`). The mean model's SEI decomposes even at 25 C: stored there under the same kinetics, the neighbour loses 12 % of its SEI in a day, 36 % in three days, 80 % in a week and all of it in a month. Kinetics this slow are beyond what DSC data resolve, as the source paper's Appendix A notes; like the source's own ARC simulation, Stage 1 starts from a fresh SEI. Repeated from the stored states, at 33.2 kJ and 500 mW/K:

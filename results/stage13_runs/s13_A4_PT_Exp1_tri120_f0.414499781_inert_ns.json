@@ -1,0 +1,120 @@
+{
+ "id": "s13_A4_PT_Exp1_tri120_f0.414499781_inert_ns",
+ "stage": 13,
+ "search": "A4_PT_Exp1_tri120",
+ "kind": "search",
+ "test": "M50_PT_Exp1",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 8976.772248678275,
+ "dE_body_J": 0.0,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "f": 0.414499781,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 27875.43655047034,
+ "E_delivered_J": 11554.362345449352,
+ "shape": "tri",
+ "tau_d_s": 120.0,
+ "geometry": "half",
+ "f_e": 0.0,
+ "sei": "fresh",
+ "sei0": null,
+ "models": "resolved",
+ "reaction": false,
+ "stop": false,
+ "t_end_s": 390.0,
+ "max_sub": 4096,
+ "h_c_W_m2K": 2000.0,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 164.00319911033648,
+ "t_T1max_s": 20.91,
+ "resolved": {
+  "propagated": false,
+  "t_prop_s": null,
+  "stopped": false,
+  "t_end_s": 390.0,
+  "steps": 10747,
+  "energy_residual_rel": 5.792780758191971e-13,
+  "peak_hottest_C": 254.9027411038586,
+  "t_peak_hottest_s": 73.3625,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 28.948708235355753,
+   "z_mm": 35.05
+  },
+  "peak_mean_C": 183.46628472511895,
+  "probe_peak": {
+   "toward": {
+    "T_C": 236.57118656455754,
+    "t_s": 71.7375
+   },
+   "away": {
+    "T_C": 181.85319719525734,
+    "t_s": 114.9
+   }
+  },
+  "in_rxn_J": 0.0,
+  "cross_s": {
+   "T_onset_low": null,
+   "T_onset_mean": null,
+   "T_onset_high": null
+  },
+  "energy_J": {
+   "in_bus": -111.99017313405223,
+   "in_gap": -2416.2077732809616,
+   "in_rad": 157.04955765994035,
+   "out_conv": 1794.7186682906583,
+   "out_rad": 2113.360477189799,
+   "in_rxn": 0.0,
+   "in_delivery": 11554.362345449352
+  },
+  "stored_J": 5275.134811219141,
+  "net_in_J": 5275.134811213821,
+  "sources": {
+   "delivery": {
+    "E_J": 11554.362345449352,
+    "tau_s": 120.0,
+    "t0_s": 0.0,
+    "name": "delivery",
+    "delivered_J": 11554.362345449352
+   }
+  },
+  "max_local_reaction_heating_K_per_s": 0.0,
+  "conversion_volume_mean_end": {
+   "sei": 0.0,
+   "li_an": 0.0,
+   "ele_liq": 0.0,
+   "cat1": 0.0,
+   "sep": 0.0
+  },
+  "n_nodes": 19355
+ },
+ "lumped": null,
+ "wall_s": 125.21105217933655,
+ "started_utc": "2026-11-17T04:52:42Z",
+ "finished_utc": "2026-11-17T04:54:47Z",
+ "machine": {
+  "label": "stage13-1",
+  "system": "Linux",
+  "release": "6.18.44-fc-v553",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "cpu_count": 2,
+  "python": "3.13.18",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 1
+}
