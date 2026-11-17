@@ -143,7 +143,14 @@ def search_state(s, recs, red=None):
             return "done", None, (lo, hi), mine
         mid = 0.5 * (lo + hi)
         return "running", (IN.key(mid) if resolved else round(mid, 6)), (lo, hi), mine
-    # not yet bracketed: step away from the start, the step doubling each time
+    # not yet bracketed: step away from the start, the step doubling each time.
+    # NOTE (independent read, D143): started_utc has one-second resolution, so when the lumped runs of a search start
+    # within the same second, min() returns the run with the lowest value among those tied, not necessarily the start
+    # (B2's E*). In 43 of the 70 lumped searches, all stepping down from a start that crossed, each step was therefore
+    # taken from the lowest value so far instead of from the start, so the steps compounded and did not follow D135's
+    # prose. The records were made by this code as registered and are kept: every bracket
+    # is still a crossing above a non-crossing, and the departure is disclosed with its bounds in D143. Left unchanged
+    # so that the code reproduces the registered runs.
     first = min(mine, key=lambda r: r.get("started_utc", ""))
     x0 = xval(first)
     k = len(mine)                                        # steps made so far: 3 %, 6 %, 12 %, ...

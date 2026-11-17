@@ -1,7 +1,7 @@
 """Stage 13, Part C2: the conditioning of the whole-cell threshold, from B2 (DECISIONS.md D138 (2)).
 
 For each of the sixteen tests at the central contact with the 21.39 s triangle: B2's E* and its derivatives by
-central differences in the trigger's body energy (plus and minus 500 J), the contact conductance h_c (plus and minus
+central differences (one-sided across a zero of E*, as D138 (2) registered) in the trigger's body energy (plus and minus 500 J), the contact conductance h_c (plus and minus
 5 %, in the trigger's pair and in the neighbour), the neighbour's heat capacity C (plus and minus 1 %, the trigger's
 history held) and the ignition temperature (the balance taken 1 K higher and lower); and, explanatory and added after
 the registration, in a shift of the whole rate law by plus and minus 1 K (every rate taken at T - dT_kin); the error each implies with the
@@ -47,6 +47,24 @@ def _do(case):
     return f"{t}|{name}", c.threshold(rtol=1e-8)       # a derivative needs E* to 1e-8, not to B2's 1e-13
 
 
+STEPS = {"dE*/dE_b": ("Eb+", "Eb-", 500.0), "dE*/dln h_c": ("hc+", "hc-", 0.05), "dE*/dln C": ("C+", "C-", 0.01),
+         "dE*/dT_ign": ("Ti+", "Ti-", 1.0), "dE*/dT_kin": ("Tk+", "Tk-", 1.0)}
+
+
+def derivative(g, plus, minus, step):
+    """The central difference of E*, or, across a zero of E* (the base above zero and one perturbed E* at zero, where
+    E* stops at zero instead of going below it), the one-sided difference on the side away from the zero, as D138 (2)
+    registered. The steps are in the quantity itself or, for h_c and C, in its ratio to the base value (5 % and 1 %).
+    Returns (derivative, "central" | "lower" | "upper"); the one-sided form was added after the independent read
+    found the central difference taken across zero for PP_Exp1 (D143)."""
+    p, m, b = g(plus), g(minus), g("base")
+    if b > 0 and p == 0.0 and m > 0:
+        return (b - m) / step, "lower"
+    if b > 0 and m == 0.0 and p > 0:
+        return (p - b) / step, "upper"
+    return (p - m) / (2.0 * step), "central"
+
+
 def main(workers=2):
     done = json.load(open(CACHE)) if os.path.exists(CACHE) else {}
     todo = [c for c in _cases() if f"{c[0]}|{c[1]}" not in done]
@@ -61,11 +79,11 @@ def main(workers=2):
         g = lambda n: done[f"{t}|{n}"]
         Ee = IN.e_e(t)
         width = 0.0125 * Ee
-        d = {"dE*/dE_b": (g("Eb+") - g("Eb-")) / 1000.0, "dE*/dln h_c": (g("hc+") - g("hc-")) / 0.10,
-             "dE*/dln C": (g("C+") - g("C-")) / 0.02, "dE*/dT_ign": (g("Ti+") - g("Ti-")) / 2.0,
-             "dE*/dT_kin": (g("Tk+") - g("Tk-")) / 2.0}
-        one_sided = any(g(n) == 0.0 for n in ("Eb+", "Eb-", "hc+", "hc-", "C+", "C-", "Ti+", "Ti-", "Tk+", "Tk-")) \
-            and g("base") > 0
+        d, form = {}, {}
+        for name, (plus, minus, step) in STEPS.items():
+            d[name], form[name] = derivative(g, plus, minus, step)
+        sides = [f"{n[4:]} {form[n]}" for n in STEPS if form[n] != "central"]
+        one_sided = bool(sides)
         row = {"test": t, "connection": IN.tests()[t]["connection"], "E_b_J": float(IN.tests()[t]["E_b_J"]),
                "E_e_J": Ee, "B2_E_star_J": g("base"), "B2_f_star": g("base") / Ee,
                "archived_fC2": br[t]["fC2"], "bracket_width_J": width,
@@ -77,7 +95,8 @@ def main(workers=2):
                "bracket_as_T_ign_K": width / abs(d["dE*/dT_ign"]) if d["dE*/dT_ign"] else None,
                "dEstar_dTkin_J_per_K": d["dE*/dT_kin"],
                "bracket_as_T_kin_K": width / abs(d["dE*/dT_kin"]) if d["dE*/dT_kin"] else None,
-               "near_zero": bool(one_sided or g("base") == 0.0)}
+               "near_zero": bool(one_sided or g("base") == 0.0),
+               "one_sided": "; ".join(sides)}
         for tau in (120.0, 240.0, 360.0):
             row[f"B2_f_star_con{tau:g}"] = g(f"con{tau:g}") / Ee
         rows.append(row)

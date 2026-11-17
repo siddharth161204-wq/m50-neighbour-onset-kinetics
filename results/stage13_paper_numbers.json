@@ -676,11 +676,41 @@
    },
    {
     "test": "M50_PT_Exp1",
+    "tau_d_s": 21.38651984299561,
+    "A2": 0.15682570855759195,
+    "bracket": [
+     0.15,
+     0.1625
+    ],
+    "inside": true
+   },
+   {
+    "test": "M50_PT_Exp1",
     "tau_d_s": 60.0,
     "A2": 0.27673697783036355,
     "bracket": [
      0.275,
      0.2875
+    ],
+    "inside": true
+   },
+   {
+    "test": "M50_ST_Exp3",
+    "tau_d_s": 21.38651984299561,
+    "A2": 0.08022664580237708,
+    "bracket": [
+     0.075,
+     0.0875
+    ],
+    "inside": true
+   },
+   {
+    "test": "M50_PT_Exp3",
+    "tau_d_s": 21.38651984299561,
+    "A2": 0.026412969037435192,
+    "bracket": [
+     0.025,
+     0.0375
     ],
     "inside": true
    },
@@ -895,8 +925,28 @@
     "inside": true
    }
   ],
-  "inside": 22,
-  "of": 23
+  "inside": 25,
+  "of": 26,
+  "at_21.39_s": [
+   16,
+   16
+  ],
+  "at_10_and_60_s": [
+   9,
+   10
+  ],
+  "missed": [
+   {
+    "test": "M50_PP_Exp3",
+    "tau_d_s": 10.0,
+    "A2": 0.004187059601237065,
+    "bracket": [
+     0.0046875,
+     0.00625
+    ],
+    "inside": false
+   }
+  ]
  },
  "B3": {
   "cases": [
@@ -1169,6 +1219,7 @@
    "dEstar_dTkin_J_per_K": "72.86501188734655",
    "bracket_as_T_kin_K": "4.782033898787965",
    "near_zero": "False",
+   "one_sided": "",
    "B2_f_star_con120": "0.47983427949601776",
    "B2_f_star_con240": "0.5660682977071332",
    "B2_f_star_con360": "0.6935219767063077"
@@ -1193,6 +1244,7 @@
    "dEstar_dTkin_J_per_K": "-90.31366223442024",
    "bracket_as_T_kin_K": "18.654713845369127",
    "near_zero": "False",
+   "one_sided": "",
    "B2_f_star_con120": "0.020414871571119868",
    "B2_f_star_con240": "0.016279201779980216",
    "B2_f_star_con360": "0.024301726254634563"
@@ -1217,6 +1269,7 @@
    "dEstar_dTkin_J_per_K": "-68.76974491244619",
    "bracket_as_T_kin_K": "17.82927706650206",
    "near_zero": "False",
+   "one_sided": "",
    "B2_f_star_con120": "0.06636624480597675",
    "B2_f_star_con240": "0.06146259955130519",
    "B2_f_star_con360": "0.08420127886347473"
@@ -1241,6 +1294,7 @@
    "dEstar_dTkin_J_per_K": "-84.4390512027685",
    "bracket_as_T_kin_K": "18.383723650508838",
    "near_zero": "False",
+   "one_sided": "",
    "B2_f_star_con120": "0.031422844273038215",
    "B2_f_star_con240": "0.025646854541264474",
    "B2_f_star_con360": "0.037601326475851245"
@@ -1254,17 +1308,18 @@
    "B2_f_star": "0.0009450459729123393",
    "archived_fC2": "0",
    "bracket_width_J": "1982.934513658764",
-   "dEstar_dEb_J_per_J": "-0.3648196105478986",
-   "dEstar_dlnhc_J": "-4565.148410484109",
-   "dEstar_dlnC_J": "21186.57980748016",
+   "dEstar_dEb_J_per_J": "-0.42980493682666066",
+   "dEstar_dlnhc_J": "-6131.953978276853",
+   "dEstar_dlnC_J": "27381.445401503497",
    "dEstar_dTign_J_per_K": "0.0",
-   "bracket_as_E_b_J": "5435.383560331982",
-   "bracket_as_h_c_pct": "43.43636472156848",
-   "bracket_as_C_pct": "9.35938944217257",
+   "bracket_as_E_b_J": "4613.568490625497",
+   "bracket_as_h_c_pct": "32.3377266150975",
+   "bracket_as_C_pct": "7.2418913047953355",
    "bracket_as_T_ign_K": "",
    "dEstar_dTkin_J_per_K": "-102.28524699362237",
    "bracket_as_T_kin_K": "19.386319845152283",
    "near_zero": "True",
+   "one_sided": "dE_b lower; dln h_c lower; dln C upper",
    "B2_f_star_con120": "0.0007508293820137624",
    "B2_f_star_con240": "0.0005996251766191563",
    "B2_f_star_con360": "0.0008994377676572187"
@@ -1289,6 +1344,7 @@
    "dEstar_dTkin_J_per_K": "-86.1435121812774",
    "bracket_as_T_kin_K": "18.45738926040763",
    "near_zero": "False",
+   "one_sided": "",
    "B2_f_star_con120": "0.028129481361247603",
    "B2_f_star_con240": "0.022778095270041373",
    "B2_f_star_con360": "0.03359040443319827"
@@ -1313,6 +1369,7 @@
    "dEstar_dTkin_J_per_K": "-91.13166231924765",
    "bracket_as_T_kin_K": "18.69652452251782",
    "near_zero": "False",
+   "one_sided": "",
    "B2_f_star_con120": "0.01895646477350965",
    "B2_f_star_con240": "0.015084808866959067",
    "B2_f_star_con360": "0.022559084871318195"
@@ -1337,6 +1394,7 @@
    "dEstar_dTkin_J_per_K": "-95.91703110247613",
    "bracket_as_T_kin_K": "18.963823354901333",
    "near_zero": "False",
+   "one_sided": "",
    "B2_f_star_con120": "0.010768832784378901",
    "B2_f_star_con240": "0.008547225123038515",
    "B2_f_star_con360": "0.012820837728213519"
@@ -1361,6 +1419,7 @@
    "dEstar_dTkin_J_per_K": "-98.76860641754024",
    "bracket_as_T_kin_K": "20.084542285461545",
    "near_zero": "False",
+   "one_sided": "",
    "B2_f_star_con120": "0.0030746371339773764",
    "B2_f_star_con240": "0.0024345637866645116",
    "B2_f_star_con360": "0.0036518456909107036"
@@ -1385,6 +1444,7 @@
    "dEstar_dTkin_J_per_K": "-92.25243160087734",
    "bracket_as_T_kin_K": "19.547067539796856",
    "near_zero": "False",
+   "one_sided": "",
    "B2_f_star_con120": "0.014048277924302964",
    "B2_f_star_con240": "0.011043675563996656",
    "B2_f_star_con360": "0.01655507256509736"
@@ -1409,6 +1469,7 @@
    "dEstar_dTkin_J_per_K": "-40.68076901544009",
    "bracket_as_T_kin_K": "15.878399356430286",
    "near_zero": "False",
+   "one_sided": "",
    "B2_f_star_con120": "0.21276848297566175",
    "B2_f_star_con240": "0.23730735201388597",
    "B2_f_star_con360": "0.291550918482244"
@@ -1433,6 +1494,7 @@
    "dEstar_dTkin_J_per_K": "-95.62327685727257",
    "bracket_as_T_kin_K": "19.811548970947104",
    "near_zero": "False",
+   "one_sided": "",
    "B2_f_star_con120": "0.008231926331063734",
    "B2_f_star_con240": "0.006487181788543239",
    "B2_f_star_con360": "0.009730772668262944"
@@ -1457,6 +1519,7 @@
    "dEstar_dTkin_J_per_K": "-92.77252394507923",
    "bracket_as_T_kin_K": "19.586078465118337",
    "near_zero": "False",
+   "one_sided": "",
    "B2_f_star_con120": "0.01313112390926108",
    "B2_f_star_con240": "0.010321159061277287",
    "B2_f_star_con360": "0.015479508729185907"
@@ -1481,6 +1544,7 @@
    "dEstar_dTkin_J_per_K": "-95.52372037741713",
    "bracket_as_T_kin_K": "19.8033340861271",
    "near_zero": "False",
+   "one_sided": "",
    "B2_f_star_con120": "0.008399391401326284",
    "B2_f_star_con240": "0.006618352112127468",
    "B2_f_star_con360": "0.009927528182743115"
@@ -1505,6 +1569,7 @@
    "dEstar_dTkin_J_per_K": "0.0",
    "bracket_as_T_kin_K": "",
    "near_zero": "True",
+   "one_sided": "",
    "B2_f_star_con120": "0.0",
    "B2_f_star_con240": "0.0",
    "B2_f_star_con360": "0.0"
@@ -1529,6 +1594,7 @@
    "dEstar_dTkin_J_per_K": "-81.48537360515184",
    "bracket_as_T_kin_K": "18.865612808087242",
    "near_zero": "False",
+   "one_sided": "",
    "B2_f_star_con120": "0.03474289632868021",
    "B2_f_star_con240": "0.028442612499929958",
    "B2_f_star_con360": "0.04110708960797636"

@@ -197,14 +197,21 @@ def skin_table(B, recs, red):
             hi_rec = [recs[i] for i in b["runs"] if abs(recs[i]["f"] - b["hi"]) < 1e-12]
             if hi_rec:
                 rr = hi_rec[0]["resolved"]
-                r.update({"res_t_cross_hi_s": rr["t_prop_s"], "res_theta_cross_hi_deg": (rr.get("where") or {}).get("theta_deg"),
-                          "res_z_cross_hi_mm": (rr.get("where") or {}).get("z_mm"), "res_rxn_heat_hi_J": rr["in_rxn_J"]})
+                # r_mm is the radius of the crossing node: 10.55 mm is the can's surface (on the line of
+                # contact when theta is 0), 0 the cell's axis (added after the independent read, D143)
+                wh = rr.get("where") or {}
+                r.update({"res_t_cross_hi_s": rr["t_prop_s"], "res_r_cross_hi_mm": wh.get("r_mm"),
+                          "res_theta_cross_hi_deg": wh.get("theta_deg"),
+                          "res_z_cross_hi_mm": wh.get("z_mm"), "res_rxn_heat_hi_J": rr["in_rxn_J"],
+                          "res_mean_at_cross_hi_C": rr.get("mean_at_prop_C")})
             inert = _inert(recs, search)
             if inert is not None:
                 pk = inert["resolved"]["peak_hottest_C"]
+                wp = inert["resolved"]["where_peak"]
                 r.update({"inert_peak_at_hi_C": pk, "inert_peak_minus_level_K": pk - IN.T_LEVEL_C,
                           "inert_t_peak_s": inert["resolved"]["t_peak_hottest_s"],
-                          "inert_theta_peak_deg": inert["resolved"]["where_peak"]["theta_deg"]})
+                          "inert_r_peak_mm": wp.get("r_mm"), "inert_theta_peak_deg": wp["theta_deg"],
+                          "inert_z_peak_mm": wp.get("z_mm")})
         rows.append(r)
 
     for tau in (5.0, 10.0, T21, 40.0, 60.0, 120.0, 240.0, 360.0):

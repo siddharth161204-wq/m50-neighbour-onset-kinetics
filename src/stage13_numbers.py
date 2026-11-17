@@ -41,14 +41,31 @@ def main():
                             "run_lists_sha256": IN.run_lists_hash()},
            "verdicts": {"held": held, "failed": failed, "n": len(sc)},
            "scorecard": sc}
-    # A3: the reduced models against the archived local brackets
+    # A3: the reduced models against the archived local brackets. The sixteen at 21.39 s are the archive's own
+    # (Stage 8) brackets, for PT_Exp1, ST_Exp3 and PT_Exp3 too, whose brackets Stage 13 then refined; with the ten
+    # archived brackets at 10 and 60 s they make 26 (counted so after the independent read, D143).
+    arch = {r["test"]: r for r in _csv("stage8_thresholds.csv")}
+
+    def _br(text):
+        text = (text or "").strip()
+        if text == "0":
+            return 0.0, 0.0
+        lo, hi = text.strip("(]").split(",")
+        return float(lo), float(hi)
+
     a3 = []
     for r in skin:
-        if r.get("res_source") == "archived (Stage 8)" and r.get("res_lo") not in (None, ""):
-            lo, hi, a2 = float(r["res_lo"]), float(r["res_hi"]), _f(r["A2_f"])
+        refined = r.get("res_source") == "archived bracket refined in Stage 13"
+        if (r.get("res_source") == "archived (Stage 8)" or refined) and r.get("res_lo") not in (None, ""):
+            lo, hi = _br(arch[r["test"]]["fC1"]) if refined else (float(r["res_lo"]), float(r["res_hi"]))
+            a2 = _f(r["A2_f"])
             a3.append({"test": r["test"], "tau_d_s": float(r["tau_d_s"]), "A2": a2, "bracket": [lo, hi],
                        "inside": bool(a2 is not None and (lo < a2 <= hi or (lo == hi == 0.0 and a2 == 0.0)))})
-    out["A3"] = {"cases": a3, "inside": sum(c["inside"] for c in a3), "of": len(a3)}
+    t21 = [c for c in a3 if abs(c["tau_d_s"] - IN.TAU_TRIGGER) < 1e-9]
+    out["A3"] = {"cases": a3, "inside": sum(c["inside"] for c in a3), "of": len(a3),
+                 "at_21.39_s": [sum(c["inside"] for c in t21), len(t21)],
+                 "at_10_and_60_s": [sum(c["inside"] for c in a3 if c not in t21), len(a3) - len(t21)],
+                 "missed": [c for c in a3 if not c["inside"]]}
     b3 = [r for r in tb if r.get("lum_source", "").startswith("archived")]
     out["B3"] = {"cases": [{"test": r["test"], "B2_J": _f(r["B2_E_J"]), "lo_J": _f(r["lum_lo_J"]),
                             "hi_J": _f(r["lum_hi_J"]), "archived_t_cross_s": _f(r.get("archived_t_cross_s")),
