@@ -31,7 +31,7 @@ def main():
         "A3": "A3 a breach's jet facing it",
         "A4": "A4 solids and melt",
         "A5": "A5 the holder",
-        "A6": "A6 the neighbour's own discharge\n(parallel tests)",
+        "A6": "A6 the neighbour's own discharge\n(parallel tests; heat in the roll)",
     }
     order = ["A1", "A2", "A3", "A4", "A5", "A6"]
     xmin, xmax = 1e2, 1e6
@@ -56,6 +56,18 @@ def main():
         ax.barh(y + h / 2 + 0.01, ut - xmin, left=xmin, height=h, color=ORANGE, linewidth=0)
         ax.text(u21 * 1.08, y - h / 2, f"{u21 / 1000:.1f} kJ", va="center", fontsize=7, color=INK2)
         ax.text(ut * 1.08, y + h / 2, f"{ut / 1000:.1f} kJ", va="center", fontsize=7, color=INK2)
+        if p == "A1":
+            # beside the bound, not part of it: a flame held on the vent's axis, and P1's line (2 % of 76.74 kJ)
+            xa = bj["A1"]["conditional_axis_J"]
+            ax.plot([xa, xa], [y - h - 0.08, y + h + 0.08], color=INK, linewidth=1.2)
+            ax.text(xa * 0.93, y + h + 0.2, f"flame held on the vent's axis: {xa / 1000:.2f} kJ", ha="right", va="center", fontsize=6.5, color=INK2)
+            xp = 0.02 * bj["inputs"]["E_fix_J"]
+            ax.plot([xp, xp], [y - h - 0.08, y + h + 0.08], color=INK, linewidth=0.9, linestyle=(0, (2, 2)))
+            ax.text(xp * 1.07, y - h - 0.2, f"P1's line, {xp / 1000:.2f} kJ", ha="left", va="center", fontsize=6.5, color=INK2)
+        if p == "A6":
+            xc = bj["A6"]["conditional_25C_J"]["21.39"]
+            ax.plot([xc, xc], [y - h - 0.08, y + 0.02], color=INK, linewidth=1.2)
+            ax.text(xc * 0.93, y - h - 0.2, f"at 25 C, within 21.39 s: {xc / 1000:.1f} kJ", ha="right", va="center", fontsize=6.5, color=INK2)
 
     # The needs at 21.39 s, along the top: propagated tests filled, non-propagated open; thresholds as spans.
     ytop = len(order) - 0.1

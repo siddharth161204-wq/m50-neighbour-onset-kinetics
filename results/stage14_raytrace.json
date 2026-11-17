@@ -1,0 +1,2161 @@
+{
+ "geometry": {
+  "R_m": 0.01055,
+  "L_m": 0.0701
+ },
+ "w_grid": [
+  {
+   "part": "axis",
+   "label": "trigger's axis, 0.0 R beyond the end",
+   "x_m": 0.0,
+   "y_m": 0.0211,
+   "z_m": 0.07010001055,
+   "w": 0.0,
+   "se": 0.0
+  },
+  {
+   "part": "axis",
+   "label": "trigger's axis, 0.5 R beyond the end",
+   "x_m": 0.0,
+   "y_m": 0.0211,
+   "z_m": 0.075375,
+   "w": 0.003336,
+   "se": 4.07729757560078e-05
+  },
+  {
+   "part": "axis",
+   "label": "trigger's axis, 1.0 R beyond the end",
+   "x_m": 0.0,
+   "y_m": 0.0211,
+   "z_m": 0.08065,
+   "w": 0.0036355,
+   "se": 4.255750897168442e-05
+  },
+  {
+   "part": "axis",
+   "label": "trigger's axis, 2.0 R beyond the end",
+   "x_m": 0.0,
+   "y_m": 0.0211,
+   "z_m": 0.0912,
+   "w": 0.0020355,
+   "se": 3.186970928444438e-05
+  },
+  {
+   "part": "axis",
+   "label": "trigger's axis, 5.0 R beyond the end",
+   "x_m": 0.0,
+   "y_m": 0.0211,
+   "z_m": 0.12285,
+   "w": 0.000504,
+   "se": 1.587050698623078e-05
+  },
+  {
+   "part": "axis",
+   "label": "trigger's axis, 10.0 R beyond the end",
+   "x_m": 0.0,
+   "y_m": 0.0211,
+   "z_m": 0.1756,
+   "w": 0.000121,
+   "se": 7.77770399925325e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.0 R, psi = 0.0 deg, 0.01 R beyond",
+   "x_m": 0.0,
+   "y_m": 0.0211,
+   "z_m": 0.07020549999999999,
+   "w": 7.3e-05,
+   "se": 6.041302467183712e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 0 deg, 0.01 R beyond",
+   "x_m": 0.0,
+   "y_m": 0.0184625,
+   "z_m": 0.07020549999999999,
+   "w": 0.000124,
+   "se": 7.873519670388841e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 30 deg, 0.01 R beyond",
+   "x_m": 0.0013187499999999998,
+   "y_m": 0.018815857997518545,
+   "z_m": 0.07020549999999999,
+   "w": 0.000134,
+   "se": 8.184804334863479e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 60 deg, 0.01 R beyond",
+   "x_m": 0.0022841420024814567,
+   "y_m": 0.01978125,
+   "z_m": 0.07020549999999999,
+   "w": 0.000111,
+   "se": 7.449418735713546e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 90 deg, 0.01 R beyond",
+   "x_m": 0.0026375,
+   "y_m": 0.0211,
+   "z_m": 0.07020549999999999,
+   "w": 9.8e-05,
+   "se": 6.999656991596088e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 120 deg, 0.01 R beyond",
+   "x_m": 0.002284142002481457,
+   "y_m": 0.02241875,
+   "z_m": 0.07020549999999999,
+   "w": 7.4e-05,
+   "se": 6.082537463920793e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 150 deg, 0.01 R beyond",
+   "x_m": 0.0013187499999999998,
+   "y_m": 0.023384142002481456,
+   "z_m": 0.07020549999999999,
+   "w": 5.15e-05,
+   "se": 5.074315113884828e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 180 deg, 0.01 R beyond",
+   "x_m": 3.2300059327511443e-19,
+   "y_m": 0.0237375,
+   "z_m": 0.07020549999999999,
+   "w": 5.75e-05,
+   "se": 5.3617484904646545e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 210 deg, 0.01 R beyond",
+   "x_m": -0.0013187500000000003,
+   "y_m": 0.023384142002481456,
+   "z_m": 0.07020549999999999,
+   "w": 6.6e-05,
+   "se": 5.744373072842676e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 240 deg, 0.01 R beyond",
+   "x_m": -0.0022841420024814563,
+   "y_m": 0.02241875,
+   "z_m": 0.07020549999999999,
+   "w": 8.6e-05,
+   "se": 6.557156548382843e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 270 deg, 0.01 R beyond",
+   "x_m": -0.0026375,
+   "y_m": 0.0211,
+   "z_m": 0.07020549999999999,
+   "w": 9.65e-05,
+   "se": 6.945886831427647e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 300 deg, 0.01 R beyond",
+   "x_m": -0.0022841420024814567,
+   "y_m": 0.01978125,
+   "z_m": 0.07020549999999999,
+   "w": 0.0001365,
+   "se": 8.260791964152106e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 330 deg, 0.01 R beyond",
+   "x_m": -0.0013187500000000011,
+   "y_m": 0.018815857997518545,
+   "z_m": 0.07020549999999999,
+   "w": 0.0001395,
+   "se": 8.351063996581514e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 0 deg, 0.01 R beyond",
+   "x_m": 0.0,
+   "y_m": 0.015825,
+   "z_m": 0.07020549999999999,
+   "w": 0.0002295,
+   "se": 1.0710913353911514e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 30 deg, 0.01 R beyond",
+   "x_m": 0.0026374999999999997,
+   "y_m": 0.016531715995037086,
+   "z_m": 0.07020549999999999,
+   "w": 0.000285,
+   "se": 1.193563519465973e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 60 deg, 0.01 R beyond",
+   "x_m": 0.0045682840049629135,
+   "y_m": 0.0184625,
+   "z_m": 0.07020549999999999,
+   "w": 0.0002575,
+   "se": 1.134534472261641e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 90 deg, 0.01 R beyond",
+   "x_m": 0.005275,
+   "y_m": 0.0211,
+   "z_m": 0.07020549999999999,
+   "w": 0.0001515,
+   "se": 8.7027882816371e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 120 deg, 0.01 R beyond",
+   "x_m": 0.004568284004962914,
+   "y_m": 0.023737499999999998,
+   "z_m": 0.07020549999999999,
+   "w": 7.45e-05,
+   "se": 6.103050456534011e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 150 deg, 0.01 R beyond",
+   "x_m": 0.0026374999999999997,
+   "y_m": 0.025668284004962915,
+   "z_m": 0.07020549999999999,
+   "w": 4.65e-05,
+   "se": 4.8217132717531015e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 180 deg, 0.01 R beyond",
+   "x_m": 6.460011865502289e-19,
+   "y_m": 0.026375000000000003,
+   "z_m": 0.07020549999999999,
+   "w": 4.2e-05,
+   "se": 4.582479459855767e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 210 deg, 0.01 R beyond",
+   "x_m": -0.0026375000000000005,
+   "y_m": 0.025668284004962915,
+   "z_m": 0.07020549999999999,
+   "w": 4.85e-05,
+   "se": 4.9243094820492345e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 240 deg, 0.01 R beyond",
+   "x_m": -0.004568284004962913,
+   "y_m": 0.0237375,
+   "z_m": 0.07020549999999999,
+   "w": 8.15e-05,
+   "se": 6.383312531515279e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 270 deg, 0.01 R beyond",
+   "x_m": -0.005275,
+   "y_m": 0.0211,
+   "z_m": 0.07020549999999999,
+   "w": 0.0001365,
+   "se": 8.260791964152106e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 300 deg, 0.01 R beyond",
+   "x_m": -0.0045682840049629135,
+   "y_m": 0.0184625,
+   "z_m": 0.07020549999999999,
+   "w": 0.00024,
+   "se": 1.0953136537083795e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 330 deg, 0.01 R beyond",
+   "x_m": -0.0026375000000000023,
+   "y_m": 0.01653171599503709,
+   "z_m": 0.07020549999999999,
+   "w": 0.0002755,
+   "se": 1.173507775325754e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 0 deg, 0.01 R beyond",
+   "x_m": 0.0,
+   "y_m": 0.013187500000000001,
+   "z_m": 0.07020549999999999,
+   "w": 0.000494,
+   "se": 1.571235125625697e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 30 deg, 0.01 R beyond",
+   "x_m": 0.003956249999999999,
+   "y_m": 0.014247573992555631,
+   "z_m": 0.07020549999999999,
+   "w": 0.001098,
+   "se": 2.341788201353829e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 60 deg, 0.01 R beyond",
+   "x_m": 0.00685242600744437,
+   "y_m": 0.01714375,
+   "z_m": 0.07020549999999999,
+   "w": 0.0006725,
+   "se": 1.833095392703282e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 90 deg, 0.01 R beyond",
+   "x_m": 0.0079125,
+   "y_m": 0.0211,
+   "z_m": 0.07020549999999999,
+   "w": 0.0002415,
+   "se": 1.0987303530666657e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 120 deg, 0.01 R beyond",
+   "x_m": 0.006852426007444371,
+   "y_m": 0.02505625,
+   "z_m": 0.07020549999999999,
+   "w": 7.8e-05,
+   "se": 6.244754438726954e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 150 deg, 0.01 R beyond",
+   "x_m": 0.003956249999999999,
+   "y_m": 0.02795242600744437,
+   "z_m": 0.07020549999999999,
+   "w": 4.35e-05,
+   "se": 4.6635880901940725e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 180 deg, 0.01 R beyond",
+   "x_m": 9.690017798253432e-19,
+   "y_m": 0.0290125,
+   "z_m": 0.07020549999999999,
+   "w": 4.2e-05,
+   "se": 4.582479459855767e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 210 deg, 0.01 R beyond",
+   "x_m": -0.0039562500000000006,
+   "y_m": 0.02795242600744437,
+   "z_m": 0.07020549999999999,
+   "w": 4.1e-05,
+   "se": 4.527599750419641e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 240 deg, 0.01 R beyond",
+   "x_m": -0.006852426007444368,
+   "y_m": 0.025056250000000002,
+   "z_m": 0.07020549999999999,
+   "w": 8.55e-05,
+   "se": 6.538068894941381e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 270 deg, 0.01 R beyond",
+   "x_m": -0.0079125,
+   "y_m": 0.0211,
+   "z_m": 0.07020549999999999,
+   "w": 0.0002325,
+   "se": 1.0780675854277412e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 300 deg, 0.01 R beyond",
+   "x_m": -0.00685242600744437,
+   "y_m": 0.01714375,
+   "z_m": 0.07020549999999999,
+   "w": 0.000655,
+   "se": 1.8091033345279093e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 330 deg, 0.01 R beyond",
+   "x_m": -0.003956250000000003,
+   "y_m": 0.014247573992555633,
+   "z_m": 0.07020549999999999,
+   "w": 0.001147,
+   "se": 2.3934121991416356e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 0 deg, 0.01 R beyond",
+   "x_m": 0.0,
+   "y_m": 0.01055,
+   "z_m": 0.07020549999999999,
+   "w": 0.0,
+   "se": 0.0
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 30 deg, 0.01 R beyond",
+   "x_m": 0.005274999999999999,
+   "y_m": 0.011963431990074172,
+   "z_m": 0.07020549999999999,
+   "w": 0.1217245,
+   "se": 0.0002312008283935743
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 60 deg, 0.01 R beyond",
+   "x_m": 0.009136568009925827,
+   "y_m": 0.015825,
+   "z_m": 0.07020549999999999,
+   "w": 0.0495965,
+   "se": 0.00015351984755683872
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 90 deg, 0.01 R beyond",
+   "x_m": 0.01055,
+   "y_m": 0.0211,
+   "z_m": 0.07020549999999999,
+   "w": 0.001844,
+   "se": 3.0336443957721875e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 120 deg, 0.01 R beyond",
+   "x_m": 0.009136568009925829,
+   "y_m": 0.026375,
+   "z_m": 0.07020549999999999,
+   "w": 9.25e-05,
+   "se": 6.800420713088271e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 150 deg, 0.01 R beyond",
+   "x_m": 0.005274999999999999,
+   "y_m": 0.03023656800992583,
+   "z_m": 0.07020549999999999,
+   "w": 4.05e-05,
+   "se": 4.4999088740773406e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 180 deg, 0.01 R beyond",
+   "x_m": 1.2920023731004577e-18,
+   "y_m": 0.03165,
+   "z_m": 0.07020549999999999,
+   "w": 2.45e-05,
+   "se": 3.4999571247373873e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 210 deg, 0.01 R beyond",
+   "x_m": -0.005275000000000001,
+   "y_m": 0.03023656800992583,
+   "z_m": 0.07020549999999999,
+   "w": 3.8e-05,
+   "se": 4.35881612367395e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 240 deg, 0.01 R beyond",
+   "x_m": -0.009136568009925825,
+   "y_m": 0.026375000000000006,
+   "z_m": 0.07020549999999999,
+   "w": 9.15e-05,
+   "se": 6.7635651748911236e-06
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 270 deg, 0.01 R beyond",
+   "x_m": -0.01055,
+   "y_m": 0.021100000000000004,
+   "z_m": 0.07020549999999999,
+   "w": 0.0018095,
+   "se": 3.005183613150784e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 300 deg, 0.01 R beyond",
+   "x_m": -0.009136568009925827,
+   "y_m": 0.015825,
+   "z_m": 0.07020549999999999,
+   "w": 0.049755,
+   "se": 0.00015375213815586435
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 330 deg, 0.01 R beyond",
+   "x_m": -0.0052750000000000045,
+   "y_m": 0.011963431990074175,
+   "z_m": 0.07020549999999999,
+   "w": 0.1216505,
+   "se": 0.0002311402775910659
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.0 R, psi = 0.0 deg, 0.1 R beyond",
+   "x_m": 0.0,
+   "y_m": 0.0211,
+   "z_m": 0.071155,
+   "w": 0.0008475,
+   "se": 2.057646402749996e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 0 deg, 0.1 R beyond",
+   "x_m": 0.0,
+   "y_m": 0.0184625,
+   "z_m": 0.071155,
+   "w": 0.001325,
+   "se": 2.5722017562780723e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 30 deg, 0.1 R beyond",
+   "x_m": 0.0013187499999999998,
+   "y_m": 0.018815857997518545,
+   "z_m": 0.071155,
+   "w": 0.001345,
+   "se": 2.591515941490617e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 60 deg, 0.1 R beyond",
+   "x_m": 0.0022841420024814567,
+   "y_m": 0.01978125,
+   "z_m": 0.071155,
+   "w": 0.0012105,
+   "se": 2.4586934434268134e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 90 deg, 0.1 R beyond",
+   "x_m": 0.0026375,
+   "y_m": 0.0211,
+   "z_m": 0.071155,
+   "w": 0.0009885,
+   "se": 2.222074332408797e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 120 deg, 0.1 R beyond",
+   "x_m": 0.002284142002481457,
+   "y_m": 0.02241875,
+   "z_m": 0.071155,
+   "w": 0.000775,
+   "se": 1.967739026141424e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 150 deg, 0.1 R beyond",
+   "x_m": 0.0013187499999999998,
+   "y_m": 0.023384142002481456,
+   "z_m": 0.071155,
+   "w": 0.000639,
+   "se": 1.7868851096251264e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 180 deg, 0.1 R beyond",
+   "x_m": 3.2300059327511443e-19,
+   "y_m": 0.0237375,
+   "z_m": 0.071155,
+   "w": 0.0005865,
+   "se": 1.7119521280544033e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 210 deg, 0.1 R beyond",
+   "x_m": -0.0013187500000000003,
+   "y_m": 0.023384142002481456,
+   "z_m": 0.071155,
+   "w": 0.000624,
+   "se": 1.765800985388784e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 240 deg, 0.1 R beyond",
+   "x_m": -0.0022841420024814563,
+   "y_m": 0.02241875,
+   "z_m": 0.071155,
+   "w": 0.0008005,
+   "se": 1.999823991942791e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 270 deg, 0.1 R beyond",
+   "x_m": -0.0026375,
+   "y_m": 0.0211,
+   "z_m": 0.071155,
+   "w": 0.0009955,
+   "se": 2.2299203794642533e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 300 deg, 0.1 R beyond",
+   "x_m": -0.0022841420024814567,
+   "y_m": 0.01978125,
+   "z_m": 0.071155,
+   "w": 0.00125,
+   "se": 2.4984370114133355e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 330 deg, 0.1 R beyond",
+   "x_m": -0.0013187500000000011,
+   "y_m": 0.018815857997518545,
+   "z_m": 0.071155,
+   "w": 0.001363,
+   "se": 2.6087757962308683e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 0 deg, 0.1 R beyond",
+   "x_m": 0.0,
+   "y_m": 0.015825,
+   "z_m": 0.071155,
+   "w": 0.002312,
+   "se": 3.396067325598831e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 30 deg, 0.1 R beyond",
+   "x_m": 0.0026374999999999997,
+   "y_m": 0.016531715995037086,
+   "z_m": 0.071155,
+   "w": 0.0027935,
+   "se": 3.7320881271414264e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 60 deg, 0.1 R beyond",
+   "x_m": 0.0045682840049629135,
+   "y_m": 0.0184625,
+   "z_m": 0.071155,
+   "w": 0.002376,
+   "se": 3.4426404285083274e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 90 deg, 0.1 R beyond",
+   "x_m": 0.005275,
+   "y_m": 0.0211,
+   "z_m": 0.071155,
+   "w": 0.0013985,
+   "se": 2.6424838672639044e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 120 deg, 0.1 R beyond",
+   "x_m": 0.004568284004962914,
+   "y_m": 0.023737499999999998,
+   "z_m": 0.071155,
+   "w": 0.0007795,
+   "se": 1.973439104393647e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 150 deg, 0.1 R beyond",
+   "x_m": 0.0026374999999999997,
+   "y_m": 0.025668284004962915,
+   "z_m": 0.071155,
+   "w": 0.0004945,
+   "se": 1.5720296907978552e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 180 deg, 0.1 R beyond",
+   "x_m": 6.460011865502289e-19,
+   "y_m": 0.026375000000000003,
+   "z_m": 0.071155,
+   "w": 0.0004395,
+   "se": 1.4820709155603857e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 210 deg, 0.1 R beyond",
+   "x_m": -0.0026375000000000005,
+   "y_m": 0.025668284004962915,
+   "z_m": 0.071155,
+   "w": 0.000483,
+   "se": 1.553651683936911e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 240 deg, 0.1 R beyond",
+   "x_m": -0.004568284004962913,
+   "y_m": 0.0237375,
+   "z_m": 0.071155,
+   "w": 0.000769,
+   "se": 1.9601130566883125e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 270 deg, 0.1 R beyond",
+   "x_m": -0.005275,
+   "y_m": 0.0211,
+   "z_m": 0.071155,
+   "w": 0.001426,
+   "se": 2.668301448487408e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 300 deg, 0.1 R beyond",
+   "x_m": -0.0045682840049629135,
+   "y_m": 0.0184625,
+   "z_m": 0.071155,
+   "w": 0.002331,
+   "se": 3.409960732178598e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 330 deg, 0.1 R beyond",
+   "x_m": -0.0026375000000000023,
+   "y_m": 0.01653171599503709,
+   "z_m": 0.071155,
+   "w": 0.0027685,
+   "se": 3.715397292181551e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 0 deg, 0.1 R beyond",
+   "x_m": 0.0,
+   "y_m": 0.013187500000000001,
+   "z_m": 0.071155,
+   "w": 0.004448,
+   "se": 4.705430530780366e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 30 deg, 0.1 R beyond",
+   "x_m": 0.003956249999999999,
+   "y_m": 0.014247573992555631,
+   "z_m": 0.071155,
+   "w": 0.01008,
+   "se": 7.063424665132347e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 60 deg, 0.1 R beyond",
+   "x_m": 0.00685242600744437,
+   "y_m": 0.01714375,
+   "z_m": 0.071155,
+   "w": 0.006431,
+   "se": 5.652274869023976e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 90 deg, 0.1 R beyond",
+   "x_m": 0.0079125,
+   "y_m": 0.0211,
+   "z_m": 0.071155,
+   "w": 0.0022115,
+   "se": 3.3216029772912355e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 120 deg, 0.1 R beyond",
+   "x_m": 0.006852426007444371,
+   "y_m": 0.02505625,
+   "z_m": 0.071155,
+   "w": 0.0008345,
+   "se": 2.0418173397123455e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 150 deg, 0.1 R beyond",
+   "x_m": 0.003956249999999999,
+   "y_m": 0.02795242600744437,
+   "z_m": 0.071155,
+   "w": 0.0004165,
+   "se": 1.4427864148064328e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 180 deg, 0.1 R beyond",
+   "x_m": 9.690017798253432e-19,
+   "y_m": 0.0290125,
+   "z_m": 0.071155,
+   "w": 0.000314,
+   "se": 1.2527996727330351e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 210 deg, 0.1 R beyond",
+   "x_m": -0.0039562500000000006,
+   "y_m": 0.02795242600744437,
+   "z_m": 0.071155,
+   "w": 0.0004045,
+   "se": 1.4218586071582505e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 240 deg, 0.1 R beyond",
+   "x_m": -0.006852426007444368,
+   "y_m": 0.025056250000000002,
+   "z_m": 0.071155,
+   "w": 0.0008005,
+   "se": 1.999823991942791e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 270 deg, 0.1 R beyond",
+   "x_m": -0.0079125,
+   "y_m": 0.0211,
+   "z_m": 0.071155,
+   "w": 0.0022555,
+   "se": 3.354409575282959e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 300 deg, 0.1 R beyond",
+   "x_m": -0.00685242600744437,
+   "y_m": 0.01714375,
+   "z_m": 0.071155,
+   "w": 0.0062345,
+   "se": 5.565802282577957e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 330 deg, 0.1 R beyond",
+   "x_m": -0.003956250000000003,
+   "y_m": 0.014247573992555633,
+   "z_m": 0.071155,
+   "w": 0.010105,
+   "se": 7.072089145012243e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 0 deg, 0.1 R beyond",
+   "x_m": 0.0,
+   "y_m": 0.01055,
+   "z_m": 0.071155,
+   "w": 0.0,
+   "se": 0.0
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 30 deg, 0.1 R beyond",
+   "x_m": 0.005274999999999999,
+   "y_m": 0.011963431990074172,
+   "z_m": 0.071155,
+   "w": 0.087264,
+   "se": 0.0001995607605517678
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 60 deg, 0.1 R beyond",
+   "x_m": 0.009136568009925827,
+   "y_m": 0.015825,
+   "z_m": 0.071155,
+   "w": 0.049516,
+   "se": 0.0001534017042669344
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 90 deg, 0.1 R beyond",
+   "x_m": 0.01055,
+   "y_m": 0.0211,
+   "z_m": 0.071155,
+   "w": 0.009195,
+   "se": 6.749241429597849e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 120 deg, 0.1 R beyond",
+   "x_m": 0.009136568009925829,
+   "y_m": 0.026375,
+   "z_m": 0.071155,
+   "w": 0.000927,
+   "se": 2.151906911323071e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 150 deg, 0.1 R beyond",
+   "x_m": 0.005274999999999999,
+   "y_m": 0.03023656800992583,
+   "z_m": 0.071155,
+   "w": 0.0003535,
+   "se": 1.32923857480514e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 180 deg, 0.1 R beyond",
+   "x_m": 1.2920023731004577e-18,
+   "y_m": 0.03165,
+   "z_m": 0.071155,
+   "w": 0.0002405,
+   "se": 1.0964537376241643e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 210 deg, 0.1 R beyond",
+   "x_m": -0.005275000000000001,
+   "y_m": 0.03023656800992583,
+   "z_m": 0.071155,
+   "w": 0.0003495,
+   "se": 1.321699379113874e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 240 deg, 0.1 R beyond",
+   "x_m": -0.009136568009925825,
+   "y_m": 0.026375000000000006,
+   "z_m": 0.071155,
+   "w": 0.0008915,
+   "se": 2.110337920511784e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 270 deg, 0.1 R beyond",
+   "x_m": -0.01055,
+   "y_m": 0.021100000000000004,
+   "z_m": 0.071155,
+   "w": 0.0092715,
+   "se": 6.77699759766447e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 300 deg, 0.1 R beyond",
+   "x_m": -0.009136568009925827,
+   "y_m": 0.015825,
+   "z_m": 0.071155,
+   "w": 0.0496995,
+   "se": 0.000153670849056921
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 330 deg, 0.1 R beyond",
+   "x_m": -0.0052750000000000045,
+   "y_m": 0.011963431990074175,
+   "z_m": 0.071155,
+   "w": 0.0870975,
+   "se": 0.00019938847195080008
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.0 R, psi = 0.0 deg, 1.0 R beyond",
+   "x_m": 0.0,
+   "y_m": 0.0211,
+   "z_m": 0.08065,
+   "w": 0.0035455,
+   "se": 4.2029331601573207e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 0 deg, 1.0 R beyond",
+   "x_m": 0.0,
+   "y_m": 0.0184625,
+   "z_m": 0.08065,
+   "w": 0.003894,
+   "se": 4.403882811792339e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 30 deg, 1.0 R beyond",
+   "x_m": 0.0013187499999999998,
+   "y_m": 0.018815857997518545,
+   "z_m": 0.08065,
+   "w": 0.004098,
+   "se": 4.517303618310374e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 60 deg, 1.0 R beyond",
+   "x_m": 0.0022841420024814567,
+   "y_m": 0.01978125,
+   "z_m": 0.08065,
+   "w": 0.0042275,
+   "se": 4.587825325658116e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 90 deg, 1.0 R beyond",
+   "x_m": 0.0026375,
+   "y_m": 0.0211,
+   "z_m": 0.08065,
+   "w": 0.0039985,
+   "se": 4.4623491558538986e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 120 deg, 1.0 R beyond",
+   "x_m": 0.002284142002481457,
+   "y_m": 0.02241875,
+   "z_m": 0.08065,
+   "w": 0.003572,
+   "se": 4.2185547382960434e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 150 deg, 1.0 R beyond",
+   "x_m": 0.0013187499999999998,
+   "y_m": 0.023384142002481456,
+   "z_m": 0.08065,
+   "w": 0.0032635,
+   "se": 4.0328957138450776e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 180 deg, 1.0 R beyond",
+   "x_m": 3.2300059327511443e-19,
+   "y_m": 0.0237375,
+   "z_m": 0.08065,
+   "w": 0.0032055,
+   "se": 3.9970143668430815e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 210 deg, 1.0 R beyond",
+   "x_m": -0.0013187500000000003,
+   "y_m": 0.023384142002481456,
+   "z_m": 0.08065,
+   "w": 0.00322,
+   "se": 4.006015227130322e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 240 deg, 1.0 R beyond",
+   "x_m": -0.0022841420024814563,
+   "y_m": 0.02241875,
+   "z_m": 0.08065,
+   "w": 0.003649,
+   "se": 4.263616304852021e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 270 deg, 1.0 R beyond",
+   "x_m": -0.0026375,
+   "y_m": 0.0211,
+   "z_m": 0.08065,
+   "w": 0.0040275,
+   "se": 4.478436805264757e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 300 deg, 1.0 R beyond",
+   "x_m": -0.0022841420024814567,
+   "y_m": 0.01978125,
+   "z_m": 0.08065,
+   "w": 0.0042105,
+   "se": 4.578630630303126e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.25 R, psi = 330 deg, 1.0 R beyond",
+   "x_m": -0.0013187500000000011,
+   "y_m": 0.018815857997518545,
+   "z_m": 0.08065,
+   "w": 0.0040985,
+   "se": 4.517578055634456e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 0 deg, 1.0 R beyond",
+   "x_m": 0.0,
+   "y_m": 0.015825,
+   "z_m": 0.08065,
+   "w": 0.0036465,
+   "se": 4.262160859088967e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 30 deg, 1.0 R beyond",
+   "x_m": 0.0026374999999999997,
+   "y_m": 0.016531715995037086,
+   "z_m": 0.08065,
+   "w": 0.0046655,
+   "se": 4.818575053763301e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 60 deg, 1.0 R beyond",
+   "x_m": 0.0045682840049629135,
+   "y_m": 0.0184625,
+   "z_m": 0.08065,
+   "w": 0.005919,
+   "se": 5.424004719301044e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 90 deg, 1.0 R beyond",
+   "x_m": 0.005275,
+   "y_m": 0.0211,
+   "z_m": 0.08065,
+   "w": 0.005155,
+   "se": 5.063805868613053e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 120 deg, 1.0 R beyond",
+   "x_m": 0.004568284004962914,
+   "y_m": 0.023737499999999998,
+   "z_m": 0.08065,
+   "w": 0.0039125,
+   "se": 4.414290624636081e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 150 deg, 1.0 R beyond",
+   "x_m": 0.0026374999999999997,
+   "y_m": 0.025668284004962915,
+   "z_m": 0.08065,
+   "w": 0.0029855,
+   "se": 3.857840581044012e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 180 deg, 1.0 R beyond",
+   "x_m": 6.460011865502289e-19,
+   "y_m": 0.026375000000000003,
+   "z_m": 0.08065,
+   "w": 0.0026165,
+   "se": 3.6122388678975816e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 210 deg, 1.0 R beyond",
+   "x_m": -0.0026375000000000005,
+   "y_m": 0.025668284004962915,
+   "z_m": 0.08065,
+   "w": 0.0029795,
+   "se": 3.853973650500221e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 240 deg, 1.0 R beyond",
+   "x_m": -0.004568284004962913,
+   "y_m": 0.0237375,
+   "z_m": 0.08065,
+   "w": 0.00394,
+   "se": 4.4297157922376917e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 270 deg, 1.0 R beyond",
+   "x_m": -0.005275,
+   "y_m": 0.0211,
+   "z_m": 0.08065,
+   "w": 0.0051965,
+   "se": 5.08404188994839e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 300 deg, 1.0 R beyond",
+   "x_m": -0.0045682840049629135,
+   "y_m": 0.0184625,
+   "z_m": 0.08065,
+   "w": 0.0058135,
+   "se": 5.3757340046499694e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.5 R, psi = 330 deg, 1.0 R beyond",
+   "x_m": -0.0026375000000000023,
+   "y_m": 0.01653171599503709,
+   "z_m": 0.08065,
+   "w": 0.004555,
+   "se": 4.761434644621304e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 0 deg, 1.0 R beyond",
+   "x_m": 0.0,
+   "y_m": 0.013187500000000001,
+   "z_m": 0.08065,
+   "w": 0.0020685,
+   "se": 3.212647901459169e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 30 deg, 1.0 R beyond",
+   "x_m": 0.003956249999999999,
+   "y_m": 0.014247573992555631,
+   "z_m": 0.08065,
+   "w": 0.005283,
+   "se": 5.125958403557329e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 60 deg, 1.0 R beyond",
+   "x_m": 0.00685242600744437,
+   "y_m": 0.01714375,
+   "z_m": 0.08065,
+   "w": 0.0091525,
+   "se": 6.73377002271016e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 90 deg, 1.0 R beyond",
+   "x_m": 0.0079125,
+   "y_m": 0.0211,
+   "z_m": 0.08065,
+   "w": 0.007732,
+   "se": 6.193632284855148e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 120 deg, 1.0 R beyond",
+   "x_m": 0.006852426007444371,
+   "y_m": 0.02505625,
+   "z_m": 0.08065,
+   "w": 0.0043085,
+   "se": 4.6313803707696046e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 150 deg, 1.0 R beyond",
+   "x_m": 0.003956249999999999,
+   "y_m": 0.02795242600744437,
+   "z_m": 0.08065,
+   "w": 0.002602,
+   "se": 3.60224207681827e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 180 deg, 1.0 R beyond",
+   "x_m": 9.690017798253432e-19,
+   "y_m": 0.0290125,
+   "z_m": 0.08065,
+   "w": 0.002199,
+   "se": 3.31222311974903e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 210 deg, 1.0 R beyond",
+   "x_m": -0.0039562500000000006,
+   "y_m": 0.02795242600744437,
+   "z_m": 0.08065,
+   "w": 0.002592,
+   "se": 3.595331372766633e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 240 deg, 1.0 R beyond",
+   "x_m": -0.006852426007444368,
+   "y_m": 0.025056250000000002,
+   "z_m": 0.08065,
+   "w": 0.004445,
+   "se": 4.703850537060037e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 270 deg, 1.0 R beyond",
+   "x_m": -0.0079125,
+   "y_m": 0.0211,
+   "z_m": 0.08065,
+   "w": 0.007503,
+   "se": 6.101927970322167e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 300 deg, 1.0 R beyond",
+   "x_m": -0.00685242600744437,
+   "y_m": 0.01714375,
+   "z_m": 0.08065,
+   "w": 0.0092605,
+   "se": 6.773013782560168e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 0.75 R, psi = 330 deg, 1.0 R beyond",
+   "x_m": -0.003956250000000003,
+   "y_m": 0.014247573992555633,
+   "z_m": 0.08065,
+   "w": 0.005243,
+   "se": 5.106618720347154e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 0 deg, 1.0 R beyond",
+   "x_m": 0.0,
+   "y_m": 0.01055,
+   "z_m": 0.08065,
+   "w": 0.0,
+   "se": 0.0
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 30 deg, 1.0 R beyond",
+   "x_m": 0.005274999999999999,
+   "y_m": 0.011963431990074172,
+   "z_m": 0.08065,
+   "w": 0.005744,
+   "se": 5.343690889263712e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 60 deg, 1.0 R beyond",
+   "x_m": 0.009136568009925827,
+   "y_m": 0.015825,
+   "z_m": 0.08065,
+   "w": 0.0156045,
+   "se": 8.763846067723349e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 90 deg, 1.0 R beyond",
+   "x_m": 0.01055,
+   "y_m": 0.0211,
+   "z_m": 0.08065,
+   "w": 0.012428,
+   "se": 7.83375542635842e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 120 deg, 1.0 R beyond",
+   "x_m": 0.009136568009925829,
+   "y_m": 0.026375,
+   "z_m": 0.08065,
+   "w": 0.0050305,
+   "se": 5.002596360766077e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 150 deg, 1.0 R beyond",
+   "x_m": 0.005274999999999999,
+   "y_m": 0.03023656800992583,
+   "z_m": 0.08065,
+   "w": 0.0023605,
+   "se": 3.431419560291338e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 180 deg, 1.0 R beyond",
+   "x_m": 1.2920023731004577e-18,
+   "y_m": 0.03165,
+   "z_m": 0.08065,
+   "w": 0.0018,
+   "se": 2.997298783905268e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 210 deg, 1.0 R beyond",
+   "x_m": -0.005275000000000001,
+   "y_m": 0.03023656800992583,
+   "z_m": 0.08065,
+   "w": 0.0023205,
+   "se": 3.402289875767496e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 240 deg, 1.0 R beyond",
+   "x_m": -0.009136568009925825,
+   "y_m": 0.026375000000000006,
+   "z_m": 0.08065,
+   "w": 0.005113,
+   "se": 5.043241631629403e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 270 deg, 1.0 R beyond",
+   "x_m": -0.01055,
+   "y_m": 0.021100000000000004,
+   "z_m": 0.08065,
+   "w": 0.0124825,
+   "se": 7.850696527617789e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 300 deg, 1.0 R beyond",
+   "x_m": -0.009136568009925827,
+   "y_m": 0.015825,
+   "z_m": 0.08065,
+   "w": 0.015598,
+   "se": 8.762049530789015e-05
+  },
+  {
+   "part": "column",
+   "label": "in front of the trigger's end, r = 1.0 R, psi = 330 deg, 1.0 R beyond",
+   "x_m": -0.0052750000000000045,
+   "y_m": 0.011963431990074175,
+   "z_m": 0.08065,
+   "w": 0.005789,
+   "se": 5.364460587514834e-05
+  },
+  {
+   "part": "edge",
+   "label": "theta = 0 deg, 0.3 R outside the can, at the end plane",
+   "x_m": 0.0,
+   "y_m": 0.013715,
+   "z_m": 0.07010001055,
+   "w": 0.0,
+   "se": 0.0
+  },
+  {
+   "part": "edge",
+   "label": "theta = 0 deg, 0.1 R outside the can, at the end plane",
+   "x_m": 0.0,
+   "y_m": 0.011605,
+   "z_m": 0.07010001055,
+   "w": 0.0,
+   "se": 0.0
+  },
+  {
+   "part": "edge",
+   "label": "theta = 0 deg, 0.03 R outside the can, at the end plane",
+   "x_m": 0.0,
+   "y_m": 0.010866500000000001,
+   "z_m": 0.07010001055,
+   "w": 5e-07,
+   "se": 4.999998749999844e-07
+  },
+  {
+   "part": "edge",
+   "label": "theta = 0 deg, 0.01 R outside the can, at the end plane",
+   "x_m": 0.0,
+   "y_m": 0.0106555,
+   "z_m": 0.07010001055,
+   "w": 1e-06,
+   "se": 7.071064276330685e-07
+  },
+  {
+   "part": "edge",
+   "label": "theta = 15 deg, 0.3 R outside the can, at the end plane",
+   "x_m": 0.0035497032035810717,
+   "y_m": 0.013247672707554572,
+   "z_m": 0.07010001055,
+   "w": 0.0,
+   "se": 0.0
+  },
+  {
+   "part": "edge",
+   "label": "theta = 15 deg, 0.1 R outside the can, at the end plane",
+   "x_m": 0.003003595018414753,
+   "y_m": 0.011209569214084638,
+   "z_m": 0.07010001055,
+   "w": 4e-06,
+   "se": 1.414210733943142e-06
+  },
+  {
+   "part": "edge",
+   "label": "theta = 15 deg, 0.03 R outside the can, at the end plane",
+   "x_m": 0.002812457153606542,
+   "y_m": 0.010496232991370162,
+   "z_m": 0.07010001055,
+   "w": 0.211433,
+   "se": 0.00028872918670529315
+  },
+  {
+   "part": "edge",
+   "label": "theta = 15 deg, 0.01 R outside the can, at the end plane",
+   "x_m": 0.00275784633508991,
+   "y_m": 0.010292422642023168,
+   "z_m": 0.07010001055,
+   "w": 0.2276485,
+   "se": 0.0002965001352847499
+  },
+  {
+   "part": "edge",
+   "label": "theta = 30 deg, 0.3 R outside the can, at the end plane",
+   "x_m": 0.006857499999999999,
+   "y_m": 0.011877538412903576,
+   "z_m": 0.07010001055,
+   "w": 0.134611,
+   "se": 0.00024134091932264616
+  },
+  {
+   "part": "edge",
+   "label": "theta = 30 deg, 0.1 R outside the can, at the end plane",
+   "x_m": 0.0058024999999999995,
+   "y_m": 0.010050224810918412,
+   "z_m": 0.07010001055,
+   "w": 0.181534,
+   "se": 0.0002725613755138464
+  },
+  {
+   "part": "edge",
+   "label": "theta = 30 deg, 0.03 R outside the can, at the end plane",
+   "x_m": 0.00543325,
+   "y_m": 0.009410665050223603,
+   "z_m": 0.07010001055,
+   "w": 0.211686,
+   "se": 0.00028885553257986945
+  },
+  {
+   "part": "edge",
+   "label": "theta = 30 deg, 0.01 R outside the can, at the end plane",
+   "x_m": 0.005327749999999999,
+   "y_m": 0.009227933690025086,
+   "z_m": 0.07010001055,
+   "w": 0.2274765,
+   "se": 0.0002964211041303824
+  },
+  {
+   "part": "edge",
+   "label": "theta = 45 deg, 0.3 R outside the can, at the end plane",
+   "x_m": 0.009697969503973499,
+   "y_m": 0.009697969503973499,
+   "z_m": 0.07010001055,
+   "w": 0.139248,
+   "se": 0.0002448039976144181
+  },
+  {
+   "part": "edge",
+   "label": "theta = 45 deg, 0.1 R outside the can, at the end plane",
+   "x_m": 0.008205974195669884,
+   "y_m": 0.008205974195669884,
+   "z_m": 0.07010001055,
+   "w": 0.18141,
+   "se": 0.00027248890977432454
+  },
+  {
+   "part": "edge",
+   "label": "theta = 45 deg, 0.03 R outside the can, at the end plane",
+   "x_m": 0.007683775837763619,
+   "y_m": 0.00768377583776362,
+   "z_m": 0.07010001055,
+   "w": 0.2111985,
+   "se": 0.0002886119311443569
+  },
+  {
+   "part": "edge",
+   "label": "theta = 45 deg, 0.01 R outside the can, at the end plane",
+   "x_m": 0.007534576306933257,
+   "y_m": 0.007534576306933258,
+   "z_m": 0.07010001055,
+   "w": 0.2277135,
+   "se": 0.00029652998323757244
+  },
+  {
+   "part": "edge",
+   "label": "theta = 60 deg, 0.3 R outside the can, at the end plane",
+   "x_m": 0.011877538412903576,
+   "y_m": 0.006857500000000002,
+   "z_m": 0.07010001055,
+   "w": 0.137487,
+   "se": 0.0002434998201549644
+  },
+  {
+   "part": "edge",
+   "label": "theta = 60 deg, 0.1 R outside the can, at the end plane",
+   "x_m": 0.01005022481091841,
+   "y_m": 0.005802500000000001,
+   "z_m": 0.07010001055,
+   "w": 0.181737,
+   "se": 0.0002726799065121961
+  },
+  {
+   "part": "edge",
+   "label": "theta = 60 deg, 0.03 R outside the can, at the end plane",
+   "x_m": 0.009410665050223603,
+   "y_m": 0.0054332500000000014,
+   "z_m": 0.07010001055,
+   "w": 0.2116975,
+   "se": 0.0002888612716285709
+  },
+  {
+   "part": "edge",
+   "label": "theta = 60 deg, 0.01 R outside the can, at the end plane",
+   "x_m": 0.009227933690025086,
+   "y_m": 0.005327750000000001,
+   "z_m": 0.07010001055,
+   "w": 0.227328,
+   "se": 0.0002963528137339006
+  },
+  {
+   "part": "edge",
+   "label": "theta = 75 deg, 0.3 R outside the can, at the end plane",
+   "x_m": 0.013247672707554572,
+   "y_m": 0.0035497032035810717,
+   "z_m": 0.07010001055,
+   "w": 0.122004,
+   "se": 0.0002314292807576431
+  },
+  {
+   "part": "edge",
+   "label": "theta = 75 deg, 0.1 R outside the can, at the end plane",
+   "x_m": 0.011209569214084638,
+   "y_m": 0.003003595018414753,
+   "z_m": 0.07010001055,
+   "w": 0.1774155,
+   "se": 0.00027012889549227236
+  },
+  {
+   "part": "edge",
+   "label": "theta = 75 deg, 0.03 R outside the can, at the end plane",
+   "x_m": 0.010496232991370162,
+   "y_m": 0.002812457153606542,
+   "z_m": 0.07010001055,
+   "w": 0.211103,
+   "se": 0.0002885641379234433
+  },
+  {
+   "part": "edge",
+   "label": "theta = 75 deg, 0.01 R outside the can, at the end plane",
+   "x_m": 0.010292422642023168,
+   "y_m": 0.00275784633508991,
+   "z_m": 0.07010001055,
+   "w": 0.227691,
+   "se": 0.00029651965240014023
+  },
+  {
+   "part": "edge",
+   "label": "theta = 90 deg, 0.3 R outside the can, at the end plane",
+   "x_m": 0.013715,
+   "y_m": 8.398015425152975e-19,
+   "z_m": 0.07010001055,
+   "w": 0.0698195,
+   "se": 0.0001802009120672673
+  },
+  {
+   "part": "edge",
+   "label": "theta = 90 deg, 0.1 R outside the can, at the end plane",
+   "x_m": 0.011605,
+   "y_m": 7.106013052052518e-19,
+   "z_m": 0.07010001055,
+   "w": 0.090896,
+   "se": 0.00020326573393466987
+  },
+  {
+   "part": "edge",
+   "label": "theta = 90 deg, 0.03 R outside the can, at the end plane",
+   "x_m": 0.010866500000000001,
+   "y_m": 6.653812221467358e-19,
+   "z_m": 0.07010001055,
+   "w": 0.106084,
+   "se": 0.00021775006882203274
+  },
+  {
+   "part": "edge",
+   "label": "theta = 90 deg, 0.01 R outside the can, at the end plane",
+   "x_m": 0.0106555,
+   "y_m": 6.524611984157311e-19,
+   "z_m": 0.07010001055,
+   "w": 0.1140915,
+   "se": 0.00022480505958246357
+  }
+ ],
+ "w_max_axis": {
+  "part": "axis",
+  "label": "trigger's axis, 1.0 R beyond the end",
+  "x_m": 0.0,
+  "y_m": 0.0211,
+  "z_m": 0.08065,
+  "w": 0.0036355,
+  "se": 4.255750897168442e-05
+ },
+ "w_max_column": {
+  "part": "column",
+  "label": "in front of the trigger's end, r = 1.0 R, psi = 30 deg, 0.01 R beyond",
+  "x_m": 0.005274999999999999,
+  "y_m": 0.011963431990074172,
+  "z_m": 0.07020549999999999,
+  "w": 0.1217245,
+  "se": 0.0002312008283935743
+ },
+ "w_max_edge": {
+  "part": "edge",
+  "label": "theta = 45 deg, 0.01 R outside the can, at the end plane",
+  "x_m": 0.007534576306933257,
+  "y_m": 0.007534576306933258,
+  "z_m": 0.07010001055,
+  "w": 0.2277135,
+  "se": 0.00029652998323757244
+ },
+ "w_sup": 0.25,
+ "w_sup_rule": "the larger of 1/4 (the share an emitter approaches at the facing half's end edge) and the largest grid value",
+ "facing_view": {
+  "trigger": 0.35565975,
+  "beyond_L": 0.3223365,
+  "beyond_0": 0.32200375,
+  "free_sideways": 0.0,
+  "other": 0.0,
+  "n": 4000000,
+  "se_trigger": 0.00023935637250235134,
+  "se_beyond_L": 0.00023368551558010072
+ },
+ "breach": [
+  {
+   "phi_deg": 0,
+   "s_beta0": 1.0,
+   "s_beta5": 1.0,
+   "s_beta10": 1.0,
+   "s_beta15": 1.0,
+   "s_beta30": 1.0,
+   "s_beta45": 1.0,
+   "s_beta60": 1.0,
+   "s_beta90": 1.0,
+   "s_max": 1.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 5,
+   "s_beta0": 1.0,
+   "s_beta5": 1.0,
+   "s_beta10": 1.0,
+   "s_beta15": 1.0,
+   "s_beta30": 1.0,
+   "s_beta45": 1.0,
+   "s_beta60": 1.0,
+   "s_beta90": 0.90546,
+   "s_max": 1.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 10,
+   "s_beta0": 1.0,
+   "s_beta5": 1.0,
+   "s_beta10": 1.0,
+   "s_beta15": 1.0,
+   "s_beta30": 1.0,
+   "s_beta45": 1.0,
+   "s_beta60": 0.988251,
+   "s_beta90": 0.813482,
+   "s_max": 1.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 15,
+   "s_beta0": 1.0,
+   "s_beta5": 1.0,
+   "s_beta10": 1.0,
+   "s_beta15": 1.0,
+   "s_beta30": 1.0,
+   "s_beta45": 0.979777,
+   "s_beta60": 0.877098,
+   "s_beta90": 0.725333,
+   "s_max": 1.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 20,
+   "s_beta0": 1.0,
+   "s_beta5": 1.0,
+   "s_beta10": 1.0,
+   "s_beta15": 1.0,
+   "s_beta30": 0.96912,
+   "s_beta45": 0.835054,
+   "s_beta60": 0.747343,
+   "s_beta90": 0.643371,
+   "s_max": 1.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 25,
+   "s_beta0": 1.0,
+   "s_beta5": 1.0,
+   "s_beta10": 1.0,
+   "s_beta15": 0.957429,
+   "s_beta30": 0.751268,
+   "s_beta45": 0.664498,
+   "s_beta60": 0.618162,
+   "s_beta90": 0.567847,
+   "s_max": 1.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 30,
+   "s_beta0": 1.0,
+   "s_beta5": 0.500063,
+   "s_beta10": 0.500521,
+   "s_beta15": 0.500009,
+   "s_beta30": 0.499406,
+   "s_beta45": 0.500051,
+   "s_beta60": 0.499595,
+   "s_beta90": 0.498237,
+   "s_max": 1.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 35,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.071738,
+   "s_beta30": 0.270593,
+   "s_beta45": 0.349295,
+   "s_beta60": 0.390931,
+   "s_beta90": 0.435008,
+   "s_max": 0.435008,
+   "beta_at_max": 90.0
+  },
+  {
+   "phi_deg": 40,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.089535,
+   "s_beta45": 0.217931,
+   "s_beta60": 0.294224,
+   "s_beta90": 0.376561,
+   "s_max": 0.376561,
+   "beta_at_max": 90.0
+  },
+  {
+   "phi_deg": 45,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.109454,
+   "s_beta60": 0.20767,
+   "s_beta90": 0.324126,
+   "s_max": 0.324126,
+   "beta_at_max": 90.0
+  },
+  {
+   "phi_deg": 50,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.028454,
+   "s_beta60": 0.132722,
+   "s_beta90": 0.275189,
+   "s_max": 0.275189,
+   "beta_at_max": 90.0
+  },
+  {
+   "phi_deg": 55,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.069175,
+   "s_beta90": 0.231035,
+   "s_max": 0.231035,
+   "beta_at_max": 90.0
+  },
+  {
+   "phi_deg": 60,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.020512,
+   "s_beta90": 0.189419,
+   "s_max": 0.189419,
+   "beta_at_max": 90.0
+  },
+  {
+   "phi_deg": 65,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.151684,
+   "s_max": 0.151684,
+   "beta_at_max": 90.0
+  },
+  {
+   "phi_deg": 70,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.116342,
+   "s_max": 0.116342,
+   "beta_at_max": 90.0
+  },
+  {
+   "phi_deg": 75,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.083402,
+   "s_max": 0.083402,
+   "beta_at_max": 90.0
+  },
+  {
+   "phi_deg": 80,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.053371,
+   "s_max": 0.053371,
+   "beta_at_max": 90.0
+  },
+  {
+   "phi_deg": 85,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.025461,
+   "s_max": 0.025461,
+   "beta_at_max": 90.0
+  },
+  {
+   "phi_deg": 90,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 95,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 100,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 105,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 110,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 115,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 120,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 125,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 130,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 135,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 140,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 145,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 150,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 155,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 160,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 165,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 170,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 175,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  },
+  {
+   "phi_deg": 180,
+   "s_beta0": 0.0,
+   "s_beta5": 0.0,
+   "s_beta10": 0.0,
+   "s_beta15": 0.0,
+   "s_beta30": 0.0,
+   "s_beta45": 0.0,
+   "s_beta60": 0.0,
+   "s_beta90": 0.0,
+   "s_max": 0.0,
+   "beta_at_max": 0.0
+  }
+ ],
+ "breach_narrow_strike_phi_max_deg": 30,
+ "breach_narrow_share_of_circumference_analytic": 0.16666666666666666
+}
