@@ -1,0 +1,192 @@
+{
+ "scorecard": {
+  "predictions": {
+   "P1": {
+    "verdict": "held",
+    "within": {
+     "M50_PT_Exp4": true,
+     "M50_PP_Exp2": true,
+     "M50_SP_Exp3": true,
+     "M50_ST_Exp3": true
+    },
+    "rel_diff": {
+     "M50_PT_Exp4": 5.607403752485218e-09,
+     "M50_PP_Exp2": 7.573943653137397e-09,
+     "M50_SP_Exp3": -0.0909090764964583,
+     "M50_ST_Exp3": 7.077379264756866e-10
+    }
+   },
+   "P2": {
+    "verdict": "held",
+    "mid_J": 7062.499960397711,
+    "bracket_J": [
+     6709.374974796259,
+     7415.624945999163
+    ]
+   },
+   "P3": {
+    "verdict": "held",
+    "exceeds": {
+     "M50_PT_Exp4": true,
+     "M50_PP_Exp2": true,
+     "M50_SP_Exp3": true,
+     "M50_ST_Exp3": false
+    },
+    "ratio": {
+     "M50_PT_Exp4": 1.4855910728644743,
+     "M50_PP_Exp2": 1.724335632,
+     "M50_SP_Exp3": null,
+     "M50_ST_Exp3": 0.8545987276275774
+    },
+    "E_C2_J": {
+     "M50_PT_Exp4": 4754.0,
+     "M50_PP_Exp2": 3974.9608414712584,
+     "M50_SP_Exp3": 0.0,
+     "M50_ST_Exp3": 12030.5
+    }
+   },
+   "P4": {
+    "verdict": "held",
+    "t_C8_s": 181.9231329963694,
+    "run": "s15_B1_PT_Exp4_s+1"
+   },
+   "P5": {
+    "verdict": "held",
+    "far_jump": {
+     "t_s": 173.0,
+     "T_C": 234.10082936304565,
+     "rule": "jump"
+    },
+    "above_197.3_K": 36.80082936304564
+   },
+   "P6": {
+    "verdict": "held",
+    "P_lo_W": 10.0,
+    "P_hi_W": 12.5,
+    "id_lo": "s15_B3_PT_Exp4_hold10.0W",
+    "id_hi": "s15_B3_PT_Exp4_hold12.5W",
+    "status": "bracketed"
+   },
+   "P7": {
+    "verdict": "held",
+    "C8_in_the_five": {
+     "s15_B4_PT_Exp4_draw188": false,
+     "s15_B4_PT_Exp4_draw83": false,
+     "s15_B4_PT_Exp4_draw40": false,
+     "s15_B4_PT_Exp4_draw184": false,
+     "s15_B4_PT_Exp4_aged": false
+    },
+    "least_shift_K": 20.0,
+    "shift": {
+     "status": "found",
+     "least_shift_K": 20.0,
+     "t_C8_s": 270.3384237664175
+    }
+   },
+   "P8": {
+    "verdict": "failed",
+    "t_C8_s": null
+   }
+  },
+  "held": 7,
+  "failed": 1,
+  "dropped": 0
+ },
+ "states": {
+  "B1": {
+   "M50_PT_Exp4": {
+    "status": "done",
+    "bracket": {
+     "lo_step": -1,
+     "hi_step": 1,
+     "lo_id": "s15_B1_PT_Exp4_s-1",
+     "hi_id": "s15_B1_PT_Exp4_s+1",
+     "lo_J": 6709.374974796259,
+     "hi_J": 7415.624945999163,
+     "mid_J": 7062.499960397711
+    }
+   },
+   "M50_PP_Exp2": {
+    "status": "done",
+    "bracket": {
+     "lo_step": -1,
+     "hi_step": 1,
+     "lo_id": "s15_B1_PP_Exp2_s-1",
+     "hi_id": "s15_B1_PP_Exp2_s+1",
+     "lo_J": 6511.458274476008,
+     "hi_J": 7196.8749550311795,
+     "mid_J": 6854.166614753594
+    }
+   },
+   "M50_SP_Exp3": {
+    "status": "done",
+    "bracket": {
+     "lo_step": 1,
+     "hi_step": 3,
+     "lo_id": "s15_B1_SP_Exp3_s+1",
+     "hi_id": "s15_B1_SP_Exp3_s+3",
+     "lo_J": 3704.166588778861,
+     "hi_J": 4056.9443992884035,
+     "mid_J": 3880.5554940336324
+    }
+   },
+   "M50_ST_Exp3": {
+    "status": "done",
+    "bracket": {
+     "lo_step": -1,
+     "hi_step": 1,
+     "lo_id": "s15_B1_ST_Exp3_s-1",
+     "hi_id": "s15_B1_ST_Exp3_s+1",
+     "lo_J": 9767.187498254956,
+     "hi_J": 10795.312487192185,
+     "mid_J": 10281.24999272357
+    }
+   }
+  },
+  "B3": {
+   "status": "bracketed",
+   "result": {
+    "P_lo_W": 10.0,
+    "P_hi_W": 12.5,
+    "id_lo": "s15_B3_PT_Exp4_hold10.0W",
+    "id_hi": "s15_B3_PT_Exp4_hold12.5W"
+   }
+  }
+ },
+ "B3a_history": {
+  "rms_K": 51.442065796111116,
+  "mean_K": 41.55648221999564,
+  "max_abs_K": 76.80150520277604,
+  "diff_at_end_K": 77.20872249994827,
+  "model_at_end_C": 244.56113208942932,
+  "measured_at_end_C": 167.35240958948106,
+  "rise_last_model_K": 34.84723859451694,
+  "rise_last_measured_K": 10.646443867951888,
+  "pass_100_model_s": 18.25637951222417,
+  "pass_100_measured_s": 2.804995897529401,
+  "pass_150_model_s": 24.157918284144078,
+  "pass_150_measured_s": 83.97131745260089,
+  "window_s": [
+   0.0,
+   181.9231329963694
+  ]
+ },
+ "B3b_history": {
+  "rms_K": 33.138253176283996,
+  "mean_K": 20.383178472348668,
+  "max_abs_K": 76.67515046279765,
+  "diff_at_end_K": 61.66214137408184,
+  "model_at_end_C": 244.39843097387833,
+  "measured_at_end_C": 182.7362895997965,
+  "rise_last_model_K": 35.07300167385347,
+  "rise_last_measured_K": 12.379838548140725,
+  "pass_100_model_s": 23.632274086370487,
+  "pass_100_measured_s": 2.804995897529401,
+  "pass_150_model_s": 62.12832383914489,
+  "pass_150_measured_s": 83.97131745260089,
+  "window_s": [
+   0.0,
+   255.85599235863532
+  ]
+ }
+}
