@@ -85,8 +85,9 @@ def main():
       "constant power over 120, 240 or 360 s. E_e = 3.105 E_b is a test's ejected energy and f = E / E_e.")
     w("- E*(C8): the least delivered energy for which C8 happens, for a stated delivery; E*(C2) likewise for C2. "
       "The whole-cell clock's threshold E*(C2) with the 21.39 s delivery is the midpoint of the narrowest archived "
-      "bracket of f*(C2) times E_e (Stage 9's, where its search ended at the threshold, otherwise Stage 8's), 0 "
-      "where the lumped neighbour crosses with no delivery.")
+      "bracket of the least energy for C2 (Stage 12's, where its continuation of Stage 9's search for the measured "
+      "time ended at the threshold; otherwise Stage 9's, where its own search did; otherwise Stage 8's), 0 where "
+      "the lumped neighbour crosses with no delivery.")
     w("- The far face: the resolved neighbour's surface node at mid-length opposite the line of contact. Its jump's "
       "start: with its rate of rise r(t) = [T(t + 1 s) - T(t - 1 s)] / 2 s on a 0.5 s grid, the first time r reaches "
       "1 K/s after r has first reached 0.5 K/s and then fallen below it, before C8; where r never falls below "
@@ -131,6 +132,32 @@ def main():
         cells = [fmt(a2[(t, 'con', tau)]["E_star_J"]) for tau in IN.TAUS_LONG]
         w(f"| {t} | " + " | ".join(cells) + " |")
     w("")
+    ft = {(r["test"], r["shape"], r["tau_s"]): r for r in xs.get("A2_at_measured", [])}
+    w("The delivered energy at which the cross-section's C8 falls at the measured time t_m, by Stage 9's rule for "
+      "f_t read on C8 (J): \"matched\", a run whose C8 lies within 10 s of t_m (its C8 time in brackets); "
+      "\"bracketed\", the energy at which C8's time, taken linear between the ends of the final bracket, equals t_m; "
+      "\"threshold\", C8 already comes before t_m at the least energy that gives it (the bracket's upper end is "
+      "given), so no delivered energy puts it at t_m; \"above grid\", C8 does not come before t_m up to "
+      "f8_hi + 0.2 (f8_hi the upper end of the E*(C8) bracket as a fraction of E_e).")
+    w("")
+    w("| Test | t_m (s) | 21.39 s | 120 s | 240 s | 360 s |")
+    w("|---|---|---|---|---|---|")
+    for t in IN.propagated():
+        cells = []
+        for shape, tau in [("tri", IN.TAU_TRIGGER)] + [("con", x) for x in IN.TAUS_LONG]:
+            m = ft.get((t, shape, tau))
+            if m is None:
+                cells.append("none")
+            elif m["status"] == "matched":
+                cells.append(f"{fmt(m['E_J'])} (matched, {m['t_C8_s']:.1f} s)")
+            elif m["status"] == "bracketed":
+                cells.append(f"{fmt(m['E_J'])} (bracketed)")
+            elif m["status"] == "threshold":
+                cells.append(f"threshold, {fmt(m['hi_f'] * IN.e_e(t))}")
+            else:
+                cells.append(m["status"])
+        w(f"| {t} | {float(IN.tests()[t]['time_s']):.0f} | " + " | ".join(cells) + " |")
+    w("")
     b1x = xs["for_predictions"]
     w("The reduced model's values for the predictions:")
     w("")
@@ -139,11 +166,17 @@ def main():
     w("")
     w("## Part B, the registered list")
     w("")
-    doc = PB.__doc__.split("\n\n", 1)[1].strip() if PB.__doc__ else ""
-    for para in doc.split("\n  "):
-        para = " ".join(para.split())
-        if para:
-            w(f"- {para}")
+    doc = PB.__doc__.split("\n\n", 1)[1] if PB.__doc__ else ""
+    paras = []
+    for line in doc.splitlines():                # a paragraph starts at a two-space indent, continues at six
+        if not line.strip():
+            continue
+        if line.startswith("  ") and not line.startswith("   "):
+            paras.append(line.strip())
+        elif paras:
+            paras[-1] += " " + line.strip()
+    for para in paras:
+        w(f"- {' '.join(para.split())}")
     w("")
     w("Every run: both neighbours, the resolved one stopped at C8 or run to 900 s, its hot spot's crossing recorded "
       "without a stop, the lumped twin to 900 s; Stage 10's five probes of the resolved neighbour at mid-length; the "

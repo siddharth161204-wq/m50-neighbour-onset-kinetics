@@ -20,6 +20,8 @@ next run read from the records already made (`stage15_run.run_one` makes them).
       T + s: s = 5, 10, 15, ... K until C8 happens (at most 60 K), then the shift 2.5 K below the first with C8.
   V4  B1's M50_PT_Exp4 runs at the two ends of its bracket, each again with the mesh refined by 1.5 and with every
       step limit halved (`dt_scale` 0.5).
+  A run that fails is made again at once; a run that fails twice is recorded as failed and stops its chain, which is
+      then reported as stopped.
 """
 import hashlib
 import json
@@ -114,6 +116,11 @@ def c8(rec):
     return bool(rec and not rec.get("failed") and rec["resolved"]["C8"])
 
 
+def failed(rec):
+    """A record whose run failed at both attempts (`stage15_run.work_list`): its chain stops there and is reported."""
+    return bool(rec and rec.get("failed"))
+
+
 def b1_state(test, recs):
     """(status, pending specs, bracket)."""
     have = {}
@@ -121,6 +128,8 @@ def b1_state(test, recs):
         sp = b1_spec(test, step)
         if sp["id"] in recs:
             have[step] = recs[sp["id"]]
+    if any(failed(r) for r in have.values()):
+        return "failed", [], None
     need = [s for s in (-1, +1) if s not in have]
     if need:
         return "running", [b1_spec(test, s) for s in need], None
@@ -154,6 +163,8 @@ def b3_state(recs, P0=None):
     tgt, tol = IN.T_PROP_FIG_S, IN.B3_TOL_S
     if not runs:
         return "running", [b3_spec(P0)], None
+    if any(failed(r) for r in runs.values()):
+        return "failed", [], None
 
     def cls(r):
         if not c8(r):
@@ -197,6 +208,8 @@ def b4_state(recs):
         if sp["id"] not in recs:
             pend.append(sp)
             return pend, None
+        if failed(recs[sp["id"]]):
+            return pend, {"status": "failed"}
         if c8(recs[sp["id"]]):
             first = s
             break
@@ -208,6 +221,8 @@ def b4_state(recs):
     if sp["id"] not in recs:
         pend.append(sp)
         return pend, None
+    if failed(recs[sp["id"]]):
+        return pend, {"status": "failed"}
     least = half if c8(recs[sp["id"]]) else first
     return pend, {"status": "found", "least_shift_K": least,
                   "t_C8_s": recs[b4_spec(shift=least)["id"]]["resolved"]["t_C8_s"]}
@@ -253,7 +268,8 @@ def registered_list():
              "B3": {"step_W": IN.B3_STEP_W, "tol_s": IN.B3_TOL_S, "target_s": IN.T_PROP_FIG_S, "max_runs": B3_MAX_RUNS},
              "B4": {"shift_steps_K": [5.0, 2.5], "max_K": B4_SHIFT_MAX},
              "V4": {"refine": 1.5, "dt_scale": 0.5, "on": "B1 M50_PT_Exp4, both ends"},
-             "stop": "C8 (mean 255.68 C) or 900 s", "lumped": "to 900 s, no stop"}
+             "stop": "C8 (mean 255.68 C) or 900 s", "lumped": "to 900 s, no stop",
+             "failure": "a failed run is made again at once; a second failure stops its chain"}
     keep = ("id", "test", "deliveries", "kin", "sei0", "shift_K", "h", "refine", "dt_scale", "t_end_s",
             "stop_mean", "max_sub")
     return {"first": [{k: s[k] for k in keep} for s in first], "rules": rules}

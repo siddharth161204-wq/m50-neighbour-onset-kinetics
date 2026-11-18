@@ -201,9 +201,19 @@ def test_partb_chains():
         _, res4 = PB.b4_state(recs)
         assert res4["status"] == "found" and res4["least_shift_K"] == 12.5, res4
         assert sum(1 for k in recs if k.endswith(("_r1.5", "_dt0.5"))) == 4
+        # a run that failed at both attempts stops its chain
+        bad = dict(recs)
+        k = PB.b1_spec("M50_PP_Exp2", -1)["id"]
+        bad[k] = dict(bad[k], failed=True)
+        st, p, br = PB.b1_state("M50_PP_Exp2", bad)
+        assert st == "failed" and not p and br is None, (st, p, br)
+        k = PB.b4_spec(shift=10.0)["id"]
+        bad[k] = dict(bad[k], failed=True)
+        assert PB.b4_state(bad)[1]["status"] == "failed"
     finally:
         PB.a2_value, PB.b3_start = saved
-    ok("Part B's chains end where their rules say on a made-up model (B1's four brackets, B3's 15 W, B4's 12.5 K, V4)")
+    ok("Part B's chains end where their rules say on a made-up model (B1's four brackets, B3's 15 W, B4's 12.5 K, V4), "
+       "and a run that failed twice stops its chain")
 
 
 def run_all():

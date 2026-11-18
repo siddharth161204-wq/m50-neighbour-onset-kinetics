@@ -236,13 +236,22 @@ def work_list(specs, out_dir, worker, label, max_minutes=None, wait_s=5.0):
         if os.path.exists(path) or not RUN._claim(claim, worker):
             continue
         st = RUN._utc()
-        try:
-            rec, series = run_one(sp, ctx)
-        except Exception as exc:
-            import traceback
-            RX.DT_BASE, RX.DT_TARGET, RX.DT_ACCEPT = 0.1, 1.0, 4.0
+        rec = series = None
+        errors = []
+        for attempt in (1, 2):                   # a step that fails twice stops its chain (D176 (4))
+            try:
+                rec, series = run_one(sp, ctx)
+                break
+            except Exception as exc:
+                import traceback
+                RX.DT_BASE, RX.DT_TARGET, RX.DT_ACCEPT = 0.1, 1.0, 4.0
+                errors.append({"attempt": attempt, "error": repr(exc), "traceback": traceback.format_exc()})
+                print(f"{RUN._utc()} {sp['id']}: attempt {attempt} failed: {exc!r}", flush=True)
+        if rec is None:
             rec, series = dict(sp), None
-            rec.update({"failed": True, "error": repr(exc), "traceback": traceback.format_exc()})
+            rec.update({"failed": True, "error": errors[-1]["error"], "attempts": errors})
+        elif errors:
+            rec["failed_attempts"] = errors
         rec.update({"started_utc": st, "finished_utc": RUN._utc(), "machine": machine, "worker": worker})
         _write(out_dir, rec, series)
         RUN._unclaim(claim)
