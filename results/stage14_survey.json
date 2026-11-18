@@ -1,0 +1,874 @@
+{
+ "stage": 14,
+ "file": "results/stage14_survey.json",
+ "written": "2026-11-16, before commit c8172e2 (11:13:19 UTC), pushed at 11:13:23 UTC as the branch's first push; the record below was added after the searches",
+ "rule": "The planned searches were written and committed before any was run; a search added later is recorded in searches_added with its reason.",
+ "searches_planned": [
+  {
+   "n": 1,
+   "group": "The rig and its references",
+   "query": "\"Exploring thermal runaway propagation in Li-ion batteries through high-speed X-ray imaging and thermal analysis\" supplementary material",
+   "written_before_any_search": true
+  },
+  {
+   "n": 2,
+   "group": "The rig and its references",
+   "query": "in situ test chamber battery failure high-speed synchrotron X-ray imaging ESRF nail penetration Pfaff Schopferer",
+   "written_before_any_search": true
+  },
+  {
+   "n": 3,
+   "group": "The rig and its references",
+   "query": "cell holder stacking cylindrical cells high-speed X-ray radiography thermal runaway propagation ESRF ID19",
+   "written_before_any_search": true
+  },
+  {
+   "n": 4,
+   "group": "The rig and its references",
+   "query": "Fransson Finegan Shearing thermal runaway propagation 21700 high-speed radiography cell holder CO2",
+   "written_before_any_search": true
+  },
+  {
+   "n": 5,
+   "group": "What the calorimeter counts",
+   "query": "Walker Darst Finegan 2019 \"Decoupling of heat generated from ejected and non-ejected contents\" 18650",
+   "written_before_any_search": true
+  },
+  {
+   "n": 6,
+   "group": "What the calorimeter counts",
+   "query": "fractional thermal runaway calorimeter ejecta mating assembly combustion nitrogen purge copper mesh",
+   "written_before_any_search": true
+  },
+  {
+   "n": 7,
+   "group": "What the calorimeter counts",
+   "query": "\"Battery Failure Databank\" Finegan 2024 open access 234106",
+   "written_before_any_search": true
+  },
+  {
+   "n": 8,
+   "group": "The vent gas's amount and composition",
+   "query": "LG M50 INR21700 thermal runaway vent gas composition",
+   "written_before_any_search": true
+  },
+  {
+   "n": 9,
+   "group": "The vent gas's amount and composition",
+   "query": "21700 NMC811 thermal runaway gas volume composition full charge",
+   "written_before_any_search": true
+  },
+  {
+   "n": 10,
+   "group": "The vent gas's amount and composition",
+   "query": "high-nickel cylindrical 21700 thermal runaway gas generation mmol hydrogen carbon monoxide",
+   "written_before_any_search": true
+  },
+  {
+   "n": 11,
+   "group": "The vent gas's amount and composition",
+   "query": "Baird Archibald Marr Ezekoye 2020 explosion hazards from lithium-ion battery vent gas",
+   "written_before_any_search": true
+  },
+  {
+   "n": 12,
+   "group": "The vent gas's amount and composition",
+   "query": "Golubkov 2014 thermal runaway experiments consumer Li-ion batteries metal-oxide olivine cathodes vent gas",
+   "written_before_any_search": true
+  },
+  {
+   "n": 13,
+   "group": "The gas's temperature at the vent",
+   "query": "21700 thermal runaway jet temperature measured at vent thermocouple",
+   "written_before_any_search": true
+  },
+  {
+   "n": 14,
+   "group": "The gas's temperature at the vent",
+   "query": "cylindrical lithium-ion cell venting gas temperature cap thermocouple NMC full charge",
+   "written_before_any_search": true
+  },
+  {
+   "n": 15,
+   "group": "The split of the ejected mass, and the solids",
+   "query": "21700 thermal runaway ejecta particles mass fraction gas solid NMC811",
+   "written_before_any_search": true
+  },
+  {
+   "n": 16,
+   "group": "The split of the ejected mass, and the solids",
+   "query": "thermal runaway ejected particles temperature measurement cylindrical cell",
+   "written_before_any_search": true
+  },
+  {
+   "n": 17,
+   "group": "The split of the ejected mass, and the solids",
+   "query": "thermal runaway ejecta particle size distribution 18650 21700 composition",
+   "written_before_any_search": true
+  },
+  {
+   "n": 18,
+   "group": "The jet's duration and its velocity or mass flow",
+   "query": "21700 lithium-ion cell venting jet velocity high-speed schlieren",
+   "written_before_any_search": true
+  },
+  {
+   "n": 19,
+   "group": "The jet's duration and its velocity or mass flow",
+   "query": "18650 venting mass flow rate thermal runaway measured duration",
+   "written_before_any_search": true
+  },
+  {
+   "n": 20,
+   "group": "The jet's duration and its velocity or mass flow",
+   "query": "Mier Hargather 18650 vent mechanism flow parameters",
+   "written_before_any_search": true
+  },
+  {
+   "n": 21,
+   "group": "The heat of combustion, and whether the gas burns",
+   "query": "heat of combustion lithium-ion battery vent gas NMC kJ per cell",
+   "written_before_any_search": true
+  },
+  {
+   "n": 22,
+   "group": "The heat of combustion, and whether the gas burns",
+   "query": "lithium-ion vent gas limiting oxygen concentration CO2 dilution flammability",
+   "written_before_any_search": true
+  },
+  {
+   "n": 23,
+   "group": "The heat of combustion, and whether the gas burns",
+   "query": "thermal runaway jet fire ignition reduced oxygen CO2 atmosphere chamber",
+   "written_before_any_search": true
+  },
+  {
+   "n": 24,
+   "group": "The radiant fraction, or a measured radiant flux",
+   "query": "lithium-ion battery jet fire radiant heat flux measurement 21700",
+   "written_before_any_search": true
+  },
+  {
+   "n": 25,
+   "group": "The radiant fraction, or a measured radiant flux",
+   "query": "18650 thermal runaway jet flame radiation heat flux gauge distance",
+   "written_before_any_search": true
+  },
+  {
+   "n": 26,
+   "group": "The radiant fraction, or a measured radiant flux",
+   "query": "radiative fraction turbulent jet flame hydrogen methane mixture correlation",
+   "written_before_any_search": true
+  },
+  {
+   "n": 27,
+   "group": "A heat flux or deposited energy at a neighbour's position",
+   "query": "heat flux measured adjacent cell thermal runaway propagation cylindrical",
+   "written_before_any_search": true
+  },
+  {
+   "n": 28,
+   "group": "A heat flux or deposited energy at a neighbour's position",
+   "query": "heat transfer pathways thermal runaway propagation 18650 module jet fire contribution quantitative",
+   "written_before_any_search": true
+  },
+  {
+   "n": 29,
+   "group": "A heat flux or deposited energy at a neighbour's position",
+   "query": "21700 module thermal runaway propagation heat flux sensor between cells",
+   "written_before_any_search": true
+  },
+  {
+   "n": 30,
+   "group": "A jet striking a cylinder, and flow past one",
+   "query": "heat transfer round jet impinging on circular cylinder correlation average Nusselt number",
+   "written_before_any_search": true
+  },
+  {
+   "n": 31,
+   "group": "A jet striking a cylinder, and flow past one",
+   "query": "slot jet impinging on circular cylinder heat transfer correlation",
+   "written_before_any_search": true
+  },
+  {
+   "n": 32,
+   "group": "A jet striking a cylinder, and flow past one",
+   "query": "Churchill Bernstein correlation circular cylinder cross flow",
+   "written_before_any_search": true
+  },
+  {
+   "n": 33,
+   "group": "Where and how often a sidewall breaches",
+   "query": "LG M50 sidewall rupture nail penetration frequency",
+   "written_before_any_search": true
+  },
+  {
+   "n": 34,
+   "group": "Where and how often a sidewall breaches",
+   "query": "Read Jones Marco 2024 sidewall rupture propensity thermal runaway propagation small module",
+   "written_before_any_search": true
+  },
+  {
+   "n": 35,
+   "group": "Where and how often a sidewall breaches",
+   "query": "sidewall breach location cylindrical cell thermal runaway radiography 21700 nail",
+   "written_before_any_search": true
+  },
+  {
+   "n": 36,
+   "group": "Solids and melt on the neighbour",
+   "query": "molten aluminium droplets thermal runaway ejecta deposition adjacent cell",
+   "written_before_any_search": true
+  },
+  {
+   "n": 37,
+   "group": "Solids and melt on the neighbour",
+   "query": "thermal runaway ejecta deposition heat transfer neighbouring cell experiment",
+   "written_before_any_search": true
+  },
+  {
+   "n": 38,
+   "group": "The circuit of the parallel tests",
+   "query": "parallel connected cells thermal runaway current neighbouring cell discharge nail penetration",
+   "written_before_any_search": true
+  },
+  {
+   "n": 39,
+   "group": "The circuit of the parallel tests",
+   "query": "LG M50 INR21700 internal resistance DC pulse",
+   "written_before_any_search": true
+  },
+  {
+   "n": 40,
+   "group": "The circuit of the parallel tests",
+   "query": "nail penetration internal short circuit resistance measured cylindrical cell",
+   "written_before_any_search": true
+  },
+  {
+   "n": 41,
+   "group": "The circuit of the parallel tests",
+   "query": "LG INR21700 M50 current interrupt device CID",
+   "written_before_any_search": true
+  },
+  {
+   "n": 42,
+   "group": "The surface",
+   "query": "emissivity carbon black paint surface",
+   "written_before_any_search": true
+  },
+  {
+   "n": 43,
+   "group": "The surface",
+   "query": "LG M50 can material nickel-plated steel emissivity",
+   "written_before_any_search": true
+  }
+ ],
+ "searches_added": [
+  {
+   "query": "Popp 2020 LG M50 internal resistance 10 °C 45 °C 400 % DC pulse 21700",
+   "reason": "to find the full reference of the resistance study that the page found under search 39 cites (Popp et al. 2020); found: Elektrotech. Inftech. 137 (2020) 169-176"
+  }
+ ],
+ "searches_run": [
+  {
+   "n": 1,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://docs.nlr.gov/docs/fy24osti/87353.pdf (Fransson 2024, NLR copy)",
+    "https://ora.ox.ac.uk/objects/uuid:4a6edaf0-c309-40b5-b863-cf32243fa7ec (ORA record)"
+   ]
+  },
+  {
+   "n": 2,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9814060 (Pfaff et al. 2023, J. Synchrotron Radiat. 30, 192-199)",
+    "https://www.nrel.gov/docs/fy23osti/82686.pdf (Pfaff 2023 NREL copy)",
+    "https://journals.iucr.org/s/issues/2023/01/00/ye5024/",
+    "https://esrf.fr/home/news/tech-talk/content-news/tech-talk/techtalk05.html"
+   ]
+  },
+  {
+   "n": 3,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://opus4.kobv.de/opus4-bam/... (BAM sodium-ion radiography, not this cell)",
+    "ESRF highlights 2017 (18650 ISC device)"
+   ]
+  },
+  {
+   "n": 4,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://core.ac.uk/download/519717661.pdf and https://eprintspublications.npl.co.uk/9736/1/eid9736.pdf (Sharp et al. 2022, J. Electrochem. Soc. 169 020526, open access)"
+   ]
+  },
+  {
+   "n": 5,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://research-hub.nrel.gov/en/publications/decoupling-of-heat-generated-from-ejected-and-non-ejected-content-2/ (Walker 2019 record)",
+    "https://discovery.ucl.ac.uk/id/eprint/10069640/1/1-s2.0-S0378775319300874-main.pdf (Finegan et al. 2019 JPS, ISC device, bottom vent)",
+    "https://nrel.gov/docs/fy24osti/87431.pdf (Finegan 2024 Databank paper)"
+   ]
+  },
+  {
+   "n": 6,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://ntrs.nasa.gov/api/citations/20190000824/downloads/20190000824.pdf (NASA FTRC slides)",
+    "https://ntrs.nasa.gov/api/citations/20190028810/downloads/20190028810.pdf",
+    "https://ntrs.nasa.gov/api/citations/20205010300/downloads/... (Trigger format comparison)",
+    "https://incompliancemag.com/thermal-runaway-energy-release-as-a-function-of-the-state-of-charge/"
+   ]
+  },
+  {
+   "n": 7,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://nrel.gov/docs/fy24osti/87431.pdf (Databank paper, CC BY-NC-ND)",
+    "https://www.nlr.gov/transportation/battery-failure (Databank page: exhaust ports)"
+   ]
+  },
+  {
+   "n": 8,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://ecn.sandia.gov/battery-safety/21700-m50lt/ (M50LT: NMC811, 1 % Si, 5.6 % electrolyte by mass, 78 % DMC)",
+    "https://discovery.ucl.ac.uk/10144748/1/Manuscript%20Draftl.pdf (FTRC Part 1 incl. LG 21700-M50)"
+   ]
+  },
+  {
+   "n": 9,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://www.hidenanalytical.com/wp-content/uploads/2023/07/AP-HPR-20-202377_Project-Summary.pdf (Abbott et al. 2022 summary: 6.5 L at 100 % SoC)",
+    "Abbott et al. 2022 J. Power Sources 231585 (subscription)",
+    "https://riunet.upv.es/... (Garcia et al., NMC811 combustion modelling)"
+   ]
+  },
+  {
+   "n": 10,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "Hiden summary (as 9)",
+    "https://core.ac.uk/download/327071519.pdf (Chen et al. 2020 J. Power Sources 472 228585, 21700 266 Wh/kg)",
+    "https://wrap.warwick.ac.uk/id/eprint/146838 (Chen et al. 2021 JES, simplified model 21700)"
+   ]
+  },
+  {
+   "n": 11,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://www.osti.gov/servlets/purl/1574807 (Baird et al. 2020 accepted manuscript)"
+   ]
+  },
+  {
+   "n": 12,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://pubs.rsc.org/en/content/articlehtml/2014/ra/c3ra45748f (Golubkov et al. 2014 RSC Adv. 4, 3633, CC BY)"
+   ]
+  },
+  {
+   "n": 13,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://wrap.warwick.ac.uk/id/eprint/194215 (Gulsoy et al. 2025 Data in Brief 63: vent temperatures 5 and 10 mm from the vent cap, 21700)",
+    "https://wrap.warwick.ac.uk/id/eprint/163033 (Vendra et al. 2022 PSEP 160 153, 4.8 Ah 21700 NMC)",
+    "https://www.icheme.org/media/17627/hazards-31-paper-43-abbott.pdf (Abbott et al. Hazards 31, 21700 failure modes)"
+   ]
+  },
+  {
+   "n": 14,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://pubs.rsc.org/en/content/articlehtml/2018/ra/c8ra06458j (Golubkov et al. 2018, large automotive cells, vent gas temperature)",
+    "https://nmt.edu/academics/mecheng/faculty/mhargather/docs/Mier2019.pdf",
+    "https://www.frontiersin.org/articles/10.3389/fenrg.2021.788239 (Li et al. 2021 vent CFD)"
+   ]
+  },
+  {
+   "n": 15,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "Hiden summary",
+    "Sharp et al. 2022",
+    "https://ecn.sandia.gov/?p=7295"
+   ]
+  },
+  {
+   "n": 16,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://www.frontiersin.org/articles/10.3389/fenrg.2023.1230429 (21700? jet zone temperatures near valve, N2 chamber)",
+    "https://mdpi.com/2313-0105/10/4/142 (Gillich et al. 2024 Batteries 10 142)",
+    "https://www.icheme.org/media/17627/hazards-31-paper-43-abbott.pdf"
+   ]
+  },
+  {
+   "n": 17,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://ntrs.nasa.gov/api/citations/20180003307/downloads/20180003307.pdf (18650 particulate analysis)",
+    "https://publikationen.bibliothek.kit.edu/1000176049/155441724 (Hoelle et al. 2024 Batteries 10 173, particle deposition, prismatic)",
+    "Claassen et al. 2024 Batteries 10 366"
+   ]
+  },
+  {
+   "n": 18,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://www.osti.gov/servlets/purl/1592298 (Mier: leading edge of jet ~150 m/s, 18650)",
+    "https://www.sandia.gov/app/uploads/sites/163/2022/02/2b_Mier_ESS_2019.pdf (core velocity ~Mach 1; flow projected outward at 21 deg)",
+    "https://mdpi.com/2313-0105/10/4/142 (Gillich 2024: 22.15 and 27.92 g/s; peak 398.5 m/s)",
+    "Kim et al. pouch PIV 123.8 m/s"
+   ]
+  },
+  {
+   "n": 19,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://mdpi.com/2313-0105/10/4/142 (Gillich 2024, Table 1 review)",
+    "https://nmt.edu/academics/mecheng/faculty/mhargather/docs/Mier2019.pdf"
+   ]
+  },
+  {
+   "n": 20,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://www.osti.gov/pages/biblio/1498760 (Mier et al. 2019 J. Fluids Eng. 141, accepted manuscript)",
+    "https://nmt.edu/academics/mecheng/faculty/mhargather/Mier2020_dissertation_finals.pdf"
+   ]
+  },
+  {
+   "n": 21,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://rosap.ntl.bts.gov/view/dot/66669/dot_66669_DS1.pdf (Karp and Sica 2022, FAA: vent gas volume and combustion energy)",
+    "https://mtl.uta.edu/files/2022/11/Mishra-JECS2022.pdf (Mishra, Zhao, Jain 2022 JES 169 100520)"
+   ]
+  },
+  {
+   "n": 22,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7643196 (flammability limits of vent gas, CHEMKIN)",
+    "https://research.chalmers.se/publication/549553/file/549553_Fulltext.pdf (Lipatnikov 2025: CO2 does not exclude fire)",
+    "https://www.fire.tc.faa.gov/pdf/TC-TT16-55.pdf (FAA flammability limits)",
+    "PolyU: effects of oxygen level and dilution gas, JPS 509 230340"
+   ]
+  },
+  {
+   "n": 23,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8102908 (fire triangle boundaries, minimum O2)",
+    "https://rosap.ntl.bts.gov/view/dot/57686/dot_57686_DS1.pdf (FAA, reduced oxygen)"
+   ]
+  },
+  {
+   "n": 24,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://eprints.whiterose.ac.uk/id/eprint/239432 (Lugaresi et al. 2026 Fire Safety J. 162 104750, radiative heat flux LFP)",
+    "https://wrap.warwick.ac.uk/id/eprint/139049 (Chen et al. 2020 JPS 472, published version)",
+    "WRAP Vendra 2022"
+   ]
+  },
+  {
+   "n": 25,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "Lugaresi 2026",
+    "https://doaj.org/article/99063680301d4a039a0759dcec55af7c (radiation-induced propagation, Applied Sciences 2023)",
+    "Mishra 2022"
+   ]
+  },
+  {
+   "n": 26,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "Zhou et al. 2018 Int. J. Hydrogen Energy 43 9870 (radiative fraction correlation, subscription)",
+    "https://thesis.library.adelaide.edu.au/... (radiant fraction H2 blends)"
+   ]
+  },
+  {
+   "n": 27,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://www.osti.gov/servlets/purl/2431996 (Sandia propagation/mitigation boundary)",
+    "Mishra 2022",
+    "Sandia Lamb 2015 record"
+   ]
+  },
+  {
+   "n": 28,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://wrap.warwick.ac.uk/id/eprint/161908 (Kong et al. 2022 eTransportation 12 100157)",
+    "https://public.websites.umich.edu/~racelab/static/Webpublication/2015-JPS-XuningF.pdf (Feng et al. 2015 JPS 275 261: 12 % of the heat triggers the neighbour)",
+    "https://ira.lib.polyu.edu.hk/bitstream/10397/89493/1/53_FT_2020_linear_LIB_fire_spread.pdf (Niu et al. 2020)"
+   ]
+  },
+  {
+   "n": 29,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://discovery.ucl.ac.uk/10144748/1/Manuscript%20Draftl.pdf (FTRC Part 1, heat flux)",
+    "https://core.ac.uk/download/520520047.pdf (Shelke et al. 2022 IJHMT 21700)"
+   ]
+  },
+  {
+   "n": 30,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://core.ac.uk/download/395738649.pdf (Csernyei and Straatman 2016, multiple impinging round jets on a cylinder)",
+    "Singh, Premachandran, Kohli 2013 (subscription)",
+    "NASA TN D-7127 (concave surface)",
+    "Applied Thermal Eng. 162 114308 (round jets on cylinder)"
+   ]
+  },
+  {
+   "n": 31,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "Olsson, Ahrne, Tragardh 2004 J. Food Eng. 63 393 (abstract gives Num = 0.14 Re^0.65 (H/d)^-0.077 (d/D)^0.32)",
+    "Nada 2006 Heat Mass Transfer (slot jets on cylinder)"
+   ]
+  },
+  {
+   "n": 32,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "Churchill and Bernstein 1977 J. Heat Transfer 99 300 (via textbook)",
+    "https://ahtt.mit.edu (Lienhard textbook, open access)"
+   ]
+  },
+  {
+   "n": 33,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://ntrs.nasa.gov/api/citations/20210024752/downloads/... (NASA side wall rupture rates, 18650)",
+    "https://ntrs.nasa.gov/api/citations/20240012828/downloads/Sidewall%20Rupture%20Characterization%2021700-Update2.pdf (NASA 21700 SWR)"
+   ]
+  },
+  {
+   "n": 34,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://wrap.warwick.ac.uk/id/eprint/188615 (Read, Jones and Marco 2024 JPS Advances 30 100162, CC BY)",
+    "https://wrap.warwick.ac.uk/186891 (Read et al. 2024 J. Energy Storage 95 112491)",
+    "https://wrap.warwick.ac.uk/193824 (Allen et al. 2025)",
+    "https://wrap.warwick.ac.uk/188614 (Allen, Jones, Marco 2025 J. Energy Storage 105)"
+   ]
+  },
+  {
+   "n": 35,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://wrap.warwick.ac.uk/179422/1/1-s2.0-S0306261923009741-main.pdf (Chen et al. 2023 Applied Energy 349 121610, CC BY)",
+    "https://wrap.warwick.ac.uk/172264/ (Chen et al. 2022, radial nail penetration, CC BY)"
+   ]
+  },
+  {
+   "n": 36,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "nothing relevant (aluminium smelting, aerogel white papers)"
+   ]
+  },
+  {
+   "n": 37,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "Srinivasan et al. 2020 JES 167 020559? (condensed esters on adjacent cells; open access)",
+    "Hoelle et al. 2024 (particle deposition)",
+    "Mishra et al. 2021 JES (venting of hot gases)"
+   ]
+  },
+  {
+   "n": 38,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "Plunkett et al. 2021 Applied Energy 286 (current dumping, 18650 NMC packs)",
+    "https://publikationen.bibliothek.kit.edu/1000173243/155178633 (Kim et al., needle penetration, ISC current measured)",
+    "Feng et al. 2015"
+   ]
+  },
+  {
+   "n": 39,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://asset.conrad.com/media10/add/160267/c1/-/en/002114679DS01/... (LG Chem INR21700 M50 product specification 2017)",
+    "https://aws.robu.in/wp-content/uploads/2021/11/DATASHEET-LGM50T.pdf (M50T datasheet)",
+    "batterydesign.net (Popp et al. DCIR)",
+    "forum tests (not used)"
+   ]
+  },
+  {
+   "n": 40,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "Long, Liu and Zhang 2023 Energy Adv. (ISC resistance)",
+    "JES 2023 dynamic ISC resistance (Zhang group)",
+    "Abaza et al. 2018 J. Energy Storage 16 211 (internal and external short circuits)",
+    "core.ac.uk 519560045 (21700 nail TR model with ISC resistance)"
+   ]
+  },
+  {
+   "n": 41,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://ecn.sandia.gov/battery-safety/21700-m50lt/ (CID and burst disk described in ECN9.18 slides)",
+    "M50LT and M50T datasheets (CID activation)",
+    "Li, Crompton, Ostanek 2022 J. Energy Storage 46 (CID activation pressure, 18650)"
+   ]
+  },
+  {
+   "n": 42,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "https://scielo.org.mx/pdf/rmf/v60n4/v60n4a10.pdf (Cardenas-Garcia 2014: high-emissivity black paint 0.972 +- 0.012, 8-14 um, 50-150 C)",
+    "FLIR tables (carbon, lampblack 0.95 to 0.97)"
+   ]
+  },
+  {
+   "n": 43,
+   "run": "2026-11-16, web search tool, standard mode",
+   "candidates": [
+    "camera emissivity tables (nickel-plated steel 0.11; not used: the cans were painted)"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "key": "Fransson2024",
+   "how": "whole text, through a text reader (journal pages 1 to 11)",
+   "cond": "LG M50 and Molicel P42A pairs, nail, 15 % CO2, the ESRF chamber",
+   "gave": "the rig (orientation, contact, tabs, thermocouples, paint, nail, atmosphere), fire at the vent, the categories and the tables of outcomes",
+   "not_gave": "state of charge, tab and holder material, ambient, which end vented, any current or voltage, any per-test account of ejection, any heat flux"
+  },
+  {
+   "key": "FranssonSupp",
+   "how": "whole file, text layer and as rendered (pages 28 to 32)",
+   "cond": "as the article",
+   "gave": "Fig. 9(b) the holder with the trigger above, Fig. 10 two thermocouple records with section rates, Fig. 11 photographs of melt, rupture and movement, Fig. 12 the parallel circuit, Fig. 13 rates and temperatures by outcome, Fig. 14 thermal images",
+   "not_gave": "the holder's dimensions or material, flame temperatures (the thermal images saturate at 500 C), test names on the photographs"
+  },
+  {
+   "key": "Fransson2023",
+   "how": "whole manuscript (13 pages)",
+   "cond": "Molicel INR21700-P42A pair in parallel, 100 % charge, the same chamber",
+   "gave": "the holder's photograph, a small air gap between the sidewalls in one radiograph, the contact and the tabs named as the two heat paths, a temperature-induced breach of the propagating cell (147.65 and 148.00 s)",
+   "not_gave": "anything on the M50, the holder's material or dimensions"
+  },
+  {
+   "key": "Pfaff2023",
+   "how": "whole text, through a text reader",
+   "cond": "the chamber of the tests",
+   "gave": "aluminium frame, 3D-printed inserts, about 2 mm of contact per fixture, a 343 l gas-tight chamber with exhaust and CO2 purge",
+   "not_gave": "the inserts' material, the holder's dimensions in the text"
+  },
+  {
+   "key": "Databank",
+   "how": "ReadMe sheet in full; the ten M50 nail rows of the data sheet",
+   "cond": "LG 21700-M50 (BV), nail, 100 % SOC, FTRC",
+   "gave": "per-test body and ejecta energies, masses, voltages, failure mechanisms, the definitions of every column",
+   "not_gave": "how the energy of the unrecovered mass is computed (given by WalkerPart1)"
+  },
+  {
+   "key": "Finegan2024",
+   "how": "whole text (local copy)",
+   "cond": "the Databank's cells",
+   "gave": "what the calorimeter captures (particles and flames arrested), less excess oxygen than in an open volume, the ejected mass's heat per gram",
+   "not_gave": "the method of the unrecovered mass's energy"
+  },
+  {
+   "key": "WalkerPart1",
+   "how": "through a text reader, the method and results",
+   "cond": "FTRC; cells include the LG 21700-M50",
+   "gave": "the unrecovered mass's energy is a sensible heat from the baffles' temperatures; the M50's negative side took 59 % of the energy in its nail tests",
+   "not_gave": "vent gas temperature, velocity, radiant heat"
+  },
+  {
+   "key": "Walker2019",
+   "how": "not read: subscription (record page only)",
+   "cond": "",
+   "gave": "nothing",
+   "not_gave": "everything; the Part 1 manuscript stands in for the calorimeter's method"
+  },
+  {
+   "key": "Sharp2022",
+   "how": "through a text reader",
+   "cond": "LG 21700-M50 and others, nail, 100 % SOC, FTRC with radiography",
+   "gave": "both vents of the M50 activated; ejected mass about 30 to 54 g; a runaway of about 2 s; molten copper seen in most M50 tests; volatiles lost through the fume extraction",
+   "not_gave": "venting duration or velocity, any gas or ejecta temperature"
+  },
+  {
+   "key": "SandiaECN",
+   "how": "web page",
+   "cond": "LG INR21700-M50LT teardown",
+   "gave": "5.6 % of the mass is electrolyte, 78 % of it DMC (given without a citation, for similar M50 cells); NMC811 with about 1 % Si; CID and burst disc at the top",
+   "not_gave": "gas amounts"
+  },
+  {
+   "key": "Hiden",
+   "how": "project summary, 2 pages",
+   "cond": "21700 NMC811 (maker not named), 50 l vessel",
+   "gave": "6.5 l of gas at 100 % SoC, hydrogen and CO2 more than half of it",
+   "not_gave": "the full composition, the cell's model; the paper itself is behind a subscription"
+  },
+  {
+   "key": "Vendra2022",
+   "how": "accepted manuscript, through a text reader",
+   "cond": "21700 NMC, 4.8 Ah, 100 % SOC; cone calorimeter and a sealed canister",
+   "gave": "total heat release in open air 96.2 to 136.5 kJ (test 2's printed parts sum to 127.3 kJ), peak heat release rate 3.33 to 3.79 kW, vent gas 0.53 mol with its composition, internal temperatures up to 1109.3 C; NMC cathode, carbon anode",
+   "not_gave": "any measured gas or flame temperature, any duration"
+  },
+  {
+   "key": "Chen2020",
+   "how": "published version, through a text reader",
+   "cond": "21700 NMC, 5 Ah, 68.3 g, vertical, ventilated chamber",
+   "gave": "flame temperatures cited up to 1069 C (single cells) and 1500 C (a module), combustion of 11.1 to 16.3 s, flame heights up to 333 mm, peak heat release rates near 3 kW",
+   "not_gave": "radiant fraction, heat flux at a neighbour"
+  },
+  {
+   "key": "Chen2023",
+   "how": "published version, through a text reader",
+   "cond": "21700 NCA/graphite-Si, 4.8 Ah, nail",
+   "gave": "sidewall rupture in 2 of 6 cells at 100 % SoC and 6 mm/s (1 of 5 at 0.5 mm/s, 4 of 5 at 100 mm/s), cracks near the bottom, a jet fire of about 110 s and combustion of about 5 min, mass loss above 45 %",
+   "not_gave": "temperatures of the jet"
+  },
+  {
+   "key": "Gillich2024",
+   "how": "web text",
+   "cond": "LG MJ1 and Sony VTC5A 18650, 100 % SOC",
+   "gave": "peak gas velocities 398.5 and 260.9 m/s, mass flows 27.92 and 22.15 g/s, a measured runaway of 1.131 +- 0.291 s (LG MJ1)",
+   "not_gave": "any 21700 velocity (its review table did not extract)"
+  },
+  {
+   "key": "Mier",
+   "how": "slides and accepted manuscript, through a text reader",
+   "cond": "18650 cells",
+   "gave": "jet leading edge about 150 m/s, core near Mach 1, flow projected outward at 21 degrees",
+   "not_gave": "21700 data"
+  },
+  {
+   "key": "KarpSica2022",
+   "how": "through a text reader",
+   "cond": "LCO 18650 and pouch cells, nitrogen vessel",
+   "gave": "vent gas volumes 3.75 and 9.9 l and the energy of their combustion, calculated for complete combustion",
+   "not_gave": "NMC 21700 data"
+  },
+  {
+   "key": "Baird2020",
+   "how": "accepted manuscript, through a text reader",
+   "cond": "review of vent gas data",
+   "gave": "no NMC 21700 values in the text",
+   "not_gave": "values for this format"
+  },
+  {
+   "key": "Golubkov2014",
+   "how": "found, not read in full",
+   "cond": "18650 cells",
+   "gave": "not used: no bound uses a gas amount (E_avail rests on measured heat releases)",
+   "not_gave": ""
+  },
+  {
+   "key": "Lugaresi2026",
+   "how": "through a text reader",
+   "cond": "LFP 18650 and 26650 cells",
+   "gave": "radiative heat flux 150 mm from the cell: about 50 to 150 kW/m2 in the first flaming event of most cells, later peaks of about 150 (18650) and 350 to 500 kW/m2 (26650); no radiant fraction",
+   "not_gave": "NMC or 21700 data"
+  },
+  {
+   "key": "Feng2015",
+   "how": "through a text reader",
+   "cond": "25 Ah prismatic NMC cells in a module",
+   "gave": "the heat reaching a neighbour by shell, connector and fire (fire 162 J of 605 kJ)",
+   "not_gave": "cylindrical-cell data"
+  },
+  {
+   "key": "Read2024",
+   "how": "published version, through a text reader",
+   "cond": "LG INR21700-M50, 100 % SOC, nail through the positive terminal, open module with 3 mm gaps",
+   "gave": "sidewall rupture in 3 of 3 with a 35 mm nail and none with 10 mm, ruptures on the bottom half of the casing, a jet fire impinging on the neighbours, which ran away 2 to 5 s later, trigger surfaces of 1051.5 to 1248.1 C with rupture",
+   "not_gave": "heat flux"
+  },
+  {
+   "key": "NASA21700",
+   "how": "slides",
+   "cond": "LG M52V, Molicel P45B, Samsung 50S and 53G, hot plate",
+   "gave": "sidewall rupture in 1.1 to 5.2 %, bottom rupture in 4.4 to 48.9 %",
+   "not_gave": "M50 data"
+  },
+  {
+   "key": "Csernyei2016",
+   "how": "through a text reader",
+   "cond": "air jets on a heated cylinder",
+   "gave": "an average Nusselt number for round jets on a cylinder (Eq. 16, Re 2.06e5 to 1.236e6)",
+   "not_gave": "anything for a jet that starts against the can"
+  },
+  {
+   "key": "Olsson2004",
+   "how": "abstract only (subscription)",
+   "cond": "slot jets on cylinders",
+   "gave": "Nu = 0.14 Re^0.65 (H/d)^-0.077 (d/D)^0.32",
+   "not_gave": "the paper's ranges"
+  },
+  {
+   "key": "Lienhard",
+   "how": "the relevant sections of the authors' PDF",
+   "cond": "relations and properties",
+   "gave": "Churchill and Bernstein, eqns (7.65) to (7.68), pp. 390-391; Table A.6 (air, hydrogen and other gases); the constants",
+   "not_gave": ""
+  },
+  {
+   "key": "LGsheet",
+   "how": "whole datasheet",
+   "cond": "LG INR21700 M50 (2017, tentative)",
+   "gave": "18.2 Wh, 3.63 V, dimensions, AC impedance at most 25 mOhm, DC resistance 30 +- 6 mOhm at 25 C",
+   "not_gave": "resistance above 25 C, a CID statement"
+  },
+  {
+   "key": "Popp2020",
+   "how": "through a text reader",
+   "cond": "LG M50, 50 % SOC, 10 to 45 C",
+   "gave": "the resistance falls about fivefold from 10 to 45 C",
+   "not_gave": "the resistance above 45 C"
+  },
+  {
+   "key": "Cardenas2014",
+   "how": "abstract",
+   "cond": "a high-emissivity black paint",
+   "gave": "emissivity 0.972 +- 0.012 at 8 to 14 um",
+   "not_gave": "the rig's carbon paint, absorptivity for flame radiation"
+  },
+  {
+   "key": "Gulsoy2025",
+   "how": "through a text reader",
+   "cond": "Sony VTC6A",
+   "gave": "nothing usable",
+   "not_gave": ""
+  },
+  {
+   "key": "KimKIT",
+   "how": "through a text reader",
+   "cond": "prismatic cells",
+   "gave": "not this format",
+   "not_gave": ""
+  }
+ ],
+ "not_found": [
+  "a radiant fraction for a battery vent flame",
+  "a heat flux or deposited energy measured at a neighbouring cylindrical cell's place",
+  "a gas temperature measured at a 21700 cell's vent",
+  "a vent velocity or mass flow for a 21700 cell",
+  "the share of vent gas that passes a neighbour, or a velocity or temperature beside it",
+  "the share of the ejecta that leaves through a breach, a breach's opening or its jet's velocity",
+  "the temperature of ejected solids, or the mass of solids and melt found on a neighbour",
+  "the material of the holder's inserts, or any temperature of the holder",
+  "a current or voltage history of parallel cells during a neighbour's failure, or the resistance of a nail's short"
+ ]
+}

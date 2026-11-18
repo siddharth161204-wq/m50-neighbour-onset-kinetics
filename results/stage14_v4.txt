@@ -1,0 +1,8 @@
+ok   disc seen from its axis, h = 0.2 R: exact 0.401942, ray tracing 0.402250, allowance 0.001387
+ok   disc seen from its axis, h = 1.0 R: exact 0.146447, ray tracing 0.146515, allowance 0.001000
+ok   disc seen from its axis, h = 3.0 R: exact 0.025658, ray tracing 0.025802, allowance 0.000447
+ok   long cylinder from its end plane, rho = 1.05 R: exact 0.200687, ray tracing 0.200294, allowance 0.001238
+ok   long cylinder from its end plane, rho = 2.00 R: exact 0.083333, ray tracing 0.082863, allowance 0.000865
+ok   long cylinder from its end plane, rho = 5.00 R: exact 0.032047, ray tracing 0.032050, allowance 0.000578
+ok   touching cylinders, facing half to the other's lateral surface: exact 0.363380, ray tracing 0.362736, allowance 0.004994
+all cases within the allowance

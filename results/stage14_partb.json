@@ -1,0 +1,226 @@
+{
+ "B1_counts_21s": {
+  "A1": {
+   "reaches": 9,
+   "reaches part": 0,
+   "does not reach": 3,
+   "needs nothing": 4,
+   "not determinable": 0,
+   "does not act (series)": 0,
+   "tests_not_reached": [
+    "M50_PT_Exp2",
+    "M50_ST_Exp3",
+    "M50_SP_Exp4"
+   ]
+  },
+  "A2": {
+   "reaches": 12,
+   "reaches part": 0,
+   "does not reach": 0,
+   "needs nothing": 4,
+   "not determinable": 0,
+   "does not act (series)": 0,
+   "tests_not_reached": []
+  },
+  "A3": {
+   "reaches": 12,
+   "reaches part": 0,
+   "does not reach": 0,
+   "needs nothing": 4,
+   "not determinable": 0,
+   "does not act (series)": 0,
+   "tests_not_reached": []
+  },
+  "A4": {
+   "reaches": 12,
+   "reaches part": 0,
+   "does not reach": 0,
+   "needs nothing": 4,
+   "not determinable": 0,
+   "does not act (series)": 0,
+   "tests_not_reached": []
+  },
+  "A5": {
+   "reaches": 0,
+   "reaches part": 0,
+   "does not reach": 0,
+   "needs nothing": 0,
+   "not determinable": 16,
+   "does not act (series)": 0,
+   "tests_not_reached": []
+  },
+  "A6": {
+   "reaches": 5,
+   "reaches part": 0,
+   "does not reach": 1,
+   "needs nothing": 2,
+   "not determinable": 0,
+   "does not act (series)": 8,
+   "tests_not_reached": [
+    "M50_PT_Exp2"
+   ]
+  }
+ },
+ "B2": {
+  "ranked": [
+   {
+    "test": "M50_ST_Exp3",
+    "need_21s_hi_J": 12111.5,
+    "reading": "f_t(C2) threshold",
+    "category": "1"
+   },
+   {
+    "test": "M50_PP_Exp2",
+    "need_21s_hi_J": 5962.4,
+    "reading": "f_t(C2) matched",
+    "category": "2"
+   },
+   {
+    "test": "M50_PT_Exp4",
+    "need_21s_hi_J": 4851.0,
+    "reading": "f_t(C2) threshold",
+    "category": "4"
+   },
+   {
+    "test": "M50_SP_Exp2",
+    "need_21s_hi_J": 3783.4,
+    "reading": "f_t(C2) matched",
+    "category": "cell movement"
+   },
+   {
+    "test": "M50_PP_Exp1",
+    "need_21s_hi_J": 2974.4,
+    "reading": "f_t(C2) matched",
+    "category": "cell movement"
+   },
+   {
+    "test": "M50_SP_Exp1",
+    "need_21s_hi_J": 2725.6,
+    "reading": "f_t(C2) matched",
+    "category": "2"
+   },
+   {
+    "test": "M50_PP_Exp4",
+    "need_21s_hi_J": 1819.0,
+    "reading": "f_t(C2) matched",
+    "category": "2"
+   },
+   {
+    "test": "M50_ST_Exp4",
+    "need_21s_hi_J": 1184.0,
+    "reading": "f_t(C2) matched",
+    "category": "1"
+   },
+   {
+    "test": "M50_SP_Exp3",
+    "need_21s_hi_J": 263.5,
+    "reading": "f_t(C2) matched",
+    "category": "cell movement"
+   }
+  ],
+  "top3": [
+   {
+    "test": "M50_ST_Exp3",
+    "category": "1"
+   },
+   {
+    "test": "M50_PP_Exp2",
+    "category": "2"
+   },
+   {
+    "test": "M50_PT_Exp4",
+    "category": "4"
+   }
+  ],
+  "largest_need_21s_J": 12111.5,
+  "paths_reaching_largest_need_21s": [
+   "A2",
+   "A3",
+   "A4",
+   "A6"
+  ],
+  "where_each_path_acts": {
+   "A1": "every test (the trigger vents)",
+   "A2": "every test (the trigger vents)",
+   "A3": "category 4 only (a trigger rupture)",
+   "A4": "every test (the trigger ejects)",
+   "A6": "parallel tests only"
+  },
+  "category4_tests": [
+   {
+    "test": "M50_PT_Exp3",
+    "propagated": "no",
+    "need_21s_lo_J": 0.0,
+    "need_21s_hi_J": 0.0,
+    "reading": "f_max far face zero"
+   },
+   {
+    "test": "M50_PT_Exp4",
+    "propagated": "yes",
+    "need_21s_lo_J": 4656.9,
+    "need_21s_hi_J": 4851.0,
+    "reading": "f_t(C2) threshold"
+   },
+   {
+    "test": "M50_ST_Exp2",
+    "propagated": "no",
+    "need_21s_lo_J": 0.0,
+    "need_21s_hi_J": 0.0,
+    "reading": "f_max far face zero"
+   }
+  ],
+  "sums_of_determinable_bounds": {
+   "21.39": {
+    "sum_series_J": 562433.46,
+    "sum_parallel_J": 627953.46,
+    "tests_needing_more": []
+   },
+   "120.0": {
+    "sum_series_J": 727887.141,
+    "sum_parallel_J": 793407.141,
+    "tests_needing_more": []
+   },
+   "240.0": {
+    "sum_series_J": 733972.785,
+    "sum_parallel_J": 799492.785,
+    "tests_needing_more": []
+   },
+   "360.0": {
+    "sum_series_J": 733972.785,
+    "sum_parallel_J": 799492.785,
+    "tests_needing_more": []
+   },
+   "total": {
+    "sum_series_J": 733972.785,
+    "sum_parallel_J": 799492.785,
+    "tests_needing_more": []
+   }
+  }
+ },
+ "B3": {
+  "M50_PT_Exp2": {
+   "neighbour_max_C": 808.0,
+   "category": "1",
+   "connection": "parallel",
+   "A1": "possible: published flame temperatures reach 1500 C, above 808 C, and the radiation lands near the venting end, a patch",
+   "A2": "possible: gas or flame beside the neighbour up to 1500 C can heat a patch (the wedges, or a thermocouple it engulfs)",
+   "A3": "not shown by the category: a breach's jet could, but neither test is in category 4",
+   "A4": "possible: hot solids or melt resting on the thermocouple (molten copper was seen in most M50 tests, Sharp et al.)",
+   "A5": "not determinable: the holder's temperature is not given",
+   "A6": "heats the roll by volume, not a surface patch, so it cannot raise one surface reading far above the roll",
+   "note": "Stated as possibilities and not built on; the paper notes that cells and thermocouples moved during failure (D89 (5))."
+  },
+  "M50_SP_Exp4": {
+   "neighbour_max_C": 626.0,
+   "category": "none",
+   "connection": "series",
+   "A1": "possible: published flame temperatures reach 1500 C, above 626 C, and the radiation lands near the venting end, a patch",
+   "A2": "possible: gas or flame beside the neighbour up to 1500 C can heat a patch (the wedges, or a thermocouple it engulfs)",
+   "A3": "not shown by the category: a breach's jet could, but neither test is in category 4",
+   "A4": "possible: hot solids or melt resting on the thermocouple (molten copper was seen in most M50 tests, Sharp et al.)",
+   "A5": "not determinable: the holder's temperature is not given",
+   "A6": "does not act (series)",
+   "note": "Stated as possibilities and not built on; the paper notes that cells and thermocouples moved during failure (D89 (5))."
+  }
+ }
+}

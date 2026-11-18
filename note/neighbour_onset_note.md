@@ -133,7 +133,7 @@ Figure 1. (a) First time each history self-heats at 0.15 K/min, 30 s release, 33
 3. So the conduction result does not rest on the fitted triggers, and the spread and the overlap of the delivered fraction survive a measured ejected energy; part of the larger spreads was the ejected energy's scaling with the fitted trigger.
 4. Scorecard: P1 to P4 held, P1, P3 and P4 fixed by Stages 6 and 9's records before the runs, as the predictions recorded. Through Stage 12: 74 predictions, 36 failed.
 
-## Stage 13 (v1.9, branch stage13)
+## Stage 13 (v1.9)
 
 1. Reduced models of the two thresholds, built from the model's own inputs and rate law and registered before any run (predictions fe10115): a closed form for a skin under the can (A1), a cross-section conduction model (A2), the ignition temperature (B1) and a two-body model with the cathode reaction's heat budget (B2).
 2. The local threshold is conduction into a skin: from 5 to 120 s (Fourier number 0.025 to 0.60) every new resolved threshold lies within 3 % of A2, and with the reaction off the hot spot still reaches 255.7 C or falls short by at most 1.1 K; at 360 s the crossing is the reaction's runaway, on the cell's axis, 10.5 % below A2.
@@ -141,6 +141,13 @@ Figure 1. (a) First time each history self-heats at 0.15 K/min, 30 s release, 33
 4. The ratio of the two thresholds falls with the Fourier number, 2.90 at 0.11, 1.16 at 0.60 and 0.94 at 1.80, and the reduced models trace the same curve, 1.2 to 7.0 % below the runs.
 5. The whole-cell threshold is a difference near its zero: the needed delivery falls by 393 to 456 J per kJ of the trigger's body energy, one archived bracket spans 3.3 to 4.8 kJ of it, and the 73-fold spread of f\*(C2) measures how near zero the smallest threshold falls.
 6. Scorecard: P1, P2, P4, P6, P7, P8 and P9 held; P3 (at 120 s the resolved threshold lies 1.5 % below the conduction model's, not 5 %), P5 (the whole surface needs 1.68 times the facing half's energy, as A2 stated) and P10 (the slopes above 300 J per kJ, as B2 stated) failed. Through Stage 13: 84 predictions, 39 failed.
+
+## Stage 14 (v1.10)
+
+1. Path by path, from published inputs alone (predictions 4dcc174; bounds as corrected after the independent read, D162), the energy each path can deliver to the neighbour's facing half within 21.39 s is at most 27.9 kJ by radiation from the vent's flame, 195.5 kJ by gas beside the neighbour, 225.8 kJ (all the ejecta can release in an open rig) by a breach's jet facing it or by solids and melt, and 65.5 kJ by the neighbour's own discharge in parallel; the holder's conduction is not determinable, and every lower bound is 0.
+2. Every need the tests read lies inside more than one path's bound. Radiation is bounded by geometry only once the flame is placed (held on the vent's axis, at most about 0.85 kJ), and no source places it.
+3. So the delivered fraction is bounded only by the ejected energy itself; what would bound it is a measurement (the flame's position, the gas beside the line of contact, where breaches face), not a further source.
+4. Scorecard: P3 to P6 held and P1 and P2 failed, all six as the design fixed them before the bounds; P5 rests on the wording of the rule for what is determinable.
 
 ## What it means for the thesis
 

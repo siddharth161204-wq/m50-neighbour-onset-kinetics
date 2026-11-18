@@ -778,7 +778,7 @@ Results (`results/stage12_capped.csv`, `results/stage12_fixed_ejecta.csv`, `resu
 
 P1, P3 and P4 were fixed by Stages 6 and 9's records before the runs, and P2 nearly so, as `predictions_stage12.md` records; they are counted as committed predictions all the same. Through Stage 12 the study has committed 74 predictions, of which 38 held and 36 failed.
 
-## Stage 13 (version 1.9.0, branch stage13): the mechanism of each threshold
+## Stage 13 (version 1.9.0): the mechanism of each threshold
 
 Stages 8 to 12 read two thresholds from the resolved and the lumped neighbour: f\*(C1), the fraction of a test's ejected energy at which the resolved neighbour's hottest node reaches 255.7 C, and f\*(C2), the fraction at which the lumped neighbour does. Stage 13 (brief of 16 November) asks whether each has a simple mechanism: the local threshold conduction into a thin skin, the whole-cell one an energy balance to an ignition temperature. It builds four reduced models from the archive's own inputs and rate law, with no parameter fitted, states their numbers before any new run, and scores ten predictions against 46 new resolved runs and 343 new lumped runs. Nothing of Stages 1 to 12 is edited, nothing under `manuscript/` is opened, and the stage is on the branch `stage13`, not merged, tagged or released.
 
@@ -820,6 +820,54 @@ Results (`results/stage13_skin.csv`, `stage13_tign.csv`, `stage13_twobody.csv`, 
 | P10 | The needed delivery falls by 150 to 300 J per kJ of body energy (PP_Exp3, ST_Exp2, PT_Exp3) | Failed | 456, 435 and 393 J per kJ |
 
 Through Stage 13 the study has committed 84 predictions, of which 45 held and 39 failed. The checks V1 to V6 all hold, V5 with a narrower scope than registered (D143), and the Stage 13 counts for `manuscript/data/predictions_by_stage.csv` are left to the main chat (D144).
+
+## Stage 14 (version 1.10.0): what a venting cell can deliver to its neighbour, path by path
+
+Stages 8 to 12 read from the tests how much energy the neighbour's facing half had to receive (0.26 to 5.96 kJ at the seven matched times and 4.66 to 12.11 kJ at the two thresholds, within the model's 21.39 s) but not by what path it came. Stage 14 (brief of 16 November) asks what physics allows: for each path by which the trigger's ejecta or its circuit can heat the facing half, a lower and an upper bound on the energy delivered and on the time over which it arrives, from published inputs alone. Every input is read at a source, with its page and conditions, and labelled whose it is; a value measured on another cell widens a range and sets no value for this one (DECISIONS.md D150 to D162).
+
+How it was done, in order. The survey's 43 searches were written and pushed before any was run (c8172e2, 2026-11-16 11:13:23 UTC). Part A0 was pushed in 041ce4e: the rig read again, what the calorimeter counts, each test's need, and the survey's record with its values, each read again by a separate agent (71 agreed, 17 were corrected, one is a limit with no source). The design of every bound (D153 to D157), the code, its tests on configurations whose answers are known, and the predictions, `predictions_stage14.md`, commit `4dcc174d1ab09324d503a01ef8ef7996adf49baf`, were first pushed at 2026-11-17 03:42:37 UTC (`provenance/github_activity_stage14.json`), before any bound was computed. The bounds, Parts B and C, the scoring and the checks V2 to V5 followed in 7d23793. An independent read (D162, `results/stage14_independent_read.md`) reproduced every registered number and verdict, and found that four registered bounds fall short of the stage's own rule for an upper bound (a fraction no source gives enters at 1); they are corrected beside the registered ones, which stay in their files (`src/stage14_corrections.py`).
+
+What enters (`results/stage14_inputs.csv`; D150, D152, D153):
+
+| Input | Value | Source, and whose |
+|---|---|---|
+| What the ejecta give a calorimeter | at most 89.34 kJ (median 76.74 kJ) over the ten nail tests; the heat of burning the escaped gas in air is not in it | Battery Failure Databank (this cell); Walker et al., Part 1, p. 7, for the method |
+| Heat of burning in open air | at most 136.5 kJ | Vendra et al. 2022 (another 21700 cell) |
+| What the ejecta can release in this rig, E_avail | 225.8 kJ, the sum | D153 (2) |
+| Flame and gas temperature | at most 1500 C | Chen et al. 2020, citing a module (others) |
+| Vent gas velocity | at most 398.5 m/s | Gillich et al. 2024 (an 18650 cell) |
+| Durations | 0.84 s to about 5 min | Gillich et al. 2024; Chen et al. 2023 (other cells) |
+| Radiant fraction, absorptivity, reflectivity, and the shares of gas that passes, of ejecta through a breach and of solids that land | no source; each at 1 | D153 (1), D162 |
+| The neighbour's stored energy and resistance | 65.52 kJ; 30 +- 6 mOhm at 25 C | Databank; LG datasheet (this cell) |
+| The holder | aluminium frame, 3D-printed inserts touching each cell over about 2 mm; the inserts' material not given | Pfaff et al. 2023 (this rig) |
+
+The bounds after the independent read (`results/stage14_bounds_corrected.csv`, `results/stage14_module_table_corrected.csv`, `results/stage14_figure.png`; every lower bound is 0):
+
+| Path | Upper bound within 21.39 s | In total | What sets it |
+|---|---|---|---|
+| A1 radiation from the jet or flame of a cap-end vent | 27,856 J (registered: 8,979 J, direct radiation from one end) | 225,838 J (registered: 56,459 J) | a black body at 1500 C filling the facing half's whole view, since the holder may reflect; and E_avail |
+| A2 gas, burning or not, beside the neighbour | 195,516 J (registered: 101,779 J) | 225,838 J | convection at 398.5 m/s by Churchill and Bernstein's relation with hydrogen's properties, at most twice its whole-cylinder mean on one half, and radiation at 1500 C; and E_avail |
+| A3 a breach's jet facing the neighbour | 225,838 J | 225,838 J | E_avail; a narrow jet strikes the facing half from a sixth of the circumference |
+| A4 solids and melt on or against the facing half | 225,838 J | 225,838 J | E_avail; melt falls onto the facing half from half of the circumference |
+| A5 conduction through the holder | not determinable | not determinable | the inserts' material and contact have no source (247.3 kJ if bounded as A3 and A4 are) |
+| A6 the neighbour's own discharge (parallel tests) | 65,520 J | 65,520 J | the rated stored energy (15,639 J within 21.39 s if the resistance stayed at its 25 C value) |
+
+What Stage 14 shows.
+- Every need the tests read is physically possible by more than one path. Within 21.39 s, gas beside the neighbour, a breach's jet and solids and melt each reach all twelve needs that are not zero; radiation reaches ten and misses only the two exploratory peaks (32.7 and 75.8 kJ); the neighbour's own discharge reaches five of the six parallel needs.
+- Radiation is bounded by geometry only once the flame is placed: held on the vent's axis, a flame sends at most about 0.37 % of its radiation onto the facing half, about 0.85 kJ of all the ejecta can release (below P1's line of 1.53 kJ); anywhere in front of the trigger's end or beyond its end plane, up to a quarter; with the holder reflecting, the geometry stops mattering at all. No source places the flame or gives the holder's reflectivity.
+- The other bounds are the ejected energy itself, because no source gives the share of vent gas that passes a neighbour, the share of the ejecta a breach carries, or the mass of melt that stays on it; and the holder's conduction is bounded by nothing but energy conservation. The failure categories do not single out the tests that need the most.
+- So, from published inputs alone, the delivered fraction is bounded only by the ejected energy. What would bound it is a measurement, named for each path in D153 (10): the flame's position and temperature beside the cells, the gas's temperature and velocity in the wedges beside the line of contact, where breaches face and what they carry, the debris left on the neighbour, the holder's inserts and surfaces, and the current between parallel cells.
+
+| Prediction (Stage 14) | Statement (short form) | Result | Measured |
+|---|---|---|---|
+| P1 | The radiation bound is below 2 % of 76.74 kJ | Failed | 225,838 J after the read (registered 56,459 J) against 1,535 J; a flame held on the vent's axis, about 849 J |
+| P2 | The determinable cap-end bounds (A1, A2, A5) sum to less than 5.96 kJ | Failed | 223,372 J within 21.39 s after the read (registered 110,758 J); A5 not determinable |
+| P3 | They sum to more than 0.26 kJ | Held | as P2 |
+| P4 | A breach's jet facing the neighbour can exceed 5.96 kJ within 21.39 s | Held | 225,838 J |
+| P5 | At least one path is not determinable | Held | A5, under D153 (3) as written; read as A3 and A4 are, A5 is bounded at 247.3 kJ and P5 fails (D162 (4)) |
+| P6 | The circuit's bound on the neighbour's own heating exceeds 1 kJ | Held | 65,520 J |
+
+Each verdict is the one `predictions_stage14.md` recorded as fixed by its design before any bound was computed, so the two failures were foreseen; the corrections of D162 change none of them, and P5's rests on the wording of the rule that decides what is determinable. The checks: V1, the second reading of every input; V2, every bound recomputed by separate code with its own ray tracing; V3, units and one hand case per path (D161); V4, the ray tracing against a disc, a long cylinder and two touching cylinders; V5, Part B recomputed by separate code; and the independent read. No model run was made and no registered result of Stages 1 to 12 changes.
 
 ## Exploratory, not pre-registered (DECISIONS.md D19 and D20)
 
@@ -913,6 +961,11 @@ The source's own internal-short trigger. The source paper switches its internal 
 | V2, Stage 12: the energy accounts and deliveries of the ten records (acceptance 1e-9) | Largest residual 1.2e-12 of the heat taken in; the seven deliveries equal the pulse's integral to the run's end within 1.4e-16, six whole and one cut at its C1 stop (830.7 of 851.9 J at 19.0 s); every fraction of E_fix times E_fix equals the delivered energy. Pass |
 | V3, Stage 12: Part C, P3, P4, Stage 10's spreads and the thresholds as fractions of E_fix, recomputed from the records by separate code | All agree. Pass |
 | X, Stage 12: Part A's central runs against Stage 6's records at the same energy and release (acceptance 1e-6 K) | Largest difference 9.2e-12 K, the same peak times, nothing crossing. Pass |
+| The Stage 14 ray tracing on configurations with known answers, before the predictions (D157) | `src/test_stage14.py`: a disc from its axis at three heights, a long cylinder from its end plane at three distances, and two touching long cylinders (crossed strings, 0.3634 from the facing half); all seven within four standard errors, run again with the bounds (`results/stage14_v4.txt`). Pass |
+| V1, Stage 14: every recorded input read again at its source by a separate agent, before the predictions (D152 (3)) | 89 rows: 71 agree, 17 corrected and the corrections applied, 1 a limit with no source (`results/stage14_v1_second_reading.md`) |
+| V2, Stage 14: every bound recomputed by separate code from the inputs table alone, with its own ray tracing (D161) | Every registered bound within its allowance; the shares agree within sampling (`results/stage14_v2.json`). Pass |
+| V3 and V5, Stage 14: units and a hand case per path; Part B recomputed by separate code (D161) | The hand cases agree; the 372 verdicts identical (`results/stage14_v5.json`). Pass |
+| An independent read of every registered Stage 14 number and verdict, before the note's and the README's Stage 14 lines were written (D162) | Every registered number and verdict reproduced with the reader's own code (an exact quadrature for the view factors); it found four registered bounds short of the stage's own rule for an upper bound, now corrected beside them, P5 resting on the wording of the rule for what is determinable, and points of wording, all taken up in D162 (`results/stage14_independent_read.md`) |
 | An independent read of every registered Stage 12 number and verdict, before the texts were written (D125) | Every registered number and verdict reproduced from the raw files, with the run list rebuilt to its registered hash. It found a count in the quoted numbers made wrong after the commit (the predictions table's new rows counted as Stage 11's), corrected, and three points of wording or precision, recorded in D125 |
 
 ## Contents
@@ -998,6 +1051,10 @@ The source's own internal-short trigger. The source paper switches its internal 
 - Stage 12 code: `src/stage12_inputs.py` (the cap, the fixed energy, the eight tests and the earlier states, read from their files), `src/stage12_run.py` (the runs, the searches and the workers), `src/stage12_score.py` (Parts A to C and P1 to P4), `src/stage12_checks.py` (V1 to V3 and X), `src/stage12_numbers.py` (every quoted Stage 12 number), `src/test_stage12.py` (the tests).
 - Stage 12 results: `stage12_runs/` (the records), `stage12_series/` (every run's histories), `stage12_logs/`, `stage12_tests.log`, `stage12_capped.csv`, `stage12_fixed_ejecta.csv`, `stage12_scorecard.json`, `stage12_checks.json`, `stage12_paper_numbers.json`.
 - `provenance/github_activity_stage12.json`: the push log through the Stage 12 predictions, retrieved before any Stage 12 run.
+- `predictions_stage14.md`: the Stage 14 predictions, the brief's word for word, with the scoring rules and what the design already fixed, all pushed before any bound was computed.
+- Stage 14 code: `src/stage14_needs.py` (each test's need, from the Stage 8, 9 and 12 results), `src/stage14_inputs.py` and `src/stage14_survey.py` (the inputs table and the survey's record), `src/stage14_view.py` (the ray tracing), `src/test_stage14.py` (its known configurations), `src/stage14_bounds.py` (Part A), `src/stage14_tests.py` (Parts B and C), `src/stage14_score.py` (P1 to P6), `src/stage14_v2.py` and `src/stage14_v5.py` (checks), `src/stage14_corrections.py` (the bounds after the independent read), `src/make_figure_stage14.py`.
+- Stage 14 results: `stage14_survey.md` and `.json`, `stage14_inputs.csv` and `stage14_inputs_sources.csv`, `stage14_v1_second_reading.md` and `.csv`, `stage14_needs.csv`, `stage14_raytrace.json`, `stage14_bounds.csv` and `.json` (registered), `stage14_tests.csv`, `stage14_partb.json`, `stage14_module_table.csv`, `stage14_scorecard.json`, `stage14_v2.json`, `stage14_v4.txt`, `stage14_v5.json`, `stage14_independent_read.md`, `stage14_corrections.json`, `stage14_bounds_corrected.csv`, `stage14_tests_corrected.csv`, `stage14_module_table_corrected.csv` (the one for a sampler), `stage14_figure.png` and `.pdf`.
+- `provenance/github_activity_stage14.json`: the push log through the Stage 14 predictions, retrieved before any Stage 14 bound was computed.
 - The submission folder, `manuscript/submission/` (D126; the journal is named in the files there): the manuscript as one PDF and one LaTeX file, the supplement, the figure files (`figures/`, TIFF at 300 dpi and PDF, by `src/make_submission_figures.py`), the graphical abstract (`src/make_graphical_abstract.py`), the highlights as a Word file, the keywords, a cover letter draft, the suggested reviewers and the checklist against the journal's instructions (`src/make_submission_files.py`). `manuscript/main_for_author.docx` is the Word copy for the author's pass (`src/make_author_docx.py`, with its number comparison against the PDF, `manuscript/main_for_author_numbers.txt`).
 - The manuscript, `manuscript/`: `main.tex` and `main.pdf`, `supplement.tex` and `supplement.pdf`, `figures/` (F1 to F8, by `src/make_manuscript_figures.py`, with Figure 1(b)'s bands from `src/manuscript_kinetics_band.py`, `results/manuscript_kinetics_band.csv`), `tables/` (by `src/make_manuscript_tables.py`), `references.bib` and `references_verified.json` (every reference with the page it was verified on), `highlights.txt`, `titles.md`, `numbers_check.py` and `numbers_check.log` (every number in the text traced to a numbers or results file; the model's constants and the counts in `results/manuscript_numbers.json`, by `src/manuscript_numbers.py`), `word_count.py` and `word_count.txt`, `review_report.md` (a separate reviewer's read), and `data/` (the parameters, the predictions and the comparators' reported numbers the tables and the text are written from).
 
@@ -1109,6 +1166,16 @@ Python 3.11 or newer. `pip install -r requirements.txt`, then `./get_published_s
     python3 stage12_score.py
     python3 stage12_checks.py
     python3 stage12_numbers.py
+    python3 stage14_needs.py
+    python3 stage14_inputs.py
+    python3 test_stage14.py
+    python3 stage14_bounds.py
+    python3 stage14_tests.py
+    python3 stage14_score.py
+    python3 stage14_v2.py
+    python3 stage14_v5.py
+    python3 stage14_corrections.py
+    python3 make_figure_stage14.py
     python3 manuscript_kinetics_band.py
     python3 manuscript_numbers.py
     python3 make_manuscript_figures.py

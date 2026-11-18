@@ -1,0 +1,63 @@
+{
+ "P1": {
+  "holds": false,
+  "A1_total_upper_J": 56459.445,
+  "line_J": 1534.825,
+  "beside": {
+   "A1_within_21s_J": 8979.130075554778,
+   "flame_on_vent_axis_J": 821.03324919,
+   "flame_in_front_of_trigger_end_J": 27489.99085161
+  },
+  "design_fixed_outcome": false,
+  "as_the_design_fixed": true
+ },
+ "P2": {
+  "holds": false,
+  "determinable_cap_end_paths": [
+   "A1",
+   "A2"
+  ],
+  "sum_within_21s_J": 110757.90013879366,
+  "line_J": 5962.4,
+  "beside": {
+   "sum_totals_J": 282297.225
+  },
+  "design_fixed_outcome": false,
+  "as_the_design_fixed": true
+ },
+ "P3": {
+  "holds": true,
+  "sum_within_21s_J": 110757.90013879366,
+  "line_J": 263.5,
+  "beside": {
+   "sum_totals_J": 282297.225
+  },
+  "design_fixed_outcome": true,
+  "as_the_design_fixed": true
+ },
+ "P4": {
+  "holds": true,
+  "A3_facing_within_21s_J": 225837.78,
+  "line_J": 5962.4,
+  "design_fixed_outcome": true,
+  "as_the_design_fixed": true
+ },
+ "P5": {
+  "holds": true,
+  "not_determinable": [
+   "A5"
+  ],
+  "design_fixed_outcome": true,
+  "as_the_design_fixed": true
+ },
+ "P6": {
+  "holds": true,
+  "A6_total_upper_J": 65520.0,
+  "line_J": 1000.0,
+  "beside": {
+   "A6_within_21s_rate_at_25C_J": 15639.40634125
+  },
+  "design_fixed_outcome": true,
+  "as_the_design_fixed": true
+ }
+}
