@@ -90,20 +90,24 @@ def main():
       "the lumped neighbour crosses with no delivery.")
     w("- The far face: the resolved neighbour's surface node at mid-length opposite the line of contact. Its jump's "
       "start: with its rate of rise r(t) = [T(t + 1 s) - T(t - 1 s)] / 2 s on a 0.5 s grid, the first time r reaches "
-      "1 K/s after r has first reached 0.5 K/s and then fallen below it, before C8; where r never falls below "
-      "0.5 K/s before C8, the reading 20 s before C8.")
+      "1 K/s after r has first reached 0.5 K/s and then fallen below it, before C8; where there is no such time "
+      "before C8 (r never falling below 0.5 K/s, the brief's case, or not reaching 1 K/s again, or never reaching "
+      "0.5 K/s), the reading 20 s before C8.")
     w("- M50_PT_Exp4's measured history: the neighbour's thermocouple in the supplement's Figure 10 of Fransson et "
       "al. (2024), read every 0.5 s; it reads 197.3 C at 271.5 s, the onset the figure marks, and then jumps. "
-      "Stage 10's rule scores a run against it at the far face over 0 to 271.5 s (the root mean square of the "
-      "difference, the difference at 271.5 s, the rise over the last 60 s).")
+      "The jump rule above, applied to the record itself (which starts at 24.16 s), finds its jump starting at 267.5 s at 186.5 C "
+      "(DECISIONS.md D171 (2)); P5's reference is the brief's, 197.3 C. Stage 10's rule scores a run against the "
+      "record at the far face over 0 to 271.5 s (the root mean square of the difference, the difference at 271.5 s, "
+      "the rise over the last 60 s).")
     w("")
     w("## The reduced model (Part A)")
     w("")
     w("The reactive cross-section is Stage 13's conduction model of the mid-height cross-section (conduction in r "
       "and theta, the can, the contact and air wedge, convection, radiation, the delivery over the facing half) "
       "with the archive's kinetics in every cell of the roll and their heat fed back, the reaction step the "
-      "three-dimensional model's own. It has neither the ends nor the tabs. With the reaction off it equals "
-      "Stage 13's model to 7.4e-13 K (V3).")
+      "three-dimensional model's own (base steps of 0.01 s to 30 s and 0.1 s after, halved as often as needed to keep "
+      "the reaction's heating of any cell within 1 K a step). It has neither the ends nor the tabs: it is a cell infinitely long under mid-height's "
+      "conditions. With the reaction off it equals Stage 13's model to 7.4e-13 K (V3).")
     w("")
     w(f"Against the archive's {a1['runs']} central continued runs (explanatory; DECISIONS.md D174) it gives the "
       f"same outcome, C8 or none within the archived run's span, in {a1['same_outcome']} and misses "
@@ -122,7 +126,7 @@ def main():
         c2 = e_c2(t)
         ratio = (r["E_star_J"] / c2["mid_J"]) if (r["E_star_J"] is not None and c2["mid_J"] > 0) else None
         w(f"| {t} | {fmt(r['E_star_J'])} | {fmt(r.get('f_star'), 5) if r.get('f_star') is not None else 'none'} | "
-          f"{fmt(c2['mid_J'])} ({c2['source']}) | {fmt(ratio, 2) if ratio else '-'} |")
+          f"{fmt(c2['mid_J'])} ({c2['source'].replace(' (0)', '')}) | {fmt(ratio, 2) if ratio else '-'} |")
     w("")
     w("E*(C8) with constant power, the nine propagated tests (J):")
     w("")
@@ -134,11 +138,14 @@ def main():
     w("")
     ft = {(r["test"], r["shape"], r["tau_s"]): r for r in xs.get("A2_at_measured", [])}
     w("The delivered energy at which the cross-section's C8 falls at the measured time t_m, by Stage 9's rule for "
-      "f_t read on C8 (J): \"matched\", a run whose C8 lies within 10 s of t_m (its C8 time in brackets); "
-      "\"bracketed\", the energy at which C8's time, taken linear between the ends of the final bracket, equals t_m; "
-      "\"threshold\", C8 already comes before t_m at the least energy that gives it (the bracket's upper end is "
-      "given), so no delivered energy puts it at t_m; \"above grid\", C8 does not come before t_m up to "
-      "f8_hi + 0.2 (f8_hi the upper end of the E*(C8) bracket as a fraction of E_e).")
+      "f_t read on C8 (J). The rule reads the grid f8_hi + 0, 0.0125, 0.025, 0.05, 0.1 and 0.2 (fractions of E_e; "
+      "f8_lo and f8_hi the ends of the E*(C8) bracket) in order up to its first point whose C8 comes before t_m, "
+      "then bisects between f8_lo and that point until the bracket is at most 0.005 E_e wide or a run's C8 lies "
+      "within 10 s of t_m. \"Matched\": a run whose C8 lies within 10 s of t_m (its C8 time in brackets). "
+      "\"Threshold\": the bisection ended at its width with its lower end, f8_lo, giving no C8, so t_m lies within "
+      "0.005 E_e of the threshold; the cell gives the bracket and the C8 times at f8_hi and at the bracket's upper "
+      "end (where C8 at f8_hi already comes before t_m, no delivered energy reproduces t_m). \"Above grid\": C8 "
+      "does not come before t_m up to f8_hi + 0.2.")
     w("")
     w("| Test | t_m (s) | 21.39 s | 120 s | 240 s | 360 s |")
     w("|---|---|---|---|---|---|")
@@ -153,7 +160,15 @@ def main():
             elif m["status"] == "bracketed":
                 cells.append(f"{fmt(m['E_J'])} (bracketed)")
             elif m["status"] == "threshold":
-                cells.append(f"threshold, {fmt(m['hi_f'] * IN.e_e(t))}")
+                E8 = a2[(t, shape, tau)]
+                t8 = m["points"][0][1]
+                E_hi = m["hi_f"] * IN.e_e(t)
+                if abs(E_hi - E8["hi_J"]) < 1.0:            # the bracket's upper end is f8_hi: C8 there before t_m
+                    cells.append(f"threshold ({fmt(E8['lo_J'])}, {fmt(E_hi)}]: C8 at {t8:.1f} s with {fmt(E_hi)}, "
+                                 f"before t_m")
+                else:
+                    cells.append(f"threshold ({fmt(E8['lo_J'])}, {fmt(E_hi)}]: C8 at {t8:.1f} s with "
+                                 f"{fmt(E8['hi_J'])}, {m['t_hi_s']:.1f} s with {fmt(E_hi)}")
             else:
                 cells.append(m["status"])
         w(f"| {t} | {float(IN.tests()[t]['time_s']):.0f} | " + " | ".join(cells) + " |")

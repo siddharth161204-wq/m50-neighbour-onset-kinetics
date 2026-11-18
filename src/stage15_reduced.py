@@ -456,8 +456,12 @@ def for_predictions(xs):
     b3, b4, b4s, b2 = xs["B3_hold"], xs["B4_cases"], xs["B4_shift"], xs["B2_cases"]
 
     def jr(u):
-        return "no C8" if u["t_C8_s"] is None else (f"C8 at {u['t_C8_s']:.1f} s, the far face's jump starting at "
-                                                    f"{u['far_jump'][1]:.1f} C ({u['far_jump'][2]})")
+        if u["t_C8_s"] is None:
+            return "no C8"
+        if u["far_jump"][2] == "jump":
+            return f"C8 at {u['t_C8_s']:.1f} s, the far face's jump starting at {u['far_jump'][1]:.1f} C"
+        return (f"C8 at {u['t_C8_s']:.1f} s, the far face reading {u['far_jump'][1]:.1f} C twenty seconds before it "
+                f"(no jump before C8)")
     n_within = sum(1 for t in IN.B1_TESTS if b1[t]["E_star_J"] is not None)
     lines = [
         "E*(C8) with the 21.39 s delivery for B1's four tests: " + "; ".join(
