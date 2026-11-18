@@ -53,7 +53,8 @@ def history_score(rec):
     z = np.load(os.path.join(IN.SERIES, rec["id"] + ".npz"))
     tp, Tp = z["probe_t"], z["probe_away"] - IN.K0
     tm, Tm = IN.measured_history()
-    t1 = min(IN.T_PROP_FIG_S, float(tp[-1]))
+    t8 = rec["resolved"]["t_C8_s"]                 # the window ends at C8, not at the end of C8's step (D181)
+    t1 = min(IN.T_PROP_FIG_S, float(t8) if t8 is not None else float(tp[-1]))
     m = S10.metrics(tm, Tm, tp, Tp, 0.0, t1)
     m["window_s"] = [0.0, t1]
     return m

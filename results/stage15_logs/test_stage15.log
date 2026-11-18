@@ -1,0 +1,8 @@
+2026-11-18T08:07:02Z
+ok the shift evaluates the rate laws at T + shift and returns the node's own temperature; the hold's energy
+ok run_lumped15 is stage9_model.run_lumped bitwise; a positive shift speeds the reaction
+ok run_resolved15 with its additions off is stage9_model.run_resolved, bitwise (fresh with a source; aged)
+ok the stop at the mean comes at the first step the mean reaches the level; the accounts close on the record
+ok V3: the reactive cross-section with the reaction off is Stage 13's model (largest difference 7.4e-13 K)
+ok Part B's chains end where their rules say on a made-up model (B1's four brackets, B3's 15 W, B4's 12.5 K, V4), and a run that failed twice stops its chain
+6 passed
