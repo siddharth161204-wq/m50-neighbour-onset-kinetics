@@ -142,6 +142,15 @@ Figure 1. (a) First time each history self-heats at 0.15 K/min, 30 s release, 33
 5. The whole-cell threshold is a difference near its zero: the needed delivery falls by 393 to 456 J per kJ of the trigger's body energy, one archived bracket spans 3.3 to 4.8 kJ of it, and the 73-fold spread of f\*(C2) measures how near zero the smallest threshold falls.
 6. Scorecard: P1, P2, P4, P6, P7, P8 and P9 held; P3 (at 120 s the resolved threshold lies 1.5 % below the conduction model's, not 5 %), P5 (the whole surface needs 1.68 times the facing half's energy, as A2 stated) and P10 (the slopes above 300 J per kJ, as B2 stated) failed. Through Stage 13: 84 predictions, 39 failed.
 
+## Stage 15 (branch stage15, not released)
+
+1. The resolved neighbour's own runaway, C8: its heat-capacity-weighted mean temperature reaching 255.7 C within 900 s (predictions 3f5e3b6; 27 three-dimensional runs, after a reactive cross-section that reproduced the outcome of all 151 archived continued runs).
+2. With the 21.39 s pulse the resolved cell needs 7.06 kJ in M50_PT_Exp4 and 6.85 kJ in M50_PP_Exp2 to run away, 1.49 and 1.72 times the lumped cell's threshold, and 3.88 kJ in M50_SP_Exp3, whose lumped cell runs away with no delivery; only M50_ST_Exp3's weak trigger reverses this (10.28 against 12.03 kJ).
+3. In M50_PT_Exp4's crossing run (7.42 kJ) the mean crosses at 181.9 s and the far face's jump begins at 234.1 C, 36.8 K above the 197.3 C from which the measured neighbour jumped; a 5.0 kJ pulse followed by a hold of 10 to 12.5 W brings the runaway to the measured 271.5 s.
+4. At 5.0 kJ no kinetic draw and no aged SEI makes the resolved cell run away, and the rate laws need a 20 K shift; the 240 s run at 6.2 kJ peaks at 241.4 C and falls, while the lumped cell runs away at 177.4 s.
+5. So the whole-cell clock's agreement with the measured times belongs to the lumped cell, and the reactive cross-section, not the lumped cell, stands for the resolved cell's own runaway: three of the four new thresholds within 5 % of it, the fourth within 10 %.
+6. Scorecard: P1 to P7 held; P8 (the 240 s run at 6.2 kJ runs away) failed, as the cross-section had stated. Through Stage 15, with Stage 14's six on its own branch: 98 predictions, 42 failed.
+
 ## What it means for the thesis
 
 Under DSC-trained kinetics a neighbour heated through copper busbars at 33.2 kJ starts to react where the busbar enters, before a lumped model in all 200 draws of the kinetic posterior (by 15 to 59 s in 95 % of them at the 30 s release); the uncertain kinetics, not the roll's published properties, set when. Next: an aged SEI in a resolved, two-way coupled cell with the cap and tabs.

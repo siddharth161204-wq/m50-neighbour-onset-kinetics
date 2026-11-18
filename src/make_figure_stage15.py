@@ -76,6 +76,9 @@ def main():
     axs[0].set_ylabel("resolved neighbour's mean temperature (C)")
     axs[1].set_ylabel("far face (C)")
     axs[0].text(590, IN.T_LEVEL_C + 4, "255.7 C", ha="right", va="bottom", fontsize=7, color=MUTED)
+    axs[0].text(IN.T_PROP_FIG_S + 6, 30, "271.5 s", ha="left", va="bottom", fontsize=7, color=MUTED)
+    axs[1].text(IN.T_PROP_FIG_S + 6, 30, "271.5 s: the measured\nneighbour's jump", ha="left", va="bottom",
+                fontsize=7, color=MUTED)
     axs[0].set_title("(a) the mean: C8 where it reaches 255.7 C", fontsize=8, loc="left", color=INK)
     axs[1].set_title("(b) the far face, with the measured history", fontsize=8, loc="left", color=INK)
     axs[1].legend(loc="upper right", fontsize=6.5, frameon=False)
