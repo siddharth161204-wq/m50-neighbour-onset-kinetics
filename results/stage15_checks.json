@@ -1,0 +1,63 @@
+{
+ "V2": {
+  "runs": 27,
+  "worst_resolved": 1.607718451231268e-12,
+  "worst_lumped": 1.9652916191491235e-12,
+  "worst_delivery": 0.0,
+  "failures": [],
+  "passed": true
+ },
+ "V4": {
+  "s15_B1_PT_Exp4_s-1_r1.5": {
+   "C8_base": false,
+   "C8": false,
+   "t_base_s": null,
+   "t_s": null,
+   "rel_change": null,
+   "mean_peak_base_C": 215.29612500970075,
+   "mean_peak_C": 214.69180710998535,
+   "passed": true
+  },
+  "s15_B1_PT_Exp4_s-1_dt0.5": {
+   "C8_base": false,
+   "C8": false,
+   "t_base_s": null,
+   "t_s": null,
+   "rel_change": null,
+   "mean_peak_base_C": 215.29612500970075,
+   "mean_peak_C": 215.31932786109218,
+   "passed": true
+  },
+  "s15_B1_PT_Exp4_s+1_r1.5": {
+   "C8_base": true,
+   "C8": true,
+   "t_base_s": 181.9231329963694,
+   "t_s": 184.62281643372881,
+   "rel_change": 0.01483969296754197,
+   "mean_peak_base_C": 255.7588412035551,
+   "mean_peak_C": 255.75719577415282,
+   "passed": true
+  },
+  "s15_B1_PT_Exp4_s+1_dt0.5": {
+   "C8_base": true,
+   "C8": true,
+   "t_base_s": 181.9231329963694,
+   "t_s": 181.93971534939178,
+   "rel_change": 9.115032678508796e-05,
+   "mean_peak_base_C": 255.7588412035551,
+   "mean_peak_C": 255.69190083717308,
+   "passed": true
+  },
+  "passed": true
+ },
+ "V1": {
+  "runs": 199,
+  "worst_crossing_s": 0.0,
+  "worst_peak_K": 0.0,
+  "failures": [],
+  "passed": true,
+  "acceptance": "0.1 s and 0.01 K",
+  "series_peak_against_record_peak_K_max": 0.010245433801173931,
+  "note": "the record's peak_mean_C is taken at every step, the series every 0.1 s; for the record only"
+ }
+}
