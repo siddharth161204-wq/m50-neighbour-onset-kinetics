@@ -82,7 +82,7 @@ The note is `note/neighbour_onset_note.pdf`, three pages from Stage 9 to Stage 1
 17. Stage 13, the mechanism of each threshold (brief of 16 November; version 1.9.0, D130 to D144), worked on branch stage13.
 18. Stage 14, what a venting cell can deliver to its neighbour, path by path (brief of 16 November; version 1.10.0, D150 to D162), worked on branch stage14 and merged after Stage 13 (D163).
 19. Stage 15, the resolved neighbour's own runaway (brief of 17 November; version 1.11.0, D170 to D182), worked on branch stage15 from Stage 13's head and merged after Stage 14 (D163).
-20. The manuscript was submitted to a journal on 17 November 2026, with a shorter title and a rewritten supplement and no number changed from the 4 November files; the files as submitted are added with the release of version 1.11.0 (D163).
+20. The manuscript was submitted to a journal on 17 November 2026, with a shorter title and a rewritten supplement and no number changed from the 4 November files. The files in `manuscript/submission/` are those of 4 November; the files as submitted will be archived in a later version.
 
 ## Results
 
