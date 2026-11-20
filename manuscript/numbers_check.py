@@ -203,7 +203,11 @@ TABLE_SOURCES = {
     "s1_steps.tex": ["manuscript/rebuild/data/steps.csv", "manuscript/rebuild/data/predictions_registry.csv"],
     "s2_registry.tex": ["manuscript/rebuild/data/predictions_registry.csv"],
     "s3_thresholds.tex": ["results/stage14_needs.csv", "results/stage15_cross_section.json",
-                          "results/stage15_table.csv", "results/stage15_paper_numbers.json"],
+                          "results/stage15_table.csv", "results/stage15_paper_numbers.json", "results/stage13_skin.csv",
+                          "results/stage13_twobody.csv"],
+    "s7_needs.tex": ["results/stage15_table.csv", "results/stage14_needs.csv"],
+    "s9_heldout.tex": ["results/stage10_heldout.json"],
+    "s10_twobody.tex": ["results/stage13_twobody.csv"],
 }
 MONTHS = r"(January|February|March|April|May|June|July|August|September|October|November|December)"
 
@@ -304,7 +308,7 @@ def rb_unit(v, unit):
         return v - 273.15
     if unit == "sci":
         return v
-    if unit == "g":
+    if unit in ("g", "milli"):                    # kg to g; ohm to milliohm
         return 1000.0 * v
     raise ValueError(f"unknown unit change {unit}")
 
@@ -380,6 +384,37 @@ def check_t1(tex, lines):
     return n_ok, bad
 
 
+def check_cells(tex, spec_path, lines):
+    """A table whose cells are conversions of file values (Table S8: fractions of a test's ejected energy E_e, in kJ):
+    each cell's source, as the table's writer recorded it (file, row, column, whether it is times E_e, scale and
+    decimals), is read again here from the file itself, converted and rounded, and must equal the printed cell; and the
+    printed cells must appear in the table in that order."""
+    spec = json.load(open(spec_path))
+    ee = {r["test"]: float(r["E_e_J"]) for r in csv.DictReader(open(os.path.join(RES, "stage14_needs.csv")))}
+    body = tex[tex.index(r"\midrule"):tex.index(r"\bottomrule")]
+    pos, n_ok, bad = 0, 0, []
+    for c in spec:
+        rows = [r for r in csv.DictReader(open(os.path.join(ROOT, c["file"])))
+                if all(r.get(k) == v for k, v in c["where"].items())]
+        if len(rows) != 1:
+            bad.append((c["text"], str(c["where"]), f"{len(rows)} rows match {c['where']} in {c['file']}"))
+            continue
+        v = float(rows[0][c["col"]]) * (ee[c["where"]["test"]] if c["times_E_e"] else 1.0) * c["scale"]
+        want = f"{v:.{c['dec']}f}"
+        k = body.find(c["text"], pos)
+        if want != c["text"]:
+            bad.append((c["text"], str(c["where"]), f"MISMATCH: source gives {want}"))
+            lines.append(f"   MISMATCH {c['text']} <- {c['file']} {c['where']} {c['col']}: {want}")
+        elif k < 0:
+            bad.append((c["text"], str(c["where"]), "cell not found in the table in order"))
+        else:
+            pos = k + len(c["text"])
+            n_ok += 1
+            lines.append(f"   cell {c['text']} <- {c['file']} {c['where']} {c['col']}"
+                         + (" x E_e" if c["times_E_e"] else "") + f" x {c['scale']:g}")
+    return n_ok, bad
+
+
 def rebuild(a):
     import sys
     rb = os.path.join(HERE, "rebuild")
@@ -433,6 +468,14 @@ def rebuild(a):
             counts["table"] += n_ok
             fails += [(name, raw, ctx, why) for raw, ctx, why in bad]
             continue
+        if mode == "table:s8_reduced.tex":
+            lines.append(f"== {name}  [each cell against the file value it is converted from]")
+            n_ok, bad = check_cells(raw_text, os.path.join(rb, "tables", "s8_reduced.cells.json"), lines)
+            counts["table"] += n_ok
+            fails += [(name, raw, ctx, why) for raw, ctx, why in bad]
+            # the caption's and the headers' numbers are checked as the other tables' are
+            raw_text = raw_text[:raw_text.index(r"\midrule")]
+            mode = "table:s8_reduced.tex"
         text = rb_strip(raw_text) if (name.endswith(".tex") or ".tex:" in name) else raw_text
         starts = [0] + [m.end() for m in re.finditer(r"(?<=[.?!])\s+(?=[A-Z(\\])|\n\s*\n", text)]
         lines.append(f"== {name}  [{mode}]")
@@ -492,9 +535,31 @@ def rebuild(a):
                     continue
             fails.append((name, raw, ctx, "NO ENTRY" if mode == "map" else "NOT FOUND"))
             lines.append(f"   {'NO ENTRY' if mode == 'map' else 'NOT FOUND'} {raw}  ...{ctx}...")
+    # counts written in words: each phrase must be in the main text and its count must equal the files' count
+    body_text = re.sub(r"\s+", " ", rb_strip(open(os.path.join(rb, "main.tex")).read()).replace("~", " "))
+    lines.append("== counts written in words (main.tex)")
+    n_words = 0
+    for phrase, want, sel in getattr(NS, "WORDS", []):
+        if not re.search(phrase, body_text):
+            fails.append(("main.tex", phrase, "", "WORDED COUNT: phrase not in the text"))
+            lines.append(f"   MISSING PHRASE {phrase}")
+            continue
+        try:
+            got = sel()[0]
+        except Exception as exc:
+            fails.append(("main.tex", phrase, "", f"WORDED COUNT: ERROR {exc}"))
+            continue
+        if abs(got - want) < 1e-9:
+            n_words += 1
+            lines.append(f"   words ok '{phrase}' = {want} <- {sel.where}")
+        else:
+            fails.append(("main.tex", phrase, "", f"WORDED COUNT: text {want}, files {got}"))
+            lines.append(f"   WORDED COUNT MISMATCH '{phrase}': text {want}, files {got}")
+    counts["words"] = n_words
     head = [f"numbers_check --rebuild{' --supplement' if a.supplement else ''}: {counts['traced']} traced to a named "
             f"value, {counts['table']} found in their table's source files, {counts['broad']} broad matches "
-            f"(supplement only), {len(fails)} failures, {counts['structural']} structural (not looked for)", ""]
+            f"(supplement only), {counts['words']} counts written in words checked, {len(fails)} failures, "
+            f"{counts['structural']} structural (not looked for)", ""]
     if fails:
         head.append("FAILURES:")
         head += [f"  {f}: {raw}  [{why}]  ...{ctx}..." for f, raw, ctx, why in fails]

@@ -18,6 +18,7 @@ import json
 import math
 import os
 import re
+import sys
 
 import numpy as np
 import matplotlib
@@ -27,6 +28,8 @@ from matplotlib.patches import Circle, Wedge, FancyArrowPatch, Rectangle
 from matplotlib.lines import Line2D
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import rebuild_brackets as RB                     # noqa: E402
 ROOT = os.path.join(HERE, "..")
 RES = os.path.join(ROOT, "results")
 OUT = os.path.join(ROOT, "manuscript", "rebuild", "figures")
@@ -201,10 +204,8 @@ def fig2():
     fig, ax = plt.subplots(figsize=(7.2, 3.3), constrained_layout=True)
     x = np.arange(len(order))
     for i, t in enumerate(order):
-        lo1, hi1 = float(nd[t]["threshold_C1_lo_J"]) / 1e3, float(nd[t]["threshold_C1_hi_J"]) / 1e3
-        lo2, hi2 = float(nd[t]["threshold_C2_lo_J"]) / 1e3, float(nd[t]["threshold_C2_hi_J"]) / 1e3
-        if "threshold" in nd[t]["reading_21s"]:            # the measured-time search narrowed the lumped bracket
-            lo2, hi2 = float(nd[t]["need_21s_lo_J"]) / 1e3, float(nd[t]["need_21s_hi_J"]) / 1e3
+        (lo1, hi1), (lo2, hi2) = RB.brackets(nd[t])       # the narrowest bracket the archive holds (as Table S3)
+        lo1, hi1, lo2, hi2 = lo1 / 1e3, hi1 / 1e3, lo2 / 1e3, hi2 / 1e3
         ax.plot([i - 0.22, i - 0.22], [lo1, hi1], color=C_LOCAL, lw=2.2, solid_capstyle="butt")
         ax.plot(i - 0.22, hi1, marker="v", ms=4.6, color=C_LOCAL, ls="none")
         ax.plot([i, i], [lo2, hi2], color=C_LUMP, lw=2.2, solid_capstyle="butt")
@@ -443,7 +444,10 @@ def fig5():
     axs[1].set_ylabel("Resolved neighbour's mean temperature (°C)")
     axs[1].set_title("Mean temperature of the resolved neighbour", loc="left", fontsize=7.5)
     grid(axs[1])
-    h, l = axs[0].get_legend_handles_labels()
+    ha, la = axs[0].get_legend_handles_labels()                     # panel a: the measured record only
+    axs[0].legend([ha[la.index("measured (Fransson et al.)")]], ["measured (Fransson et al.)"], loc="lower right",
+                  fontsize=6.0)
+    h, l = axs[1].get_legend_handles_labels()                       # panel b: the five model runs, its own lines
     axs[1].legend(h, l, loc="lower right", fontsize=6.0)
     panel(axs[1], "b")
     save(fig, 5)

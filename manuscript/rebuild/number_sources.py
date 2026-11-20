@@ -375,7 +375,7 @@ E = [
     (r"225\.8", ["225.8"], J("results/stage14_corrections.json", "E_avail_J"), "kJ"),
     (r"27\.9~kJ|jet or flame & 27\.9", ["27.9"], C(BOUNDS, "upper_J", path="A1", window_s="21.39"), "kJ"),
     (r"1500", ["1500"], C(INP14, "value", key="T_flame_max"), None),
-    (r"0\.37\\,\\%", ["0.37"], J("results/stage14_corrections.json", "scans.axis_max_w"), "pct"),
+    (r"about 0\.38\\,\\%", ["0.38"], MD("results/stage14_independent_read.md", r"gives (0\.003759) \+- 0\.000022 at 0\.85 R"), "pct"),
     (r"0\.85~kJ", ["0.85"], MD("results/stage14_independent_read.md", r"at most about (\d+) J \(1\.11 %\)"), "kJ"),
     (r"195\.5", ["195.5"], C(BOUNDS, "upper_J", path="A2", window_s="21.39"), "kJ"),
     (r"65\.5~kJ|parallel tests\) & 65\.5 & 65\.5", ["65.5"], C(BOUNDS, "upper_J", path="A6", window_s="21.39"), "kJ"),
@@ -383,7 +383,7 @@ E = [
     (r"32\.7 and 75\.8", ["75.8"], C(NEEDS, "need_21s_lo_J", test="M50_PT_Exp2"), "kJ"),
     (r"5\.3 to 25\.4", ["5.3", "25.4"], lo_hi(f"{TAB15}: C8_xs_share_of_76.74kJ", lambda: [r["C8_xs_share_of_76.74kJ"] for r in _csv(TAB15)]), "pct"),
     # ---------------------------------------------------------------- the reactive cross-section
-    (r"151", ["151"], J(XS, "A1_summary.runs"), None),
+    (r"(all|the|Against the) 151\b|151 (runs|three-dimensional|central)", ["151"], J(XS, "A1_summary.runs"), None),
     (r"In the 92 runs", ["92"], J(XS, "A1_summary.dt_C8_s.n"), None),
     (r"1\.0~s later", ["1.0"], J(XS, "A1_summary.dt_C8_s.mean"), None),
     (r"\(5\.5~s earlier", ["5.5"], J(XS, "A1_summary.dt_C8_s.min"), "abs"),
@@ -417,8 +417,8 @@ E = [
     (r"5\.0~kJ over 21\.4~s", ["5.0"], J(READ, "1.PT_Exp4.E_J"), "kJ"),
     (r"carried to 332", ["332"], J(READ, "1.PT_Exp4.t_end_s"), None),
     (r"[Aa]bout 7~kJ", ["7"], J(S15, B1 + "PT_Exp4.bracket.mid_J"), "kJ"),
-    (r"1\.5 and 1\.7 times", ["1.5"], J(S15, B1 + "PT_Exp4.ratio_to_C2"), None),
-    (r"1\.5 and 1\.7 times", ["1.7"], J(S15, B1 + "PP_Exp2.ratio_to_C2"), None),
+    (r"1\.5 (and|to) 1\.7 times", ["1.5"], J(S15, B1 + "PT_Exp4.ratio_to_C2"), None),
+    (r"1\.5 (and|to) 1\.7 times", ["1.7"], J(S15, B1 + "PP_Exp2.ratio_to_C2"), None),
     # ---------------------------------------------------------------- Table 2, the parameters (read from the code)
     (r"21\.1 and 70\.1", ["21.1"], J(CONST, "constants.cell_diameter_mm"), None),
     (r"21\.1 and 70\.1", ["70.1"], J(CONST, "constants.cell_length_mm"), None),
@@ -459,4 +459,127 @@ E = [
     (r"247\.3~kJ", ["247.3"], J("results/stage14_corrections.json", "E_global_J"), "kJ"),
     (r"15\.6~kJ within", ["15.6"], J("results/stage14_bounds.json", ["A6", "conditional_25C_J", "21.39"]), "kJ"),
     (r"at its 25\\textdegree C value|at its 25", ["25"], MD(INP14, r"0\.5 C for 30 s, (25) C"), None),
+    # ---------------------------------------------------------------- added with the independent read's fixes (20 November)
+    (r"\(17\.53 and 25\.24", ["17.53"], J("results/stage7_paper_numbers.json", "triggers.levels.tau_s[0]"), None),
+    (r"\(17\.53 and 25\.24", ["25.24"], J("results/stage7_paper_numbers.json", "triggers.levels.tau_s[2]"), None),
+    (r"rise from 25 ?°C, taken as its start", ["25"], MD(PARAMS, r"the (25) C start of Section I is this study's choice"), None),
+    (r"9\.0 and 16\.6", ["16.6"], C(TRIG, "E_J", kind="test", test="M50_ST_Exp3"), "kJ"),
+    (r"2,000 or 3,700", ["2,000"], J(CONST, "constants.h_contact_W_m2K.central"), None),
+    (r"2,000 or 3,700", ["3,700"], J(CONST, "constants.h_contact_W_m2K.high"), None),
+    (r"and 200 W m\^\{-2\} ?K\^\{-1\} for the low", ["200"], J(CONST, "constants.h_contact_W_m2K.low"), None),
+    (r"(pulses of|triangular over) 5 to 360", ["5", "360"], C(SKIN, "tau_d_s", test="M50_PT_Exp1", region="half"), None),
+    (r"PT-Exp1 at 5, 40 and 120", ["5", "40", "120"], C(SKIN, "tau_d_s", test="M50_PT_Exp1", region="half"), None),
+    (r"(Up to|To|up to|pulses of|brackets up to) 120 ?s", ["120"], C(SKIN, "tau_d_s", test="M50_PT_Exp1", region="half"), None),
+    (r"over a can at 25|the model's 25", ["25"], J(CONST, "constants.T_amb_C"), None),
+    (r"hydrogen's (properties )?at 1000", ["1000"], MD(INP14, r"Table A\.6, 50 to (1000) K"), None),
+    (r"within 30 ?°", ["30"], J("results/stage14_corrections.json", "A3.narrow_jet_strikes_for_phi_below_deg"), None),
+    (r"10,000 permutations", ["10,000"], J("results/stage10_heldout.json", "n_perm"), None),
+    (r"over 10 or 30 ?s", ["10"], MD(PARAMS, r'Release durations, Stage 5",tau,(10) and 30'), None),
+    (r"over 10 or 30 ?s", ["30"], MD(PARAMS, r'Release durations, Stage 5",tau,10 and (30)'), None),
+    (r"3\.18 to 4\.77", ["3.18"], C(NEEDS, "threshold_C2_lo_J", test="M50_PP_Exp2"), "kJ"),
+    (r"3\.18 to 4\.77", ["4.77"], C(NEEDS, "threshold_C2_hi_J", test="M50_PP_Exp2"), "kJ"),
+    (r"threshold is 10\.28", ["10.28"], J(S15, B1 + "ST_Exp3.bracket.mid_J"), "kJ"),
+    (r"150 to 300 ?J per kJ", ["150"], MD("predictions_stage13.md", r"falls by (150) to 300 J per kJ"), None),
+    (r"150 to 300 ?J per kJ", ["300"], MD("predictions_stage13.md", r"falls by 150 to (300) J per kJ"), None),
+    (r"by 250 ?s the lumped", ["250"], F("results/stage15_accounts.json: the accounts' rows at t_s 250",
+                                         lambda: sorted({r["t_s"] for v in _json("results/stage15_accounts.json")["accounts"].values()
+                                                         for r in v["rows"] if r["t_s"] == 250.0})), None),
+    (r"rank 5, 50, 151 and 196", ["5", "50", "151", "196"], F(f"{CONST}: constants.kin_ranks", lambda: _json(CONST)["constants"]["kin_ranks"]), None),
+    (r"196 of 200", ["200"], J(S13, "scorecard.P7.n_draws"), None),
+    (r"the 0\.26 ?kJ with which SP-Exp3", ["0.26"], C(TAB15, "C2_E_by_t_J", test="M50_SP_Exp3", delivery="21.39 s pulse"), "kJ"),
+    (r"5\.96 ?kJ in PP-Exp2", ["5.96"], C(NEEDS, "need_21s_lo_J", test="M50_PP_Exp2"), "kJ"),
+    (r"about 23( times|-fold)", ["23"], J(S12, "part_c.ratio"), None),
+    (r"time within 10 ?s", ["10"], MD("predictions_stage9.md", r"crossing lies within (10) s of the measured time"), None),
+    (r"starts at 32\.2", ["32.2"], C("inputs/fransson2024/pt_exp4_history.csv", "T_neighbour_C", t_s="0.0"), None),
+    (r"begins at 173 ?s", ["173"], F(f"{S15}: B1.M50_PT_Exp4, the run at the bracket's upper end: far_jump.t_s",
+                                     lambda: [r["far_jump"]["t_s"] for r in _json(S15)["B1"]["M50_PT_Exp4"]["runs"] if r["C8"]]), None),
+    (r"6\.2 ?kJ (at constant power )?over 240", ["6.2"], J(S15, ["B2", "0.05", "E_J"]), "kJ"),
+    (r"6\.2 ?kJ (at constant power )?over 240", ["240"], C(TAB15, "tau_s", test="M50_PT_Exp4"), None),
+    (r"peaking at 241\.4", ["241.4"], J(S15, ["B2", "0.05", "peak_mean_C"]), None),
+    (r"mean at 220\.5", ["220.5"], MD("predictions_stage15.md", r"6,209 J no C8 \(mean peak (220\.5) C\)"), None),
+    (r"carries 4\.1 to 19\.5", ["4.1", "19.5"], lo_hi(f"{TAB15}: C8_xs_E_J, every delivery with which the cross-section runs away",
+                                                      lambda: [r["C8_xs_E_J"] for r in _csv(TAB15)]), "kJ"),
+    (r"in twelve, to 332", ["332"], F(f"{XS}: A1_rows, the earliest end of a run", lambda: [min(r["t_end_s"] for r in _json(XS)["A1_rows"])]), None),
+    (r"shifted by 20 ?K bring", ["20"], J(S15, "B4.shift.least_shift_K"), None),
+    (r"jump at 240\.4", ["240.4"], F(f"{S15}: B4.shift_runs, the run shifted by 20 K: far_jump.T_C",
+                                     lambda: [r["far_jump"]["T_C"] for r in _json(S15)["B4"]["shift_runs"] if r["shift_K"] == 20.0]), None),
+    (r"=1,743", ["1,743"], J("results/stage13_readings.json", "reading_1.e_roll_as_resolved"), None),
+    (r"(can's|its) 4\.5 ?J", ["4.5"], MD(PARAMS, r"9; 500 \((4\.5) J/K\)"), None),
+    (r"heat & 15 W", ["15"], J(CONST, "constants.can_conductivity_W_mK"), None),
+    (r"ambient and start & 10 W", ["10"], J(CONST, "constants.h_conv_W_m2K"), None),
+    (r"\(110\.8 ?kJ\)", ["110.8"], C(INP14, "value", key="db_Etotal_max"), "kJ"),
+    (r"comparison\) & 65\.5 & 65\.5", ["65.5"], C(BOUNDS, "upper_J", path="A6", window_s="21.39"), "kJ"),
+    (r"stored energy, 18\.2 ?Wh", ["18.2"], MD(INP14, r"Cell-Energy-Wh \((18\.2)\)"), None),
+    (r"15\.6 ?kJ at 731", ["15.6"], J("results/stage14_bounds.json", ["A6", "conditional_25C_J", "21.39"]), "kJ"),
+    (r"at 731 ?W", ["731"], J("results/stage14_bounds.json", "A6.rate_25C_W"), None),
+    (r"4\.189 ?V", ["4.189"], J("results/stage14_bounds.json", "inputs.V_oc_V"), None),
+    (r"across 24 ?m", ["24"], J("results/stage14_bounds.json", "inputs.R_dc_min_ohm"), "milli"),
+    (r"Omega\s+at 25", ["25"], MD(INP14, r"0\.5 C for 30 s, (25) C"), None),
+]
+
+
+# ---------------------------------------------------------------- counts written in words in the main text
+def _n_tests(cond):
+    return lambda: [float(sum(1 for r in _csv(TESTS) if cond(r)))]
+
+
+def _n_needs(cond):
+    return lambda: [float(sum(1 for r in _csv(NEEDS) if cond(r)))]
+
+
+def _nz21(r):
+    return bool(r["need_21s_lo_J"]) and float(r["need_21s_lo_J"]) > 0
+
+
+def _need21(r):
+    return float(r["need_21s_hi_J"] or r["need_21s_lo_J"])
+
+
+def _bound(path):
+    return [float(r["upper_J"]) for r in _csv(BOUNDS) if r["path"] == path and r["window_s"] == "21.39"][0]
+
+
+# (phrase as written, the count it states, a selector giving that count from the files)
+WORDS = [
+    (r"Nine propagated", 9, F(f"{TESTS}: tests with propagated Yes", _n_tests(lambda r: r["propagated"] == "Yes"))),
+    (r"thirteen of the sixteen tests", 13, F(f"{TRIG}: tests whose E_J exceeds the calorimetry's 33,222.9 J",
+                                               lambda: [float(sum(1 for x in trig_E() if float(x) > 33222.9))])),
+    (r"the fourteen with strong triggers", 14, F(f"{TRIG}: tests whose E_J exceeds 30 kJ",
+                                                      lambda: [float(sum(1 for x in trig_E() if float(x) > 30000))])),
+    (r"the two with weak triggers", 2, F(f"{TRIG}: tests whose E_J is below 30 kJ",
+                                         lambda: [float(sum(1 for x in trig_E() if float(x) < 30000))])),
+    (r"zero in the eight tests", 8, F(f"{NEEDS}: tests whose local threshold is zero",
+                                      _n_needs(lambda r: r["threshold_C1_hi_J"] and float(r["threshold_C1_hi_J"]) == 0))),
+    (r"in the eight tests with the largest fitted triggers", 8, F(f"{CAP}: tests run with their fitted trigger",
+                                                                  lambda: [float(len({r['test'] for r in _csv(CAP)}))])),
+    (r"zero in two tests", 2, F(f"{NEEDS}: tests whose lumped threshold is zero",
+                                _n_needs(lambda r: r["threshold_C2_hi_J"] and float(r["threshold_C2_hi_J"]) == 0))),
+    (r"in seven propagated tests", 7, F(f"{NEEDS}: propagated tests read at the measured time",
+                                        _n_needs(lambda r: r["propagated"] == "yes" and "matched" in r["reading_21s"]))),
+    (r"Of the five tests that did not propagate and report low maxima", 5, F(f"{TESTS}: tests that did not propagate, below 600 C",
+                                                                              _n_tests(lambda r: r["propagated"] == "No" and float(r["neighbour_max_C"]) < 600))),
+    (r"four need none", 4, F("results/stage9_paper_numbers.json: part_a.A3 tests with an overshoot", lambda: [float(len(overshoot()))])),
+    (r"twenty-five of the thirty-two cases", 25, F(f"{TAB15}: matched cases outside ST_Exp3", lambda: [float(len(matched_rows()))])),
+    (r"of the thirty-two cases outside ST-Exp3", 32, F(f"{TAB15}: cases outside ST_Exp3",
+                                                     lambda: [float(sum(1 for r in _csv(TAB15) if r["test"] != "M50_ST_Exp3"))])),
+    (r"In the other seven, shorter deliveries", 7, F(f"{TAB15}: cases outside ST_Exp3 whose cross-section need is a threshold",
+                                                              lambda: [float(sum(1 for r in _csv(TAB15) if r["test"] != "M50_ST_Exp3"
+                                                                                 and r["C8_xs_status"] == "threshold"))])),
+    (r"or, in twelve, to 332", 12, F(f"{XS}: A1_rows that end at 332 s", lambda: [float(sum(1 for r in _json(XS)["A1_rows"] if r["t_end_s"] < 400))])),
+    (r"rests in ten tests on the reactive cross-section|ten of the high-contact outcomes", 10,
+     F("results/stage15_nodelivery.csv: high-contact rows whose whole-cell outcome comes from the cross-section",
+       lambda: [float(sum(1 for r in _csv("results/stage15_nodelivery.csv") if r["h"] == "high" and r["C8_source"] == "cross-section"))])),
+    (r"the twelve tests not searched in three dimensions|twelve of the sixteen resolved thresholds", 12,
+     F(f"{S15}: the sixteen tests less those searched in three dimensions (B1)", lambda: [16.0 - len(_json(S15)["B1"])])),
+    (r"at least four delivery paths", 4, F(f"{TAB15}: the fewest of the paths A1 to A4 whose bound reaches a need at the measured time",
+                                           lambda: [float(min(len(set(r[k].split()) & {"A1", "A2", "A3", "A4"}) for r in _csv(TAB15)
+                                                              for k in ("C2_stage14_paths", "C8_xs_stage14_paths") if r[k]))])),
+    (r"none of the three quantities", 3, F("results/stage10_heldout.json: predictors", lambda: [float(len(_json("results/stage10_heldout.json")["predictors"]))])),
+    (r"all twelve of the needs with the pulse", 12, F(f"{NEEDS}: non-zero needs over 21.39 s", _n_needs(_nz21))),
+    (r"radiation reaches ten", 10, F(f"{NEEDS} against {BOUNDS} A1: non-zero needs at or below the radiation bound",
+                                     _n_needs(lambda r: _nz21(r) and _need21(r) <= _bound("A1")))),
+    (r"five of the six parallel needs", 5, F(f"{NEEDS} against {BOUNDS} A6: parallel non-zero needs at or below the discharge bound",
+                                             _n_needs(lambda r: r["connection"] == "parallel" and _nz21(r) and _need21(r) <= _bound("A6")))),
+    (r"of the six parallel needs", 6, F(f"{NEEDS}: parallel non-zero needs", _n_needs(lambda r: r["connection"] == "parallel" and _nz21(r)))),
+    (r"in the four tests it searched", 4, F(f"{S15}: B1 tests", lambda: [float(len(_json(S15)["B1"]))])),
 ]

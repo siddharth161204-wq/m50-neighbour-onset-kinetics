@@ -36,7 +36,7 @@ NEW = [
      "likely", "predictions_stage13.md:17"),
     (13, "P6", "For PT_Exp1 at 21.39 s, over the eighth of the facing half nearest the cap the threshold energy per unit area exceeds the facing half's by at least 25 %.",
      "likely", "predictions_stage13.md:19"),
-    (13, "P7", "The ignition temperature of the posterior-mean kinetics lies between 215 and 240 C (known when registered, not counted), and the central 95 % of the 200 draws spans less than 40 K.",
+    (13, "P7", "The ignition temperature of the posterior-mean kinetics lies between 215 and 240 C (known when registered, so not scored), and the central 95 % of the 200 draws spans less than 40 K (scored).",
      "likely for the mean, uncertain for the span", "predictions_stage13.md:21"),
     (13, "P8", "The two-body model's whole-cell threshold lies within the larger of 10 % and 300 J of the lumped model's midpoint in at least 28 of the 32 low and high contact searches.",
      "uncertain", "predictions_stage13.md:23"),
@@ -99,6 +99,27 @@ def tex(s):
             .replace(" C)", "\\degC)").replace(" C.", "\\degC."))
 
 
+def shown(text):
+    """The registry as the supplement shows it: the records' test names and "Stage" written as the paper writes them
+    (M50_PT_Exp1 as PT-Exp1, Stage 7 as step 7), and "the file" named as the predictions file. Nothing else changes."""
+    import re
+    t = re.sub(r"\bM50_(PT|PP|ST|SP)_Exp(\d)", r"\1-Exp\2", text)
+    t = re.sub(r"\b(PT|PP|ST|SP)_Exp(\d)", r"\1-Exp\2", t)
+    t = re.sub(r"\bStages (\d+) (to|and) (\d+)", r"steps \1 \2 \3", t)
+    t = re.sub(r"\bStage (\d+)", r"step \1", t)
+    t = t.replace("the stage's question", "the step's question").replace("this stage's", "this step's")
+    t = t.replace("the file's analysis", "the predictions file's analysis").replace("the file records",
+                                                                                  "the predictions file records")
+    return t
+
+
+def basis_quote(basis):
+    """The quoted words of a foreseen failure's basis, without its file and line references."""
+    import re
+    q = re.findall(r'"([^"]+)"', basis)
+    return " ... ".join("\u201c%s\u201d" % x for x in q) if q else basis
+
+
 def main():
     os.makedirs(OUTD, exist_ok=True)
     os.makedirs(OUTT, exist_ok=True)
@@ -118,11 +139,13 @@ def main():
     for r in old:
         rows.append({"stage": r["stage"], "prediction": r["prediction"], "statement": r["statement"],
                      "expectation": r["expectation"], "verdict": r["verdict"],
-                     "foreseen": r["foreseen"] if r["verdict"] == "failed" else "", "source": r["source"]})
+                     "foreseen": r["foreseen"] if r["verdict"] == "failed" else "",
+                     "foreseen_basis": r["foreseen_basis"] if r["verdict"] == "failed" else "", "source": r["source"]})
     for st, lab, stmt, exp, src in NEW:
         v = verdict(st, lab)
         rows.append({"stage": str(st), "prediction": lab, "statement": stmt, "expectation": exp, "verdict": v,
-                     "foreseen": ("yes" if (st, lab) in FORESEEN else "no") if v == "failed" else "", "source": src})
+                     "foreseen": ("yes" if (st, lab) in FORESEEN else "no") if v == "failed" else "",
+                     "foreseen_basis": "", "source": src})
     with open(os.path.join(OUTD, "predictions_registry.csv"), "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
         w.writeheader()
@@ -141,11 +164,11 @@ def main():
         w.writerows(steps)
 
     tot = {k: sum(s[k] for s in steps) for k in ("committed", "held", "failed", "failed_foreseen")}
-    t1 = [r"\begin{table}[!htbp]", r"\centering", r"\footnotesize",
+    t1 = [r"\begin{table}[!htbp]", r"\centering", r"\scriptsize",
           r"\caption{The study's fifteen steps, each with its own predictions committed to the public repository "
           r"and pushed before its runs (the date is that of the push, UTC), and how many held and failed; a failure "
           r"is foreseen when the predictions file recorded it as expected before the runs.}",
-          r"\label{tab:s-steps}", r"\setlength{\tabcolsep}{3pt}", r"\begin{tabular}{rp{0.37\textwidth}lrrrr}", r"\toprule",
+          r"\label{tab:s-steps}", r"\setlength{\tabcolsep}{3pt}", r"\begin{tabular}{rp{0.44\textwidth}lrrrr}", r"\toprule",
           r"Step & What it asked & Registered & Predictions & Held & Failed & Foreseen \\", r"\midrule"]
     for s in steps:
         t1.append("%d & %s & %s & %d & %d & %d & %d \\\\" % (s["step"], tex(s["question"]), s["registered_utc_date"],
@@ -162,8 +185,11 @@ def main():
           r"\toprule", r"Step & & Prediction & Expectation & Verdict \\", r"\midrule", r"\endhead"]
     for r in rows:
         v = r["verdict"] + (", foreseen" if r["foreseen"] == "yes" else "")
-        t2.append("%s & %s & %s & %s & %s \\\\" % (r["stage"], tex(r["prediction"]), tex(r["statement"]),
-                                                  tex(r["expectation"]), v))
+        exp = r["expectation"]
+        if r["foreseen"] == "yes" and "fail" not in exp.lower():
+            exp = exp.rstrip(".") + "; the predictions file's analysis: " + basis_quote(r["foreseen_basis"])
+        t2.append("%s & %s & %s & %s & %s \\\\" % (r["stage"], tex(r["prediction"]), tex(shown(r["statement"])),
+                                                  tex(shown(exp)), v))
     t2 += [r"\bottomrule", r"\end{longtable}", r"}"]
     open(os.path.join(OUTT, "s2_registry.tex"), "w").write("\n".join(t2) + "\n")
     print("registry: %d predictions, %d held, %d failed, %d of the failures foreseen" %

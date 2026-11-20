@@ -92,8 +92,9 @@ def main():
     ax2.legend(handles=[Patch(color=C_LUMP, label=leg[0]), Patch(color=C_RES, label=leg[1])], fontsize=7.2,
                frameon=False, loc="upper left", bbox_to_anchor=(-0.24, 1.19), ncol=2, handlelength=1.0, columnspacing=1.0)
     texts += leg
-    foot = (f"The one published history jumps from {above:.0f} K below the resolved neighbour's far side.\n"
-            f"Published inputs bound every delivery path at {bound:.1f} kJ or more.")
+    foot = (f"The one published history of a propagating neighbour jumps from {above:.0f} K below the resolved "
+            f"neighbour's far side.\nNo path through the facing half is bounded below {bound:.1f} kJ within 21.4 s "
+            f"by published inputs.")
     T(fig, 0.5, 0.02, foot, ha="center", va="bottom", fontsize=7.2, color=MUTED, linespacing=1.3)
 
     for ext, kw in (("pdf", {}), ("png", {"dpi": 300}), ("tif", {"dpi": 300, "pil_kwargs": {"compression": "tiff_lzw"}})):
