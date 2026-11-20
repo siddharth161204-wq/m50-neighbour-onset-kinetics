@@ -1,0 +1,171 @@
+\documentclass[preprint,12pt]{elsarticle}
+% Supplementary material of manuscript/rebuild/main.tex (Brief 29). Its tables are written by
+% src/make_rebuild_registry.py and src/make_rebuild_tables.py from the results files; its numbers are traced by
+% manuscript/numbers_check.py --rebuild --supplement.
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{textcomp}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\degC}{\,\textdegree C}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\biboptions{sort&compress}
+\setlength{\emergencystretch}{1.5em}
+\makeatletter
+\def\ps@pprintTitle{\let\@oddhead\@empty\let\@evenhead\@empty\def\@oddfoot{\reset@font\hfil\thepage\hfil}\let\@evenfoot\@oddfoot}
+\makeatother
+
+\begin{document}
+
+\begin{frontmatter}
+\title{Supplementary material for: The heat a neighbouring lithium-ion cell needs for thermal runaway propagation depends on how the cell is modelled}
+\author{Siddharth Satte}
+\address{Independent researcher, Pune, Maharashtra, India}
+\end{frontmatter}
+
+This supplement holds the record of the study (its fifteen steps and every prediction registered before their runs), the numbers behind the figures of the main text test by test, the checks, the inputs of the bounds on what each path can deliver, and how the one published neighbour history was read. Everything in it can be read without the archive; the archive~\cite{satte2026repo} holds the code, the run records and a log of every decision, for anyone who wants to repeat a result.
+
+\section{The labels used in the registry}
+\label{sec:s-key}
+
+The study's records, and so the predictions in Table~\ref{tab:s-registry}, use short labels. In plain words:
+\begin{itemize}
+\item Trigger, neighbour: the failing cell, modelled as one temperature, and the cell beside it. A lumped neighbour is one temperature; a resolved neighbour is a three-dimensional temperature field.
+\item Hottest node, hot spot: the resolved neighbour's hottest point at each time. Mean: the resolved neighbour's heat-capacity-weighted mean temperature. Far face: the resolved neighbour's surface point at mid-length opposite the line of contact.
+\item C1, the local criterion: the hot spot reaches 255.7\degC. C2, the whole-cell clock: the lumped neighbour reaches 255.7\degC. C3: the lumped neighbour reaches 150\degC. C4 and C5: the separator's melting temperature, 138.5\degC, at the hot spot or in the lumped neighbour. C6 and C7: C1 and C4 with the SEI already consumed. C8: the resolved neighbour's mean reaches 255.7\degC{} within 900~s, the cell's own runaway.
+\item $E_\mathrm{b}$: the trigger's body energy; $E_\mathrm{e}=3.105\,E_\mathrm{b}$: the energy its ejecta carry, with 3.105 the median ratio of ejected to body energy in the ten nail tests of this cell in the Battery Failure Databank~\cite{finegan2024databank}; $E_\mathrm{fix}=76.74$~kJ: the Databank's median ejected energy, one for every test.
+\item $f$: the fraction of $E_\mathrm{e}$ delivered to the neighbour through the half of its can facing the trigger. $f^*$ and $E^*$: a criterion's threshold, the least fraction or energy at which it is met. $f_\mathrm{t}$: the fraction at which a criterion is met at a propagated test's measured time. $f_\mathrm{max}$: the fraction at which the far face peaks at a non-propagated test's measured maximum.
+\item Low, central and high contact: a contact conductance of 200, 2,000 and 3,700~W\,m$^{-2}$\,K$^{-1}$ between the cans.
+\item A1 and A2 in the predictions of step 13: the skin model and the cross-section conduction model; B1 and B2: the ignition temperature and the two-body model (Section~2.5 and Appendix~B of the main text). In step 14, A1 to A6 are the paths of Table~\ref{tab:s-inputs}, in its order.
+\end{itemize}
+
+\section{The fifteen steps}
+\label{sec:s-steps}
+
+The study ran in fifteen steps (Table~\ref{tab:s-steps}). Each step's predictions file was committed and pushed to the public repository before any run of the step's registered list, with the outcome expected for each prediction, and was not changed afterwards; the repository records each file's commit, the time of its push and the hash of each step's run list~\cite{satte2026repo}. Two departures are recorded there. While the eleventh step's code was tested, one full run under a kinetic draw was made before its predictions, and its result is stated in them; and while that step's runs went, the scoring was once run on 178 of its 216 records to test a figure's script, and the verdicts it printed were seen, after which no code, rule or run changed.
+
+\IfFileExists{tables/s1_steps.tex}{\input{tables/s1_steps.tex}}{}
+
+The main text reports the results of steps 5 to 15; steps 1 to 4 concern when the chemistry starts in an earlier geometry of the same cells, with a gap between them and busbars, and are summarised here only through their predictions. A failure counts as foreseen when the predictions file recorded it, before the runs, as expected, as fixed by earlier records or an energy balance, or as following from a condition it named that then held; a hedged ``may fail'' does not count. By that rule 24 of the 42 failures were foreseen.
+
+\section{The registry of predictions}
+\label{sec:s-registry}
+
+\IfFileExists{tables/s2_registry.tex}{\input{tables/s2_registry.tex}}{}
+
+\section{The thresholds and needs of every test}
+\label{sec:s-thresholds}
+
+Table~\ref{tab:s-thresholds} gives, test by test, the brackets that Fig.~2 and Fig.~4a of the main text draw. The local and lumped brackets of most tests come from searches over fractions of each test's ejected energy that halved the bracket to 0.0125 of it; four tests' brackets were narrowed further with one ejected energy for every test, and the lumped brackets of PT-Exp4 and ST-Exp3 by the search for the measured time, which ended at the threshold. The cross-section's brackets are at most 1\,\% of their midpoints; the three-dimensional searches started 5\,\% either side of the cross-section's value.
+
+\IfFileExists{tables/s3_thresholds.tex}{\input{tables/s3_thresholds.tex}}{}
+
+\section{The checks}
+\label{sec:s-checks}
+
+Every run's energy account closes: the heat taken in through the boundary paths, the reaction heat and the delivered energy equal the change in stored heat to the residuals of Table~\ref{tab:s-checks}, against an acceptance of $10^{-9}$ of the heat taken in, and every delivery equals its pulse's integral up to the run's end. Each step that changed the configuration of the resolved neighbour halved every mesh spacing, and separately every step limit, on a run near its threshold. Every registered number and verdict was recomputed by separate code and read again, before the step's texts were written, by a check that had not drafted them.
+
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\caption{The checks of the steps whose runs the main text reports: the largest energy residual of each step's runs, as a fraction of the heat taken in, and the change in the hottest point's peak rise (or a runaway time) with the mesh spacing halved and with every step limit halved.}
+\label{tab:s-checks}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{rrlll}
+\toprule
+Step & Runs & Largest energy residual & Mesh halved & Step limits halved \\
+\midrule
+5 & 5,248 & $8.5\times10^{-12}$ & 0.27 and 0.31\,\% & 0.0035 and 0.0040\,\% \\
+6 & 506 & $8.5\times10^{-12}$ & 0.28 and 0.32\,\% & 0.0033 and 0.0037\,\% \\
+7 & 186 & $4.34\times10^{-12}$ & 0.15\,\% & 0.0008\,\% \\
+8 & 230 & $1.97\times10^{-11}$ & 0.52\,\% & 0.0021\,\% \\
+9 & 670 & $6.8\times10^{-12}$ & 0.32\,\% & 0.0006\,\% \\
+10 & 30 & $3.3\times10^{-12}$ & \multicolumn{2}{l}{the configuration of step 9, unchanged} \\
+11 & 216 & $6.1\times10^{-12}$ & \multicolumn{2}{l}{the configuration of step 9, unchanged} \\
+12 & 10 & $1.2\times10^{-12}$ & \multicolumn{2}{l}{the configuration of step 9, unchanged} \\
+13 & 389 & $2.99\times10^{-12}$ & \multicolumn{2}{l}{the configuration of step 9, unchanged} \\
+15 & 27 & $1.97\times10^{-12}$ & 1.5\,\% (runaway time) & 0.01\,\% (runaway time) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{The inputs of the bounds on what each path can deliver}
+\label{sec:s-inputs}
+
+Each input of the bounds of Table~3 of the main text was read at its source, with the page used, and labelled as measured on this cell, in this rig, on another cell, or as a relation; a value measured on another cell widens a range and sets no value for this one (Table~\ref{tab:s-inputs}). Where no source gives a fraction, it enters at 1, the largest it can be, so each upper bound is what the published inputs cannot be made to exceed. Radiation was bounded by tracing four to eight million rays per point from emitters placed on a grid beyond the trigger's end: on the vent's axis the largest share of an emitter's rays that strike the facing half is about 0.0037, and in front of the trigger's end face, near the line of contact, the share rises toward a quarter. With the holder able to reflect, the geometry stops mattering, and radiation is bounded by a black body at the flame temperature filling the facing half's view.
+
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\caption{The inputs of the bounds. Whose: measured on this cell (the LG M50), in this rig, on another cell, or a relation.}
+\label{tab:s-inputs}
+\begin{tabular}{p{0.31\textwidth}p{0.25\textwidth}p{0.2\textwidth}p{0.11\textwidth}}
+\toprule
+Input & Value & Source & Whose \\
+\midrule
+Largest energy in the ejecta, ten nail tests & 89.34~kJ (median 76.74~kJ) & \cite{finegan2024databank} & this cell \\
+Largest heat of burning in open air & 136.5~kJ & \cite{vendra2022numerical}, Table 2 & another cell \\
+Largest flame temperature & 1500\degC, a battery module & cited in \cite{chen2020experimental}, p.~2 & another cell \\
+Largest vent gas velocity & 398.5~m\,s$^{-1}$ & \cite{gillich2024mechanical} & another cell \\
+Shortest runaway or venting & 1.131~s & \cite{gillich2024mechanical} & another cell \\
+Longest combustion of a 21700 cell & about 300~s & \cite{chen2023comprehensive}, p.~11 & another cell \\
+Sidewall ruptures of the trigger & 3 of the 16 tests & \cite{fransson2024exploring}, Tables 3 and 4 & this cell \\
+Sidewall breaches in the Databank's nail tests & none of 10 & \cite{finegan2024databank} & this cell \\
+A rupture's jet fire on neighbours & neighbours ran away 2 to 5~s later & \cite{read2024sidewall}, p.~5 & this cell \\
+Holder & aluminium frame with 3D-printed inserts, about 2~mm of contact; material not given & \cite{pfaff2023insitu}, p.~194 & this rig \\
+Discharge of the neighbour through the trigger & stated for the parallel tests & \cite{fransson2024exploring} & this rig \\
+Stored energy at 100\,\% state of charge & 65.52~kJ (18.2~Wh) & \cite{finegan2024databank} & this cell \\
+Resistance's rise as the cell cools & about five times from 45 to 10\degC & \cite{popp2020antemortem}, p.~172 & this cell \\
+Convection from a cylinder in cross flow & Churchill and Bernstein's relation & \cite{churchill1977correlating,lienhard2024heat} & relation \\
+Properties of hydrogen and air at 1 atm & tabulated to 1000 and 1500~K & \cite[Table A.6]{lienhard2024heat} & relation \\
+Radiant fraction, absorptivity, share of gas passing, share carried by a breach & no source; each enters at 1 & & limit \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The neighbour's direct-current resistance, $30\pm6$~m$\Omega$ at 25\degC, is the manufacturer's specification of the cell (LG Chem, Product Specification, Lithium Ion INR21700 M50 18.2~Wh, read in November 2026); it sets only the rate at which the discharge path could deliver, 15.6~kJ within 21.4~s if the resistance kept its value at 25\degC, while the bound in Table~3 of the main text is the whole stored energy.
+
+\section{The one published neighbour history}
+\label{sec:s-history}
+
+No raw temperature series of the two-cell tests is published. The supplement of Fransson et al.~\cite{fransson2024exploring} draws the thermocouple records of two tests in its Figure~10, PT-Exp4, which propagated, and PP-Exp3, which did not. The figure is a vector drawing, so the series were read out of the curves' paths rather than off pixels, twice, by separate code and separate calibrations, and resampled every 0.5~s from 0 to 500~s. The two readings differ by at most 0.0005~K on PT-Exp4's neighbour curve; the figure's own resolution, half the curves' stroke width, is 2.47~K and 0.45~s, and the recorded uncertainty is the larger. A third reading, from the page rendered at 1200~dpi, lies within the recorded uncertainty plus one pixel of the vector reading. PT-Exp4's record: 32.2\degC{} at 0~s; a spike to 102.0\degC{} at 3.1~s as the trigger runs away, back to 79.9\degC{} at 8.4~s; 141.0\degC{} at 45~s; a slow rise to 197.3\degC{} at 271.50~s, where the figure marks the onset (Table~3 of the paper gives 272~s); then the jump. The main text takes the opening 8.5~s as the thermocouple's exposure at the trigger's runaway rather than the can's temperature.
+
+\section{Other datasets}
+\label{sec:s-survey}
+
+A survey of published datasets with per-test outcomes and times for cell-to-cell propagation asked whether the model's inputs cover their cell without an invented value (Table~\ref{tab:s-survey}). One other dataset has a cell they cover: Read, Jones and Marco~\cite{read2024sidewall}, seven LG M50 cells 3~mm apart, whose propagated tests followed the trigger's sidewall rupture, a path this model does not represent.
+
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\caption{The datasets the survey found.}
+\label{tab:s-survey}
+\begin{tabular}{p{0.3\textwidth}p{0.21\textwidth}p{0.17\textwidth}p{0.17\textwidth}}
+\toprule
+Dataset & Cell & Arrangement & The model's inputs cover the cell \\
+\midrule
+Fransson et al. 2024~\cite{fransson2024exploring}, M50 tests & LG M50 & two cells in contact & yes \\
+Fransson et al. 2024, P42A tests & Molicel P42A & two cells in contact & no \\
+Read, Jones and Marco 2024~\cite{read2024sidewall} & LG M50 & seven cells, 3~mm gaps & yes \\
+Read et al. 2024~\cite{read2024barrier} & unnamed, M50 specification & 34 cells, 1~mm gaps & not established \\
+Allen et al. 2025~\cite{allen2025sleeves} & Molicel P45B & seven cells, 3~mm & no \\
+Lamb et al. 2015~\cite{lamb2015failure} & LiCoO$_2$, 18650 and pouch & cells in contact & no \\
+Said et al. 2019~\cite{said2019cascading} & LiCoO$_2$, 18650 & arrays & no \\
+Hoelle et al. 2023~\cite{hoelle2023simulation} & prismatic & five-cell stack & no \\
+Sch\"oberl et al. 2024~\cite{schoberl2024propagation} & prismatic NMC and LFP & braced stack & no \\
+Torres-Castro et al. 2020~\cite{torrescastro2020passive} & pouch & stacks & no \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\bibliographystyle{elsarticle-num}
+\bibliography{references}
+
+\end{document}

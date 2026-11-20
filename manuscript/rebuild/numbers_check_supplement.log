@@ -1,0 +1,1463 @@
+numbers_check --rebuild --supplement: 553 traced to a named value, 619 found in their table's source files, 113 broad matches (supplement only), 0 failures, 107 structural (not looked for)
+
+== main.tex: title  [map]
+== main.tex: abstract  [map]
+   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 7 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.mid_J = 7.0625
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
+   traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 3 <- src/stage13_inputs.py: /FIRST_STEP = (0\.03)/ = 3
+   traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
+   traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
+   traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
+   traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 4.06435
+   traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 8.11583
+   traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 0.218747
+   traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 5.9624
+   traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
+   traced 37 <- results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
+== main.tex: Introduction to Discussion, with figure captions  [map]
+   [name] 18650  ...the vent matters: fractional thermal runaway calorimetry of 18650 cells finds that typically 20 to 30\,\%...
+   traced 20 <- manuscript/data/comparators.csv: value where {'key': 'walker2019decoupling', 'quantity': 'share of the total energy released through the casing, low'} = 20
+   traced 30 <- manuscript/data/comparators.csv: value where {'key': 'walker2019decoupling', 'quantity': 'share of the total energy released through the casing, high'} = 30
+   traced 147 <- smallest and largest of inputs/fransson2024/m50_tests.csv: time_to_propagation_s = 147
+   traced 342 <- smallest and largest of inputs/fransson2024/m50_tests.csv: time_to_propagation_s = 342
+   [name] 21700  ...are those of Fransson et al.~  (Table~ ): two LG M50 cells (21700 format) side by side with their cans to...
+   traced 71 <- smallest and largest of inputs/fransson2024/m50_tests.csv: neighbour_max_C of the tests that did not propagate, without the two exploratory maxima = 71
+   traced 133 <- smallest and largest of inputs/fransson2024/m50_tests.csv: neighbour_max_C of the tests that did not propagate, without the two exploratory maxima = 133
+   traced 626 <- inputs/fransson2024/m50_tests.csv: neighbour_max_C where {'propagated': 'No'} = 626
+   traced 808 <- inputs/fransson2024/m50_tests.csv: neighbour_max_C where {'propagated': 'No'} = 808
+   [label] 10  ...s published, PT-Exp4's, in the paper's supplementary Figure~10; it was read out of the figure's vector...
+   traced 2.47 <- results/stage10_paper_numbers.json: measured.uncertainty_K = 2.47241
+   traced 0.45 <- results/stage10_paper_numbers.json: measured.uncertainty_s = 0.454675
+   traced 21.39 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
+   traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
+   traced 89.34 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_max'} = 89.3378
+   traced 61.75 <- results/manuscript_numbers.json: constants.C_cell_J_K = 61.75
+   [exponent or subscript] -1  ... where $T_1$ is the trigger's temperature, $C=61.75$~J\,K$^{-1}$ the cell's heat capacity and $m$ its ...
+   traced 25 <- results/manuscript_numbers.json: constants.T_amb_C = 25
+   traced 19,355 <- results/stage8_paper_numbers.json: v3.base.n_nodes = 19355
+   traced 0.25 <- results/manuscript_numbers.json: constants.can_thickness_mm = 0.25
+   traced 1.3 <- results/manuscript_numbers.json: constants.k_radial_W_mK = 1.3
+   [exponent or subscript] -1  ...,  [display]  with the conductivity $\mathbf{k}$ 1.3~W\,m$^{-1}$\,K$^{-1}$ across the layers and 25~W\...
+   [exponent or subscript] -1  ...y]  with the conductivity $\mathbf{k}$ 1.3~W\,m$^{-1}$\,K$^{-1}$ across the layers and 25~W\,m$^{-1}$\...
+   traced 25 <- results/manuscript_numbers.json: constants.k_axial_W_mK = 25
+   [exponent or subscript] -1  ...$ 1.3~W\,m$^{-1}$\,K$^{-1}$ across the layers and 25~W\,m$^{-1}$\,K$^{-1}$ along them and the same tot...
+   [exponent or subscript] -1  ...$^{-1}$\,K$^{-1}$ across the layers and 25~W\,m$^{-1}$\,K$^{-1}$ along them and the same total heat ca...
+   traced 45 <- src/v12_mesh.py: SECTOR = math.pi / 4, the wedge sector's half-angle, in degrees = 45
+   traced 200 <- results/manuscript_numbers.json: constants.h_contact_W_m2K.low = 200
+   traced 2,000 <- results/manuscript_numbers.json: constants.h_contact_W_m2K.central = 2000
+   traced 3,700 <- results/manuscript_numbers.json: constants.h_contact_W_m2K.high = 3700
+   [exponent or subscript] -2  ...om the line of contact; $h_c$ is 200, 2,000 or 3,700~W\,m$^{-2}$\,K$^{-1}$ for the low, central and hi...
+   [exponent or subscript] -1  ...e of contact; $h_c$ is 200, 2,000 or 3,700~W\,m$^{-2}$\,K$^{-1}$ for the low, central and high contact...
+   traced 45 <- src/v12_mesh.py: SECTOR = math.pi / 4, the wedge sector's half-angle, in degrees = 45
+   traced 1 <- src/reactive.py: /DT_TARGET = (1\.0)/ = 1
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   traced 45 <- src/v12_mesh.py: SECTOR = math.pi / 4, the wedge sector's half-angle, in degrees = 45
+   traced 7.4 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4, the run at the bracket's upper end: E_J = 7.41562
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 8 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4, the run at the bracket's upper end: C1_t_s = 8.27672
+   traced 107 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4, the run at the bracket's upper end: lumped_C2_t_s = 106.51
+   traced 182 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4, the run at the bracket's upper end: t_C8_s = 181.923
+   traced 720 <- results/manuscript_numbers.json: constants.M_ref_g = 720
+   traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
+   traced 21.39 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 120 <- results/stage15_table.csv: tau_s where {'test': 'M50_PT_Exp4'} = 120
+   traced 240 <- results/stage15_table.csv: tau_s where {'test': 'M50_PT_Exp4'} = 240
+   traced 360 <- results/stage15_table.csv: tau_s where {'test': 'M50_PT_Exp4'} = 360
+   traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
+   traced 5 <- predictions_stage9.md: /within (5) K of it/ = 5
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 98 <- manuscript/rebuild/data/predictions_registry.csv: rows = 98
+   traced 56 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict held = 56
+   traced 42 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed = 42
+   traced 2\times10^{-11} <- results/stage8_paper_numbers.json: checks.V4.largest_relative.resolved = 1.9747e-11
+   traced 0.52 <- results/stage8_paper_numbers.json: checks.V3.v3mesh.relative_change = 0.515385
+   traced 1.5 <- results/stage15_checks.json: V4/s15_B1_PT_Exp4_s+1_r1.5/rel_change = 1.48397
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   traced 5,248 <- results/v12_numbers.json: runs.all = 5248
+   traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
+   traced 226.7 <- results/v12_numbers.json: all_runs.res_peak_hottest_C.max = 226.67
+   traced 180.6 <- results/v12_numbers.json: all_runs.lum_peak_C.max = 180.633
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 46.5 <- smallest and largest of results/stage12_capped.csv: E_b_fitted_J = 46.4567
+   traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
+   traced 21.7 <- results/stage12_paper_numbers.json: part_a.central.fitted_C1_at_f0_s[1] = 21.7
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   traced 191.9 <- results/stage12_paper_numbers.json: part_a.central.hot_spot_peak_C[0] = 191.9
+   traced 192.2 <- results/stage12_paper_numbers.json: part_a.central.hot_spot_peak_C[1] = 192.16
+   traced 226.4 <- results/stage12_paper_numbers.json: part_a.high.hot_spot_peak_C[0] = 226.39
+   traced 226.7 <- results/stage12_paper_numbers.json: part_a.high.hot_spot_peak_C[1] = 226.69
+   traced 63.5 <- results/stage12_paper_numbers.json: part_a.central.shortfall_hot_spot_K[0] = 63.5
+   traced 63.8 <- results/stage12_paper_numbers.json: part_a.central.shortfall_hot_spot_K[1] = 63.8
+   traced 29.0 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 29.3 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[1] = 29.3
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 159.8 <- results/stage12_paper_numbers.json: part_a.central.lumped_peak_C[0] = 159.76
+   traced 161.8 <- results/stage12_paper_numbers.json: part_a.central.lumped_peak_C[1] = 161.75
+   traced 175.9 <- results/stage12_paper_numbers.json: part_a.high.lumped_peak_C[0] = 175.92
+   traced 177.4 <- results/stage12_paper_numbers.json: part_a.high.lumped_peak_C[1] = 177.4
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 4.53 <- results/stage14_needs.csv: threshold_C1_hi_J where {'test': 'M50_PT_Exp1'} = 4.5298
+   traced 12.89 <- results/stage14_needs.csv: threshold_C2_hi_J where {'test': 'M50_PT_Exp1'} = 12.8924
+   traced 3.5 <- smallest and largest of results/stage15_cross_section.json: A2, the 21.39 s pulse, E_star_J = 3.52778
+   traced 10.8 <- smallest and largest of results/stage15_cross_section.json: A2, the 21.39 s pulse, E_star_J = 10.7812
+   traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
+   traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
+   traced 4.5 <- results/stage15_cross_section.json: A2, the 21.39 s pulse, E_star_J of the two tests whose lumped neighbour needs no delivery = 4.54167
+   traced 3.5 <- results/stage15_cross_section.json: A2, the 21.39 s pulse, E_star_J of the two tests whose lumped neighbour needs no delivery = 3.52778
+   traced 7.06 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.mid_J = 7.0625
+   traced 6.71 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.lo_J = 6.70937
+   traced 7.42 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.hi_J = 7.41562
+   traced 6.85 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.bracket.mid_J = 6.85417
+   traced 6.51 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.bracket.lo_J = 6.51146
+   traced 7.20 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.bracket.hi_J = 7.19687
+   traced 1.49 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
+   traced 1.72 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 4.75 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.E_C2_J = 4.754
+   traced 3.97 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.E_C2_J = 3.97496
+   traced 3.88 <- results/stage15_paper_numbers.json: B1.M50_SP_Exp3.bracket.mid_J = 3.88056
+   traced 3.70 <- results/stage15_paper_numbers.json: B1.M50_SP_Exp3.bracket.lo_J = 3.70417
+   traced 4.06 <- results/stage15_paper_numbers.json: B1.M50_SP_Exp3.bracket.hi_J = 4.05694
+   traced 106 <- smallest and largest of results/stage15_paper_numbers.json: B1 runs of PT_Exp4, PP_Exp2, SP_Exp3: lumped_C2_t_s = 106.141
+   traced 128 <- smallest and largest of results/stage15_paper_numbers.json: B1 runs of PT_Exp4, PP_Exp2, SP_Exp3: lumped_C2_t_s = 127.543
+   traced 22.4 <- smallest and largest of results/stage15_paper_numbers.json: B1 runs of PT_Exp4, PP_Exp2, SP_Exp3: lumped_rxn_J = 22.3795
+   traced 22.6 <- smallest and largest of results/stage15_paper_numbers.json: B1 runs of PT_Exp4, PP_Exp2, SP_Exp3: lumped_rxn_J = 22.5889
+   traced 4.1 <- smallest and largest of results/stage15_paper_numbers.json: B1 runs of PT_Exp4, PP_Exp2, SP_Exp3 with the mean's runaway: rxn_J = 4.07541
+   traced 4.8 <- smallest and largest of results/stage15_paper_numbers.json: B1 runs of PT_Exp4, PP_Exp2, SP_Exp3 with the mean's runaway: rxn_J = 4.79567
+   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
+   traced 10.28 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.bracket.mid_J = 10.2812
+   traced 9.77 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.bracket.lo_J = 9.76719
+   traced 10.80 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.bracket.hi_J = 10.7953
+   traced 0.85 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
+   traced 12.03 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.E_C2_J = 12.0305
+   traced 10.80 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.bracket.hi_J = 10.7953
+   traced 61.5 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3, the run at the bracket's upper end: t_C8_s = 61.5222
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 5 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 5
+   traced 120 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
+   traced 10 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_ST_Exp3', 'region': 'half'} = 10
+   traced 60 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_ST_Exp3', 'region': 'half'} = 60
+   traced 3 <- src/stage13_inputs.py: /FIRST_STEP = (0\.03)/ = 3
+   traced 0.025 <- results/stage13_skin.csv: fourier where {'test': 'M50_PT_Exp1', 'region': 'half', 'tau_d_s': '5.0'} = 0.0250038
+   traced 0.60 <- results/stage13_skin.csv: fourier where {'test': 'M50_PT_Exp1', 'region': 'half', 'tau_d_s': '120.0'} = 0.600091
+   traced 5.565\times10^{-7} <- results/stage13_sentences.md: /\(([\d.]+e-7) m2/s\)/ = 5.565e-07
+   [exponent or subscript] -1  ... 0.025 to 0.60, with $\alpha=5.565\times10^{-7}$~m$^2$\,s$^{-1}$ the roll's diffusivity across its lay...
+   traced 10.55 <- results/manuscript_numbers.json: constants.cell_radius_mm = 10.55
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 1.1 <- results/stage13_skin.csv: the largest shortfall of inert_peak_minus_level_K up to a Fourier number of 0.6 = 1.13572
+   traced 360 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 360
+   traced 1.80 <- results/stage13_skin.csv: fourier where {'test': 'M50_PT_Exp1', 'region': 'half', 'tau_d_s': '360.0'} = 1.80027
+   traced 18.9 <- results/stage13_skin.csv: inert_peak_minus_level_K where {'test': 'M50_PT_Exp1', 'region': 'half', 'tau_d_s': '360.0'} = 18.9319
+   traced 316.5 <- results/stage13_skin.csv: res_t_cross_hi_s where {'test': 'M50_PT_Exp1', 'region': 'half', 'tau_d_s': '360.0'} = 316.544
+   traced 240.1 <- results/stage13_skin.csv: res_mean_at_cross_hi_C where {'test': 'M50_PT_Exp1', 'region': 'half', 'tau_d_s': '360.0'} = 240.119
+   traced 2.90 <- results/stage13_paper_numbers.json: scorecard/P9/ratio/21.39 = 2.89706
+   traced 0.11 <- results/stage13_skin.csv: fourier where {'test': 'M50_PT_Exp1', 'region': 'half', 'tau_d_s': '21.38651984299561'} = 0.106949
+   traced 1.16 <- results/stage13_paper_numbers.json: scorecard/P9/ratio/120 = 1.15999
+   traced 0.60 <- results/stage13_skin.csv: fourier where {'test': 'M50_PT_Exp1', 'region': 'half', 'tau_d_s': '120.0'} = 0.600091
+   traced 0.94 <- results/stage13_paper_numbers.json: scorecard/P9/ratio/360 = 0.938279
+   traced 1.80 <- results/stage13_skin.csv: fourier where {'test': 'M50_PT_Exp1', 'region': 'half', 'tau_d_s': '360.0'} = 1.80027
+   traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
+   traced 230.4 <- results/stage13_tign.csv: T_ign_C where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'ambient'} = 230.379
+   traced 25 <- results/manuscript_numbers.json: constants.T_amb_C = 25
+   traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
+   traced 215.3 <- results/stage13_paper_numbers.json: scorecard/P7/p2.5_C = 215.257
+   traced 221.4 <- results/stage13_paper_numbers.json: scorecard/P7/p97.5_C = 221.395
+   traced 95 <- predictions_stage13.md: /the central (95) % of the 200 draws/ = 95
+   traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
+   traced 73.3 <- results/stage13_tign.csv: carrying_share where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'own'} = 73.3174
+   traced 2,667 <- results/stage13_tign.csv: cat1_heat_total_J where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'own'} = 2667.2
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 10 <- predictions_stage13.md: /within the larger of (10) % and 300 J/ = 10
+   traced 300 <- predictions_stage13.md: /within the larger of 10 % and (300) J/ = 300
+   traced 32 <- results/stage13_paper_numbers.json: scorecard.P8.n_within = 32
+   traced 393 <- smallest and largest of results/stage13_paper_numbers.json: scorecard.P10.cases: slope_J_per_kJ = 393.034
+   traced 456 <- smallest and largest of results/stage13_paper_numbers.json: scorecard.P10.cases: slope_J_per_kJ = 456.135
+   traced 250 <- results/stage15_accounts.json: accounts rows: t_s = 250
+   traced 2.1 <- smallest and largest of results/stage15_accounts.json: lumped_less_resolved.contact_and_wedge at 250 s = 2.05166
+   traced 2.3 <- smallest and largest of results/stage15_accounts.json: lumped_less_resolved.contact_and_wedge at 250 s = 2.30888
+   traced 5.04 <- results/stage15_paper_numbers.json: B4.draws.5.E_J = 5.04499
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 215.6 <- results/stage15_readings.json: 1.PT_Exp4.lumped_cross_s = 215.6
+   traced 191.2 <- smallest and largest of results/stage15_paper_numbers.json: B4.draws: peak_mean_C = 191.164
+   traced 192.4 <- smallest and largest of results/stage15_paper_numbers.json: B4.draws: peak_mean_C = 192.397
+   traced 188.3 <- results/stage15_paper_numbers.json: B4.aged.peak_mean_C = 188.294
+   traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
+   traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
+   traced 221.1 <- results/stage15_paper_numbers.json: B4.shift_runs, the run shifted by 17.5 K: peak_mean_C = 221.105
+   traced 20 <- results/stage15_paper_numbers.json: B4.shift.least_shift_K = 20
+   traced 270.3 <- results/stage15_paper_numbers.json: B4.shift.t_C8_s = 270.338
+   traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
+   traced 2 <- src/stage13_inputs.py: /for d in \(-2000\.0, (2000\.0)\)/ = 2
+   traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
+   traced 5.04 <- results/stage15_paper_numbers.json: B4.draws.5.E_J = 5.04499
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
+   traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
+   traced 4.66 <- results/stage14_needs.csv: need_21s_lo_J where {'test': 'M50_PT_Exp4'} = 4.6569
+   traced 4.85 <- results/stage14_needs.csv: need_21s_hi_J where {'test': 'M50_PT_Exp4'} = 4.851
+   traced 11.95 <- results/stage14_needs.csv: need_21s_lo_J where {'test': 'M50_ST_Exp3'} = 11.95
+   traced 12.11 <- results/stage14_needs.csv: need_21s_hi_J where {'test': 'M50_ST_Exp3'} = 12.1115
+   traced 13.8 <- smallest and largest of results/stage9_paper_numbers.json: part_a.A3: overshoot_K = 13.7556
+   traced 56.3 <- smallest and largest of results/stage9_paper_numbers.json: part_a.A3: overshoot_K = 56.3217
+   traced 2.09 <- results/stage14_needs.csv: need_21s_lo_J where {'test': 'M50_PT_Exp1'} = 2.0907
+   traced 7.9 <- results/stage12_paper_numbers.json: P4.ratio = 7.9
+   traced 22 <- results/stage12_paper_numbers.json: part_c.stage10_energy_ratio_range[0] = 21.8
+   traced 64 <- results/stage12_paper_numbers.json: part_c.stage10_energy_ratio_range[1] = 63.8
+   traced 0.1 <- predictions_stage10.md: /by more than (0\.1) in the mean log score/ = 0.1
+   traced 0.062 <- results/stage10_paper_numbers.json: part_c.largest_d_log = 0.0624263
+   traced 0.23 <- smallest and largest of results/stage10_paper_numbers.json: part_c.held_out: p_log = 0.226477
+   traced 0.75 <- smallest and largest of results/stage10_paper_numbers.json: part_c.held_out: p_log = 0.751725
+   traced -0.92 <- results/stage10_paper_numbers.json: part_c.rho_E_b.fC1 = -0.920358
+   traced $-0.97 <- results/stage10_paper_numbers.json: part_c.rho_E_b.fC2 = -0.974721
+   traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 4.06435
+   traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 8.11583
+   traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 0.218747
+   traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 5.9624
+   traced 4.58 <- results/stage15_table.csv: C8_xs_E_by_t_J where {'test': 'M50_SP_Exp3', 'delivery': '21.39 s pulse'} = 4.58171
+   traced 0.26 <- results/stage15_table.csv: C2_E_by_t_J where {'test': 'M50_SP_Exp3', 'delivery': '21.39 s pulse'} = 0.2635
+   traced 114.0 <- results/stage15_table.csv: C8_xs_t_at_E_star_hi_s where {'test': 'M50_ST_Exp3', 'delivery': '21.39 s pulse'} = 113.987
+   traced 177 <- results/stage15_table.csv: t_measured_s where {'test': 'M50_ST_Exp3', 'delivery': '21.39 s pulse'} = 177
+   traced 141.0 <- results/stage10_paper_numbers.json: measured.at_45_s_C = 140.997
+   traced 45 <- results/stage10_paper_numbers.json: /"at_(45)_s_C"/ = 45
+   traced 197.3 <- results/stage10_paper_numbers.json: measured.at_onset_C = 197.254
+   traced 271.5 <- results/stage10_paper_numbers.json: measured.onset_figure_s = 271.5
+   traced 4.66 <- results/stage14_needs.csv: need_21s_lo_J where {'test': 'M50_PT_Exp4'} = 4.6569
+   traced 5.04 <- results/stage15_paper_numbers.json: B4.draws.5.E_J = 5.04499
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 16.3 <- results/stage10_paper_numbers.json: part_a.tri21_C2_lo_hcentral.nodes.away.window.rms_K = 16.2554
+   traced 16.8 <- results/stage10_paper_numbers.json: part_a.tri21_C2_hi_hcentral.nodes.away.window.rms_K = 16.8348
+   [start of a time window] 0  ... 16.3 and 16.8~K from the record, the root mean square over 0 to 271.5~s, but the resolved neighbour ...
+   traced 271.5 <- results/stage10_paper_numbers.json: measured.onset_figure_s = 271.5
+   traced 5.04 <- results/stage15_paper_numbers.json: B4.draws.5.E_J = 5.04499
+   traced 190.6 <- results/stage15_readings.json: 1.PT_Exp4.mean_peak_C = 190.6
+   traced 7.42 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.hi_J = 7.41562
+   traced 181.9 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4, the run at the bracket's upper end: t_C8_s = 181.923
+   traced 271.5 <- results/stage10_paper_numbers.json: measured.onset_figure_s = 271.5
+   traced 234.1 <- results/stage15_paper_numbers.json: B3a.run.far_jump.T_C = 234.101
+   traced 36.8 <- results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
+   traced 197.3 <- results/stage10_paper_numbers.json: measured.at_onset_C = 197.254
+   [start of a time window] 0  ...197.3\degC{} from which the measured neighbour jumped; over 0 to 181.9~s its far face lies 51.4~K fro...
+   traced 181.9 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4, the run at the bracket's upper end: t_C8_s = 181.923
+   traced 51.4 <- results/stage15_paper_numbers.json: B3a.history.rms_K = 51.4421
+   traced 5.04 <- results/stage15_paper_numbers.json: B4.draws.5.E_J = 5.04499
+   traced 12.5 <- results/stage15_paper_numbers.json: B3b.result.P_hi_W = 12.5
+   traced 255.9 <- results/stage15_paper_numbers.json: B3b run s15_B3_PT_Exp4_hold12.5W: t_C8_s = 255.856
+   traced 10 <- results/stage15_paper_numbers.json: B3b.result.P_lo_W = 10
+   traced 369.3 <- results/stage15_paper_numbers.json: B3b run s15_B3_PT_Exp4_hold10.0W: t_C8_s = 369.329
+   traced 2.9 <- results/stage15_paper_numbers.json: B3b run s15_B3_PT_Exp4_hold12.5W: delivered_J.delivery2 = 2.93142
+   traced 3.5 <- results/stage15_paper_numbers.json: B3b run s15_B3_PT_Exp4_hold10.0W: delivered_J.delivery2 = 3.48013
+   traced 12.5 <- results/stage15_paper_numbers.json: B3b.result.P_hi_W = 12.5
+   traced 233.6 <- results/stage15_paper_numbers.json: B3b run s15_B3_PT_Exp4_hold12.5W: far_jump.T_C = 233.595
+   traced 33.1 <- results/stage15_paper_numbers.json: B3b.history.rms_K = 33.1383
+   [start of a time window] 0  ...gins at 233.6\degC, and it lies 33.1~K from the record over 0 to 255.9~s. The thermocouple's angle is...
+   traced 255.9 <- results/stage15_paper_numbers.json: B3b run s15_B3_PT_Exp4_hold12.5W: t_C8_s = 255.856
+   traced 235.5 <- results/stage15_independent_read.md: the two side probes' readings at the far face's jump = 235.5
+   traced 235.8 <- results/stage15_independent_read.md: the two side probes' readings at the far face's jump = 235.79
+   traced 36.8 <- results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   [label] 10  ...hermocouple (black; Fransson et al.~ , supplementary Figure~10, read from the figure) against the mode...
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 5.0 <- results/stage15_readings.json: 1.PT_Exp4.E_J = 5.045
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 332 <- results/stage15_readings.json: 1.PT_Exp4.t_end_s = 332
+   traced 225.8 <- results/stage14_corrections.json: E_avail_J = 225.838
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
+   traced 1500 <- results/stage14_inputs.csv: value where {'key': 'T_flame_max'} = 1500
+   traced 0.37 <- results/stage14_corrections.json: scans.axis_max_w = 0.373225
+   traced 0.85 <- results/stage14_independent_read.md: /at most about (\d+) J \(1\.11 %\)/ = 0.849
+   traced 195.5 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A2', 'window_s': '21.39'} = 195.516
+   traced 225.8 <- results/stage14_corrections.json: E_avail_J = 225.838
+   traced 65.5 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A6', 'window_s': '21.39'} = 65.52
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 32.7 <- results/stage14_needs.csv: need_21s_lo_J where {'test': 'M50_SP_Exp4'} = 32.667
+   traced 75.8 <- results/stage14_needs.csv: need_21s_lo_J where {'test': 'M50_PT_Exp2'} = 75.8149
+   traced 5.3 <- smallest and largest of results/stage15_table.csv: C8_xs_share_of_76.74kJ = 5.29617
+   traced 25.4 <- smallest and largest of results/stage15_table.csv: C8_xs_share_of_76.74kJ = 25.4319
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
+   traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
+   traced 92 <- results/stage15_cross_section.json: A1_summary.dt_C8_s.n = 92
+   traced 1.0 <- results/stage15_cross_section.json: A1_summary.dt_C8_s.mean = 1.03766
+   traced 5.5 <- results/stage15_cross_section.json: A1_summary.dt_C8_s.min = 5.48377
+   traced 34.5 <- results/stage15_cross_section.json: A1_summary.dt_C8_s.max = 34.5232
+   traced 59 <- results/stage15_cross_section.json: A1_summary.d_mean_peak_K.n = 59
+   traced 1.9 <- results/stage15_cross_section.json: A1_summary.d_mean_peak_K.mean = 1.87063
+   traced 20.7 <- results/stage15_cross_section.json: A1_summary.d_mean_peak_K.min = 20.6721
+   traced 5 <- predictions_stage15.md: /less (5) % and plus 5 %/ = 5
+   traced 9.1 <- results/stage15_paper_numbers.json: B1.M50_SP_Exp3.rel_diff_xs = 9.09091
+   traced 17 <- smallest and largest of results/stage15_xs/*.json: wall_s = 16.9846
+   traced 71 <- smallest and largest of results/stage15_xs/*.json: wall_s = 71.3495
+   traced 240 <- smallest and largest of results/stage15_paper_numbers.json: runs.wall_s min and max = 239.781
+   traced 2,762 <- smallest and largest of results/stage15_paper_numbers.json: runs.wall_s min and max = 2762.3
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 22 <- results/stage12_paper_numbers.json: part_c.stage10_energy_ratio_range[0] = 21.8
+   traced 64 <- results/stage12_paper_numbers.json: part_c.stage10_energy_ratio_range[1] = 63.8
+   traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 4.06435
+   traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 8.11583
+   traced 5.3 <- smallest and largest of results/stage15_table.csv: C8_xs_share_of_76.74kJ = 5.29617
+   traced 25.4 <- smallest and largest of results/stage15_table.csv: C8_xs_share_of_76.74kJ = 25.4319
+   traced 2.0 <- manuscript/data/comparators.csv: value where {'key': 'torrescastro2020passive', 'quantity': 'energy the next cell absorbs before it fails, mean'} = 2
+   traced 1.49 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
+   traced 1.72 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 16.3 <- results/stage10_paper_numbers.json: part_a.tri21_C2_lo_hcentral.nodes.away.window.rms_K = 16.2554
+   traced 16.8 <- results/stage10_paper_numbers.json: part_a.tri21_C2_hi_hcentral.nodes.away.window.rms_K = 16.8348
+   traced 37 <- results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
+   traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
+   traced 37 <- results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
+   traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
+   traced 0.85 <- results/stage14_independent_read.md: /at most about (\d+) J \(1\.11 %\)/ = 0.849
+   traced 8.5 <- results/stage10_paper_numbers.json: measured.dip_after_spike_t_s = 8.5
+   traced 102 <- results/stage10_paper_numbers.json: measured.spike_on_the_samples_C = 101.711
+== main.tex: Conclusions  [map]
+   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 1.49 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
+   traced 1.72 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
+   traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
+   traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 4.06435
+   traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 8.11583
+   traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 0.218747
+   traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 5.9624
+   traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+== main.tex: appendices  [map]
+   traced 45 <- src/v12_mesh.py: SECTOR = math.pi / 4, the wedge sector's half-angle, in degrees = 45
+   traced 2\times10^{-11} <- results/stage8_paper_numbers.json: checks.V4.largest_relative.resolved = 1.9747e-11
+   traced 1,743 <- results/stage13_readings.json: reading_1.e_roll_as_resolved = 1742.5
+   [exponent or subscript] -2  ...er unit area, $\tau$ the pulse's duration, $e=1,743$~J\,m$^{-2}$\,K$^{-1}$\,s$^{-1/2}$ the roll's effu...
+   [exponent or subscript] -1  ...ea, $\tau$ the pulse's duration, $e=1,743$~J\,m$^{-2}$\,K$^{-1}$\,s$^{-1/2}$ the roll's effusivity acr...
+   [exponent or subscript] -1  ... the pulse's duration, $e=1,743$~J\,m$^{-2}$\,K$^{-1}$\,s$^{-1/2}$ the roll's effusivity across its la...
+   [exponent or subscript] 2  ...e pulse's duration, $e=1,743$~J\,m$^{-2}$\,K$^{-1}$\,s$^{-1/2}$ the roll's effusivity across its laye...
+   traced 1.2284 <- results/stage13_checks.json: V5.Phi00 = 1.22842
+   traced 841.7 <- results/stage13_readings.json: reading_1.C_s_J_m2K = 841.736
+   [exponent or subscript] -2  ...ar pulse; the can enters as a surface layer of 841.7~J\,m$^{-2}$\,K$^{-1}$ with a linear surface loss....
+   [exponent or subscript] -1  ...the can enters as a surface layer of 841.7~J\,m$^{-2}$\,K$^{-1}$ with a linear surface loss. It agrees...
+== main.tex: declarations  [map]
+   [label] 1.11  ...every step are archived at Zenodo,   (all versions; version 1.11.0,  , holds every result used here), an...
+   [identifier] 4.0  ...tests are those of Fransson et al.~ , published under CC~BY~4.0. The kinetic posterior files are the su...
+== manuscript/rebuild/tables/t1_tests.tex: caption  [map]
+   [label] 3  ...ll tests of LG M50 cells of Fransson et al.~  (their Tables 3 and 4), and the body energy $E_\mathrm{...
+   [label] 4  ...ts of LG M50 cells of Fransson et al.~  (their Tables 3 and 4), and the body energy $E_\mathrm{b}$ th...
+   traced 21.39 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 1 <- inputs/fransson2024/m50_tests.csv: the failure categories the tests report (Fransson et al.'s codes) = 1
+   traced 2 <- inputs/fransson2024/m50_tests.csv: the failure categories the tests report (Fransson et al.'s codes) = 2
+   traced 4 <- inputs/fransson2024/m50_tests.csv: the failure categories the tests report (Fransson et al.'s codes) = 4
+== manuscript/rebuild/tables/t1_tests.tex: rows  [each cell against its column of the test's row]
+   column PT-Exp1 connection: parallel = parallel
+   column PT-Exp1 trigger_max_C: 164 = 164
+   column PT-Exp1 E_J (kJ): 9.0 = 9.0
+   column PT-Exp1 propagated: no = no
+   column PT-Exp1 time_to_propagation_s:  = 
+   column PT-Exp1 neighbour_max_C: 71 = 71
+   column PT-Exp1 failure_category: c.m. = c.m.
+   column PT-Exp2 connection: parallel = parallel
+   column PT-Exp2 trigger_max_C: 679 = 679
+   column PT-Exp2 E_J (kJ): 43.4 = 43.4
+   column PT-Exp2 propagated: no = no
+   column PT-Exp2 time_to_propagation_s:  = 
+   column PT-Exp2 neighbour_max_C: 808 = 808
+   column PT-Exp2 failure_category: 1 = 1
+   column PT-Exp3 connection: parallel = parallel
+   column PT-Exp3 trigger_max_C: 507 = 507
+   column PT-Exp3 E_J (kJ): 31.6 = 31.6
+   column PT-Exp3 propagated: no = no
+   column PT-Exp3 time_to_propagation_s:  = 
+   column PT-Exp3 neighbour_max_C: 118 = 118
+   column PT-Exp3 failure_category: 4 = 4
+   column PT-Exp4 connection: parallel = parallel
+   column PT-Exp4 trigger_max_C: 630 = 630
+   column PT-Exp4 E_J (kJ): 40.0 = 40.0
+   column PT-Exp4 propagated: yes = yes
+   column PT-Exp4 time_to_propagation_s: 272 = 272
+   column PT-Exp4 neighbour_max_C: 607 = 607
+   column PT-Exp4 failure_category: 4 = 4
+   column PP-Exp1 connection: parallel = parallel
+   column PP-Exp1 trigger_max_C: 787 = 787
+   column PP-Exp1 E_J (kJ): 51.1 = 51.1
+   column PP-Exp1 propagated: yes = yes
+   column PP-Exp1 time_to_propagation_s: 152 = 152
+   column PP-Exp1 neighbour_max_C: 381 = 381
+   column PP-Exp1 failure_category: c.m. = c.m.
+   column PP-Exp2 connection: parallel = parallel
+   column PP-Exp2 trigger_max_C: 644 = 644
+   column PP-Exp2 E_J (kJ): 41.0 = 41.0
+   column PP-Exp2 propagated: yes = yes
+   column PP-Exp2 time_to_propagation_s: 147 = 147
+   column PP-Exp2 neighbour_max_C: 699 = 699
+   column PP-Exp2 failure_category: 2 = 2
+   column PP-Exp3 connection: parallel = parallel
+   column PP-Exp3 trigger_max_C: 686 = 686
+   column PP-Exp3 E_J (kJ): 43.9 = 43.9
+   column PP-Exp3 propagated: no = no
+   column PP-Exp3 time_to_propagation_s:  = 
+   column PP-Exp3 neighbour_max_C: 105 = 105
+   column PP-Exp3 failure_category: -- = --
+   column PP-Exp4 connection: parallel = parallel
+   column PP-Exp4 trigger_max_C: 728 = 728
+   column PP-Exp4 E_J (kJ): 46.9 = 46.9
+   column PP-Exp4 propagated: yes = yes
+   column PP-Exp4 time_to_propagation_s: 275 = 275
+   column PP-Exp4 neighbour_max_C: 523 = 523
+   column PP-Exp4 failure_category: 2 = 2
+   column ST-Exp1 connection: series = series
+   column ST-Exp1 trigger_max_C: 788 = 788
+   column ST-Exp1 E_J (kJ): 51.1 = 51.1
+   column ST-Exp1 propagated: no = no
+   column ST-Exp1 time_to_propagation_s:  = 
+   column ST-Exp1 neighbour_max_C: 128 = 128
+   column ST-Exp1 failure_category: 1 = 1
+   column ST-Exp2 connection: series = series
+   column ST-Exp2 trigger_max_C: 723 = 723
+   column ST-Exp2 E_J (kJ): 46.5 = 46.5
+   column ST-Exp2 propagated: no = no
+   column ST-Exp2 time_to_propagation_s:  = 
+   column ST-Exp2 neighbour_max_C: 133 = 133
+   column ST-Exp2 failure_category: 4 = 4
+   column ST-Exp3 connection: series = series
+   column ST-Exp3 trigger_max_C: 282 = 282
+   column ST-Exp3 E_J (kJ): 16.6 = 16.6
+   column ST-Exp3 propagated: yes = yes
+   column ST-Exp3 time_to_propagation_s: 177 = 177
+   column ST-Exp3 neighbour_max_C: 763 = 763
+   column ST-Exp3 failure_category: 1 = 1
+   column ST-Exp4 connection: series = series
+   column ST-Exp4 trigger_max_C: 756 = 756
+   column ST-Exp4 E_J (kJ): 48.8 = 48.8
+   column ST-Exp4 propagated: yes = yes
+   column ST-Exp4 time_to_propagation_s: 342 = 342
+   column ST-Exp4 neighbour_max_C: 733 = 733
+   column ST-Exp4 failure_category: 1 = 1
+   column SP-Exp1 connection: series = series
+   column SP-Exp1 trigger_max_C: 728 = 728
+   column SP-Exp1 E_J (kJ): 46.8 = 46.8
+   column SP-Exp1 propagated: yes = yes
+   column SP-Exp1 time_to_propagation_s: 223 = 223
+   column SP-Exp1 neighbour_max_C: 546 = 546
+   column SP-Exp1 failure_category: 2 = 2
+   column SP-Exp2 connection: series = series
+   column SP-Exp2 trigger_max_C: 755 = 755
+   column SP-Exp2 E_J (kJ): 48.7 = 48.7
+   column SP-Exp2 propagated: yes = yes
+   column SP-Exp2 time_to_propagation_s: 149 = 149
+   column SP-Exp2 neighbour_max_C: 698 = 698
+   column SP-Exp2 failure_category: c.m. = c.m.
+   column SP-Exp3 connection: series = series
+   column SP-Exp3 trigger_max_C: 832 = 832
+   column SP-Exp3 E_J (kJ): 54.3 = 54.3
+   column SP-Exp3 propagated: yes = yes
+   column SP-Exp3 time_to_propagation_s: 210 = 210
+   column SP-Exp3 neighbour_max_C: 420 = 420
+   column SP-Exp3 failure_category: c.m. = c.m.
+   column SP-Exp4 connection: series = series
+   column SP-Exp4 trigger_max_C: 625 = 625
+   column SP-Exp4 E_J (kJ): 39.6 = 39.6
+   column SP-Exp4 propagated: no = no
+   column SP-Exp4 time_to_propagation_s:  = 
+   column SP-Exp4 neighbour_max_C: 626 = 626
+   column SP-Exp4 failure_category: -- = --
+== manuscript/rebuild/tables/t2_parameters.tex  [map]
+   traced 21.1 <- results/manuscript_numbers.json: constants.cell_diameter_mm = 21.1
+   traced 70.1 <- results/manuscript_numbers.json: constants.cell_length_mm = 70.1
+   traced 0.25 <- results/manuscript_numbers.json: constants.can_thickness_mm = 0.25
+   traced 15 <- results/manuscript_numbers.json: constants.can_conductivity_W_mK = 15
+   [exponent or subscript] -1  ...d conductivity; mass and specific heat & 0.25 mm, 15 W\,m$^{-1}$\,K$^{-1}$; 9 g, 500 J\,kg$^{-1}$\,K$^...
+   [exponent or subscript] -1  ...vity; mass and specific heat & 0.25 mm, 15 W\,m$^{-1}$\,K$^{-1}$; 9 g, 500 J\,kg$^{-1}$\,K$^{-1}$ &   ...
+   traced 9 <- manuscript/data/parameters.csv: /m_can; c_can,(9); 500/ = 9
+   traced 500 <- manuscript/data/parameters.csv: /m_can; c_can,9; (500)/ = 500
+   [exponent or subscript] -1  ... heat & 0.25 mm, 15 W\,m$^{-1}$\,K$^{-1}$; 9 g, 500 J\,kg$^{-1}$\,K$^{-1}$ &   \\ Roll conductivity ac...
+   [exponent or subscript] -1  ...25 mm, 15 W\,m$^{-1}$\,K$^{-1}$; 9 g, 500 J\,kg$^{-1}$\,K$^{-1}$ &   \\ Roll conductivity across and a...
+   traced 1.3 <- results/manuscript_numbers.json: constants.k_radial_W_mK = 1.3
+   traced 25 <- results/manuscript_numbers.json: constants.k_axial_W_mK = 25
+   [exponent or subscript] -1  ...onductivity across and along the layers & 1.3 and 25 W\,m$^{-1}$\,K$^{-1}$ &   \\ Cell heat capacity &...
+   [exponent or subscript] -1  ...y across and along the layers & 1.3 and 25 W\,m$^{-1}$\,K$^{-1}$ &   \\ Cell heat capacity & 61.75 J\,...
+   traced 61.75 <- results/manuscript_numbers.json: constants.C_cell_J_K = 61.75
+   [exponent or subscript] -1  ...m$^{-1}$\,K$^{-1}$ &   \\ Cell heat capacity & 61.75 J\,K$^{-1}$ (65 g at 950 J\,kg$^{-1}$\,K$^{-1}$) ...
+   traced 65 <- results/manuscript_numbers.json: constants.m_cell_kg = 65
+   traced 950 <- results/manuscript_numbers.json: constants.cp_cell_J_kgK = 950
+   [exponent or subscript] -1  ...Cell heat capacity & 61.75 J\,K$^{-1}$ (65 g at 950 J\,kg$^{-1}$\,K$^{-1}$) &   \\ Resolved neighbour ...
+   [exponent or subscript] -1  ...capacity & 61.75 J\,K$^{-1}$ (65 g at 950 J\,kg$^{-1}$\,K$^{-1}$) &   \\ Resolved neighbour & half mod...
+   traced 19,355 <- results/stage8_paper_numbers.json: v3.base.n_nodes = 19355
+   traced 200 <- results/manuscript_numbers.json: constants.h_contact_W_m2K.low = 200
+   traced 2,000 <- results/manuscript_numbers.json: constants.h_contact_W_m2K.central = 2000
+   traced 3,700 <- results/manuscript_numbers.json: constants.h_contact_W_m2K.high = 3700
+   [exponent or subscript] -2  ...ductance between the cans, $h_c$ & 200, 2,000, 3,700 W\,m$^{-2}$\,K$^{-1}$ (low, central, high) &   \\...
+   [exponent or subscript] -1  ...etween the cans, $h_c$ & 200, 2,000, 3,700 W\,m$^{-2}$\,K$^{-1}$ (low, central, high) &   \\ Air in th...
+   traced 0.03 <- results/manuscript_numbers.json: constants.k_air_W_mK = 0.03
+   [exponent or subscript] -1  ...h) &   \\ Air in the wedge beside the contact & 0.03 W\,m$^{-1}$\,K$^{-1}$ &   \\ Welded tabs: series ...
+   [exponent or subscript] -1  ...Air in the wedge beside the contact & 0.03 W\,m$^{-1}$\,K$^{-1}$ &   \\ Welded tabs: series one, paral...
+   traced 6.8 <- results/manuscript_numbers.json: constants.g_tab_mW_K.central = 6.8
+   [exponent or subscript] -1  ... &   \\ Welded tabs: series one, parallel two & 6.8 mW\,K$^{-1}$ per tab (5 and 10 as brackets) &   \\...
+   traced 5 <- results/manuscript_numbers.json: constants.g_tab_mW_K.low = 5
+   traced 10 <- results/manuscript_numbers.json: constants.g_tab_mW_K.high = 10
+   traced 0.1817 <- results/manuscript_numbers.json: constants.view_factor_cans_in_contact = 0.18169
+   traced 0.8 <- results/manuscript_numbers.json: constants.emissivity = 0.8
+   traced 10 <- results/manuscript_numbers.json: constants.h_conv_W_m2K = 10
+   [exponent or subscript] -2  ...y & 0.1817; 0.8 &   \\ Room convection; ambient & 10 W\,m$^{-2}$\,K$^{-1}$; 25\textdegree C &   \\  {\...
+   [exponent or subscript] -1  ...; 0.8 &   \\ Room convection; ambient & 10 W\,m$^{-2}$\,K$^{-1}$; 25\textdegree C &   \\  {\textit{Tri...
+   traced 25 <- results/manuscript_numbers.json: constants.T_amb_C = 25
+   traced 21.39 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
+   traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
+   [label] 1  ...energy $E_\mathrm{b}$ & 9.0 to 54.3 kJ, one per test (Table 1); 33.2 kJ held to calorimetry &   \\  {...
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
+   traced 720 <- results/manuscript_numbers.json: constants.M_ref_g = 720
+   traced 0.15 <- results/manuscript_numbers.json: constants.sei_initial_amount = 0.15
+   traced 0 <- src/stage15_inputs.py: /SEI_AGED = (0\.0)/ = 0
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   traced 21.39 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 120 <- results/stage15_table.csv: tau_s where {'test': 'M50_PT_Exp4'} = 120
+   traced 240 <- results/stage15_table.csv: tau_s where {'test': 'M50_PT_Exp4'} = 240
+   traced 360 <- results/stage15_table.csv: tau_s where {'test': 'M50_PT_Exp4'} = 360
+== manuscript/rebuild/tables/t3_bounds.tex  [map]
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 225.8 <- results/stage14_corrections.json: E_avail_J = 225.838
+   traced 89.34 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_max'} = 89.3378
+   traced 136.5 <- results/stage14_inputs.csv: value where {'key': 'vendra_Qt_max'} = 136.5
+   [name] 21700  ...vent gas in open air (at most 136.5~kJ, measured on another 21700 cell)~ ; the gas and flame are taken at...
+   traced 1500 <- results/stage14_inputs.csv: value where {'key': 'T_flame_max'} = 1500
+   traced 398.5 <- results/stage14_inputs.csv: value where {'key': 'u_vent_max'} = 398.5
+   [exponent or subscript] -1  ... 1500\textdegree C~  and the vent gas at up to 398.5~m\,s$^{-1}$~ .}        rr  } \toprule Path &  {21...
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
+   traced 225.8 <- results/stage14_corrections.json: E_avail_J = 225.838
+   traced 1500 <- results/stage14_inputs.csv: value where {'key': 'T_flame_max'} = 1500
+   traced 0.85 <- results/stage14_independent_read.md: /at most about (\d+) J \(1\.11 %\)/ = 0.849
+   traced 195.5 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A2', 'window_s': '21.39'} = 195.516
+   traced 225.8 <- results/stage14_corrections.json: E_avail_J = 225.838
+   traced 398.5 <- results/stage14_inputs.csv: value where {'key': 'u_vent_max'} = 398.5
+   [exponent or subscript] -1  ...burning or not & 195.5 & 225.8 & convection at 398.5~m\,s$^{-1}$ with hydrogen's properties~ , at most...
+   traced 1500 <- results/stage14_inputs.csv: value where {'key': 'T_flame_max'} = 1500
+   traced 225.8 <- results/stage14_corrections.json: E_avail_J = 225.838
+   traced 225.8 <- results/stage14_corrections.json: E_avail_J = 225.838
+   traced 225.8 <- results/stage14_corrections.json: E_avail_J = 225.838
+   traced 225.8 <- results/stage14_corrections.json: E_avail_J = 225.838
+   traced 247.3 <- results/stage14_corrections.json: E_global_J = 247.333
+   traced 65.5 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A6', 'window_s': '21.39'} = 65.52
+   traced 65.5 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A6', 'window_s': '21.39'} = 65.52
+   traced 15.6 <- results/stage14_bounds.json: A6/conditional_25C_J/21.39 = 15.6394
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 25 <- results/stage14_inputs.csv: /0\.5 C for 30 s, (25) C/ = 25
+== manuscript/rebuild/highlights.txt  [map]
+   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
+   traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
+   traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
+   traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
+== manuscript/rebuild/keywords.txt  [map]
+== manuscript/rebuild/titles.md  [map]
+== manuscript/rebuild/ga_text.txt  [map]
+   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 4.75 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.E_C2_J = 4.754
+   traced 7.06 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.mid_J = 7.0625
+   traced 1.49 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
+   traced 3.97 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.E_C2_J = 3.97496
+   traced 6.85 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.bracket.mid_J = 6.85417
+   traced 1.72 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 37 <- results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
+   traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
+== manuscript/rebuild/letters/Cover_letter_FSJ.txt  [map]
+   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
+   traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
+   traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
+   traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
+   traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
+   traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
+   traced 98 <- manuscript/rebuild/data/predictions_registry.csv: rows = 98
+   [year or date] 2026  ... the runs they concern.  I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
+== manuscript/rebuild/letters/Cover_letter_JES.txt  [map]
+   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
+   traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
+   traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
+   traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
+   traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
+   traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
+   traced 98 <- manuscript/rebuild/data/predictions_registry.csv: rows = 98
+   [year or date] 2026  ... the runs they concern.  I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
+== manuscript/rebuild/letters/Cover_letter_JPS.txt  [map]
+   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
+   traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
+   traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
+   traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
+   traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
+   traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
+   traced 98 <- manuscript/rebuild/data/predictions_registry.csv: rows = 98
+   [year or date] 2026  ... the runs they concern.  I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
+== manuscript/rebuild/letters/Enquiry_FSJ.txt  [map]
+   [year or date] 2026  ...nt that would settle it. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
+   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 7 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.mid_J = 7.0625
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
+   traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 3 <- src/stage13_inputs.py: /FIRST_STEP = (0\.03)/ = 3
+   traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
+   traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
+   traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
+   traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 4.06435
+   traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 8.11583
+   traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 0.218747
+   traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 5.9624
+   traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
+   traced 37 <- results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
+== manuscript/rebuild/letters/Enquiry_JES.txt  [map]
+   [year or date] 2026  ...nt that would settle it. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
+   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 7 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.mid_J = 7.0625
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
+   traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 3 <- src/stage13_inputs.py: /FIRST_STEP = (0\.03)/ = 3
+   traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
+   traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
+   traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
+   traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 4.06435
+   traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 8.11583
+   traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 0.218747
+   traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 5.9624
+   traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
+   traced 37 <- results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
+== manuscript/rebuild/letters/Enquiry_JPS.txt  [map]
+   [year or date] 2026  ...sured propagation tests. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
+   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 7 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.mid_J = 7.0625
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
+   traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 3 <- src/stage13_inputs.py: /FIRST_STEP = (0\.03)/ = 3
+   traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
+   traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
+   traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
+   traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 4.06435
+   traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 8.11583
+   traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 0.218747
+   traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 5.9624
+   traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
+   traced 37 <- results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
+== manuscript/rebuild/supplement.tex  [broad]
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   broad 150 <- results/note_numbers.json.stage2_table[4].mean_peak_reactive_C~str | results/v12_numbers.json.grid.by_contact.high.res_peak_mean_C.max | results/stage6_numbers.json.part_a_mean_reaches_150_fact.peak_C[0] | results/stage7_paper_numbers.json.sensitivities_central.release_17.53s.C5.time_errors_s.M50_SP_Exp3
+   broad 138.5 <- results/note_numbers.json.V0.separator.at_C | results/stage6_numbers.json.part_b_sets.draws_by_connection.series.away_peak_C[1] | results/stage15_cross_section.json.A1_rows[137].rxn_3d_J
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   broad 3.105 <- results/stage8_paper_numbers.json.inputs.ratio.central | manuscript/data/parameters.csv:71:value | manuscript/data/parameters_table.csv:24:value
+   broad 3.105 <- results/stage8_paper_numbers.json.inputs.ratio.central | manuscript/data/parameters.csv:71:value | manuscript/data/parameters_table.csv:24:value
+   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
+   broad 200 <- results/note_numbers.json.V1.T_on_1_C_per_min_C | results/v11_sensitivity.json.exploratory.joint_against_dominant_runs.dominant_runs_cathode_start_T_C[0] | results/stage7_paper_numbers.json.sensitivities_central.release_17.53s.C1.time_error_median_s | results/stage8_paper_numbers.json.part_c.0.1.C3.errors_s[4]
+   broad 2,000 <- results/v12_numbers.json.grid.h_c_W_m2K.central
+   broad 3,700 <- results/v12_numbers.json.grid.h_c_W_m2K.high
+   [exponent or subscript] -2  ...ntact: a contact conductance of 200, 2,000 and 3,700~W\,m$^{-2}$\,K$^{-1}$ between the cans. \item A1 ...
+   [exponent or subscript] -1  ...ontact conductance of 200, 2,000 and 3,700~W\,m$^{-2}$\,K$^{-1}$ between the cans. \item A1 and A2 in ...
+   [label] 13  ...etween the cans. \item A1 and A2 in the predictions of step 13: the skin model and the cross-section c...
+   [label] 2.5  ...2: the ignition temperature and the two-body model (Section~2.5 and Appendix~B of the main text). In st...
+   broad 14 <- results/note_numbers.json.sei_storage_exploratory.0_days.headline.two_E21495_tau30_G0.5.hottest_node[0] | results/stage3_numbers.json.decomposition.lead_s.sd_kinetic | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_restriction.elec_evap.restricted.p2.5 | results/stage6_numbers.json.part_b_sets.total.hot_150C.times_s[1]
+   broad 178 <- results/note_numbers.json.stage1_extra.T_at_1Kpm_C_lumped_33kJ_500mWK[0] | results/v12_numbers.json.fact.by_connection.series.lum_peak_C.max | results/stage7_paper_numbers.json.sensitivities_central.release_25.24s.C5.time_errors_s.M50_PT_Exp4 | results/stage9_paper_numbers.json.runs.wall_s_by_category.both_to_900_s.n
+   broad 216 <- results/v12_numbers.json.measured.propagated.mean_s | results/stage9_paper_numbers.json.part_a.A2.M50_PT_Exp4.C2.t_hi_s | results/stage11_paper_numbers.json.runs.records | results/explore_sei_storage.json.storage.30_days.cases.two_E33223_tau30_G0.2.hottest_node_peak_Kpm
+   broad 5 <- results/note_numbers.json.V0.ln_k.cat1 | results/stage3_numbers.json.V4_amended_D25.mean_offset_C | results/v12_numbers.json.grid.tab_high_minus_low.parallel_hlow_tau10.res_peak_hottest_C | results/stage7_paper_numbers.json.aged_vs_fresh.low.largest_change_hot_138_5_crossing_s
+   [label] 15  ...d.   { }{}  The main text reports the results of steps 5 to 15; steps 1 to 4 concern when the chemistr...
+   broad 1 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.1.0~key | results/stage3_numbers.json.V4_registered.main_cluster_share | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.an_ele.share | results/v12_numbers.json.grid.tab_high_minus_low.series_hcentral_tau10.lum_peak_C
+   [label] 4  ... main text reports the results of steps 5 to 15; steps 1 to 4 concern when the chemistry starts in an...
+   broad 24 <- results/note_numbers.json.sei_storage_exploratory.1_days.lead_s.two_E33223_tau10_G0.5 | results/stage3_numbers.json.nine_cases_3a.two_E33223_tau30_G0.2.lead_p2.5_s | results/v11_sensitivity.json.exploratory.sets.central half, an_ele.n_long_lead | results/stage6_numbers.json.part_b_sets.body_by_contact.central.t_T1max_s[1]
+   broad 42 <- results/v12_numbers.json.sens.sens_mean_parallel_hcentral_gcentral_tau30_Enailmin.d_res_peak_away_K | results/stage6_numbers.json.part_b_sets.body.n | results/stage8_paper_numbers.json.part_d_records.M50_PP_Exp3.layer.where_can_peak.theta_deg | results/stage10_paper_numbers.json.part_a.con120_C2_hi_hcentral.nodes.side.after_section_I.max_abs_K
+   [label] 2  ...est}    Table~  gives, test by test, the brackets that Fig.~2 and Fig.~4a of the main text draw. The ...
+   [label] 4  ...le~  gives, test by test, the brackets that Fig.~2 and Fig.~4a of the main text draw. The local and l...
+   broad 0.0125 <- results/stage7_paper_numbers.json.aged_vs_fresh.high.lumped_peak_fresh_minus_aged_K[0] | results/stage8_paper_numbers.json.part_a.per_test.M50_PT_Exp2.fC1.hi | results/stage9_paper_numbers.json.part_b.120.per_test.M50_PP_Exp2.ft_C2.f_t_minus_fs_lo | results/stage10_paper_numbers.json.part_c.held_out.fC2.parallel_to_series.d_log
+   broad 1 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.1.0~key | results/stage3_numbers.json.V4_registered.main_cluster_share | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.an_ele.share | results/v12_numbers.json.grid.G_tab_W_K.low
+   traced 5 <- predictions_stage15.md: /less (5) % and plus 5 %/ = 5
+   broad 10 <- results/note_numbers.json.headline_0.15.tau10~key | results/stage3_numbers.json.nine_cases_3a.two_E33223_tau10_G0.5.lead_p2.5_s | results/v11_sensitivity.json.exploratory.sets.central half, an_ele.short_mode_width_s | results/v12_numbers.json.all_runs.t_T1max_s.min
+   [exponent or subscript] -9  ... to the residuals of Table~ , against an acceptance of $10^{-9}$ of the heat taken in, and every deliv...
+   broad 5 <- results/note_numbers.json.V0.ln_k.cat1 | results/stage3_numbers.json.V4_amended_D25.mean_offset_C | results/v12_numbers.json.grid.tab_high_minus_low.parallel_hlow_tau10.res_peak_hottest_C | results/stage7_paper_numbers.json.aged_vs_fresh.low.largest_change_hot_138_5_crossing_s
+   broad 5,248 <- results/v12_numbers.json.runs.all
+   broad 8.5\times10^{-12} <- results/note_numbers.json.levels_reached_two_strip.resolved_mean.1.0 | results/stage3_numbers.json.V6.energy_residual_max_abs | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.ncm811.share_95_bootstrap[0] | results/v12_numbers.json.central_case.runs.series_tau10.res_energy_residual_rel
+   broad 0.27 <- results/stage3_numbers.json.thermal_30_extra.corr_hottest_onset_k_radial | results/v12_numbers.json.central_case.runs.series_tau10.toward_below_hottest_K | results/stage8_paper_numbers.json.a4.per_test.M50_PT_Exp1.dur60_c1.f.lo | results/stage9_paper_numbers.json.part_a.A3.M50_SP_Exp4.f_max
+   broad 0.31 <- results/v11_sensitivity.json.shares.100 mW/K.hottest_onset_T_C.by_group.separator.share_95_bootstrap[1] | results/v12_numbers.json.v3.parallel_refine2.relative_change_of_peak_rise | results/stage8_paper_numbers.json.a4.per_test.M50_PP_Exp3.dur10_c1.lowering[0] | results/stage9_paper_numbers.json.part_b.120.per_test.M50_SP_Exp4.fmax.lo
+   broad 0.0035 <- results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_share_of_resamples_largest.IV | results/stage13_checks.json.V3.cases[0].max_abs_K | results/stage14_corrections.json.scans.axis[12].w
+   broad 0.0040 <- results/v12_numbers.json.v3.parallel_dthalf.relative_change_of_peak_rise | results/stage2_checks.json.step_halved.relative_move.T_onset_high | manuscript/data/parameters.csv:9:file_evidence
+   broad 6 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.10.0 | results/v12_numbers.json.grid.tab_high_minus_low.parallel_hlow_tau10.res_peak_mean_C | results/stage6_numbers.json.part_b_sets.total.hot_150C.times_s[0] | results/stage7_paper_numbers.json.part_c_timing.event_C5.away_reaches_255_7_after_start_s[0]
+   broad 506 <- results/stage6_numbers.json.runs.n | results/stage7_triggers.csv:144:T1max_C | results/stage15_accounts.json.accounts.acc_PP_Exp3.rows[11].lumped_less_resolved.stored
+   broad 8.5\times10^{-12} <- results/note_numbers.json.levels_reached_two_strip.resolved_mean.1.0 | results/stage3_numbers.json.V6.energy_residual_max_abs | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.ncm811.share_95_bootstrap[0] | results/v12_numbers.json.central_case.runs.series_tau10.res_energy_residual_rel
+   broad 0.28 <- results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_restriction.V.narrowing_95_bootstrap[1] | results/v12_numbers.json.central_case.runs.series_tau30.toward_below_hottest_K | results/stage8_paper_numbers.json.part_a.per_test.M50_PT_Exp1.fC3_exploratory.value | results/stage13_paper_numbers.json.A3.cases[2].A2
+   broad 0.32 <- results/v11_sensitivity.json.restriction.an_ele.by_case.100 mW/K.narrowing_95_bootstrap[1] | results/v12_numbers.json.grid.tab_high_minus_low.parallel_hcentral_tau10.res_peak_hottest_C | results/stage6_numbers.json.v3.cases.parallel_refine2.relative_change | results/stage8_paper_numbers.json.exploratory.C2.mid.p_by_test.M50_ST_Exp3
+   broad 0.0033 <- results/v11_sensitivity.json.shares.100 mW/K.lead_s.by_group.separator.share_95_bootstrap[1] | results/stage14_corrections.json.scans.axis[0].w
+   broad 0.0037 <- results/stage6_numbers.json.v3.cases.parallel_dthalf.relative_change | manuscript/data/parameters.csv:8:range_or_bracket | results/stage13_paper_numbers.json.conditioning[8].B2_f_star_con360~str | results/stage14_corrections.json.scans.axis[4].w
+   broad 7 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.1.0 | results/stage3_numbers.json.combined_210.hottest_onset_s.p2.5 | results/v11_sensitivity.json.exploratory.sei_heat_release_half.mode.short_mode_width_s | results/v12_numbers.json.grid.tab_high_minus_low.parallel_hlow_tau30.res_peak_mean_C
+   broad 186 <- results/v12_numbers.json.central_case.runs.parallel_tau10.in_rxn_J | results/stage7_paper_numbers.json.P_details.P6.by_connection.parallel.lumped_peaks_C[3] | results/stage9_paper_numbers.json.part_c.story[1].240.thermocouple_at_t_m_C | results/stage10_paper_numbers.json.part_a.tri21_C1_lo_hcentral.nodes.facing.window.model_at_end_C
+   broad 4.34\times10^{-12} <- results/note_numbers.json.levels_reached_two_strip.resolved_mean.1.0 | results/stage3_numbers.json.V6.energy_residual_max_abs | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.ncm811.share_95_bootstrap[0] | results/v12_numbers.json.central_case.runs.series_tau10.res_energy_residual_rel
+   broad 0.15 <- results/note_numbers.json.headline_0.15~key | results/stage3_numbers.json.P3_distribution.200 mW/K | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.separator.share | results/v12_numbers.json.exploratory.section2_rate_without_propagation.grid_mean_parallel_hlow_glow_tau10.toward.rate_C_per_s
+   broad 0.0008 <- results/v11_sensitivity.json.shares.500 mW/K.lumped_onset_s.by_group.separator.share_95_bootstrap[0] | results/stage7_paper_numbers.json.V3.cases.dthalf.relative_change_of_rise | results/stage8_paper_numbers.json.inputs.gas_layer.d_max_m | results/stage13_paper_numbers.json.conditioning[4].B2_f_star_con120~str
+   broad 8 <- results/note_numbers.json.stage2_table[0].hottest_reaches_278.9C_s~str | results/stage3_numbers.json.V4_amended_D25.sd_C | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.joint_variance | results/v12_numbers.json.exploratory.time_above_150C.grid_mean_parallel_hcentral_gcentral_tau10.toward.from_s
+   broad 230 <- results/note_numbers.json.stage2_table[3].resolved_reaction_heat_J~str | results/v11_sensitivity.json.restriction.an_ele.by_case.100 mW/K.per_reaction_restriction.V.restricted.width_s | results/v12_numbers.json.exploratory.time_above_150C.grid_mean_series_hcentral_glow_tau10.lumped.duration_s | results/stage8_paper_numbers.json.runs.n
+   broad 1.97\times10^{-11} <- results/note_numbers.json.levels_reached_two_strip.resolved_mean.1.0 | results/stage3_numbers.json.V6.energy_residual_max_abs | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.ncm811.share_95_bootstrap[0] | results/v12_numbers.json.central_case.runs.series_tau10.res_energy_residual_rel
+   traced 0.52 <- results/stage8_paper_numbers.json: checks.V3.v3mesh.relative_change = 0.515385
+   broad 0.0021 <- results/note_numbers.json.stage2_table[3].lumped_layered_cathode_conversion_900s~str | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.separator.share_95_bootstrap[1] | results/stage8_paper_numbers.json.checks.V3.v3step.relative_change
+   broad 9 <- results/note_numbers.json.only_local_cases[2]~str | results/stage3_numbers.json.V4_amended_D25.sd_C | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_restriction.an_ele.rows_used | results/stage6_numbers.json.part_b_sets.total_by_contact.central.hot_t_255_7_s[0]
+   broad 670 <- results/stage9_paper_numbers.json.runs.n | results/stage7_triggers.csv:189:T1max_C | results/stage15_cross_section.json.A1_rows[26].hot_peak_xs_C
+   broad 6.8\times10^{-12} <- results/note_numbers.json.levels_reached_two_strip.resolved_mean.1.0 | results/stage3_numbers.json.V6.energy_residual_max_abs | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.ncm811.share_95_bootstrap[0] | results/v12_numbers.json.central_case.runs.series_tau10.res_energy_residual_rel
+   broad 0.32 <- results/v11_sensitivity.json.restriction.an_ele.by_case.100 mW/K.narrowing_95_bootstrap[1] | results/v12_numbers.json.grid.tab_high_minus_low.parallel_hcentral_tau10.res_peak_hottest_C | results/stage6_numbers.json.v3.cases.parallel_refine2.relative_change | results/stage8_paper_numbers.json.exploratory.C2.mid.p_by_test.M50_ST_Exp3
+   broad 0.0006 <- results/stage9_paper_numbers.json.checks.V3.step.change_of_rise | manuscript/data/parameters.csv:75:range_or_bracket | results/stage13_paper_numbers.json.conditioning[4].B2_f_star_con240~str | results/stage13_checks.json.V6.regions.half.rel_diff
+   broad 10 <- results/note_numbers.json.headline_0.15.tau10~key | results/stage3_numbers.json.nine_cases_3a.two_E33223_tau10_G0.5.lead_p2.5_s | results/v11_sensitivity.json.exploratory.sets.central half, an_ele.short_mode_width_s | results/v12_numbers.json.all_runs.t_T1max_s.min
+   broad 30 <- results/note_numbers.json.headline_0.15.tau30~key | results/v11_sensitivity.json.restriction.an_ele.by_case.100 mW/K.per_reaction_restriction.elec_evap.restricted.p2.5 | results/v12_numbers.json.central_case.runs.parallel_tau10.resolved_minus_lumped_peak_K | results/stage6_numbers.json.part_a_sets_with_series.sens.hot.t_cross_max_s
+   broad 3.3\times10^{-12} <- results/note_numbers.json.levels_reached_two_strip.resolved_mean.1.0 | results/stage3_numbers.json.V6.energy_residual_max_abs | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.ncm811.share_95_bootstrap[0] | results/v12_numbers.json.central_case.runs.series_tau10.res_energy_residual_rel
+   [label] 9  ...10 & 30 & $3.3\times10^{-12}$ &  {the configuration of step 9, unchanged} \\ 11 & 216 & $6.1\times10^...
+   broad 11 <- results/note_numbers.json.headline_0.15.tau30.hottest_s | results/stage3_numbers.json.headline_3a.hottest_onset_s.p50 | results/v11_sensitivity.json.definitions~str | results/v12_numbers.json.exploratory.hottest_node_at_peak.grid_mean_parallel_hcentral_gcentral_tau10.r_mm
+   broad 216 <- results/v12_numbers.json.measured.propagated.mean_s | results/stage9_paper_numbers.json.part_a.A2.M50_PT_Exp4.C2.t_hi_s | results/stage11_paper_numbers.json.runs.records | results/explore_sei_storage.json.storage.30_days.cases.two_E33223_tau30_G0.2.hottest_node_peak_Kpm
+   broad 6.1\times10^{-12} <- results/note_numbers.json.levels_reached_two_strip.resolved_mean.1.0 | results/stage3_numbers.json.V6.energy_residual_max_abs | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.ncm811.share_95_bootstrap[0] | results/v12_numbers.json.central_case.runs.series_tau10.res_energy_residual_rel
+   [label] 9  ...1 & 216 & $6.1\times10^{-12}$ &  {the configuration of step 9, unchanged} \\ 12 & 10 & $1.2\times10^{...
+   broad 12 <- results/note_numbers.json.levels_reached_two_strip.lumped.0.15 | results/stage3_numbers.json.headline_3a.hottest_onset_s.mean | results/v11_sensitivity.json.exploratory.sets.central half, ncm811.short_mode_width_s | results/stage6_numbers.json.part_b_sets.total_by_contact.low.hot_t_peak_s[0]
+   broad 10 <- results/note_numbers.json.headline_0.15.tau10~key | results/stage3_numbers.json.nine_cases_3a.two_E33223_tau10_G0.5.lead_p2.5_s | results/v11_sensitivity.json.exploratory.sets.central half, an_ele.short_mode_width_s | results/v12_numbers.json.all_runs.t_T1max_s.min
+   broad 1.2\times10^{-12} <- results/note_numbers.json.levels_reached_two_strip.resolved_mean.1.0 | results/stage3_numbers.json.V6.energy_residual_max_abs | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.ncm811.share_95_bootstrap[0] | results/v12_numbers.json.central_case.runs.series_tau10.res_energy_residual_rel
+   [label] 9  ...12 & 10 & $1.2\times10^{-12}$ &  {the configuration of step 9, unchanged} \\ 13 & 389 & $2.99\times10...
+   broad 13 <- results/stage3_numbers.json.headline_3a_extra.lead_modes.first.lead_s[0] | results/v11_sensitivity.json.restriction.separator.by_case.500 mW/K.restricted.p2.5 | results/v12_numbers.json.fact.by_contact.high.res_peak_hottest_C.min_run~str | results/stage6_numbers.json.part_b_sets.body_by_contact.central.hot_150C.times_s[0]
+   broad 389 <- results/stage6_numbers.json.part_a_grid.hot.high.t_return_s[0] | results/stage13_checks.json.V4.runs | results/stage15_cross_section.json.A2[6].runs[6][2]
+   broad 2.99\times10^{-12} <- results/note_numbers.json.levels_reached_two_strip.resolved_mean.1.0 | results/stage3_numbers.json.V6.energy_residual_max_abs | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.ncm811.share_95_bootstrap[0] | results/v12_numbers.json.central_case.runs.series_tau10.res_energy_residual_rel
+   [label] 9  ... & 389 & $2.99\times10^{-12}$ &  {the configuration of step 9, unchanged} \\ 15 & 27 & $1.97\times10^...
+   broad 15 <- results/note_numbers.json.sei_storage_exploratory.0_days.headline.two_E33223_tau30_G0.2.hottest_node[0] | results/stage3_numbers.json.headline_3a.lead_s.p2.5 | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.full.p2.5 | results/stage6_numbers.json.part_b_sets.total_by_tau.21.39.hot_t_peak_s[1]
+   broad 27 <- results/note_numbers.json.sei_storage_exploratory.1_days.lead_s.two_E33223_tau30_G0.5 | results/stage3_numbers.json.V6.high_k.highk_27~key | results/stage6_numbers.json.part_b_sets.total_by_contact.high.lumped_150C.times_s[1] | results/stage7_paper_numbers.json.aged_vs_fresh.high.lumped_reaction_heat_fresh_J[0]
+   broad 1.97\times10^{-12} <- results/note_numbers.json.levels_reached_two_strip.resolved_mean.1.0 | results/stage3_numbers.json.V6.energy_residual_max_abs | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.ncm811.share_95_bootstrap[0] | results/v12_numbers.json.central_case.runs.series_tau10.res_energy_residual_rel
+   broad 1.5 <- results/note_numbers.json.stage2_heat_ratio_lumped_over_resolved.two_E33223_tau10_G0.2 | results/stage3_numbers.json.variance_share_thermal_over_kinetic.lead_s | results/v11_sensitivity.json.rank_shares.100 mW/K.lead_s.separator.rank_share | results/v12_numbers.json.grid.tab_high_minus_low.series_hcentral_tau10.lum_peak_C
+   broad 0.01 <- results/note_numbers.json.V2.synthetic_max_rel | results/stage3_numbers.json.V5.worst_relative_change | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.separator.variance | results/v12_numbers.json.grid.G_tab_W_K.low
+   [label] 3  ...each path can deliver}    Each input of the bounds of Table~3 of the main text was read at its source...
+   broad 1 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.1.0~key | results/stage3_numbers.json.V4_registered.main_cluster_share | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.an_ele.share | results/v12_numbers.json.grid.tab_high_minus_low.series_hcentral_tau10.lum_peak_C
+   broad 0.0037 <- manuscript/data/parameters.csv:8:range_or_bracket | results/stage13_paper_numbers.json.conditioning[8].B2_f_star_con360~str | results/stage14_corrections.json.scans.axis[4].w
+   traced 89.34 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_max'} = 89.3378
+   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
+   broad 136.5 <- results/stage7_paper_numbers.json.separator_spread.min_C | results/stage8_paper_numbers.json.part_c.0.1.C2.errors_s[5] | results/stage14_inputs.csv:42:value
+   [label] 2  ...\ Largest heat of burning in open air & 136.5~kJ &  , Table 2 & another cell \\ Largest flame tempera...
+   traced 1500 <- results/stage14_inputs.csv: value where {'key': 'T_flame_max'} = 1500
+   broad 2 <- results/note_numbers.json.levels_reached_two_strip.lumped.1.0 | results/stage3_numbers.json.V4_registered.T_in_p2.5_C~key | results/v12_numbers.json.central_case.series_minus_parallel.tau10.lum_peak_C | results/stage7_paper_numbers.json.part_c_c5_minus_c4_K.hot_spread_within_C4_K
+   traced 398.5 <- results/stage14_inputs.csv: value where {'key': 'u_vent_max'} = 398.5
+   [exponent or subscript] -1  ... & another cell \\ Largest vent gas velocity & 398.5~m\,s$^{-1}$ &   & another cell \\ Shortest runawa...
+   broad 1.131 <- results/stage14_inputs.csv:62:value
+   [name] 21700  ...ing & 1.131~s &   & another cell \\ Longest combustion of a 21700 cell & about 300~s &  , p.~11 & another...
+   broad 300 <- results/v12_numbers.json.all_runs.res_t_peak_hottest_s.max | inputs/fransson2024/fig10_extraction.json.source.sha256~str | results/stage15_cross_section.json.A2[25].runs[5][2] | results/stage15_accounts.json.accounts.acc_PP_Exp3.rows[9].lumped_less_resolved.reaction
+   broad 11 <- results/note_numbers.json.headline_0.15.tau30.hottest_s | results/stage3_numbers.json.headline_3a.hottest_onset_s.p50 | results/v11_sensitivity.json.definitions~str | results/v12_numbers.json.exploratory.hottest_node_at_peak.grid_mean_parallel_hcentral_gcentral_tau10.r_mm
+   broad 3 <- results/note_numbers.json.V0.ln_k.cat3~key | results/stage3_numbers.json.V4_registered.T_in_p2.5_C~key | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_T_C.by_group.separator.variance | results/v12_numbers.json.central_case.series_minus_parallel.tau10.res_peak_mean_C
+   broad 16 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.0.15 | results/stage3_numbers.json.decomposition.lumped_onset_s.sd_combined | results/v12_numbers.json.exploratory.hottest_node_at_peak.grid_mean_series_hlow_glow_tau10.z_mm | results/stage6_numbers.json.part_b_sets.body_by_contact.high.hot_150C.times_s[1]
+   [label] 3  ...all ruptures of the trigger & 3 of the 16 tests &  , Tables 3 and 4 & this cell \\ Sidewall breaches ...
+   [label] 4  ...ptures of the trigger & 3 of the 16 tests &  , Tables 3 and 4 & this cell \\ Sidewall breaches in the...
+   broad 10 <- results/note_numbers.json.headline_0.15.tau10~key | results/stage3_numbers.json.nine_cases_3a.two_E33223_tau10_G0.5.lead_p2.5_s | results/v11_sensitivity.json.exploratory.sets.central half, an_ele.short_mode_width_s | results/v12_numbers.json.all_runs.t_T1max_s.min
+   broad 2 <- results/note_numbers.json.levels_reached_two_strip.lumped.1.0 | results/stage3_numbers.json.V4_registered.T_in_p2.5_C~key | results/v12_numbers.json.central_case.series_minus_parallel.tau10.lum_peak_C | results/stage7_paper_numbers.json.part_c_c5_minus_c4_K.hot_spread_within_C4_K
+   broad 5 <- results/note_numbers.json.V0.ln_k.cat1 | results/stage3_numbers.json.V4_amended_D25.mean_offset_C | results/v12_numbers.json.grid.tab_high_minus_low.parallel_hlow_tau10.res_peak_hottest_C | results/stage7_paper_numbers.json.aged_vs_fresh.low.largest_change_hot_138_5_crossing_s
+   broad 5 <- results/note_numbers.json.V0.ln_k.cat1 | results/stage3_numbers.json.V4_amended_D25.mean_offset_C | results/v12_numbers.json.grid.tab_high_minus_low.parallel_hlow_tau10.res_peak_hottest_C | results/stage7_paper_numbers.json.aged_vs_fresh.low.largest_change_hot_138_5_crossing_s
+   broad 3 <- results/note_numbers.json.V0.ln_k.cat3~key | results/stage3_numbers.json.V4_registered.T_in_p2.5_C~key | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_T_C.by_group.separator.variance | results/v12_numbers.json.central_case.series_minus_parallel.tau10.res_peak_mean_C
+   broad 2 <- results/note_numbers.json.levels_reached_two_strip.lumped.1.0 | results/stage3_numbers.json.V4_registered.T_in_p2.5_C~key | results/v12_numbers.json.central_case.series_minus_parallel.tau10.lum_peak_C | results/stage7_paper_numbers.json.part_c_c5_minus_c4_K.hot_spread_within_C4_K
+   broad 194 <- results/note_numbers.json.sei_storage_exploratory.7_days.headline.two_E33223_tau30_G0.2.hottest_node[1] | results/stage3_numbers.json.V5.compared | results/stage9_paper_numbers.json.part_b.120.per_test.M50_SP_Exp3.ft_C2.t_hi_s | results/stage10_paper_numbers.json.part_a.con360_C2_hcentral.nodes.side.window.model_at_end_C
+   broad 100 <- results/note_numbers.json.only_local_smallest_mWK | results/stage3_numbers.json.thermal_30_extra.corr_lumped_onset_c_roll | results/v11_sensitivity.json.shares.500 mW/K.lumped_onset_s.by_group.an_ele.share | results/v12_numbers.json.grid.by_contact.low.res_peak_mean_C.min
+   broad 65.52 <- results/stage7_paper_numbers.json.triggers.levels.E_event_J
+   broad 18.2 <- results/stage7_paper_numbers.json.event.Wh[0] | results/stage8_paper_numbers.json.part_d_records.M50_PP_Exp3.layer.t_roll_peak_s | results/stage10_paper_numbers.json.part_a.con120_C2_hi_hcentral.nodes.side_out.after_section_I.rms_K | results/stage11_paper_numbers.json.clock.per_test.M50_ST_Exp3.shift_from_mean_s.d188
+   broad 45 <- results/note_numbers.json.sei_storage_exploratory.3_days.lead_s.two_E21495_tau30_G0.5 | results/stage3_numbers.json.headline_3a.lumped_onset_s.mean | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_restriction.elec_evap.restricted.width_s | results/stage7_paper_numbers.json.part_b.C5.low.time_error_median_s
+   broad 10 <- results/note_numbers.json.headline_0.15.tau10~key | results/stage3_numbers.json.nine_cases_3a.two_E33223_tau10_G0.5.lead_p2.5_s | results/v11_sensitivity.json.restriction.an_ele.by_case.100 mW/K.per_reaction_restriction.sei_decomp.restricted.p97.5 | results/v12_numbers.json.all_runs.t_T1max_s.min
+   broad 172 <- results/stage6_numbers.json.part_b_sets.body.lumped_150C.times_s[1] | results/stage8_paper_numbers.json.part_c.0.3.C1.errors_s[5] | results/stage9_paper_numbers.json.part_c.story[5].120.thermocouple_at_t_m_C | results/stage11_paper_numbers.json.far_face.per_test.M50_PP_Exp3.peaks_C.c_min_central
+   broad 1 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.1.0~key | results/stage3_numbers.json.V4_registered.main_cluster_share | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.an_ele.share | results/v12_numbers.json.grid.tab_high_minus_low.series_hcentral_tau10.lum_peak_C
+   broad 1000 <- results/stage7_triggers.csv:22:E_J | results/stage15_cross_section.json.A1_rows[43].hot_peak_3d_C | results/stage15_accounts.json.accounts.acc_ST_Exp2.rows[1].resolved.contact_and_wedge
+   traced 1500 <- results/stage14_inputs.csv: value where {'key': 'T_flame_max'} = 1500
+   broad 1 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.1.0~key | results/stage3_numbers.json.V4_registered.main_cluster_share | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.an_ele.share | results/v12_numbers.json.grid.tab_high_minus_low.series_hcentral_tau10.lum_peak_C
+   broad 30 <- results/note_numbers.json.headline_0.15.tau30~key | results/v11_sensitivity.json.restriction.an_ele.by_case.100 mW/K.per_reaction_restriction.elec_evap.restricted.p2.5 | results/v12_numbers.json.central_case.runs.parallel_tau10.resolved_minus_lumped_peak_K | results/stage6_numbers.json.part_a_sets_with_series.sens.hot.t_cross_max_s
+   broad 25 <- results/note_numbers.json.V1.t_in_h | results/stage3_numbers.json.V4_amended_D25~key | results/v11_sensitivity.json.shares.500 mW/K.lumped_onset_s.by_group.an_ele.variance | results/v12_numbers.json.sens.sens_mean_parallel_hcentral_gcentral_tau30_Enailmedian.d_lum_peak_K
+   broad 18.2 <- results/stage7_paper_numbers.json.event.Wh[0] | results/stage8_paper_numbers.json.part_d_records.M50_PP_Exp3.layer.t_roll_peak_s | results/stage10_paper_numbers.json.part_a.con120_C2_hi_hcentral.nodes.side_out.after_section_I.rms_K | results/stage11_paper_numbers.json.clock.per_test.M50_ST_Exp3.shift_from_mean_s.d188
+   [year or date] 2026  ...ication, Lithium Ion INR21700 M50 18.2~Wh, read in November 2026); it sets only the rate at which the di...
+   traced 15.6 <- results/stage14_bounds.json: A6/conditional_25C_J/21.39 = 15.6394
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   broad 25 <- results/note_numbers.json.V1.t_in_h | results/stage3_numbers.json.V4_amended_D25~key | results/v11_sensitivity.json.shares.500 mW/K.lumped_onset_s.by_group.an_ele.variance | results/v12_numbers.json.sens.sens_mean_parallel_hcentral_gcentral_tau30_Enailmedian.d_lum_peak_K
+   [label] 3  ...istance kept its value at 25\degC, while the bound in Table~3 of the main text is the whole stored en...
+   [label] 10  ...  draws the thermocouple records of two tests in its Figure~10, PT-Exp4, which propagated, and PP-Exp3...
+   broad 0.5 <- results/note_numbers.json.V0.cathode_peak.peak_W_per_g | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_share_of_resamples_largest.sei_decomp | results/v12_numbers.json.exploratory.section2_rate_without_propagation.grid_mean_parallel_hcentral_gcentral_tau10.lumped.rate_C_per_s | results/stage8_paper_numbers.json.part_a.per_test.M50_PT_Exp1.fC2.lo
+   [start of a time window] 0  ...e and separate calibrations, and resampled every 0.5~s from 0 to 500~s. The two readings differ by at...
+   broad 500 <- results/note_numbers.json.only_local_cases[2]~str | inputs/fransson2024/fig10_extraction.json.panels.a.curves.neighbour.t_last_s
+   broad 0.0005 <- results/v11_sensitivity.json.shares.100 mW/K.hottest_onset_s.by_group.separator.share | results/stage10_paper_numbers.json.measured.readings_agree_K.a.neighbour
+   traced 2.47 <- results/stage10_paper_numbers.json: measured.uncertainty_K = 2.47241
+   traced 0.45 <- results/stage10_paper_numbers.json: measured.uncertainty_s = 0.454675
+   broad 1200 <- results/stage10_v1.json.dpi
+   broad 32.2 <- results/stage6_numbers.json.part_b_sets.total.mean_peak_C[0] | results/stage13_readings.json.reading_2.peaks_below_C[2][1] | results/stage15_paper_numbers.json.B1.M50_ST_Exp3.runs[1].far_peak.t_s | results/stage15_cross_section.json.A2[8].runs[8][3]
+   broad 0 <- results/note_numbers.json.headline_0.15~key | results/stage3_numbers.json.V4_registered.delayed_share | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.ncm811.variance | results/v12_numbers.json.central_case.runs.series_tau10.res_energy_residual_rel
+   broad 102.0 <- results/v12_numbers.json.exploratory.time_above_150C.grid_mean_series_hcentral_gcentral_tau30.lumped.from_s | results/stage6_numbers.json.part_a_sets_with_series.v3.lumped.t_cross_max_s | results/stage10_paper_numbers.json.measured.PP_Exp3.peak_C | results/stage10_v1.json.what~str
+   broad 3.1 <- results/v12_numbers.json.grid.tab_high_minus_low.parallel_hhigh_tau30.res_peak_away_C | results/stage8_paper_numbers.json.inputs.ratio.central | results/stage9_paper_numbers.json.verdict_details.P2.rows[2].best_run.dt_s | results/stage10_paper_numbers.json.part_a.none_hcentral.nodes.side.window.rise_last_model_K
+   broad 79.9 <- results/stage7_paper_numbers.json.sensitivities_central.release_17.53s.C3.time_errors_s.M50_PP_Exp1 | results/stage10_paper_numbers.json.part_a.con240_C2_hcentral.nodes.away.window.max_abs_K
+   broad 8.4 <- results/stage6_numbers.json.part_b_sets.bracket.hot_150C.times_s[0] | results/stage8_paper_numbers.json.part_c.0.2.C3.times_s[11] | results/stage10_paper_numbers.json.part_a.con360_C2_hcentral.nodes.side_out.window.rise_last_model_K | results/stage11_paper_numbers.json.far_face.per_test.M50_PT_Exp1.thermal_K.c_min
+   traced 141.0 <- results/stage10_paper_numbers.json: measured.at_45_s_C = 140.997
+   broad 45 <- results/note_numbers.json.sei_storage_exploratory.3_days.lead_s.two_E21495_tau30_G0.5 | results/stage3_numbers.json.headline_3a.lumped_onset_s.mean | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_restriction.elec_evap.restricted.width_s | results/stage7_paper_numbers.json.part_b.C5.low.time_error_median_s
+   traced 197.3 <- results/stage10_paper_numbers.json: measured.at_onset_C = 197.254
+   broad 271.50 <- results/stage10_paper_numbers.json.measured.onset_figure_s | inputs/fransson2024/fig10_extraction.json.panels.a.section_bounds_s[1]
+   [label] 3  ...degC{} at 271.50~s, where the figure marks the onset (Table~3 of the paper gives 272~s); then the jum...
+   broad 272 <- results/v12_numbers.json.exploratory.section2_rate_without_propagation.sens_mean_series_hcentral_gcentral_tau30_amb20.lumped.t_end_s | results/stage6_numbers.json.measured.times_to_propagation_s[6] | results/stage7_paper_numbers.json.sensitivities_central.melting_p2.5_136.83C.C5.time_errors_s.M50_ST_Exp4 | results/stage8_paper_numbers.json.part_c.0.3.C1.errors_s[1]
+   traced 8.5 <- results/stage10_paper_numbers.json: measured.dip_after_spike_t_s = 8.5
+   broad 3 <- results/note_numbers.json.V0.ln_k.cat3~key | results/stage3_numbers.json.V4_registered.T_in_p2.5_C~key | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_T_C.by_group.separator.variance | results/v12_numbers.json.central_case.series_minus_parallel.tau10.res_peak_mean_C
+   [year or date] 2024  ...e model's inputs cover the cell \\ \midrule Fransson et al. 2024~ , M50 tests & LG M50 & two cells in co...
+   [year or date] 2024  ...ts & LG M50 & two cells in contact & yes \\ Fransson et al. 2024, P42A tests & Molicel P42A & two cells ...
+   broad 2024 <- results/stage9_paper_numbers.json.derived.sources.onset_temperatures_C~str | results/stage10_paper_numbers.json.part_d.qualifying_detail.reference~str
+   broad 3 <- results/note_numbers.json.V0.ln_k.cat3~key | results/stage3_numbers.json.V4_registered.T_in_p2.5_C~key | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_T_C.by_group.separator.variance | results/v12_numbers.json.central_case.series_minus_parallel.tau10.res_peak_mean_C
+   [year or date] 2024  ...24~  & LG M50 & seven cells, 3~mm gaps & yes \\ Read et al. 2024~  & unnamed, M50 specification & 34 cel...
+   broad 34 <- results/stage3_numbers.json.thermal_30.lumped_onset_s.p2.5 | results/v12_numbers.json.exploratory.section2_rate_without_propagation.grid_mean_parallel_hcentral_ghigh_tau10.lumped.T_start_C | results/stage6_numbers.json.part_b_sets.total_by_contact.high.lumped_minus_hot_255_7_s[1] | results/stage8_paper_numbers.json.part_d.per_test.M50_PP_Exp3.control.where.theta_deg
+   broad 1 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.1.0~key | results/stage3_numbers.json.V4_registered.main_cluster_share | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.an_ele.share | results/v12_numbers.json.grid.tab_high_minus_low.series_hcentral_tau10.lum_peak_C
+   [year or date] 2025  ...ion & 34 cells, 1~mm gaps & not established \\ Allen et al. 2025~  & Molicel P45B & seven cells, 3~mm & ...
+   broad 3 <- results/note_numbers.json.V0.ln_k.cat3~key | results/stage3_numbers.json.V4_registered.T_in_p2.5_C~key | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_T_C.by_group.separator.variance | results/v12_numbers.json.central_case.series_minus_parallel.tau10.res_peak_mean_C
+   [year or date] 2015  ...25~  & Molicel P45B & seven cells, 3~mm & no \\ Lamb et al. 2015~  & LiCoO$_2$, 18650 and pouch & cells ...
+   [name] 18650  ...& seven cells, 3~mm & no \\ Lamb et al. 2015~  & LiCoO$_2$, 18650 and pouch & cells in contact & no \\ Sa...
+   [year or date] 2019  ..._2$, 18650 and pouch & cells in contact & no \\ Said et al. 2019~  & LiCoO$_2$, 18650 & arrays & no \\ H...
+   [name] 18650  ... & cells in contact & no \\ Said et al. 2019~  & LiCoO$_2$, 18650 & arrays & no \\ Hoelle et al. 2023~  &...
+   [year or date] 2023  ...l. 2019~  & LiCoO$_2$, 18650 & arrays & no \\ Hoelle et al. 2023~  & prismatic & five-cell stack & no \\...
+   [year or date] 2024  ...3~  & prismatic & five-cell stack & no \\ Sch\"oberl et al. 2024~  & prismatic NMC and LFP & braced stac...
+   [year or date] 2020  ...tic NMC and LFP & braced stack & no \\ Torres-Castro et al. 2020~  & pouch & stacks & no \\ \bottomrule ...
+== manuscript/rebuild/tables/s1_steps.tex  [table:s1_steps.tex]
+   table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
+   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
+   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 3 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 3 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
+   table 30 <- manuscript/rebuild/data/steps.csv:4:question | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
+   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 12 <- manuscript/rebuild/data/steps.csv:4:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 6 <- manuscript/rebuild/data/steps.csv:4:committed | manuscript/rebuild/data/predictions_registry.csv:14:prediction
+   table 3 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   table 3 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
+   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 16 <- manuscript/rebuild/data/steps.csv:5:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:25:statement
+   table 5 <- manuscript/rebuild/data/steps.csv:5:committed | manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 5 <- manuscript/rebuild/data/steps.csv:5:committed | manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
+   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 21 <- manuscript/rebuild/data/steps.csv:6:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:statement
+   table 7 <- manuscript/rebuild/data/steps.csv:6:committed | manuscript/rebuild/data/predictions_registry.csv:26:prediction
+   table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 6 <- manuscript/rebuild/data/steps.csv:4:committed | manuscript/rebuild/data/predictions_registry.csv:14:prediction
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 6 <- manuscript/rebuild/data/steps.csv:4:committed | manuscript/rebuild/data/predictions_registry.csv:14:prediction
+   table 150 <- manuscript/rebuild/data/steps.csv:7:question | manuscript/rebuild/data/predictions_registry.csv:12:statement
+   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
+   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 23 <- manuscript/rebuild/data/steps.csv:7:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:4:source
+   table 7 <- manuscript/rebuild/data/steps.csv:6:committed | manuscript/rebuild/data/predictions_registry.csv:26:prediction
+   table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 6 <- manuscript/rebuild/data/steps.csv:4:committed | manuscript/rebuild/data/predictions_registry.csv:14:prediction
+   table 6 <- manuscript/rebuild/data/steps.csv:4:committed | manuscript/rebuild/data/predictions_registry.csv:14:prediction
+   table 7 <- manuscript/rebuild/data/steps.csv:6:committed | manuscript/rebuild/data/predictions_registry.csv:26:prediction
+   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
+   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 26 <- manuscript/rebuild/data/steps.csv:8:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:10:source
+   table 8 <- manuscript/rebuild/data/steps.csv:8:committed | manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 3 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   table 5 <- manuscript/rebuild/data/steps.csv:5:committed | manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   table 5 <- manuscript/rebuild/data/steps.csv:5:committed | manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   table 8 <- manuscript/rebuild/data/steps.csv:8:committed | manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
+   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 26 <- manuscript/rebuild/data/steps.csv:8:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:10:source
+   table 8 <- manuscript/rebuild/data/steps.csv:8:committed | manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 5 <- manuscript/rebuild/data/steps.csv:5:committed | manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   table 3 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   table 3 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   table 9 <- manuscript/rebuild/data/steps.csv:10:step | manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
+   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 29 <- manuscript/rebuild/data/steps.csv:10:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 8 <- manuscript/rebuild/data/steps.csv:8:committed | manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 5 <- manuscript/rebuild/data/steps.csv:5:committed | manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   table 3 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   table 3 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
+   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 30 <- manuscript/rebuild/data/steps.csv:4:question | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 8 <- manuscript/rebuild/data/steps.csv:8:committed | manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 11 <- manuscript/rebuild/data/steps.csv:5:predictions_file | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
+   table 11 <- manuscript/rebuild/data/steps.csv:5:predictions_file | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 02 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 6 <- manuscript/rebuild/data/steps.csv:4:committed | manuscript/rebuild/data/predictions_registry.csv:14:prediction
+   table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 12 <- manuscript/rebuild/data/steps.csv:4:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
+   table 11 <- manuscript/rebuild/data/steps.csv:5:predictions_file | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 03 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 13 <- manuscript/rebuild/data/steps.csv:14:step | manuscript/rebuild/data/predictions_registry.csv:76:stage
+   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
+   table 11 <- manuscript/rebuild/data/steps.csv:5:predictions_file | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 16 <- manuscript/rebuild/data/steps.csv:5:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:25:statement
+   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 7 <- manuscript/rebuild/data/steps.csv:6:committed | manuscript/rebuild/data/predictions_registry.csv:26:prediction
+   table 3 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 14 <- manuscript/rebuild/data/steps.csv:15:step | manuscript/rebuild/data/predictions_registry.csv:86:stage
+   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
+   table 11 <- manuscript/rebuild/data/steps.csv:5:predictions_file | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 17 <- manuscript/rebuild/data/steps.csv:15:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:80:source
+   table 6 <- manuscript/rebuild/data/steps.csv:4:committed | manuscript/rebuild/data/predictions_registry.csv:14:prediction
+   table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 15 <- manuscript/rebuild/data/steps.csv:16:step | manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
+   table 11 <- manuscript/rebuild/data/steps.csv:5:predictions_file | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 18 <- manuscript/rebuild/data/steps.csv:16:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:11:expectation
+   table 8 <- manuscript/rebuild/data/steps.csv:8:committed | manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 7 <- manuscript/rebuild/data/steps.csv:6:committed | manuscript/rebuild/data/predictions_registry.csv:26:prediction
+   table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 98 <- manuscript/rebuild/data/predictions_registry.csv:18:statement
+   table 56 <- manuscript/rebuild/data/predictions_registry.csv:25:statement
+   table 42 <- manuscript/rebuild/data/predictions_registry.csv:3:statement
+   broad 24 <- results/note_numbers.json.sei_storage_exploratory.1_days.lead_s.two_E33223_tau10_G0.5 | results/stage3_numbers.json.nine_cases_3a.two_E33223_tau10_G0.05.share_only_hottest | results/v11_sensitivity.json.exploratory.sets.central half, an_ele.n_long_lead | results/v12_numbers.json.exploratory.section2_rate_without_propagation.grid_mean_parallel_hlow_ghigh_tau10.lumped.rate_C_per_s
+== manuscript/rebuild/tables/s2_registry.tex  [table:s2_registry.tex]
+   table 1 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   table 500 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 0.15 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 4.2 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 29 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 86 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 11.5 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 39 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 30 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 71 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 1 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0.15 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 42 <- manuscript/rebuild/data/predictions_registry.csv:3:statement
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   table 100 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 200 <- manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 500 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 21.5 <- manuscript/rebuild/data/predictions_registry.csv:3:statement
+   table 200 <- manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 500 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 1 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0.15 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 100 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 21.5 <- manuscript/rebuild/data/predictions_registry.csv:3:statement
+   table 100 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 1 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 1 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 2 <- manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   table 500 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   table 2 <- manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   table 200 <- manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   table 2 <- manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 21.5 <- manuscript/rebuild/data/predictions_registry.csv:3:statement
+   table 500 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 30 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   table 3 <- manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   table 30 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 500 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 0.15 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 95 <- manuscript/rebuild/data/predictions_registry.csv:9:statement
+   table 99 <- manuscript/rebuild/data/predictions_registry.csv:9:expectation
+   table 100 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 3 <- manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   table 30 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 500 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   traced 95 <- predictions_stage13.md: /the central (95) % of the 200 draws/ = 95
+   table 20 <- manuscript/rebuild/data/predictions_registry.csv:10:statement
+   table 20 <- manuscript/rebuild/data/predictions_registry.csv:10:statement
+   table 8 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 40 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 9.2 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 64 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 3 <- manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   table 100 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 200 <- manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 70 <- manuscript/rebuild/data/predictions_registry.csv:11:expectation
+   table 100 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 18.5 <- manuscript/rebuild/data/predictions_registry.csv:11:expectation
+   table 100 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 10.5 <- manuscript/rebuild/data/predictions_registry.csv:11:expectation
+   table 500 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 3 <- manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   table 30 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 500 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 1.5 <- manuscript/rebuild/data/predictions_registry.csv:12:statement
+   table 3 <- manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   table 3 <- manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   table 30 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 500 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 1.5 <- manuscript/rebuild/data/predictions_registry.csv:12:statement
+   table 2 <- manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 3 <- manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 100 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 36.5 <- manuscript/rebuild/data/predictions_registry.csv:14:expectation
+   table 4 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   table 30 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 500 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 65 <- manuscript/rebuild/data/predictions_registry.csv:15:expectation
+   table 4 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   table 30 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 500 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 0.8 <- manuscript/rebuild/data/predictions_registry.csv:16:statement
+   table 1.1 <- manuscript/rebuild/data/predictions_registry.csv:16:statement
+   table 4 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 100 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 5 <- manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   table 4 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 2.5 <- manuscript/rebuild/data/predictions_registry.csv:18:statement
+   table 97.5 <- manuscript/rebuild/data/predictions_registry.csv:18:statement
+   table 40 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 4 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 100 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 500 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 500 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 5 <- manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   traced 147 <- smallest and largest of inputs/fransson2024/m50_tests.csv: time_to_propagation_s = 147
+   traced 342 <- smallest and largest of inputs/fransson2024/m50_tests.csv: time_to_propagation_s = 342
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   table 5 <- manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   table 20 <- manuscript/rebuild/data/predictions_registry.csv:10:statement
+   traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   table 145 <- manuscript/rebuild/data/predictions_registry.csv:21:expectation
+   table 170 <- manuscript/rebuild/data/predictions_registry.csv:21:expectation
+   table 5 <- manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   table 150 <- manuscript/rebuild/data/predictions_registry.csv:12:statement
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   table 150 <- manuscript/rebuild/data/predictions_registry.csv:12:statement
+   table 5 <- manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   table 60 <- manuscript/rebuild/data/predictions_registry.csv:23:statement
+   table 0.2 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 0.8 <- manuscript/rebuild/data/predictions_registry.csv:16:statement
+   table 0.4 <- manuscript/rebuild/data/predictions_registry.csv:23:statement
+   table 5 <- manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   table 30 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 8 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 4 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 8 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 5 <- manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   table 4,800 <- manuscript/rebuild/data/predictions_registry.csv:22:source
+   table 30 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 90 <- manuscript/rebuild/data/predictions_registry.csv:25:statement
+   table 9 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 16 <- manuscript/rebuild/data/predictions_registry.csv:25:statement
+   table 56 <- manuscript/rebuild/data/predictions_registry.csv:25:statement
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   table 5 <- manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   table 1 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   [label] 3  ...sterior (standard deviation ratio above 1), reversing Stage 3's onset finding. & Study's expectation:...
+   table 4.6 <- manuscript/rebuild/data/predictions_registry.csv:26:expectation
+   table 6 <- manuscript/rebuild/data/predictions_registry.csv:14:prediction
+   [label] 5  ...ge changes the path 4.6-fold. & failed \\ 6 & P1 & In Stage 5 runs the lumped neighbour first reaches...
+   table 150 <- manuscript/rebuild/data/predictions_registry.csv:12:statement
+   traced 147 <- smallest and largest of inputs/fransson2024/m50_tests.csv: time_to_propagation_s = 147
+   traced 342 <- smallest and largest of inputs/fransson2024/m50_tests.csv: time_to_propagation_s = 342
+   traced 147 <- smallest and largest of inputs/fransson2024/m50_tests.csv: time_to_propagation_s = 147
+   [label] 5  ...ways before 147 s. & Brief's expectation: Likely; the Stage 5 central case already shows it. Study's ...
+   table 6 <- manuscript/rebuild/data/predictions_registry.csv:14:prediction
+   table 133 <- manuscript/rebuild/data/predictions_registry.csv:28:statement
+   [label] 5  ...of five non-propagating tests, in fewer than half the Stage 5 runs. & Brief's expectation: Uncertain....
+   table 6 <- manuscript/rebuild/data/predictions_registry.csv:14:prediction
+   [label] 5  ...ak times, the lumped neighbour's peak rises above its Stage 5 central value (159 to 162\degC) by at l...
+   table 159 <- manuscript/rebuild/data/predictions_registry.csv:29:statement
+   table 162 <- manuscript/rebuild/data/predictions_registry.csv:29:statement
+   table 20 <- manuscript/rebuild/data/predictions_registry.csv:10:statement
+   [label] 5  ... a longer release keeps the neighbour heated past its Stage 5 peak time. Study's expectation: Fails. ...
+   table 6 <- manuscript/rebuild/data/predictions_registry.csv:14:prediction
+   table 6 <- manuscript/rebuild/data/predictions_registry.csv:14:prediction
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   table 6 <- manuscript/rebuild/data/predictions_registry.csv:14:prediction
+   traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 70 <- manuscript/rebuild/data/predictions_registry.csv:11:expectation
+   table 35 <- manuscript/rebuild/data/predictions_registry.csv:32:statement
+   table 0 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 6 <- manuscript/rebuild/data/predictions_registry.csv:14:prediction
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   table 7 <- manuscript/rebuild/data/predictions_registry.csv:26:prediction
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   table 9 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 16 <- manuscript/rebuild/data/predictions_registry.csv:25:statement
+   [label] 6  ...han 9 of the 16 tests. & Brief's expectation: Likely; Stage 6 ignited the hot spot only at the Databa...
+   table 7 <- manuscript/rebuild/data/predictions_registry.csv:26:prediction
+   table 150 <- manuscript/rebuild/data/predictions_registry.csv:12:statement
+   table 9 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 16 <- manuscript/rebuild/data/predictions_registry.csv:25:statement
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 16 <- manuscript/rebuild/data/predictions_registry.csv:25:statement
+   table 7 <- manuscript/rebuild/data/predictions_registry.csv:26:prediction
+   table 60 <- manuscript/rebuild/data/predictions_registry.csv:23:statement
+   table 7 <- manuscript/rebuild/data/predictions_registry.csv:26:prediction
+   table 138.5 <- manuscript/rebuild/data/predictions_registry.csv:37:statement
+   table 9 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 16 <- manuscript/rebuild/data/predictions_registry.csv:25:statement
+   table 138.5 <- manuscript/rebuild/data/predictions_registry.csv:37:statement
+   [label] 5  ...on: Likely; the hot spot passed 138.5\degC{} in every Stage 5 run at the central and high contacts. S...
+   table 7 <- manuscript/rebuild/data/predictions_registry.csv:26:prediction
+   table 7 <- manuscript/rebuild/data/predictions_registry.csv:26:prediction
+   table 7 <- manuscript/rebuild/data/predictions_registry.csv:26:prediction
+   table 5 <- manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   table 8 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 4 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 8 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 7 <- manuscript/rebuild/data/predictions_registry.csv:26:prediction
+   table 381 <- manuscript/rebuild/data/predictions_registry.csv:41:statement
+   table 763 <- manuscript/rebuild/data/predictions_registry.csv:41:statement
+   table 8 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 0 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   [label] 7  ... Of the nine propagated tests, f*(C1) is 0 in the six Stage 7 hits and below 0.3 in the other three. ...
+   table 0.3 <- manuscript/rebuild/data/predictions_registry.csv:6:statement
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   table 8 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   [label] 7  ...n-propagated tests, at least three, including the two Stage 7 false alarms at 0, have f*(C1) below 0....
+   table 0 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0.3 <- manuscript/rebuild/data/predictions_registry.csv:6:statement
+   table 0.3 <- manuscript/rebuild/data/predictions_registry.csv:6:statement
+   table 8 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 0.05 <- manuscript/rebuild/data/predictions_registry.csv:20:source
+   table 0.5 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 8 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 0.2 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 60 <- manuscript/rebuild/data/predictions_registry.csv:23:statement
+   [label] 7  ...t four of its hits. & Brief's expectation: Uncertain; Stage 7 had one of eight within 60 s for C3 at ...
+   table 60 <- manuscript/rebuild/data/predictions_registry.csv:23:statement
+   table 0 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 8 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 0.1 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 0.2 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 0.3 <- manuscript/rebuild/data/predictions_registry.csv:6:statement
+   table 12 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 16 <- manuscript/rebuild/data/predictions_registry.csv:25:statement
+   table 8 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 8 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 0.2 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 0.1 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 8 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 0 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 9 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   traced 21.39 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   table 30 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 11.9 <- manuscript/rebuild/data/predictions_registry.csv:50:expectation
+   table 18.5 <- manuscript/rebuild/data/predictions_registry.csv:11:expectation
+   table 9 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   traced 21.39 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   table 30 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 0.1 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 61.4 <- manuscript/rebuild/data/predictions_registry.csv:51:expectation
+   table 9 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 0.02 <- manuscript/rebuild/data/predictions_registry.csv:2:source
+   table 9 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 9 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 9 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 240 <- manuscript/rebuild/data/predictions_registry.csv:55:statement
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   table 0.2 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 9 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 0.75 <- manuscript/rebuild/data/predictions_registry.csv:56:statement
+   table 1.40 <- manuscript/rebuild/data/predictions_registry.csv:56:statement
+   table 9 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 0.01 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   [label] 7  ...xp1 and M50\_SP\_Exp2. & Brief's expectation: Likely (Stage 7: the aged SEI changed no verdict). Stud...
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   traced 21.39 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   [label] 9  ...bracket, fits M50\_PT\_Exp4's measured history at the Stage 9 (far-face) node within 25 K root-mean-s...
+   table 25 <- manuscript/rebuild/data/predictions_registry.csv:5:source
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 240 <- manuscript/rebuild/data/predictions_registry.csv:55:statement
+   table 360 <- manuscript/rebuild/data/predictions_registry.csv:59:statement
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 30 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 60 <- manuscript/rebuild/data/predictions_registry.csv:23:statement
+   table 360 <- manuscript/rebuild/data/predictions_registry.csv:59:statement
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 0 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   [label] 9  ...ee nodes in the same four low-maximum tests as at the Stage 9 node; M50\_PT\_Exp1's facing-node value...
+   [label] 9  ... node; M50\_PT\_Exp1's facing-node value is below its Stage 9 value. & Brief's expectation: likely (t...
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   [label] 9  ...exceeds the smallest C2 time-matching fraction at the Stage 9, 90 degree and facing nodes. & Brief's ...
+   table 90 <- manuscript/rebuild/data/predictions_registry.csv:25:statement
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 0.1 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 0.05 <- manuscript/rebuild/data/predictions_registry.csv:20:source
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 0.05 <- manuscript/rebuild/data/predictions_registry.csv:20:source
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 11 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 0.025 <- manuscript/rebuild/data/predictions_registry.csv:5:source
+   table 0 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 11 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 0.025 <- manuscript/rebuild/data/predictions_registry.csv:5:source
+   table 0 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 11 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 11 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 11 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 11 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 60 <- manuscript/rebuild/data/predictions_registry.csv:23:statement
+   table 12 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   [label] 5  ...t the central contact. & Brief's expectation: likely (Stage 5 found no ignition at 33.2 kJ with the t...
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   [label] 6  ...ell study's trigger); the file records it as fixed by Stage 6's records. & held \\ 12 & P2 & At the h...
+   table 12 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   [label] 6  ...on: uncertain; the file records it as close to fixed (Stage 6, with other tabs). & held \\ 12 & P3 & ...
+   table 12 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   [label] 9  ... expectation: likely; the file records it as fixed by Stage 9's records. & held \\ 12 & P4 & With E\_...
+   table 12 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   [label] 9  ... expectation: likely; the file records it as fixed by Stage 9's records. & held \\ 13 & P1 & For PT\_...
+   table 13 <- manuscript/rebuild/data/predictions_registry.csv:76:stage
+   table 5 <- manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 0.07701 <- manuscript/rebuild/data/predictions_registry.csv:76:statement
+   table 13 <- manuscript/rebuild/data/predictions_registry.csv:76:stage
+   table 40 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 0.21775 <- manuscript/rebuild/data/predictions_registry.csv:77:statement
+   table 5 <- manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   table 13 <- manuscript/rebuild/data/predictions_registry.csv:76:stage
+   table 120 <- manuscript/rebuild/data/predictions_registry.csv:78:statement
+   table 5 <- manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   table 0.41450 <- manuscript/rebuild/data/predictions_registry.csv:78:statement
+   table 13 <- manuscript/rebuild/data/predictions_registry.csv:76:stage
+   traced 10 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_ST_Exp3', 'region': 'half'} = 10
+   traced 10 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_ST_Exp3', 'region': 'half'} = 10
+   traced 60 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_ST_Exp3', 'region': 'half'} = 60
+   traced 21.39 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   table 13 <- manuscript/rebuild/data/predictions_registry.csv:76:stage
+   traced 21.39 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   table 1.8 <- manuscript/rebuild/data/predictions_registry.csv:80:statement
+   table 2.2 <- manuscript/rebuild/data/predictions_registry.csv:80:statement
+   table 13 <- manuscript/rebuild/data/predictions_registry.csv:76:stage
+   traced 21.39 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   table 25 <- manuscript/rebuild/data/predictions_registry.csv:5:source
+   table 13 <- manuscript/rebuild/data/predictions_registry.csv:76:stage
+   table 215 <- manuscript/rebuild/data/predictions_registry.csv:82:statement
+   table 240 <- manuscript/rebuild/data/predictions_registry.csv:55:statement
+   traced 95 <- predictions_stage13.md: /the central (95) % of the 200 draws/ = 95
+   table 200 <- manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 40 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 13 <- manuscript/rebuild/data/predictions_registry.csv:76:stage
+   traced 10 <- predictions_stage13.md: /within the larger of (10) % and 300 J/ = 10
+   traced 300 <- predictions_stage13.md: /within the larger of 10 % and (300) J/ = 300
+   table 28 <- manuscript/rebuild/data/predictions_registry.csv:6:source
+   table 32 <- manuscript/rebuild/data/predictions_registry.csv:60:source
+   table 13 <- manuscript/rebuild/data/predictions_registry.csv:76:stage
+   table 21.39 <- manuscript/rebuild/data/predictions_registry.csv:50:statement
+   table 120 <- manuscript/rebuild/data/predictions_registry.csv:78:statement
+   table 360 <- manuscript/rebuild/data/predictions_registry.csv:59:statement
+   table 1.5 <- manuscript/rebuild/data/predictions_registry.csv:12:statement
+   table 360 <- manuscript/rebuild/data/predictions_registry.csv:59:statement
+   table 13 <- manuscript/rebuild/data/predictions_registry.csv:76:stage
+   table 150 <- manuscript/rebuild/data/predictions_registry.csv:12:statement
+   table 300 <- manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   table 4 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 14 <- manuscript/rebuild/data/predictions_registry.csv:86:stage
+   table 2 <- manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
+   table 14 <- manuscript/rebuild/data/predictions_registry.csv:86:stage
+   table 5.96 <- manuscript/rebuild/data/predictions_registry.csv:87:statement
+   table 14 <- manuscript/rebuild/data/predictions_registry.csv:86:stage
+   table 0.26 <- manuscript/rebuild/data/predictions_registry.csv:6:statement
+   table 14 <- manuscript/rebuild/data/predictions_registry.csv:86:stage
+   table 5.96 <- manuscript/rebuild/data/predictions_registry.csv:87:statement
+   traced 21.39 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   table 14 <- manuscript/rebuild/data/predictions_registry.csv:86:stage
+   table 14 <- manuscript/rebuild/data/predictions_registry.csv:86:stage
+   table 1 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 15 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 15 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 15 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   traced 21.39 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   table 6 <- manuscript/rebuild/data/predictions_registry.csv:14:prediction
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 15 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 1.25 <- manuscript/rebuild/data/predictions_registry.csv:94:statement
+   table 15 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   table 150 <- manuscript/rebuild/data/predictions_registry.csv:12:statement
+   table 400 <- manuscript/rebuild/data/predictions_registry.csv:5:prediction
+   table 15 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 15 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   traced 197.3 <- results/stage10_paper_numbers.json: measured.at_onset_C = 197.254
+   table 15 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   table 5.0 <- manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   traced 271.5 <- results/stage10_paper_numbers.json: measured.onset_figure_s = 271.5
+   table 5 <- manuscript/rebuild/data/predictions_registry.csv:6:prediction
+   traced 25 <- results/manuscript_numbers.json: constants.k_axial_W_mK = 25
+   table 15 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   broad 5,045 <- results/stage9_paper_numbers.json.part_a.A2.M50_PT_Exp4.C2.E_bracket_J[1] | results/stage12_fixed_ejecta.csv:10:prior_E_hi_J
+   table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 15 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
+   broad 6,209 <- results/stage9_paper_numbers.json.part_b.240.per_test.M50_PT_Exp4.ft_C1.E_bracket_J[0] | results/stage15_readings.json.3.240.0[4].E_J | results/stage14_needs.csv:5:threshold_C2_hi_J
+   table 240 <- manuscript/rebuild/data/predictions_registry.csv:55:statement
+   traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+== manuscript/rebuild/tables/s3_thresholds.tex  [table:s3_thresholds.tex]
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   table 4.18 <- results/stage14_needs.csv:2:threshold_C1_lo_J | results/stage15_cross_section.json.A1_rows[145].E_J
+   table 4.53 <- results/stage14_needs.csv:2:threshold_C1_hi_J | results/stage15_cross_section.json.A1[6].key~str
+   table 12.54 <- results/stage14_needs.csv:2:threshold_C2_lo_J
+   table 12.89 <- results/stage14_needs.csv:2:threshold_C2_hi_J
+   table 10.75 <- results/stage15_cross_section.json.A2[0].lo_J
+   table 10.81 <- results/stage15_cross_section.json.A2[0].hi_J
+   table 0.00 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 1.68 <- results/stage14_needs.csv:3:threshold_C1_hi_J
+   table 1.68 <- results/stage14_needs.csv:3:threshold_C1_hi_J
+   table 3.37 <- results/stage14_needs.csv:3:threshold_C2_hi_J | results/stage15_cross_section.json.A1_rows[121].rxn_xs_J
+   table 6.33 <- results/stage15_cross_section.json.A2[1].lo_J
+   table 6.38 <- results/stage15_cross_section.json.A2[1].hi_J
+   table 2.45 <- results/stage14_needs.csv:4:threshold_C1_lo_J | results/stage15_cross_section.json.A1_rows[64].E_J
+   table 3.68 <- results/stage14_needs.csv:4:threshold_C1_hi_J
+   table 7.36 <- results/stage14_needs.csv:4:threshold_C2_lo_J | results/stage15_cross_section.json.A1[3].key~str
+   table 8.58 <- results/stage14_needs.csv:4:threshold_C2_hi_J
+   table 8.56 <- results/stage15_cross_section.json.A2[2].lo_J
+   table 8.62 <- results/stage15_cross_section.json.A2[2].hi_J
+   table 0.00 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 1.55 <- results/stage14_needs.csv:5:threshold_C1_hi_J | results/stage15_cross_section.json.A1_rows[147].E_J
+   table 4.66 <- results/stage14_needs.csv:5:threshold_C2_lo_J | results/stage15_cross_section.json.A1_rows[148].E_J
+   table 4.85 <- results/stage14_needs.csv:5:need_21s_hi_J | results/stage15_cross_section.json.A1[145].key~str
+   table 7.04 <- results/stage15_cross_section.json.A2[3].lo_J | results/stage15_table.csv:27:C8_xs_share_of_76.74kJ
+   table 7.08 <- results/stage15_cross_section.json.A2[3].hi_J | results/stage15_paper_numbers.json.B1.M50_ST_Exp3.runs[0].C1_t_s
+   table 6.71 <- results/stage15_cross_section.json.A1[28].key~str | results/stage15_table.csv:2:C8_3d_bracket_J
+   table 7.42 <- results/stage15_cross_section.json.for_predictions.PT_Exp4_upper.1.05.E_J | results/stage15_table.csv:2:C8_3d_bracket_J
+   table 4.85 <- results/stage14_needs.csv:5:need_21s_hi_J | results/stage15_cross_section.json.A1[145].key~str
+   table 7.44 <- results/stage15_cross_section.json.A1_rows[81].hot_cross_xs_s | results/stage15_table.csv:2:C8_xs_E_J
+   table 0 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 0 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 4.53 <- results/stage14_needs.csv:2:threshold_C1_hi_J | results/stage15_cross_section.json.A1[6].key~str
+   table 4.56 <- results/stage15_cross_section.json.A1[117].key~str
+   table 2.97 <- results/stage14_needs.csv:6:need_21s_lo_J | results/stage15_cross_section.json.A2_at_measured[31].points[0][0]
+   table 6.04 <- results/stage15_cross_section.json.A2_at_measured[4].E_J | results/stage15_table.csv:6:C8_xs_E_J
+   table 0.00 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 1.59 <- results/stage14_needs.csv:7:threshold_C1_hi_J | results/stage15_cross_section.json.A2[33].f_star
+   table 3.18 <- results/stage14_needs.csv:7:threshold_C2_lo_J | results/stage15_cross_section.json.A1_rows[103].rxn_xs_J
+   table 4.77 <- results/stage14_needs.csv:7:threshold_C2_hi_J | results/stage15_cross_section.json.A1_rows[1].E_J
+   table 6.83 <- results/stage15_cross_section.json.A2[5].lo_J
+   table 6.88 <- results/stage15_cross_section.json.A2[5].hi_J
+   table 6.51 <- results/stage15_table.csv:10:C8_3d_bracket_J | results/stage15_paper_numbers.json.B1.M50_PP_Exp2.runs[0].E_J
+   table 7.20 <- results/stage15_cross_section.json.A1_rows[24].hot_cross_3d_s | results/stage15_table.csv:3:C8_xs_E_J
+   table 5.96 <- results/stage14_needs.csv:7:need_21s_lo_J | results/stage15_cross_section.json.A2_at_measured[24].E_J
+   table 7.65 <- results/stage15_cross_section.json.A2_at_measured[8].E_J | results/stage15_table.csv:10:C8_xs_E_J
+   table 0.00 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 0.85 <- results/stage14_needs.csv:8:threshold_C1_hi_J | results/stage15_cross_section.json.A1_rows[7].mean_peak_3d_C
+   table 2.56 <- results/stage14_needs.csv:8:threshold_C2_lo_J
+   table 3.41 <- results/stage14_needs.csv:8:threshold_C2_hi_J | results/stage15_cross_section.json.A2[14].runs[6][0]
+   table 6.21 <- results/stage14_needs.csv:5:threshold_C2_hi_J | results/stage15_cross_section.json.A2[6].lo_J
+   table 6.25 <- results/stage15_cross_section.json.A1[54].key~str | results/stage15_table.csv:36:C8_xs_share_of_76.74kJ
+   table 0 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 0.00 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 1.82 <- results/stage14_needs.csv:9:threshold_C2_hi_J | results/stage15_cross_section.json.A1_rows[62].E_J
+   table 5.58 <- results/stage15_cross_section.json.A2[7].lo_J
+   table 5.62 <- results/stage15_cross_section.json.A2[7].hi_J
+   table 1.82 <- results/stage14_needs.csv:9:threshold_C2_hi_J | results/stage15_cross_section.json.A1_rows[62].E_J
+   table 6.05 <- results/stage15_table.csv:14:C8_xs_E_J
+   table 0 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 0.00 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 1.98 <- results/stage14_needs.csv:6:need_120s_lo_J | results/stage15_cross_section.json.A1_rows[0].E_J
+   table 4.42 <- results/stage15_cross_section.json.A2[8].lo_J
+   table 4.44 <- results/stage15_cross_section.json.A1[47].key~str
+   table 0 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 1.80 <- results/stage14_needs.csv:11:threshold_C2_lo_J | results/stage15_cross_section.json.A1_rows[121].hot_peak_3d_C
+   table 2.70 <- results/stage14_needs.csv:11:threshold_C2_hi_J
+   table 5.58 <- results/stage15_cross_section.json.A2[7].lo_J
+   table 5.62 <- results/stage15_cross_section.json.A2[7].hi_J
+   table 3.88 <- results/stage14_needs.csv:5:need_120s_hi_J | results/stage15_cross_section.json.A2[9].f_star
+   table 4.52 <- results/stage14_needs.csv:12:threshold_C1_hi_J | results/stage15_cross_section.json.A1[6].key~str
+   table 11.95 <- results/stage14_needs.csv:12:need_21s_lo_J
+   table 12.11 <- results/stage14_needs.csv:12:need_21s_hi_J | results/stage15_table.csv:18:C2_E_J
+   table 10.25 <- results/stage15_cross_section.json.A2[10].lo_J
+   table 10.31 <- results/stage15_cross_section.json.A2[10].hi_J | results/stage15_table.csv:18:C8_xs_E_J
+   table 9.77 <- results/stage15_table.csv:18:C8_3d_bracket_J | results/stage15_paper_numbers.json.B1.M50_ST_Exp3.runs[0].E_J
+   table 10.80 <- results/stage15_table.csv:18:C8_3d_bracket_J | results/stage15_paper_numbers.json.B1.M50_ST_Exp3.runs[1].E_J
+   table 12.11 <- results/stage14_needs.csv:12:need_21s_hi_J | results/stage15_table.csv:18:C2_E_J
+   table 10.31 <- results/stage15_cross_section.json.A2[10].hi_J | results/stage15_table.csv:18:C8_xs_E_J
+   table 0 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 0.00 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 1.89 <- results/stage14_needs.csv:13:threshold_C2_hi_J | results/stage15_cross_section.json.A1_rows[12].hot_cross_3d_s
+   table 5.03 <- results/stage15_cross_section.json.A2[11].lo_J | results/stage15_table.csv:16:C8_xs_E_J
+   table 5.06 <- results/stage15_cross_section.json.A2[11].hi_J | results/stage15_table.csv:3:C2_share_of_76.74kJ
+   table 1.18 <- results/stage14_needs.csv:13:need_21s_lo_J | results/stage15_cross_section.json.A1_rows[14].hot_peak_3d_C
+   table 5.51 <- results/stage15_cross_section.json.A2_at_measured[1].points[0][0] | results/stage15_table.csv:22:C8_xs_E_J
+   table 0 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 1.82 <- results/stage14_needs.csv:9:threshold_C2_hi_J | results/stage15_cross_section.json.A1_rows[62].E_J
+   table 3.63 <- results/stage14_needs.csv:14:threshold_C2_hi_J | results/stage15_cross_section.json.A2_at_measured[20].hi_f
+   table 5.50 <- results/stage15_cross_section.json.A2[7].runs[5][0]
+   table 5.54 <- results/stage15_cross_section.json.A2[12].hi_J
+   table 2.73 <- results/stage14_needs.csv:14:need_21s_lo_J | results/stage15_cross_section.json.A1_rows[109].E_J
+   table 5.96 <- results/stage14_needs.csv:7:need_21s_lo_J | results/stage15_cross_section.json.A2_at_measured[24].E_J
+   table 0 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 0.00 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 1.89 <- results/stage14_needs.csv:13:threshold_C2_hi_J | results/stage15_cross_section.json.A1_rows[12].hot_cross_3d_s
+   table 5.06 <- results/stage15_cross_section.json.A2[11].hi_J | results/stage15_table.csv:3:C2_share_of_76.74kJ
+   table 5.08 <- results/stage15_cross_section.json.A2[13].hi_J | results/stage15_table.csv:17:C8_xs_E_star_J
+   table 3.78 <- results/stage14_needs.csv:15:need_21s_lo_J | results/stage15_cross_section.json.A1_rows[110].E_J
+   table 6.50 <- results/stage15_cross_section.json.A2[1].runs[5][0] | results/stage15_table.csv:30:C8_xs_E_J
+   table 0 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 0 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 3.52 <- results/stage15_cross_section.json.A2[14].lo_J | results/stage15_paper_numbers.json.B1.M50_PP_Exp2.runs[0].rxn_J
+   table 3.54 <- results/stage15_cross_section.json.A2[14].hi_J | results/stage15_paper_numbers.json.B3b.runs[1].rxn_J
+   table 3.70 <- results/stage15_table.csv:31:C2_share_of_76.74kJ | results/stage15_paper_numbers.json.B1.M50_SP_Exp3.runs[1].E_J
+   table 4.06 <- results/stage15_cross_section.json.A1[83].archived~str | results/stage15_table.csv:34:C8_3d_bracket_J
+   table 0.26 <- results/stage14_needs.csv:16:need_21s_lo_J | results/stage15_cross_section.json.A1[114].archived~str
+   table 4.58 <- results/stage15_cross_section.json.A2[28].E_star_J | results/stage15_table.csv:16:C8_xs_E_star_J
+   table 0.00 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
+   table 1.54 <- results/stage14_needs.csv:17:threshold_C1_hi_J | results/stage15_cross_section.json.A1_rows[117].hot_peak_3d_C
+   table 4.61 <- results/stage14_needs.csv:17:threshold_C2_lo_J | results/stage15_cross_section.json.A2_at_measured[28].points[1][0]
+   table 6.15 <- results/stage14_needs.csv:17:threshold_C2_hi_J
+   table 7.08 <- results/stage15_cross_section.json.A2[3].hi_J | results/stage15_paper_numbers.json.B1.M50_ST_Exp3.runs[0].C1_t_s
+   table 7.12 <- results/stage15_cross_section.json.A2[15].hi_J | results/stage15_table.csv:15:C8_xs_share_of_76.74kJ
