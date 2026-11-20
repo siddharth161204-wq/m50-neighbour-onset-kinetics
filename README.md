@@ -4,7 +4,7 @@ A pre-registered study. A published two-cell study (Satte 2026, doi:10.5281/zeno
 
 Siddharth Satte, Independent researcher, Pune, India.
 
-All versions on Zenodo: https://doi.org/10.5281/zenodo.23279455. The latest archived version, v1.8.0 (Stages 1 to 12): https://doi.org/10.5281/zenodo.23937370. Stages 13, 14 and 15 below are versions 1.9.0, 1.10.0 and 1.11.0, to be archived together under the same all-versions DOI. Version v1.6.0: https://doi.org/10.5281/zenodo.23882043; v1.4.0: https://doi.org/10.5281/zenodo.23589793; v1.1.0: https://doi.org/10.5281/zenodo.23279456; v1.0.0, v1.2.0, v1.3.0, v1.5.0, v1.6.0 and v1.7.0 were released on GitHub only, the Zenodo versions after v1.4.0 being held so that one, v1.8.0, carries Stages 9 to 12 and the manuscript as submitted. Cite as: Satte, S. (2026). Onset kinetics on a resolved neighbour cell: where a whole-cell threshold and a local one disagree (v1.8.0). Zenodo. https://doi.org/10.5281/zenodo.23279455
+All versions on Zenodo: https://doi.org/10.5281/zenodo.23279455. The latest archived version, v1.11.0 (Stages 1 to 15): https://doi.org/10.5281/zenodo.24368356. Version v1.8.0 (Stages 1 to 12): https://doi.org/10.5281/zenodo.23937370; v1.6.0: https://doi.org/10.5281/zenodo.23882043; v1.4.0: https://doi.org/10.5281/zenodo.23589793; v1.1.0: https://doi.org/10.5281/zenodo.23279456; v1.0.0, v1.2.0, v1.3.0, v1.5.0, v1.7.0, v1.9.0 and v1.10.0 were released on GitHub only. Cite as: Satte, S. (2026). Onset kinetics on a resolved neighbour cell: where a whole-cell threshold and a local one disagree (v1.11.0). Zenodo. https://doi.org/10.5281/zenodo.23279455
 
 The note is `note/neighbour_onset_note.pdf`, three pages from Stage 9 to Stage 12 and four with Stages 13 to 15 (source `note/neighbour_onset_note.md`).
 
