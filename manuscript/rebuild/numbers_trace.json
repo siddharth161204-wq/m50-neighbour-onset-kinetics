@@ -7,97 +7,61 @@
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7~kJ over 21.4~s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7~kJ over 21.4~s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "7",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.mid_J = 7.0625"
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7~kJ over 21.4~s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7~kJ over 21.4~s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "21.4",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7~kJ over 21.4~s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7~kJ over 21.4~s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "1.5",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559"
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7~kJ over 21.4~s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7~kJ over 21.4~s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "1.7",
   "source": "results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434"
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7~kJ over 21.4~s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7~kJ over 21.4~s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "0.85",
   "source": "results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599"
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "Up to 120~s, surface conduction sets the hot-spot threshold, within 3\\,\\% of a conduction model.",
-  "number": "120",
-  "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120"
- },
- {
-  "segment": "main.tex: abstract",
-  "sentence": "Up to 120~s, surface conduction sets the hot-spot threshold, within 3\\,\\% of a conduction model.",
-  "number": "3",
-  "source": "src/stage13_inputs.py: /FIRST_STEP = (0\\.03)/ = 3"
- },
- {
-  "segment": "main.tex: abstract",
-  "sentence": "The lumped threshold follows an energy balance to 218.5\\degC, where reaction heat outruns losses.",
+  "sentence": "The lumped cell ignites at 218.5\\degC, where reaction heat outruns losses.",
   "number": "218.5",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484"
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "Matching the thresholds in one test needs a cell's reaction rates over 17.5~K hotter, against 6.1~K of kinetic uncertainty.",
+  "sentence": "Matching the two thresholds in one test needs rates over 17.5~K hotter, beyond the kinetics' 6.1~K span.",
   "number": "17.5",
   "source": "results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5"
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "Matching the thresholds in one test needs a cell's reaction rates over 17.5~K hotter, against 6.1~K of kinetic uncertainty.",
+  "sentence": "Matching the two thresholds in one test needs rates over 17.5~K hotter, beyond the kinetics' 6.1~K span.",
   "number": "6.1",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "At the central contact a reactive cross-section reproduced all 151 three-dimensional outcomes.",
+  "sentence": "At the central contact conductance a two-dimensional reactive cross-section reproduced all 151 three-dimensional outcomes.",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "At the measured times, bar one test, it needs 4.1 to 8.1~kJ, the lumped neighbour 0.2 to 6.0~kJ, within published bounds.",
-  "number": "4.1",
-  "source": "smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 4.06435"
- },
- {
-  "segment": "main.tex: abstract",
-  "sentence": "At the measured times, bar one test, it needs 4.1 to 8.1~kJ, the lumped neighbour 0.2 to 6.0~kJ, within published bounds.",
-  "number": "8.1",
-  "source": "smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 8.11583"
- },
- {
-  "segment": "main.tex: abstract",
-  "sentence": "At the measured times, bar one test, it needs 4.1 to 8.1~kJ, the lumped neighbour 0.2 to 6.0~kJ, within published bounds.",
-  "number": "0.2",
-  "source": "smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 0.218747"
- },
- {
-  "segment": "main.tex: abstract",
-  "sentence": "At the measured times, bar one test, it needs 4.1 to 8.1~kJ, the lumped neighbour 0.2 to 6.0~kJ, within published bounds.",
-  "number": "6.0",
-  "source": "smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 5.9624"
- },
- {
-  "segment": "main.tex: abstract",
-  "sentence": "The one published record of a propagating neighbour jumps 37~K cooler than the resolved model's far side.",
+  "sentence": "The one published record of a propagating neighbour starts its final rise 37~K cooler than the resolved model's far side does.",
   "number": "37",
   "source": "results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008"
  },
@@ -2881,51 +2845,63 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "Each threshold has a mechanism that a reduced model captures: for pulses up to 120 s, conduction into the surface layer sets the resolved cell's hot spot, and an energy balance to an ignition temperature of 218.5 \u00b0C sets the lumped cell's runaway.",
+  "sentence": "Reduced models give the mechanisms: for pulses up to 120 s, conduction into the surface layer sets the resolved cell's hot spot, and an energy balance to an ignition temperature of 218.5 \u00b0C sets the lumped cell's runaway.",
   "number": "120",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "Each threshold has a mechanism that a reduced model captures: for pulses up to 120 s, conduction into the surface layer sets the resolved cell's hot spot, and an energy balance to an ignition temperature of 218.5 \u00b0C sets the lumped cell's runaway.",
+  "sentence": "Reduced models give the mechanisms: for pulses up to 120 s, conduction into the surface layer sets the resolved cell's hot spot, and an energy balance to an ignition temperature of 218.5 \u00b0C sets the lumped cell's runaway.",
   "number": "218.5",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "The published uncertainty of the kinetics moves that temperature by 6.1 K, while matching the two thresholds in one test would need reaction rates of a cell over 17.5 K hotter.",
+  "sentence": "The kinetics' published uncertainty moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K.",
   "number": "6.1",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "The published uncertainty of the kinetics moves that temperature by 6.1 K, while matching the two thresholds in one test would need reaction rates of a cell over 17.5 K hotter.",
+  "sentence": "The kinetics' published uncertainty moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K.",
   "number": "17.5",
   "source": "results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "At the central contact a reactive cross-section of the cell reproduced the runaway outcome of all 151 three-dimensional runs it was checked against, at a fraction of their cost, which makes a resolved neighbour affordable in a module model.",
+  "sentence": "The kinetics' published uncertainty moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K.",
+  "number": "6.1",
+  "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
+ },
+ {
+  "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
+  "sentence": "At the central contact a two-dimensional reactive cross-section reproduced the outcome of all 151 three-dimensional runs it was checked against, at a fraction of their cost, making a resolved neighbour affordable in a module model.",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "In the model, with the failing cell's energy limited to its calorimetry value, conduction and radiation leave the neighbour at least 29 K short of runaway, so the rest of the heat must come from the ejecta or other paths.",
+  "sentence": "In the model, with the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29 K short of runaway, so the ejecta or other paths must supply the rest.",
   "number": "29",
   "source": "results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between the treatments; the paper names the measurement that would, the heat flux on the neighbour's facing side.",
+  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between the treatments.",
   "number": "27.9",
   "source": "results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between the treatments; the paper names the measurement that would, the heat flux on the neighbour's facing side.",
+  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between the treatments.",
   "number": "21.4",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
+ },
+ {
+  "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
+  "sentence": "The one published record of a propagating neighbour starts its final rise 37 K cooler than the resolved model's far side; a heat flux measured on the neighbour's facing side would decide.",
+  "number": "37",
+  "source": "results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
@@ -2965,51 +2941,63 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "Each threshold has a mechanism that a reduced model captures: for pulses up to 120 s, conduction into the surface layer sets the resolved cell's hot spot, and an energy balance to an ignition temperature of 218.5 \u00b0C sets the lumped cell's runaway.",
+  "sentence": "Reduced models give the mechanisms: for pulses up to 120 s, conduction into the surface layer sets the resolved cell's hot spot, and an energy balance to an ignition temperature of 218.5 \u00b0C sets the lumped cell's runaway.",
   "number": "120",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "Each threshold has a mechanism that a reduced model captures: for pulses up to 120 s, conduction into the surface layer sets the resolved cell's hot spot, and an energy balance to an ignition temperature of 218.5 \u00b0C sets the lumped cell's runaway.",
+  "sentence": "Reduced models give the mechanisms: for pulses up to 120 s, conduction into the surface layer sets the resolved cell's hot spot, and an energy balance to an ignition temperature of 218.5 \u00b0C sets the lumped cell's runaway.",
   "number": "218.5",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "The published uncertainty of the kinetics moves that temperature by 6.1 K, while matching the two thresholds in one test would need reaction rates of a cell over 17.5 K hotter.",
+  "sentence": "The kinetics' published uncertainty moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K.",
   "number": "6.1",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "The published uncertainty of the kinetics moves that temperature by 6.1 K, while matching the two thresholds in one test would need reaction rates of a cell over 17.5 K hotter.",
+  "sentence": "The kinetics' published uncertainty moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K.",
   "number": "17.5",
   "source": "results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "At the central contact a reactive cross-section of the cell reproduced the runaway outcome of all 151 three-dimensional runs it was checked against, at a fraction of their cost, which makes a resolved neighbour affordable in a module model.",
+  "sentence": "The kinetics' published uncertainty moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K.",
+  "number": "6.1",
+  "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
+ },
+ {
+  "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
+  "sentence": "At the central contact a two-dimensional reactive cross-section reproduced the outcome of all 151 three-dimensional runs it was checked against, at a fraction of their cost, making a resolved neighbour affordable in a module model.",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "In the model, with the failing cell's energy limited to its calorimetry value, conduction and radiation leave the neighbour at least 29 K short of runaway, so the rest of the heat must come from the ejecta or other paths.",
+  "sentence": "In the model, with the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29 K short of runaway, so the ejecta or other paths must supply the rest.",
   "number": "29",
   "source": "results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between the treatments; the paper names the measurement that would, the heat flux on the neighbour's facing side.",
+  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between the treatments.",
   "number": "27.9",
   "source": "results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between the treatments; the paper names the measurement that would, the heat flux on the neighbour's facing side.",
+  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between the treatments.",
   "number": "21.4",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
+ },
+ {
+  "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
+  "sentence": "The one published record of a propagating neighbour starts its final rise 37 K cooler than the resolved model's far side; a heat flux measured on the neighbour's facing side would decide.",
+  "number": "37",
+  "source": "results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
@@ -3049,51 +3037,63 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "Each threshold has a mechanism that a reduced model captures: for pulses up to 120 s, conduction into the surface layer sets the resolved cell's hot spot, and an energy balance to an ignition temperature of 218.5 \u00b0C sets the lumped cell's runaway.",
+  "sentence": "Reduced models give the mechanisms: for pulses up to 120 s, conduction into the surface layer sets the resolved cell's hot spot, and an energy balance to an ignition temperature of 218.5 \u00b0C sets the lumped cell's runaway.",
   "number": "120",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "Each threshold has a mechanism that a reduced model captures: for pulses up to 120 s, conduction into the surface layer sets the resolved cell's hot spot, and an energy balance to an ignition temperature of 218.5 \u00b0C sets the lumped cell's runaway.",
+  "sentence": "Reduced models give the mechanisms: for pulses up to 120 s, conduction into the surface layer sets the resolved cell's hot spot, and an energy balance to an ignition temperature of 218.5 \u00b0C sets the lumped cell's runaway.",
   "number": "218.5",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "The published uncertainty of the kinetics moves that temperature by 6.1 K, while matching the two thresholds in one test would need reaction rates of a cell over 17.5 K hotter.",
+  "sentence": "The kinetics' published uncertainty moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K.",
   "number": "6.1",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "The published uncertainty of the kinetics moves that temperature by 6.1 K, while matching the two thresholds in one test would need reaction rates of a cell over 17.5 K hotter.",
+  "sentence": "The kinetics' published uncertainty moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K.",
   "number": "17.5",
   "source": "results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "At the central contact a reactive cross-section of the cell reproduced the runaway outcome of all 151 three-dimensional runs it was checked against, at a fraction of their cost, which makes a resolved neighbour affordable in a module model.",
+  "sentence": "The kinetics' published uncertainty moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K.",
+  "number": "6.1",
+  "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
+ },
+ {
+  "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
+  "sentence": "At the central contact a two-dimensional reactive cross-section reproduced the outcome of all 151 three-dimensional runs it was checked against, at a fraction of their cost, making a resolved neighbour affordable in a module model.",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "In the model, with the failing cell's energy limited to its calorimetry value, conduction and radiation leave the neighbour at least 29 K short of runaway, so the rest of the heat must come from the ejecta or other paths.",
+  "sentence": "In the model, with the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29 K short of runaway, so the ejecta or other paths must supply the rest.",
   "number": "29",
   "source": "results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between the treatments; the paper names the measurement that would, the heat flux on the neighbour's facing side.",
+  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between the treatments.",
   "number": "27.9",
   "source": "results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between the treatments; the paper names the measurement that would, the heat flux on the neighbour's facing side.",
+  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between the treatments.",
   "number": "21.4",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
+ },
+ {
+  "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
+  "sentence": "The one published record of a propagating neighbour starts its final rise 37 K cooler than the resolved model's far side; a heat flux measured on the neighbour's facing side would decide.",
+  "number": "37",
+  "source": "results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
@@ -3109,97 +3109,61 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "7",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.mid_J = 7.0625"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "21.4",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "1.5",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "1.7",
   "source": "results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "0.85",
   "source": "results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "Up to 120 s, surface conduction sets the hot-spot threshold, within 3 % of a conduction model.",
-  "number": "120",
-  "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "Up to 120 s, surface conduction sets the hot-spot threshold, within 3 % of a conduction model.",
-  "number": "3",
-  "source": "src/stage13_inputs.py: /FIRST_STEP = (0\\.03)/ = 3"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "The lumped threshold follows an energy balance to 218.5 \u00b0C, where reaction heat outruns losses.",
+  "sentence": "The lumped cell ignites at 218.5 \u00b0C, where reaction heat outruns losses.",
   "number": "218.5",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "Matching the thresholds in one test needs a cell's reaction rates over 17.5 K hotter, against 6.1 K of kinetic uncertainty.",
+  "sentence": "Matching the two thresholds in one test needs rates over 17.5 K hotter, beyond the kinetics' 6.1 K span.",
   "number": "17.5",
   "source": "results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "Matching the thresholds in one test needs a cell's reaction rates over 17.5 K hotter, against 6.1 K of kinetic uncertainty.",
+  "sentence": "Matching the two thresholds in one test needs rates over 17.5 K hotter, beyond the kinetics' 6.1 K span.",
   "number": "6.1",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "At the central contact a reactive cross-section reproduced all 151 three-dimensional outcomes.",
+  "sentence": "At the central contact conductance a two-dimensional reactive cross-section reproduced all 151 three-dimensional outcomes.",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "At the measured times, bar one test, it needs 4.1 to 8.1 kJ, the lumped neighbour 0.2 to 6.0 kJ, within published bounds.",
-  "number": "4.1",
-  "source": "smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 4.06435"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "At the measured times, bar one test, it needs 4.1 to 8.1 kJ, the lumped neighbour 0.2 to 6.0 kJ, within published bounds.",
-  "number": "8.1",
-  "source": "smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 8.11583"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "At the measured times, bar one test, it needs 4.1 to 8.1 kJ, the lumped neighbour 0.2 to 6.0 kJ, within published bounds.",
-  "number": "0.2",
-  "source": "smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 0.218747"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "At the measured times, bar one test, it needs 4.1 to 8.1 kJ, the lumped neighbour 0.2 to 6.0 kJ, within published bounds.",
-  "number": "6.0",
-  "source": "smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 5.9624"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "The one published record of a propagating neighbour jumps 37 K cooler than the resolved model's far side.",
+  "sentence": "The one published record of a propagating neighbour starts its final rise 37 K cooler than the resolved model's far side does.",
   "number": "37",
   "source": "results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008"
  },
@@ -3211,97 +3175,61 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "7",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.mid_J = 7.0625"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "21.4",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "1.5",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "1.7",
   "source": "results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "0.85",
   "source": "results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "Up to 120 s, surface conduction sets the hot-spot threshold, within 3 % of a conduction model.",
-  "number": "120",
-  "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "Up to 120 s, surface conduction sets the hot-spot threshold, within 3 % of a conduction model.",
-  "number": "3",
-  "source": "src/stage13_inputs.py: /FIRST_STEP = (0\\.03)/ = 3"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "The lumped threshold follows an energy balance to 218.5 \u00b0C, where reaction heat outruns losses.",
+  "sentence": "The lumped cell ignites at 218.5 \u00b0C, where reaction heat outruns losses.",
   "number": "218.5",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "Matching the thresholds in one test needs a cell's reaction rates over 17.5 K hotter, against 6.1 K of kinetic uncertainty.",
+  "sentence": "Matching the two thresholds in one test needs rates over 17.5 K hotter, beyond the kinetics' 6.1 K span.",
   "number": "17.5",
   "source": "results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "Matching the thresholds in one test needs a cell's reaction rates over 17.5 K hotter, against 6.1 K of kinetic uncertainty.",
+  "sentence": "Matching the two thresholds in one test needs rates over 17.5 K hotter, beyond the kinetics' 6.1 K span.",
   "number": "6.1",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "At the central contact a reactive cross-section reproduced all 151 three-dimensional outcomes.",
+  "sentence": "At the central contact conductance a two-dimensional reactive cross-section reproduced all 151 three-dimensional outcomes.",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "At the measured times, bar one test, it needs 4.1 to 8.1 kJ, the lumped neighbour 0.2 to 6.0 kJ, within published bounds.",
-  "number": "4.1",
-  "source": "smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 4.06435"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "At the measured times, bar one test, it needs 4.1 to 8.1 kJ, the lumped neighbour 0.2 to 6.0 kJ, within published bounds.",
-  "number": "8.1",
-  "source": "smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 8.11583"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "At the measured times, bar one test, it needs 4.1 to 8.1 kJ, the lumped neighbour 0.2 to 6.0 kJ, within published bounds.",
-  "number": "0.2",
-  "source": "smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 0.218747"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "At the measured times, bar one test, it needs 4.1 to 8.1 kJ, the lumped neighbour 0.2 to 6.0 kJ, within published bounds.",
-  "number": "6.0",
-  "source": "smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 5.9624"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "The one published record of a propagating neighbour jumps 37 K cooler than the resolved model's far side.",
+  "sentence": "The one published record of a propagating neighbour starts its final rise 37 K cooler than the resolved model's far side does.",
   "number": "37",
   "source": "results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008"
  },
@@ -3313,97 +3241,61 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "7",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.mid_J = 7.0625"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "21.4",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "1.5",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "1.7",
   "source": "results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "With fitted triggers, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
+  "sentence": "With that energy fitted instead to each test's trigger peak, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.",
   "number": "0.85",
   "source": "results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "Up to 120 s, surface conduction sets the hot-spot threshold, within 3 % of a conduction model.",
-  "number": "120",
-  "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "Up to 120 s, surface conduction sets the hot-spot threshold, within 3 % of a conduction model.",
-  "number": "3",
-  "source": "src/stage13_inputs.py: /FIRST_STEP = (0\\.03)/ = 3"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "The lumped threshold follows an energy balance to 218.5 \u00b0C, where reaction heat outruns losses.",
+  "sentence": "The lumped cell ignites at 218.5 \u00b0C, where reaction heat outruns losses.",
   "number": "218.5",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "Matching the thresholds in one test needs a cell's reaction rates over 17.5 K hotter, against 6.1 K of kinetic uncertainty.",
+  "sentence": "Matching the two thresholds in one test needs rates over 17.5 K hotter, beyond the kinetics' 6.1 K span.",
   "number": "17.5",
   "source": "results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "Matching the thresholds in one test needs a cell's reaction rates over 17.5 K hotter, against 6.1 K of kinetic uncertainty.",
+  "sentence": "Matching the two thresholds in one test needs rates over 17.5 K hotter, beyond the kinetics' 6.1 K span.",
   "number": "6.1",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "At the central contact a reactive cross-section reproduced all 151 three-dimensional outcomes.",
+  "sentence": "At the central contact conductance a two-dimensional reactive cross-section reproduced all 151 three-dimensional outcomes.",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "At the measured times, bar one test, it needs 4.1 to 8.1 kJ, the lumped neighbour 0.2 to 6.0 kJ, within published bounds.",
-  "number": "4.1",
-  "source": "smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 4.06435"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "At the measured times, bar one test, it needs 4.1 to 8.1 kJ, the lumped neighbour 0.2 to 6.0 kJ, within published bounds.",
-  "number": "8.1",
-  "source": "smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, matched cases outside ST_Exp3 = 8.11583"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "At the measured times, bar one test, it needs 4.1 to 8.1 kJ, the lumped neighbour 0.2 to 6.0 kJ, within published bounds.",
-  "number": "0.2",
-  "source": "smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 0.218747"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "At the measured times, bar one test, it needs 4.1 to 8.1 kJ, the lumped neighbour 0.2 to 6.0 kJ, within published bounds.",
-  "number": "6.0",
-  "source": "smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same cases = 5.9624"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "The one published record of a propagating neighbour jumps 37 K cooler than the resolved model's far side.",
+  "sentence": "The one published record of a propagating neighbour starts its final rise 37 K cooler than the resolved model's far side does.",
   "number": "37",
   "source": "results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008"
  }

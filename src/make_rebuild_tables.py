@@ -314,11 +314,11 @@ def table_s8():
              r"ratio of the lumped to the local threshold's midpoint: PT-Exp1 at the central contact. A blank: no "
              r"search or run at that duration.}",
              r"\label{tab:s-reduced}", r"\setlength{\tabcolsep}{2.5pt}",
-             r"\begin{tabular}{p{0.075\textwidth}>{\raggedleft\arraybackslash}p{0.045\textwidth}"
-             r">{\raggedleft\arraybackslash}p{0.065\textwidth}>{\raggedleft\arraybackslash}p{0.13\textwidth}"
+             r"\begin{tabular}{p{0.075\textwidth}>{\raggedleft\arraybackslash}p{0.055\textwidth}"
+             r">{\raggedleft\arraybackslash}p{0.075\textwidth}>{\raggedleft\arraybackslash}p{0.13\textwidth}"
              r">{\raggedleft\arraybackslash}p{0.085\textwidth}>{\raggedleft\arraybackslash}p{0.06\textwidth}"
              r">{\raggedleft\arraybackslash}p{0.1\textwidth}>{\raggedleft\arraybackslash}p{0.13\textwidth}"
-             r">{\raggedleft\arraybackslash}p{0.045\textwidth}}", r"\toprule", head, r"\midrule"]
+             r">{\raggedleft\arraybackslash}p{0.055\textwidth}}", r"\toprule", head, r"\midrule"]
     order = [("M50_PT_Exp1", None), ("M50_ST_Exp3", None), ("M50_PT_Exp3", None)]
     for t, _ in order:
         rows = [r for r in skin if r["test"] == t and r["region"] == "half"]
