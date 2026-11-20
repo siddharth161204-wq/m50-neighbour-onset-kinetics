@@ -9,18 +9,18 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 
 1. With the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29~K short.
    - 29 (new): results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
-2. In two tests with strong triggers the resolved neighbour needs about 7~kJ over 21.4~s, 1.5 and 1.7 times the lumped threshold; in one with a weak trigger, 0.85 times.
+2. With fitted triggers, the resolved neighbour needs about 7~kJ over 21.4~s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.
    - 7: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.mid_J = 7.0625
    - 21.4 (new): results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    - 1.5: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    - 1.7 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
    - 0.85 (new): results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
-3. Up to 120~s, surface conduction sets the hot-spot threshold, within 3\,\% of a cross-section conduction model.
+3. Up to 120~s, surface conduction sets the hot-spot threshold, within 3\,\% of a conduction model.
    - 120: results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
    - 3: src/stage13_inputs.py: /FIRST_STEP = (0\.03)/ = 3
 4. The lumped threshold follows an energy balance to 218.5\degC, where reaction heat outruns losses.
    - 218.5 (new): results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
-5. Matching the thresholds in one test needs reactions as if over 17.5~K hotter, against 6.1~K of kinetic uncertainty.
+5. Matching the thresholds in one test needs a cell's reaction rates over 17.5~K hotter, against 6.1~K of kinetic uncertainty.
    - 17.5: results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    - 6.1 (new): results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
 6. At the central contact a reactive cross-section reproduced all 151 three-dimensional outcomes.
@@ -631,9 +631,11 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 
 ## manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt
 
-123. In the two tests with strong triggers where both thresholds are bracketed, the resolved neighbour needs 1.5 and 1.7 times the heat of the lumped neighbour, and in the one with a weak trigger 0.85 times, so a lumped cell cannot stand in for a resolved one without a correction whose sign depends on the trigger.
+123. With each test's trigger fitted to its measured peak, the resolved neighbour needs 1.5 and 1.7 times the heat of the lumped neighbour in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both thresholds are bracketed, and 0.85 times in the one with a weak trigger.
    - 1.5: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    - 1.7 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   - 31.6: results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
+   - 54.3: smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    - 0.85 (new): results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
 124. Each threshold has a mechanism that a reduced model captures: for pulses up to 120 s, conduction into the surface layer sets the resolved cell's hot spot, and an energy balance to an ignition temperature of 218.5 °C sets the lumped cell's runaway.
    - 120: results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
@@ -653,9 +655,11 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 
 ## manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt
 
-130. In the two tests with strong triggers where both thresholds are bracketed, the resolved neighbour needs 1.5 and 1.7 times the heat of the lumped neighbour, and in the one with a weak trigger 0.85 times, so a lumped cell cannot stand in for a resolved one without a correction whose sign depends on the trigger.
+130. With each test's trigger fitted to its measured peak, the resolved neighbour needs 1.5 and 1.7 times the heat of the lumped neighbour in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both thresholds are bracketed, and 0.85 times in the one with a weak trigger.
    - 1.5: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    - 1.7 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   - 31.6: results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
+   - 54.3: smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    - 0.85 (new): results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
 131. Each threshold has a mechanism that a reduced model captures: for pulses up to 120 s, conduction into the surface layer sets the resolved cell's hot spot, and an energy balance to an ignition temperature of 218.5 °C sets the lumped cell's runaway.
    - 120: results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
@@ -675,9 +679,11 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 
 ## manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt
 
-137. In the two tests with strong triggers where both thresholds are bracketed, the resolved neighbour needs 1.5 and 1.7 times the heat of the lumped neighbour, and in the one with a weak trigger 0.85 times, so a lumped cell cannot stand in for a resolved one without a correction whose sign depends on the trigger.
+137. With each test's trigger fitted to its measured peak, the resolved neighbour needs 1.5 and 1.7 times the heat of the lumped neighbour in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both thresholds are bracketed, and 0.85 times in the one with a weak trigger.
    - 1.5: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    - 1.7 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   - 31.6: results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
+   - 54.3: smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    - 0.85 (new): results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
 138. Each threshold has a mechanism that a reduced model captures: for pulses up to 120 s, conduction into the surface layer sets the resolved cell's hot spot, and an energy balance to an ignition temperature of 218.5 °C sets the lumped cell's runaway.
    - 120: results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
@@ -699,18 +705,18 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 
 144. With the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29 K short.
    - 29 (new): results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
-145. In two tests with strong triggers the resolved neighbour needs about 7 kJ over 21.4 s, 1.5 and 1.7 times the lumped threshold; in one with a weak trigger, 0.85 times.
+145. With fitted triggers, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.
    - 7: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.mid_J = 7.0625
    - 21.4 (new): results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    - 1.5: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    - 1.7 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
    - 0.85 (new): results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
-146. Up to 120 s, surface conduction sets the hot-spot threshold, within 3 % of a cross-section conduction model.
+146. Up to 120 s, surface conduction sets the hot-spot threshold, within 3 % of a conduction model.
    - 120: results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
    - 3: src/stage13_inputs.py: /FIRST_STEP = (0\.03)/ = 3
 147. The lumped threshold follows an energy balance to 218.5 °C, where reaction heat outruns losses.
    - 218.5 (new): results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
-148. Matching the thresholds in one test needs reactions as if over 17.5 K hotter, against 6.1 K of kinetic uncertainty.
+148. Matching the thresholds in one test needs a cell's reaction rates over 17.5 K hotter, against 6.1 K of kinetic uncertainty.
    - 17.5: results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    - 6.1 (new): results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
 149. At the central contact a reactive cross-section reproduced all 151 three-dimensional outcomes.
@@ -727,18 +733,18 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 
 152. With the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29 K short.
    - 29 (new): results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
-153. In two tests with strong triggers the resolved neighbour needs about 7 kJ over 21.4 s, 1.5 and 1.7 times the lumped threshold; in one with a weak trigger, 0.85 times.
+153. With fitted triggers, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.
    - 7: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.mid_J = 7.0625
    - 21.4 (new): results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    - 1.5: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    - 1.7 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
    - 0.85 (new): results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
-154. Up to 120 s, surface conduction sets the hot-spot threshold, within 3 % of a cross-section conduction model.
+154. Up to 120 s, surface conduction sets the hot-spot threshold, within 3 % of a conduction model.
    - 120: results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
    - 3: src/stage13_inputs.py: /FIRST_STEP = (0\.03)/ = 3
 155. The lumped threshold follows an energy balance to 218.5 °C, where reaction heat outruns losses.
    - 218.5 (new): results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
-156. Matching the thresholds in one test needs reactions as if over 17.5 K hotter, against 6.1 K of kinetic uncertainty.
+156. Matching the thresholds in one test needs a cell's reaction rates over 17.5 K hotter, against 6.1 K of kinetic uncertainty.
    - 17.5: results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    - 6.1 (new): results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
 157. At the central contact a reactive cross-section reproduced all 151 three-dimensional outcomes.
@@ -755,18 +761,18 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 
 160. With the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29 K short.
    - 29 (new): results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
-161. In two tests with strong triggers the resolved neighbour needs about 7 kJ over 21.4 s, 1.5 and 1.7 times the lumped threshold; in one with a weak trigger, 0.85 times.
+161. With fitted triggers, the resolved neighbour needs about 7 kJ over 21.4 s in two strong-trigger tests, 1.5 and 1.7 times the lumped threshold, and 0.85 times after a weak trigger.
    - 7: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.mid_J = 7.0625
    - 21.4 (new): results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    - 1.5: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    - 1.7 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
    - 0.85 (new): results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
-162. Up to 120 s, surface conduction sets the hot-spot threshold, within 3 % of a cross-section conduction model.
+162. Up to 120 s, surface conduction sets the hot-spot threshold, within 3 % of a conduction model.
    - 120: results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
    - 3: src/stage13_inputs.py: /FIRST_STEP = (0\.03)/ = 3
 163. The lumped threshold follows an energy balance to 218.5 °C, where reaction heat outruns losses.
    - 218.5 (new): results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
-164. Matching the thresholds in one test needs reactions as if over 17.5 K hotter, against 6.1 K of kinetic uncertainty.
+164. Matching the thresholds in one test needs a cell's reaction rates over 17.5 K hotter, against 6.1 K of kinetic uncertainty.
    - 17.5: results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    - 6.1 (new): results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
 165. At the central contact a reactive cross-section reproduced all 151 three-dimensional outcomes.

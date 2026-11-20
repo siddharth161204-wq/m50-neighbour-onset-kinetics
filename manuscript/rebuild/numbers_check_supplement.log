@@ -1,4 +1,4 @@
-numbers_check --rebuild --supplement: 686 traced to a named value, 1145 found in their table's source files, 179 broad matches (supplement only), 23 counts written in words checked, 0 failures, 119 structural (not looked for)
+numbers_check --rebuild --supplement: 692 traced to a named value, 1145 found in their table's source files, 179 broad matches (supplement only), 23 counts written in words checked, 0 failures, 119 structural (not looked for)
 
 == main.tex: title  [map]
 == main.tex: abstract  [map]
@@ -657,6 +657,8 @@ numbers_check --rebuild --supplement: 686 traced to a named value, 1145 found in
 == manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt  [map]
    traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
+   traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    traced 0.85 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
    traced 120 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
    traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
@@ -671,6 +673,8 @@ numbers_check --rebuild --supplement: 686 traced to a named value, 1145 found in
 == manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt  [map]
    traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
+   traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    traced 0.85 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
    traced 120 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
    traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
@@ -685,6 +689,8 @@ numbers_check --rebuild --supplement: 686 traced to a named value, 1145 found in
 == manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt  [map]
    traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
+   traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    traced 0.85 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
    traced 120 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
    traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
