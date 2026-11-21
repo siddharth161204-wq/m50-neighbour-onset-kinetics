@@ -152,7 +152,7 @@ def fig1():
     # symmetry plane of the resolved half model
     ax.plot([-2.1, 2.2], [c2[1], c2[1]], color=MUTED, lw=0.6, ls=(0, (6, 2, 1, 2)))
     # probes at mid-length: facing, side, far face
-    for ang, lab, dx, dy, ha in [(180, "facing", 0.12, 0.13, "left"), (90, "side", 0.0, 0.2, "center"),
+    for ang, lab, dx, dy, ha in [(180, "contact", 0.12, 0.13, "left"), (90, "side", 0.0, 0.2, "center"),
                                  (0, "far face", 0.12, 0.0, "left")]:
         x = c2[0] + R * math.cos(math.radians(ang))
         y = c2[1] + R * math.sin(math.radians(ang))
@@ -225,7 +225,7 @@ def fig2():
             va="top", fontsize=6.8)
     ax2 = ax.secondary_xaxis("top")
     ax2.set_xticks(x)
-    ax2.set_xticklabels(["%.0f" % (tt[t]["E_b_J"] / 1e3) for t in order], fontsize=6.8)
+    ax2.set_xticklabels(["%.1f" % (tt[t]["E_b_J"] / 1e3) for t in order], fontsize=6.6)
     ax2.set_xlabel("Trigger's body energy fitted to the measured trigger peak (kJ)", fontsize=7)
     ax.set_ylabel("Threshold: least energy delivered\nover 21.4 s to the facing half (kJ)")
     ax.set_ylim(-0.3, 14)
@@ -340,7 +340,7 @@ def fig3():
     for r in sh:
         ax.plot(r["shift_K"], r["peak_mean_C"], marker="o" if r["C8"] else "x", color=C_RES, ms=5.5,
                 mfc="white" if r["C8"] else C_RES, mew=1.3, ls="none", zorder=4)
-    ax.text(0.3, 275.5, "PT-Exp4, 5.0 kJ over 21.4 s: \u00d7 no resolved runaway; \u25cb runaway", fontsize=6.4,
+    ax.text(0.3, 275.5, "PT-Exp4, 5.04 kJ over 21.4 s: \u00d7 no resolved runaway; \u25cb runaway", fontsize=6.4,
             color=C_RES, va="top")
     ax.set_xlim(-0.8, 22.5)
     ax.set_ylim(182, 276)
@@ -403,8 +403,8 @@ def fig4():
          Line2D([], [], color=C_RES, marker="o", mfc="white", ls="none", ms=4.6, mew=1.2,
                 label="resolved neighbour's mean reaches 255.7 °C")]
     h += [Line2D([], [], color=MUTED, marker=mk, ls="none", ms=4.2, label=lab) for _, mk, lab in deliveries]
-    h += [Line2D([], [], color=INK, marker=".", ms=5.0, ls="none", label="dot inside: within the resolution (t)"),
-          Line2D([], [], color=INK, marker="_", ms=7.0, mew=1.2, ls="none", label="bar: interpolated (b)")]
+    h += [Line2D([], [], color=INK, marker=".", ms=5.0, ls="none", label="dot inside: time met within the grid's resolution (t)"),
+          Line2D([], [], color=INK, marker="_", ms=7.0, mew=1.2, ls="none", label="dash: interpolated between two runs")]
     fig.legend(handles=h, loc="outside lower center", fontsize=6.4, ncol=4, frameon=False)
     panel(ax, "a")
     ax = axs[1]
@@ -460,6 +460,8 @@ def fig5():
     axs[0].plot(tm, Tm, color=INK, lw=1.6, label="measured (Fransson et al.)")
     fj = n15["B1"]["M50_PT_Exp4"]["runs"][1]["far_jump"]
     axs[0].plot([fj["t_s"]], [fj["T_C"]], marker="o", ms=4.5, color=C_RES, zorder=6)
+    hj = [r for r in n15["B3b"]["runs"] if r["id"] == "s15_B3_PT_Exp4_hold12.5W"][0]["far_jump"]
+    axs[0].plot([hj["t_s"]], [hj["T_C"]], marker="o", ms=4.5, color=C_PURPLE, zorder=6)
     axs[0].annotate("model's jump begins\n%.1f °C at %.0f s" % (fj["T_C"], fj["t_s"]), (fj["t_s"], fj["T_C"]),
                     xytext=(95, 292), fontsize=6.2, color=C_RES, arrowprops=dict(arrowstyle="-", lw=0.6, color=C_RES))
     axs[0].plot([271.5], [197.3], marker="o", ms=4.5, color=INK, zorder=6)

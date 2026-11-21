@@ -1,4 +1,4 @@
-numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in their table's source files, 246 broad matches (supplement only), 29 counts written in words checked, 0 failures, 181 structural (not looked for)
+numbers_check --rebuild --supplement: 887 traced to a named value, 1301 found in their table's source files, 264 broad matches (supplement only), 29 counts written in words checked, 0 failures, 186 structural (not looked for)
 
 == main.tex: title  [map]
 == main.tex: abstract  [map]
@@ -87,6 +87,7 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    traced 302.1 <- DECISIONS.md: /below the paper's band of 255\.7 to (302\.1)/ = 302.1
    traced 164 <- results/stage3_v4.json: main_cluster_T_in_C.n = 164
    traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
+   traced 4,000 <- DECISIONS.md: /no later than (4000) min after the test starts is in the main cluster/ = 4000
    traced 146.3 <- results/stage3_numbers.json: V4_registered/T_in_p2.5_C = 146.3
    traced 191.4 <- results/stage3_numbers.json: V4_registered/T_in_p97.5_C = 191.4
    traced 95 <- predictions_stage13.md: /the central (95) % of the 200 draws/ = 95
@@ -95,8 +96,6 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    traced 120 <- results/stage15_table.csv: tau_s where {'test': 'M50_PT_Exp4'} = 120
    traced 240 <- results/stage15_table.csv: tau_s where {'test': 'M50_PT_Exp4'} = 240
    traced 360 <- results/stage15_table.csv: tau_s where {'test': 'M50_PT_Exp4'} = 360
-   traced 5 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 5
-   traced 360 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 360
    traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
    traced 0.5 <- results/stage15_cross_section.json: settings.width_ft = 0.5
    traced 5 <- predictions_stage9.md: /within (5) K of it/ = 5
@@ -157,10 +156,10 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    traced 7.42 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.hi_J = 7.41562
    traced 6.51 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.bracket.lo_J = 6.51146
    traced 7.20 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.bracket.hi_J = 7.19687
-   traced 1.38 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PT_Exp4 = 1.38309
-   traced 1.59 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PT_Exp4 = 1.5924
+   traced 1.38 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PT_Exp4, rounded outward = 1.38
+   traced 1.60 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PT_Exp4, rounded outward = 1.6
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
-   traced 2.26 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2 = 2.26317
+   traced 2.27 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the upper end rounded up = 2.27
    traced 4.66 <- results/stage14_needs.csv: need_21s_lo_J where {'test': 'M50_PT_Exp4'} = 4.6569
    traced 4.85 <- results/stage14_needs.csv: need_21s_hi_J where {'test': 'M50_PT_Exp4'} = 4.851
    traced 3.18 <- results/stage14_needs.csv: threshold_C2_lo_J where {'test': 'M50_PP_Exp2'} = 3.18
@@ -182,8 +181,8 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    traced 10.28 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.bracket.mid_J = 10.2812
    traced 0.85 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
    traced 12.03 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.E_C2_J = 12.0305
-   traced 0.81 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3 = 0.806439
-   traced 0.90 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3 = 0.903373
+   traced 0.80 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.8
+   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
    traced 10.80 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.bracket.hi_J = 10.7953
    traced 61.5 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3, the run at the bracket's upper end: t_C8_s = 61.5222
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
@@ -348,7 +347,7 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    traced 255.9 <- results/stage15_paper_numbers.json: B3b run s15_B3_PT_Exp4_hold12.5W: t_C8_s = 255.856
    traced 233.6 <- results/stage15_paper_numbers.json: B3b run s15_B3_PT_Exp4_hold12.5W: far_jump.T_C = 233.595
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
-   [label] 10  ...ning at 233.6\degC. Carried on to 900~s, a run made in step~10 (Supplementary Table~S1) and stopped at...
+   traced 10 <- results/stage15_cross_section.json: A1_rows, the archived 6,209 J run's id, s10_... = 10
    traced 332 <- results/stage15_cross_section.json: A1_rows, the archived 6,209 J run: t_end_s = 332
    traced 60 <- src/stage10_run.py: /Table 3's 272 s plus (60) s/ = 60
    traced 6.2 <- results/stage15_paper_numbers.json: B2/0.05/E_J = 6.20922
@@ -368,6 +367,7 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    [label] 10  ...hermocouple (black; Fransson et al.~ , supplementary Figure~10, read from the figure) against the mode...
+   traced 12.5 <- results/stage15_paper_numbers.json: B3b.result.P_hi_W = 12.5
    traced 5.0 <- results/stage15_readings.json: 1.PT_Exp4.E_J = 5.045
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 6.7 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.lo_J = 6.70937
@@ -439,6 +439,7 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    traced 512 <- smallest and largest of results/stage15_runs/*.json: wall_s of the B1 runs = 512.452
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 5 <- predictions_stage15.md: /less (5) % and plus 5 %/ = 5
    traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
    traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 5.9624
    traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
@@ -476,11 +477,10 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
-   traced 1.49 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
-   traced 1.72 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
-   traced 0.85 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
-   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
+   traced 2.27 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the upper end rounded up = 2.27
+   traced 0.80 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.8
+   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
    traced 5.04 <- results/stage15_paper_numbers.json: B4.draws.5.E_J = 5.04499
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
@@ -490,6 +490,8 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 5.9624
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
+   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
 == main.tex: appendices  [map]
    traced 45 <- src/v12_mesh.py: SECTOR = math.pi / 4, the wedge sector's half-angle, in degrees = 45
    traced 0.1 <- src/reactive.py: /DT_BASE = (0\.1)/ = 0.1
@@ -660,11 +662,11 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    [exponent or subscript] -1  ...onductivity across and along the layers & 1.3 and 25 W\,m$^{-1}$\,K$^{-1}$ &   \\ Cell heat capacity &...
    [exponent or subscript] -1  ...y across and along the layers & 1.3 and 25 W\,m$^{-1}$\,K$^{-1}$ &   \\ Cell heat capacity & 61.75 J\,...
    traced 61.75 <- results/manuscript_numbers.json: constants.C_cell_J_K = 61.75
-   [exponent or subscript] -1  ...m$^{-1}$\,K$^{-1}$ &   \\ Cell heat capacity & 61.75 J\,K$^{-1}$ (65 g at 950 J\,kg$^{-1}$\,K$^{-1}$) ...
+   [exponent or subscript] -1  ...m$^{-1}$\,K$^{-1}$ &   \\ Cell heat capacity & 61.75 J\,K$^{-1}$ (65 g at 950 J\,kg$^{-1}$\,K$^{-1}$; ...
    traced 65 <- results/manuscript_numbers.json: constants.m_cell_kg = 65
    traced 950 <- results/manuscript_numbers.json: constants.cp_cell_J_kgK = 950
-   [exponent or subscript] -1  ...Cell heat capacity & 61.75 J\,K$^{-1}$ (65 g at 950 J\,kg$^{-1}$\,K$^{-1}$) &  ; mass assumed$^{a}$; t...
-   [exponent or subscript] -1  ...capacity & 61.75 J\,K$^{-1}$ (65 g at 950 J\,kg$^{-1}$\,K$^{-1}$) &  ; mass assumed$^{a}$; the Databan...
+   [exponent or subscript] -1  ...Cell heat capacity & 61.75 J\,K$^{-1}$ (65 g at 950 J\,kg$^{-1}$\,K$^{-1}$; the Databank's cells weigh...
+   [exponent or subscript] -1  ...capacity & 61.75 J\,K$^{-1}$ (65 g at 950 J\,kg$^{-1}$\,K$^{-1}$; the Databank's cells weighed 68.05 t...
    traced 68.05 <- smallest and largest of inputs/databank/databank_m50_used.csv: Pre-Test-Cell-Mass-g = 68.05
    traced 68.52 <- smallest and largest of inputs/databank/databank_m50_used.csv: Pre-Test-Cell-Mass-g = 68.52
    traced 19,355 <- results/stage8_paper_numbers.json: v3.base.n_nodes = 19355
@@ -770,9 +772,6 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
-   traced 120 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
-   traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
-   traced 230.4 <- results/stage13_tign.csv: T_ign_C where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'ambient'} = 230.379
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
    traced 13 <- stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13
@@ -788,9 +787,6 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
-   traced 120 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
-   traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
-   traced 230.4 <- results/stage13_tign.csv: T_ign_C where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'ambient'} = 230.379
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
    traced 13 <- stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13
@@ -806,9 +802,6 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
-   traced 120 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
-   traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
-   traced 230.4 <- results/stage13_tign.csv: T_ign_C where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'ambient'} = 230.379
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
    traced 13 <- stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13
@@ -848,6 +841,9 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    traced 37 <- results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
 == manuscript/rebuild/supplement.tex  [broad]
    broad 11 <- results/note_numbers.json.headline_0.15.tau30.hottest_s | results/stage3_numbers.json.headline_3a.hottest_onset_s.p50 | results/v11_sensitivity.json.definitions~str | results/v12_numbers.json.exploratory.hottest_node_at_peak.grid_mean_parallel_hcentral_gcentral_tau10.r_mm
+   broad 1 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.1.0~key | results/stage3_numbers.json.V4_registered.main_cluster_share | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.an_ele.share | results/v12_numbers.json.grid.tab_high_minus_low.series_hcentral_tau10.lum_peak_C
+   [label] 4  ...which are not results of this paper. The runs of steps 1 to 4 and 6, and some on which other steps' e...
+   [label] 6  ...are not results of this paper. The runs of steps 1 to 4 and 6, and some on which other steps' expecta...
    [label] 7  ...g. Parts of a plan carry labels such as A0.2 or A4: in step 7, A4 is the runs with an aged SEI; in st...
    [label] 10  ... or A4: in step 7, A4 is the runs with an aged SEI; in step 10, A0.2 is the reading of PT-Exp4's publi...
    broad 9 <- results/note_numbers.json.only_local_cases[2]~str | results/stage3_numbers.json.V4_amended_D25.sd_C | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_restriction.an_ele.rows_used | results/stage6_numbers.json.part_b_sets.total_by_contact.central.hot_t_255_7_s[0]
@@ -861,6 +857,7 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    broad 0.15 <- results/note_numbers.json.headline_0.15~key | results/stage3_numbers.json.P3_distribution.200 mW/K | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.narrowing | results/v12_numbers.json.exploratory.section2_rate_without_propagation.grid_mean_parallel_hlow_glow_tau10.toward.rate_C_per_s
    [exponent or subscript] -1  ... a node's reaction self-heating first reaches 0.15~K\,min$^{-1}$, the exotherm threshold of the accele...
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   broad 302.1 <- results/note_numbers.json.V1.paper_T_on_band_C[1] | results/stage9_paper_numbers.json.runs.first_started_utc~str | results/stage15_cross_section.json.A2_at_measured[19].points[3][1]
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    broad 150 <- results/note_numbers.json.stage2_table[4].mean_peak_reactive_C~str | results/v12_numbers.json.grid.by_contact.high.res_peak_mean_C.max | results/stage6_numbers.json.part_a_mean_reaches_150_fact.peak_C[0] | results/stage7_paper_numbers.json.sensitivities_central.release_17.53s.C5.time_errors_s.M50_SP_Exp3
@@ -896,7 +893,9 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    traced 100 <- external/m50-two-cell-pilot/results/resolved_results_two.csv: G_bus_WK of the 42 cases, in mW/K = 100
    traced 200 <- external/m50-two-cell-pilot/results/resolved_results_two.csv: G_bus_WK of the 42 cases, in mW/K = 200
    traced 500 <- external/m50-two-cell-pilot/results/resolved_results_two.csv: G_bus_WK of the 42 cases, in mW/K = 500
-   [exponent or subscript] -1  ...seven conductances (5, 10, 20, 50, 100, 200 and 500~mW\,K$^{-1}$) and two releases. \item Kinetic draw...
+   [exponent or subscript] -1  ...seven conductances (5, 10, 20, 50, 100, 200 and 500~mW\,K$^{-1}$) and two releases, over 10 and 30~s. ...
+   traced 10 <- external/m50-two-cell-pilot/results/resolved_results_two.csv: G_bus_WK of the 42 cases, in mW/K = 10
+   broad 30 <- results/note_numbers.json.headline_0.15.tau30~key | results/v11_sensitivity.json.restriction.an_ele.by_case.100 mW/K.per_reaction_restriction.elec_evap.restricted.p2.5 | results/v12_numbers.json.central_case.runs.parallel_tau10.resolved_minus_lumped_peak_K | results/stage6_numbers.json.part_a_sets_with_series.sens.hot.t_cross_max_s
    traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
    [label] 2.3  ...raws: the 200 joint draws of the kinetic posterior (Section~2.3 of the main text); the four drawn by ra...
    [label] 11  ...ction~2.3 of the main text); the four drawn by rank in step 11 are those ranked 5, 50, 151 and 196, ea...
@@ -980,8 +979,8 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    traced 200 <- predictions_v11.md: /over that submodel's (200) grouped runs/ = 200
    traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
    [label] 8  ...e cap end: the end of the cell at its positive cap; in step 8 the quarter of the facing half nearest ...
-   [label] 14  ...arest it, a delivery region tested beside the half; in step 14, A1, A2 and A5, the paths its plan coun...
-   [label] 12  ..., the paths its plan counts as the cap end's. $E^*$ in step 12: the delivered energy at which the lump...
+   [label] 14  ...arest it, a delivery region tested beside the half; in step 14, the paths that step's plan counts as t...
+   [label] 12  ... holder (A1, A2 and A5, the last item below). $E^*$ in step 12: the delivered energy at which the lump...
    broad 10 <- results/note_numbers.json.headline_0.15.tau10~key | results/stage3_numbers.json.nine_cases_3a.two_E33223_tau10_G0.5.lead_p2.5_s | results/v11_sensitivity.json.exploratory.sets.central half, an_ele.short_mode_width_s | results/v12_numbers.json.all_runs.t_T1max_s.min
    broad 14 <- results/note_numbers.json.sei_storage_exploratory.0_days.headline.two_E21495_tau30_G0.5.hottest_node[0] | results/stage3_numbers.json.decomposition.lead_s.sd_kinetic | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_restriction.elec_evap.restricted.p2.5 | results/stage6_numbers.json.part_b_sets.total.hot_150C.times_s[1]
    broad 3 <- results/note_numbers.json.V0.ln_k.cat3~key | results/stage3_numbers.json.V4_registered.T_in_p2.5_C~key | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_T_C.by_group.separator.variance | results/v12_numbers.json.central_case.series_minus_parallel.tau10.res_peak_mean_C
@@ -1000,7 +999,7 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    [label] 13  ...heir thresholds. \item A1 and A2 in the predictions of step 13: the skin model and the cross-section c...
    [label] 2.5  ...2: the ignition temperature and the two-body model (Section~2.5 and Appendix~B of the main text). In st...
    broad 14 <- results/note_numbers.json.sei_storage_exploratory.0_days.headline.two_E21495_tau30_G0.5.hottest_node[0] | results/stage3_numbers.json.decomposition.lead_s.sd_kinetic | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_restriction.elec_evap.restricted.p2.5 | results/stage6_numbers.json.part_b_sets.total.hot_150C.times_s[1]
-   [label] 3  ...main text). In step 14, A1 to A6 are the six paths of Table~3 of the main text, in its order.    \sec...
+   [label] 3  ...main text). In step 14, A1 to A6 are the six paths of Table~3 of the main text, in its order. Labels ...
    traced 5.04 <- results/stage15_paper_numbers.json: B4.draws.5.E_J = 5.04499
    traced 21.39 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    [label] 5  ...s, PT-Exp4 with 5.04~kJ over 21.39~s under the draw of rank 5, whose lumped neighbour ran away at 191...
@@ -1009,9 +1008,25 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    broad 178 <- results/note_numbers.json.stage1_extra.T_at_1Kpm_C_lumped_33kJ_500mWK[0] | results/v12_numbers.json.fact.by_connection.series.lum_peak_C.max | results/stage7_paper_numbers.json.sensitivities_central.release_25.24s.C5.time_errors_s.M50_PT_Exp4 | results/stage9_paper_numbers.json.runs.wall_s_by_category.both_to_900_s.n
    broad 216 <- results/v12_numbers.json.measured.propagated.mean_s | results/stage9_paper_numbers.json.part_a.A2.M50_PT_Exp4.C2.t_hi_s | results/stage11_paper_numbers.json.runs.records | results/explore_sei_storage.json.storage.30_days.cases.two_E33223_tau30_G0.2.hottest_node_peak_Kpm
    broad 5 <- results/note_numbers.json.V0.ln_k.cat1 | results/stage3_numbers.json.V4_amended_D25.mean_offset_C | results/v12_numbers.json.grid.tab_high_minus_low.parallel_hlow_tau10.res_peak_hottest_C | results/stage7_paper_numbers.json.aged_vs_fresh.low.largest_change_hot_138_5_crossing_s
-   [label] 15  ...d.   { }{}  The main text reports the results of steps 5 to 15; steps 1 to 4 concern when the chemistr...
+   [label] 7  ...nged.   { }{}  The main text reports results of steps 5 and 7 to 15. Steps 1 to 4 concern when the ch...
+   [label] 15  ...   { }{}  The main text reports results of steps 5 and 7 to 15. Steps 1 to 4 concern when the chemistr...
    broad 1 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.1.0~key | results/stage3_numbers.json.V4_registered.main_cluster_share | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.an_ele.share | results/v12_numbers.json.grid.tab_high_minus_low.series_hcentral_tau10.lum_peak_C
-   [label] 4  ... main text reports the results of steps 5 to 15; steps 1 to 4 concern when the chemistry starts in an...
+   [label] 4  ...ain text reports results of steps 5 and 7 to 15. Steps 1 to 4 concern when the chemistry starts in an...
+   broad 6 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.10.0 | results/v12_numbers.json.grid.tab_high_minus_low.parallel_hlow_tau10.res_peak_mean_C | results/stage6_numbers.json.part_b_sets.total.hot_150C.times_s[0] | results/stage7_paper_numbers.json.part_c_timing.event_C5.away_reaches_255_7_after_start_s[0]
+   broad 150 <- results/note_numbers.json.stage2_table[4].mean_peak_reactive_C~str | results/v12_numbers.json.grid.by_contact.high.res_peak_mean_C.max | results/stage6_numbers.json.part_a_mean_reaches_150_fact.peak_C[0] | results/stage7_paper_numbers.json.sensitivities_central.release_17.53s.C5.time_errors_s.M50_SP_Exp3
+   broad 3 <- results/note_numbers.json.V0.ln_k.cat3~key | results/stage3_numbers.json.V4_registered.T_in_p2.5_C~key | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_T_C.by_group.separator.variance | results/v12_numbers.json.central_case.series_minus_parallel.tau10.res_peak_mean_C
+   broad 11 <- results/note_numbers.json.headline_0.15.tau30.hottest_s | results/stage3_numbers.json.headline_3a.hottest_onset_s.p50 | results/v11_sensitivity.json.definitions~str | results/v12_numbers.json.exploratory.hottest_node_at_peak.grid_mean_parallel_hcentral_gcentral_tau10.r_mm
+   broad 3 <- results/note_numbers.json.V0.ln_k.cat3~key | results/stage3_numbers.json.V4_registered.T_in_p2.5_C~key | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_T_C.by_group.separator.variance | results/v12_numbers.json.central_case.series_minus_parallel.tau10.res_peak_mean_C
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   broad 30 <- results/note_numbers.json.headline_0.15.tau30~key | results/v11_sensitivity.json.restriction.an_ele.by_case.100 mW/K.per_reaction_restriction.elec_evap.restricted.p2.5 | results/v12_numbers.json.central_case.runs.parallel_tau10.resolved_minus_lumped_peak_K | results/stage6_numbers.json.part_a_sets_with_series.sens.hot.t_cross_max_s
+   broad 500 <- results/note_numbers.json.only_local_cases[2]~str | inputs/fransson2024/fig10_extraction.json.panels.a.curves.neighbour.t_last_s
+   [exponent or subscript] -1  ...try's case of 33.2~kJ released over 30~s with a 500~mW\,K$^{-1}$ busbar under the 200 kinetic draws an...
+   traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
+   broad 30 <- results/note_numbers.json.headline_0.15.tau30~key | results/v11_sensitivity.json.restriction.an_ele.by_case.100 mW/K.per_reaction_restriction.elec_evap.restricted.p2.5 | results/v12_numbers.json.central_case.runs.parallel_tau10.resolved_minus_lumped_peak_K | results/stage6_numbers.json.part_a_sets_with_series.sens.hot.t_cross_max_s
+   broad 0.15 <- results/note_numbers.json.headline_0.15~key | results/stage3_numbers.json.P3_distribution.200 mW/K | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.narrowing | results/v12_numbers.json.exploratory.section2_rate_without_propagation.grid_mean_parallel_hlow_glow_tau10.toward.rate_C_per_s
+   [exponent or subscript] -1  ...d when each node's self-heating first reached 0.15~K\,min$^{-1}$; the standard deviation of the hot sp...
+   broad 2.83 <- results/stage3_numbers.json.decomposition.hottest_onset_s.sd_kinetic | results/v12_numbers.json.central_case.series_minus_parallel.tau10.res_peak_mean_C
+   broad 0.076 <- results/stage3_numbers.json.decomposition.hottest_onset_s.sd_thermal | results/stage9_paper_numbers.json.part_b.360.per_test.M50_PP_Exp2.ft_C1.f_t | results/stage15_cross_section.json.A2_at_measured[3].f | results/stage13_skin.csv:2:A1_pure_skin_f
    broad 2 <- results/note_numbers.json.levels_reached_two_strip.lumped.1.0 | results/stage3_numbers.json.V4_registered.T_in_p2.5_C~key | results/v12_numbers.json.central_case.series_minus_parallel.tau10.lum_peak_C | results/stage7_paper_numbers.json.part_c_c5_minus_c4_K.hot_spread_within_C4_K
    broad 1 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.1.0~key | results/stage3_numbers.json.V4_registered.main_cluster_share | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.an_ele.share | results/v12_numbers.json.grid.tab_high_minus_low.series_hcentral_tau10.lum_peak_C
    broad 24 <- results/note_numbers.json.sei_storage_exploratory.1_days.lead_s.two_E33223_tau10_G0.5 | results/stage3_numbers.json.nine_cases_3a.two_E33223_tau30_G0.2.lead_p2.5_s | results/v11_sensitivity.json.exploratory.sets.central half, an_ele.n_long_lead | results/stage6_numbers.json.part_b_sets.body_by_contact.central.t_T1max_s[1]
@@ -1043,6 +1058,12 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 302.1 <- DECISIONS.md: /below the paper's band of 255\.7 to (302\.1)/ = 302.1
    traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
+   broad 1 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.1.0~key | results/stage3_numbers.json.V4_registered.main_cluster_share | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.an_ele.share | results/v12_numbers.json.grid.tab_high_minus_low.series_hcentral_tau10.lum_peak_C
+   [exponent or subscript] -1  ... any case ran. A draw whose self-heating reaches 1~K\,min$^{-1}$ within 4,000~min of the test's start ...
+   traced 4,000 <- DECISIONS.md: /no later than (4000) min after the test starts is in the main cluster/ = 4000
+   broad 164 <- results/stage3_numbers.json.headline_3a_extra.by_V4_class_medians_s.main_cluster.n | results/v12_numbers.json.grid.by_contact.central.lum_peak_C.max | results/stage6_numbers.json.part_b_sets.body_by_contact.central.lumped_peak_C[1] | results/stage7_paper_numbers.json.triggers.T1max_central_C.M50_PT_Exp1
+   broad 200 <- results/note_numbers.json.V1.T_on_1_C_per_min_C | results/v11_sensitivity.json.exploratory.joint_against_dominant_runs.dominant_runs_cathode_start_T_C[0] | results/stage7_paper_numbers.json.sensitivities_central.release_17.53s.C1.time_error_median_s | results/stage8_paper_numbers.json.part_c.0.1.C3.errors_s[4]
+   broad 76 <- results/note_numbers.json.sei_storage_exploratory.30_days.headline.two_E33223_tau30_G0.5.lumped[0] | results/stage3_numbers.json.headline_3a.lumped_onset_s.p97.5 | results/stage7_paper_numbers.json.sensitivities_central.release_25.24s.C3.time_errors_s.M50_PP_Exp1 | results/stage10_paper_numbers.json.part_a.con120_C2_lo_hcentral.nodes.away.after_section_I.max_abs_K
    traced 95 <- predictions_stage13.md: /the central (95) % of the 200 draws/ = 95
    traced 5 <- results/stage3_v4_amended.json: tolerance_C = 5
    traced 5 <- results/stage3_v4_amended.json: tolerance_C = 5
@@ -1250,10 +1271,11 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    traced 20 <- src/stage15_inputs.py: /BEFORE_S = (20\.0)/ = 20
    [label] 24.16  ...to PT-Exp4's record from the end of the figure's Section~I, 24.16~s, it finds the measured jump beginning...
    traced 267.5 <- the registered rule (stage15_archive.far_face_jump) on inputs/fransson2024/pt_exp4_history.csv from 24.16 s: t, T = 267.5
-   traced 186.5 <- the registered rule (stage15_archive.far_face_jump) on inputs/fransson2024/pt_exp4_history.csv from 24.16 s: t, T = 186.538
-   traced 10.7 <- inputs/fransson2024/pt_exp4_history.csv at 271.5 s, less the record's jump by the rule = 10.7161
-   traced 197.3 <- results/stage10_paper_numbers.json: measured.at_onset_C = 197.254
+   traced 186.54 <- the registered rule (stage15_archive.far_face_jump) on inputs/fransson2024/pt_exp4_history.csv from 24.16 s: t, T = 186.538
+   traced 10.72 <- inputs/fransson2024/pt_exp4_history.csv at 271.5 s, less the record's jump by the rule = 10.7161
+   traced 197.25 <- inputs/fransson2024/pt_exp4_history.csv at 271.5 s = 197.254
    traced 271.5 <- results/stage10_paper_numbers.json: measured.onset_figure_s = 271.5
+   traced 197.3 <- results/stage10_paper_numbers.json: measured.at_onset_C = 197.254
    traced 47.6 <- results/stage15_paper_numbers.json: B1 PT_Exp4's upper run, far_jump.T_C, less the record's jump by the same rule = 47.563
    traced 36.8 <- results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
    [label] 2  ...ented beyond the assumptions the model already makes (Table~2 of the main text; Table~ ). One other d...
@@ -1543,7 +1565,7 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    table 3.61 <- manuscript/rebuild/data/step11_lumped_kJ.csv:4:hi_kJ
    table 0 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | results/stage11_draws.csv:2:label
    table 5 <- manuscript/rebuild/data/step11_lumped_kJ.csv:15:hi_kJ | results/stage11_draws.csv:2:rank
-   table 188 <- manuscript/rebuild/data/step11_lumped_kJ.csv:6:draw | results/stage11_draws.csv:2:label
+   table 200 <- manuscript/rebuild/data/step11_lumped_kJ.csv:4:test | results/stage11_draws.csv:6:stage3_draw
    table 12.54 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:lo_kJ
    table 12.89 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:hi_kJ
    table 1.70 <- manuscript/rebuild/data/step11_lumped_kJ.csv:3:lo_kJ
@@ -1552,7 +1574,7 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    table 1.80 <- manuscript/rebuild/data/step11_lumped_kJ.csv:4:lo_kJ
    table 0 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | results/stage11_draws.csv:2:label
    table 50 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | results/stage11_draws.csv:3:rank
-   table 83 <- manuscript/rebuild/data/step11_lumped_kJ.csv:10:draw | results/stage11_draws.csv:3:label
+   table 200 <- manuscript/rebuild/data/step11_lumped_kJ.csv:4:test | results/stage11_draws.csv:6:stage3_draw
    table 12.54 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:lo_kJ
    table 12.89 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:hi_kJ
    table 1.70 <- manuscript/rebuild/data/step11_lumped_kJ.csv:3:lo_kJ
@@ -1561,7 +1583,7 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    table 1.80 <- manuscript/rebuild/data/step11_lumped_kJ.csv:4:lo_kJ
    table 0 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | results/stage11_draws.csv:2:label
    table 151 <- results/stage11_draws.csv:4:rank
-   table 40 <- manuscript/rebuild/data/step11_lumped_kJ.csv:14:draw | results/stage11_draws.csv:4:label
+   table 200 <- manuscript/rebuild/data/step11_lumped_kJ.csv:4:test | results/stage11_draws.csv:6:stage3_draw
    table 12.89 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:hi_kJ
    table 13.24 <- manuscript/rebuild/data/step11_lumped_kJ.csv:14:hi_kJ
    table 3.41 <- manuscript/rebuild/data/step11_lumped_kJ.csv:3:hi_kJ
@@ -1570,7 +1592,7 @@ numbers_check --rebuild --supplement: 887 traced to a named value, 1302 found in
    table 3.61 <- manuscript/rebuild/data/step11_lumped_kJ.csv:4:hi_kJ
    table 0 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | results/stage11_draws.csv:2:label
    table 196 <- results/stage11_draws.csv:5:rank
-   table 184 <- manuscript/rebuild/data/step11_lumped_kJ.csv:18:draw | results/stage11_draws.csv:5:label
+   traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
    table 12.89 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:hi_kJ
    table 13.24 <- manuscript/rebuild/data/step11_lumped_kJ.csv:14:hi_kJ
    table 3.41 <- manuscript/rebuild/data/step11_lumped_kJ.csv:3:hi_kJ

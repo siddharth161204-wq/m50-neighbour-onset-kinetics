@@ -93,9 +93,9 @@ def table2():
          r"assumed$^{a}$"),
         ("Roll conductivity across and along the layers", r"1.3 and 25 W\,m$^{-1}$\,K$^{-1}$",
          r"\cite{oregan2022thermal,chen2021simplified}"),
-        ("Cell heat capacity", r"61.75 J\,K$^{-1}$ (65 g at 950 J\,kg$^{-1}$\,K$^{-1}$)",
-         r"\cite{oregan2022thermal}; mass assumed$^{a}$; the Databank's cells weighed %s to %s g before their "
-         r"tests~\cite{finegan2024databank}" % databank_mass()),
+        ("Cell heat capacity", r"61.75 J\,K$^{-1}$ (65 g at 950 J\,kg$^{-1}$\,K$^{-1}$; the Databank's cells weighed %s "
+         r"to %s g before their tests~\cite{finegan2024databank})" % databank_mass(),
+         r"\cite{oregan2022thermal}; mass assumed$^{a}$"),
         ("Resolved neighbour", "half model, 19,355 nodes", "this study"),
         (r"\textit{Heat paths}", None, None),
         (r"Contact conductance between the cans, $h_c$", r"200, 2,000, 3,700 W\,m$^{-2}$\,K$^{-1}$ (low, central, high)",
@@ -125,7 +125,7 @@ def table2():
                    r"followed by a constant power; for Section~\ref{sec:res-why}, triangular over 5 to 360 s",
          "this study"),
     ]
-    lines = [r"\begin{table}[!tbp]", r"\centering", r"\footnotesize",
+    lines = [r"\begin{table}[!tbp]", r"\centering", r"\scriptsize",
              r"\caption{The model's parameters and their sources. The two-cell geometry and its solver are those of "
              r"an earlier, archived study by the author~\cite{satte2026twocell}; $^{a}$, a value that study set "
              r"without a primary source, held here as an assumption.}",
@@ -173,7 +173,7 @@ def table3():
             "A4": "the debris left on the neighbour",
             "A5": "the holder's inserts and their contact",
             "A6": "the current between parallel cells"}
-    lines = [r"\begin{table}[!tbp]", r"\centering", r"\footnotesize",
+    lines = [r"\begin{table}[!tbp]", r"\centering", r"\scriptsize",
              r"\caption{What each path can deliver to the neighbour's facing half, from published inputs alone "
              r"(Supplementary Table~S5): the upper bound within the pulse's 21.4~s and in total (every lower bound is "
              r"zero), what sets it, and the measurement that would bound it more tightly. The ejecta can release at "
@@ -204,7 +204,7 @@ def table_s3():
     b1 = json.load(open(os.path.join(RES, "stage15_paper_numbers.json")))["B1"]
     tab = read_csv(os.path.join(RES, "stage15_table.csv"))
     lines = [r"{\footnotesize\setlength{\tabcolsep}{3pt}", r"\begin{longtable}{p{0.1\textwidth}p{0.13\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.18\textwidth}}",
-             r"\caption{The thresholds of the sixteen tests with the 21.4~s pulse (kJ; a bracket is the largest "
+             r"\caption{The thresholds of the sixteen tests with the 21.4~s pulse at the central contact (kJ; a bracket is the largest "
              r"energy run that does not meet the criterion and the smallest that does), and, for the nine propagated "
              r"tests, their needs: the least energy with which the lumped neighbour and the resolved neighbour (by "
              r"the reactive cross-section) run away within 10~s of the measured time, counted as delivered by the "
@@ -480,7 +480,7 @@ def s11_draw_labels():
     d = {r["label"]: r for r in read_csv(os.path.join(RES, "stage11_draws.csv"))}
     lab = [("mean", "Posterior mean, central properties")]
     for k in ("d188", "d83", "d40", "d184"):
-        lab.append((k, "Kinetic draw ranked %s (draw %s)" % (d[k]["rank"], d[k]["stage3_draw"])))
+        lab.append((k, "Kinetic draw ranked %s of 200" % d[k]["rank"]))
     lab += [("kr_min", r"Least conductivity across the layers, %.3f W\,m$^{-1}$\,K$^{-1}$" % float(d["kr_min"]["k_radial_W_mK"])),
             ("kr_max", r"Largest conductivity across the layers, %.3f W\,m$^{-1}$\,K$^{-1}$" % float(d["kr_max"]["k_radial_W_mK"])),
             ("c_min", r"Least specific heat, %.0f J\,kg$^{-1}$\,K$^{-1}$" % float(d["c_min"]["c_roll_J_kgK"])),
