@@ -26,6 +26,12 @@ C_LUMP, C_RES, C_TRIG, C_HEAT = "#0072B2", "#009E73", "#D55E00", "#E69F00"
 CM = 1 / 2.54
 
 
+
+def half_up(x, nd=2):
+    """x to nd decimals, halves rounded up, as the manuscript writes a midpoint such as 3.975 kJ (3.98)."""
+    from decimal import Decimal, ROUND_HALF_UP
+    return str(Decimal(repr(float(x))).quantize(Decimal(1).scaleb(-nd), rounding=ROUND_HALF_UP))
+
 def main():
     p = json.load(open(os.path.join(ROOT, "results", "stage15_paper_numbers.json")))
     b1 = p["B1"]
@@ -75,9 +81,9 @@ def main():
         ax2.bar(i - w / 2 - 0.02, r["lumped"], w, color=C_LUMP, zorder=3)
         ax2.bar(i + w / 2 + 0.02, r["mid"], w, color=C_RES, zorder=3)
         ax2.plot([i + w / 2 + 0.02] * 2, [r["lo"], r["hi"]], color=INK, lw=1.0, zorder=4)
-        T(ax2, i - w / 2 - 0.02, r["lumped"] + 0.25, f"{r['lumped']:.2f}", f"{r['test']}, the lumped neighbour's threshold, kJ",
+        T(ax2, i - w / 2 - 0.02, r["lumped"] + 0.25, half_up(r["lumped"]), f"{r['test']}, the lumped neighbour's threshold, kJ",
           ha="center", va="bottom", fontsize=7.5, color=C_LUMP)
-        T(ax2, i + w / 2 + 0.02, r["hi"] + 0.25, f"{r['mid']:.2f}", f"{r['test']}, the resolved neighbour's threshold, kJ",
+        T(ax2, i + w / 2 + 0.02, r["hi"] + 0.25, half_up(r["mid"]), f"{r['test']}, the resolved neighbour's threshold, kJ",
           ha="center", va="bottom", fontsize=7.5, color=C_RES)
         T(ax2, i, 9.3, f"{r['ratio']:.1f} times", f"{r['test']}, the resolved threshold over the lumped one",
           ha="center", va="top", fontsize=7.5, color=INK)

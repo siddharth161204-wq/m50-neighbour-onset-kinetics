@@ -24,6 +24,7 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import matplotlib.ticker
 from matplotlib.patches import Circle, Wedge, FancyArrowPatch, Rectangle
 from matplotlib.lines import Line2D
 
@@ -344,6 +345,9 @@ def fig3():
 
 
 # ------------------------------------------------------------------------------------------------ Figure 4
+NONE_Y = 0.1                                                        # Fig. 4b: the row of the zero needs
+
+
 def fig4():
     """What each neighbour model needs at the measured times (the nine propagated tests, four deliveries), and the
     energy read from each non-propagated test's measured maximum."""
@@ -372,7 +376,7 @@ def fig4():
     ax.set_ylim(0.12, 100)
     ax.set_xticks(range(len(prop)))
     ax.set_xticklabels(["%s\n%.0f s" % (short(t), tt[t]["time_s"]) for t in prop], fontsize=6.3)
-    ax.set_ylabel("Energy delivered to the facing half\nby the measured time (kJ)")
+    ax.set_ylabel("Energy delivered to the facing half\nby the runaway (kJ)")
     ax.set_title("Propagated tests, in order of the measured time", loc="left", fontsize=7.5)
     grid(ax)
     h = [Line2D([], [], color=C_LUMP, marker="o", ls="none", ms=4.2, label="lumped neighbour reaches 255.7 °C"),
@@ -385,12 +389,19 @@ def fig4():
     for i, t in enumerate(nonp):
         v = fnum(nd[t]["need_21s_lo_J"])
         expl = "exploratory" in nd[t]["reading_21s"]
-        y = 0.2 if (v is None or v == 0) else v / 1e3
-        ax.plot(i, y, marker="o", ms=4.6, mfc=("white" if expl else INK), mec=INK, ls="none")
-    ax.text(1.7, 0.26, "none needed: with no delivery the far\nface already peaks above the maximum", ha="left",
+        zero = v is None or v == 0
+        y = NONE_Y if zero else v / 1e3                              # a need of zero sits in its own row, "none"
+        ax.plot(i, y, marker=("v" if zero else "o"), ms=4.6, mfc=("white" if expl else INK), mec=INK, ls="none")
+    ax.axhline(0.15, color=MUTED, lw=0.6, ls=(0, (1, 2)))
+    ax.text(1.75, 0.16, "below the line: with no delivery the far\nface already peaks above the maximum", ha="left",
             va="bottom", fontsize=5.7, color=MUTED)
     ax.set_yscale("log")
-    ax.set_ylim(0.12, 100)
+    ax.set_ylim(0.075, 100)
+    ax.set_yticks([NONE_Y, 1, 10, 100])
+    ax.set_yticklabels(["none", "1", "10", "100"])
+    ax.yaxis.set_minor_locator(matplotlib.ticker.FixedLocator(
+        [m * 10.0 ** k for k in (-1, 0, 1) for m in range(2, 10) if m * 10.0 ** k > 0.15]))
+    ax.yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
     ax.set_xticks(range(len(nonp)))
     ax.set_xticklabels([short(t) for t in nonp], rotation=60, fontsize=6.3, ha="right")
     ax.set_ylabel("Energy over 21.4 s that puts the far face's\npeak at the measured maximum (kJ)", fontsize=7)
@@ -406,12 +417,15 @@ def fig4():
 def fig5():
     """PT-Exp4's neighbour: the measured surface record against the model's far face, and the mean."""
     n15 = stage15_numbers()
-    runs = [("s15_rep_size_PT_Exp4_tri21", "5.0 kJ over 21.4 s (lumped neighbour runs away at 216 s)", C_LUMP, "-"),
-            ("s15_B1_PT_Exp4_s-1", "6.7 kJ over 21.4 s", C_RES, "--"),
-            ("s15_B1_PT_Exp4_s+1", "7.4 kJ over 21.4 s", C_RES, "-"),
+    b1 = {r["id"]: r for r in n15["B1"]["M50_PT_Exp4"]["runs"]}
+    runs = [("s15_rep_size_PT_Exp4_tri21", "5.0 kJ over 21.4 s (no runaway; the lumped neighbour's at 216 s)", C_LUMP, "-"),
+            ("s15_B1_PT_Exp4_s-1", "6.7 kJ over 21.4 s (no runaway)" if not b1["s15_B1_PT_Exp4_s-1"]["C8"] else
+             "6.7 kJ over 21.4 s", C_RES, "--"),
+            ("s15_B1_PT_Exp4_s+1", "7.4 kJ over 21.4 s (runaway at %.0f s)" % b1["s15_B1_PT_Exp4_s+1"]["t_C8_s"],
+             C_RES, "-"),
             ("s15_B3_PT_Exp4_hold12.5W", "5.0 kJ pulse, then 12.5 W", C_PURPLE, "-"),
             ("s15_B2_PT_Exp4_con240_f0.050000", "6.2 kJ over 240 s", C_ORANGE, "-")]
-    fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.0), constrained_layout=True)
+    fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.35), constrained_layout=True)
     tm, Tm = measured_pt_exp4()
     for rid, lab, col, ls in runs:
         p = os.path.join(RES, "stage15_series", rid + ".npz")
@@ -448,7 +462,7 @@ def fig5():
     axs[0].legend([ha[la.index("measured (Fransson et al.)")]], ["measured (Fransson et al.)"], loc="lower right",
                   fontsize=6.0)
     h, l = axs[1].get_legend_handles_labels()                       # panel b: the five model runs, its own lines
-    axs[1].legend(h, l, loc="lower right", fontsize=6.0)
+    fig.legend(h, l, loc="outside lower center", ncol=3, fontsize=6.0, frameon=False)
     panel(axs[1], "b")
     save(fig, 5)
 

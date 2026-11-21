@@ -50,8 +50,9 @@ def table1():
              r"trigger peak at the central contact when released over 21.39~s. Times run from the trigger's runaway "
              r"to the neighbour's. The two maxima marked $^{a}$ may not be the neighbour's surface and are treated as "
              r"exploratory. Category, Fransson et al.'s failure category: 1, the trigger's nail-penetration failure; "
-             r"2, failure in the propagating cell; 4, sidewall rupture of the trigger; c.m., ``cell movement'' in the "
-             r"X-ray camera's field of view, given in place of a category; a dash, none given.}",
+             r"2, failure in the propagating cell; 4, sidewall rupture of the trigger (3, sidewall melting, is given for "
+             r"none of these tests); c.m., ``cell movement'' in the X-ray camera's field of view, given in place of a "
+             r"category; a dash, none given. A test propagated when the neighbour's thermocouple shows a second spike.}",
              r"\label{tab:tests}",
              r"\begin{tabular}{llrrlrrc}", r"\toprule",
              r"Test & Connection & Trigger peak & $E_\mathrm{b}$ & Propagated & Time & Neighbour peak & Category \\",
@@ -75,7 +76,8 @@ def table2():
         ("Cell diameter and length", "21.1 and 70.1 mm", r"\cite{oregan2022thermal}"),
         ("Can wall", "0.25 mm", r"\cite[Table 1]{finegan2024databank}"),
         ("Can: conductivity; mass and specific heat",
-         r"15 W\,m$^{-1}$\,K$^{-1}$; 9 g, 500 J\,kg$^{-1}$\,K$^{-1}$", r"assumed$^{a}$"),
+         r"15 W\,m$^{-1}$\,K$^{-1}$, a stainless steel's (no source gives the grade); 9 g, 500 J\,kg$^{-1}$\,K$^{-1}$",
+         r"assumed$^{a}$"),
         ("Roll conductivity across and along the layers", r"1.3 and 25 W\,m$^{-1}$\,K$^{-1}$",
          r"\cite{oregan2022thermal,chen2021simplified}"),
         ("Cell heat capacity", r"61.75 J\,K$^{-1}$ (65 g at 950 J\,kg$^{-1}$\,K$^{-1}$)",
@@ -133,8 +135,10 @@ def table3():
              "A6": "The neighbour's own discharge (parallel tests; for comparison)"}
     sets = {"A1": r"a black body at 1500\textdegree C filling the facing half's view (the holder may reflect); "
                   r"a flame held on the vent's axis, about 0.85~kJ",
-            "A2": r"convection at 398.5~m\,s$^{-1}$~\cite{churchill1977correlating} with hydrogen's properties at "
-                  r"1000~K, at most twice the whole-cylinder mean on one half; radiation at 1500\textdegree C",
+            "A2": r"convection by Churchill and Bernstein's relation~\cite{churchill1977correlating} at "
+                  r"398.5~m\,s$^{-1}$~\cite{gillich2024mechanical}, at the film temperature of gas at 1500\textdegree C "
+                  r"over a can at 25\textdegree C, with hydrogen's properties at 1000~K~\cite{lienhard2024heat}, at most "
+                  r"twice the whole-cylinder mean on one half; radiation at 1500\textdegree C",
             "A3": r"what the ejecta can release; a narrow jet strikes only from within 30\textdegree{} of the line of "
                   r"centres, a sixth of the circumference",
             "A4": r"what the ejecta can release; melt falls onto it from a breach on the trigger's lower half, half "
@@ -183,16 +187,18 @@ def table_s3():
     lines = [r"{\footnotesize\setlength{\tabcolsep}{3pt}", r"\begin{longtable}{p{0.1\textwidth}p{0.13\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.18\textwidth}}",
              r"\caption{The thresholds of the sixteen tests with the 21.4~s pulse (kJ; a bracket is the largest "
              r"energy run that does not meet the criterion and the smallest that does), and, for the nine propagated "
-             r"tests, the energy delivered by the measured time at which the lumped neighbour and the resolved "
-             r"neighbour run away then (by the reactive cross-section). An energy marked $^{t}$ is the least energy "
+             r"tests, their needs: the least energy with which the lumped neighbour and the resolved neighbour (by "
+             r"the reactive cross-section) run away within 10~s of the measured time, counted as delivered by the "
+             r"run's own runaway. An energy marked $^{t}$ is the least energy "
              r"run whose runaway comes before the measured time when the next lower run, 0.5\,\% of the test's "
              r"ejected energy below, gives none within 900~s: the measured time is reproduced only between the two, "
              r"within that resolution of the threshold, and the value, the higher, can exceed the bracket beside it. Supplementary Table~\ref{tab:s-needs} gives the other delivery shapes.}"
              r"\label{tab:s-thresholds}\\",
              r"\toprule", r"Test & Hottest point & Lumped & Resolved, cross-section & Resolved, three-dimensional & "
-             r"By the measured time: lumped; resolved \\", r"\midrule", r"\endfirsthead", r"\toprule",
+             r"Needs: lumped; resolved \\", r"\midrule", r"\endfirsthead",
+             r"\multicolumn{6}{l}{\textit{Continued}} \\", r"\toprule",
              r"Test & Hottest point & Lumped & Resolved, cross-section & Resolved, three-dimensional & "
-             r"By the measured time: lumped; resolved \\", r"\midrule", r"\endhead"]
+             r"Needs: lumped; resolved \\", r"\midrule", r"\endhead"]
     for t in TESTS:
         r = nd[t]
         (lo1, hi1), (lo2, hi2) = RB.brackets(r)          # the narrowest bracket the archive holds (Stage 13 refined four)
@@ -226,19 +232,21 @@ def table_s7():
     lines = [r"{\footnotesize\setlength{\tabcolsep}{3pt}",
              r"\begin{longtable}{p{0.09\textwidth}p{0.065\textwidth}p{0.17\textwidth}p{0.1\textwidth}p{0.1\textwidth}"
              r"p{0.11\textwidth}p{0.09\textwidth}}",
-             r"\caption{The needs of the nine tests that propagated under the four delivery shapes (kJ): the energy "
-             r"delivered by the measured time (Time) with which the lumped neighbour (Lumped), and the resolved "
-             r"neighbour by the reactive cross-section (Resolved), run away at that time within 10~s; for the resolved "
-             r"neighbour, the energy of that delivery in all, over its whole shape, and the time of its runaway in that "
-             r"run. $^{t}$, the least energy run whose runaway comes before the measured time, the next lower run, "
-             r"0.5\,\% of the test's ejected energy below, giving none within 900~s, so that the measured time is "
-             r"reproduced only between the two, within that resolution of the threshold; "
-             r"$^{b}$, interpolated in time between the two runs whose runaways bracket the measured time; a dash, no "
-             r"energy on the search's grid gave a runaway. The four shapes deliver the same energy by the measured time "
-             r"only where the delivery ends before it. Below, for the seven tests that did not propagate, the energy "
+             r"\caption{The needs of the nine tests that propagated under the four delivery shapes (kJ): the least "
+             r"energy with which the lumped neighbour (Lumped), and the resolved neighbour by the reactive cross-section "
+             r"(Resolved), run away within 10~s of the measured time (Time), counted as delivered by the run's own "
+             r"runaway; for the resolved neighbour, the energy of that delivery in all, over its whole shape, and the "
+             r"time of its runaway in that run. $^{t}$, the least energy run whose runaway comes before the measured "
+             r"time, the next lower run, 0.5\,\% of the test's ejected energy below, giving none within 900~s, so that "
+             r"the measured time is reproduced only between the two, within that resolution of the threshold; the "
+             r"energy is counted to that run's runaway; "
+             r"$^{b}$, interpolated between the two runs whose runaways bracket the measured time, and counted "
+             r"to the measured time; a dash, no energy on the search's grid gave a runaway. The four shapes deliver the "
+             r"same energy by the runaway only where the delivery ends before it. Below, for the seven tests that did not propagate, the energy "
              r"that puts the far face's peak at the measured maximum, within 5~K, under each shape; $^{a}$, a maximum "
              r"that may not be the neighbour's surface (exploratory).}\label{tab:s-needs}\\",
-             r"\toprule", head, r"\midrule", r"\endfirsthead", r"\toprule", head, r"\midrule", r"\endhead"]
+             r"\toprule", head, r"\midrule", r"\endfirsthead", r"\multicolumn{7}{l}{\textit{Continued}} \\",
+             r"\toprule", head, r"\midrule", r"\endhead"]
     for t in TESTS:
         rows = [x for x in tab if x["test"] == t]
         if not rows:
@@ -395,7 +403,7 @@ def table_s10():
              r"and its difference from the bracket's midpoint, against the larger of 10\,\% of the midpoint and "
              r"300~J, registered before the searches.}\label{tab:s-twobody}\\",
              r"\toprule", r"Test & Contact & $E_\mathrm{b}$ & Lumped bracket & Two-body & Difference & Tolerance & Within \\",
-             r"\midrule", r"\endfirsthead", r"\toprule",
+             r"\midrule", r"\endfirsthead", r"\multicolumn{8}{l}{\textit{Continued}} \\", r"\toprule",
              r"Test & Contact & $E_\mathrm{b}$ & Lumped bracket & Two-body & Difference & Tolerance & Within \\",
              r"\midrule", r"\endhead"]
     for t in TESTS:

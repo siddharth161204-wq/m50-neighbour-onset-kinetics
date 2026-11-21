@@ -56,20 +56,20 @@ NEW = [
     (14, "P6", "For the parallel tests the circuit's upper bound on the neighbour's own heating exceeds 1 kJ.",
      "uncertain; the file's analysis says P6 is expected to hold", "predictions_stage14.md:12"),
     (15, "P1", "The reactive cross-section's E*(C8) lies within 15 % of the midpoint of the three-dimensional bracket in at least three of four tests.",
-     "uncertain", "predictions_stage15.md:110"),
-    (15, "P2", "For PT_Exp4 with the 21.39 s delivery, E*(C8) lies between 6 and 10 kJ.", "likely",
+     "uncertain; the reduced model's values are the searches' centres", "predictions_stage15.md:110"),
+    (15, "P2", "For PT_Exp4 with the 21.39 s delivery, E*(C8) lies between 6 and 10 kJ.", "likely; the reduced model's value, registered with it: 7,062 J",
      "predictions_stage15.md:112"),
     (15, "P3", "In at least three of the four tests E*(C8) is at least 1.25 times the whole-cell clock's threshold E*(C2).",
-     "likely for the three strong triggers, uncertain for ST_Exp3", "predictions_stage15.md:114"),
+     "likely for the three strong triggers, uncertain for ST_Exp3; the reduced model's values: 1.49, 1.72, above zero in SP_Exp3, 0.85", "predictions_stage15.md:114"),
     (15, "P4", "For PT_Exp4, in the run at the upper end of the bracket, the mean crosses 255.7 C between 150 and 400 s after the trigger's start.",
-     "likely", "predictions_stage15.md:116"),
+     "likely; the reduced model's value: 310.6 s at the upper end of its own bracket", "predictions_stage15.md:116"),
     (15, "P5", "In that run the far face reads more than 15 K above 197.3 C, the reading from which the measured neighbour jumped, when its own jump begins.",
-     "likely", "predictions_stage15.md:118"),
+     "likely; the reduced model's value: 240.1 C", "predictions_stage15.md:118"),
     (15, "P6", "The constant power after the 5.0 kJ pulse that brings the cell's own runaway to 271.5 s lies between 5 and 25 W.",
-     "likely", "predictions_stage15.md:120"),
+     "likely; the reduced model's value: 12.5 W", "predictions_stage15.md:120"),
     (15, "P7", "Under none of four kinetic draws and not with the aged SEI does the resolved cell run away at PT_Exp4's 5,045 J, and the least shift of the rate laws that makes it run away is 10 K or more.",
-     "likely", "predictions_stage15.md:122"),
-    (15, "P8", "PT_Exp4's run with 6,209 J over 240 s, carried to 900 s, runs away.", "likely", "predictions_stage15.md:124"),
+     "likely; the reduced model's values: no runaway in any of the five runs, the least shift 20.0 K", "predictions_stage15.md:122"),
+    (15, "P8", "PT_Exp4's run with 6,209 J over 240 s, carried to 900 s, runs away.", "likely; the reduced model's value, registered with it: no runaway, the mean peaking at 220.5 C", "predictions_stage15.md:124"),
 ]
 FORESEEN = {(14, "P1"), (14, "P2")}
 
@@ -191,10 +191,10 @@ def main():
     open(os.path.join(OUTT, "s1_steps.tex"), "w").write("\n".join(t1) + "\n")
 
     t2 = [r"{\sloppy\scriptsize\setlength{\tabcolsep}{3pt}", r"\begin{longtable}{>{\raggedright\arraybackslash}p{0.05\textwidth}>{\raggedright\arraybackslash}p{0.065\textwidth}>{\raggedright\arraybackslash}p{0.425\textwidth}>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}p{0.1\textwidth}}",
-          r"\caption{Every prediction, as its predictions file states it (shortened), with the expectation recorded "
+          r"\caption{Every prediction, as its predictions file states it (shortened where long), with the expectation recorded "
           r"before the runs and the verdict. Labels are defined in Section~\ref{sec:s-key}.}\label{tab:s-registry}\\",
           r"\toprule", r"Step & & Prediction & Expectation & Verdict \\", r"\midrule", r"\endfirsthead",
-          r"\toprule", r"Step & & Prediction & Expectation & Verdict \\", r"\midrule", r"\endhead"]
+          r"\multicolumn{5}{l}{\textit{Continued}} \\", r"\toprule", r"Step & & Prediction & Expectation & Verdict \\", r"\midrule", r"\endhead"]
     for r in rows:
         v = r["verdict"] + (", foreseen" if r["foreseen"] == "yes" else "")
         exp = r["expectation"]

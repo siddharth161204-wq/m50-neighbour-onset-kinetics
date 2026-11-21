@@ -1,10 +1,11 @@
 {\sloppy\scriptsize\setlength{\tabcolsep}{3pt}
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.05\textwidth}>{\raggedright\arraybackslash}p{0.065\textwidth}>{\raggedright\arraybackslash}p{0.425\textwidth}>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}p{0.1\textwidth}}
-\caption{Every prediction, as its predictions file states it (shortened), with the expectation recorded before the runs and the verdict. Labels are defined in Section~\ref{sec:s-key}.}\label{tab:s-registry}\\
+\caption{Every prediction, as its predictions file states it (shortened where long), with the expectation recorded before the runs and the verdict. Labels are defined in Section~\ref{sec:s-key}.}\label{tab:s-registry}\\
 \toprule
 Step & & Prediction & Expectation & Verdict \\
 \midrule
 \endfirsthead
+\multicolumn{5}{l}{\textit{Continued}} \\
 \toprule
 Step & & Prediction & Expectation & Verdict \\
 \midrule
@@ -99,14 +100,14 @@ Step & & Prediction & Expectation & Verdict \\
 14 & P4 & The upper bound of a breach's jet facing the neighbour exceeds 5.96 kJ delivered within 21.39 s. & likely & held \\
 14 & P5 & At least one of the six paths is not determinable from published inputs for this cell. & likely & held \\
 14 & P6 & For the parallel tests the circuit's upper bound on the neighbour's own heating exceeds 1 kJ. & uncertain; the predictions file's analysis says P6 is expected to hold & held \\
-15 & P1 & The reactive cross-section's $E^*$(C8) lies within 15 \% of the midpoint of the three-dimensional bracket in at least three of four tests. & uncertain & held \\
-15 & P2 & For PT-Exp4 with the 21.39 s delivery, $E^*$(C8) lies between 6 and 10 kJ. & likely & held \\
-15 & P3 & In at least three of the four tests $E^*$(C8) is at least 1.25 times the whole-cell clock's threshold $E^*$(C2). & likely for the three strong triggers, uncertain for ST-Exp3 & held \\
-15 & P4 & For PT-Exp4, in the run at the upper end of the bracket, the mean crosses 255.7\degC{} between 150 and 400 s after the trigger's start. & likely & held \\
-15 & P5 & In that run the far face reads more than 15 K above 197.3\degC, the reading from which the measured neighbour jumped, when its own jump begins. & likely & held \\
-15 & P6 & The constant power after the 5.0 kJ pulse that brings the cell's own runaway to 271.5 s lies between 5 and 25 W. & likely & held \\
-15 & P7 & Under none of four kinetic draws and not with the aged SEI does the resolved cell run away at PT-Exp4's 5,045 J, and the least shift of the rate laws that makes it run away is 10 K or more. & likely & held \\
-15 & P8 & PT-Exp4's run with 6,209 J over 240 s, carried to 900 s, runs away. & likely & failed \\
+15 & P1 & The reactive cross-section's $E^*$(C8) lies within 15 \% of the midpoint of the three-dimensional bracket in at least three of four tests. & uncertain; the reduced model's values are the searches' centres & held \\
+15 & P2 & For PT-Exp4 with the 21.39 s delivery, $E^*$(C8) lies between 6 and 10 kJ. & likely; the reduced model's value, registered with it: 7,062 J & held \\
+15 & P3 & In at least three of the four tests $E^*$(C8) is at least 1.25 times the whole-cell clock's threshold $E^*$(C2). & likely for the three strong triggers, uncertain for ST-Exp3; the reduced model's values: 1.49, 1.72, above zero in SP-Exp3, 0.85 & held \\
+15 & P4 & For PT-Exp4, in the run at the upper end of the bracket, the mean crosses 255.7\degC{} between 150 and 400 s after the trigger's start. & likely; the reduced model's value: 310.6 s at the upper end of its own bracket & held \\
+15 & P5 & In that run the far face reads more than 15 K above 197.3\degC, the reading from which the measured neighbour jumped, when its own jump begins. & likely; the reduced model's value: 240.1\,\textdegree C & held \\
+15 & P6 & The constant power after the 5.0 kJ pulse that brings the cell's own runaway to 271.5 s lies between 5 and 25 W. & likely; the reduced model's value: 12.5 W & held \\
+15 & P7 & Under none of four kinetic draws and not with the aged SEI does the resolved cell run away at PT-Exp4's 5,045 J, and the least shift of the rate laws that makes it run away is 10 K or more. & likely; the reduced model's values: no runaway in any of the five runs, the least shift 20.0 K & held \\
+15 & P8 & PT-Exp4's run with 6,209 J over 240 s, carried to 900 s, runs away. & likely; the reduced model's value, registered with it: no runaway, the mean peaking at 220.5\,\textdegree C & failed \\
 \bottomrule
 \end{longtable}
 }
