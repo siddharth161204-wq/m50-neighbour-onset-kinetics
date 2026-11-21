@@ -208,6 +208,7 @@ TABLE_SOURCES = {
     "s7_needs.tex": ["results/stage15_table.csv", "results/stage14_needs.csv"],
     "s9_heldout.tex": ["results/stage10_heldout.json"],
     "s10_twobody.tex": ["results/stage13_twobody.csv"],
+    "s11_archived.tex": ["results/stage15_cross_section.json"],
 }
 MONTHS = r"(January|February|March|April|May|June|July|August|September|October|November|December)"
 
@@ -415,6 +416,44 @@ def check_cells(tex, spec_path, lines):
     return n_ok, bad
 
 
+def check_s11(tex, lines):
+    """Table S11, the archived runs by test: every row recomputed here, by this code's own grouping, from the rows of
+    results/stage15_cross_section.json (A1_rows), and compared with the printed row."""
+    rows = json.load(open(os.path.join(RES, "stage15_cross_section.json")))["A1_rows"]
+    body = tex[tex.index(r"\midrule"):tex.index(r"\bottomrule")]
+    printed = [ln.strip().rstrip("\\").strip() for ln in body.splitlines() if "&" in ln]
+    order = [f"M50_{c}_Exp{i}" for c in ("PT", "PP", "ST", "SP") for i in range(1, 5)] + [None]
+    want = []
+    for t in order:
+        sel = [r for r in rows if t is None or r["test"] == t]
+        if not sel:
+            continue
+        by = {}
+        for r in sel:
+            key = "none" if r["shape"] == "none" else ("tri" if r["shape"] == "tri" else f"con{round(r['tau_d_s'])}")
+            by[key] = by.get(key, 0) + 1
+        es = sorted(r["E_J"] for r in sel if r["E_J"] > 0)
+        rng = "--" if not es else (f"{es[0] / 1e3:.1f}" if len(es) == 1 else f"{es[0] / 1e3:.1f} to {es[-1] / 1e3:.1f}")
+        both = len([r for r in sel if r["C8_3d"] is True and r["C8_xs"] is True])
+        short = len([r for r in sel if r["t_end_s"] < 899.0])
+        label = "All" if t is None else t.split("_", 1)[1].replace("_", "-")
+        cells = [label, len(sel), by.get("none", 0), by.get("tri", 0), by.get("con120", 0), by.get("con240", 0),
+                 by.get("con360", 0), rng, both, short]
+        want.append(" & ".join(str(c) for c in cells))
+    n_ok, bad = 0, []
+    for k, w in enumerate(want):
+        got = printed[k] if k < len(printed) else None
+        if got == w:
+            n_ok += 1
+            lines.append(f"   row {w}")
+        else:
+            bad.append((str(got), w, "MISMATCH: recomputed row differs"))
+            lines.append(f"   MISMATCH row: table {got!r}, recomputed {w!r}")
+    if len(printed) != len(want):
+        bad.append((str(len(printed)), str(len(want)), "row count differs"))
+    return n_ok, bad
+
+
 def rebuild(a):
     import sys
     rb = os.path.join(HERE, "rebuild")
@@ -468,6 +507,12 @@ def rebuild(a):
             counts["table"] += n_ok
             fails += [(name, raw, ctx, why) for raw, ctx, why in bad]
             continue
+        if mode == "table:s11_archived.tex":
+            lines.append(f"== {name}  [each row recomputed from the archived runs]")
+            n_ok, bad = check_s11(raw_text, lines)
+            counts["table"] += n_ok
+            fails += [(name, raw, ctx, why) for raw, ctx, why in bad]
+            raw_text = raw_text[:raw_text.index(r"\midrule")]
         if mode == "table:s8_reduced.tex":
             lines.append(f"== {name}  [each cell against the file value it is converted from]")
             n_ok, bad = check_cells(raw_text, os.path.join(rb, "tables", "s8_reduced.cells.json"), lines)

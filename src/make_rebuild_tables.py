@@ -97,9 +97,9 @@ def table2():
         (r"\textit{Kinetics}", None, None),
         ("Model", "Bayesian chemical reaction neural network: posterior mean, and 200 joint draws",
          r"\cite{koenig2025uncertainty}"),
-        ("Reactant masses; initial SEI amount", r"per 720 g reference cell; 0.15 (fresh), 0 (aged)",
+        ("Reactant masses; initial SEI amount", r"per 720 g reference cell; 0.15 of the source's normalised amount (fresh), 0 (aged)",
          r"\cite{koenig2025uncertainty}"),
-        ("Runaway level", r"255.7\textdegree C, within 900 s", r"\cite{koenig2025uncertainty}"),
+        ("Runaway level; window", r"255.7\textdegree C; within 900 s", r"\cite{koenig2025uncertainty}; this study"),
         (r"\textit{Delivered heat}", None, None),
         ("Region", "the half of the neighbour's can facing the trigger, a uniform flux", "this study"),
         ("Shapes", "triangular over 21.39 s; constant power over 120, 240 or 360 s; in PT-Exp4 also the pulse "
@@ -139,10 +139,11 @@ def table3():
                   r"centres, a sixth of the circumference",
             "A4": r"what the ejecta can release; melt falls onto it from a breach on the trigger's lower half, half "
                   r"of the circumference",
-            "A5": r"the inserts' material and contact are not given; bounded as the jet and melt are, 247.3~kJ, the "
-                  r"most measured for this cell in all (110.8~kJ) with the vent gas burning",
-            "A6": r"heats from inside: the stored energy, 18.2~Wh; within 21.4~s, 15.6~kJ at 731~W, 4.189~V across "
-                  r"24~m$\Omega$~\cite{lg2017m50} at 25\textdegree C"}
+            "A5": r"not determinable: the inserts' material and contact are not given; energy conservation alone caps it "
+                  r"at 247.3~kJ, all the trigger can release, the most measured for this cell in all (110.8~kJ"
+                  r"~\cite{finegan2024databank}) with the vent gas burning",
+            "A6": r"heats from inside: the stored energy, 18.2~Wh, in every window; beside it, a short across "
+                  r"24~m$\Omega$~\cite{lg2017m50} at 4.189~V and 25\textdegree C, 731~W or 15.6~kJ within 21.4~s"}
     meas = {"A1": "the flame's position and temperature beside the cells",
             "A2": "the gas's temperature and velocity in the wedges beside the line of contact",
             "A3": "where breaches face and what they carry",
@@ -184,10 +185,9 @@ def table_s3():
              r"energy run that does not meet the criterion and the smallest that does), and, for the nine propagated "
              r"tests, the energy delivered by the measured time at which the lumped neighbour and the resolved "
              r"neighbour run away then (by the reactive cross-section). An energy marked $^{t}$ is the least energy "
-             r"run whose runaway comes before the measured time when the next lower run, within the search's "
-             r"resolution of 0.5\,\% of the test's ejected energy, gives none within 900~s: no energy reproduces the "
-             r"measured time, and the value lies within that resolution above the threshold, so it can exceed the "
-             r"bracket beside it. Supplementary Table~\ref{tab:s-needs} gives the other delivery shapes.}"
+             r"run whose runaway comes before the measured time when the next lower run, 0.5\,\% of the test's "
+             r"ejected energy below, gives none within 900~s: the measured time is reproduced only between the two, "
+             r"within that resolution of the threshold, and the value, the higher, can exceed the bracket beside it. Supplementary Table~\ref{tab:s-needs} gives the other delivery shapes.}"
              r"\label{tab:s-thresholds}\\",
              r"\toprule", r"Test & Hottest point & Lumped & Resolved, cross-section & Resolved, three-dimensional & "
              r"By the measured time: lumped; resolved \\", r"\midrule", r"\endfirsthead", r"\toprule",
@@ -230,9 +230,9 @@ def table_s7():
              r"delivered by the measured time (Time) with which the lumped neighbour (Lumped), and the resolved "
              r"neighbour by the reactive cross-section (Resolved), run away at that time within 10~s; for the resolved "
              r"neighbour, the energy of that delivery in all, over its whole shape, and the time of its runaway in that "
-             r"run. $^{t}$, no energy "
-             r"reproduces the measured time: the value is the least energy run whose runaway comes before it, the next "
-             r"lower run giving none within 900~s, and lies within the search's resolution above the threshold; "
+             r"run. $^{t}$, the least energy run whose runaway comes before the measured time, the next lower run, "
+             r"0.5\,\% of the test's ejected energy below, giving none within 900~s, so that the measured time is "
+             r"reproduced only between the two, within that resolution of the threshold; "
              r"$^{b}$, interpolated in time between the two runs whose runaways bracket the measured time; a dash, no "
              r"energy on the search's grid gave a runaway. The four shapes deliver the same energy by the measured time "
              r"only where the delivery ends before it. Below, for the seven tests that did not propagate, the energy "
@@ -410,11 +410,48 @@ def table_s10():
     return "\n".join(lines) + "\n"
 
 
+TESTS16 = [f"M50_{c}_Exp{i}" for c in ("PT", "PP", "ST", "SP") for i in range(1, 5)]
+
+
+def table_s11():
+    """The 151 archived three-dimensional runs at the central contact that the reactive cross-section was set against
+    (results/stage15_cross_section.json, A1_rows), by test and delivery. The numbers check recomputes every row from
+    the same rows by its own code."""
+    rows = json.load(open(os.path.join(RES, "stage15_cross_section.json")))["A1_rows"]
+    lines = [r"\begin{table}[!htbp]", r"\centering", r"\footnotesize",
+             r"\caption{The 151 archived three-dimensional runs at the central contact against which the reactive "
+             r"cross-section was set (Section~3.6 of the main text), by test and delivery: the runs with no delivery, "
+             r"with the 21.4~s pulse and with constant power over 120, 240 and 360~s; the range of energy delivered; "
+             r"the runs in which both models' means reach 255.7\textdegree C; and those held to 332~s, PT-Exp4's "
+             r"measured time plus 60~s, made to compare with its history, every other run going to 900~s. In all 151 "
+             r"the cross-section gave the three-dimensional outcome.}",
+             r"\label{tab:s-archived}", r"\setlength{\tabcolsep}{2.5pt}",
+             r"\begin{tabular}{lrrrrrr@{\hspace{9pt}}lrr}", r"\toprule",
+             r"Test & Runs & None & Pulse & 120~s & 240~s & 360~s & Energy (kJ) & Both run away & To 332~s \\",
+             r"\midrule"]
+    for t in TESTS16 + ["all"]:
+        rr = [r for r in rows if t == "all" or r["test"] == t]
+        if not rr:
+            continue
+        n = lambda shape, tau=None: sum(1 for r in rr if r["shape"] == shape and (tau is None or abs(r["tau_d_s"] - tau) < 1))
+        e = [r["E_J"] / 1e3 for r in rr if r["E_J"] > 0]
+        er = (f"{min(e):.1f} to {max(e):.1f}" if len(e) > 1 else f"{e[0]:.1f}") if e else "--"
+        name = "All" if t == "all" else t[4:].replace("_", "-")
+        if t == "all":
+            lines.append(r"\midrule")
+        lines.append(f"{name} & {len(rr)} & {n('none')} & {n('tri')} & {n('con', 120)} & {n('con', 240)} & "
+                     f"{n('con', 360)} & {er} & {sum(1 for r in rr if r['C8_3d'] and r['C8_xs'])} & "
+                     f"{sum(1 for r in rr if r['t_end_s'] < 899)} \\\\")
+    lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}", ""]
+    return "\n".join(lines)
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     for name, fn in [("t1_tests.tex", table1), ("t2_parameters.tex", table2), ("t3_bounds.tex", table3),
                      ("s3_thresholds.tex", table_s3), ("s7_needs.tex", table_s7), ("s8_reduced.tex", table_s8),
-                     ("s9_heldout.tex", table_s9), ("s10_twobody.tex", table_s10)]:
+                     ("s9_heldout.tex", table_s9), ("s10_twobody.tex", table_s10),
+                     ("s11_archived.tex", table_s11)]:
         open(os.path.join(OUT, name), "w").write(fn())
     print("tables written to", os.path.relpath(OUT, ROOT))
 

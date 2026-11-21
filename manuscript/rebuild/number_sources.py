@@ -139,6 +139,71 @@ def trig_E():
     return [r["E_J"] for r in _csv(TRIG) if r["kind"] == "test"]
 
 
+def trig_by_test():
+    return {r["test"]: float(r["E_J"]) for r in _csv(TRIG) if r["kind"] == "test"}
+
+
+def xs_lo():
+    return {r["test"]: r["lo_J"] for r in _json(XS)["A2"] if r["shape"] == "tri"}
+
+
+def lumped_hi():
+    import sys as _s
+    _s.path.insert(0, os.path.join(ROOT, "src"))
+    import rebuild_brackets as RBK
+    return {r["test"]: RBK.brackets(r)[1][1] for r in _csv(NEEDS)}
+
+
+def strong_rows():
+    """Every case of the eight propagated tests other than ST_Exp3 (strong triggers), each shape: matched or within
+    the search's resolution of the threshold."""
+    return [r for r in _csv(TAB15) if r["test"] != "M50_ST_Exp3" and r["C8_xs_status"] in ("matched", "threshold")]
+
+
+def st3_rows():
+    return [r for r in _csv(TAB15) if r["test"] == "M50_ST_Exp3"]
+
+
+def ratio_span(test):
+    """The ratio of the three-dimensional resolved bracket to the lumped bracket, at its two extremes."""
+    import sys as _s
+    _s.path.insert(0, os.path.join(ROOT, "src"))
+    import rebuild_brackets as RBK
+    b = _json(S15)["B1"]["M50_" + test]["bracket"]
+    nd = {r["test"]: r for r in _csv(NEEDS)}
+    lo2, hi2 = RBK.brackets(nd["M50_" + test])[1]
+    return [b["lo_J"] / hi2, b["hi_J"] / lo2]
+
+
+def archived_6209():
+    return [r for r in _json(XS)["A1_rows"] if r["id"] == "s10_con240_fresh_hcentral_M50_PT_Exp4_f0.050000000_t332"]
+
+
+def exploratory_both():
+    return [r for r in _json(XS)["A1_rows"] if r["test"] in ("M50_PT_Exp2", "M50_SP_Exp4") and r["C8_3d"] and r["C8_xs"]]
+
+
+def cat1_dh():
+    import sys as _s
+    _s.path.insert(0, os.path.join(ROOT, "src"))
+    import bcrnn
+    k = bcrnn.Kinetics()
+    return [float(k.dH[bcrnn.REACTIONS.index("cat1")])]
+
+
+def section_cells():
+    import sys as _s
+    _s.path.insert(0, os.path.join(ROOT, "src"))
+    import stage13_section as S
+    sec = S.Section()
+    return [float(sec.nr * sec.nt)]
+
+
+def twobody_central():
+    return [r for r in _csv("results/stage13_twobody.csv") if r["h"] == "central" and r["lum_source"] == "new search"
+            and r["tau_d_s"][:3] in ("120", "360")]
+
+
 def matched_rows():
     """The 21.4 s, 120 s, 240 s and 360 s cases outside ST_Exp3 in which the reactive cross-section's need is matched."""
     return [r for r in _csv(TAB15) if r["test"] != "M50_ST_Exp3" and r["C8_xs_status"] == "matched"]
@@ -254,44 +319,44 @@ E = [
     (r"at most at 226\.7", ["226.7"], J("results/v12_numbers.json", "all_runs.res_peak_hottest_C.max"), None),
     (r"lumped neighbour at 180\.6", ["180.6"], J("results/v12_numbers.json", "all_runs.lum_peak_C.max"), None),
     (r"within 21\.7~s", ["21.7"], J(S12, "part_a.central.fitted_C1_at_f0_s[1]"), None),
-    (r"191\.9 to 192\.2", ["191.9"], J(S12, "part_a.central.hot_spot_peak_C[0]"), None),
-    (r"191\.9 to 192\.2", ["192.2"], J(S12, "part_a.central.hot_spot_peak_C[1]"), None),
-    (r"226\.4 to 226\.7", ["226.4"], J(S12, "part_a.high.hot_spot_peak_C[0]"), None),
-    (r"226\.4 to 226\.7", ["226.7"], J(S12, "part_a.high.hot_spot_peak_C[1]"), None),
+    (r"191\.9 (to|and) 192\.2", ["191.9"], J(S12, "part_a.central.hot_spot_peak_C[0]"), None),
+    (r"191\.9 (to|and) 192\.2", ["192.2"], J(S12, "part_a.central.hot_spot_peak_C[1]"), None),
+    (r"226\.4 (to|and) 226\.7", ["226.4"], J(S12, "part_a.high.hot_spot_peak_C[0]"), None),
+    (r"226\.4 (to|and) 226\.7", ["226.7"], J(S12, "part_a.high.hot_spot_peak_C[1]"), None),
     (r"63\.5 to 63\.8", ["63.5"], J(S12, "part_a.central.shortfall_hot_spot_K[0]"), None),
     (r"63\.5 to 63\.8", ["63.8"], J(S12, "part_a.central.shortfall_hot_spot_K[1]"), None),
     (r"29\.0 to 29\.3", ["29.0"], J(S12, "part_a.high.shortfall_hot_spot_K[0]"), None),
     (r"29\.0 to 29\.3", ["29.3"], J(S12, "part_a.high.shortfall_hot_spot_K[1]"), None),
     (r"at least 29~K|29~K short", ["29"], J(S12, "part_a.high.shortfall_hot_spot_K[0]"), None),
-    (r"159\.8 to 161\.8", ["159.8"], J(S12, "part_a.central.lumped_peak_C[0]"), None),
-    (r"159\.8 to 161\.8", ["161.8"], J(S12, "part_a.central.lumped_peak_C[1]"), None),
-    (r"175\.9 to 177\.4", ["175.9"], J(S12, "part_a.high.lumped_peak_C[0]"), None),
-    (r"175\.9 to 177\.4", ["177.4"], J(S12, "part_a.high.lumped_peak_C[1]"), None),
+    (r"159\.8 (to|and) 161\.8", ["159.8"], J(S12, "part_a.central.lumped_peak_C[0]"), None),
+    (r"159\.8 (to|and) 161\.8", ["161.8"], J(S12, "part_a.central.lumped_peak_C[1]"), None),
+    (r"175\.9 (to|and) 177\.4", ["175.9"], J(S12, "part_a.high.lumped_peak_C[0]"), None),
+    (r"175\.9 (to|and) 177\.4", ["177.4"], J(S12, "part_a.high.lumped_peak_C[1]"), None),
     # ---------------------------------------------------------------- what a neighbour needs
     (r"at most 4\.53~kJ", ["4.53"], C(NEEDS, "threshold_C1_hi_J", test="M50_PT_Exp1"), "kJ"),
     (r"at most 12\.89~kJ", ["12.89"], C(NEEDS, "threshold_C2_hi_J", test="M50_PT_Exp1"), "kJ"),
     (r"3\.5 to 10\.8", ["3.5", "10.8"], lo_hi(f"{XS}: A2, the 21.39 s pulse, E_star_J", lambda: [r["E_star_J"] for r in _json(XS)["A2"] if r["shape"] == "tri"]), "kJ"),
     (r"4\.5 and 3\.5", ["4.5", "3.5"], F(f"{XS}: A2, the 21.39 s pulse, E_star_J of the two tests whose lumped neighbour needs no delivery",
                                          lambda: [r["E_star_J"] for r in _json(XS)["A2"] if r["shape"] == "tri" and r["test"] in ("M50_PP_Exp1", "M50_SP_Exp3")]), "kJ"),
-    (r"above 7\.06~kJ", ["7.06"], J(S15, B1 + "PT_Exp4.bracket.mid_J"), "kJ"),
-    (r"6\.71 to 7\.42", ["6.71"], J(S15, B1 + "PT_Exp4.bracket.lo_J"), "kJ"),
-    (r"6\.71 to 7\.42|At 7\.42~kJ", ["7.42"], J(S15, B1 + "PT_Exp4.bracket.hi_J"), "kJ"),
-    (r"6\.85~kJ in PP", ["6.85"], J(S15, B1 + "PP_Exp2.bracket.mid_J"), "kJ"),
-    (r"6\.51 to 7\.20", ["6.51"], J(S15, B1 + "PP_Exp2.bracket.lo_J"), "kJ"),
-    (r"6\.51 to 7\.20", ["7.20"], J(S15, B1 + "PP_Exp2.bracket.hi_J"), "kJ"),
+    (r"above 7\.06~kJ|midpoint 7\.06", ["7.06"], J(S15, B1 + "PT_Exp4.bracket.mid_J"), "kJ"),
+    (r"6\.71 (to|and) 7\.42", ["6.71"], J(S15, B1 + "PT_Exp4.bracket.lo_J"), "kJ"),
+    (r"6\.71 (to|and) 7\.42|At 7\.42~kJ|of the 7\.42~kJ run", ["7.42"], J(S15, B1 + "PT_Exp4.bracket.hi_J"), "kJ"),
+    (r"6\.85~kJ in PP|PP-Exp2 \(6\.85~kJ\)", ["6.85"], J(S15, B1 + "PP_Exp2.bracket.mid_J"), "kJ"),
+    (r"6\.51 (to|and) 7\.20", ["6.51"], J(S15, B1 + "PP_Exp2.bracket.lo_J"), "kJ"),
+    (r"6\.51 (to|and) 7\.20", ["7.20"], J(S15, B1 + "PP_Exp2.bracket.hi_J"), "kJ"),
     (r"1\.49 and 1\.72|1\.49 to 1\.72", ["1.49"], J(S15, B1 + "PT_Exp4.ratio_to_C2"), None),
     (r"1\.49 and 1\.72|1\.49 to 1\.72", ["1.72"], J(S15, B1 + "PP_Exp2.ratio_to_C2"), None),
     (r"4\.75 and 3\.97", ["4.75"], J(S15, B1 + "PT_Exp4.E_C2_J"), "kJ"),
     (r"4\.75 and 3\.97", ["3.97"], J(S15, B1 + "PP_Exp2.E_C2_J"), "kJ"),
-    (r"above 3\.88~kJ", ["3.88"], J(S15, B1 + "SP_Exp3.bracket.mid_J"), "kJ"),
-    (r"3\.70 to 4\.06", ["3.70"], J(S15, B1 + "SP_Exp3.bracket.lo_J"), "kJ"),
-    (r"3\.70 to 4\.06", ["4.06"], J(S15, B1 + "SP_Exp3.bracket.hi_J"), "kJ"),
+    (r"above 3\.88~kJ|4\.06~kJ \(3\.88~kJ\)", ["3.88"], J(S15, B1 + "SP_Exp3.bracket.mid_J"), "kJ"),
+    (r"3\.70 (to|and) 4\.06", ["3.70"], J(S15, B1 + "SP_Exp3.bracket.lo_J"), "kJ"),
+    (r"3\.70 (to|and) 4\.06", ["4.06"], J(S15, B1 + "SP_Exp3.bracket.hi_J"), "kJ"),
     (r"106 to 128", ["106", "128"], lo_hi(f"{S15}: B1 runs of PT_Exp4, PP_Exp2, SP_Exp3: lumped_C2_t_s", lambda: [r["lumped_C2_t_s"] for r in b1_runs()]), None),
     (r"22\.4 to 22\.6", ["22.4", "22.6"], lo_hi(f"{S15}: B1 runs of PT_Exp4, PP_Exp2, SP_Exp3: lumped_rxn_J", lambda: [r["lumped_rxn_J"] for r in b1_runs()]), "kJ"),
     (r"4\.1 to 4\.8~kJ", ["4.1", "4.8"], lo_hi(f"{S15}: B1 runs of PT_Exp4, PP_Exp2, SP_Exp3 with the mean's runaway: rxn_J", lambda: [r["rxn_J"] for r in b1_runs() if r["C8"]]), "kJ"),
-    (r"needs 10\.28", ["10.28"], J(S15, B1 + "ST_Exp3.bracket.mid_J"), "kJ"),
-    (r"9\.77 to 10\.80", ["9.77"], J(S15, B1 + "ST_Exp3.bracket.lo_J"), "kJ"),
-    (r"9\.77 to 10\.80|at 10\.80~kJ", ["10.80"], J(S15, B1 + "ST_Exp3.bracket.hi_J"), "kJ"),
+    (r"needs 10\.28|10\.80~kJ \(10\.28~kJ\)", ["10.28"], J(S15, B1 + "ST_Exp3.bracket.mid_J"), "kJ"),
+    (r"9\.77 (to|and) 10\.80", ["9.77"], J(S15, B1 + "ST_Exp3.bracket.lo_J"), "kJ"),
+    (r"9\.77 (to|and) 10\.80|at 10\.80~kJ", ["10.80"], J(S15, B1 + "ST_Exp3.bracket.hi_J"), "kJ"),
     (r"0\.85 times", ["0.85"], J(S15, B1 + "ST_Exp3.ratio_to_C2"), None),
     (r"12\.03~kJ", ["12.03"], J(S15, B1 + "ST_Exp3.E_C2_J"), "kJ"),
     (r"runs away at 61\.5", ["61.5"], b1_crossing("ST_Exp3", "t_C8_s"), None),
@@ -319,7 +384,7 @@ E = [
     (r"393 to 456", ["393", "456"], lo_hi(f"{S13}: scorecard.P10.cases: slope_J_per_kJ", lambda: [c["slope_J_per_kJ"] for c in _json(S13)["scorecard"]["P10"]["cases"]]), None),
     (r"By 250~s", ["250"], F("results/stage15_accounts.json: accounts rows: t_s", lambda: [r["t_s"] for r in _json("results/stage15_accounts.json")["accounts"]["acc_PT_Exp4"]["rows"]]), None),
     (r"2\.1 to 2\.3", ["2.1", "2.3"], lo_hi("results/stage15_accounts.json: lumped_less_resolved.contact_and_wedge at 250 s", acc250), "kJ"),
-    (r"5\.04~kJ|4\.66 and 5\.04", ["5.04"], J(S15, "B4.draws.5.E_J"), "kJ"),
+    (r"5\.04~kJ|4\.66 and 5\.04|4\.66 to 5\.04", ["5.04"], J(S15, "B4.draws.5.E_J"), "kJ"),
     (r"runs away at 215\.6", ["215.6"], J(READ, "1.PT_Exp4.lumped_cross_s"), None),
     (r"191\.2 to 192\.4", ["191.2", "192.4"], lo_hi(f"{S15}: B4.draws: peak_mean_C", lambda: [v["peak_mean_C"] for v in _json(S15)["B4"]["draws"].values()]), None),
     (r"aged SEI \(188\.3", ["188.3"], J(S15, "B4.aged.peak_mean_C"), None),
@@ -331,7 +396,7 @@ E = [
     # ---------------------------------------------------------------- what the tests say
     (r"0\.26 to 5\.96", ["0.26", "5.96"], lo_hi(f"{NEEDS}: need_21s_lo_J of the propagated tests read at the measured time",
                                                  lambda: [r["need_21s_lo_J"] for r in _csv(NEEDS) if r["propagated"] == "yes" and "threshold" not in r["reading_21s"] and r["need_21s_lo_J"]]), "kJ"),
-    (r"4\.66 to 4\.85|4\.66 and 5\.04", ["4.66"], C(NEEDS, "need_21s_lo_J", test="M50_PT_Exp4"), "kJ"),
+    (r"4\.66 to 4\.85|4\.66 and 5\.04|4\.66 to 5\.04|The 4\.66~kJ run", ["4.66"], C(NEEDS, "need_21s_lo_J", test="M50_PT_Exp4"), "kJ"),
     (r"4\.66 to 4\.85", ["4.85"], C(NEEDS, "need_21s_hi_J", test="M50_PT_Exp4"), "kJ"),
     (r"11\.95 to 12\.11", ["11.95"], C(NEEDS, "need_21s_lo_J", test="M50_ST_Exp3"), "kJ"),
     (r"11\.95 to 12\.11", ["12.11"], C(NEEDS, "need_21s_hi_J", test="M50_ST_Exp3"), "kJ"),
@@ -344,8 +409,8 @@ E = [
     (r"0\.23 to 0\.75", ["0.23", "0.75"], lo_hi(f"{S10}: part_c.held_out: p_log", held_out_p), None),
     (r"rho=-0\.92|-0\.92", ["-0.92"], J(S10, "part_c.rho_E_b.fC1"), None),
     (r"-0\.97", ["-0.97"], J(S10, "part_c.rho_E_b.fC2"), None),
-    (r"4\.1 to 8\.1", ["4.1", "8.1"], lo_hi(f"{TAB15}: C8_xs_E_by_t_J, matched cases outside ST_Exp3", lambda: [r["C8_xs_E_by_t_J"] for r in matched_rows()]), "kJ"),
-    (r"0\.2 to 6\.0", ["0.2", "6.0"], lo_hi(f"{TAB15}: C2_E_by_t_J of the same cases", lambda: [r["C2_E_by_t_J"] for r in matched_rows()]), "kJ"),
+    (r"4\.1 to 8\.1", ["4.1", "8.1"], lo_hi(f"{TAB15}: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold)", lambda: [r["C8_xs_E_by_t_J"] for r in strong_rows()]), "kJ"),
+    (r"0\.2 to 6\.0", ["0.2", "6.0"], lo_hi(f"{TAB15}: C2_E_by_t_J of the same thirty-two cases", lambda: [r["C2_E_by_t_J"] for r in strong_rows()]), "kJ"),
     (r"4\.58 against 0\.26", ["4.58"], C(TAB15, "C8_xs_E_by_t_J", test="M50_SP_Exp3", delivery="21.39 s pulse"), "kJ"),
     (r"4\.58 against 0\.26", ["0.26"], C(TAB15, "C2_E_by_t_J", test="M50_SP_Exp3", delivery="21.39 s pulse"), "kJ"),
     (r"114\.0~s", ["114.0"], C(TAB15, "C8_xs_t_at_E_star_hi_s", test="M50_ST_Exp3", delivery="21.39 s pulse"), None),
@@ -363,7 +428,7 @@ E = [
     (r"51\.4~K", ["51.4"], J(S15, "B3a.history.rms_K"), None),
     (r"255\.9", ["255.9"], b3b("12.5", "t_C8_s"), None),
     (r"369\.3", ["369.3"], b3b("10.0", "t_C8_s"), None),
-    (r"constant 12\.5~W|with 12\.5~W", ["12.5"], J(S15, "B3b.result.P_hi_W"), None),
+    (r"constant 12\.5~W|with 12\.5~W|followed by 12\.5~W", ["12.5"], J(S15, "B3b.result.P_hi_W"), None),
     (r"by 10~W", ["10"], J(S15, "B3b.result.P_lo_W"), None),
     (r"added 2\.9 and 3\.5", ["2.9"], b3b("12.5", "delivered_J", "delivery2"), "kJ"),
     (r"added 2\.9 and 3\.5", ["3.5"], b3b("10.0", "delivered_J", "delivery2"), "kJ"),
@@ -400,7 +465,7 @@ E = [
     (r"42 failed|42 of 98", ["42"], count("failed"), None),
     (r"2\\times10\^\{-11\}", ["2\\times10^{-11}"], J(S8, "checks.V4.largest_relative.resolved"), None),
     (r"0\.52\\,\\%", ["0.52"], J(S8, "checks.V3.v3mesh.relative_change"), "pct"),
-    (r"by 1\.5\\,\\%", ["1.5"], J("results/stage15_checks.json", ["V4", "s15_B1_PT_Exp4_s+1_r1.5", "rel_change"]), "pct"),
+    (r"by 1\.5\\,\\%|by at most 1\.5\\,\\%", ["1.5"], J("results/stage15_checks.json", ["V4", "s15_B1_PT_Exp4_s+1_r1.5", "rel_change"]), "pct"),
     (r"opening 8\.5~s", ["8.5"], J(S10, "measured.dip_after_spike_t_s"), None),
     (r"spike to 102", ["102"], J(S10, "measured.spike_on_the_samples_C"), None),
     (r"2\.0~kJ on average", ["2.0"], LIT("torrescastro2020passive", "energy the next cell absorbs before it fails, mean"), None),
@@ -415,7 +480,7 @@ E = [
     (r"at 182~s", ["182"], b1_crossing("PT_Exp4", "t_C8_s"), None),
     (r"7\.4~kJ delivered", ["7.4"], b1_crossing("PT_Exp4", "E_J"), "kJ"),
     (r"5\.0~kJ over 21\.4~s", ["5.0"], J(READ, "1.PT_Exp4.E_J"), "kJ"),
-    (r"carried to 332", ["332"], J(READ, "1.PT_Exp4.t_end_s"), None),
+    (r"carried to 332|held to 332", ["332"], J(READ, "1.PT_Exp4.t_end_s"), None),
     (r"[Aa]bout 7~kJ", ["7"], J(S15, B1 + "PT_Exp4.bracket.mid_J"), "kJ"),
     (r"1\.5 (and|to) 1\.7 times", ["1.5"], J(S15, B1 + "PT_Exp4.ratio_to_C2"), None),
     (r"1\.5 (and|to) 1\.7 times", ["1.7"], J(S15, B1 + "PP_Exp2.ratio_to_C2"), None),
@@ -440,7 +505,7 @@ E = [
     (r"Room convection; ambient & 10", ["10"], J(CONST, "constants.h_conv_W_m2K"), None),
     (r"K\$\^\{-1\}\$; 25|; 25\\textdegree", ["25"], J(CONST, "constants.T_amb_C"), None),
     (r"triangular over 21\.39", ["21.39"], C(SKIN, "tau_d_s", test="M50_PT_Exp1", region="half"), None),
-    (r"0\.15 \(fresh\)", ["0.15"], J(CONST, "constants.sei_initial_amount"), None),
+    (r"0\.15 \(fresh\)|0\.15 of the source's normalised amount", ["0.15"], J(CONST, "constants.sei_initial_amount"), None),
     (r"0 \(aged\)", ["0"], MD("src/stage15_inputs.py", r"SEI_AGED = (0\.0)"), None),
     (r"constant power over 120, 240 or 360", ["120", "240", "360"], C(TAB15, "tau_s", test="M50_PT_Exp4"), None),
     (r"failure category: 1, the trigger|; 2, failure in the propagating|; 4, sidewall rupture", ["1", "2", "4"],
@@ -493,25 +558,25 @@ E = [
     (r"starts at 32\.2", ["32.2"], C("inputs/fransson2024/pt_exp4_history.csv", "T_neighbour_C", t_s="0.0"), None),
     (r"begins at 173 ?s", ["173"], F(f"{S15}: B1.M50_PT_Exp4, the run at the bracket's upper end: far_jump.t_s",
                                      lambda: [r["far_jump"]["t_s"] for r in _json(S15)["B1"]["M50_PT_Exp4"]["runs"] if r["C8"]]), None),
-    (r"6\.2 ?kJ (at constant power )?over 240", ["6.2"], J(S15, ["B2", "0.05", "E_J"]), "kJ"),
-    (r"6\.2 ?kJ (at constant power )?over 240", ["240"], C(TAB15, "tau_s", test="M50_PT_Exp4"), None),
+    (r"6\.2 ?kJ (at constant power )?over 240|332~s, 6\.2~kJ, 5", ["6.2"], J(S15, ["B2", "0.05", "E_J"]), "kJ"),
+    (r"6\.2 ?kJ (at constant power )?over 240|energy, at constant power over 240", ["240"], C(TAB15, "tau_s", test="M50_PT_Exp4"), None),
     (r"peaking at 241\.4", ["241.4"], J(S15, ["B2", "0.05", "peak_mean_C"]), None),
-    (r"mean at 220\.5", ["220.5"], MD("predictions_stage15.md", r"6,209 J no C8 \(mean peak (220\.5) C\)"), None),
+    (r"mean (peaking )?at 220\.5", ["220.5"], MD("predictions_stage15.md", r"6,209 J no C8 \(mean peak (220\.5) C\)"), None),
     (r"carries 4\.1 to 19\.5", ["4.1", "19.5"], lo_hi(f"{TAB15}: C8_xs_E_J, every delivery with which the cross-section runs away",
                                                       lambda: [r["C8_xs_E_J"] for r in _csv(TAB15)]), "kJ"),
     (r"in twelve, to 332", ["332"], F(f"{XS}: A1_rows, the earliest end of a run", lambda: [min(r["t_end_s"] for r in _json(XS)["A1_rows"])]), None),
     (r"shifted by 20 ?K bring", ["20"], J(S15, "B4.shift.least_shift_K"), None),
-    (r"jump at 240\.4", ["240.4"], F(f"{S15}: B4.shift_runs, the run shifted by 20 K: far_jump.T_C",
+    (r"jump at 240\.4|jump beginning at 240\.4", ["240.4"], F(f"{S15}: B4.shift_runs, the run shifted by 20 K: far_jump.T_C",
                                      lambda: [r["far_jump"]["T_C"] for r in _json(S15)["B4"]["shift_runs"] if r["shift_K"] == 20.0]), None),
     (r"=1,743", ["1,743"], J("results/stage13_readings.json", "reading_1.e_roll_as_resolved"), None),
     (r"(can's|its) 4\.5 ?J", ["4.5"], MD(PARAMS, r"9; 500 \((4\.5) J/K\)"), None),
     (r"heat & 15 W", ["15"], J(CONST, "constants.can_conductivity_W_mK"), None),
     (r"ambient and start & 10 W", ["10"], J(CONST, "constants.h_conv_W_m2K"), None),
-    (r"\(110\.8 ?kJ\)", ["110.8"], C(INP14, "value", key="db_Etotal_max"), "kJ"),
+    (r"\(110\.8 ?kJ", ["110.8"], C(INP14, "value", key="db_Etotal_max"), "kJ"),
     (r"comparison\) & 65\.5 & 65\.5", ["65.5"], C(BOUNDS, "upper_J", path="A6", window_s="21.39"), "kJ"),
     (r"stored energy, 18\.2 ?Wh", ["18.2"], MD(INP14, r"Cell-Energy-Wh \((18\.2)\)"), None),
-    (r"15\.6 ?kJ at 731", ["15.6"], J("results/stage14_bounds.json", ["A6", "conditional_25C_J", "21.39"]), "kJ"),
-    (r"at 731 ?W", ["731"], J("results/stage14_bounds.json", "A6.rate_25C_W"), None),
+    (r"15\.6 ?kJ at 731|731 ?W or 15\.6|dissipate 15\.6", ["15.6"], J("results/stage14_bounds.json", ["A6", "conditional_25C_J", "21.39"]), "kJ"),
+    (r"at 731 ?W|C, 731 ?W", ["731"], J("results/stage14_bounds.json", "A6.rate_25C_W"), None),
     (r"4\.189 ?V", ["4.189"], J("results/stage14_bounds.json", "inputs.V_oc_V"), None),
     (r"across 24 ?m", ["24"], J("results/stage14_bounds.json", "inputs.R_dc_min_ohm"), "milli"),
     (r"Omega\s+at 25", ["25"], MD(INP14, r"0\.5 C for 30 s, (25) C"), None),
@@ -540,7 +605,81 @@ def _bound(path):
 
 
 # (phrase as written, the count it states, a selector giving that count from the files)
+E += [
+    (r"exotherm onset of 179\.3", ["179.3"], J("results/note_numbers.json", "V1.T_in_C"), None),
+    (r"main cluster, 169\.0 to 198\.0|169\.0 to 198\.0", ["169.0"], MD("DECISIONS.md", r"main-cluster mean, (169\.0) to 198\.0"), None),
+    (r"main cluster, 169\.0 to 198\.0|169\.0 to 198\.0", ["198.0"], MD("DECISIONS.md", r"main-cluster mean, 169\.0 to (198\.0)"), None),
+    (r"next lower run, 0\.5\\,\\% of the test's ejected energy", ["0.5"], J(XS, "settings.width_ft"), "pct"),
+    (r"least resistance at 25\\degC|4\.189~V and 25", ["25"], MD(INP14, r"0\.5 C for 30 s, (25) C"), None),
+    (r"failed, 24 of the failures", ["24"], F("manuscript/rebuild/data/predictions_registry.csv: rows foreseen",
+                                                lambda: [float(sum(1 for r in _csv("manuscript/rebuild/data/predictions_registry.csv") if r["foreseen"] == "yes"))]), None),
+    (r"by a factor of 1\.5", ["1.5"], MD("predictions_stage15.md", r"the mesh refined by (1\.5)"), None),
+    (r"at most at 199\.2", ["199.2"], lo_hi("results/stage15_nodelivery.csv: mean_peak_xs_C, high contact, outcome from the cross-section",
+                                             lambda: [r["mean_peak_xs_C"] for r in _csv("results/stage15_nodelivery.csv") if r["h"] == "high" and r["C8_source"] == "cross-section"]), None),
+    (r"1\.38 to 1\.59", ["1.38", "1.59"], F(f"{S15} B1 against the lumped bracket (rebuild_brackets): PT_Exp4", lambda: ratio_span("PT_Exp4")), None),
+    (r"1\.37 to 2\.26|at least 1\.37 times", ["1.37", "2.26"], F(f"{S15} B1 against the lumped bracket (rebuild_brackets): PP_Exp2", lambda: ratio_span("PP_Exp2")), None),
+    (r"0\.81 to 0\.90|at most 0\.90", ["0.81", "0.90"], F(f"{S15} B1 against the lumped bracket (rebuild_brackets): ST_Exp3", lambda: ratio_span("ST_Exp3")), None),
+    (r"in 29 of the 32 searches over 120 and 360", ["29"], F("results/stage13_twobody.csv: central-contact searches over 120 and 360 s within the larger of 10 % and 300 J",
+                                                           lambda: [float(sum(1 for r in twobody_central() if abs(float(r["B2_minus_mid_J"])) <= max(0.1 * float(r["lum_mid_J"]), 300.0)))]), None),
+    (r"in 29 of the 32 searches over 120 and 360", ["32"], F("results/stage13_twobody.csv: central-contact searches over 120 and 360 s", lambda: [float(len(twobody_central()))]), None),
+    (r"in 29 of the 32 searches over 120 and 360", ["120", "360"], F("results/stage13_twobody.csv: tau_d_s of those searches", lambda: [float(r["tau_d_s"]) for r in twobody_central()]), None),
+    (r"\(3\.75 to 4\.06\\,\\%", ["3.75"], F("results/stage10_heldout.json: table, M50_PT_Exp4, f9_lo", lambda: [next(r["f9_lo"] for r in _json("results/stage10_heldout.json")["table"] if r["test"] == "M50_PT_Exp4")]), "pct"),
+    (r"\(3\.75 to 4\.06\\,\\%", ["4.06"], F("results/stage10_heldout.json: table, M50_PT_Exp4, f9_hi", lambda: [next(r["f9_hi"] for r in _json("results/stage10_heldout.json")["table"] if r["test"] == "M50_PT_Exp4")]), "pct"),
+    (r"by 1\.7 to 4\.3|within the 1\.7 to 4\.3", ["1.7", "4.3"], lo_hi(f"{TAB15}: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3",
+                                                                       lambda: [float(r["C8_xs_E_by_t_J"]) - float(r["C2_E_by_t_J"]) for r in strong_rows() if r["delivery"].startswith("21.39")]), "kJ"),
+    (r"needs 10\.3 to 13\.8|at 10\.3 to 13\.8|and 10\.3 to 13\.8", ["10.3", "13.8"], lo_hi(f"{TAB15}: ST_Exp3, C8_xs_E_by_t_J", lambda: [r["C8_xs_E_by_t_J"] for r in st3_rows()]), "kJ"),
+    (r"11\.5 to 12\.3", ["11.5", "12.3"], lo_hi(f"{TAB15}: ST_Exp3, C2_E_by_t_J", lambda: [r["C2_E_by_t_J"] for r in st3_rows()]), "kJ"),
+    (r"they are 12\.1 and", ["12.1"], C(TAB15, "C2_E_by_t_J", test="M50_ST_Exp3", delivery="21.39 s pulse"), "kJ"),
+    (r"only with the 240~s delivery|with the 360~s delivery", ["240", "360"], C(TAB15, "tau_s", test="M50_ST_Exp3"), None),
+    (r"6\.2~kJ, 5\\,\\% of the test's ejected energy", ["5"], MD("predictions_stage15.md", r"at f = (0\.05) \(6,209 J"), "pct"),
+    (r"archive's 241\.2", ["241.2"], F(f"{XS}: A1_rows, the archived 6,209 J run over 240 s: mean_peak_3d_C", lambda: [r["mean_peak_3d_C"] for r in archived_6209()]), None),
+    (r"archive's 241\.2.{0,12}at 332", ["332"], F(f"{XS}: A1_rows, the archived 6,209 J run: t_end_s", lambda: [r["t_end_s"] for r in archived_6209()]), None),
+    (r"Table~S2, step~15, P8", ["15"], C("manuscript/rebuild/data/predictions_registry.csv", "stage", prediction="P8"), None),
+    (r"under five deliveries|; 6\.7 and 7\.4~kJ", ["6.7"], J(S15, B1 + "PT_Exp4.bracket.lo_J"), "kJ"),
+    (r"6\.7 and 7\.4~kJ", ["7.4"], J(S15, B1 + "PT_Exp4.bracket.hi_J"), "kJ"),
+    (r"deliveries: 5\.0~kJ|the 5\.0~kJ pulse|of 5\.0~kJ over", ["5.0"], J(S15, "B4.draws.5.E_J"), "kJ"),
+    (r"82 of them in the two exploratory tests", ["82"], F(f"{XS}: A1_rows of PT_Exp2 and SP_Exp4 in which both run away", lambda: [float(len(exploratory_both()))]), None),
+    (r"deliveries of 15 to 135", ["15", "135"], lo_hi(f"{XS}: A1_rows of PT_Exp2 and SP_Exp4 in which both run away, E_J", lambda: [r["E_J"] for r in exploratory_both()]), "kJ"),
+    (r"164\.9~J per gram", ["164.9"], F("inputs: the posterior-mean kinetics (src/bcrnn.py): dH of cat1, J/g", cat1_dh), None),
+    (r"the cathode's 179\.12", ["179.12"], MD("src/bcrnn.py", r"M_IVV = (179\.12)"), None),
+    (r"this cell's 65~g", ["65"], MD("src/stage13_tign.py", r"the reaction heat of the (65) g cell"), None),
+    (r"solved on 3,034 cells", ["3,034"], F("src/stage13_section.py: Section(): nr x nt", section_cells), None),
+]
+
+V12 = "results/v12_numbers.json"
+E += [
+    (r"central case, the central contact and tab with the posterior-mean kinetics, the hottest point peaked at 191\.5 to 192\.3", ["191.5"], J(V12, "central_case.span.res_peak_hottest_C.min"), None),
+    (r"hottest point peaked at 191\.5 to 192\.3", ["192.3"], J(V12, "central_case.span.res_peak_hottest_C.max"), None),
+    (r"lumped neighbour at 159\.4 to 162\.1", ["159.4"], J(V12, "central_case.span.lum_peak_C.min"), None),
+    (r"lumped neighbour at 159\.4 to 162\.1", ["162.1"], J(V12, "central_case.span.lum_peak_C.max"), None),
+    (r"they are 8\.7~s apart", ["8.7"], F(f"{TESTS}: mean time_to_propagation_s in series less in parallel",
+                                          lambda: [(lambda rr: sum(float(r["time_to_propagation_s"]) for r in rr if r["connection"] == "series") / sum(1 for r in rr if r["connection"] == "series")
+                                                   - sum(float(r["time_to_propagation_s"]) for r in rr if r["connection"] == "parallel") / sum(1 for r in rr if r["connection"] == "parallel"))(
+                                                   [r for r in _csv(TESTS) if r["propagated"] == "Yes"])]), None),
+    (r"as 8~s apart", ["8"], MD("predictions_v12.md", r"the measured means differ by (8) s"), None),
+    (r"about 0\.4~K", ["0.4"], MD("predictions_v12.md", r"average heat rate for propagation to occur was (0\.4)"), None),
+    (r"it lies within the same tolerance in 29", ["29"], F("results/stage13_twobody.csv: central searches over 120 and 360 s within the tolerance",
+                                                         lambda: [float(sum(1 for r in twobody_central() if abs(float(r["B2_minus_mid_J"])) <= max(0.1 * float(r["lum_mid_J"]), 300.0)))]), None),
+    (r"with the 32 searches made there over 120 and 360", ["32"], F("results/stage13_twobody.csv: central searches over 120 and 360 s", lambda: [float(len(twobody_central()))]), None),
+    (r"with the 32 searches made there over 120 and 360|SP-Exp2 over 120", ["120", "360"], F("results/stage13_twobody.csv: tau_d_s of those searches", lambda: [float(r["tau_d_s"]) for r in twobody_central()]), None),
+    (r"7 to 46~J beyond it", ["7", "46"], lo_hi("results/stage13_twobody.csv: central searches outside the tolerance, by how much",
+                                               lambda: [abs(float(r["B2_minus_mid_J"])) - max(0.1 * float(r["lum_mid_J"]), 300.0) for r in twobody_central()
+                                                        if abs(float(r["B2_minus_mid_J"])) > max(0.1 * float(r["lum_mid_J"]), 300.0)]), None),
+    (r"Of the 92 in which both models run away, 82", ["92"], F(f"{XS}: A1_rows in which both run away", lambda: [float(sum(1 for r in _json(XS)["A1_rows"] if r["C8_3d"] and r["C8_xs"]))]), None),
+    (r"Of the 92 in which both models run away, 82", ["82"], F(f"{XS}: A1_rows of PT_Exp2 and SP_Exp4 in which both run away", lambda: [float(len(exploratory_both()))]), None),
+    (r"lists, by test and delivery, the 151", ["151"], J(XS, "A1_summary.runs"), None),
+    (r"Nine of the 32 are zero in both", ["32"], F("results/stage13_twobody.csv: low and high searches", lambda: [float(sum(1 for r in _csv("results/stage13_twobody.csv") if r["h"] in ("low", "high")))]), None),
+]
+
 WORDS = [
+    (r"thirteen of the fourteen with strong triggers", 13, F("stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket",
+                                                       lambda: [float(sum(1 for t, lo in xs_lo().items() if trig_by_test()[t] > 30000 and lo > lumped_hi()[t]))])),
+    (r"After the eight strong triggers among the tests that propagated", 8, F(f"{TAB15}: tests other than ST_Exp3", lambda: [float(len({r["test"] for r in strong_rows()}))])),
+    (r"under three of the shapes", 3, F(f"{TAB15}: ST_Exp3 shapes with a cross-section need", lambda: [float(sum(1 for r in st3_rows() if r["C8_xs_E_by_t_J"]))])),
+    (r"nine of them with both zero", 9, F("results/stage13_twobody.csv: low and high searches with both zero",
+                                         lambda: [float(sum(1 for r in _csv("results/stage13_twobody.csv") if r["h"] in ("low", "high") and float(r["B2_E_J"] or 0) == 0 and float(r["lum_mid_J"] or 0) == 0))])),
+    (r"four of the holds recorded there as fixed", 4, F("manuscript/rebuild/data/predictions_registry.csv: held rows whose expectation records them as fixed",
+                                                        lambda: [float(sum(1 for r in _csv("manuscript/rebuild/data/predictions_registry.csv") if r["verdict"] == "held" and "fixed" in r["expectation"]))])),
     (r"Nine propagated", 9, F(f"{TESTS}: tests with propagated Yes", _n_tests(lambda r: r["propagated"] == "Yes"))),
     (r"thirteen of the sixteen tests", 13, F(f"{TRIG}: tests whose E_J exceeds the calorimetry's 33,222.9 J",
                                                lambda: [float(sum(1 for x in trig_E() if float(x) > 33222.9))])),
@@ -559,14 +698,14 @@ WORDS = [
     (r"Of the five tests that did not propagate and report low maxima", 5, F(f"{TESTS}: tests that did not propagate, below 600 C",
                                                                               _n_tests(lambda r: r["propagated"] == "No" and float(r["neighbour_max_C"]) < 600))),
     (r"four need none", 4, F("results/stage9_paper_numbers.json: part_a.A3 tests with an overshoot", lambda: [float(len(overshoot()))])),
-    (r"twenty-five of the thirty-two cases", 25, F(f"{TAB15}: matched cases outside ST_Exp3", lambda: [float(len(matched_rows()))])),
-    (r"of the thirty-two cases outside ST-Exp3", 32, F(f"{TAB15}: cases outside ST_Exp3",
+    (r"In twenty-five of them a run reproduces", 25, F(f"{TAB15}: matched cases outside ST_Exp3", lambda: [float(len(matched_rows()))])),
+    (r"in the same thirty-two cases", 32, F(f"{TAB15}: cases outside ST_Exp3",
                                                      lambda: [float(sum(1 for r in _csv(TAB15) if r["test"] != "M50_ST_Exp3"))])),
-    (r"In the other seven, shorter deliveries", 7, F(f"{TAB15}: cases outside ST_Exp3 whose cross-section need is a threshold",
+    (r"in the other seven, shorter deliveries", 7, F(f"{TAB15}: cases outside ST_Exp3 whose cross-section need is a threshold",
                                                               lambda: [float(sum(1 for r in _csv(TAB15) if r["test"] != "M50_ST_Exp3"
                                                                                  and r["C8_xs_status"] == "threshold"))])),
     (r"or, in twelve, to 332", 12, F(f"{XS}: A1_rows that end at 332 s", lambda: [float(sum(1 for r in _json(XS)["A1_rows"] if r["t_end_s"] < 400))])),
-    (r"rests in ten tests on the reactive cross-section|ten of the high-contact outcomes", 10,
+    (r"rests in ten tests, PT-Exp2|ten of the high-contact outcomes", 10,
      F("results/stage15_nodelivery.csv: high-contact rows whose whole-cell outcome comes from the cross-section",
        lambda: [float(sum(1 for r in _csv("results/stage15_nodelivery.csv") if r["h"] == "high" and r["C8_source"] == "cross-section"))])),
     (r"the twelve tests not searched in three dimensions|twelve of the sixteen resolved thresholds", 12,

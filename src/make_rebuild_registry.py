@@ -110,6 +110,18 @@ def shown(text):
     t = t.replace("the stage's question", "the step's question").replace("this stage's", "this step's")
     t = t.replace("the file's analysis", "the predictions file's analysis").replace("the file records",
                                                                                   "the predictions file records")
+    t = t.replace("the bullet says", "the brief's line for it says")
+    return t
+
+
+def typeset(t):
+    """After escaping: the records' plain symbols set as the paper sets them (E_b, E_e, f_max, f_t, f* and E*, and
+    degrees Celsius after a number). The words are not changed."""
+    import re
+    t = t.replace("E\\_b", "$E_\\mathrm{b}$").replace("E\\_e", "$E_\\mathrm{e}$")
+    t = t.replace("f\\_max", "$f_\\mathrm{max}$").replace("f\\_t", "$f_\\mathrm{t}$")
+    t = re.sub(r"\b([fE])\*", lambda m: "$" + m.group(1) + "^*$", t)
+    t = re.sub(r"(\d) C\b", lambda m: m.group(1) + "\\,\\textdegree C", t)
     return t
 
 
@@ -188,8 +200,8 @@ def main():
         exp = r["expectation"]
         if r["foreseen"] == "yes" and "fail" not in exp.lower():
             exp = exp.rstrip(".") + "; the predictions file's analysis: " + basis_quote(r["foreseen_basis"])
-        t2.append("%s & %s & %s & %s & %s \\\\" % (r["stage"], tex(r["prediction"]), tex(shown(r["statement"])),
-                                                  tex(shown(exp)), v))
+        t2.append("%s & %s & %s & %s & %s \\\\" % (r["stage"], tex(r["prediction"]), typeset(tex(shown(r["statement"]))),
+                                                  typeset(tex(shown(exp))), v))
     t2 += [r"\bottomrule", r"\end{longtable}", r"}"]
     open(os.path.join(OUTT, "s2_registry.tex"), "w").write("\n".join(t2) + "\n")
     print("registry: %d predictions, %d held, %d failed, %d of the failures foreseen" %

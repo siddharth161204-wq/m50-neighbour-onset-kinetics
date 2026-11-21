@@ -463,15 +463,15 @@ def fig6():
              ("A5", "conduction through the holder"), ("A6", "the neighbour's own discharge (parallel)")]
     fig, ax = plt.subplots(figsize=(7.2, 3.3), constrained_layout=True)
     y = np.arange(len(paths))[::-1]
-    bands = [(0.2635, 5.9624, C_LUMP, 0.13, "lumped neighbour: needs at the measured times, 21.4 s pulse"),
-             (4.064, 8.116, C_RES, 0.16, "resolved neighbour: energy delivered by the measured times"),
+    bands = [(0.2635, 5.9624, C_LUMP, 0.13, "lumped neighbour's needs, strong triggers, 21.4 s pulse"),
+             (4.064, 8.116, C_RES, 0.16, "resolved neighbour's needs, strong triggers, four shapes"),
              (76.74, 89.34, INK, 0.10, "calorimetry of this cell: ejected energy, median to largest")]
     for lo, hi, col, al, lab in bands:
         ax.axvspan(lo, hi, color=col, alpha=al, lw=0, zorder=0)
     for yy, (p, lab) in zip(y, paths):
         u21, ut = get(p, "21.39"), get(p, "total")
         if u21 is None:
-            ax.text(0.115, yy, "not determinable: no source gives the inserts' material or contact", va="center",
+            ax.text(0.115, yy, "not determinable; energy conservation alone caps it at 247.3 kJ", va="center",
                     fontsize=6.3, color=MUTED)
         else:
             ax.barh(yy + 0.17, u21 / 1e3, height=0.3, left=0.1, color=C_SKY, edgecolor="none", zorder=2)

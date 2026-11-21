@@ -2,8 +2,8 @@
 
 Each names lithium-ion cells and thermal runaway propagation, states the quantity or the finding, has no negation and has at most 20 words. The manuscript carries title 1.
 
-1. Thermal runaway propagation between lithium-ion cells: a lumped neighbour needs less heat than a resolved one after strong triggers (19 words)
+1. Modelling thermal runaway propagation between lithium-ion cells: a lumped neighbour needs less heat than a resolved one after strong triggers (20 words)
 2. A reactive cross-section reproduces resolved lithium-ion cells in thermal runaway propagation at a fraction of the three-dimensional cost (18 words)
-3. Surface conduction and an ignition energy balance set the heat a neighbouring lithium-ion cell needs for thermal runaway propagation (19 words)
+3. Conduction and an ignition temperature account for the heat a neighbouring lithium-ion cell needs for thermal runaway propagation (18 words)
 4. The heat a neighbouring lithium-ion cell needs for thermal runaway propagation: resolved and lumped thresholds against sixteen two-cell tests (19 words)
 5. Delivered heat for thermal runaway propagation between lithium-ion cells, from resolved and lumped neighbours and sixteen two-cell tests (18 words)

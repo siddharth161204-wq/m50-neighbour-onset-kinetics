@@ -73,9 +73,9 @@ def main():
              "lumped neighbour in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where "
              "both thresholds are bracketed, and 0.85 times in the one with a weak trigger. A share of the ejected "
              "energy calibrated on such tests with one treatment therefore cannot be carried to the other without a "
-             "correction whose sign depends on the trigger. Reduced models give the mechanisms: for pulses up to "
-             "120 s, conduction into the surface layer sets the resolved cell's hot spot, and an energy balance to an "
-             "ignition temperature of 218.5 °C sets the lumped cell's runaway. The kinetics' published uncertainty "
+             "correction whose sign depends on the trigger. Reduced models point to the mechanisms: for pulses up to "
+             "120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway agrees with an energy "
+             "balance to an ignition temperature of 218.5 °C. The kinetics' published uncertainty "
              "moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's "
              "reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K. At the "
              "central contact a two-dimensional reactive cross-section reproduced the outcome of all "
@@ -86,8 +86,9 @@ def main():
              "neighbour at least 29 K short of runaway, so the ejecta or other paths must supply the rest. Published "
              "inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above "
              "what either treatment needs at the measured times, so the sixteen tests cannot decide between the "
-             "treatments. The one published record of a propagating neighbour starts its final rise 37 K cooler than "
-             "the resolved model's far side; a heat flux measured on the neighbour's facing side would decide."),
+             "treatments. In the one published record of a propagating neighbour, the final rise starts 37 K cooler "
+             "than on the resolved model's far side; a heat flux measured on the neighbour's facing side would "
+             "decide, if the model's other inputs stand."),
             "",
             j["fit"],
             "",
