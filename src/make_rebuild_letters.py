@@ -62,38 +62,37 @@ def main():
             "",
             f"I submit the manuscript \"{title}\" for consideration as a research article in the {j['name']}.",
             "",
-            ("Models of thermal runaway propagation in modules treat each cell as one temperature or as a resolved "
-             "field, and choose what share of the failing cell's vented heat reaches its neighbour. The manuscript "
+            ("Propagation models of modules treat each cell as one temperature or a resolved field, and choose "
+             "what share of the failing cell's vented heat reaches its neighbour. The manuscript "
              "asks how much delivered heat a neighbour needs under each treatment, for two touching LG M50 cells with "
-             "decomposition kinetics published for another chemistry (NCM811 and graphite), against sixteen "
-             "published two-cell tests."),
+             "decomposition kinetics fitted to another cell's calorimetry (NCM811 and graphite; the M50's negative "
+             "electrode adds silicon), against sixteen published two-cell tests."),
             "",
             ("It finds that the choice matters, in a direction set by the trigger. With each test's "
              "trigger fitted to its measured peak, the resolved neighbour needs 1.5 and 1.7 times the heat of the "
              "lumped neighbour in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where "
-             "both thresholds are bracketed, and 0.85 times in the one with a weak trigger. A share of the ejected "
-             "energy calibrated on such tests with one treatment therefore cannot be carried to the other without a "
-             "correction whose sign depends on the trigger. Reduced models point to the mechanisms: for pulses up to "
-             "120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway agrees with an energy "
-             "balance to an ignition temperature of 218.5 °C. The kinetics' published uncertainty "
-             "moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's "
-             "reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K. At the "
-             "central contact a two-dimensional reactive cross-section reproduced the outcome of all "
-             "151 three-dimensional runs it was checked against, at a fraction of their cost, making a resolved "
-             "neighbour affordable in a module model."),
+             "both thresholds are bracketed, and 0.85 times in the one with a weak trigger. A share of ejected energy "
+             "calibrated with one treatment therefore needs a trigger-dependent correction to serve the other. "
+             "Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot "
+             "spot, and the lumped cell's runaway agrees with an energy balance to an ignition temperature of "
+             "218.5 °C. Matching the two thresholds in one test would need every reaction to run as if over 17.5 K "
+             "hotter, beyond the 6.1 K of the kinetics' published uncertainty, which omits the difference "
+             "between their cell and the M50. At the central contact a two-dimensional reactive cross-section "
+             "reproduced the outcome of all 151 archived three-dimensional runs at a fraction of their cost, making "
+             "a resolved neighbour affordable in module models."),
             "",
             ("In the model, with the failing cell's energy held to calorimetry, conduction and radiation leave the "
-             "neighbour at least 29 K short of runaway, so the ejecta or other paths must supply the rest. Published "
+             "neighbour at least 29 K short of runaway; the ejecta or other paths must supply the rest. Published "
              "inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above "
-             "what either treatment needs at the measured times, so the sixteen tests cannot decide between the "
-             "treatments. In the one published record of a propagating neighbour, the final rise starts 37 K cooler "
-             "than on the resolved model's far side; a heat flux measured on the neighbour's facing side would "
+             "what either treatment needs at the measured times, so the sixteen tests cannot decide between them. "
+             "The one published record of a propagating neighbour fits neither cleanly, its final rise "
+             "starting 37 K cooler than on the resolved model's far side; a heat flux measured on its facing side would "
              "decide, if the model's other inputs stand."),
             "",
             j["fit"],
             "",
-            ("The code, inputs and run records are openly archived, and the study's 98 predictions were committed "
-             "before the runs they concern."),
+            ("The code, inputs and run records are archived openly, with the study's 98 predictions, each committed "
+             "before its runs."),
             "",
             (author + (", with no funding and no competing interests." if j["declarations"] else ".")
              + " The manuscript has not been published and is not under consideration elsewhere."),

@@ -391,7 +391,7 @@ E = [
     (r"17\.5~K", ["17.5"], F(f"{S15}: B4.shift_runs: the largest shift_K without the mean's runaway",
                              lambda: [max(r["shift_K"] for r in _json(S15)["B4"]["shift_runs"] if not r["C8"])]), None),
     (r"221\.1", ["221.1"], shift_run(17.5, "peak_mean_C"), None),
-    (r"at 20~K", ["20"], J(S15, "B4.shift.least_shift_K"), None),
+    (r"at 20~K|the first with one \(20~K\)", ["20"], J(S15, "B4.shift.least_shift_K"), None),
     (r"270\.3~s", ["270.3"], J(S15, "B4.shift.t_C8_s"), None),
     # ---------------------------------------------------------------- what the tests say
     (r"0\.26 to 5\.96", ["0.26", "5.96"], lo_hi(f"{NEEDS}: need_21s_lo_J of the propagated tests read at the measured time",
@@ -669,6 +669,32 @@ E += [
     (r"Of the 92 in which both models run away, 82", ["82"], F(f"{XS}: A1_rows of PT_Exp2 and SP_Exp4 in which both run away", lambda: [float(len(exploratory_both()))]), None),
     (r"lists, by test and delivery, the 151", ["151"], J(XS, "A1_summary.runs"), None),
     (r"Nine of the 32 are zero in both", ["32"], F("results/stage13_twobody.csv: low and high searches", lambda: [float(sum(1 for r in _csv("results/stage13_twobody.csv") if r["h"] in ("low", "high")))]), None),
+]
+
+E += [
+    (r"against 139\\degC\{\} in the kinetic source|against 139", ["139"], MD("DECISIONS.md", r"(139) C in the source paper's Fig\. 3\(e\)"), None),
+]
+
+E += [
+    (r"internal-short rate, 1~K\\,min\$\^\{-1\}\$ of self-heating, at 199\.8|at 199\.8", ["199.8"], J("results/note_numbers.json", "V1.T_on_1_C_per_min_C"), None),
+    (r"internal-short rate|self-heating, at 199", ["1"], MD("DECISIONS.md", r"T_on at the paper's stated trigger \((1) C/min\)"), None),
+    (r"band of 255\.7 to 302\.1", ["255.7"], MD("DECISIONS.md", r"below the paper's band of (255\.7) to 302\.1"), None),
+    (r"band of 255\.7 to 302\.1", ["302.1"], MD("DECISIONS.md", r"below the paper's band of 255\.7 to (302\.1)"), None),
+    (r"runs from 146\.3 to 191\.4", ["146.3"], J("results/stage3_numbers.json", ["V4_registered", "T_in_p2.5_C"]), None),
+    (r"runs from 146\.3 to 191\.4", ["191.4"], J("results/stage3_numbers.json", ["V4_registered", "T_in_p97.5_C"]), None),
+    (r"191\.4\\degC\{\} \(central 95|\(central 95\\,\\%\)", ["95"], MD("DECISIONS.md", r"(95) %"), None),
+    (r"Over the 200 draws below|the 200 draws below", ["200"], J(S13, "scorecard.P7.n_draws"), None),
+]
+
+def twobody_low(strong):
+    trig = trig_by_test()
+    return [float(r["B2_minus_mid_J"]) for r in _csv("results/stage13_twobody.csv") if r["h"] == "low" and ((trig[r["test"]] > 30000) == strong)]
+
+
+E += [
+    (r"after every strong trigger, by 0\.25 to 0\.48", ["0.25", "0.48"], lo_hi("results/stage13_twobody.csv: low contact, strong triggers, B2 less the midpoint", lambda: twobody_low(True)), "kJ"),
+    (r"after the two weak ones, by 0\.28 and 0\.44", ["0.28", "0.44"], F("results/stage13_twobody.csv: low contact, weak triggers, the midpoint less B2", lambda: [-x for x in twobody_low(False)]), "kJ"),
+    (r"differences run from -0\.43 to 0\.19", ["-0.43", "0.19"], lo_hi("results/stage13_twobody.csv: high contact, B2 less the midpoint", lambda: [r["B2_minus_mid_J"] for r in _csv("results/stage13_twobody.csv") if r["h"] == "high"]), "kJ"),
 ]
 
 WORDS = [

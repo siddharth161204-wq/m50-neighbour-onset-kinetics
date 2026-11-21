@@ -1,4 +1,4 @@
-numbers_check --rebuild: 603 traced to a named value, 67 found in their table's source files, 0 broad matches (supplement only), 28 counts written in words checked, 0 failures, 60 structural (not looked for)
+numbers_check --rebuild: 607 traced to a named value, 67 found in their table's source files, 0 broad matches (supplement only), 28 counts written in words checked, 0 failures, 61 structural (not looked for)
 
 == main.tex: title  [map]
 == main.tex: abstract  [map]
@@ -7,7 +7,6 @@ numbers_check --rebuild: 603 traced to a named value, 67 found in their table's 
    traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
    traced 0.85 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
-   traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
    traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
@@ -73,6 +72,15 @@ numbers_check --rebuild: 603 traced to a named value, 67 found in their table's 
    traced 179.3 <- results/note_numbers.json: V1.T_in_C = 179.252
    traced 169.0 <- DECISIONS.md: /main-cluster mean, (169\.0) to 198\.0/ = 169
    traced 198.0 <- DECISIONS.md: /main-cluster mean, 169\.0 to (198\.0)/ = 198
+   traced 1 <- DECISIONS.md: /T_on at the paper's stated trigger \((1) C/min\)/ = 1
+   [exponent or subscript] -1  ...C, but reaches the source's internal-short rate, 1~K\,min$^{-1}$ of self-heating, at 199.8\degC, below...
+   traced 199.8 <- results/note_numbers.json: V1.T_on_1_C_per_min_C = 199.794
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 302.1 <- DECISIONS.md: /below the paper's band of 255\.7 to (302\.1)/ = 302.1
+   traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
+   traced 146.3 <- results/stage3_numbers.json: V4_registered/T_in_p2.5_C = 146.3
+   traced 191.4 <- results/stage3_numbers.json: V4_registered/T_in_p97.5_C = 191.4
+   traced 95 <- predictions_stage13.md: /the central (95) % of the 200 draws/ = 95
    traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
    traced 21.39 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 120 <- results/stage15_table.csv: tau_s where {'test': 'M50_PT_Exp4'} = 120
@@ -249,6 +257,9 @@ numbers_check --rebuild: 603 traced to a named value, 67 found in their table's 
    traced 2 <- src/stage13_inputs.py: /for d in \(-2000\.0, (2000\.0)\)/ = 2
    traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
    traced 5.04 <- results/stage15_paper_numbers.json: B4.draws.5.E_J = 5.04499
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
+   traced 20 <- results/stage15_paper_numbers.json: B4.shift.least_shift_K = 20
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
@@ -713,7 +724,6 @@ numbers_check --rebuild: 603 traced to a named value, 67 found in their table's 
    traced 0.85 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
    traced 120 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
    traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
-   traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
    traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
@@ -722,7 +732,7 @@ numbers_check --rebuild: 603 traced to a named value, 67 found in their table's 
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 37 <- results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
    traced 98 <- manuscript/rebuild/data/predictions_registry.csv: rows = 98
-   [year or date] 2026  ... the runs they concern.  I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
+   [year or date] 2026  ...mitted before its runs.  I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
 == manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt  [map]
    traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
@@ -731,7 +741,6 @@ numbers_check --rebuild: 603 traced to a named value, 67 found in their table's 
    traced 0.85 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
    traced 120 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
    traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
-   traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
    traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
@@ -740,7 +749,7 @@ numbers_check --rebuild: 603 traced to a named value, 67 found in their table's 
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 37 <- results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
    traced 98 <- manuscript/rebuild/data/predictions_registry.csv: rows = 98
-   [year or date] 2026  ... the runs they concern.  I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
+   [year or date] 2026  ...mitted before its runs.  I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
 == manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt  [map]
    traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
@@ -749,7 +758,6 @@ numbers_check --rebuild: 603 traced to a named value, 67 found in their table's 
    traced 0.85 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
    traced 120 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
    traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
-   traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
    traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
@@ -758,7 +766,7 @@ numbers_check --rebuild: 603 traced to a named value, 67 found in their table's 
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 37 <- results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
    traced 98 <- manuscript/rebuild/data/predictions_registry.csv: rows = 98
-   [year or date] 2026  ... the runs they concern.  I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
+   [year or date] 2026  ...mitted before its runs.  I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
 == manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt  [map]
    [year or date] 2026  ...om one cell to the next. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
@@ -766,7 +774,6 @@ numbers_check --rebuild: 603 traced to a named value, 67 found in their table's 
    traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
    traced 0.85 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
-   traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
    traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
@@ -778,7 +785,6 @@ numbers_check --rebuild: 603 traced to a named value, 67 found in their table's 
    traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
    traced 0.85 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
-   traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
    traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
@@ -790,7 +796,6 @@ numbers_check --rebuild: 603 traced to a named value, 67 found in their table's 
    traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
    traced 0.85 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
-   traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
    traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151

@@ -31,19 +31,13 @@
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "The lumped cell ignites at 218.5\\degC, where reaction heat outruns losses.",
-  "number": "218.5",
-  "source": "results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484"
- },
- {
-  "segment": "main.tex: abstract",
-  "sentence": "Matching the two thresholds in one test needs rates over 17.5~K hotter, beyond the kinetics' 6.1~K span.",
+  "sentence": "Matching the two thresholds in one test needs every reaction to run as if over 17.5~K hotter, beyond the 6.1~K that the kinetics' uncertainty spans.",
   "number": "17.5",
   "source": "results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5"
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "Matching the two thresholds in one test needs rates over 17.5~K hotter, beyond the kinetics' 6.1~K span.",
+  "sentence": "Matching the two thresholds in one test needs every reaction to run as if over 17.5~K hotter, beyond the 6.1~K that the kinetics' uncertainty spans.",
   "number": "6.1",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
  },
@@ -55,7 +49,7 @@
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "In the one published record of a propagating neighbour, the final rise starts 37~K cooler than on the resolved model's far side.",
+  "sentence": "The one published record of a propagating neighbour fits neither model cleanly: its final rise starts 37~K cooler than on the resolved model's far side.",
   "number": "37",
   "source": "results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008"
  },
@@ -325,21 +319,69 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The model is the mean of each parameter over the source's posterior particles; emulating the source's calorimetry of its own cell, it gives an exotherm onset of 179.3\\degC, inside the two-standard-deviation band of the source's main cluster, 169.0 to 198.0\\degC.",
+  "sentence": "The model is the mean of each parameter over the source's posterior particles; emulating the source's calorimetry of its own cell, it gives an exotherm onset of 179.3\\degC, inside the two-standard-deviation band of the source's main cluster, 169.0 to 198.0\\degC, but reaches the source's internal-short rate, 1~K\\,min$^{-1}$ of self-heating, at 199.8\\degC, below that event's band of 255.7 to 302.1\\degC, a difference not resolved here.",
   "number": "179.3",
   "source": "results/note_numbers.json: V1.T_in_C = 179.252"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The model is the mean of each parameter over the source's posterior particles; emulating the source's calorimetry of its own cell, it gives an exotherm onset of 179.3\\degC, inside the two-standard-deviation band of the source's main cluster, 169.0 to 198.0\\degC.",
+  "sentence": "The model is the mean of each parameter over the source's posterior particles; emulating the source's calorimetry of its own cell, it gives an exotherm onset of 179.3\\degC, inside the two-standard-deviation band of the source's main cluster, 169.0 to 198.0\\degC, but reaches the source's internal-short rate, 1~K\\,min$^{-1}$ of self-heating, at 199.8\\degC, below that event's band of 255.7 to 302.1\\degC, a difference not resolved here.",
   "number": "169.0",
   "source": "DECISIONS.md: /main-cluster mean, (169\\.0) to 198\\.0/ = 169"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The model is the mean of each parameter over the source's posterior particles; emulating the source's calorimetry of its own cell, it gives an exotherm onset of 179.3\\degC, inside the two-standard-deviation band of the source's main cluster, 169.0 to 198.0\\degC.",
+  "sentence": "The model is the mean of each parameter over the source's posterior particles; emulating the source's calorimetry of its own cell, it gives an exotherm onset of 179.3\\degC, inside the two-standard-deviation band of the source's main cluster, 169.0 to 198.0\\degC, but reaches the source's internal-short rate, 1~K\\,min$^{-1}$ of self-heating, at 199.8\\degC, below that event's band of 255.7 to 302.1\\degC, a difference not resolved here.",
   "number": "198.0",
   "source": "DECISIONS.md: /main-cluster mean, 169\\.0 to (198\\.0)/ = 198"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "The model is the mean of each parameter over the source's posterior particles; emulating the source's calorimetry of its own cell, it gives an exotherm onset of 179.3\\degC, inside the two-standard-deviation band of the source's main cluster, 169.0 to 198.0\\degC, but reaches the source's internal-short rate, 1~K\\,min$^{-1}$ of self-heating, at 199.8\\degC, below that event's band of 255.7 to 302.1\\degC, a difference not resolved here.",
+  "number": "1",
+  "source": "DECISIONS.md: /T_on at the paper's stated trigger \\((1) C/min\\)/ = 1"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "The model is the mean of each parameter over the source's posterior particles; emulating the source's calorimetry of its own cell, it gives an exotherm onset of 179.3\\degC, inside the two-standard-deviation band of the source's main cluster, 169.0 to 198.0\\degC, but reaches the source's internal-short rate, 1~K\\,min$^{-1}$ of self-heating, at 199.8\\degC, below that event's band of 255.7 to 302.1\\degC, a difference not resolved here.",
+  "number": "199.8",
+  "source": "results/note_numbers.json: V1.T_on_1_C_per_min_C = 199.794"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "The model is the mean of each parameter over the source's posterior particles; emulating the source's calorimetry of its own cell, it gives an exotherm onset of 179.3\\degC, inside the two-standard-deviation band of the source's main cluster, 169.0 to 198.0\\degC, but reaches the source's internal-short rate, 1~K\\,min$^{-1}$ of self-heating, at 199.8\\degC, below that event's band of 255.7 to 302.1\\degC, a difference not resolved here.",
+  "number": "255.7",
+  "source": "results/manuscript_numbers.json: constants.level_propagation_C = 255.682"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "The model is the mean of each parameter over the source's posterior particles; emulating the source's calorimetry of its own cell, it gives an exotherm onset of 179.3\\degC, inside the two-standard-deviation band of the source's main cluster, 169.0 to 198.0\\degC, but reaches the source's internal-short rate, 1~K\\,min$^{-1}$ of self-heating, at 199.8\\degC, below that event's band of 255.7 to 302.1\\degC, a difference not resolved here.",
+  "number": "302.1",
+  "source": "DECISIONS.md: /below the paper's band of 255\\.7 to (302\\.1)/ = 302.1"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "Over the 200 draws below, the exotherm onset runs from 146.3 to 191.4\\degC{} (central 95\\,\\%).",
+  "number": "200",
+  "source": "results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "Over the 200 draws below, the exotherm onset runs from 146.3 to 191.4\\degC{} (central 95\\,\\%).",
+  "number": "146.3",
+  "source": "results/stage3_numbers.json: V4_registered/T_in_p2.5_C = 146.3"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "Over the 200 draws below, the exotherm onset runs from 146.3 to 191.4\\degC{} (central 95\\,\\%).",
+  "number": "191.4",
+  "source": "results/stage3_numbers.json: V4_registered/T_in_p97.5_C = 191.4"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "Over the 200 draws below, the exotherm onset runs from 146.3 to 191.4\\degC{} (central 95\\,\\%).",
+  "number": "95",
+  "source": "predictions_stage13.md: /the central (95) % of the 200 draws/ = 95"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
@@ -1363,7 +1405,7 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "That shift lies well beyond the 6.1~K span of the posterior's ignition temperatures, a different measure but comparable to first order, since a shift of the rate laws moves the ignition temperature by about as much; the span leaves out the difference between the kinetic source's chemistry and this cell's (Section~ ).",
+  "sentence": "That shift lies well beyond the 6.1~K span of the posterior's ignition temperatures, a different measure but comparable to first order, since a shift of the rate laws moves the ignition temperature by about as much; the span leaves out the difference between the kinetic source's cell and this one (Section~ ).",
   "number": "6.1",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
  },
@@ -1381,9 +1423,27 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "(d) On one axis in kelvin, the span of those ignition temperatures (the posterior's kinetic uncertainty) beside the shift added to the temperature in every rate law that the resolved neighbour of PT-Exp4 needs to run away at 5.04~kJ: crosses, no runaway; circle, runaway.}",
+  "sentence": "(d) On one axis in kelvin, the span of those ignition temperatures (the posterior's kinetic uncertainty) beside the shift added to the temperature in every rate law of PT-Exp4's resolved neighbour, under 5.04~kJ over 21.4~s, the upper end of an earlier bracket on the lumped threshold, with which the lumped neighbour runs away: crosses, shifts with no resolved runaway (up to 17.5~K); circle, the first with one (20~K).}",
   "number": "5.04",
   "source": "results/stage15_paper_numbers.json: B4.draws.5.E_J = 5.04499"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "(d) On one axis in kelvin, the span of those ignition temperatures (the posterior's kinetic uncertainty) beside the shift added to the temperature in every rate law of PT-Exp4's resolved neighbour, under 5.04~kJ over 21.4~s, the upper end of an earlier bracket on the lumped threshold, with which the lumped neighbour runs away: crosses, shifts with no resolved runaway (up to 17.5~K); circle, the first with one (20~K).}",
+  "number": "21.4",
+  "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "(d) On one axis in kelvin, the span of those ignition temperatures (the posterior's kinetic uncertainty) beside the shift added to the temperature in every rate law of PT-Exp4's resolved neighbour, under 5.04~kJ over 21.4~s, the upper end of an earlier bracket on the lumped threshold, with which the lumped neighbour runs away: crosses, shifts with no resolved runaway (up to 17.5~K); circle, the first with one (20~K).}",
+  "number": "17.5",
+  "source": "results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "(d) On one axis in kelvin, the span of those ignition temperatures (the posterior's kinetic uncertainty) beside the shift added to the temperature in every rate law of PT-Exp4's resolved neighbour, under 5.04~kJ over 21.4~s, the upper end of an earlier bracket on the lumped threshold, with which the lumped neighbour runs away: crosses, shifts with no resolved runaway (up to 17.5~K); circle, the first with one (20~K).}",
+  "number": "20",
+  "source": "results/stage15_paper_numbers.json: B4.shift.least_shift_K = 20"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
@@ -3181,67 +3241,61 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "Reduced models point to the mechanisms: for pulses up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway agrees with an energy balance to an ignition temperature of 218.5 \u00b0C.",
+  "sentence": "Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway agrees with an energy balance to an ignition temperature of 218.5 \u00b0C.",
   "number": "120",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "Reduced models point to the mechanisms: for pulses up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway agrees with an energy balance to an ignition temperature of 218.5 \u00b0C.",
+  "sentence": "Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway agrees with an energy balance to an ignition temperature of 218.5 \u00b0C.",
   "number": "218.5",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "The kinetics' published uncertainty moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K.",
-  "number": "6.1",
-  "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
- },
- {
-  "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "The kinetics' published uncertainty moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K.",
+  "sentence": "Matching the two thresholds in one test would need every reaction to run as if over 17.5 K hotter, beyond the 6.1 K of the kinetics' published uncertainty, which omits the difference between their cell and the M50.",
   "number": "17.5",
   "source": "results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "The kinetics' published uncertainty moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K.",
+  "sentence": "Matching the two thresholds in one test would need every reaction to run as if over 17.5 K hotter, beyond the 6.1 K of the kinetics' published uncertainty, which omits the difference between their cell and the M50.",
   "number": "6.1",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "At the central contact a two-dimensional reactive cross-section reproduced the outcome of all 151 three-dimensional runs it was checked against, at a fraction of their cost, making a resolved neighbour affordable in a module model.",
+  "sentence": "At the central contact a two-dimensional reactive cross-section reproduced the outcome of all 151 archived three-dimensional runs at a fraction of their cost, making a resolved neighbour affordable in module models.",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "In the model, with the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29 K short of runaway, so the ejecta or other paths must supply the rest.",
+  "sentence": "In the model, with the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29 K short of runaway; the ejecta or other paths must supply the rest.",
   "number": "29",
   "source": "results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between the treatments.",
+  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between them.",
   "number": "27.9",
   "source": "results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between the treatments.",
+  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between them.",
   "number": "21.4",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "In the one published record of a propagating neighbour, the final rise starts 37 K cooler than on the resolved model's far side; a heat flux measured on the neighbour's facing side would decide, if the model's other inputs stand.",
+  "sentence": "The one published record of a propagating neighbour fits neither cleanly, its final rise starting 37 K cooler than on the resolved model's far side; a heat flux measured on its facing side would decide, if the model's other inputs stand.",
   "number": "37",
   "source": "results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "The code, inputs and run records are openly archived, and the study's 98 predictions were committed before the runs they concern.",
+  "sentence": "The code, inputs and run records are archived openly, with the study's 98 predictions, each committed before its runs.",
   "number": "98",
   "source": "manuscript/rebuild/data/predictions_registry.csv: rows = 98"
  },
@@ -3277,67 +3331,61 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "Reduced models point to the mechanisms: for pulses up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway agrees with an energy balance to an ignition temperature of 218.5 \u00b0C.",
+  "sentence": "Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway agrees with an energy balance to an ignition temperature of 218.5 \u00b0C.",
   "number": "120",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "Reduced models point to the mechanisms: for pulses up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway agrees with an energy balance to an ignition temperature of 218.5 \u00b0C.",
+  "sentence": "Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway agrees with an energy balance to an ignition temperature of 218.5 \u00b0C.",
   "number": "218.5",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "The kinetics' published uncertainty moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K.",
-  "number": "6.1",
-  "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
- },
- {
-  "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "The kinetics' published uncertainty moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K.",
+  "sentence": "Matching the two thresholds in one test would need every reaction to run as if over 17.5 K hotter, beyond the 6.1 K of the kinetics' published uncertainty, which omits the difference between their cell and the M50.",
   "number": "17.5",
   "source": "results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "The kinetics' published uncertainty moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K.",
+  "sentence": "Matching the two thresholds in one test would need every reaction to run as if over 17.5 K hotter, beyond the 6.1 K of the kinetics' published uncertainty, which omits the difference between their cell and the M50.",
   "number": "6.1",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "At the central contact a two-dimensional reactive cross-section reproduced the outcome of all 151 three-dimensional runs it was checked against, at a fraction of their cost, making a resolved neighbour affordable in a module model.",
+  "sentence": "At the central contact a two-dimensional reactive cross-section reproduced the outcome of all 151 archived three-dimensional runs at a fraction of their cost, making a resolved neighbour affordable in module models.",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "In the model, with the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29 K short of runaway, so the ejecta or other paths must supply the rest.",
+  "sentence": "In the model, with the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29 K short of runaway; the ejecta or other paths must supply the rest.",
   "number": "29",
   "source": "results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between the treatments.",
+  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between them.",
   "number": "27.9",
   "source": "results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between the treatments.",
+  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between them.",
   "number": "21.4",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "In the one published record of a propagating neighbour, the final rise starts 37 K cooler than on the resolved model's far side; a heat flux measured on the neighbour's facing side would decide, if the model's other inputs stand.",
+  "sentence": "The one published record of a propagating neighbour fits neither cleanly, its final rise starting 37 K cooler than on the resolved model's far side; a heat flux measured on its facing side would decide, if the model's other inputs stand.",
   "number": "37",
   "source": "results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "The code, inputs and run records are openly archived, and the study's 98 predictions were committed before the runs they concern.",
+  "sentence": "The code, inputs and run records are archived openly, with the study's 98 predictions, each committed before its runs.",
   "number": "98",
   "source": "manuscript/rebuild/data/predictions_registry.csv: rows = 98"
  },
@@ -3373,67 +3421,61 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "Reduced models point to the mechanisms: for pulses up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway agrees with an energy balance to an ignition temperature of 218.5 \u00b0C.",
+  "sentence": "Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway agrees with an energy balance to an ignition temperature of 218.5 \u00b0C.",
   "number": "120",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "Reduced models point to the mechanisms: for pulses up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway agrees with an energy balance to an ignition temperature of 218.5 \u00b0C.",
+  "sentence": "Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway agrees with an energy balance to an ignition temperature of 218.5 \u00b0C.",
   "number": "218.5",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "The kinetics' published uncertainty moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K.",
-  "number": "6.1",
-  "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
- },
- {
-  "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "The kinetics' published uncertainty moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K.",
+  "sentence": "Matching the two thresholds in one test would need every reaction to run as if over 17.5 K hotter, beyond the 6.1 K of the kinetics' published uncertainty, which omits the difference between their cell and the M50.",
   "number": "17.5",
   "source": "results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "The kinetics' published uncertainty moves that temperature by 6.1 K, while matching the two thresholds in one test would need a cell's reaction rates over 17.5 K hotter, and the chemistry mismatch lies outside that 6.1 K.",
+  "sentence": "Matching the two thresholds in one test would need every reaction to run as if over 17.5 K hotter, beyond the 6.1 K of the kinetics' published uncertainty, which omits the difference between their cell and the M50.",
   "number": "6.1",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "At the central contact a two-dimensional reactive cross-section reproduced the outcome of all 151 three-dimensional runs it was checked against, at a fraction of their cost, making a resolved neighbour affordable in a module model.",
+  "sentence": "At the central contact a two-dimensional reactive cross-section reproduced the outcome of all 151 archived three-dimensional runs at a fraction of their cost, making a resolved neighbour affordable in module models.",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "In the model, with the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29 K short of runaway, so the ejecta or other paths must supply the rest.",
+  "sentence": "In the model, with the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29 K short of runaway; the ejecta or other paths must supply the rest.",
   "number": "29",
   "source": "results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between the treatments.",
+  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between them.",
   "number": "27.9",
   "source": "results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between the treatments.",
+  "sentence": "Published inputs cannot bound any path through the neighbour's facing half below 27.9 kJ within 21.4 s, above what either treatment needs at the measured times, so the sixteen tests cannot decide between them.",
   "number": "21.4",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "In the one published record of a propagating neighbour, the final rise starts 37 K cooler than on the resolved model's far side; a heat flux measured on the neighbour's facing side would decide, if the model's other inputs stand.",
+  "sentence": "The one published record of a propagating neighbour fits neither cleanly, its final rise starting 37 K cooler than on the resolved model's far side; a heat flux measured on its facing side would decide, if the model's other inputs stand.",
   "number": "37",
   "source": "results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "The code, inputs and run records are openly archived, and the study's 98 predictions were committed before the runs they concern.",
+  "sentence": "The code, inputs and run records are archived openly, with the study's 98 predictions, each committed before its runs.",
   "number": "98",
   "source": "manuscript/rebuild/data/predictions_registry.csv: rows = 98"
  },
@@ -3469,19 +3511,13 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "The lumped cell ignites at 218.5 \u00b0C, where reaction heat outruns losses.",
-  "number": "218.5",
-  "source": "results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "Matching the two thresholds in one test needs rates over 17.5 K hotter, beyond the kinetics' 6.1 K span.",
+  "sentence": "Matching the two thresholds in one test needs every reaction to run as if over 17.5 K hotter, beyond the 6.1 K that the kinetics' uncertainty spans.",
   "number": "17.5",
   "source": "results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "Matching the two thresholds in one test needs rates over 17.5 K hotter, beyond the kinetics' 6.1 K span.",
+  "sentence": "Matching the two thresholds in one test needs every reaction to run as if over 17.5 K hotter, beyond the 6.1 K that the kinetics' uncertainty spans.",
   "number": "6.1",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
  },
@@ -3493,7 +3529,7 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "In the one published record of a propagating neighbour, the final rise starts 37 K cooler than on the resolved model's far side.",
+  "sentence": "The one published record of a propagating neighbour fits neither model cleanly: its final rise starts 37 K cooler than on the resolved model's far side.",
   "number": "37",
   "source": "results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008"
  },
@@ -3529,19 +3565,13 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "The lumped cell ignites at 218.5 \u00b0C, where reaction heat outruns losses.",
-  "number": "218.5",
-  "source": "results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "Matching the two thresholds in one test needs rates over 17.5 K hotter, beyond the kinetics' 6.1 K span.",
+  "sentence": "Matching the two thresholds in one test needs every reaction to run as if over 17.5 K hotter, beyond the 6.1 K that the kinetics' uncertainty spans.",
   "number": "17.5",
   "source": "results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "Matching the two thresholds in one test needs rates over 17.5 K hotter, beyond the kinetics' 6.1 K span.",
+  "sentence": "Matching the two thresholds in one test needs every reaction to run as if over 17.5 K hotter, beyond the 6.1 K that the kinetics' uncertainty spans.",
   "number": "6.1",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
  },
@@ -3553,7 +3583,7 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "In the one published record of a propagating neighbour, the final rise starts 37 K cooler than on the resolved model's far side.",
+  "sentence": "The one published record of a propagating neighbour fits neither model cleanly: its final rise starts 37 K cooler than on the resolved model's far side.",
   "number": "37",
   "source": "results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008"
  },
@@ -3589,19 +3619,13 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "The lumped cell ignites at 218.5 \u00b0C, where reaction heat outruns losses.",
-  "number": "218.5",
-  "source": "results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484"
- },
- {
-  "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "Matching the two thresholds in one test needs rates over 17.5 K hotter, beyond the kinetics' 6.1 K span.",
+  "sentence": "Matching the two thresholds in one test needs every reaction to run as if over 17.5 K hotter, beyond the 6.1 K that the kinetics' uncertainty spans.",
   "number": "17.5",
   "source": "results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "Matching the two thresholds in one test needs rates over 17.5 K hotter, beyond the kinetics' 6.1 K span.",
+  "sentence": "Matching the two thresholds in one test needs every reaction to run as if over 17.5 K hotter, beyond the 6.1 K that the kinetics' uncertainty spans.",
   "number": "6.1",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765"
  },
@@ -3613,7 +3637,7 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "In the one published record of a propagating neighbour, the final rise starts 37 K cooler than on the resolved model's far side.",
+  "sentence": "The one published record of a propagating neighbour fits neither model cleanly: its final rise starts 37 K cooler than on the resolved model's far side.",
   "number": "37",
   "source": "results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008"
  }
