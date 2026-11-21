@@ -1,4 +1,4 @@
-numbers_check --rebuild: 629 traced to a named value, 67 found in their table's source files, 0 broad matches (supplement only), 28 counts written in words checked, 0 failures, 66 structural (not looked for)
+numbers_check --rebuild: 630 traced to a named value, 67 found in their table's source files, 0 broad matches (supplement only), 28 counts written in words checked, 0 failures, 66 structural (not looked for)
 
 == main.tex: title  [map]
 == main.tex: abstract  [map]
@@ -85,6 +85,7 @@ numbers_check --rebuild: 629 traced to a named value, 67 found in their table's 
    traced 199.8 <- results/note_numbers.json: V1.T_on_1_C_per_min_C = 199.794
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 302.1 <- DECISIONS.md: /below the paper's band of 255\.7 to (302\.1)/ = 302.1
+   traced 164 <- results/stage3_v4.json: main_cluster_T_in_C.n = 164
    traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
    traced 146.3 <- results/stage3_numbers.json: V4_registered/T_in_p2.5_C = 146.3
    traced 191.4 <- results/stage3_numbers.json: V4_registered/T_in_p97.5_C = 191.4

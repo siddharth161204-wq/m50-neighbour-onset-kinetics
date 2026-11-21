@@ -98,7 +98,8 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
    - 199.8: results/note_numbers.json: V1.T_on_1_C_per_min_C = 199.794
    - 255.7: results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    - 302.1: DECISIONS.md: /below the paper's band of 255\.7 to (302\.1)/ = 302.1
-24. Over the 200 draws below, the exotherm onset runs from 146.3 to 191.4\degC{} (central 95\,\%).
+24. Over the 164 of the 200 draws below in the source's main cluster the exotherm onset runs from 146.3 to 191.4\degC{} (central 95\,\%), and the check recorded for the draws against the source's band failed; it passed only as amended after the failure (Supplementary Section~S2).
+   - 164: results/stage3_v4.json: main_cluster_T_in_C.n = 164
    - 200: results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
    - 146.3 (new): results/stage3_numbers.json: V4_registered/T_in_p2.5_C = 146.3
    - 191.4 (new): results/stage3_numbers.json: V4_registered/T_in_p97.5_C = 191.4

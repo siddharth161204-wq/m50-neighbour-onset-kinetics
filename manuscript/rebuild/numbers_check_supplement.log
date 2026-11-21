@@ -1,4 +1,4 @@
-numbers_check --rebuild --supplement: 860 traced to a named value, 1175 found in their table's source files, 213 broad matches (supplement only), 28 counts written in words checked, 0 failures, 160 structural (not looked for)
+numbers_check --rebuild --supplement: 873 traced to a named value, 1175 found in their table's source files, 213 broad matches (supplement only), 28 counts written in words checked, 0 failures, 160 structural (not looked for)
 
 == main.tex: title  [map]
 == main.tex: abstract  [map]
@@ -85,6 +85,7 @@ numbers_check --rebuild --supplement: 860 traced to a named value, 1175 found in
    traced 199.8 <- results/note_numbers.json: V1.T_on_1_C_per_min_C = 199.794
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 302.1 <- DECISIONS.md: /below the paper's band of 255\.7 to (302\.1)/ = 302.1
+   traced 164 <- results/stage3_v4.json: main_cluster_T_in_C.n = 164
    traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
    traced 146.3 <- results/stage3_numbers.json: V4_registered/T_in_p2.5_C = 146.3
    traced 191.4 <- results/stage3_numbers.json: V4_registered/T_in_p97.5_C = 191.4
@@ -1000,6 +1001,18 @@ numbers_check --rebuild --supplement: 860 traced to a named value, 1175 found in
    traced 199.8 <- results/note_numbers.json: V1.T_on_1_C_per_min_C = 199.794
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 302.1 <- DECISIONS.md: /below the paper's band of 255\.7 to (302\.1)/ = 302.1
+   traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
+   traced 95 <- predictions_stage13.md: /the central (95) % of the 200 draws/ = 95
+   traced 5 <- results/stage3_v4_amended.json: tolerance_C = 5
+   traced 5 <- results/stage3_v4_amended.json: tolerance_C = 5
+   traced 183.5 <- results/stage3_v4_amended.json: paper.mean_C = 183.5
+   traced 164 <- results/stage3_v4.json: main_cluster_T_in_C.n = 164
+   traced 146.3 <- results/stage3_v4.json: main_cluster_T_in_C/p2.5 = 146.281
+   traced 191.4 <- results/stage3_v4.json: main_cluster_T_in_C/p97.5 = 191.379
+   traced 178.8 <- results/stage3_v4.json: main_cluster_T_in_C.mean = 178.816
+   traced 161.9 <- results/stage3_v4_amended.json: D25.lower_edge_C = 161.91
+   traced 195.7 <- results/stage3_v4_amended.json: D25.upper_edge_C = 195.722
+   traced 179.3 <- results/stage3_v4_amended.json: emulation_mean_model_T_in_C = 179.252
    broad 5 <- results/note_numbers.json.V0.ln_k.cat1 | results/stage3_numbers.json.V4_amended_D25.mean_offset_C | results/v12_numbers.json.grid.tab_high_minus_low.parallel_hlow_tau10.res_peak_hottest_C | results/stage7_paper_numbers.json.aged_vs_fresh.low.largest_change_hot_138_5_crossing_s
    traced 5,248 <- results/v12_numbers.json: runs.all = 5248
    traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229

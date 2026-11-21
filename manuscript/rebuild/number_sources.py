@@ -856,6 +856,25 @@ E += [
     (r"carried only to 332", ["332"], F(f"{XS}: A1_rows, the earliest end of a run", lambda: [min(r["t_end_s"] for r in _json(XS)["A1_rows"])]), None),
 ]
 
+
+# ---------------------------------------------------------------- the draws' calorimetry check (V4, D23 and D25)
+V4 = "results/stage3_v4.json"
+V4A = "results/stage3_v4_amended.json"
+E += [
+    (r"Over the 164 of the 200 draws|the 164 such draws", ["164"], J(V4, "main_cluster_T_in_C.n"), None),
+    (r"Over the 164 of the 200 draws|kinetic draws went through the same emulation", ["200"], J(V4, "n_draws"), None),
+    (r"runs from 146\.3 to 191\.4|gave 146\.3 to 191\.4", ["191.4"], J(V4, ["main_cluster_T_in_C", "p97.5"]), None),
+    (r"gave 146\.3 to 191\.4", ["146.3"], J(V4, ["main_cluster_T_in_C", "p2.5"]), None),
+    (r"lie within 5~K of the band's edges and their mean within 5~K", ["5"], J(V4A, "tolerance_C"), None),
+    (r"their mean within 5~K of 183\.5", ["183.5"], J(V4A, "paper.mean_C"), None),
+    (r"with a mean of 178\.8", ["178.8"], J(V4, "main_cluster_T_in_C.mean"), None),
+    (r"two standard deviations, 161\.9 to 195\.7", ["161.9"], J(V4A, "D25.lower_edge_C"), None),
+    (r"two standard deviations, 161\.9 to 195\.7", ["195.7"], J(V4A, "D25.upper_edge_C"), None),
+    (r"under the posterior mean, 179\.3", ["179.3"], J(V4A, "emulation_mean_model_T_in_C"), None),
+    (r"the central 95\\,\\% of the exotherm onsets", ["95"], F("src/v4_arc_draws.py: D23's 97.5 less its 2.5 percentile",
+     lambda: [float(m.group(2)) - float(m.group(1)) for m in [re.search(r"the (2\.5) and (97\.5) percentiles", open(os.path.join(ROOT, "src/v4_arc_draws.py")).read())]]), "pct"),
+]
+
 WORDS = [
     (r"thirteen of the fourteen with strong triggers", 13, F("stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket",
                                                        lambda: [float(sum(1 for t, lo in xs_lo().items() if trig_by_test()[t] > 30000 and lo > lumped_hi()[t]))])),
