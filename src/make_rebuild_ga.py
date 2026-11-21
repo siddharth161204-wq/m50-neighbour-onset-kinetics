@@ -11,7 +11,9 @@ The guides ask for at least 1,328 pixels across, the longest side horizontal, re
 Usage: python3 src/make_rebuild_ga.py
 """
 import json
+import math
 import os
+import sys
 
 import matplotlib
 matplotlib.use("Agg")
@@ -33,14 +35,20 @@ def half_up(x, nd=2):
     return str(Decimal(repr(float(x))).quantize(Decimal(1).scaleb(-nd), rounding=ROUND_HALF_UP))
 
 def main():
+    sys.path.insert(0, os.path.join(ROOT, "src"))
+    import csv as _csv
+    import rebuild_brackets as RBK
+    needs = {r["test"]: r for r in _csv.DictReader(open(os.path.join(ROOT, "results", "stage14_needs.csv")))}
     p = json.load(open(os.path.join(ROOT, "results", "stage15_paper_numbers.json")))
     b1 = p["B1"]
     rows = []
     for t in ("M50_PT_Exp4", "M50_PP_Exp2"):
         b = b1[t]
+        lo2, hi2 = RBK.brackets(needs[t])[1]                       # the lumped bracket (J)
         rows.append(dict(test=t.replace("M50_", "").replace("_", "-"), lumped=b["E_C2_J"] / 1000,
                          lo=b["bracket"]["lo_J"] / 1000, hi=b["bracket"]["hi_J"] / 1000,
-                         mid=b["bracket"]["mid_J"] / 1000, ratio=b["ratio_to_C2"]))
+                         mid=b["bracket"]["mid_J"] / 1000, ratio=b["ratio_to_C2"], lo2=lo2 / 1000, hi2=hi2 / 1000,
+                         ratio_lo=math.floor(100 * b["bracket"]["lo_J"] / hi2) / 100))
     sc = json.load(open(os.path.join(ROOT, "results", "stage15_scorecard.json")))
     above = sc["scorecard"]["predictions"]["P5"]["above_197.3_K"]
     short = json.load(open(os.path.join(ROOT, "results", "stage12_paper_numbers.json")))["part_a"]["high"]["shortfall_hot_spot_K"][0]
@@ -81,15 +89,17 @@ def main():
         ax2.bar(i - w / 2 - 0.02, r["lumped"], w, color=C_LUMP, zorder=3)
         ax2.bar(i + w / 2 + 0.02, r["mid"], w, color=C_RES, zorder=3)
         ax2.plot([i + w / 2 + 0.02] * 2, [r["lo"], r["hi"]], color=INK, lw=1.0, zorder=4)
-        T(ax2, i - w / 2 - 0.02, r["lumped"] + 0.25, half_up(r["lumped"]), f"{r['test']}, the lumped neighbour's threshold, kJ",
+        ax2.plot([i - w / 2 - 0.02] * 2, [r["lo2"], r["hi2"]], color=INK, lw=1.0, zorder=4)
+        T(ax2, i - w / 2 - 0.02, r["hi2"] + 0.25, half_up(r["lumped"]), f"{r['test']}, the lumped neighbour's threshold, kJ",
           ha="center", va="bottom", fontsize=7.5, color=C_LUMP)
         T(ax2, i + w / 2 + 0.02, r["hi"] + 0.25, half_up(r["mid"]), f"{r['test']}, the resolved neighbour's threshold, kJ",
           ha="center", va="bottom", fontsize=7.5, color=C_RES)
-        T(ax2, i, 9.3, f"{r['ratio']:.1f} times", f"{r['test']}, the resolved threshold over the lumped one",
+        T(ax2, i, 10.7, f"at least {r['ratio_lo']:.2f} times", f"{r['test']}, the resolved threshold over the lumped one, "
+          "across the brackets",
           ha="center", va="top", fontsize=7.5, color=INK)
     ax2.set_xticks(x); ax2.set_xticklabels([r["test"] for r in rows], fontsize=8)
     texts += [r["test"] for r in rows]
-    ax2.set_ylim(0, 9.6); ax2.set_yticks([0, 2, 4, 6, 8]); ax2.tick_params(labelsize=7.5)
+    ax2.set_ylim(0, 10.9); ax2.set_yticks([0, 2, 4, 6, 8, 10]); ax2.tick_params(labelsize=7.5)
     ax2.grid(True, axis="y", color=GRID, lw=0.6, zorder=0)
     lab = "heat in 21.4 s for runaway (kJ)"
     ax2.set_ylabel(lab, fontsize=7.5); texts.append(lab)

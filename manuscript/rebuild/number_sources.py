@@ -282,7 +282,7 @@ E = [
     (r"a=10\.55", ["10.55"], J(CONST, "constants.cell_radius_mm"), None),
     (r"720~g", ["720"], J(CONST, "constants.M_ref_g"), None),
     (r"19,355 nodes", ["19,355"], J(S8, "v3.base.n_nodes"), None),
-    (r"(within|Beyond|spans) 45|The sector, 45", ["45"], F("src/v12_mesh.py: SECTOR = math.pi / 4, the wedge sector's half-angle, in degrees", sector_deg), None),
+    (r"(within|Beyond|spans) 45|The sector, 45|line of contact & 45", ["45"], F("src/v12_mesh.py: SECTOR = math.pi / 4, the wedge sector's half-angle, in degrees", sector_deg), None),
     (r"within 1~K a step", ["1"], MD("src/reactive.py", r"DT_TARGET = (1\.0)"), None),
     (r"21\.39~s", ["21.39"], C(SKIN, "tau_d_s", test="M50_PT_Exp1", region="half"), None),
     (r"21\.4~s|21\.4\\,s|21\.4 s", ["21.4"], C(SKIN, "tau_d_s", test="M50_PT_Exp1", region="half"), None),
@@ -453,7 +453,7 @@ E = [
     (r"In the 92 runs", ["92"], J(XS, "A1_summary.dt_C8_s.n"), None),
     (r"1\.0~s later", ["1.0"], J(XS, "A1_summary.dt_C8_s.mean"), None),
     (r"\(5\.5~s earlier", ["5.5"], J(XS, "A1_summary.dt_C8_s.min"), "abs"),
-    (r"34\.5~s later", ["34.5"], J(XS, "A1_summary.dt_C8_s.max"), None),
+    (r"34\.5~s later|by up to 34\.5~s", ["34.5"], J(XS, "A1_summary.dt_C8_s.max"), None),
     (r"in the 59 in which", ["59"], J(XS, "A1_summary.d_mean_peak_K.n"), None),
     (r"1\.9~K lower", ["1.9"], J(XS, "A1_summary.d_mean_peak_K.mean"), "abs"),
     (r"20\.7~K lower", ["20.7"], J(XS, "A1_summary.d_mean_peak_K.min"), "abs"),
@@ -771,7 +771,7 @@ E += [
     (r"measured time plus 60~s", ["60"], MD("src/stage10_run.py", r"Table 3's 272 s plus (60) s"), None),
     (r"needs at most 12\.3~kJ by its runaway", ["12.3"], F(f"{TAB15}: C2_E_by_t_J, the largest", lambda: [max(float(r["C2_E_by_t_J"]) for r in _csv(TAB15) if r["C2_E_by_t_J"])]), "kJ"),
     (r"the 20~K shift", ["20"], J(S15, "B4.shift.least_shift_K"), None),
-    (r"lumped threshold, 2\.70~kJ on that grid", ["2.70"],
+    (r"lumped threshold, 2\.70~kJ on that grid|lumped threshold, 2\.70~kJ, its bracket's midpoint", ["2.70"],
      F(f"results/stage11_scorecard.json: P1, ST_Exp2's posterior-mean f*, times its ejected energy (results/stage8_ejected.csv)",
        lambda: [float(_get(_json("results/stage11_scorecard.json"), "predictions.P1.detail.M50_ST_Exp2.mean")) * ejected("M50_ST_Exp2")]), "kJ"),
     (r"was at most 1\.80~kJ under two kinetic draws", ["1.80"],
@@ -885,14 +885,77 @@ E += [
      F(f"{TRIG}: tests whose E_J exceeds 30 kJ", lambda: [float(sum(1 for x in trig_E() if float(x) > 30000))]), None),
 ]
 
+
+# ---------------------------------------------------------------- the fourth independent read's additions
+def step_of_run(test="M50_PT_Exp4"):
+    """The step whose search set PT-Exp4's coarser lumped bracket with the pulse (results/stage14_needs.csv names it)."""
+    src = next(r for r in _csv(NEEDS) if r["test"] == test)["need_21s_source"]
+    return [float(re.search(r"Stage (\d+)'s search", src).group(1))]
+
+
+def steps_where(*words):
+    rows = _csv("manuscript/rebuild/data/steps.csv")
+    return [float(next(r["step"] for r in rows if w in r["question"])) for w in words]
+
+
+def b1_wall():
+    import glob as _g
+    return [_json(os.path.relpath(p, ROOT))["wall_s"] for p in _g.glob(os.path.join(ROOT, "results", "stage15_runs", "*.json"))
+            if _json(os.path.relpath(p, ROOT))["kind"] == "B1"]
+
+
+def databank_mass():
+    return [r["Pre-Test-Cell-Mass-g"] for r in _csv("inputs/databank/databank_m50_used.csv")]
+
+
+E += [
+    (r"the two either side of 90\\textdegree", ["90"], MD("DECISIONS.md", r"the node nearest (90) degrees from the line"), None),
+    (r"entered in steps 7, 8 and 15", ["7", "8", "15"],
+     F("manuscript/rebuild/data/steps.csv: the steps that brought in each test's own trigger, the delivered fraction and the "
+       "resolved neighbour's own runaway", lambda: steps_where("each test with its own trigger", "delivered fraction",
+                                                                 "own runaway")), None),
+    (r"Table~S1, step~9\)", ["9"], F(f"{NEEDS}: need_21s_source of PT_Exp4, the step whose search set the coarser bracket",
+                                     step_of_run), None),
+    (r"ranked 5, 50, 151 and 196 of 200", ["5", "50", "151", "196"],
+     F("results/stage11_draws.csv: rank of the four kinetic draws", lambda: [r["rank"] for r in _csv("results/stage11_draws.csv") if r["kind"] == "kinetic"]), None),
+    (r"near the 2\.5th, 25th, 75th and 97\.5th", ["2.5"], MD("DECISIONS.md", r"The brief names them the (2\.5)th, 25th, 75th and 97\.5th"), None),
+    (r"near the 2\.5th, 25th, 75th and 97\.5th", ["25"], MD("DECISIONS.md", r"The brief names them the 2\.5th, (25)th, 75th and 97\.5th"), None),
+    (r"near the 2\.5th, 25th, 75th and 97\.5th", ["75"], MD("DECISIONS.md", r"The brief names them the 2\.5th, 25th, (75)th and 97\.5th"), None),
+    (r"near the 2\.5th, 25th, 75th and 97\.5th", ["97.5"], MD("DECISIONS.md", r"The brief names them the 2\.5th, 25th, 75th and (97\.5)th"), None),
+    (r"first two draws, at 191\.0 and 196\.5", ["191.0", "196.5"],
+     F(f"{S15}: B4 draws of rank 5 and 50, lumped_C2_t_s", lambda: [_get(_json(S15), "B4.draws.5.lumped_C2_t_s"),
+                                                                    _get(_json(S15), "B4.draws.50.lumped_C2_t_s")]), None),
+    (r"a run made in step~10", ["10"], F(f"{XS}: A1_rows, the archived 6,209 J run's id, s10_...",
+                                         lambda: [int(archived_6209()[0]["id"][1:3])]), None),
+    (r"S1\) and stopped at 332", ["332"], F(f"{XS}: A1_rows, the archived 6,209 J run: t_end_s", lambda: [r["t_end_s"] for r in archived_6209()]), None),
+    (r"its peak 20\.9~K lower", ["20.9"],
+     F(f"{S15}: B2 0.05 peak_mean_C less the reduced model's registered peak (predictions_stage15.md)",
+       lambda: [float(_get(_json(S15), ["B2", "0.05", "peak_mean_C"])) -
+                float(re.search(r"6,209 J no C8 \(mean peak (220\.5) C\)", open(os.path.join(ROOT, "predictions_stage15.md")).read()).group(1))]), None),
+    (r"came 5\.5~s earlier to 34\.5~s later", ["5.5"], F(f"{XS}: A1_summary.dt_C8_s.min, negated", lambda: [-float(_get(_json(XS), "A1_summary.dt_C8_s.min"))]), None),
+    (r"more than the 10~s of a match", ["10"], MD("predictions_stage9.md", r"crossing lies within (10) s of the measured time"), None),
+    (r"against 246 to 512~s", ["246", "512"], lo_hi("results/stage15_runs/*.json: wall_s of the B1 runs", b1_wall), None),
+    (r"Table~S1, step~11\) under", ["11"], F(f"{REG}: the step of P1 under every kinetic draw", lambda: step_of("P1", "under every kinetic draw")), None),
+    (r"in steps of 0\.1~s, halved", ["0.1"], MD("src/reactive.py", r"DT_BASE = (0\.1)"), None),
+    (r"exceeds about 1~K a step", ["1"], MD("src/reactive.py", r"DT_TARGET = (1)\.0"), None),
+    (r"by more than 4~K being repeated", ["4"], MD("src/reactive.py", r"DT_ACCEPT = (4)\.0"), None),
+    (r"weighed 68\.05 to 68\.52 g", ["68.05", "68.52"], lo_hi("inputs/databank/databank_m50_used.csv: Pre-Test-Cell-Mass-g", databank_mass), None),
+    (r"about 300 s \(Supplementary Section S6\)", ["300"], C(INP14, "value", key="t_flame_max"), None),
+    (r"at most 0\.91", ["0.91"], F(f"{S15} B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound",
+                                   lambda: [math.ceil(ratio_span("ST_Exp3")[1] * 100) / 100]), None),
+    (r"at least 1\.38 times \| PT-Exp4", ["1.38"],
+     F(f"{S15} B1 against the lumped bracket (rebuild_brackets): PT_Exp4, the lower end rounded down", lambda: [math.floor(ratio_span("PT_Exp4")[0] * 100) / 100]), None),
+]
+
 WORDS = [
+    (r"halved up to sixteen times", 16, MD("src/reactive.py", r"K_MAX = (16)")),
     (r"thirteen of the fourteen with strong triggers", 13, F("stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket",
                                                        lambda: [float(sum(1 for t, lo in xs_lo().items() if trig_by_test()[t] > 30000 and lo > lumped_hi()[t]))])),
     (r"After the eight strong triggers among the tests that propagated", 8, F(f"{TAB15}: tests other than ST_Exp3", lambda: [float(len({r["test"] for r in strong_rows()}))])),
     (r"under three of the shapes", 3, F(f"{TAB15}: ST_Exp3 shapes with a cross-section need", lambda: [float(sum(1 for r in st3_rows() if r["C8_xs_E_by_t_J"]))])),
     (r"nine of them with both zero", 9, F("results/stage13_twobody.csv: low and high searches with both zero",
                                          lambda: [float(sum(1 for r in _csv("results/stage13_twobody.csv") if r["h"] in ("low", "high") and float(r["B2_E_J"] or 0) == 0 and float(r["lum_mid_J"] or 0) == 0))])),
-    (r"four of the holds known there from earlier records", 4, F("manuscript/rebuild/data/predictions_registry.csv: held rows whose expectation records them as fixed",
+    (r"four of the holds known there to be fixed, or nearly", 4, F("manuscript/rebuild/data/predictions_registry.csv: held rows whose expectation records them as fixed",
                                                         lambda: [float(sum(1 for r in _csv("manuscript/rebuild/data/predictions_registry.csv") if r["verdict"] == "held" and "fixed" in r["expectation"]))])),
     (r"Nine propagated", 9, F(f"{TESTS}: tests with propagated Yes", _n_tests(lambda r: r["propagated"] == "Yes"))),
     (r"thirteen of the sixteen tests", 13, F(f"{TRIG}: tests whose E_J exceeds the calorimetry's 33,222.9 J",

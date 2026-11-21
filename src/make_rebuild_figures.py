@@ -137,8 +137,8 @@ def fig1():
     ax.add_patch(Circle(c1, R, fc="#f3d9c9", ec=INK, lw=1.0))
     ax.add_patch(Circle(c2, R, fc="#f2f2f2", ec=INK, lw=1.0))
     ax.text(c1[0], c1[1] + 0.32, "trigger", ha="center", va="center", fontsize=7.5)
-    ax.text(c1[0], c1[1] - 0.48, "one temperature;\nreleases its body\nenergy over 21.4 s", ha="center", va="center",
-            fontsize=6.3, color=MUTED)
+    ax.text(c1[0], c1[1] - 0.45, "one temperature;\nreleases its\nbody energy\nover 21.4 s", ha="center",
+            va="center", fontsize=6.3, color=MUTED, linespacing=1.15)
     # the facing half of the neighbour, where the delivered heat enters
     ax.add_patch(Wedge(c2, R * 1.09, 90, 270, width=0.08, fc=C_LOCAL, ec="none"))
     ax.annotate("delivered heat enters\nthe facing half", (c2[0] - 0.72, c2[1] + 0.78), xytext=(-0.55, 1.5),
@@ -147,7 +147,7 @@ def fig1():
     # the contact and its air wedge, within 45 degrees of the line of contact
     ax.add_patch(Wedge(c2, R, 135, 225, width=0.13, fc=C_LUMP, ec="none", alpha=0.55))
     ax.annotate("contact and air wedge,\nwithin 45\u00b0 of the line\nof contact", (c2[0] - 0.83, c2[1] - 0.55),
-                xytext=(-0.35, -1.35), fontsize=6.0, color=C_LUMP, ha="center", va="top",
+                xytext=(-0.85, -1.3), fontsize=6.0, color=C_LUMP, ha="center", va="top",
                 arrowprops=dict(arrowstyle="-", color=C_LUMP, lw=0.6))
     # symmetry plane of the resolved half model
     ax.plot([-2.1, 2.2], [c2[1], c2[1]], color=MUTED, lw=0.6, ls=(0, (6, 2, 1, 2)))
@@ -159,7 +159,7 @@ def fig1():
         ax.plot(x, y, "o", ms=4.2, mfc="white", mec=INK, mew=0.9, zorder=5)
         ax.text(x + dx, y + dy, lab, fontsize=6.3, ha=ha, va="center")
     ax.text(c2[0] + 0.12, c2[1] - 0.42, "neighbour", ha="center", fontsize=7.5)
-    ax.text(c2[0] + 0.55, -1.0, "one temperature (lumped),\nor a resolved field\n(half model, 19,355 nodes)",
+    ax.text(c2[0] + 0.7, -1.0, "one temperature (lumped),\nor a resolved field\n(half model, 19,355 nodes)",
             ha="center", va="top", fontsize=6.0, color=MUTED)
     ax.set_xlim(-2.15, 2.65)
     ax.set_ylim(-1.75, 1.85)
@@ -218,14 +218,14 @@ def fig2():
                     solid_capstyle="butt")
             ax.plot(i + 0.22, br["mid_J"] / 1e3, marker="D", ms=4.2, color=C_RES, ls="none")
     ax.set_xticks(x)
-    ax.set_xticklabels([short(t) + ("\n\u25cf" if tt[t]["propagated"] else "\n\u25cb") for t in order], fontsize=6.3)
+    ax.set_xticklabels([short(t) + ("\n\u25cf" if tt[t]["propagated"] else "\n\u25cb") for t in order], fontsize=6.8)
     for lab, t in zip(ax.get_xticklabels(), order):
         lab.set_color(INK if tt[t]["propagated"] else MUTED)
     ax.text(1.0, -0.2, "\u25cf propagated in the test   \u25cb did not", transform=ax.transAxes, ha="right",
-            va="top", fontsize=6.3)
+            va="top", fontsize=6.8)
     ax2 = ax.secondary_xaxis("top")
     ax2.set_xticks(x)
-    ax2.set_xticklabels(["%.0f" % (tt[t]["E_b_J"] / 1e3) for t in order], fontsize=6.3)
+    ax2.set_xticklabels(["%.0f" % (tt[t]["E_b_J"] / 1e3) for t in order], fontsize=6.8)
     ax2.set_xlabel("Trigger's body energy fitted to the measured trigger peak (kJ)", fontsize=7)
     ax.set_ylabel("Threshold: least energy delivered\nover 21.4 s to the facing half (kJ)")
     ax.set_ylim(-0.3, 14)
@@ -237,7 +237,7 @@ def fig2():
                 label="resolved neighbour's mean reaches 255.7 °C: reactive cross-section"),
          Line2D([], [], color=C_RES, marker="D", lw=2.6, ms=4.2,
                 label="the same, three-dimensional model (bracket)")]
-    ax.legend(handles=h, loc="upper right", fontsize=6.4, ncol=1)
+    ax.legend(handles=h, loc="upper right", fontsize=7.0, ncol=1)
     save(fig, 2)
 
 
@@ -298,7 +298,7 @@ def fig3():
     ax.set_xlim(-2.6, 4.9)
     ax.set_ylim(0, 10)
     grid(ax)
-    ax.text(0.3, 0.985, "filled: searched with the body energy shifted by 2 kJ;\nhollow: the bracket at the fitted energy",
+    ax.text(0.22, 0.985, "filled: searched with the body energy shifted by 2 kJ;\nhollow: the bracket at the fitted energy",
             transform=ax.transAxes, fontsize=5.9, color=MUTED, va="top")
     panel(ax, "b")
     # (c) the ignition temperature over the posterior
@@ -308,38 +308,47 @@ def fig3():
     tig = np.array([float(r["T_ign_C"]) for r in rows])
     s13 = json.load(open(os.path.join(RES, "stage13_paper_numbers.json")))["scorecard"]["P7"]
     ax.hist(tig, bins=np.arange(213.5, 224.6, 0.5), color=C_LUMP, alpha=0.75, edgecolor="white", lw=0.4)
-    ax.axvline(s13["mean_C"], color=INK, lw=1.0)
+    ax.plot([s13["mean_C"]] * 2, [0, 44.5], color=INK, lw=1.0)
     ax.axvspan(s13["p2.5_C"], s13["p97.5_C"], color=C_LUMP, alpha=0.12, lw=0)
-    ax.text(s13["mean_C"] + 0.2, 44, "posterior mean\n%.1f \u00b0C" % s13["mean_C"], fontsize=6.2, va="top")
-    ax.text(s13["p2.5_C"] + 0.1, 47, "central 95 %%: %.1f to %.1f \u00b0C" % (s13["p2.5_C"], s13["p97.5_C"]),
-            fontsize=6.0, color=C_LUMP, va="top")
+    ax.text(s13["mean_C"], 45.5, "posterior mean, %.1f \u00b0C" % s13["mean_C"], fontsize=6.4, ha="center",
+            va="bottom")
+    ax.text(s13["p2.5_C"] + 0.1, 57.5, "central 95 %%: %.1f to %.1f \u00b0C" % (s13["p2.5_C"], s13["p97.5_C"]),
+            fontsize=6.4, color=C_LUMP, va="top")
     ax.set_xlim(213.5, 224.5)
-    ax.set_ylim(0, 48)
+    ax.set_ylim(0, 58)
     ax.set_ylabel("Kinetic draws")
     ax.set_xlabel("Ignition temperature of the lumped neighbour (\u00b0C)")
     grid(ax)
     panel(ax, "c")
-    # (d) that spread beside the shift of the rate laws the resolved neighbour needs at the lumped threshold
+    # (d) PT-Exp4's resolved neighbour under 5.04 kJ over 21.4 s: the peak of its mean against the shift of every rate
+    # law, and with no shift under the four kinetic draws and the aged SEI (none of which runs it away)
     ax = axs[1, 1]
     b4 = stage15_numbers()["B4"]
-    sh = b4["shift_runs"]
-    no = max(r["shift_K"] for r in sh if not r["C8"])
-    yes = min(r["shift_K"] for r in sh if r["C8"])
+    sh = sorted(b4["shift_runs"], key=lambda r: r["shift_K"])
+    mean0 = json.load(open(os.path.join(RES, "stage15_readings.json")))["1"]["PT_Exp4"]["mean_peak_C"]
+    others = [r["peak_mean_C"] for r in b4["draws"].values()] + [b4["aged"]["peak_mean_C"]]
+    ax.axhline(LEVEL_C, color=INK, lw=0.7, ls=(0, (3, 2)))
+    ax.text(16.6, LEVEL_C - 1.5, "255.7 \u00b0C: runaway", fontsize=6.4, ha="right", va="top")
+    ax.plot([0, 0], [min(others), max(others)], color=MUTED, lw=4.0, alpha=0.55, solid_capstyle="butt", zorder=2)
+    ax.annotate("no shift, the four kinetic draws and the aged SEI:\n%.1f to %.1f \u00b0C, none runs away"
+                % (min(others), max(others)), (0.25, 0.5 * (min(others) + max(others))), xytext=(2.0, 205.0),
+                fontsize=6.4, color=MUTED, va="center", arrowprops=dict(arrowstyle="-", lw=0.6, color=MUTED))
+    xs = [0.0] + [r["shift_K"] for r in sh]
+    ys = [mean0] + [r["peak_mean_C"] for r in sh]
+    ax.plot(xs, ys, color=C_RES, lw=0.8, alpha=0.6, zorder=3)
+    ax.plot([0.0], [mean0], marker="x", color=C_RES, ms=5.5, mew=1.3, ls="none", zorder=4)
     for r in sh:
-        ax.plot(r["shift_K"], 0, marker="o" if r["C8"] else "x", color=C_RES, ms=5, mfc="white" if r["C8"] else C_RES,
-                mew=1.2, ls="none")
-    ax.barh([1], [s13["span_K"]], color=C_LUMP, alpha=0.75, height=0.5)
-    ax.text(s13["span_K"] + 0.4, 1, "central 95 %% of the posterior's ignition temperatures: %.1f K" % s13["span_K"],
-            va="center", fontsize=6.0)
-    ax.text(0.2, -0.42, "shift of every rate law, at 5.0 kJ over 21.4 s (PT-Exp4):\n"
-            "\u00d7 the resolved neighbour does not run away; \u25cb it does", fontsize=6.0, color=C_RES, va="top")
-    ax.axvspan(no, yes, color=C_RES, alpha=0.12, lw=0)
-    ax.set_xlim(0, 24)
-    ax.set_ylim(-1.3, 1.6)
-    ax.set_yticks([])
-    ax.spines["left"].set_visible(False)
-    ax.set_xlabel("Temperature shift (K)")
-    grid(ax, "x")
+        ax.plot(r["shift_K"], r["peak_mean_C"], marker="o" if r["C8"] else "x", color=C_RES, ms=5.5,
+                mfc="white" if r["C8"] else C_RES, mew=1.3, ls="none", zorder=4)
+    ax.text(0.3, 275.5, "PT-Exp4, 5.0 kJ over 21.4 s: \u00d7 no resolved runaway; \u25cb runaway", fontsize=6.4,
+            color=C_RES, va="top")
+    ax.set_xlim(-0.8, 22.5)
+    ax.set_ylim(182, 276)
+    ax.set_xticks([0, 5, 10, 15, 17.5, 20])
+    ax.set_xticklabels(["0", "5", "10", "15", "17.5", "20"])
+    ax.set_xlabel("Shift of the temperature in every rate law (K)")
+    ax.set_ylabel("Peak of the resolved mean (\u00b0C)")
+    grid(ax)
     panel(ax, "d")
     save(fig, 3)
 
@@ -358,8 +367,16 @@ def fig4():
                   ("240 s constant power", "^", "240 s"), ("360 s constant power", "D", "360 s")]
     prop = sorted([t for t in TESTS if tt[t]["propagated"]], key=lambda t: tt[t]["time_s"])
     nonp = [t for t in TESTS if not tt[t]["propagated"]]
-    fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.0), constrained_layout=True, gridspec_kw={"width_ratios": [2.0, 1.0]})
+    fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.6), constrained_layout=True, gridspec_kw={"width_ratios": [2.0, 1.0]})
     ax = axs[0]
+
+    def mark(x, y, status, col):
+        """t: the time reproduced only within the search's resolution (a dot); b: interpolated (a bar)."""
+        if status == "threshold":
+            ax.plot(x, y, marker=".", ms=2.6, color=col, ls="none", zorder=6)
+        elif status == "bracketed":
+            ax.plot(x, y, marker="_", ms=7.0, mew=1.2, color=INK, ls="none", zorder=6)
+
     for i, t in enumerate(prop):
         for j, (dname, mk, _) in enumerate(deliveries):
             r = next((r for r in rows if r["test"] == t and r["delivery"] == dname), None)
@@ -369,13 +386,16 @@ def fig4():
             e2 = fnum(r["C2_E_by_t_J"])
             e8 = fnum(r["C8_xs_E_by_t_J"])
             if e2 is not None and r["C2_status"] in ("matched", "threshold", "bracketed"):
-                ax.plot(i + dx, max(e2, 1.0) / 1e3, marker=mk, ms=4.2, mfc=C_LUMP, mec=C_LUMP, ls="none")
+                y2 = max(e2, 1.0) / 1e3
+                ax.plot(i + dx, y2, marker=mk, ms=4.4, mfc=C_LUMP, mec=C_LUMP, ls="none")
+                mark(i + dx, y2, r["C2_status"], "white")
             if e8 is not None and r["C8_xs_status"] in ("matched", "threshold"):
-                ax.plot(i + dx, e8 / 1e3, marker=mk, ms=4.6, mfc="white", mec=C_RES, mew=1.2, ls="none")
+                ax.plot(i + dx, e8 / 1e3, marker=mk, ms=4.8, mfc="white", mec=C_RES, mew=1.2, ls="none")
+                mark(i + dx, e8 / 1e3, r["C8_xs_status"], C_RES)
     ax.set_yscale("log")
     ax.set_ylim(0.12, 100)
     ax.set_xticks(range(len(prop)))
-    ax.set_xticklabels(["%s\n%.0f s" % (short(t), tt[t]["time_s"]) for t in prop], fontsize=6.3)
+    ax.set_xticklabels(["%s\n%.0f s" % (short(t), tt[t]["time_s"]) for t in prop], fontsize=6.6)
     ax.set_ylabel("Energy delivered to the facing half\nby the runaway (kJ)")
     ax.set_title("Propagated tests, in order of the measured time", loc="left", fontsize=7.5)
     grid(ax)
@@ -383,7 +403,9 @@ def fig4():
          Line2D([], [], color=C_RES, marker="o", mfc="white", ls="none", ms=4.6, mew=1.2,
                 label="resolved neighbour's mean reaches 255.7 °C")]
     h += [Line2D([], [], color=MUTED, marker=mk, ls="none", ms=4.2, label=lab) for _, mk, lab in deliveries]
-    ax.legend(handles=h, loc="upper left", fontsize=6.0, ncol=2)
+    h += [Line2D([], [], color=INK, marker=".", ms=5.0, ls="none", label="dot inside: within the resolution (t)"),
+          Line2D([], [], color=INK, marker="_", ms=7.0, mew=1.2, ls="none", label="bar: interpolated (b)")]
+    fig.legend(handles=h, loc="outside lower center", fontsize=6.4, ncol=4, frameon=False)
     panel(ax, "a")
     ax = axs[1]
     for i, t in enumerate(nonp):
@@ -393,8 +415,8 @@ def fig4():
         y = NONE_Y if zero else v / 1e3                              # a need of zero sits in its own row, "none"
         ax.plot(i, y, marker=("v" if zero else "o"), ms=4.6, mfc=("white" if expl else INK), mec=INK, ls="none")
     ax.axhline(0.15, color=MUTED, lw=0.6, ls=(0, (1, 2)))
-    ax.text(1.75, 0.16, "below the line: with no delivery the far\nface already peaks above the maximum", ha="left",
-            va="bottom", fontsize=5.7, color=MUTED)
+    ax.text(0.03, 0.135, "below the line: with no delivery the\nfar face already peaks above the\nmaximum",
+            transform=ax.transAxes, ha="left", va="bottom", fontsize=6.3, color=MUTED)
     ax.set_yscale("log")
     ax.set_ylim(0.075, 100)
     ax.set_yticks([NONE_Y, 1, 10, 100])
@@ -403,12 +425,12 @@ def fig4():
         [m * 10.0 ** k for k in (-1, 0, 1) for m in range(2, 10) if m * 10.0 ** k > 0.15]))
     ax.yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
     ax.set_xticks(range(len(nonp)))
-    ax.set_xticklabels([short(t) for t in nonp], rotation=60, fontsize=6.3, ha="right")
+    ax.set_xticklabels([short(t) for t in nonp], rotation=60, fontsize=6.8, ha="right")
     ax.set_ylabel("Energy over 21.4 s that puts the far face's\npeak at the measured maximum (kJ)", fontsize=7)
     ax.set_title("Tests that did not propagate", loc="left", fontsize=7.5)
     grid(ax)
-    ax.text(0.97, 0.97, "hollow: maxima that may\nnot be the neighbour's\nsurface", transform=ax.transAxes,
-            fontsize=5.7, ha="right", va="top", color=MUTED)
+    ax.text(0.97, 0.64, "hollow: maxima that may\nnot be the neighbour's\nsurface", transform=ax.transAxes,
+            fontsize=6.3, ha="right", va="center", color=MUTED)
     panel(ax, "b")
     save(fig, 4)
 
@@ -486,28 +508,28 @@ def fig6():
         u21, ut = get(p, "21.39"), get(p, "total")
         if u21 is None:
             ax.text(0.115, yy, "not determinable; energy conservation alone caps it at 247.3 kJ", va="center",
-                    fontsize=6.3, color=MUTED)
+                    fontsize=6.8, color=MUTED)
         else:
             ax.barh(yy + 0.17, u21 / 1e3, height=0.3, left=0.1, color=C_SKY, edgecolor="none", zorder=2)
             ax.barh(yy - 0.17, ut / 1e3, height=0.3, left=0.1, color="#9e9e9e", edgecolor="none", zorder=2)
-            ax.text(u21 / 1e3 * 1.08, yy + 0.17, "%.1f" % (u21 / 1e3), va="center", fontsize=6, zorder=3)
-            ax.text(ut / 1e3 * 1.08, yy - 0.17, "%.1f" % (ut / 1e3), va="center", fontsize=6, color=MUTED, zorder=3)
+            ax.text(u21 / 1e3 * 1.08, yy + 0.17, "%.1f" % (u21 / 1e3), va="center", fontsize=6.8, zorder=3)
+            ax.text(ut / 1e3 * 1.08, yy - 0.17, "%.1f" % (ut / 1e3), va="center", fontsize=6.8, color=MUTED, zorder=3)
     # a flame held on the vent's axis: the finer scan of the bounds' independent read (about 849 J)
     txt = open(os.path.join(RES, "stage14_independent_read.md")).read()
     axial = float(re.search(r"at most about (\d+) J \(1\.11 %\)", txt).group(1))
     ax.plot([axial / 1e3], [y[0] + 0.17], marker="|", ms=11, color=C_LOCAL, mew=1.8, zorder=4)
     ax.annotate("flame held on the vent's axis", (axial / 1e3, y[0] + 0.3), xytext=(0.3, y[0] + 0.62),
-                fontsize=5.9, color=C_LOCAL, arrowprops=dict(arrowstyle="-", lw=0.6, color=C_LOCAL))
+                fontsize=6.6, color=C_LOCAL, arrowprops=dict(arrowstyle="-", lw=0.6, color=C_LOCAL))
     ax.set_xscale("log")
     ax.set_xlim(0.1, 600)
     ax.set_ylim(-0.6, len(paths) - 0.2)
     ax.set_yticks(y)
-    ax.set_yticklabels([lab for _, lab in paths], fontsize=6.8)
+    ax.set_yticklabels([lab for _, lab in paths], fontsize=7.2)
     ax.set_xlabel("Energy delivered to the neighbour's facing half (kJ)")
     h = [Rectangle((0, 0), 1, 1, color=C_SKY, label="upper bound within 21.4 s"),
          Rectangle((0, 0), 1, 1, color="#9e9e9e", label="upper bound in total")]
     h += [Rectangle((0, 0), 1, 1, color=col, alpha=al + 0.1, label=lab) for _, _, col, al, lab in bands]
-    ax.legend(handles=h, loc="upper center", bbox_to_anchor=(0.45, -0.17), ncol=2, fontsize=6.0)
+    ax.legend(handles=h, loc="upper center", bbox_to_anchor=(0.45, -0.17), ncol=2, fontsize=6.8)
     grid(ax, "x")
     save(fig, 6)
 
@@ -554,7 +576,7 @@ def fig7():
          Line2D([], [], marker="o", color=MUTED, mfc="white", ls="none", ms=3.6, label="pulse over 21.4 s"),
          Line2D([], [], marker="s", color=MUTED, mfc="white", ls="none", ms=3.6, label="constant power"),
          Line2D([], [], marker="^", color=MUTED, mfc="white", ls="none", ms=3.6, label="no delivery")]
-    ax.legend(handles=h, loc="upper left", fontsize=5.6)
+    ax.legend(handles=h, loc="upper left", fontsize=6.3)
     panel(ax, "b")
     ax = axs[2]
     b1 = stage15_numbers()["B1"]
@@ -571,7 +593,7 @@ def fig7():
     ax.set_title("Thresholds", loc="left", fontsize=7.2)
     h = [Line2D([], [], color=C_RES, marker="D", lw=3, ms=4, label="three-dimensional (bracket)"),
          Line2D([], [], color=INK, marker="o", mfc="white", lw=0, ms=4.4, label="reactive cross-section")]
-    ax.legend(handles=h, loc="upper left", fontsize=5.8)
+    ax.legend(handles=h, loc="upper left", fontsize=6.3)
     grid(ax)
     panel(ax, "c")
     save(fig, 7)

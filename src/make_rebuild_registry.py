@@ -85,7 +85,7 @@ STEPS = [
     (8, "The delivered fraction of the ejected energy that each test's outcome requires", "predictions_stage8.md", "2026-10-26"),
     (9, "The delivered fraction read from each test's time and peak", "predictions_stage9.md", "2026-10-29"),
     (10, "The one published history, the thermocouple's angle and held-out scores", "predictions_stage10.md", "2026-10-30"),
-    (11, "Bands of the central numbers under kinetic and thermal draws chosen by rank", "predictions_stage11.md", "2026-11-02"),
+    (11, "Bands of the central numbers under four kinetic draws chosen by rank and four thermal draws at the extremes", "predictions_stage11.md", "2026-11-02"),
     (12, "The trigger held to calorimetry's body energy and one ejected energy for every test", "predictions_stage12.md", "2026-11-03"),
     (13, "The mechanism of each threshold: reduced models of skin conduction and of an ignition temperature", "predictions_stage13.md", "2026-11-16"),
     (14, "What each path can deliver to the neighbour, bounded from published inputs", "predictions_stage14.md", "2026-11-17"),
@@ -148,9 +148,17 @@ def main():
         return v15[lab]["verdict"]
 
     rows = []
+    def attributed(stage, exp):
+        """Steps 1 and 2 had one predictions file and no separate plan's estimates: their expectations are the study's."""
+        if str(stage) not in ("1", "2") or exp == "none recorded":
+            return exp
+        if exp.startswith("Central estimate"):
+            return "Study's central estimate" + exp[len("Central estimate"):]
+        return "Study's expectation: " + (exp if exp.startswith("P5") else exp[0].lower() + exp[1:])
+
     for r in old:
         rows.append({"stage": r["stage"], "prediction": r["prediction"], "statement": r["statement"],
-                     "expectation": r["expectation"], "verdict": r["verdict"],
+                     "expectation": attributed(r["stage"], r["expectation"]), "verdict": r["verdict"],
                      "foreseen": r["foreseen"] if r["verdict"] == "failed" else "",
                      "foreseen_basis": r["foreseen_basis"] if r["verdict"] == "failed" else "", "source": r["source"]})
     for st, lab, stmt, exp, src in NEW:

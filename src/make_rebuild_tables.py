@@ -40,6 +40,17 @@ def kj(x, nd=1):
     return ("%%.%df" % nd) % (float(x) / 1e3)
 
 
+def databank_mass():
+    """The smallest and largest pre-test mass of the Databank's seventeen LG M50 cells (g, two decimals)."""
+    m = [float(r["Pre-Test-Cell-Mass-g"]) for r in read_csv(os.path.join(ROOT, "inputs", "databank", "databank_m50_used.csv"))]
+    return "%.2f" % min(m), "%.2f" % max(m)
+
+
+def flame_s():
+    """The longest published combustion of a 21700 cell, the bounds' time window (results/stage14_inputs.csv)."""
+    return float(next(r for r in read_csv(os.path.join(RES, "stage14_inputs.csv")) if r["key"] == "t_flame_max")["value"])
+
+
 def table1():
     meas = {r["test"]: r for r in read_csv(os.path.join(ROOT, "inputs", "fransson2024", "m50_tests.csv"))}
     trig = {r["test"]: float(r["E_J"]) for r in read_csv(os.path.join(RES, "stage7_triggers.csv")) if r["kind"] == "test"}
@@ -83,12 +94,14 @@ def table2():
         ("Roll conductivity across and along the layers", r"1.3 and 25 W\,m$^{-1}$\,K$^{-1}$",
          r"\cite{oregan2022thermal,chen2021simplified}"),
         ("Cell heat capacity", r"61.75 J\,K$^{-1}$ (65 g at 950 J\,kg$^{-1}$\,K$^{-1}$)",
-         r"\cite{oregan2022thermal}; mass assumed$^{a}$"),
+         r"\cite{oregan2022thermal}; mass assumed$^{a}$; the Databank's cells weighed %s to %s g before their "
+         r"tests~\cite{finegan2024databank}" % databank_mass()),
         ("Resolved neighbour", "half model, 19,355 nodes", "this study"),
         (r"\textit{Heat paths}", None, None),
         (r"Contact conductance between the cans, $h_c$", r"200, 2,000, 3,700 W\,m$^{-2}$\,K$^{-1}$ (low, central, high)",
          r"\cite[Table 2.1]{lienhard2024heat}"),
         ("Air in the wedge beside the contact", r"0.03 W\,m$^{-1}$\,K$^{-1}$", r"assumed$^{a}$"),
+        ("Contact sector, either side of the line of contact", r"45\textdegree", r"assumed$^{a}$"),
         ("Welded tabs: series one, parallel two", r"6.8 mW\,K$^{-1}$ per tab (5 and 10 as brackets)",
          r"assumed$^{a}$"),
         ("View factor between the cans; emissivity", "0.1817; 0.8",
@@ -106,7 +119,9 @@ def table2():
         ("Runaway level; window", r"255.7\textdegree C; within 900 s", r"\cite{koenig2025uncertainty}; this study"),
         (r"\textit{Delivered heat}", None, None),
         ("Region", "the half of the neighbour's can facing the trigger, a uniform flux", "this study"),
-        ("Shapes", "triangular over 21.39 s; constant power over 120, 240 or 360 s; in PT-Exp4 also the pulse "
+        ("Shapes", ("triangular over 21.39 s; constant power over 120, 240 or 360 s, the last outlasting the "
+                    "longest combustion reported for a 21700 cell, about %.0f s (Supplementary Section S6); in "
+                    "PT-Exp4 also the pulse " % flame_s()) +
                    r"followed by a constant power; for Section~\ref{sec:res-why}, triangular over 5 to 360 s",
          "this study"),
     ]
@@ -140,7 +155,8 @@ def table3():
             "A2": r"convection by Churchill and Bernstein's relation~\cite{churchill1977correlating} at "
                   r"398.5~m\,s$^{-1}$~\cite{gillich2024mechanical}, at the film temperature of gas at 1500\textdegree C "
                   r"over a can at 25\textdegree C, with hydrogen's properties at 1000~K~\cite{lienhard2024heat}, at most "
-                  r"twice the whole-cylinder mean on one half; radiation at 1500\textdegree C",
+                  r"twice the whole-cylinder mean on one half, as the other half's cannot be negative; radiation at "
+                  r"1500\textdegree C",
             "A3": r"what the ejecta can release; a narrow jet strikes only from within 30\textdegree{} of the line of "
                   r"centres, a sixth of the circumference",
             "A4": r"what the ejecta can release; melt falls onto it from a breach on the trigger's lower half, half "
@@ -456,12 +472,101 @@ def table_s11():
     return "\n".join(lines)
 
 
+S11_TESTS = ["M50_PT_Exp1", "M50_PP_Exp3", "M50_ST_Exp2", "M50_SP_Exp3"]
+
+
+def s11_draw_labels():
+    d = {r["label"]: r for r in read_csv(os.path.join(RES, "stage11_draws.csv"))}
+    lab = [("mean", "Posterior mean, central properties")]
+    for k in ("d188", "d83", "d40", "d184"):
+        lab.append((k, "Kinetic draw ranked %s (draw %s)" % (d[k]["rank"], d[k]["stage3_draw"])))
+    lab += [("kr_min", r"Least conductivity across the layers, %.3f W\,m$^{-1}$\,K$^{-1}$" % float(d["kr_min"]["k_radial_W_mK"])),
+            ("kr_max", r"Largest conductivity across the layers, %.3f W\,m$^{-1}$\,K$^{-1}$" % float(d["kr_max"]["k_radial_W_mK"])),
+            ("c_min", r"Least specific heat, %.0f J\,kg$^{-1}$\,K$^{-1}$" % float(d["c_min"]["c_roll_J_kgK"])),
+            ("c_max", r"Largest specific heat, %.0f J\,kg$^{-1}$\,K$^{-1}$" % float(d["c_max"]["c_roll_J_kgK"]))]
+    return lab
+
+
+def table_s12():
+    """Step 11's lumped thresholds with the 21.39 s pulse at the central contact, under the posterior mean and its eight
+    draws (results/stage11_thresholds.csv, criterion C2), in kJ: the fractions' bracket times the test's ejected energy
+    (results/stage8_ejected.csv). Also writes manuscript/rebuild/data/step11_lumped_kJ.csv, the table's values, for the
+    numbers check."""
+    ee = {r["id"]: float(r["E_e_J"]) for r in read_csv(os.path.join(RES, "stage8_ejected.csv")) if r["kind"] == "test"}
+    th = {(r["test"], r["draw"]): r for r in read_csv(os.path.join(RES, "stage11_thresholds.csv")) if r["criterion"] == "C2"}
+    data = []
+    lines = [r"\begin{table}[!htbp]", r"\centering", r"\footnotesize",
+             r"\caption{The lumped threshold of the four tests that step~11 searched, with the 21.4~s pulse at the "
+             r"central contact, under the posterior mean and the central properties and under the step's eight draws "
+             r"(Section~\ref{sec:s-key}): the bracket between the largest energy run that does not run the lumped "
+             r"neighbour away and the smallest that does, in kJ, on a grid of 0.0125 of the test's ejected energy "
+             r"(the last row); 0, met with no delivery. The main text quotes a bracket's midpoint. The kinetic draws "
+             r"are ranked, earliest first, by the time of the hot spot's onset in step~3's case; the thermal draws "
+             r"are the extremes among thirty over the roll's published ranges.}",
+             r"\label{tab:s-step11}", r"\setlength{\tabcolsep}{4pt}",
+             r"\begin{tabular}{>{\raggedright\arraybackslash}p{0.33\textwidth}rrrr}", r"\toprule",
+             r"Draw & PT-Exp1 & PP-Exp3 & ST-Exp2 & SP-Exp3 \\", r"\midrule"]
+    for key, label in s11_draw_labels():
+        cells = []
+        for t in S11_TESTS:
+            r = th[(t, key)]
+            lo, hi = float(r["lo"] or 0) * ee[t] / 1e3, float(r["hi"] or 0) * ee[t] / 1e3
+            data.append({"test": t, "draw": key, "status": r["status"], "lo_kJ": lo, "hi_kJ": hi,
+                         "E_e_kJ": ee[t] / 1e3})
+            cells.append("0" if r["status"] == "zero" else "(%.2f, %.2f]" % (lo, hi))
+        lines.append(label + " & " + " & ".join(cells) + r" \\")
+        if key in ("mean", "d184"):
+            lines.append(r"\midrule")
+    lines.append(r"\midrule")
+    lines.append(r"Ejected energy (kJ) & " + " & ".join("%.2f" % (ee[t] / 1e3) for t in S11_TESTS) + r" \\")
+    lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}", ""]
+    out = os.path.join(ROOT, "manuscript", "rebuild", "data", "step11_lumped_kJ.csv")
+    with open(out, "w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(data[0].keys()))
+        w.writeheader()
+        w.writerows(data)
+    return "\n".join(lines)
+
+
+def table_s13():
+    """Step 11's far-face peaks with no delivery in the five low-maximum tests that did not propagate
+    (results/stage11_overshoot.csv)."""
+    ov = {(r["test"], r["thermal"], r["contact"]): r for r in read_csv(os.path.join(RES, "stage11_overshoot.csv"))}
+    tests = ["M50_PT_Exp1", "M50_PT_Exp3", "M50_PP_Exp3", "M50_ST_Exp1", "M50_ST_Exp2"]
+    lab = dict(s11_draw_labels())
+    rows = [("Measured maximum", None)]
+    rows += [("Central contact: " + lab["mean"][0].lower() + lab["mean"][1:], ("central", "central"))]
+    rows += [("Central contact: " + lab[k][0].lower() + lab[k][1:], (k, "central")) for k in ("kr_min", "kr_max", "c_min", "c_max")]
+    rows += [("Low contact, posterior mean and central properties", ("central", "low")),
+             ("High contact, posterior mean and central properties", ("central", "high"))]
+    lines = [r"\begin{table}[!htbp]", r"\centering", r"\footnotesize",
+             r"\caption{The far face's peak with no delivered heat over 900~s (\textdegree C) in the five tests that did "
+             r"not propagate and report low maxima, with each test's fitted trigger, against the maximum Fransson et "
+             r"al.\ measured: at the central contact under the posterior mean and the central properties and under "
+             r"step~11's four thermal draws, and at the low and high contacts under the posterior mean and the "
+             r"central properties.}",
+             r"\label{tab:s-farface}", r"\setlength{\tabcolsep}{3pt}",
+             r"\begin{tabular}{>{\raggedright\arraybackslash}p{0.36\textwidth}rrrrr}", r"\toprule",
+             r" & " + " & ".join(tex_name(t) for t in tests) + r" \\", r"\midrule"]
+    for name, key in rows:
+        if key is None:
+            cells = ["%.0f" % float(ov[(t, "central", "central")]["M_C"]) for t in tests]
+        else:
+            cells = ["%.1f" % float(ov[(t, key[0], key[1])]["peak_f0_C"]) for t in tests]
+        lines.append(name + " & " + " & ".join(cells) + r" \\")
+        if key is None or key == ("c_max", "central"):
+            lines.append(r"\midrule")
+    lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}", ""]
+    return "\n".join(lines)
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     for name, fn in [("t1_tests.tex", table1), ("t2_parameters.tex", table2), ("t3_bounds.tex", table3),
                      ("s3_thresholds.tex", table_s3), ("s7_needs.tex", table_s7), ("s8_reduced.tex", table_s8),
                      ("s9_heldout.tex", table_s9), ("s10_twobody.tex", table_s10),
-                     ("s11_archived.tex", table_s11)]:
+                     ("s11_archived.tex", table_s11), ("s12_step11.tex", table_s12),
+                     ("s13_farface.tex", table_s13)]:
         open(os.path.join(OUT, name), "w").write(fn())
     print("tables written to", os.path.relpath(OUT, ROOT))
 

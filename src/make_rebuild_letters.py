@@ -68,15 +68,14 @@ def main():
              "negative electrode adds silicon), against sixteen published two-cell tests."),
             "",
             ("In this model the choice matters, in a direction set by the trigger. With each test's "
-             "trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped "
-             "neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times "
-             "in one with a weak trigger. A share of ejected energy calibrated with one treatment would therefore "
+             "trigger fitted to its measured peak, the resolved neighbour's threshold is at least 1.36 times the "
+             "lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and at "
+             "most 0.91 times in one with a weak trigger. A share of ejected energy calibrated with one treatment would therefore "
              "need a trigger-dependent correction to serve the other. Reduced models point to the mechanisms: "
              "conduction for the resolved cell's hot spot up to 120 s, and an energy balance to an ignition "
              "temperature of 218.5 to 230.4 °C for the lumped cell. "
-             "In one test the resolved neighbour runs away with the lumped neighbour's energy only if every reaction "
-             "runs as if over 17.5 K hotter; the kinetics' published uncertainty spans 6.1 K of ignition temperature "
-             "and omits the difference between their materials and the M50's. At the central contact a "
+             "In one test the energy that runs the lumped neighbour away runs the resolved one away under none of "
+             "the kinetic draws tried, and only if every reaction runs as if over 17.5 K hotter. At the central contact a "
              "two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, "
              "most far from a threshold, reproduced every outcome at a fraction of their cost; it puts the resolved "
              "threshold above the lumped in 13 of the 14 strong-trigger tests and below it after both weak triggers."),
@@ -86,8 +85,8 @@ def main():
              "facing side below 27.9 kJ in the first 21.4 s, more than either treatment needs, so the sixteen tests "
              "cannot decide between them. "
              "The one published record of a propagating neighbour fits neither cleanly, its final rise "
-             "starting 37 K cooler than on the resolved model's far side; a heat flux measured on its facing side, "
-             "with the thermocouple's angle, could decide, if the model is otherwise right."),
+             "starting 37 K cooler than on the resolved model's far side; a heat flux measured on its facing side "
+             "could decide, if the model is otherwise right."),
             "",
             j["fit"],
             "",
