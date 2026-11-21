@@ -878,10 +878,10 @@ E += [
 
 # ---------------------------------------------------------------- the reduced model's order of the thresholds, in figures
 E += [
-    (r"in 13 of 14 by a reduced model|above the lumped in 13 of the 14", ["13"],
+    (r"in 13 of 14 by a reduced model|above the lumped in 13 of the 14|in 13 of 14 tests by a two-dimensional|resolved neighbour in 13 of the 14", ["13"],
      F("stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket",
        lambda: [float(sum(1 for t, lo in xs_lo().items() if trig_by_test()[t] > 30000 and lo > lumped_hi()[t]))]), None),
-    (r"in 13 of 14 by a reduced model|above the lumped in 13 of the 14", ["14"],
+    (r"in 13 of 14 by a reduced model|above the lumped in 13 of the 14|in 13 of 14 tests by a two-dimensional|resolved neighbour in 13 of the 14", ["14"],
      F(f"{TRIG}: tests whose E_J exceeds 30 kJ", lambda: [float(sum(1 for x in trig_E() if float(x) > 30000))]), None),
 ]
 

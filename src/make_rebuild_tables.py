@@ -154,7 +154,8 @@ def table3():
                   r"a flame held on the vent's axis, about 0.85~kJ",
             "A2": r"convection by Churchill and Bernstein's relation~\cite{churchill1977correlating} at "
                   r"398.5~m\,s$^{-1}$~\cite{gillich2024mechanical}, at the film temperature of gas at 1500\textdegree C "
-                  r"over a can at 25\textdegree C, with hydrogen's properties at 1000~K~\cite{lienhard2024heat}, at most "
+                  r"over a can at 25\textdegree C, with hydrogen's properties at 1000~K, the highest tabulated, which give a "
+                  r"larger coefficient than air's~\cite{lienhard2024heat}, at most "
                   r"twice the whole-cylinder mean on one half, as the other half's cannot be negative; radiation at "
                   r"1500\textdegree C",
             "A3": r"what the ejecta can release; a narrow jet strikes only from within 30\textdegree{} of the line of "
