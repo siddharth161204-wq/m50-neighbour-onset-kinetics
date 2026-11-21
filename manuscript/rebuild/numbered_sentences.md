@@ -9,14 +9,16 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 
 1. With the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29~K short.
    - 29 (new): results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
-2. Fitted instead to each test's trigger peak, that energy gives resolved thresholds 1.5 and 1.7 times the lumped ones in two strong-trigger tests and 0.85 times after a weak trigger.
+2. Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.
    - 1.5: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    - 1.7 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   - 13: stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13
+   - 14: results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14
    - 0.85 (new): results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
 3. In one test the resolved neighbour needs every reaction run as if over 17.5~K hotter to run away with the lumped one's energy; kinetic uncertainty spans 6.1~K of ignition temperature.
    - 17.5: results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    - 6.1 (new): results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
-4. At the central contact a two-dimensional reactive cross-section afterwards reproduced all 151 archived three-dimensional outcomes, most far from a threshold.
+4. The reduced model, a two-dimensional reactive cross-section, afterwards reproduced all 151 archived three-dimensional outcomes.
    - 151: results/stage15_cross_section.json: A1_summary.runs = 151
 5. The one published record of a propagating neighbour fits neither: its final rise starts 37~K cooler than on the resolved model's far side.
    - 37: results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
@@ -29,7 +31,7 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 7. Nine propagated, 147 to 342~s after the trigger's runaway.
    - 147: smallest and largest of inputs/fransson2024/m50_tests.csv: time_to_propagation_s = 147
    - 342: smallest and largest of inputs/fransson2024/m50_tests.csv: time_to_propagation_s = 342
-8. The neighbours of five of the seven tests that did not propagate peaked at 71 to 133\degC; the other two report 626 and 808\degC, which the paper's note on thermocouples that moved during failure may explain, and are treated as exploratory.
+8. The neighbours of five of the seven tests that did not propagate peaked at 71 to 133\degC; the other two, 626 and 808\degC, which the paper's note on thermocouples that moved during failure may explain, are treated as exploratory.
    - 71: smallest and largest of inputs/fransson2024/m50_tests.csv: neighbour_max_C of the tests that did not propagate, without the two exploratory maxima = 71
    - 133: smallest and largest of inputs/fransson2024/m50_tests.csv: neighbour_max_C of the tests that did not propagate, without the two exploratory maxima = 133
    - 626: inputs/fransson2024/m50_tests.csv: neighbour_max_C where {'propagated': 'No'} = 626
@@ -521,7 +523,7 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
    - 76.74: results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
 103. Torres-Castro et al.'s estimate for pouch cells, 2.0~kJ absorbed on average by the next cell before it failed~ , lies inside the lumped range found here, though a different cell cannot choose between the readings of this one.
    - 2.0: manuscript/data/comparators.csv: value where {'key': 'torrescastro2020passive', 'quantity': 'energy the next cell absorbs before it fails, mean'} = 2
-104. Since the resolved threshold is 1.49 and 1.72 times the lumped one in the two strong-trigger tests where both are bracketed and 0.85 times after the weak trigger, a heat share calibrated in this model with either neighbour cannot be carried to the other without a correction whose sign depends on the trigger; the reactive cross-section gives the resolved reading at a small part of the cost (Section~ ).
+104. Since the resolved threshold is 1.49 and 1.72 times the lumped one in the two strong-trigger tests searched in three dimensions whose lumped threshold is not zero and 0.85 times after the weak trigger, a heat share calibrated in this model with either neighbour cannot be carried to the other without a correction whose sign depends on the trigger; the reactive cross-section gives the resolved reading at a small part of the cost (Section~ ).
    - 1.49 (new): results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    - 1.72 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
    - 0.85 (new): results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
@@ -534,7 +536,7 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
    - 20: results/stage15_paper_numbers.json: B4.shift.least_shift_K = 20
    - 233.6 (new): results/stage15_paper_numbers.json: B3b run s15_B3_PT_Exp4_hold12.5W: far_jump.T_C = 233.595
    - 240.4 (new): results/stage15_paper_numbers.json: B4.shift_runs, the run shifted by 20 K: far_jump.T_C = 240.351
-107. A heat flux measured at several points of the neighbour's facing side, away from the line of contact and through the venting, would give the heat delivered to that half, which the readings need in different amounts, in place of a need inferred through a model; it could decide if the model's other inputs stand (Section~ ) and if it gives the heat delivered to that half to well within the 1.7 to 4.3~kJ by which the two readings' needs differ with the pulse after strong triggers.
+107. A heat flux measured at several points of the neighbour's facing side, away from the line of contact and through the venting, would give the heat delivered to that half, which the readings need in different amounts, in place of a need inferred through a model; it could decide if the model is otherwise right (Section~ ) and if it gives the heat delivered to that half to well within the 1.7 to 4.3~kJ by which the two readings' needs differ with the pulse after strong triggers.
    - 1.7 (new): smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
    - 4.3 (new): smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
 108. The flame's position and temperature beside the cells would bound radiation by geometry, from 27.9~kJ toward 0.85~kJ.
@@ -555,7 +557,7 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 111. \item In the model, with the trigger's body energy held to the largest that calorimetry gives for this cell, conduction and radiation leave the neighbour's hottest point at least 29~K short of 255.7\degC{} at every contact conductance considered.
    - 29 (new): results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    - 255.7: results/manuscript_numbers.json: constants.level_propagation_C = 255.682
-112. \item With 21.4~s of delivered heat the resolved neighbour runs away as a whole at 1.49 and 1.72 times the lumped neighbour's threshold in the two tests with strong triggers where both are bracketed, at least 1.36 times across the brackets, and at 0.85 times, at most 0.90, in the one with a weak trigger.
+112. \item With 21.4~s of delivered heat the resolved neighbour runs away as a whole at 1.49 and 1.72 times the lumped neighbour's threshold in the two strong-trigger tests searched in three dimensions whose lumped threshold is not zero, at least 1.36 times across the brackets, and at 0.85 times, at most 0.90, in the one with a weak trigger.
    - 21.4 (new): results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    - 1.49 (new): results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    - 1.72 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
@@ -603,7 +605,7 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 
 ## manuscript/rebuild/tables/t1_tests.tex: caption
 
-123. \caption{The sixteen two-cell tests of LG M50 cells of Fransson et al.~ (their Tables 3 and 4), and the body energy $E_\mathrm{b}$ that puts the model's trigger at the measured trigger peak at the central contact when released over 21.39~s.
+123. \caption{The sixteen two-cell tests of LG M50 cells of Fransson et al.~ (their Tables 3 and 4), named as they name them without the prefix M50 (PT and PP connected in parallel, ST and SP in series, the second letter naming the cell in the X-ray camera's field of view, the trigger or the propagating cell), and the body energy $E_\mathrm{b}$ that puts the model's trigger at the measured trigger peak at the central contact when released over 21.39~s.
    - 21.39: results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
 124. Category, Fransson et al.'s failure category: 1, the trigger's nail-penetration failure; 2, failure in the propagating cell; 4, sidewall rupture of the trigger (3, sidewall melting, is given for none of these tests); c.m., ``cell movement'' in the X-ray camera's field of view, given in place of a category; a dash, none given.
    - 1: inputs/fransson2024/m50_tests.csv: the failure categories the tests report (Fransson et al.'s codes) = 1
@@ -696,7 +698,7 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 
 ## manuscript/rebuild/highlights.txt
 
-129. Capped at calorimetry, modelled conduction and radiation fall at least 29 K short In two strong-trigger tests the resolved threshold is 1.5 and 1.7 times the lumped To 120 s, conduction sets the hot spot; a lumped cell ignites at 218.5 to 230.4 °C Afterwards, a reactive cross-section matched all 151 archived central-contact runs The tests cannot decide; a facing-side heat flux could, if the other inputs stand
+129. Capped at calorimetry, modelled conduction and radiation fall at least 29 K short In two strong-trigger tests the resolved threshold is 1.5 and 1.7 times the lumped To 120 s, conduction sets the hot spot; a lumped cell ignites at 218.5 to 230.4 °C Afterwards, a reactive cross-section matched all 151 archived central-contact runs Tests cannot decide; a facing-side heat flux could, if the model is otherwise right
    - 29 (new): results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    - 1.5: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    - 1.7 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
@@ -723,81 +725,87 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 
 ## manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt
 
-132. With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both are bracketed, and 0.85 times in the one with a weak trigger.
+132. With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times in one with a weak trigger.
    - 1.5: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    - 1.7 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
    - 31.6: results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    - 54.3: smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    - 0.85 (new): results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
-133. Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway is consistent with an energy balance to an ignition temperature of 218.5 to 230.4 °C.
+133. Reduced models point to the mechanisms: conduction for the resolved cell's hot spot up to 120 s, and an energy balance to an ignition temperature of 218.5 to 230.4 °C for the lumped cell.
    - 120: results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
    - 218.5 (new): results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
    - 230.4 (new): results/stage13_tign.csv: T_ign_C where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'ambient'} = 230.379
 134. In one test the resolved neighbour runs away with the lumped neighbour's energy only if every reaction runs as if over 17.5 K hotter; the kinetics' published uncertainty spans 6.1 K of ignition temperature and omits the difference between their materials and the M50's.
    - 17.5: results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    - 6.1 (new): results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
-135. At the central contact a two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, most far from a threshold, reproduced every outcome at a fraction of their cost.
+135. At the central contact a two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, most far from a threshold, reproduced every outcome at a fraction of their cost; it puts the resolved threshold above the lumped in 13 of the 14 strong-trigger tests and below it after both weak triggers.
    - 151: results/stage15_cross_section.json: A1_summary.runs = 151
+   - 13: stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13
+   - 14: results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14
 136. In the model, with the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29 K short of runaway.
    - 29 (new): results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
-137. No published input bounds a path through the neighbour's facing half below 27.9 kJ within 21.4 s, more than either treatment needs, so the sixteen tests cannot decide between them.
+137. Published inputs cap no route of heat to the neighbour's facing side below 27.9 kJ in the first 21.4 s, more than either treatment needs, so the sixteen tests cannot decide between them.
    - 27.9: results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    - 21.4 (new): results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
-138. The one published record of a propagating neighbour fits neither cleanly, its final rise starting 37 K cooler than on the resolved model's far side; a heat flux measured on its facing side, with the thermocouple's angle, could decide, if the model's other inputs stand.
+138. The one published record of a propagating neighbour fits neither cleanly, its final rise starting 37 K cooler than on the resolved model's far side; a heat flux measured on its facing side, with the thermocouple's angle, could decide, if the model is otherwise right.
    - 37: results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
 139. The code, inputs and run records are archived openly, with the study's 98 predictions, each committed before its runs.
    - 98 (new): manuscript/rebuild/data/predictions_registry.csv: rows = 98
 
 ## manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt
 
-140. With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both are bracketed, and 0.85 times in the one with a weak trigger.
+140. With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times in one with a weak trigger.
    - 1.5: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    - 1.7 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
    - 31.6: results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    - 54.3: smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    - 0.85 (new): results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
-141. Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway is consistent with an energy balance to an ignition temperature of 218.5 to 230.4 °C.
+141. Reduced models point to the mechanisms: conduction for the resolved cell's hot spot up to 120 s, and an energy balance to an ignition temperature of 218.5 to 230.4 °C for the lumped cell.
    - 120: results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
    - 218.5 (new): results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
    - 230.4 (new): results/stage13_tign.csv: T_ign_C where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'ambient'} = 230.379
 142. In one test the resolved neighbour runs away with the lumped neighbour's energy only if every reaction runs as if over 17.5 K hotter; the kinetics' published uncertainty spans 6.1 K of ignition temperature and omits the difference between their materials and the M50's.
    - 17.5: results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    - 6.1 (new): results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
-143. At the central contact a two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, most far from a threshold, reproduced every outcome at a fraction of their cost.
+143. At the central contact a two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, most far from a threshold, reproduced every outcome at a fraction of their cost; it puts the resolved threshold above the lumped in 13 of the 14 strong-trigger tests and below it after both weak triggers.
    - 151: results/stage15_cross_section.json: A1_summary.runs = 151
+   - 13: stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13
+   - 14: results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14
 144. In the model, with the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29 K short of runaway.
    - 29 (new): results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
-145. No published input bounds a path through the neighbour's facing half below 27.9 kJ within 21.4 s, more than either treatment needs, so the sixteen tests cannot decide between them.
+145. Published inputs cap no route of heat to the neighbour's facing side below 27.9 kJ in the first 21.4 s, more than either treatment needs, so the sixteen tests cannot decide between them.
    - 27.9: results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    - 21.4 (new): results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
-146. The one published record of a propagating neighbour fits neither cleanly, its final rise starting 37 K cooler than on the resolved model's far side; a heat flux measured on its facing side, with the thermocouple's angle, could decide, if the model's other inputs stand.
+146. The one published record of a propagating neighbour fits neither cleanly, its final rise starting 37 K cooler than on the resolved model's far side; a heat flux measured on its facing side, with the thermocouple's angle, could decide, if the model is otherwise right.
    - 37: results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
 147. The code, inputs and run records are archived openly, with the study's 98 predictions, each committed before its runs.
    - 98 (new): manuscript/rebuild/data/predictions_registry.csv: rows = 98
 
 ## manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt
 
-148. With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both are bracketed, and 0.85 times in the one with a weak trigger.
+148. With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times in one with a weak trigger.
    - 1.5: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    - 1.7 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
    - 31.6: results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    - 54.3: smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    - 0.85 (new): results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
-149. Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway is consistent with an energy balance to an ignition temperature of 218.5 to 230.4 °C.
+149. Reduced models point to the mechanisms: conduction for the resolved cell's hot spot up to 120 s, and an energy balance to an ignition temperature of 218.5 to 230.4 °C for the lumped cell.
    - 120: results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
    - 218.5 (new): results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
    - 230.4 (new): results/stage13_tign.csv: T_ign_C where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'ambient'} = 230.379
 150. In one test the resolved neighbour runs away with the lumped neighbour's energy only if every reaction runs as if over 17.5 K hotter; the kinetics' published uncertainty spans 6.1 K of ignition temperature and omits the difference between their materials and the M50's.
    - 17.5: results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    - 6.1 (new): results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
-151. At the central contact a two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, most far from a threshold, reproduced every outcome at a fraction of their cost.
+151. At the central contact a two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, most far from a threshold, reproduced every outcome at a fraction of their cost; it puts the resolved threshold above the lumped in 13 of the 14 strong-trigger tests and below it after both weak triggers.
    - 151: results/stage15_cross_section.json: A1_summary.runs = 151
+   - 13: stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13
+   - 14: results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14
 152. In the model, with the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29 K short of runaway.
    - 29 (new): results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
-153. No published input bounds a path through the neighbour's facing half below 27.9 kJ within 21.4 s, more than either treatment needs, so the sixteen tests cannot decide between them.
+153. Published inputs cap no route of heat to the neighbour's facing side below 27.9 kJ in the first 21.4 s, more than either treatment needs, so the sixteen tests cannot decide between them.
    - 27.9: results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    - 21.4 (new): results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
-154. The one published record of a propagating neighbour fits neither cleanly, its final rise starting 37 K cooler than on the resolved model's far side; a heat flux measured on its facing side, with the thermocouple's angle, could decide, if the model's other inputs stand.
+154. The one published record of a propagating neighbour fits neither cleanly, its final rise starting 37 K cooler than on the resolved model's far side; a heat flux measured on its facing side, with the thermocouple's angle, could decide, if the model is otherwise right.
    - 37: results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
 155. The code, inputs and run records are archived openly, with the study's 98 predictions, each committed before its runs.
    - 98 (new): manuscript/rebuild/data/predictions_registry.csv: rows = 98
@@ -806,14 +814,16 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 
 156. With the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29 K short.
    - 29 (new): results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
-157. Fitted instead to each test's trigger peak, that energy gives resolved thresholds 1.5 and 1.7 times the lumped ones in two strong-trigger tests and 0.85 times after a weak trigger.
+157. Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.
    - 1.5: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    - 1.7 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   - 13: stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13
+   - 14: results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14
    - 0.85 (new): results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
 158. In one test the resolved neighbour needs every reaction run as if over 17.5 K hotter to run away with the lumped one's energy; kinetic uncertainty spans 6.1 K of ignition temperature.
    - 17.5: results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    - 6.1 (new): results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
-159. At the central contact a two-dimensional reactive cross-section afterwards reproduced all 151 archived three-dimensional outcomes, most far from a threshold.
+159. The reduced model, a two-dimensional reactive cross-section, afterwards reproduced all 151 archived three-dimensional outcomes.
    - 151: results/stage15_cross_section.json: A1_summary.runs = 151
 160. The one published record of a propagating neighbour fits neither: its final rise starts 37 K cooler than on the resolved model's far side.
    - 37: results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
@@ -822,14 +832,16 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 
 161. With the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29 K short.
    - 29 (new): results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
-162. Fitted instead to each test's trigger peak, that energy gives resolved thresholds 1.5 and 1.7 times the lumped ones in two strong-trigger tests and 0.85 times after a weak trigger.
+162. Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.
    - 1.5: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    - 1.7 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   - 13: stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13
+   - 14: results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14
    - 0.85 (new): results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
 163. In one test the resolved neighbour needs every reaction run as if over 17.5 K hotter to run away with the lumped one's energy; kinetic uncertainty spans 6.1 K of ignition temperature.
    - 17.5: results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    - 6.1 (new): results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
-164. At the central contact a two-dimensional reactive cross-section afterwards reproduced all 151 archived three-dimensional outcomes, most far from a threshold.
+164. The reduced model, a two-dimensional reactive cross-section, afterwards reproduced all 151 archived three-dimensional outcomes.
    - 151: results/stage15_cross_section.json: A1_summary.runs = 151
 165. The one published record of a propagating neighbour fits neither: its final rise starts 37 K cooler than on the resolved model's far side.
    - 37: results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
@@ -838,14 +850,16 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 
 166. With the failing cell's energy held to calorimetry, conduction and radiation leave the neighbour at least 29 K short.
    - 29 (new): results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
-167. Fitted instead to each test's trigger peak, that energy gives resolved thresholds 1.5 and 1.7 times the lumped ones in two strong-trigger tests and 0.85 times after a weak trigger.
+167. Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.
    - 1.5: results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    - 1.7 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   - 13: stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13
+   - 14: results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14
    - 0.85 (new): results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
 168. In one test the resolved neighbour needs every reaction run as if over 17.5 K hotter to run away with the lumped one's energy; kinetic uncertainty spans 6.1 K of ignition temperature.
    - 17.5: results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    - 6.1 (new): results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
-169. At the central contact a two-dimensional reactive cross-section afterwards reproduced all 151 archived three-dimensional outcomes, most far from a threshold.
+169. The reduced model, a two-dimensional reactive cross-section, afterwards reproduced all 151 archived three-dimensional outcomes.
    - 151: results/stage15_cross_section.json: A1_summary.runs = 151
 170. The one published record of a propagating neighbour fits neither: its final rise starts 37 K cooler than on the resolved model's far side.
    - 37: results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008

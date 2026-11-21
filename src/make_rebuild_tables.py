@@ -46,7 +46,9 @@ def table1():
     cat = {"cell movement": "c.m.", "": "--"}
     lines = [r"\begin{table}[!tbp]", r"\centering", r"\footnotesize", r"\setlength{\tabcolsep}{2.6pt}",
              r"\caption{The sixteen two-cell tests of LG M50 cells of Fransson et al.~\cite{fransson2024exploring} "
-             r"(their Tables 3 and 4), and the body energy $E_\mathrm{b}$ that puts the model's trigger at the measured "
+             r"(their Tables 3 and 4), named as they name them without the prefix M50 (PT and PP connected in parallel, "
+             r"ST and SP in series, the second letter naming the cell in the X-ray camera's field of view, the trigger "
+             r"or the propagating cell), and the body energy $E_\mathrm{b}$ that puts the model's trigger at the measured "
              r"trigger peak at the central contact when released over 21.39~s. Times run from the trigger's runaway "
              r"to the neighbour's. The two maxima marked $^{a}$ may not be the neighbour's surface and are treated as "
              r"exploratory. Category, Fransson et al.'s failure category: 1, the trigger's nail-penetration failure; "

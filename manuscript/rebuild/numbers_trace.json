@@ -7,19 +7,31 @@
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "Fitted instead to each test's trigger peak, that energy gives resolved thresholds 1.5 and 1.7 times the lumped ones in two strong-trigger tests and 0.85 times after a weak trigger.",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
   "number": "1.5",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559"
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "Fitted instead to each test's trigger peak, that energy gives resolved thresholds 1.5 and 1.7 times the lumped ones in two strong-trigger tests and 0.85 times after a weak trigger.",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
   "number": "1.7",
   "source": "results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434"
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "Fitted instead to each test's trigger peak, that energy gives resolved thresholds 1.5 and 1.7 times the lumped ones in two strong-trigger tests and 0.85 times after a weak trigger.",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
+  "number": "13",
+  "source": "stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13"
+ },
+ {
+  "segment": "main.tex: abstract",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
+  "number": "14",
+  "source": "results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14"
+ },
+ {
+  "segment": "main.tex: abstract",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
   "number": "0.85",
   "source": "results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599"
  },
@@ -37,7 +49,7 @@
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "At the central contact a two-dimensional reactive cross-section afterwards reproduced all 151 archived three-dimensional outcomes, most far from a threshold.",
+  "sentence": "The reduced model, a two-dimensional reactive cross-section, afterwards reproduced all 151 archived three-dimensional outcomes.",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
  },
@@ -73,25 +85,25 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The neighbours of five of the seven tests that did not propagate peaked at 71 to 133\\degC; the other two report 626 and 808\\degC, which the paper's note on thermocouples that moved during failure may explain, and are treated as exploratory.",
+  "sentence": "The neighbours of five of the seven tests that did not propagate peaked at 71 to 133\\degC; the other two, 626 and 808\\degC, which the paper's note on thermocouples that moved during failure may explain, are treated as exploratory.",
   "number": "71",
   "source": "smallest and largest of inputs/fransson2024/m50_tests.csv: neighbour_max_C of the tests that did not propagate, without the two exploratory maxima = 71"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The neighbours of five of the seven tests that did not propagate peaked at 71 to 133\\degC; the other two report 626 and 808\\degC, which the paper's note on thermocouples that moved during failure may explain, and are treated as exploratory.",
+  "sentence": "The neighbours of five of the seven tests that did not propagate peaked at 71 to 133\\degC; the other two, 626 and 808\\degC, which the paper's note on thermocouples that moved during failure may explain, are treated as exploratory.",
   "number": "133",
   "source": "smallest and largest of inputs/fransson2024/m50_tests.csv: neighbour_max_C of the tests that did not propagate, without the two exploratory maxima = 133"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The neighbours of five of the seven tests that did not propagate peaked at 71 to 133\\degC; the other two report 626 and 808\\degC, which the paper's note on thermocouples that moved during failure may explain, and are treated as exploratory.",
+  "sentence": "The neighbours of five of the seven tests that did not propagate peaked at 71 to 133\\degC; the other two, 626 and 808\\degC, which the paper's note on thermocouples that moved during failure may explain, are treated as exploratory.",
   "number": "626",
   "source": "inputs/fransson2024/m50_tests.csv: neighbour_max_C where {'propagated': 'No'} = 626"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The neighbours of five of the seven tests that did not propagate peaked at 71 to 133\\degC; the other two report 626 and 808\\degC, which the paper's note on thermocouples that moved during failure may explain, and are treated as exploratory.",
+  "sentence": "The neighbours of five of the seven tests that did not propagate peaked at 71 to 133\\degC; the other two, 626 and 808\\degC, which the paper's note on thermocouples that moved during failure may explain, are treated as exploratory.",
   "number": "808",
   "source": "inputs/fransson2024/m50_tests.csv: neighbour_max_C where {'propagated': 'No'} = 808"
  },
@@ -2449,19 +2461,19 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Since the resolved threshold is 1.49 and 1.72 times the lumped one in the two strong-trigger tests where both are bracketed and 0.85 times after the weak trigger, a heat share calibrated in this model with either neighbour cannot be carried to the other without a correction whose sign depends on the trigger; the reactive cross-section gives the resolved reading at a small part of the cost (Section~ ).",
+  "sentence": "Since the resolved threshold is 1.49 and 1.72 times the lumped one in the two strong-trigger tests searched in three dimensions whose lumped threshold is not zero and 0.85 times after the weak trigger, a heat share calibrated in this model with either neighbour cannot be carried to the other without a correction whose sign depends on the trigger; the reactive cross-section gives the resolved reading at a small part of the cost (Section~ ).",
   "number": "1.49",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Since the resolved threshold is 1.49 and 1.72 times the lumped one in the two strong-trigger tests where both are bracketed and 0.85 times after the weak trigger, a heat share calibrated in this model with either neighbour cannot be carried to the other without a correction whose sign depends on the trigger; the reactive cross-section gives the resolved reading at a small part of the cost (Section~ ).",
+  "sentence": "Since the resolved threshold is 1.49 and 1.72 times the lumped one in the two strong-trigger tests searched in three dimensions whose lumped threshold is not zero and 0.85 times after the weak trigger, a heat share calibrated in this model with either neighbour cannot be carried to the other without a correction whose sign depends on the trigger; the reactive cross-section gives the resolved reading at a small part of the cost (Section~ ).",
   "number": "1.72",
   "source": "results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Since the resolved threshold is 1.49 and 1.72 times the lumped one in the two strong-trigger tests where both are bracketed and 0.85 times after the weak trigger, a heat share calibrated in this model with either neighbour cannot be carried to the other without a correction whose sign depends on the trigger; the reactive cross-section gives the resolved reading at a small part of the cost (Section~ ).",
+  "sentence": "Since the resolved threshold is 1.49 and 1.72 times the lumped one in the two strong-trigger tests searched in three dimensions whose lumped threshold is not zero and 0.85 times after the weak trigger, a heat share calibrated in this model with either neighbour cannot be carried to the other without a correction whose sign depends on the trigger; the reactive cross-section gives the resolved reading at a small part of the cost (Section~ ).",
   "number": "0.85",
   "source": "results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599"
  },
@@ -2509,13 +2521,13 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "A heat flux measured at several points of the neighbour's facing side, away from the line of contact and through the venting, would give the heat delivered to that half, which the readings need in different amounts, in place of a need inferred through a model; it could decide if the model's other inputs stand (Section~ ) and if it gives the heat delivered to that half to well within the 1.7 to 4.3~kJ by which the two readings' needs differ with the pulse after strong triggers.",
+  "sentence": "A heat flux measured at several points of the neighbour's facing side, away from the line of contact and through the venting, would give the heat delivered to that half, which the readings need in different amounts, in place of a need inferred through a model; it could decide if the model is otherwise right (Section~ ) and if it gives the heat delivered to that half to well within the 1.7 to 4.3~kJ by which the two readings' needs differ with the pulse after strong triggers.",
   "number": "1.7",
   "source": "smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "A heat flux measured at several points of the neighbour's facing side, away from the line of contact and through the venting, would give the heat delivered to that half, which the readings need in different amounts, in place of a need inferred through a model; it could decide if the model's other inputs stand (Section~ ) and if it gives the heat delivered to that half to well within the 1.7 to 4.3~kJ by which the two readings' needs differ with the pulse after strong triggers.",
+  "sentence": "A heat flux measured at several points of the neighbour's facing side, away from the line of contact and through the venting, would give the heat delivered to that half, which the readings need in different amounts, in place of a need inferred through a model; it could decide if the model is otherwise right (Section~ ) and if it gives the heat delivered to that half to well within the 1.7 to 4.3~kJ by which the two readings' needs differ with the pulse after strong triggers.",
   "number": "4.3",
   "source": "smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433"
  },
@@ -2587,37 +2599,37 @@
  },
  {
   "segment": "main.tex: Conclusions",
-  "sentence": "\\item With 21.4~s of delivered heat the resolved neighbour runs away as a whole at 1.49 and 1.72 times the lumped neighbour's threshold in the two tests with strong triggers where both are bracketed, at least 1.36 times across the brackets, and at 0.85 times, at most 0.90, in the one with a weak trigger.",
+  "sentence": "\\item With 21.4~s of delivered heat the resolved neighbour runs away as a whole at 1.49 and 1.72 times the lumped neighbour's threshold in the two strong-trigger tests searched in three dimensions whose lumped threshold is not zero, at least 1.36 times across the brackets, and at 0.85 times, at most 0.90, in the one with a weak trigger.",
   "number": "21.4",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
  },
  {
   "segment": "main.tex: Conclusions",
-  "sentence": "\\item With 21.4~s of delivered heat the resolved neighbour runs away as a whole at 1.49 and 1.72 times the lumped neighbour's threshold in the two tests with strong triggers where both are bracketed, at least 1.36 times across the brackets, and at 0.85 times, at most 0.90, in the one with a weak trigger.",
+  "sentence": "\\item With 21.4~s of delivered heat the resolved neighbour runs away as a whole at 1.49 and 1.72 times the lumped neighbour's threshold in the two strong-trigger tests searched in three dimensions whose lumped threshold is not zero, at least 1.36 times across the brackets, and at 0.85 times, at most 0.90, in the one with a weak trigger.",
   "number": "1.49",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559"
  },
  {
   "segment": "main.tex: Conclusions",
-  "sentence": "\\item With 21.4~s of delivered heat the resolved neighbour runs away as a whole at 1.49 and 1.72 times the lumped neighbour's threshold in the two tests with strong triggers where both are bracketed, at least 1.36 times across the brackets, and at 0.85 times, at most 0.90, in the one with a weak trigger.",
+  "sentence": "\\item With 21.4~s of delivered heat the resolved neighbour runs away as a whole at 1.49 and 1.72 times the lumped neighbour's threshold in the two strong-trigger tests searched in three dimensions whose lumped threshold is not zero, at least 1.36 times across the brackets, and at 0.85 times, at most 0.90, in the one with a weak trigger.",
   "number": "1.72",
   "source": "results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434"
  },
  {
   "segment": "main.tex: Conclusions",
-  "sentence": "\\item With 21.4~s of delivered heat the resolved neighbour runs away as a whole at 1.49 and 1.72 times the lumped neighbour's threshold in the two tests with strong triggers where both are bracketed, at least 1.36 times across the brackets, and at 0.85 times, at most 0.90, in the one with a weak trigger.",
+  "sentence": "\\item With 21.4~s of delivered heat the resolved neighbour runs away as a whole at 1.49 and 1.72 times the lumped neighbour's threshold in the two strong-trigger tests searched in three dimensions whose lumped threshold is not zero, at least 1.36 times across the brackets, and at 0.85 times, at most 0.90, in the one with a weak trigger.",
   "number": "1.36",
   "source": "results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36"
  },
  {
   "segment": "main.tex: Conclusions",
-  "sentence": "\\item With 21.4~s of delivered heat the resolved neighbour runs away as a whole at 1.49 and 1.72 times the lumped neighbour's threshold in the two tests with strong triggers where both are bracketed, at least 1.36 times across the brackets, and at 0.85 times, at most 0.90, in the one with a weak trigger.",
+  "sentence": "\\item With 21.4~s of delivered heat the resolved neighbour runs away as a whole at 1.49 and 1.72 times the lumped neighbour's threshold in the two strong-trigger tests searched in three dimensions whose lumped threshold is not zero, at least 1.36 times across the brackets, and at 0.85 times, at most 0.90, in the one with a weak trigger.",
   "number": "0.85",
   "source": "results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599"
  },
  {
   "segment": "main.tex: Conclusions",
-  "sentence": "\\item With 21.4~s of delivered heat the resolved neighbour runs away as a whole at 1.49 and 1.72 times the lumped neighbour's threshold in the two tests with strong triggers where both are bracketed, at least 1.36 times across the brackets, and at 0.85 times, at most 0.90, in the one with a weak trigger.",
+  "sentence": "\\item With 21.4~s of delivered heat the resolved neighbour runs away as a whole at 1.49 and 1.72 times the lumped neighbour's threshold in the two strong-trigger tests searched in three dimensions whose lumped threshold is not zero, at least 1.36 times across the brackets, and at 0.85 times, at most 0.90, in the one with a weak trigger.",
   "number": "0.90",
   "source": "results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3 = 0.903373"
  },
@@ -2773,7 +2785,7 @@
  },
  {
   "segment": "manuscript/rebuild/tables/t1_tests.tex: caption",
-  "sentence": "\\caption{The sixteen two-cell tests of LG M50 cells of Fransson et al.~ (their Tables 3 and 4), and the body energy $E_\\mathrm{b}$ that puts the model's trigger at the measured trigger peak at the central contact when released over 21.39~s.",
+  "sentence": "\\caption{The sixteen two-cell tests of LG M50 cells of Fransson et al.~ (their Tables 3 and 4), named as they name them without the prefix M50 (PT and PP connected in parallel, ST and SP in series, the second letter naming the cell in the X-ray camera's field of view, the trigger or the propagating cell), and the body energy $E_\\mathrm{b}$ that puts the model's trigger at the measured trigger peak at the central contact when released over 21.39~s.",
   "number": "21.39",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
  },
@@ -3241,43 +3253,43 @@
  },
  {
   "segment": "manuscript/rebuild/highlights.txt",
-  "sentence": "Capped at calorimetry, modelled conduction and radiation fall at least 29 K short In two strong-trigger tests the resolved threshold is 1.5 and 1.7 times the lumped To 120 s, conduction sets the hot spot; a lumped cell ignites at 218.5 to 230.4 \u00b0C Afterwards, a reactive cross-section matched all 151 archived central-contact runs The tests cannot decide; a facing-side heat flux could, if the other inputs stand",
+  "sentence": "Capped at calorimetry, modelled conduction and radiation fall at least 29 K short In two strong-trigger tests the resolved threshold is 1.5 and 1.7 times the lumped To 120 s, conduction sets the hot spot; a lumped cell ignites at 218.5 to 230.4 \u00b0C Afterwards, a reactive cross-section matched all 151 archived central-contact runs Tests cannot decide; a facing-side heat flux could, if the model is otherwise right",
   "number": "29",
   "source": "results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29"
  },
  {
   "segment": "manuscript/rebuild/highlights.txt",
-  "sentence": "Capped at calorimetry, modelled conduction and radiation fall at least 29 K short In two strong-trigger tests the resolved threshold is 1.5 and 1.7 times the lumped To 120 s, conduction sets the hot spot; a lumped cell ignites at 218.5 to 230.4 \u00b0C Afterwards, a reactive cross-section matched all 151 archived central-contact runs The tests cannot decide; a facing-side heat flux could, if the other inputs stand",
+  "sentence": "Capped at calorimetry, modelled conduction and radiation fall at least 29 K short In two strong-trigger tests the resolved threshold is 1.5 and 1.7 times the lumped To 120 s, conduction sets the hot spot; a lumped cell ignites at 218.5 to 230.4 \u00b0C Afterwards, a reactive cross-section matched all 151 archived central-contact runs Tests cannot decide; a facing-side heat flux could, if the model is otherwise right",
   "number": "1.5",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559"
  },
  {
   "segment": "manuscript/rebuild/highlights.txt",
-  "sentence": "Capped at calorimetry, modelled conduction and radiation fall at least 29 K short In two strong-trigger tests the resolved threshold is 1.5 and 1.7 times the lumped To 120 s, conduction sets the hot spot; a lumped cell ignites at 218.5 to 230.4 \u00b0C Afterwards, a reactive cross-section matched all 151 archived central-contact runs The tests cannot decide; a facing-side heat flux could, if the other inputs stand",
+  "sentence": "Capped at calorimetry, modelled conduction and radiation fall at least 29 K short In two strong-trigger tests the resolved threshold is 1.5 and 1.7 times the lumped To 120 s, conduction sets the hot spot; a lumped cell ignites at 218.5 to 230.4 \u00b0C Afterwards, a reactive cross-section matched all 151 archived central-contact runs Tests cannot decide; a facing-side heat flux could, if the model is otherwise right",
   "number": "1.7",
   "source": "results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434"
  },
  {
   "segment": "manuscript/rebuild/highlights.txt",
-  "sentence": "Capped at calorimetry, modelled conduction and radiation fall at least 29 K short In two strong-trigger tests the resolved threshold is 1.5 and 1.7 times the lumped To 120 s, conduction sets the hot spot; a lumped cell ignites at 218.5 to 230.4 \u00b0C Afterwards, a reactive cross-section matched all 151 archived central-contact runs The tests cannot decide; a facing-side heat flux could, if the other inputs stand",
+  "sentence": "Capped at calorimetry, modelled conduction and radiation fall at least 29 K short In two strong-trigger tests the resolved threshold is 1.5 and 1.7 times the lumped To 120 s, conduction sets the hot spot; a lumped cell ignites at 218.5 to 230.4 \u00b0C Afterwards, a reactive cross-section matched all 151 archived central-contact runs Tests cannot decide; a facing-side heat flux could, if the model is otherwise right",
   "number": "120",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120"
  },
  {
   "segment": "manuscript/rebuild/highlights.txt",
-  "sentence": "Capped at calorimetry, modelled conduction and radiation fall at least 29 K short In two strong-trigger tests the resolved threshold is 1.5 and 1.7 times the lumped To 120 s, conduction sets the hot spot; a lumped cell ignites at 218.5 to 230.4 \u00b0C Afterwards, a reactive cross-section matched all 151 archived central-contact runs The tests cannot decide; a facing-side heat flux could, if the other inputs stand",
+  "sentence": "Capped at calorimetry, modelled conduction and radiation fall at least 29 K short In two strong-trigger tests the resolved threshold is 1.5 and 1.7 times the lumped To 120 s, conduction sets the hot spot; a lumped cell ignites at 218.5 to 230.4 \u00b0C Afterwards, a reactive cross-section matched all 151 archived central-contact runs Tests cannot decide; a facing-side heat flux could, if the model is otherwise right",
   "number": "218.5",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484"
  },
  {
   "segment": "manuscript/rebuild/highlights.txt",
-  "sentence": "Capped at calorimetry, modelled conduction and radiation fall at least 29 K short In two strong-trigger tests the resolved threshold is 1.5 and 1.7 times the lumped To 120 s, conduction sets the hot spot; a lumped cell ignites at 218.5 to 230.4 \u00b0C Afterwards, a reactive cross-section matched all 151 archived central-contact runs The tests cannot decide; a facing-side heat flux could, if the other inputs stand",
+  "sentence": "Capped at calorimetry, modelled conduction and radiation fall at least 29 K short In two strong-trigger tests the resolved threshold is 1.5 and 1.7 times the lumped To 120 s, conduction sets the hot spot; a lumped cell ignites at 218.5 to 230.4 \u00b0C Afterwards, a reactive cross-section matched all 151 archived central-contact runs Tests cannot decide; a facing-side heat flux could, if the model is otherwise right",
   "number": "230.4",
   "source": "results/stage13_tign.csv: T_ign_C where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'ambient'} = 230.379"
  },
  {
   "segment": "manuscript/rebuild/highlights.txt",
-  "sentence": "Capped at calorimetry, modelled conduction and radiation fall at least 29 K short In two strong-trigger tests the resolved threshold is 1.5 and 1.7 times the lumped To 120 s, conduction sets the hot spot; a lumped cell ignites at 218.5 to 230.4 \u00b0C Afterwards, a reactive cross-section matched all 151 archived central-contact runs The tests cannot decide; a facing-side heat flux could, if the other inputs stand",
+  "sentence": "Capped at calorimetry, modelled conduction and radiation fall at least 29 K short In two strong-trigger tests the resolved threshold is 1.5 and 1.7 times the lumped To 120 s, conduction sets the hot spot; a lumped cell ignites at 218.5 to 230.4 \u00b0C Afterwards, a reactive cross-section matched all 151 archived central-contact runs Tests cannot decide; a facing-side heat flux could, if the model is otherwise right",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
  },
@@ -3349,49 +3361,49 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both are bracketed, and 0.85 times in the one with a weak trigger.",
+  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times in one with a weak trigger.",
   "number": "1.5",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both are bracketed, and 0.85 times in the one with a weak trigger.",
+  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times in one with a weak trigger.",
   "number": "1.7",
   "source": "results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both are bracketed, and 0.85 times in the one with a weak trigger.",
+  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times in one with a weak trigger.",
   "number": "31.6",
   "source": "results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both are bracketed, and 0.85 times in the one with a weak trigger.",
+  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times in one with a weak trigger.",
   "number": "54.3",
   "source": "smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both are bracketed, and 0.85 times in the one with a weak trigger.",
+  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times in one with a weak trigger.",
   "number": "0.85",
   "source": "results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway is consistent with an energy balance to an ignition temperature of 218.5 to 230.4 \u00b0C.",
+  "sentence": "Reduced models point to the mechanisms: conduction for the resolved cell's hot spot up to 120 s, and an energy balance to an ignition temperature of 218.5 to 230.4 \u00b0C for the lumped cell.",
   "number": "120",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway is consistent with an energy balance to an ignition temperature of 218.5 to 230.4 \u00b0C.",
+  "sentence": "Reduced models point to the mechanisms: conduction for the resolved cell's hot spot up to 120 s, and an energy balance to an ignition temperature of 218.5 to 230.4 \u00b0C for the lumped cell.",
   "number": "218.5",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway is consistent with an energy balance to an ignition temperature of 218.5 to 230.4 \u00b0C.",
+  "sentence": "Reduced models point to the mechanisms: conduction for the resolved cell's hot spot up to 120 s, and an energy balance to an ignition temperature of 218.5 to 230.4 \u00b0C for the lumped cell.",
   "number": "230.4",
   "source": "results/stage13_tign.csv: T_ign_C where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'ambient'} = 230.379"
  },
@@ -3409,9 +3421,21 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "At the central contact a two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, most far from a threshold, reproduced every outcome at a fraction of their cost.",
+  "sentence": "At the central contact a two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, most far from a threshold, reproduced every outcome at a fraction of their cost; it puts the resolved threshold above the lumped in 13 of the 14 strong-trigger tests and below it after both weak triggers.",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
+ },
+ {
+  "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
+  "sentence": "At the central contact a two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, most far from a threshold, reproduced every outcome at a fraction of their cost; it puts the resolved threshold above the lumped in 13 of the 14 strong-trigger tests and below it after both weak triggers.",
+  "number": "13",
+  "source": "stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13"
+ },
+ {
+  "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
+  "sentence": "At the central contact a two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, most far from a threshold, reproduced every outcome at a fraction of their cost; it puts the resolved threshold above the lumped in 13 of the 14 strong-trigger tests and below it after both weak triggers.",
+  "number": "14",
+  "source": "results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
@@ -3421,19 +3445,19 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "No published input bounds a path through the neighbour's facing half below 27.9 kJ within 21.4 s, more than either treatment needs, so the sixteen tests cannot decide between them.",
+  "sentence": "Published inputs cap no route of heat to the neighbour's facing side below 27.9 kJ in the first 21.4 s, more than either treatment needs, so the sixteen tests cannot decide between them.",
   "number": "27.9",
   "source": "results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "No published input bounds a path through the neighbour's facing half below 27.9 kJ within 21.4 s, more than either treatment needs, so the sixteen tests cannot decide between them.",
+  "sentence": "Published inputs cap no route of heat to the neighbour's facing side below 27.9 kJ in the first 21.4 s, more than either treatment needs, so the sixteen tests cannot decide between them.",
   "number": "21.4",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "The one published record of a propagating neighbour fits neither cleanly, its final rise starting 37 K cooler than on the resolved model's far side; a heat flux measured on its facing side, with the thermocouple's angle, could decide, if the model's other inputs stand.",
+  "sentence": "The one published record of a propagating neighbour fits neither cleanly, its final rise starting 37 K cooler than on the resolved model's far side; a heat flux measured on its facing side, with the thermocouple's angle, could decide, if the model is otherwise right.",
   "number": "37",
   "source": "results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008"
  },
@@ -3445,49 +3469,49 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both are bracketed, and 0.85 times in the one with a weak trigger.",
+  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times in one with a weak trigger.",
   "number": "1.5",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both are bracketed, and 0.85 times in the one with a weak trigger.",
+  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times in one with a weak trigger.",
   "number": "1.7",
   "source": "results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both are bracketed, and 0.85 times in the one with a weak trigger.",
+  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times in one with a weak trigger.",
   "number": "31.6",
   "source": "results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both are bracketed, and 0.85 times in the one with a weak trigger.",
+  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times in one with a weak trigger.",
   "number": "54.3",
   "source": "smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both are bracketed, and 0.85 times in the one with a weak trigger.",
+  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times in one with a weak trigger.",
   "number": "0.85",
   "source": "results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway is consistent with an energy balance to an ignition temperature of 218.5 to 230.4 \u00b0C.",
+  "sentence": "Reduced models point to the mechanisms: conduction for the resolved cell's hot spot up to 120 s, and an energy balance to an ignition temperature of 218.5 to 230.4 \u00b0C for the lumped cell.",
   "number": "120",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway is consistent with an energy balance to an ignition temperature of 218.5 to 230.4 \u00b0C.",
+  "sentence": "Reduced models point to the mechanisms: conduction for the resolved cell's hot spot up to 120 s, and an energy balance to an ignition temperature of 218.5 to 230.4 \u00b0C for the lumped cell.",
   "number": "218.5",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway is consistent with an energy balance to an ignition temperature of 218.5 to 230.4 \u00b0C.",
+  "sentence": "Reduced models point to the mechanisms: conduction for the resolved cell's hot spot up to 120 s, and an energy balance to an ignition temperature of 218.5 to 230.4 \u00b0C for the lumped cell.",
   "number": "230.4",
   "source": "results/stage13_tign.csv: T_ign_C where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'ambient'} = 230.379"
  },
@@ -3505,9 +3529,21 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "At the central contact a two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, most far from a threshold, reproduced every outcome at a fraction of their cost.",
+  "sentence": "At the central contact a two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, most far from a threshold, reproduced every outcome at a fraction of their cost; it puts the resolved threshold above the lumped in 13 of the 14 strong-trigger tests and below it after both weak triggers.",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
+ },
+ {
+  "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
+  "sentence": "At the central contact a two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, most far from a threshold, reproduced every outcome at a fraction of their cost; it puts the resolved threshold above the lumped in 13 of the 14 strong-trigger tests and below it after both weak triggers.",
+  "number": "13",
+  "source": "stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13"
+ },
+ {
+  "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
+  "sentence": "At the central contact a two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, most far from a threshold, reproduced every outcome at a fraction of their cost; it puts the resolved threshold above the lumped in 13 of the 14 strong-trigger tests and below it after both weak triggers.",
+  "number": "14",
+  "source": "results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
@@ -3517,19 +3553,19 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "No published input bounds a path through the neighbour's facing half below 27.9 kJ within 21.4 s, more than either treatment needs, so the sixteen tests cannot decide between them.",
+  "sentence": "Published inputs cap no route of heat to the neighbour's facing side below 27.9 kJ in the first 21.4 s, more than either treatment needs, so the sixteen tests cannot decide between them.",
   "number": "27.9",
   "source": "results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "No published input bounds a path through the neighbour's facing half below 27.9 kJ within 21.4 s, more than either treatment needs, so the sixteen tests cannot decide between them.",
+  "sentence": "Published inputs cap no route of heat to the neighbour's facing side below 27.9 kJ in the first 21.4 s, more than either treatment needs, so the sixteen tests cannot decide between them.",
   "number": "21.4",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "The one published record of a propagating neighbour fits neither cleanly, its final rise starting 37 K cooler than on the resolved model's far side; a heat flux measured on its facing side, with the thermocouple's angle, could decide, if the model's other inputs stand.",
+  "sentence": "The one published record of a propagating neighbour fits neither cleanly, its final rise starting 37 K cooler than on the resolved model's far side; a heat flux measured on its facing side, with the thermocouple's angle, could decide, if the model is otherwise right.",
   "number": "37",
   "source": "results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008"
  },
@@ -3541,49 +3577,49 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both are bracketed, and 0.85 times in the one with a weak trigger.",
+  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times in one with a weak trigger.",
   "number": "1.5",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both are bracketed, and 0.85 times in the one with a weak trigger.",
+  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times in one with a weak trigger.",
   "number": "1.7",
   "source": "results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both are bracketed, and 0.85 times in the one with a weak trigger.",
+  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times in one with a weak trigger.",
   "number": "31.6",
   "source": "results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both are bracketed, and 0.85 times in the one with a weak trigger.",
+  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times in one with a weak trigger.",
   "number": "54.3",
   "source": "smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in the two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ) where both are bracketed, and 0.85 times in the one with a weak trigger.",
+  "sentence": "With each test's trigger fitted to its measured peak, the resolved neighbour's threshold is 1.5 and 1.7 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and 0.85 times in one with a weak trigger.",
   "number": "0.85",
   "source": "results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway is consistent with an energy balance to an ignition temperature of 218.5 to 230.4 \u00b0C.",
+  "sentence": "Reduced models point to the mechanisms: conduction for the resolved cell's hot spot up to 120 s, and an energy balance to an ignition temperature of 218.5 to 230.4 \u00b0C for the lumped cell.",
   "number": "120",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway is consistent with an energy balance to an ignition temperature of 218.5 to 230.4 \u00b0C.",
+  "sentence": "Reduced models point to the mechanisms: conduction for the resolved cell's hot spot up to 120 s, and an energy balance to an ignition temperature of 218.5 to 230.4 \u00b0C for the lumped cell.",
   "number": "218.5",
   "source": "results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "Reduced models point to the mechanisms: up to 120 s, conduction sets the resolved cell's hot spot, and the lumped cell's runaway is consistent with an energy balance to an ignition temperature of 218.5 to 230.4 \u00b0C.",
+  "sentence": "Reduced models point to the mechanisms: conduction for the resolved cell's hot spot up to 120 s, and an energy balance to an ignition temperature of 218.5 to 230.4 \u00b0C for the lumped cell.",
   "number": "230.4",
   "source": "results/stage13_tign.csv: T_ign_C where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'ambient'} = 230.379"
  },
@@ -3601,9 +3637,21 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "At the central contact a two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, most far from a threshold, reproduced every outcome at a fraction of their cost.",
+  "sentence": "At the central contact a two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, most far from a threshold, reproduced every outcome at a fraction of their cost; it puts the resolved threshold above the lumped in 13 of the 14 strong-trigger tests and below it after both weak triggers.",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
+ },
+ {
+  "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
+  "sentence": "At the central contact a two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, most far from a threshold, reproduced every outcome at a fraction of their cost; it puts the resolved threshold above the lumped in 13 of the 14 strong-trigger tests and below it after both weak triggers.",
+  "number": "13",
+  "source": "stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13"
+ },
+ {
+  "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
+  "sentence": "At the central contact a two-dimensional reactive cross-section, set afterwards against all 151 archived three-dimensional runs, most far from a threshold, reproduced every outcome at a fraction of their cost; it puts the resolved threshold above the lumped in 13 of the 14 strong-trigger tests and below it after both weak triggers.",
+  "number": "14",
+  "source": "results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
@@ -3613,19 +3661,19 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "No published input bounds a path through the neighbour's facing half below 27.9 kJ within 21.4 s, more than either treatment needs, so the sixteen tests cannot decide between them.",
+  "sentence": "Published inputs cap no route of heat to the neighbour's facing side below 27.9 kJ in the first 21.4 s, more than either treatment needs, so the sixteen tests cannot decide between them.",
   "number": "27.9",
   "source": "results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "No published input bounds a path through the neighbour's facing half below 27.9 kJ within 21.4 s, more than either treatment needs, so the sixteen tests cannot decide between them.",
+  "sentence": "Published inputs cap no route of heat to the neighbour's facing side below 27.9 kJ in the first 21.4 s, more than either treatment needs, so the sixteen tests cannot decide between them.",
   "number": "21.4",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "The one published record of a propagating neighbour fits neither cleanly, its final rise starting 37 K cooler than on the resolved model's far side; a heat flux measured on its facing side, with the thermocouple's angle, could decide, if the model's other inputs stand.",
+  "sentence": "The one published record of a propagating neighbour fits neither cleanly, its final rise starting 37 K cooler than on the resolved model's far side; a heat flux measured on its facing side, with the thermocouple's angle, could decide, if the model is otherwise right.",
   "number": "37",
   "source": "results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008"
  },
@@ -3643,19 +3691,31 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "Fitted instead to each test's trigger peak, that energy gives resolved thresholds 1.5 and 1.7 times the lumped ones in two strong-trigger tests and 0.85 times after a weak trigger.",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
   "number": "1.5",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "Fitted instead to each test's trigger peak, that energy gives resolved thresholds 1.5 and 1.7 times the lumped ones in two strong-trigger tests and 0.85 times after a weak trigger.",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
   "number": "1.7",
   "source": "results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "Fitted instead to each test's trigger peak, that energy gives resolved thresholds 1.5 and 1.7 times the lumped ones in two strong-trigger tests and 0.85 times after a weak trigger.",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
+  "number": "13",
+  "source": "stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13"
+ },
+ {
+  "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
+  "number": "14",
+  "source": "results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14"
+ },
+ {
+  "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
   "number": "0.85",
   "source": "results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599"
  },
@@ -3673,7 +3733,7 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "At the central contact a two-dimensional reactive cross-section afterwards reproduced all 151 archived three-dimensional outcomes, most far from a threshold.",
+  "sentence": "The reduced model, a two-dimensional reactive cross-section, afterwards reproduced all 151 archived three-dimensional outcomes.",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
  },
@@ -3691,19 +3751,31 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "Fitted instead to each test's trigger peak, that energy gives resolved thresholds 1.5 and 1.7 times the lumped ones in two strong-trigger tests and 0.85 times after a weak trigger.",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
   "number": "1.5",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "Fitted instead to each test's trigger peak, that energy gives resolved thresholds 1.5 and 1.7 times the lumped ones in two strong-trigger tests and 0.85 times after a weak trigger.",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
   "number": "1.7",
   "source": "results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "Fitted instead to each test's trigger peak, that energy gives resolved thresholds 1.5 and 1.7 times the lumped ones in two strong-trigger tests and 0.85 times after a weak trigger.",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
+  "number": "13",
+  "source": "stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13"
+ },
+ {
+  "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
+  "number": "14",
+  "source": "results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14"
+ },
+ {
+  "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
   "number": "0.85",
   "source": "results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599"
  },
@@ -3721,7 +3793,7 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "At the central contact a two-dimensional reactive cross-section afterwards reproduced all 151 archived three-dimensional outcomes, most far from a threshold.",
+  "sentence": "The reduced model, a two-dimensional reactive cross-section, afterwards reproduced all 151 archived three-dimensional outcomes.",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
  },
@@ -3739,19 +3811,31 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "Fitted instead to each test's trigger peak, that energy gives resolved thresholds 1.5 and 1.7 times the lumped ones in two strong-trigger tests and 0.85 times after a weak trigger.",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
   "number": "1.5",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "Fitted instead to each test's trigger peak, that energy gives resolved thresholds 1.5 and 1.7 times the lumped ones in two strong-trigger tests and 0.85 times after a weak trigger.",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
   "number": "1.7",
   "source": "results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "Fitted instead to each test's trigger peak, that energy gives resolved thresholds 1.5 and 1.7 times the lumped ones in two strong-trigger tests and 0.85 times after a weak trigger.",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
+  "number": "13",
+  "source": "stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13"
+ },
+ {
+  "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
+  "number": "14",
+  "source": "results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14"
+ },
+ {
+  "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
+  "sentence": "Fitted to each test's trigger peak, that energy puts the resolved threshold above the lumped after strong triggers, 1.5 and 1.7 times in two three-dimensional searches and in 13 of 14 by a reduced model, and below it, 0.85 times, after weak ones.",
   "number": "0.85",
   "source": "results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599"
  },
@@ -3769,7 +3853,7 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "At the central contact a two-dimensional reactive cross-section afterwards reproduced all 151 archived three-dimensional outcomes, most far from a threshold.",
+  "sentence": "The reduced model, a two-dimensional reactive cross-section, afterwards reproduced all 151 archived three-dimensional outcomes.",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
  },

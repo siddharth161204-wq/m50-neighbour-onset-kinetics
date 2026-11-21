@@ -1,10 +1,12 @@
-numbers_check --rebuild: 630 traced to a named value, 67 found in their table's source files, 0 broad matches (supplement only), 28 counts written in words checked, 0 failures, 66 structural (not looked for)
+numbers_check --rebuild: 644 traced to a named value, 67 found in their table's source files, 0 broad matches (supplement only), 28 counts written in words checked, 0 failures, 66 structural (not looked for)
 
 == main.tex: title  [map]
 == main.tex: abstract  [map]
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 13 <- stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13
+   traced 14 <- results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14
    traced 0.85 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
@@ -507,8 +509,8 @@ numbers_check --rebuild: 630 traced to a named value, 67 found in their table's 
    [label] 1.11  ...every step are archived at Zenodo,   (all versions; version 1.11.0,  , holds every result used here), an...
    [identifier] 4.0  ...tests are those of Fransson et al.~ , published under CC~BY~4.0. The kinetic posterior files are the su...
 == manuscript/rebuild/tables/t1_tests.tex: caption  [map]
-   [label] 3  ...ll tests of LG M50 cells of Fransson et al.~  (their Tables 3 and 4), and the body energy $E_\mathrm{...
-   [label] 4  ...ts of LG M50 cells of Fransson et al.~  (their Tables 3 and 4), and the body energy $E_\mathrm{b}$ th...
+   [label] 3  ...ll tests of LG M50 cells of Fransson et al.~  (their Tables 3 and 4), named as they name them without...
+   [label] 4  ...ts of LG M50 cells of Fransson et al.~  (their Tables 3 and 4), named as they name them without the p...
    traced 21.39 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 1 <- inputs/fransson2024/m50_tests.csv: the failure categories the tests report (Fransson et al.'s codes) = 1
    traced 2 <- inputs/fransson2024/m50_tests.csv: the failure categories the tests report (Fransson et al.'s codes) = 2
@@ -756,6 +758,8 @@ numbers_check --rebuild: 630 traced to a named value, 67 found in their table's 
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
    traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
+   traced 13 <- stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13
+   traced 14 <- results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
@@ -774,6 +778,8 @@ numbers_check --rebuild: 630 traced to a named value, 67 found in their table's 
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
    traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
+   traced 13 <- stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13
+   traced 14 <- results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
@@ -792,6 +798,8 @@ numbers_check --rebuild: 630 traced to a named value, 67 found in their table's 
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
    traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
+   traced 13 <- stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13
+   traced 14 <- results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
@@ -803,6 +811,8 @@ numbers_check --rebuild: 630 traced to a named value, 67 found in their table's 
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 13 <- stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13
+   traced 14 <- results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14
    traced 0.85 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
@@ -813,16 +823,20 @@ numbers_check --rebuild: 630 traced to a named value, 67 found in their table's 
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 13 <- stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13
+   traced 14 <- results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14
    traced 0.85 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
    traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
    traced 37 <- results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
 == manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt  [map]
-   [year or date] 2026  ...sured propagation tests. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
+   [year or date] 2026  ...set against experiments. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 1.5 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
    traced 1.7 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 13 <- stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket = 13
+   traced 14 <- results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ = 14
    traced 0.85 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
