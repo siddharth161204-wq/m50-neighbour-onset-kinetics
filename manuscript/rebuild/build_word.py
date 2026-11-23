@@ -11,6 +11,7 @@ Language project, CC BY-SA 3.0). Equations stay editable Word equations.
 Writes, in manuscript/rebuild/submission/:
   Manuscript.docx, Manuscript.pdf (the LaTeX PDF), Supplementary_material.docx, Supplementary_material.pdf,
   Highlights.docx, Keywords.txt, Figure_1.pdf ... Figure_7.pdf (vector) and Figure_1.tif ... (1,000 dpi), Graphical_abstract.tif and .pdf,
+  the three cover letters (Cover_letter_<journal>.docx and .txt) and the three enquiries (Enquiry_<journal>.txt),
   Manuscript_double_spaced.docx and .pdf (the same text double-spaced at 12 points, to count pages against the Fire
   Safety Journal's preference), and build_report.txt (page counts).
 
@@ -250,6 +251,12 @@ def main():
             os.remove(pdf)      # LibreOffice does not draw Word equations; the PDFs are the LaTeX ones
         rep.append(f"{name}: {n} pages as LibreOffice lays it out (A4, 2.5 cm margins, Times New Roman 12 pt; "
                    "LibreOffice leaves the Word equations out of its PDF, so the count is low by their lines)")
+    # the three cover letters (Word, with their text) and the three enquiries, so that the set is in one folder (Brief 30)
+    import glob as _glob
+    for f in sorted(_glob.glob(os.path.join(HERE, "letters", "Cover_letter_*.docx"))
+                    + _glob.glob(os.path.join(HERE, "letters", "Cover_letter_*.txt"))
+                    + _glob.glob(os.path.join(HERE, "letters", "Enquiry_*.txt"))):
+        shutil.copy(f, os.path.join(OUT, os.path.basename(f)))
     shutil.copy(os.path.join(HERE, "main.pdf"), os.path.join(OUT, "Manuscript.pdf"))
     shutil.copy(os.path.join(HERE, "supplement.pdf"), os.path.join(OUT, "Supplementary_material.pdf"))
     n_tex = int(re.search(r"Pages:\s+(\d+)", subprocess.run(["pdfinfo", os.path.join(OUT, "Manuscript.pdf")],
