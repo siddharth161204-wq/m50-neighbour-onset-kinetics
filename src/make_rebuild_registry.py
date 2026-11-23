@@ -156,7 +156,7 @@ STEPS = [
     (3, "The onsets over 200 kinetic draws and 30 thermal draws", "predictions_stage3.md", "2026-10-12"),
     (4, "Which submodel of the kinetic posterior sets the lead of the hot spot", "predictions_v11.md", "2026-10-16"),
     (5, "The cans in contact and joined by tabs, against the sixteen measured tests", "predictions_v12.md", "2026-10-21"),
-    (6, "Why the model does not propagate: propagation read at 150 C, the least onset temperature of propagation Fransson et al. observed, and the trigger released over the two measured rise times", "predictions_stage6.md", "2026-10-23"),
+    (6, "Why the model does not propagate: propagation read at 150 C, the least onset temperature of propagation in Fransson et al.'s tests, and the trigger released over the two measured rise times", "predictions_stage6.md", "2026-10-23"),
     (7, "Seven ignition criteria scored test by test, each test with its own trigger", "predictions_stage7.md", "2026-10-26"),
     (8, "The delivered fraction of the ejected energy that each test's outcome requires", "predictions_stage8.md", "2026-10-26"),
     (9, "The delivered fraction read from each test's time and peak", "predictions_stage9.md", "2026-10-29"),

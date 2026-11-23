@@ -1,4 +1,4 @@
-numbers_check --rebuild --supplement: 1041 traced to a named value, 2327 found in their table's source files, 281 broad matches (supplement only), 31 counts written in words checked, 0 failures, 248 structural (not looked for)
+numbers_check --rebuild --supplement: 1041 traced to a named value, 2327 found in their table's source files, 281 broad matches (supplement only), 31 counts written in words checked, 0 failures, 236 structural (not looked for)
 
 == main.tex: title  [map]
 == main.tex: abstract  [map]
@@ -3088,7 +3088,6 @@ numbers_check --rebuild --supplement: 1041 traced to a named value, 2327 found i
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
-   [exponent or subscript] 3  ...e-dimensional run to 900~s, so the mean cannot reach it; $^{3}$, a three-dimensional run carried to 9...
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
    [label] 3.7  ...to 900~s; $^{x}$, the reactive cross-section alone (Section~3.7 of the main text). The peak is the thre...
    table 51.0 <- results/stage15_nodelivery.csv:2:mean_peak_3d_C
@@ -3105,7 +3104,6 @@ numbers_check --rebuild --supplement: 1041 traced to a named value, 2327 found i
    table 162.7 <- results/stage15_nodelivery.csv:13:mean_peak_xs_C
    table 137.5 <- results/stage15_nodelivery.csv:14:mean_peak_3d_C
    table 183.6 <- results/stage15_nodelivery.csv:15:mean_peak_3d_C
-   [exponent or subscript] 3  ...58.1$^{h}$ & 162.7$^{x}$ \\ PP-Exp1 & 137.5$^{h}$ & 183.6$^{3}$ & 190.1$^{x}$ \\ PP-Exp2 & 120.8$^{h}...
    table 190.1 <- results/stage15_nodelivery.csv:16:mean_peak_xs_C
    table 120.8 <- results/stage15_nodelivery.csv:17:mean_peak_3d_C
    table 160.5 <- results/stage15_nodelivery.csv:18:mean_peak_3d_C
@@ -3113,39 +3111,29 @@ numbers_check --rebuild --supplement: 1041 traced to a named value, 2327 found i
    table 125.8 <- results/stage15_nodelivery.csv:20:mean_peak_3d_C
    table 167.4 <- results/stage15_nodelivery.csv:21:mean_peak_3d_C
    table 176.5 <- results/stage15_nodelivery.csv:22:mean_peak_3d_C
-   [exponent or subscript] 3  ...65.2$^{x}$ \\ PP-Exp3 & 125.8$^{h}$ & 167.4$^{h}$ & 176.5$^{3}$ \\ PP-Exp4 & 130.7$^{h}$ & 174.2$^{3}...
    table 130.7 <- results/stage15_nodelivery.csv:23:mean_peak_3d_C
    table 174.2 <- results/stage15_nodelivery.csv:24:mean_peak_3d_C
-   [exponent or subscript] 3  ...67.4$^{h}$ & 176.5$^{3}$ \\ PP-Exp4 & 130.7$^{h}$ & 174.2$^{3}$ & 179.9$^{x}$ \\ ST-Exp1 & 131.2$^{h}...
    table 179.9 <- results/stage15_nodelivery.csv:25:mean_peak_xs_C
    table 131.2 <- results/stage15_nodelivery.csv:26:mean_peak_3d_C
    table 179.5 <- results/stage15_nodelivery.csv:27:mean_peak_3d_C
-   [exponent or subscript] 3  ...74.2$^{3}$ & 179.9$^{x}$ \\ ST-Exp1 & 131.2$^{h}$ & 179.5$^{3}$ & 190.8$^{3}$ \\ ST-Exp2 & 124.1$^{h}...
    table 190.8 <- results/stage15_nodelivery.csv:28:mean_peak_3d_C
-   [exponent or subscript] 3  ...79.9$^{x}$ \\ ST-Exp1 & 131.2$^{h}$ & 179.5$^{3}$ & 190.8$^{3}$ \\ ST-Exp2 & 124.1$^{h}$ & 169.5$^{3}...
    table 124.1 <- results/stage15_nodelivery.csv:29:mean_peak_3d_C
    table 169.5 <- results/stage15_nodelivery.csv:30:mean_peak_3d_C
-   [exponent or subscript] 3  ...79.5$^{3}$ & 190.8$^{3}$ \\ ST-Exp2 & 124.1$^{h}$ & 169.5$^{3}$ & 179.5$^{3}$ \\ ST-Exp3 & 68.0$^{h}$...
    table 179.5 <- results/stage15_nodelivery.csv:27:mean_peak_3d_C
-   [exponent or subscript] 3  ...90.8$^{3}$ \\ ST-Exp2 & 124.1$^{h}$ & 169.5$^{3}$ & 179.5$^{3}$ \\ ST-Exp3 & 68.0$^{h}$ & 88.2$^{h}$ ...
    table 68.0 <- results/stage15_nodelivery.csv:32:mean_peak_3d_C
    table 88.2 <- results/stage15_nodelivery.csv:33:mean_peak_3d_C
    table 91.7 <- results/stage15_nodelivery.csv:34:mean_peak_xs_C
    table 127.7 <- results/stage15_nodelivery.csv:35:mean_peak_3d_C
    table 174.6 <- results/stage15_nodelivery.csv:36:mean_peak_3d_C
-   [exponent or subscript] 3  ... 88.2$^{h}$ & 91.7$^{h}$ \\ ST-Exp4 & 127.7$^{h}$ & 174.6$^{3}$ & 185.2$^{x}$ \\ SP-Exp1 & 124.7$^{h}...
    table 185.2 <- results/stage15_nodelivery.csv:37:mean_peak_xs_C
    table 124.7 <- results/stage15_nodelivery.csv:38:mean_peak_3d_C
    table 170.3 <- results/stage15_nodelivery.csv:39:mean_peak_3d_C
-   [exponent or subscript] 3  ...74.6$^{3}$ & 185.2$^{x}$ \\ SP-Exp1 & 124.7$^{h}$ & 170.3$^{3}$ & 180.4$^{x}$ \\ SP-Exp2 & 127.6$^{h}...
    table 180.4 <- results/stage15_nodelivery.csv:40:mean_peak_xs_C
    table 127.6 <- results/stage15_nodelivery.csv:41:mean_peak_3d_C
    table 174.4 <- results/stage15_nodelivery.csv:42:mean_peak_3d_C
-   [exponent or subscript] 3  ...70.3$^{3}$ & 180.4$^{x}$ \\ SP-Exp2 & 127.6$^{h}$ & 174.4$^{3}$ & 185.0$^{x}$ \\ SP-Exp3 & 136.0$^{h}...
    table 185.0 <- results/stage15_nodelivery.csv:43:mean_peak_xs_C
    table 136.0 <- results/stage15_nodelivery.csv:44:mean_peak_3d_C
    table 186.2 <- results/stage15_nodelivery.csv:45:mean_peak_3d_C
-   [exponent or subscript] 3  ...74.4$^{3}$ & 185.0$^{x}$ \\ SP-Exp3 & 136.0$^{h}$ & 186.2$^{3}$ & 199.2$^{x}$ \\ SP-Exp4 & 112.9$^{h}...
    table 199.2 <- results/stage15_nodelivery.csv:46:mean_peak_xs_C
    table 112.9 <- results/stage15_nodelivery.csv:47:mean_peak_3d_C
    table 153.8 <- results/stage15_nodelivery.csv:48:mean_peak_3d_C

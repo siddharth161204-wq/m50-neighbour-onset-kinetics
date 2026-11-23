@@ -647,7 +647,7 @@ def table_s14():
 def table_s15():
     """The resolved neighbour with no delivered heat, every test at the three contacts (results/stage15_nodelivery.csv):
     the peak of its mean and how its outcome is established. h: the hottest point stays below 255.7 C in a
-    three-dimensional run to 900 s (the mean cannot pass it); 3: a three-dimensional run carried to 900 s; x: the
+    three-dimensional run to 900 s (the mean cannot pass it); r: a three-dimensional run carried to 900 s; x: the
     reactive cross-section alone. The peak is the three-dimensional run's where there is one, else the cross-section's."""
     nd = read_csv(os.path.join(RES, "stage15_nodelivery.csv"))
     lines = [r"\begin{table}[!htbp]", r"\centering", r"\footnotesize",
@@ -655,7 +655,7 @@ def table_s15():
              r"test's fitted trigger under the posterior mean and the nominal properties: the peak of its mean "
              r"temperature within 900~s (\textdegree C) and how its outcome, no runaway in every case, is established. "
              r"$^{h}$, the hottest point stays below 255.7\textdegree C in a three-dimensional run to 900~s, so the mean "
-             r"cannot reach it; $^{3}$, a three-dimensional run carried to 900~s; $^{x}$, the reactive cross-section "
+             r"cannot reach it; $^{r}$, a three-dimensional run carried to 900~s; $^{x}$, the reactive cross-section "
              r"alone (Section~3.7 of the main text). The peak is the three-dimensional run's where there is one and "
              r"the cross-section's otherwise.}",
              r"\label{tab:s-nodelivery}", r"\setlength{\tabcolsep}{6pt}",
@@ -670,14 +670,14 @@ def table_s15():
             if r["C1"] == "False":
                 m, peak = "h", r["mean_peak_3d_C"]
             elif r["C8_source"].startswith("archive"):
-                m, peak = "3", r["mean_peak_3d_C"]
+                m, peak = "r", r["mean_peak_3d_C"]
             else:
                 assert r["C8_source"] == "cross-section"
                 m, peak = "x", r["mean_peak_xs_C"]
             counts[(h, m)] = counts.get((h, m), 0) + 1
             cells.append("%.1f$^{%s}$" % (float(peak), m))
         lines.append(tex_name(t) + " & " + " & ".join(cells) + r" \\")
-    assert counts == {("low", "h"): 16, ("central", "h"): 8, ("central", "3"): 8, ("high", "h"): 3, ("high", "3"): 3,
+    assert counts == {("low", "h"): 16, ("central", "h"): 8, ("central", "r"): 8, ("high", "h"): 3, ("high", "r"): 3,
                       ("high", "x"): 10}, counts
     lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}", ""]
     return "\n".join(lines)
