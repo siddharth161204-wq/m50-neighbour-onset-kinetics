@@ -2,11 +2,11 @@
 
 One per journal: one question, whether the manuscript is within scope, and one sentence on why it belongs; the text before the title and abstract is at most 150 words. None of the three journals' guides or editorial-board pages gives an address for enquiries (journal_rules_20261120.md, section 7); the enquiry goes out from the main chat on the author's word.
 
-## Journal of Power Sources (to Ilias Belharouak, Editor-in-Chief; 118 words before the title and abstract)
+## Journal of Power Sources (to Ilias Belharouak, Editor-in-Chief; 119 words before the title and abstract)
 
 Dear Dr Belharouak,
 
-Would the manuscript below be within the scope of the Journal of Power Sources? It estimates, against sixteen published two-cell tests, how much heat must reach a neighbouring lithium-ion cell for thermal runaway to propagate; it shows that the estimate depends on whether the neighbour is modelled as one temperature or as a resolved field, in a direction set by the failing cell, and names the measurement that would remove that dependence. It belongs within the journal's priority areas of safety and of multiscale simulation set against experiments. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), working independently. The title and abstract follow.
+Would the manuscript below be within the scope of the Journal of Power Sources? It estimates, against sixteen published two-cell tests, how much heat must reach a neighbouring lithium-ion cell for thermal runaway to propagate; it shows that the estimate depends on whether the neighbour is modelled as one temperature or as a resolved field, in a direction set by the failing cell, and names the measurement that would remove that dependence. It belongs within the journal's priority area of safety, as a computational study set against published experiments. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), working independently. The title and abstract follow.
 
 Yours sincerely,
 

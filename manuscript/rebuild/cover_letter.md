@@ -2,7 +2,7 @@
 
 One letter per journal; they differ only in the editor addressed, the sentence on the journal's scope and, for the Journal of Power Sources, whose guide asks that the letter carry no funding information or author declarations, the end of the sentence about the author. Word files of each are in `letters/`.
 
-## Journal of Power Sources (Ilias Belharouak, Editor-in-Chief; 482 words)
+## Journal of Power Sources (Ilias Belharouak, Editor-in-Chief; 483 words)
 
 Dear Dr Belharouak,
 
@@ -16,7 +16,7 @@ That estimate depends on the neighbour's treatment, in a direction set by the tr
 
 Published inputs bound no path of the ejecta's heat to the facing side below 27.9 kJ within 21.4 s, more than either treatment needs, so the sixteen tests cannot remove that dependence; a heat flux measured where the neighbour faces the failing cell, to well within the 1.7 to 4.3 kJ by which the two treatments' needs differ, could, if the model is otherwise right.
 
-It falls within the journal's priority areas of safety and of multiscale simulation set against experiments.
+It falls within the journal's priority area of safety, as a computational study set against published experiments.
 
 The code, inputs and run records are archived openly, with the study's 98 predictions, each committed before its runs.
 

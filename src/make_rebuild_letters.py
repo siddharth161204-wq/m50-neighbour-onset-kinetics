@@ -22,8 +22,8 @@ RB = os.path.join(HERE, "..", "manuscript", "rebuild")
 JOURNALS = [
     dict(key="J_Power_Sources", name="Journal of Power Sources", to="Dr Belharouak",
          editor="Ilias Belharouak, Editor-in-Chief",
-         fit=("It falls within the journal's priority areas of safety and of multiscale simulation set against "
-              "experiments."),
+         fit=("It falls within the journal's priority area of safety, as a computational study set against "
+              "published experiments."),
          declarations=False),
     dict(key="J_Energy_Storage", name="Journal of Energy Storage", to="Professor Cabeza and Dr Jurasz",
          editor="Luisa F. Cabeza and Jakub Jurasz, Editors-in-Chief",
