@@ -8,7 +8,8 @@ archive appears on it.
 Colours: the Okabe and Ito set, distinguishable under the common colour-vision deficiencies; every series also has
 its own marker or line style and a legend or a direct label, so no identity rests on colour alone.
 
-Writes manuscript/rebuild/figures/fig1.pdf ... fig7.pdf, a PNG of each at 300 dpi and a TIFF of each for submission
+Writes manuscript/rebuild/figures/fig1.pdf ... fig7.pdf (numbered as the paper cites them since Brief 30: fig2()
+draws the thresholds as Figure 3, fig3() why they differ as Figure 4 and fig4() the needs as Figure 2), a PNG of each at 300 dpi and a TIFF of each for submission
 (Figure_1.tif ..., at 1,000 dpi, the guides' resolution for line art; the PDFs are vector).
 
 Usage: python3 src/make_rebuild_figures.py
@@ -238,7 +239,7 @@ def fig2():
          Line2D([], [], color=C_RES, marker="D", lw=2.6, ms=4.2,
                 label="the same, three-dimensional model (bracket)")]
     ax.legend(handles=h, loc="upper right", fontsize=7.0, ncol=1)
-    save(fig, 2)
+    save(fig, 3)   # the thresholds: Figure 3 in Brief 30's order of the results
 
 
 # ------------------------------------------------------------------------------------------------ Figure 3
@@ -350,7 +351,7 @@ def fig3():
     ax.set_ylabel("Peak of the resolved mean (\u00b0C)")
     grid(ax)
     panel(ax, "d")
-    save(fig, 3)
+    save(fig, 4)   # why the thresholds differ: Figure 4
 
 
 # ------------------------------------------------------------------------------------------------ Figure 4
@@ -432,7 +433,7 @@ def fig4():
     ax.text(0.97, 0.64, "hollow: maxima that may\nnot be the neighbour's\nsurface", transform=ax.transAxes,
             fontsize=6.3, ha="right", va="center", color=MUTED)
     panel(ax, "b")
-    save(fig, 4)
+    save(fig, 2)   # what the tests need: Figure 2, the paper's lead result
 
 
 # ------------------------------------------------------------------------------------------------ Figure 5

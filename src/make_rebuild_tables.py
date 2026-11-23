@@ -335,7 +335,7 @@ def table_s8():
              r"\caption{The local threshold against the reduced models of Section~2.5 of the main text, with triangular "
              r"pulses over the facing half (kJ): PT-Exp1 by the pulse's duration, and ST-Exp3 and PT-Exp3 at 10, 21.4 "
              r"and 60~s. Fourier number, $\alpha\tau/a^2$ with the roll's diffusivity across its layers. Skin model: "
-             r"PT-Exp1 only, as Fig.~3a of the main text draws it. Hottest point "
+             r"PT-Exp1 only, as Fig.~4a of the main text draws it. Hottest point "
              r"without the reaction: with the reaction switched off at the upper end of the resolved bracket, the "
              r"hottest point's peak less 255.7\textdegree C (a negative value falls short). Lumped threshold and the "
              r"ratio of the lumped to the local threshold's midpoint: PT-Exp1 at the central contact. A blank: no "
@@ -447,7 +447,7 @@ def table_s11():
     rows = json.load(open(os.path.join(RES, "stage15_cross_section.json")))["A1_rows"]
     lines = [r"\begin{table}[!htbp]", r"\centering", r"\footnotesize",
              r"\caption{The 151 archived three-dimensional runs at the central contact against which the reactive "
-             r"cross-section was set (Section~3.6 of the main text), by test and delivery: the runs with no delivery, "
+             r"cross-section was set (Section~3.7 of the main text), by test and delivery: the runs with no delivery, "
              r"with the 21.4~s pulse and with constant power over 120, 240 and 360~s; the range of energy delivered; "
              r"the runs in which both models' means reach 255.7\textdegree C; and those held to 332~s, PT-Exp4's "
              r"measured time plus 60~s, made to compare with its history, every other run going to 900~s. In all 151 "
@@ -489,43 +489,48 @@ def s11_draw_labels():
 
 
 def table_s12():
-    """Step 11's lumped thresholds with the 21.39 s pulse at the central contact, under the posterior mean and its eight
-    draws (results/stage11_thresholds.csv, criterion C2), in kJ: the fractions' bracket times the test's ejected energy
-    (results/stage8_ejected.csv). Also writes manuscript/rebuild/data/step11_lumped_kJ.csv, the table's values, for the
-    numbers check."""
+    """Step 11's lumped and local thresholds with the 21.39 s pulse at the central contact, under the posterior mean
+    and its eight draws (results/stage11_thresholds.csv, criteria C2 and C1), in kJ: the fractions' bracket times the
+    test's ejected energy (results/stage8_ejected.csv). Also writes manuscript/rebuild/data/step11_lumped_kJ.csv and
+    step11_local_kJ.csv, the table's values, for the numbers check."""
     ee = {r["id"]: float(r["E_e_J"]) for r in read_csv(os.path.join(RES, "stage8_ejected.csv")) if r["kind"] == "test"}
-    th = {(r["test"], r["draw"]): r for r in read_csv(os.path.join(RES, "stage11_thresholds.csv")) if r["criterion"] == "C2"}
-    data = []
-    lines = [r"\begin{table}[!htbp]", r"\centering", r"\footnotesize",
-             r"\caption{The lumped threshold of the four tests that step~11 searched, with the 21.4~s pulse at the "
+    allth = read_csv(os.path.join(RES, "stage11_thresholds.csv"))
+    lines = [r"\begin{table}[!htbp]", r"\centering", r"\scriptsize",
+             r"\caption{The lumped threshold and the hottest point's of the four tests that step~11 searched, with the "
+             r"21.4~s pulse at the "
              r"central contact, under the posterior mean and the central properties and under the step's eight draws "
-             r"(Section~\ref{sec:s-key}): the bracket between the largest energy run that does not run the lumped "
-             r"neighbour away and the smallest that does, in kJ, on a grid of 0.0125 of the test's ejected energy "
+             r"(Section~\ref{sec:s-key}): the bracket between the largest energy run that does not meet the criterion "
+             r"and the smallest that does, in kJ, on a grid of 0.0125 of the test's ejected energy "
              r"(the last row); 0, met with no delivery. The main text quotes a bracket's midpoint. The kinetic draws "
              r"are ranked, earliest first, by the time of the hot spot's onset in step~3's case; the thermal draws "
              r"are the extremes among thirty over the roll's published ranges.}",
              r"\label{tab:s-step11}", r"\setlength{\tabcolsep}{4pt}",
              r"\begin{tabular}{>{\raggedright\arraybackslash}p{0.33\textwidth}rrrr}", r"\toprule",
              r"Draw & PT-Exp1 & PP-Exp3 & ST-Exp2 & SP-Exp3 \\", r"\midrule"]
-    for key, label in s11_draw_labels():
-        cells = []
-        for t in S11_TESTS:
-            r = th[(t, key)]
-            lo, hi = float(r["lo"] or 0) * ee[t] / 1e3, float(r["hi"] or 0) * ee[t] / 1e3
-            data.append({"test": t, "draw": key, "status": r["status"], "lo_kJ": lo, "hi_kJ": hi,
-                         "E_e_kJ": ee[t] / 1e3})
-            cells.append("0" if r["status"] == "zero" else "(%.2f, %.2f]" % (lo, hi))
-        lines.append(label + " & " + " & ".join(cells) + r" \\")
-        if key in ("mean", "d184"):
-            lines.append(r"\midrule")
-    lines.append(r"\midrule")
+    for crit, head, fname in (("C2", "The lumped threshold", "step11_lumped_kJ.csv"),
+                              ("C1", "The hottest point's threshold", "step11_local_kJ.csv")):
+        th = {(r["test"], r["draw"]): r for r in allth if r["criterion"] == crit}
+        data = []
+        lines.append(r"\multicolumn{5}{l}{\textit{%s}} \\" % head)
+        for key, label in s11_draw_labels():
+            cells = []
+            for t in S11_TESTS:
+                r = th[(t, key)]
+                lo, hi = float(r["lo"] or 0) * ee[t] / 1e3, float(r["hi"] or 0) * ee[t] / 1e3
+                data.append({"test": t, "draw": key, "status": r["status"], "lo_kJ": lo, "hi_kJ": hi,
+                             "E_e_kJ": ee[t] / 1e3})
+                cells.append("0" if r["status"] == "zero" else "(%.2f, %.2f]" % (lo, hi))
+            lines.append(label + " & " + " & ".join(cells) + r" \\")
+            if key in ("mean", "d184"):
+                lines.append(r"\addlinespace[2pt]")
+        lines.append(r"\midrule")
+        out = os.path.join(ROOT, "manuscript", "rebuild", "data", fname)
+        with open(out, "w", newline="") as fh:
+            w = csv.DictWriter(fh, fieldnames=list(data[0].keys()))
+            w.writeheader()
+            w.writerows(data)
     lines.append(r"Ejected energy (kJ) & " + " & ".join("%.2f" % (ee[t] / 1e3) for t in S11_TESTS) + r" \\")
     lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}", ""]
-    out = os.path.join(ROOT, "manuscript", "rebuild", "data", "step11_lumped_kJ.csv")
-    with open(out, "w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=list(data[0].keys()))
-        w.writeheader()
-        w.writerows(data)
     return "\n".join(lines)
 
 
@@ -561,13 +566,56 @@ def table_s13():
     return "\n".join(lines)
 
 
+def table_s14():
+    """The 151 archived runs one by one (results/stage15_cross_section.json, A1_rows): test, delivery, energy, the step
+    whose search made the run, how far it was carried, and each model's outcome, the mean's runaway time or, with none,
+    its peak. A run marked with a dagger repeats the configuration of another run, made in a different step."""
+    rows = json.load(open(os.path.join(RES, "stage15_cross_section.json")))["A1_rows"]
+    key = lambda r: (r["test"], r["shape"], round(r["tau_d_s"], 2), round(r["E_J"], 1))
+    seen = {}
+    for r in rows:
+        seen.setdefault(key(r), []).append(r["id"])
+    order = {t: i for i, t in enumerate(TESTS16)}
+    shape = lambda r: ("none" if r["shape"] == "none" else "pulse" if r["shape"] == "tri" else "%.0f~s" % r["tau_d_s"])
+    srt = sorted(rows, key=lambda r: (order[r["test"]], {"none": 0, "tri": 1, "con": 2}[r["shape"]], r["tau_d_s"], r["E_J"],
+                                      int(r["id"].split("_")[0][1:]), r["id"]))
+    def out(r, m):
+        if r["C8_" + m]:
+            return "runs away, %.1f~s" % r["t_C8_%s_s" % m]
+        return "peak %.1f\\textdegree C" % r["mean_peak_%s_C" % m]
+    lines = [r"{\scriptsize\setlength{\tabcolsep}{4pt}",
+             r"\begin{longtable}{llrrrll}",
+             r"\caption{The 151 archived three-dimensional runs of Table~\ref{tab:s-archived} one by one, at the central "
+             r"contact: the test, the delivery (none, the 21.4~s pulse, or constant power over the time given), the "
+             r"energy delivered to the facing half, the step whose search made the run, how far it was carried, and each "
+             r"model's outcome, the time at which the resolved neighbour's mean reaches 255.7\textdegree C or, where it "
+             r"does not, the mean's peak. A dagger marks the six runs that repeat another's configuration in a different "
+             r"step; they are counted as they were run.}\label{tab:s-archived-runs}\\",
+             r"\toprule", r"Test & Delivery & Energy (kJ) & Step & To (s) & Three-dimensional & Cross-section \\",
+             r"\midrule", r"\endfirsthead",
+             r"\multicolumn{7}{l}{\textit{Continued}} \\", r"\toprule",
+             r"Test & Delivery & Energy (kJ) & Step & To (s) & Three-dimensional & Cross-section \\", r"\midrule",
+             r"\endhead"]
+    first = {}
+    for r in srt:
+        k = key(r)
+        dup = len(seen[k]) > 1 and first.setdefault(k, r["id"]) != r["id"]
+        step = r["id"].split("_")[0][1:]
+        name = r["test"][4:].replace("_", "-") + (r"$^\dagger$" if dup else "")
+        lines.append("%s & %s & %s & %s & %.0f & %s & %s \\\\" % (name, shape(r), ("%.2f" % (r["E_J"] / 1e3)) if r["E_J"] else "0",
+                                                                step, r["t_end_s"], out(r, "3d"), out(r, "xs")))
+    assert sum(1 for x in lines if "dagger" in x and "&" in x and "caption" not in x) == 6
+    lines += [r"\bottomrule", r"\end{longtable}", r"}", ""]
+    return "\n".join(lines)
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     for name, fn in [("t1_tests.tex", table1), ("t2_parameters.tex", table2), ("t3_bounds.tex", table3),
                      ("s3_thresholds.tex", table_s3), ("s7_needs.tex", table_s7), ("s8_reduced.tex", table_s8),
                      ("s9_heldout.tex", table_s9), ("s10_twobody.tex", table_s10),
                      ("s11_archived.tex", table_s11), ("s12_step11.tex", table_s12),
-                     ("s13_farface.tex", table_s13)]:
+                     ("s13_farface.tex", table_s13), ("s14_archived_runs.tex", table_s14)]:
         open(os.path.join(OUT, name), "w").write(fn())
     print("tables written to", os.path.relpath(OUT, ROOT))
 

@@ -7,6 +7,11 @@ stage15_scorecard.json. A failure counts as foreseen under the rule of the count
 (manuscript/data/predictions_by_stage_counts.md): the predictions file recorded it, before the runs, as expected or as
 fixed by its design or by earlier records.
 
+Supplementary Table S2 lists only the predictions whose runs the manuscript or its supplement reports (Brief 30, item
+6): UNREPORTED names the others, each with the reason, and STRIP the reasons in a listed prediction's expectation that
+rest on runs neither document reports, which leave the table. The registry file keeps all 98, with a column saying
+whether the table lists each and, if not, why.
+
 Writes manuscript/rebuild/data/predictions_registry.csv and manuscript/rebuild/data/steps.csv, and the supplement's
 tables manuscript/rebuild/tables/s1_steps.tex and s2_registry.tex.
 
@@ -73,6 +78,54 @@ NEW = [
 ]
 FORESEEN = {(14, "P1"), (14, "P2")}
 
+# The predictions whose runs neither the manuscript nor its supplement reports (Brief 30, item 6), with the reason. They
+# leave Supplementary Table S2; each, with its file and its verdict, stays in this registry file and in the archive.
+EARLIER_GEOMETRY = "its runs are on the earlier two-cell study's geometry, which neither document reports"
+UNREPORTED = {
+    1: {"all": EARLIER_GEOMETRY}, 2: {"all": EARLIER_GEOMETRY}, 3: {"all": EARLIER_GEOMETRY},
+    4: {"all": EARLIER_GEOMETRY},
+    6: {"all": "step 6's runs (the tests' 150 C criterion and the trigger's measured durations) are not reported"},
+    7: {"P2": "the lumped criterion at 150 C (C3) test by test is not reported",
+        "P3": "C3's crossing times are not reported",
+        "P4": "the separator-melting criterion (C4) test by test is not reported",
+        "P5": "the runs with an aged SEI are not reported",
+        "P6": "the lumped neighbour's peaks with no delivered heat test by test are not reported",
+        "P7": "every criterion's count by connection is not reported",
+        "P8": "the internal-short event runs are not reported"},
+    8: {"P4": "the runs at a delivered fraction of 0.2 are not reported",
+        "P5": "the counts at the common fractions 0.1, 0.2 and 0.3 are not reported",
+        "P7": "the runs with Joule heat (the electrical bracket) are not reported",
+        "P8": "the delivery through the quarter of the facing half nearest the cap is not reported"},
+    9: {"P6": "the local criterion's time-matching fractions with 240 s of constant power are not reported",
+        "P8": "the runs with an aged SEI are not reported"},
+    10: {"P2": "the fits of the long deliveries to the history are not reported",
+         "P3": "the 60 s rise before propagation in the model's runs is not reported",
+         "P4": "the peak-matching fractions at the facing and 90 degree nodes are not reported",
+         "P5": "the separation at the facing and 90 degree nodes is not reported",
+         "P7": "the rank correlations are not reported"},
+    11: {"P6": "the six tests' runs under the kinetic draws at the matched fractions are not reported"},
+    13: {"P5": "the threshold over the whole lateral surface is not reported",
+         "P6": "the threshold over the eighth of the facing half nearest the cap is not reported"},
+}
+
+# Reasons in a listed prediction's expectation that rest on runs neither document reports: they leave the table (Brief
+# 30, item 6), and the expectation keeps its verdict word. Each old string must occur in that expectation once.
+STRIP = {
+    (7, "P1"): ("; Stage 6 ignited the hot spot only at the Databank's total energy and, at the median peak, only at "
+                "the high contact", ""),
+    (8, "P1"): ("; the hot spot is close to 255.7 C in several misses", ""),
+    (9, "P1"): (" (the hot spot crosses at 11.9 to 18.5 s at the threshold's upper end)", ""),
+    (9, "P2"): (" (seven upper-end crossings lie inside the window; ST_Exp3's lies at 61.4 s)", ""),
+    # step 6's six runs on which these two rest are reported in the supplement's Section S3: a pointer, no removal
+    (12, "P1"): ("fixed by Stage 6's records", "fixed by Stage 6's records (SREFREGISTRY)"),
+    (12, "P2"): ("(Stage 6, with other tabs)", "(Stage 6, with other tabs; SREFREGISTRY)"),
+}
+
+
+def unreported(stage, lab):
+    u = UNREPORTED.get(int(stage), {})
+    return u.get("all") or u.get(lab, "")
+
 STEPS = [
     # step, question, file, registered (UTC date)
     (1, "Passive kinetics along the archived histories of the earlier two-cell study: when the chemistry starts at the hot spot, the mean and the lumped node", "predictions.md", "2026-10-10"),
@@ -110,7 +163,7 @@ def shown(text):
     t = t.replace("the stage's question", "the step's question").replace("this stage's", "this step's")
     t = t.replace("the file's analysis", "the predictions file's analysis").replace("the file records",
                                                                                   "the predictions file records")
-    t = t.replace("the bullet says", "the brief's line for it says")
+    t = t.replace("the bullet says", "the plan's line for it says").replace("Brief's expectation", "Plan's expectation")
     return t
 
 
@@ -166,54 +219,86 @@ def main():
         rows.append({"stage": str(st), "prediction": lab, "statement": stmt, "expectation": exp, "verdict": v,
                      "foreseen": ("yes" if (st, lab) in FORESEEN else "no") if v == "failed" else "",
                      "foreseen_basis": "", "source": src})
+    for r in rows:
+        why = unreported(r["stage"], r["prediction"])
+        r["in_table_s2"] = "no" if why else "yes"
+        r["not_listed_because"] = why
+        key = (int(r["stage"]), r["prediction"])
+        r["expectation_in_table_s2"] = ""
+        if not why:
+            e = r["expectation"]
+            if key in STRIP:
+                o, n = STRIP[key]
+                assert e.count(o) == 1, (key, o)
+                e = e.replace(o, n)
+            r["expectation_in_table_s2"] = e
+    assert sum(r["in_table_s2"] == "yes" for r in rows) + sum(r["in_table_s2"] == "no" for r in rows) == len(rows)
     with open(os.path.join(OUTD, "predictions_registry.csv"), "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
         w.writeheader()
-        w.writerows(rows)
+        w.writerows([dict(r, expectation_in_table_s2=r["expectation_in_table_s2"].replace(
+            "SREFREGISTRY", "Section S3 of the supplement")) for r in rows])
 
     steps = []
     for n, q, f, d in STEPS:
         rr = [r for r in rows if int(r["stage"]) == n]
+        ll = [r for r in rr if r["in_table_s2"] == "yes"]
         steps.append({"step": n, "question": q, "predictions_file": f, "registered_utc_date": d,
                       "committed": len(rr), "held": sum(r["verdict"] == "held" for r in rr),
                       "failed": sum(r["verdict"] == "failed" for r in rr),
-                      "failed_foreseen": sum(r["foreseen"] == "yes" for r in rr)})
+                      "failed_foreseen": sum(r["foreseen"] == "yes" for r in rr),
+                      "listed": len(ll), "listed_held": sum(r["verdict"] == "held" for r in ll),
+                      "listed_failed": sum(r["verdict"] == "failed" for r in ll),
+                      "listed_failed_foreseen": sum(r["foreseen"] == "yes" for r in ll)})
     with open(os.path.join(OUTD, "steps.csv"), "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(steps[0].keys()))
         w.writeheader()
         w.writerows(steps)
 
-    tot = {k: sum(s[k] for s in steps) for k in ("committed", "held", "failed", "failed_foreseen")}
+    keys = ("committed", "held", "failed", "failed_foreseen", "listed", "listed_held", "listed_failed",
+            "listed_failed_foreseen")
+    tot = {k: sum(s[k] for s in steps) for k in keys}
     t1 = [r"\begin{table}[!htbp]", r"\centering", r"\scriptsize",
           r"\caption{The study's fifteen steps, each with its own predictions committed to the public repository "
-          r"and pushed before its runs (the date is that of the push, UTC), and how many held and failed; a failure "
-          r"is foreseen when the predictions file recorded it as expected before the runs.}",
-          r"\label{tab:s-steps}", r"\setlength{\tabcolsep}{3pt}", r"\begin{tabular}{rp{0.44\textwidth}lrrrr}", r"\toprule",
-          r"Step & What it asked & Registered & Predictions & Held & Failed & Foreseen \\", r"\midrule"]
+          r"and pushed before its runs (the date is that of the push, UTC): how many predictions each registered, how "
+          r"many of them Table~\ref{tab:s-registry} lists, those whose runs the main text or this supplement reports, "
+          r"and how many of these held and failed; a failure is foreseen when the predictions file recorded it as "
+          r"expected before the runs. The verdicts of the others are in the public archive (Section~\ref{sec:s-registry}).}",
+          r"\label{tab:s-steps}", r"\setlength{\tabcolsep}{3pt}", r"\begin{tabular}{rp{0.36\textwidth}lrrrrr}", r"\toprule",
+          r"Step & What it asked & Registered & Predictions & Listed & Held & Failed & Foreseen \\", r"\midrule"]
     for s in steps:
-        t1.append("%d & %s & %s & %d & %d & %d & %d \\\\" % (s["step"], tex(s["question"]), s["registered_utc_date"],
-                                                         s["committed"], s["held"], s["failed"], s["failed_foreseen"]))
-    t1 += [r"\midrule", r"All & & & %d & %d & %d & %d \\" % (tot["committed"], tot["held"], tot["failed"],
-                                                           tot["failed_foreseen"]),
+        cells = (("%d & %d & %d & %d" % (s["listed"], s["listed_held"], s["listed_failed"], s["listed_failed_foreseen"]))
+                 if s["listed"] else "0 & & &")
+        t1.append("%d & %s & %s & %d & %s \\\\" % (s["step"], tex(s["question"]), s["registered_utc_date"],
+                                                s["committed"], cells))
+    t1 += [r"\midrule", r"All & & & %d & %d & %d & %d & %d \\" % (tot["committed"], tot["listed"], tot["listed_held"],
+                                                                tot["listed_failed"], tot["listed_failed_foreseen"]),
            r"\bottomrule", r"\end{tabular}", r"\end{table}"]
     open(os.path.join(OUTT, "s1_steps.tex"), "w").write("\n".join(t1) + "\n")
 
     t2 = [r"{\sloppy\scriptsize\setlength{\tabcolsep}{3pt}", r"\begin{longtable}{>{\raggedright\arraybackslash}p{0.05\textwidth}>{\raggedright\arraybackslash}p{0.065\textwidth}>{\raggedright\arraybackslash}p{0.425\textwidth}>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}p{0.1\textwidth}}",
-          r"\caption{Every prediction, as its predictions file states it (shortened where long), with the expectation recorded "
-          r"before the runs and the verdict. Labels are defined in Section~\ref{sec:s-key}.}\label{tab:s-registry}\\",
+          (r"\caption{The %d predictions whose runs the main text or this supplement reports, of the %d the study "
+           r"registered: %d held and %d failed, %d of the failures foreseen. Each is given as its predictions file states it "
+           r"(shortened where long), with the expectation recorded before the runs and the verdict. Labels are defined in "
+           r"Section~\ref{sec:s-key}.}\label{tab:s-registry}\\") % (tot["listed"], tot["committed"], tot["listed_held"],
+                                                                   tot["listed_failed"], tot["listed_failed_foreseen"]),
           r"\toprule", r"Step & & Prediction & Expectation & Verdict \\", r"\midrule", r"\endfirsthead",
           r"\multicolumn{5}{l}{\textit{Continued}} \\", r"\toprule", r"Step & & Prediction & Expectation & Verdict \\", r"\midrule", r"\endhead"]
     for r in rows:
+        if r["in_table_s2"] != "yes":
+            continue
         v = r["verdict"] + (", foreseen" if r["foreseen"] == "yes" else "")
-        exp = r["expectation"]
+        exp = r["expectation_in_table_s2"]
         if r["foreseen"] == "yes" and "fail" not in exp.lower():
             exp = exp.rstrip(".") + "; the predictions file's analysis: " + basis_quote(r["foreseen_basis"])
         t2.append("%s & %s & %s & %s & %s \\\\" % (r["stage"], tex(r["prediction"]), typeset(tex(shown(r["statement"]))),
-                                                  typeset(tex(shown(exp))), v))
+                                                  typeset(tex(shown(exp))).replace("SREFREGISTRY", r"Section~\ref{sec:s-registry}"), v))
     t2 += [r"\bottomrule", r"\end{longtable}", r"}"]
     open(os.path.join(OUTT, "s2_registry.tex"), "w").write("\n".join(t2) + "\n")
-    print("registry: %d predictions, %d held, %d failed, %d of the failures foreseen" %
-          (tot["committed"], tot["held"], tot["failed"], tot["failed_foreseen"]))
+    print("registry: %d predictions, %d held, %d failed, %d of the failures foreseen; Table S2 lists %d, %d held, "
+          "%d failed, %d foreseen" % (tot["committed"], tot["held"], tot["failed"], tot["failed_foreseen"],
+                                      tot["listed"], tot["listed_held"], tot["listed_failed"],
+                                      tot["listed_failed_foreseen"]))
 
 
 if __name__ == "__main__":

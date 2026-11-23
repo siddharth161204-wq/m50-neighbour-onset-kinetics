@@ -2,6 +2,11 @@ cff-version: 1.2.0
 message: If you use this work, please cite it as below.
 title: "Onset kinetics on a resolved neighbour cell: where a whole-cell threshold and a local one disagree"
 type: software
+abstract: >-
+  Code, inputs and run records of a pre-registered study of thermal runaway onset and propagation between two
+  touching LG M50 cells, set against sixteen published two-cell tests. Version 1.12.0 carries the manuscript
+  "Thermal runaway propagation between two lithium-ion cells: resolved and lumped neighbour models against sixteen
+  tests" (manuscript/rebuild/), not yet submitted.
 authors:
   - family-names: Satte
     given-names: Siddharth
@@ -35,6 +40,14 @@ keywords:
   - Latin hypercube sampling
   - pre-registration
 references:
+  - type: article
+    title: "Thermal runaway propagation between two lithium-ion cells: resolved and lumped neighbour models against sixteen tests"
+    authors:
+      - family-names: Satte
+        given-names: Siddharth
+    status: in-preparation
+    year: 2026
+    notes: "The manuscript of this version, in manuscript/rebuild/."
   - type: software
     title: "Where and when a neighbour cell first reaches thermal-runaway onset temperatures: resolved against lumped, a pre-registered two-cell LG M50 pilot"
     authors:

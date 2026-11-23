@@ -51,7 +51,7 @@ def main():
     title = re.search(r"\\title\{(.*?)\}\n", tex, re.S).group(1)
     abstract = plain(tex[tex.index("\\begin{abstract}") + len("\\begin{abstract}"):tex.index("\\end{abstract}")])
     author = "I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), working independently"
-    sign = ["Yours sincerely,", "", "Siddharth Satte", "Independent researcher, Pune, Maharashtra, India",
+    sign = ["Yours sincerely,", "", "Siddharth Satte", "Independent researcher, Pune, India",
             "siddharth161204@gmail.com"]
     letters, enquiries = [], []
     os.makedirs(os.path.join(RB, "letters"), exist_ok=True)
@@ -61,34 +61,32 @@ def main():
             "",
             f"I submit the manuscript \"{title}\" for consideration as a research article in the {j['name']}.",
             "",
-            ("Propagation models of modules treat each cell as one temperature or a resolved field, and choose "
-             "what share of the failing cell's vented heat reaches its neighbour. The manuscript "
-             "asks how much delivered heat a neighbour needs under each treatment, for two touching LG M50 cells with "
-             "decomposition kinetics fitted to calorimetry of NCM811 and of graphite with its electrolyte (the M50's "
-             "negative electrode adds silicon), against sixteen published two-cell tests. Earlier propagation "
-             "models represent the cell one way or the other; the manuscript sets the two "
-             "side by side on the same inputs and tests."),
-            "",
-            ("In this model the choice matters, in a direction set by the trigger. With each test's "
-             "trigger fitted to its measured peak, the least delivered heat that runs the resolved neighbour away is at "
-             "least 1.36 times the lumped neighbour's in two tests with strong triggers (fitted body energies of 31.6 to 54.3 kJ), and at "
-             "most 0.91 times in one with a weak trigger. A share of ejected energy calibrated with one treatment would therefore "
-             "need a trigger-dependent correction to serve the other. "
-             "In one test the energy that runs the lumped neighbour away runs the resolved one away under none of "
-             "the samples of the kinetics' uncertainty tried, and only if every reaction rate is taken over 17.5 K "
-             "hotter. At the central contact a "
-             "two-dimensional reduced model, set afterwards against all 151 earlier three-dimensional runs, "
-             "most far from a threshold, reproduced every outcome at a fraction of their cost; it puts that heat "
-             "higher for the resolved neighbour in 13 of the 14 strong-trigger tests and lower after both weak "
-             "triggers."),
+            ("Propagation models of modules choose what share of a failing cell's vented heat reaches its neighbour, "
+             "a share the published tests do not measure, and treat each cell as one temperature or as a resolved "
+             "field. The manuscript asks how much of that heat must reach a neighbour for it to follow, and whether "
+             "published tests can say, for two touching LG M50 cells with decomposition kinetics fitted to calorimetry "
+             "of NCM811 and of graphite with its electrolyte (the M50's negative electrode adds silicon), against "
+             "sixteen published two-cell tests."),
             "",
             ("In the model, with the failing cell's energy held to calorimetry, conduction and radiation leave the "
-             "neighbour at least 29 K short of runaway. Published inputs cap no route of heat to the side of the "
-             "neighbour facing the failing cell below 27.9 kJ in the first 21.4 s, more than either treatment needs, so the sixteen tests "
-             "cannot decide between them. "
-             "The one published record of a propagating neighbour fits neither cleanly, its final rise "
-             "starting 37 K cooler than on the resolved model's far side; a heat flux measured where the neighbour "
-             "faces the failing cell could decide, if the model is otherwise right."),
+             "neighbour at least 29 K short of runaway. With each test's trigger fitted to its measured peak, the "
+             "tests that propagated after strong triggers (fitted body energies of 31.6 to 54.3 kJ) need 4.1 to 8.1 kJ "
+             "delivered by their measured times to the side of a resolved neighbour facing the failing cell, by a "
+             "two-dimensional reduced model, and 0.2 to 6.0 kJ for a lumped neighbour: 5.3 to 10.6 % and 0.3 to 7.8 % "
+             "of the median 76.74 kJ that calorimetry measured in this cell's ejecta."),
+            "",
+            ("That estimate depends on the neighbour's treatment, in a direction set by the trigger. With a 21.4 s "
+             "pulse the least delivered heat that runs the resolved neighbour away is 1.36 to 2.27 times the lumped "
+             "neighbour's in two strong-trigger tests searched in three dimensions and 0.80 to 0.91 times in one with a "
+             "weak trigger, so a share calibrated with one treatment needs a trigger-dependent correction to serve the "
+             "other. Earlier propagation models represent the cell one way or the other; the manuscript sets the two "
+             "side by side on the same inputs and tests. The reduced model reproduced the outcome of all 151 earlier "
+             "three-dimensional runs, most of them far from a threshold, at a fraction of their cost."),
+            "",
+            ("Published inputs bound no path of the ejecta's heat to the facing side below 27.9 kJ within 21.4 s, "
+             "more than either treatment needs, so the sixteen tests cannot remove that dependence; a heat flux "
+             "measured where the neighbour faces the failing cell, to well within the 1.7 to 4.3 kJ by which the two "
+             "treatments' needs differ, could, if the model is otherwise right."),
             "",
             j["fit"],
             "",
@@ -103,10 +101,11 @@ def main():
         enq = [
             f"Dear {j['to']},",
             "",
-            (f"Would the manuscript below be within the scope of the {j['name']}? It asks how much heat must reach a "
-             "neighbouring lithium-ion cell for thermal runaway to propagate, with the cell modelled as one "
-             "temperature or as a resolved field; it finds that the two differ in a direction set by the trigger, "
-             "explains each with a reduced model and names the measurement that could decide. "
+            (f"Would the manuscript below be within the scope of the {j['name']}? It estimates, against sixteen "
+             "published two-cell tests, how much heat must reach a neighbouring lithium-ion cell for thermal runaway "
+             "to propagate; it shows that the estimate depends on whether the neighbour is modelled as one "
+             "temperature or as a resolved field, in a direction set by the failing cell, and names the measurement "
+             "that would remove that dependence. "
              + j["fit"].replace("It falls", "It belongs", 1)
              + " " + author + ". The title and abstract follow."),
             "",
@@ -121,7 +120,7 @@ def main():
         os.replace(md, md.replace(".md", ".txt"))
         open(os.path.join(RB, "letters", f"Enquiry_{j['key']}.txt"), "w").write(
             "\n".join(enquiries[-1][1]) + "\n")
-    out = ["# Cover letters (drafts, not sent; 20 November 2026)", "",
+    out = ["# Cover letters (drafts, not sent; 23 November 2026)", "",
            "One letter per journal; they differ only in the editor addressed, the sentence on the journal's scope and, "
            "for the Journal of Power Sources, whose guide asks that the letter carry no funding information or author "
            "declarations, the end of the sentence about the author. Word files of each are in `letters/`.", ""]
@@ -129,7 +128,7 @@ def main():
         words = len(" ".join(body).split())
         out += [f"## {j['name']} ({j['editor']}; {words} words)", ""] + body + [""]
     open(os.path.join(RB, "cover_letter.md"), "w").write("\n".join(out))
-    out = ["# Pre-submission enquiries (drafts, not sent; 20 November 2026)", "",
+    out = ["# Pre-submission enquiries (drafts, not sent; 23 November 2026)", "",
            "One per journal: one question, whether the manuscript is within scope, and one sentence on why it belongs; "
            "the text before the title and abstract is at most 150 words. None of the three journals' guides or "
            "editorial-board pages gives an address for enquiries (journal_rules_20261120.md, section 7); the "

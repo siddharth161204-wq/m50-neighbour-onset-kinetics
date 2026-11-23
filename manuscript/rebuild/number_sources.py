@@ -95,12 +95,33 @@ def lo_hi(where, gen):
     return F("smallest and largest of " + where, fn)
 
 
-def count(verdict=None):
+def count(verdict=None, listed=None, foreseen=None):
+    """Rows of the registry: all 98, or those with a verdict; listed=True or False keeps the rows that Supplementary
+    Table S2 lists or leaves out (Brief 30); foreseen=True keeps the foreseen failures."""
     def get():
         rows = _csv("manuscript/rebuild/data/predictions_registry.csv")
-        return [float(sum(1 for r in rows if verdict is None or r["verdict"] == verdict))]
-    get.where = "manuscript/rebuild/data/predictions_registry.csv: rows" + (f" with verdict {verdict}" if verdict else "")
+        return [float(sum(1 for r in rows if (verdict is None or r["verdict"] == verdict)
+                          and (listed is None or (r["in_table_s2"] == "yes") == listed)
+                          and (foreseen is None or (r["foreseen"] == "yes") == foreseen)))]
+    get.where = ("manuscript/rebuild/data/predictions_registry.csv: rows" + (f" with verdict {verdict}" if verdict else "")
+                 + ("" if listed is None else (", listed in Table S2" if listed else ", not listed in Table S2"))
+                 + (", foreseen" if foreseen else ""))
     return get
+
+
+def share_of_ejecta(col, rows_fn, where):
+    """The smallest and largest of a column of needs (J) over named rows, each as a fraction of the Databank's median
+    ejected energy (results/stage14_inputs.csv, db_Eej_median), for the unit change to per cent (Brief 30: the share
+    is computed by script from the results files, never typed)."""
+    def fn():
+        e_fix = float([r["value"] for r in _csv(INP14) if r["key"] == "db_Eej_median"][0])
+        v = [float(r[col]) / e_fix for r in rows_fn() if r.get(col) not in (None, "")]
+        return [min(v), max(v)]
+    return F(f"smallest and largest of {where}, over {INP14} db_Eej_median", fn)
+
+
+def s6_hot(conn, h, g):
+    return J(f"results/stage6_runs/body_mean_{conn}_h{h}_g{g}_tau21.39_E33.22.json", "resolved.peak_hottest_C")
 
 
 def LIT(key, quantity):
@@ -388,7 +409,7 @@ E = [
     (r"5\.04~kJ|4\.66 and 5\.04|4\.66 to 5\.04", ["5.04"], J(S15, "B4.draws.5.E_J"), "kJ"),
     (r"runs away at 215\.6", ["215.6"], J(READ, "1.PT_Exp4.lumped_cross_s"), None),
     (r"191\.2 to 192\.4", ["191.2", "192.4"], lo_hi(f"{S15}: B4.draws: peak_mean_C", lambda: [v["peak_mean_C"] for v in _json(S15)["B4"]["draws"].values()]), None),
-    (r"aged SEI \(188\.3", ["188.3"], J(S15, "B4.aged.peak_mean_C"), None),
+    (r"aged SEI \(188\.3|set to zero \(188\.3", ["188.3"], J(S15, "B4.aged.peak_mean_C"), None),
     (r"17\.5~K", ["17.5"], F(f"{S15}: B4.shift_runs: the largest shift_K without the mean's runaway",
                              lambda: [max(r["shift_K"] for r in _json(S15)["B4"]["shift_runs"] if not r["C8"])]), None),
     (r"221\.1", ["221.1"], shift_run(17.5, "peak_mean_C"), None),
@@ -449,7 +470,7 @@ E = [
     (r"32\.7 and 75\.8", ["75.8"], C(NEEDS, "need_21s_lo_J", test="M50_PT_Exp2"), "kJ"),
     (r"5\.3 to 25\.4", ["5.3", "25.4"], lo_hi(f"{TAB15}: C8_xs_share_of_76.74kJ", lambda: [r["C8_xs_share_of_76.74kJ"] for r in _csv(TAB15)]), "pct"),
     # ---------------------------------------------------------------- the reactive cross-section
-    (r"(all|the|Against the) 151\b|151 (runs|three-dimensional|central)", ["151"], J(XS, "A1_summary.runs"), None),
+    (r"(all|the|Against the) 151\b|151 (runs|three-dimensional|central)|outcome of 151 earlier", ["151"], J(XS, "A1_summary.runs"), None),
     (r"In the 92 runs", ["92"], J(XS, "A1_summary.dt_C8_s.n"), None),
     (r"1\.0~s later", ["1.0"], J(XS, "A1_summary.dt_C8_s.mean"), None),
     (r"\(5\.5~s earlier", ["5.5"], J(XS, "A1_summary.dt_C8_s.min"), "abs"),
@@ -612,8 +633,6 @@ E += [
     (r"main cluster, 169\.0 to 198\.0|169\.0 to 198\.0", ["198.0"], MD("DECISIONS.md", r"main-cluster mean, 169\.0 to (198\.0)"), None),
     (r"next lower run, 0\.5\\,\\% of the test's ejected energy", ["0.5"], J(XS, "settings.width_ft"), "pct"),
     (r"least resistance at 25\\degC|4\.189~V and 25", ["25"], MD(INP14, r"0\.5 C for 30 s, (25) C"), None),
-    (r"failed, 24 of the failures", ["24"], F("manuscript/rebuild/data/predictions_registry.csv: rows foreseen",
-                                                lambda: [float(sum(1 for r in _csv("manuscript/rebuild/data/predictions_registry.csv") if r["foreseen"] == "yes"))]), None),
     (r"by a factor of 1\.5", ["1.5"], MD("predictions_stage15.md", r"the mesh refined by (1\.5)"), None),
     (r"at most at 199\.2", ["199.2"], lo_hi("results/stage15_nodelivery.csv: mean_peak_xs_C, high contact, outcome from the cross-section",
                                              lambda: [r["mean_peak_xs_C"] for r in _csv("results/stage15_nodelivery.csv") if r["h"] == "high" and r["C8_source"] == "cross-section"]), None),
@@ -630,7 +649,7 @@ E += [
     (r"\(3\.75 to 4\.06\\,\\%", ["4.06"], F("results/stage10_heldout.json: table, M50_PT_Exp4, f9_hi", lambda: [next(r["f9_hi"] for r in _json("results/stage10_heldout.json")["table"] if r["test"] == "M50_PT_Exp4")]), "pct"),
     (r"by 1\.7 to 4\.3|within the 1\.7 to 4\.3", ["1.7", "4.3"], lo_hi(f"{TAB15}: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3",
                                                                        lambda: [float(r["C8_xs_E_by_t_J"]) - float(r["C2_E_by_t_J"]) for r in strong_rows() if r["delivery"].startswith("21.39")]), "kJ"),
-    (r"needs 10\.3 to 13\.8|at 10\.3 to 13\.8|and 10\.3 to 13\.8", ["10.3", "13.8"], lo_hi(f"{TAB15}: ST_Exp3, C8_xs_E_by_t_J", lambda: [r["C8_xs_E_by_t_J"] for r in st3_rows()]), "kJ"),
+    (r"needs 10\.3 to 13\.8|at 10\.3 to 13\.8|and 10\.3 to 13\.8|weak one 10\.3 to 13\.8", ["10.3", "13.8"], lo_hi(f"{TAB15}: ST_Exp3, C8_xs_E_by_t_J", lambda: [r["C8_xs_E_by_t_J"] for r in st3_rows()]), "kJ"),
     (r"11\.5 to 12\.3", ["11.5", "12.3"], lo_hi(f"{TAB15}: ST_Exp3, C2_E_by_t_J", lambda: [r["C2_E_by_t_J"] for r in st3_rows()]), "kJ"),
     (r"they are 12\.1 and", ["12.1"], C(TAB15, "C2_E_by_t_J", test="M50_ST_Exp3", delivery="21.39 s pulse"), "kJ"),
     (r"only with the 240~s delivery|with the 360~s delivery", ["240", "360"], C(TAB15, "tau_s", test="M50_ST_Exp3"), None),
@@ -951,6 +970,46 @@ E += [
      F(f"{S15} B1 against the lumped bracket (rebuild_brackets): PT_Exp4, the lower end rounded down", lambda: [math.floor(ratio_span("PT_Exp4")[0] * 100) / 100]), None),
 ]
 
+# ---------------------------------------------------------------- Brief 30
+B30 = [
+    # the registry: Section 2.7, Supplementary Sections S2 and S3, Tables S1 and S2
+    (r"lists, with their expectations, the 52|lists the 52|The 52 predictions|Of the 52|& 98 & 52", ["52"], count(listed=True), None),
+    (r"Of the 52, 34 held|34 of which held|: 34 held|& 52 & 34", ["34"], count("held", listed=True), None),
+    (r"and 18 failed|6 of the 18 failures|34 held and 18 failed|& 34 & 18", ["18"], count("failed", listed=True), None),
+    (r"6 of the 18 failures|6 of the failures foreseen|& 18 & 6", ["6"], count("failed", listed=True, foreseen=True), None),
+    (r"The other 46", ["46"], count(listed=False), None),
+    (r"of the 98 the study registered|& 98 & 52", ["98"], count(), None),
+    # the needs as shares of the ejecta's measured energy (strong triggers, counted to the runaway)
+    (r"5\.3 to 10\.6", ["5.3", "10.6"], share_of_ejecta("C8_xs_E_by_t_J", lambda: strong_rows(),
+                                                        f"{TAB15}: C8_xs_E_by_t_J, the thirty-two strong-trigger cases"), "pct"),
+    (r"0\.3 to 7\.8", ["0.3", "7.8"], share_of_ejecta("C2_E_by_t_J", lambda: strong_rows(),
+                                                      f"{TAB15}: C2_E_by_t_J, the same thirty-two cases"), "pct"),
+    # Supplementary Section S3: the runs behind step 9's P1 and step 12's P1 and P2
+    (r"rests on 83 of that step's runs", ["83"], F("results/stage9_scorecard.json: predictions.P1.rows, the runs summed",
+                                                     lambda: [float(sum(r["runs"] for r in _json("results/stage9_scorecard.json")["predictions"]["P1"]["rows"]))]), None),
+    (r"came 13\.8 to 21\.1", ["13.8", "21.1"], lo_hi("results/stage9_scorecard.json: predictions.P1.rows, latest_crossing_s",
+                                                      lambda: [r["latest_crossing_s"] for r in _json("results/stage9_scorecard.json")["predictions"]["P1"]["rows"]]), None),
+    (r"peaked at 192\.16", ["192.16"], s6_hot("series", "central", "central"), None),
+    (r"and 191\.90", ["191.90"], s6_hot("parallel", "central", "central"), None),
+    (r"tabs at 226\.14 to 226\.75", ["226.14", "226.75"],
+     lo_hi("results/stage6_runs/body_mean_*_hhigh_g{low,high}_tau21.39_E33.22.json: resolved.peak_hottest_C",
+           lambda: [s6_hot(c, "high", g)()[0] for c in ("series", "parallel") for g in ("low", "high")]), None),
+    (r"releasing 33\.2~kJ over 21\.39", ["33.2"], J("results/stage6_runs/body_mean_series_hcentral_gcentral_tau21.39_E33.22.json", "E_body_J"), "kJ"),
+    (r"releasing 33\.2~kJ over 21\.39", ["21.39"], J("results/stage6_runs/body_mean_series_hcentral_gcentral_tau21.39_E33.22.json", "tau"), None),
+    # Supplementary Section S2: step 3's onsets, by which step 11 ranked its kinetic draws
+    (r"came 6\.01 to 17\.13", ["6.01", "17.13"], lo_hi("results/stage3a_onsets.csv: t_0.15Kpm_s, case two_E33223_tau30_G0.5, hottest node, the 200 kinetic draws",
+                                                        lambda: [r["t_0.15Kpm_s"] for r in _csv("results/stage3a_onsets.csv")
+                                                                 if r["case"] == "two_E33223_tau30_G0.5" and r["history"] == "hottest_node"]), None),
+    (r"at 11\.48~s under the posterior mean", ["11.48"], J("results/stage3a_metrics.json", ["mean_model_stage1_onsets_s", "two_E33223_tau30_G0.5", "hottest_node"]), None),
+    (r"at 6\.25, 10\.23, 16\.04 and 17\.02", ["6.25"], C("results/stage11_draws.csv", "headline_hottest_onset_s", label="d188"), None),
+    (r"at 6\.25, 10\.23, 16\.04 and 17\.02", ["10.23"], C("results/stage11_draws.csv", "headline_hottest_onset_s", label="d83"), None),
+    (r"at 6\.25, 10\.23, 16\.04 and 17\.02", ["16.04"], C("results/stage11_draws.csv", "headline_hottest_onset_s", label="d40"), None),
+    (r"at 6\.25, 10\.23, 16\.04 and 17\.02", ["17.02"], C("results/stage11_draws.csv", "headline_hottest_onset_s", label="d184"), None),
+    (r"ran the earlier geometry's case of 33\.2", ["33.2"], MD("predictions_stage11.md", r"hottest node's onset at (33\.2) kJ"), None),
+    (r"30~s with a 500~mW", ["500"], MD("predictions_stage11.md", r"30 s and (500) mW/K"), None),
+]
+E += B30
+
 WORDS = [
     (r"halved up to sixteen times", 16, MD("src/reactive.py", r"K_MAX = (16)")),
     (r"thirteen of the fourteen with strong triggers", 13, F("stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket",
@@ -959,8 +1018,9 @@ WORDS = [
     (r"under three of the shapes", 3, F(f"{TAB15}: ST_Exp3 shapes with a cross-section need", lambda: [float(sum(1 for r in st3_rows() if r["C8_xs_E_by_t_J"]))])),
     (r"nine of them with both zero", 9, F("results/stage13_twobody.csv: low and high searches with both zero",
                                          lambda: [float(sum(1 for r in _csv("results/stage13_twobody.csv") if r["h"] in ("low", "high") and float(r["B2_E_J"] or 0) == 0 and float(r["lum_mid_J"] or 0) == 0))])),
-    (r"four of the holds known there to be fixed, or nearly", 4, F("manuscript/rebuild/data/predictions_registry.csv: held rows whose expectation records them as fixed",
-                                                        lambda: [float(sum(1 for r in _csv("manuscript/rebuild/data/predictions_registry.csv") if r["verdict"] == "held" and "fixed" in r["expectation"]))])),
+    (r"six of them foreseen", 6, count("failed", listed=True, foreseen=True)),
+    (r"four of them known beforehand to be fixed, or nearly", 4, F("manuscript/rebuild/data/predictions_registry.csv: held rows of Table S2 whose expectation records them as fixed",
+                                                        lambda: [float(sum(1 for r in _csv("manuscript/rebuild/data/predictions_registry.csv") if r["verdict"] == "held" and r["in_table_s2"] == "yes" and "fixed" in r["expectation"]))])),
     (r"Nine propagated", 9, F(f"{TESTS}: tests with propagated Yes", _n_tests(lambda r: r["propagated"] == "Yes"))),
     (r"thirteen of the sixteen tests", 13, F(f"{TRIG}: tests whose E_J exceeds the calorimetry's 33,222.9 J",
                                                lambda: [float(sum(1 for x in trig_E() if float(x) > 33222.9))])),
