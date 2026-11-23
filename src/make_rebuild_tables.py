@@ -496,7 +496,7 @@ def table_s12():
     ee = {r["id"]: float(r["E_e_J"]) for r in read_csv(os.path.join(RES, "stage8_ejected.csv")) if r["kind"] == "test"}
     allth = read_csv(os.path.join(RES, "stage11_thresholds.csv"))
     lines = [r"\begin{table}[!htbp]", r"\centering", r"\scriptsize",
-             r"\caption{The lumped threshold and the hottest point's of the four tests that step~11 searched, with the "
+             r"\caption{The lumped and the hottest point's thresholds of the four tests that step~11 searched, with the "
              r"21.4~s pulse at the "
              r"central contact, under the posterior mean and the central properties and under the step's eight draws "
              r"(Section~\ref{sec:s-key}): the bracket between the largest energy run that does not meet the criterion "
