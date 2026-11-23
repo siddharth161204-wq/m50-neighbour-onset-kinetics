@@ -647,7 +647,7 @@ E += [
     (r"in 29 of the 32 searches over 120 and 360", ["120", "360"], F("results/stage13_twobody.csv: tau_d_s of those searches", lambda: [float(r["tau_d_s"]) for r in twobody_central()]), None),
     (r"\(3\.75 to 4\.06\\,\\%", ["3.75"], F("results/stage10_heldout.json: table, M50_PT_Exp4, f9_lo", lambda: [next(r["f9_lo"] for r in _json("results/stage10_heldout.json")["table"] if r["test"] == "M50_PT_Exp4")]), "pct"),
     (r"\(3\.75 to 4\.06\\,\\%", ["4.06"], F("results/stage10_heldout.json: table, M50_PT_Exp4, f9_hi", lambda: [next(r["f9_hi"] for r in _json("results/stage10_heldout.json")["table"] if r["test"] == "M50_PT_Exp4")]), "pct"),
-    (r"by 1\.7 to 4\.3|within the 1\.7 to 4\.3", ["1.7", "4.3"], lo_hi(f"{TAB15}: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3",
+    (r"by 1\.7 to 4\.3|within the 1\.7 to 4\.3|resolving the 1\.7 to 4\.3", ["1.7", "4.3"], lo_hi(f"{TAB15}: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3",
                                                                        lambda: [float(r["C8_xs_E_by_t_J"]) - float(r["C2_E_by_t_J"]) for r in strong_rows() if r["delivery"].startswith("21.39")]), "kJ"),
     (r"needs 10\.3 to 13\.8|at 10\.3 to 13\.8|and 10\.3 to 13\.8|weak one 10\.3 to 13\.8", ["10.3", "13.8"], lo_hi(f"{TAB15}: ST_Exp3, C8_xs_E_by_t_J", lambda: [r["C8_xs_E_by_t_J"] for r in st3_rows()]), "kJ"),
     (r"11\.5 to 12\.3", ["11.5", "12.3"], lo_hi(f"{TAB15}: ST_Exp3, C2_E_by_t_J", lambda: [r["C2_E_by_t_J"] for r in st3_rows()]), "kJ"),
@@ -773,7 +773,7 @@ E += [
     (r"after having reached 0\.5~K", ["0.5"], MD("src/stage15_inputs.py", r"RISE_SLOW = (0\.5)"), None),
     (r"226\.7\\degC, 29\.0~K short", ["29.0"], F("255.7 C less results/v12_numbers.json: all_runs.res_peak_hottest_C.max",
                                                 lambda: [255.7 - float(_get(_json("results/v12_numbers.json"), "all_runs.res_peak_hottest_C.max"))]), None),
-    (r"low contact its hottest point peaks at most at 162\.6", ["162.6"],
+    (r"low contact its hottest point peaks at most at 162\.6|in all sixteen tests, peaking at most at 162\.6", ["162.6"],
      F("results/stage7_crossings.csv: hot_peak_C, the largest of the per-test runs at the low contact",
        lambda: [max(float(r["hot_peak_C"]) for r in _csv("results/stage7_crossings.csv") if r["h"] == "low" and r["set"] == "pertest")]), None),
     (r"1\.36 to 2\.27|at least 1\.36 times", ["1.36"],
@@ -963,7 +963,7 @@ E += [
     (r"exceeds about 1~K a step", ["1"], MD("src/reactive.py", r"DT_TARGET = (1)\.0"), None),
     (r"by more than 4~K being repeated", ["4"], MD("src/reactive.py", r"DT_ACCEPT = (4)\.0"), None),
     (r"weighed 68\.05 to 68\.52 g", ["68.05", "68.52"], lo_hi("inputs/databank/databank_m50_used.csv: Pre-Test-Cell-Mass-g", databank_mass), None),
-    (r"about 300 s \(Supplementary Section S6\)", ["300"], C(INP14, "value", key="t_flame_max"), None),
+    (r"about 300 s \(Supplementary Section S6\)|for a 21700 cell, about 300 s", ["300"], C(INP14, "value", key="t_flame_max"), None),
     (r"at most 0\.91", ["0.91"], F(f"{S15} B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound",
                                    lambda: [math.ceil(ratio_span("ST_Exp3")[1] * 100) / 100]), None),
     (r"at least 1\.38 times \| PT-Exp4", ["1.38"],
@@ -1010,6 +1010,79 @@ B30 = [
 ]
 E += B30
 
+def _xs_run(test, shape, tau, which):
+    """A run of the reactive cross-section's search for the measured time (results/stage15_xs/*.json), picked by its
+    test, its delivery and, among those, the largest energy (which='last'): the run at the top of the search's grid."""
+    def fn():
+        rows = []
+        for f in glob.glob(os.path.join(RES, "stage15_xs", "*.json")):
+            d = _json(os.path.relpath(f, ROOT))
+            c = d.get("case", {})
+            dl = c.get("deliveries", [])
+            if (c.get("test") == test and c.get("h") == "central" and c.get("kin") == "mean" and len(dl) == 1
+                    and dl[0]["shape"] == shape and abs(dl[0]["tau_s"] - tau) < 1e-6 and not c.get("shift_K")):
+                rows.append(d)
+        top = max(rows, key=lambda d: d["case"]["deliveries"][0]["E_J"])
+        # the grid's top run is the last point of the search the cross-section file records
+        last = [r for r in _json(XS)["A2_at_measured"] if r["test"] == test and r["shape"] == shape
+                and abs(r["tau_s"] - tau) < 1e-6][0]["points"][-1]
+        assert abs(top["t_c8_s"] - last[1]) < 1e-9
+        return [top["case"]["deliveries"][0]["E_J"] if which == "E" else top["t_c8_s"]]
+    return F(f"results/stage15_xs/*.json: {test}, {shape} over {tau:.0f} s, the run at the top of the grid, "
+             + ("its delivered energy" if which == "E" else "its C8 time") + f" (the last point of {XS} A2_at_measured)", fn)
+
+
+def _nd(h, rule):
+    """Tests of results/stage15_nodelivery.csv at a contact whose no-delivery outcome rests on a rule: 'h', the hottest
+    point below the level in a three-dimensional run; '3', a three-dimensional run carried to 900 s; 'x', the
+    cross-section alone."""
+    def fn():
+        rows = [r for r in _csv("results/stage15_nodelivery.csv") if r["h"] == h]
+        if rule == "h":
+            n = sum(1 for r in rows if r["C1"] == "False")
+        elif rule == "3":
+            n = sum(1 for r in rows if r["C1"] == "True" and r["C8_source"].startswith("archive"))
+        else:
+            n = sum(1 for r in rows if r["C8_source"] == "cross-section")
+        return [float(n)]
+    return F(f"results/stage15_nodelivery.csv: {h}-contact rows, rule {rule}", fn)
+
+
+def _grid(part=None):
+    def fn():
+        g = _json("results/stage14_raytrace.json")["w_grid"]
+        return [float(len(g) if part is None else sum(1 for p in g if p["part"] == part))]
+    return F("results/stage14_raytrace.json: w_grid points" + (f", part {part}" if part else ""), fn)
+
+
+V12P = "predictions_v12.md"
+B30R2 = [
+    # Section 3.2, Fig. 2's caption and Table S7: the top of ST-Exp3's 360 s search
+    (r"up to 25\.6~kJ|with 25\.6~kJ", ["25.6"], _xs_run("M50_ST_Exp3", "con", 360.0, "E"), "kJ"),
+    (r"earlier than 196\.4", ["196.4"], _xs_run("M50_ST_Exp3", "con", 360.0, "t"), None),
+    # Supplementary Section S1: step 5's hand estimates, as its predictions file set them out
+    (r"trigger's 33\.2~kJ would raise it", ["33.2"], MD(V12P, r"release of (33\.2) kJ would raise it"), None),
+    (r"raise it 538~K adiabatically", ["538"], MD(V12P, r"would raise it (538) K adiabatically"), None),
+    (r"both cells 269~K", ["269"], MD(V12P, r"would raise them (269) K"), None),
+    (r"time scale of 181~s", ["181"], MD(V12P, r"time scale C/\(2G\) of (181) s"), None),
+    (r"\(614 and 132~s at the low", ["614"], MD(V12P, r"\((614) s and 132 s at the low"), None),
+    (r"\(614 and 132~s at the low", ["132"], MD(V12P, r"614 s and (132) s at the low"), None),
+    (r"near 145 to 170", ["145"], MD(V12P, r"passive peak near (145) to 170 C"), None),
+    (r"near 145 to 170", ["170"], MD(V12P, r"passive peak near 145 to (170) C"), None),
+    (r"200 to 250~s after the release", ["200"], MD(V12P, r"(200) to 250 s after the release"), None),
+    (r"200 to 250~s after the release", ["250"], MD(V12P, r"200 to (250) s after the release"), None),
+    (r"near 190 to 200", ["190"], MD(V12P, r"sits near (190) to 200 C"), None),
+    (r"near 190 to 200", ["200"], MD(V12P, r"sits near 190 to (200) C"), None),
+    (r"pass about 220", ["220"], MD(V12P, r"must pass about (220) C"), None),
+    # Supplementary Section S1: step 7's further criteria
+    (r"lumped neighbour at 138\.5", ["138.5"], MD("predictions_stage7.md", r"the lumped neighbour reaches (138\.5) C"), None),
+    # Supplementary Section S6: the ray tracing's grid
+    (r"from each of 181 emitter points", ["181"], _grid(), None),
+    (r"147 on a polar grid", ["147"], _grid("column"), None),
+    (r"and 28 approaching", ["28"], _grid("edge"), None),
+]
+E += B30R2
+
 WORDS = [
     (r"halved up to sixteen times", 16, MD("src/reactive.py", r"K_MAX = (16)")),
     (r"thirteen of the fourteen with strong triggers", 13, F("stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket",
@@ -1019,6 +1092,7 @@ WORDS = [
     (r"nine of them with both zero", 9, F("results/stage13_twobody.csv: low and high searches with both zero",
                                          lambda: [float(sum(1 for r in _csv("results/stage13_twobody.csv") if r["h"] in ("low", "high") and float(r["B2_E_J"] or 0) == 0 and float(r["lum_mid_J"] or 0) == 0))])),
     (r"six of them foreseen", 6, count("failed", listed=True, foreseen=True)),
+    (r"at the high contact ten of the outcomes rest on the reactive cross-section alone", 10, _nd("high", "x")),
     (r"four of them known beforehand to be fixed, or nearly", 4, F("manuscript/rebuild/data/predictions_registry.csv: held rows of Table S2 whose expectation records them as fixed",
                                                         lambda: [float(sum(1 for r in _csv("manuscript/rebuild/data/predictions_registry.csv") if r["verdict"] == "held" and r["in_table_s2"] == "yes" and "fixed" in r["expectation"]))])),
     (r"Nine propagated", 9, F(f"{TESTS}: tests with propagated Yes", _n_tests(lambda r: r["propagated"] == "Yes"))),
@@ -1039,7 +1113,7 @@ WORDS = [
     (r"Of the five tests that did not propagate and report low maxima", 5, F(f"{TESTS}: tests that did not propagate, below 600 C",
                                                                               _n_tests(lambda r: r["propagated"] == "No" and float(r["neighbour_max_C"]) < 600))),
     (r"four need none", 4, F("results/stage9_paper_numbers.json: part_a.A3 tests with an overshoot", lambda: [float(len(overshoot()))])),
-    (r"In twenty-five of them a run reproduces", 25, F(f"{TAB15}: matched cases outside ST_Exp3", lambda: [float(len(matched_rows()))])),
+    (r"In twenty-five of them a run of the resolved neighbour reproduces", 25, F(f"{TAB15}: matched cases outside ST_Exp3", lambda: [float(len(matched_rows()))])),
     (r"in the same thirty-two cases", 32, F(f"{TAB15}: cases outside ST_Exp3",
                                                      lambda: [float(sum(1 for r in _csv(TAB15) if r["test"] != "M50_ST_Exp3"))])),
     (r"in the other seven, shorter deliveries", 7, F(f"{TAB15}: cases outside ST_Exp3 whose cross-section need is a threshold",

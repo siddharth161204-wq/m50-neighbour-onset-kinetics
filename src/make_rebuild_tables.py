@@ -120,15 +120,16 @@ def table2():
         (r"\textit{Delivered heat}", None, None),
         ("Region", "the half of the neighbour's can facing the trigger, a uniform flux", "this study"),
         ("Shapes", ("triangular over 21.39 s; constant power over 120, 240 or 360 s, the last outlasting the "
-                    "longest combustion reported for a 21700 cell, about %.0f s (Supplementary Section S6); in "
+                    "longest combustion reported for a 21700 cell, about %.0f s~\\cite{chen2023comprehensive}; in "
                     "PT-Exp4 also the pulse " % flame_s()) +
                    r"followed by a constant power; for Section~\ref{sec:res-why}, triangular over 5 to 360 s",
          "this study"),
     ]
     lines = [r"\begin{table}[!tbp]", r"\centering", r"\scriptsize",
              r"\caption{The model's parameters and their sources. The two-cell geometry and its solver are those of "
-             r"an earlier, archived study by the author~\cite{satte2026twocell}; $^{a}$, a value that study set "
-             r"without a primary source, held here as an assumption.}",
+             r"an earlier, archived study by the author~\cite{satte2026twocell}, whose cells stood apart and were joined "
+             r"by busbars; here the cans touch along a line and welded tabs join the cells, as in the tests. $^{a}$, a "
+             r"value that study set without a primary source, held here as an assumption.}",
              r"\label{tab:params}", r"\renewcommand{\arraystretch}{0.9}",
              r"\setlength{\tabcolsep}{4pt}", r"\begin{tabular}{>{\raggedright\arraybackslash}p{0.28\textwidth}>{\raggedright\arraybackslash}p{0.43\textwidth}>{\raggedright\arraybackslash}p{0.21\textwidth}}", r"\toprule",
              r"Quantity & Value & Source \\", r"\midrule"]
@@ -260,10 +261,13 @@ def table_s7():
              r"the measured time is reproduced only between the two, within that resolution of the threshold; the "
              r"energy is counted to that run's runaway; "
              r"$^{b}$, interpolated between the two runs whose runaways bracket the measured time, and counted "
-             r"to the measured time; a dash, no energy on the search's grid gave a runaway. The four shapes deliver the "
+             r"to the measured time; a dash, no energy on the search's grid, which ran to 0.2 of the test's ejected "
+             r"energy above the threshold's upper end, brought the runaway within 10~s of the measured time (in ST-Exp3 "
+             r"over 360~s it came no earlier than 196.4~s, with 25.6~kJ). The four shapes deliver the "
              r"same energy by the runaway only where the delivery ends before it. Below, for the seven tests that did not propagate, the energy "
              r"that puts the far face's peak at the measured maximum, within 5~K, under each shape; $^{a}$, a maximum "
-             r"that may not be the neighbour's surface (exploratory).}\label{tab:s-needs}\\",
+             r"that may not be the neighbour's surface (exploratory); a dash, a far face that stays below the measured "
+             r"maximum with up to the test's whole ejected energy.}\label{tab:s-needs}\\",
              r"\toprule", head, r"\midrule", r"\endfirsthead", r"\multicolumn{7}{l}{\textit{Continued}} \\",
              r"\toprule", head, r"\midrule", r"\endhead"]
     for t in TESTS:
@@ -412,28 +416,52 @@ def table_s9():
 
 
 def table_s10():
-    """The two-body model against the lumped searches at the low and high contacts (results/stage13_twobody.csv)."""
+    """The two-body model against the lumped searches (results/stage13_twobody.csv): at the low and high contacts with
+    the 21.39 s pulse, as registered, and at the central contact with triangular pulses of 120 and 360 s, compared
+    afterwards and unscored. The tolerance is the larger of 10 % of the bracket's midpoint and 300 J, as registered;
+    the central rows' tolerance, which the file does not hold, and each row's verdict are written to
+    manuscript/rebuild/data/s10_twobody.csv for the numbers check."""
     tb = read_csv(os.path.join(RES, "stage13_twobody.csv"))
-    rows = [r for r in tb if r["h"] in ("low", "high") and r["tau_d_s"] == RB.TAU21]
+    head = r"Test & Case & $E_\mathrm{b}$ & Lumped bracket & Two-body & Difference & Tolerance & Within \\"
     lines = [r"{\footnotesize\setlength{\tabcolsep}{2.5pt}",
              r"\begin{longtable}{llrrrrrl}",
-             r"\caption{The lumped threshold with the 21.4~s pulse at the low and the high contact against the "
-             r"two-body model of Section~2.5 of the main text (kJ): the search's bracket, the two-body model's value "
+             r"\caption{The lumped threshold against the two-body model of Section~2.5 of the main text (kJ): above, "
+             r"with the 21.4~s pulse at the low and the high contact, the 32 searches the model was registered against "
+             r"before them; below, with triangular pulses of 120 and 360~s at the central contact, the 32 searches it "
+             r"was compared with afterwards, unscored. Each row gives the search's bracket, the two-body model's value "
              r"and its difference from the bracket's midpoint, against the larger of 10\,\% of the midpoint and "
-             r"300~J, registered before the searches.}\label{tab:s-twobody}\\",
-             r"\toprule", r"Test & Contact & $E_\mathrm{b}$ & Lumped bracket & Two-body & Difference & Tolerance & Within \\",
-             r"\midrule", r"\endfirsthead", r"\multicolumn{8}{l}{\textit{Continued}} \\", r"\toprule",
-             r"Test & Contact & $E_\mathrm{b}$ & Lumped bracket & Two-body & Difference & Tolerance & Within \\",
-             r"\midrule", r"\endhead"]
-    for t in TESTS:
-        for h in ("low", "high"):
-            r = next(x for x in rows if x["test"] == t and x["h"] == h)
-            br = "0" if float(r["lum_hi_J"]) == 0 else "(%s, %s]" % (kj(r["lum_lo_J"], 2), kj(r["lum_hi_J"], 2))
-            within = "yes" if abs(float(r["B2_minus_mid_J"])) <= float(r["P8_tol_J"]) + 1e-9 else "no"
-            lines.append(" & ".join([tex_name(t) if h == "low" else "", h, kj(r["E_b_J"], 1) if h == "low" else "",
-                                     br, kj(r["B2_E_J"], 2), kj(r["B2_minus_mid_J"], 2), kj(r["P8_tol_J"], 2),
-                                     within]) + r" \\")
+             r"300~J, the tolerance registered with the model.}\label{tab:s-twobody}\\",
+             r"\toprule", head, r"\midrule", r"\endfirsthead", r"\multicolumn{8}{l}{\textit{Continued}} \\",
+             r"\toprule", head, r"\midrule", r"\endhead"]
+    data = []
+    blocks = [("At the low and the high contact, the 21.4~s pulse (registered)",
+               [("low", RB.TAU21, "low"), ("high", RB.TAU21, "high")]),
+              ("At the central contact, triangular pulses (compared afterwards, unscored)",
+               [("central", "120.0", "120~s"), ("central", "360.0", "360~s")])]
+    for bname, cases in blocks:
+        lines.append(r"\multicolumn{8}{l}{\textit{%s}} \\" % bname)
+        for t in TESTS:
+            for j, (h, tau, lab) in enumerate(cases):
+                r = next(x for x in tb if x["test"] == t and x["h"] == h and x["tau_d_s"] == tau)
+                mid = float(r["lum_mid_J"])
+                tol = float(r["P8_tol_J"]) if r["P8_tol_J"] else max(0.1 * mid, 300.0)
+                diff = float(r["B2_minus_mid_J"])
+                within = abs(diff) <= tol + 1e-9
+                br = "0" if float(r["lum_hi_J"]) == 0 else "(%s, %s]" % (kj(r["lum_lo_J"], 2), kj(r["lum_hi_J"], 2))
+                lines.append(" & ".join([tex_name(t) if j == 0 else "", lab, kj(r["E_b_J"], 1) if j == 0 else "",
+                                         br, kj(r["B2_E_J"], 2), kj(diff, 2), kj(tol, 2),
+                                         "yes" if within else "no"]) + r" \\")
+                data.append({"test": t, "contact": h, "tau_s": tau, "lum_lo_J": r["lum_lo_J"], "lum_hi_J": r["lum_hi_J"],
+                             "mid_J": mid, "two_body_J": r["B2_E_J"], "diff_J": diff, "tol_J": tol,
+                             "beyond_J": max(0.0, abs(diff) - tol), "within": "yes" if within else "no"})
+        if bname.startswith("At the low"):
+            lines.append(r"\midrule")
     lines += [r"\bottomrule", r"\end{longtable}", r"}"]
+    out = os.path.join(ROOT, "manuscript", "rebuild", "data", "s10_twobody.csv")
+    with open(out, "w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(data[0].keys()))
+        w.writeheader()
+        w.writerows(data)
     return "\n".join(lines) + "\n"
 
 
@@ -478,13 +506,15 @@ S11_TESTS = ["M50_PT_Exp1", "M50_PP_Exp3", "M50_ST_Exp2", "M50_SP_Exp3"]
 
 def s11_draw_labels():
     d = {r["label"]: r for r in read_csv(os.path.join(RES, "stage11_draws.csv"))}
-    lab = [("mean", "Posterior mean, central properties")]
+    lab = [("mean", "Posterior mean, nominal properties")]
     for k in ("d188", "d83", "d40", "d184"):
         lab.append((k, "Kinetic draw ranked %s of 200" % d[k]["rank"]))
-    lab += [("kr_min", r"Least conductivity across the layers, %.3f W\,m$^{-1}$\,K$^{-1}$" % float(d["kr_min"]["k_radial_W_mK"])),
-            ("kr_max", r"Largest conductivity across the layers, %.3f W\,m$^{-1}$\,K$^{-1}$" % float(d["kr_max"]["k_radial_W_mK"])),
-            ("c_min", r"Least specific heat, %.0f J\,kg$^{-1}$\,K$^{-1}$" % float(d["c_min"]["c_roll_J_kgK"])),
-            ("c_max", r"Largest specific heat, %.0f J\,kg$^{-1}$\,K$^{-1}$" % float(d["c_max"]["c_roll_J_kgK"]))]
+    three = lambda k: r"%.3f and %.2f W\,m$^{-1}$\,K$^{-1}$, %.0f J\,kg$^{-1}$\,K$^{-1}$" % (
+        float(d[k]["k_radial_W_mK"]), float(d[k]["k_axial_W_mK"]), float(d[k]["c_roll_J_kgK"]))
+    lab += [("kr_min", "Least conductivity across the layers: " + three("kr_min")),
+            ("kr_max", "Largest conductivity across the layers: " + three("kr_max")),
+            ("c_min", "Least specific heat: " + three("c_min")),
+            ("c_max", "Largest specific heat: " + three("c_max"))]
     return lab
 
 
@@ -498,12 +528,13 @@ def table_s12():
     lines = [r"\begin{table}[!htbp]", r"\centering", r"\scriptsize",
              r"\caption{The lumped and the hottest point's thresholds of the four tests that step~11 searched, with the "
              r"21.4~s pulse at the "
-             r"central contact, under the posterior mean and the central properties and under the step's eight draws "
+             r"central contact, under the posterior mean and the nominal properties and under the step's eight draws "
              r"(Section~\ref{sec:s-key}): the bracket between the largest energy run that does not meet the criterion "
              r"and the smallest that does, in kJ, on a grid of 0.0125 of the test's ejected energy "
              r"(the last row); 0, met with no delivery. The main text quotes a bracket's midpoint. The kinetic draws "
              r"are ranked, earliest first, by the time of the hot spot's onset in step~3's case; the thermal draws "
-             r"are the extremes among thirty over the roll's published ranges.}",
+             r"are the extremes among thirty over the roll's published ranges, each named by the property in which it "
+             r"is extreme and setting all three: the conductivity across and along the layers and the specific heat.}",
              r"\label{tab:s-step11}", r"\setlength{\tabcolsep}{4pt}",
              r"\begin{tabular}{>{\raggedright\arraybackslash}p{0.33\textwidth}rrrr}", r"\toprule",
              r"Draw & PT-Exp1 & PP-Exp3 & ST-Exp2 & SP-Exp3 \\", r"\midrule"]
@@ -543,14 +574,14 @@ def table_s13():
     rows = [("Measured maximum", None)]
     rows += [("Central contact: " + lab["mean"][0].lower() + lab["mean"][1:], ("central", "central"))]
     rows += [("Central contact: " + lab[k][0].lower() + lab[k][1:], (k, "central")) for k in ("kr_min", "kr_max", "c_min", "c_max")]
-    rows += [("Low contact, posterior mean and central properties", ("central", "low")),
-             ("High contact, posterior mean and central properties", ("central", "high"))]
+    rows += [("Low contact, posterior mean and nominal properties", ("central", "low")),
+             ("High contact, posterior mean and nominal properties", ("central", "high"))]
     lines = [r"\begin{table}[!htbp]", r"\centering", r"\footnotesize",
              r"\caption{The far face's peak with no delivered heat over 900~s (\textdegree C) in the five tests that did "
              r"not propagate and report low maxima, with each test's fitted trigger, against the maximum Fransson et "
-             r"al.\ measured: at the central contact under the posterior mean and the central properties and under "
-             r"step~11's four thermal draws, and at the low and high contacts under the posterior mean and the "
-             r"central properties.}",
+             r"al.\ measured: at the central contact under the posterior mean and the nominal properties and under "
+             r"step~11's four thermal draws, each with its three properties as in Table~\ref{tab:s-step11}, and at the "
+             r"low and high contacts under the posterior mean and the nominal properties.}",
              r"\label{tab:s-farface}", r"\setlength{\tabcolsep}{3pt}",
              r"\begin{tabular}{>{\raggedright\arraybackslash}p{0.36\textwidth}rrrrr}", r"\toprule",
              r" & " + " & ".join(tex_name(t) for t in tests) + r" \\", r"\midrule"]
@@ -590,7 +621,11 @@ def table_s14():
              r"energy delivered to the facing half, the step whose search made the run, how far it was carried, and each "
              r"model's outcome, the time at which the resolved neighbour's mean reaches 255.7\textdegree C or, where it "
              r"does not, the mean's peak. A dagger marks the six runs that repeat another's configuration in a different "
-             r"step; they are counted as they were run.}\label{tab:s-archived-runs}\\",
+             r"step; they are counted as they were run. Two energies differ in the last digit from the needs of "
+             r"Tables~\ref{tab:s-thresholds} and~\ref{tab:s-needs}: PT-Exp1's over 360~s is the same run, whose energy "
+             r"the needs file records to 0.1~J, and SP-Exp3's with the pulse is step 9's run at the fraction its search "
+             r"interpolated, while the need is that of step 12's run, which met the measured time.}"
+             r"\label{tab:s-archived-runs}\\",
              r"\toprule", r"Test & Delivery & Energy (kJ) & Step & To (s) & Three-dimensional & Cross-section \\",
              r"\midrule", r"\endfirsthead",
              r"\multicolumn{7}{l}{\textit{Continued}} \\", r"\toprule",
@@ -609,13 +644,53 @@ def table_s14():
     return "\n".join(lines)
 
 
+def table_s15():
+    """The resolved neighbour with no delivered heat, every test at the three contacts (results/stage15_nodelivery.csv):
+    the peak of its mean and how its outcome is established. h: the hottest point stays below 255.7 C in a
+    three-dimensional run to 900 s (the mean cannot pass it); 3: a three-dimensional run carried to 900 s; x: the
+    reactive cross-section alone. The peak is the three-dimensional run's where there is one, else the cross-section's."""
+    nd = read_csv(os.path.join(RES, "stage15_nodelivery.csv"))
+    lines = [r"\begin{table}[!htbp]", r"\centering", r"\footnotesize",
+             r"\caption{The resolved neighbour with no delivered heat, test by test at the three contacts, with each "
+             r"test's fitted trigger under the posterior mean and the nominal properties: the peak of its mean "
+             r"temperature within 900~s (\textdegree C) and how its outcome, no runaway in every case, is established. "
+             r"$^{h}$, the hottest point stays below 255.7\textdegree C in a three-dimensional run to 900~s, so the mean "
+             r"cannot reach it; $^{3}$, a three-dimensional run carried to 900~s; $^{x}$, the reactive cross-section "
+             r"alone (Section~3.7 of the main text). The peak is the three-dimensional run's where there is one and "
+             r"the cross-section's otherwise.}",
+             r"\label{tab:s-nodelivery}", r"\setlength{\tabcolsep}{6pt}",
+             r"\begin{tabular}{lrrr}", r"\toprule", r"Test & Low contact & Central contact & High contact \\",
+             r"\midrule"]
+    counts = {}
+    for t in TESTS16:
+        cells = []
+        for h in ("low", "central", "high"):
+            r = next(x for x in nd if x["test"] == t and x["h"] == h)
+            assert r["C8"] == "False" and r["C8_xs"] == "False"
+            if r["C1"] == "False":
+                m, peak = "h", r["mean_peak_3d_C"]
+            elif r["C8_source"].startswith("archive"):
+                m, peak = "3", r["mean_peak_3d_C"]
+            else:
+                assert r["C8_source"] == "cross-section"
+                m, peak = "x", r["mean_peak_xs_C"]
+            counts[(h, m)] = counts.get((h, m), 0) + 1
+            cells.append("%.1f$^{%s}$" % (float(peak), m))
+        lines.append(tex_name(t) + " & " + " & ".join(cells) + r" \\")
+    assert counts == {("low", "h"): 16, ("central", "h"): 8, ("central", "3"): 8, ("high", "h"): 3, ("high", "3"): 3,
+                      ("high", "x"): 10}, counts
+    lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}", ""]
+    return "\n".join(lines)
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     for name, fn in [("t1_tests.tex", table1), ("t2_parameters.tex", table2), ("t3_bounds.tex", table3),
                      ("s3_thresholds.tex", table_s3), ("s7_needs.tex", table_s7), ("s8_reduced.tex", table_s8),
                      ("s9_heldout.tex", table_s9), ("s10_twobody.tex", table_s10),
                      ("s11_archived.tex", table_s11), ("s12_step11.tex", table_s12),
-                     ("s13_farface.tex", table_s13), ("s14_archived_runs.tex", table_s14)]:
+                     ("s13_farface.tex", table_s13), ("s14_archived_runs.tex", table_s14),
+                     ("s15_nodelivery.tex", table_s15)]:
         open(os.path.join(OUT, name), "w").write(fn())
     print("tables written to", os.path.relpath(OUT, ROOT))
 

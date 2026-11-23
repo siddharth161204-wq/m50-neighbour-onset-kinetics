@@ -207,12 +207,13 @@ TABLE_SOURCES = {
                           "results/stage13_twobody.csv"],
     "s7_needs.tex": ["results/stage15_table.csv", "results/stage14_needs.csv"],
     "s9_heldout.tex": ["results/stage10_heldout.json"],
-    "s10_twobody.tex": ["results/stage13_twobody.csv"],
+    "s10_twobody.tex": ["results/stage13_twobody.csv", "manuscript/rebuild/data/s10_twobody.csv"],
     "s11_archived.tex": ["results/stage15_cross_section.json"],
     "s12_step11.tex": ["manuscript/rebuild/data/step11_lumped_kJ.csv", "manuscript/rebuild/data/step11_local_kJ.csv", "results/stage11_draws.csv",
                        "results/stage11_thresholds.csv"],
     "s13_farface.tex": ["results/stage11_overshoot.csv", "results/stage11_draws.csv"],
     "s14_archived_runs.tex": ["results/stage15_cross_section.json"],
+    "s15_nodelivery.tex": ["results/stage15_nodelivery.csv"],
 }
 MONTHS = r"(January|February|March|April|May|June|July|August|September|October|November|December)"
 

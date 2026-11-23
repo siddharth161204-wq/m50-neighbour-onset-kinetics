@@ -102,4 +102,17 @@ What changed after it: see "What changed after reads 8 to 10" at the end of this
 
 ## What changed after reads 8 to 10
 
-All three would send the paper to review, for the reason Brief 30 names. The changes their remarks call for are written here once the sixth independent read, made at the same time on the PDFs of the same commit, has reported.
+All three would send the paper to review, for the reason Brief 30 names, so item 9 passed in the first round. Item 10 did not: the sixth independent read, made at the same time on the PDFs of the same commit, found the paper not ready (`independent_read_6.md`). The second round answered both, and what the editors' remarks asked for was done with it:
+
+- Strong and weak triggers are defined where the abstract first uses them (strong: fitted body energies of 31.6 to 54.3 kJ), and so are the trigger ("the failing cell (trigger)") and runaway (255.7 °C).
+- "Central kinetics and properties" is gone from the abstract; the main text and the supplement now call the roll's values of Table 2 the nominal properties and define them (Supplementary Section S1).
+- The 21.4 s pulse is given its origin in the abstract, the triggers' measured rise time.
+- "The readings' difference" is replaced by the number it stands for: a heat flux resolving "the 1.7 to 4.3 kJ between the needs".
+- The abstract's ending no longer needs the letter: published inputs cannot cap any path to the facing half below 27.9 kJ within 21.4 s, "above both needs", so a measurement there could decide between the readings, if the model holds otherwise.
+- The two sets of numbers are told apart: the needs are what the model's neighbour needs to run away at the measured times; the ratios compare each reading's "least runaway energy" with a 21.4 s pulse.
+- The fitting that read 10 noted ("against sixteen tests" amounts to fitting each test) is stated in the abstract: each failing cell is fitted to its test's peak.
+- The model dependence is scoped to the tests searched (read 10's single weak-trigger test; the independent read's C1): the abstract states only the measured ratios, and the discussion and the letters say that the pattern rests in three dimensions on three tests and its reversal on one, at the posterior mean and the nominal properties.
+- The reduced model's limit (reads 8 and 10: checked mostly far from a threshold) is stated where its numbers are used in the discussion as well as in the conclusions and the letters.
+- "Multiscale" left the Journal of Power Sources letter in the first round (commit 1ad354e).
+
+Reads 11 to 13 below were made on the second round's texts.

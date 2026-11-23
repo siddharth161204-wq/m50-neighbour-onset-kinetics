@@ -1,8 +1,11 @@
-numbers_check --rebuild: 734 traced to a named value, 67 found in their table's source files, 0 broad matches (supplement only), 30 counts written in words checked, 0 failures, 71 structural (not looked for)
+numbers_check --rebuild: 751 traced to a named value, 67 found in their table's source files, 0 broad matches (supplement only), 31 counts written in words checked, 0 failures, 71 structural (not looked for)
 
 == main.tex: title  [map]
 == main.tex: abstract  [map]
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
+   traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
    traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
    traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
@@ -19,6 +22,8 @@ numbers_check --rebuild: 734 traced to a named value, 67 found in their table's 
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
+   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
 == main.tex: Introduction to Discussion, with figure captions  [map]
    [name] 18650  ...the vent matters: fractional thermal runaway calorimetry of 18650 cells finds that typically 20 to 30\,\%...
    traced 20 <- manuscript/data/comparators.csv: value where {'key': 'walker2019decoupling', 'quantity': 'share of the total energy released through the casing, low'} = 20
@@ -190,6 +195,8 @@ numbers_check --rebuild: 734 traced to a named value, 67 found in their table's 
    traced 177 <- results/stage15_table.csv: t_measured_s where {'test': 'M50_ST_Exp3', 'delivery': '21.39 s pulse'} = 177
    traced 240 <- results/stage15_table.csv: tau_s where {'test': 'M50_ST_Exp3'} = 240
    traced 360 <- results/stage15_table.csv: tau_s where {'test': 'M50_ST_Exp3'} = 360
+   traced 25.6 <- results/stage15_xs/*.json: M50_ST_Exp3, con over 360 s, the run at the top of the grid, its delivered energy (the last point of results/stage15_cross_section.json A2_at_measured) = 25.6281
+   traced 196.4 <- results/stage15_xs/*.json: M50_ST_Exp3, con over 360 s, the run at the top of the grid, its C8 time (the last point of results/stage15_cross_section.json A2_at_measured) = 196.394
    traced 11.5 <- smallest and largest of results/stage15_table.csv: ST_Exp3, C2_E_by_t_J = 11.4655
    traced 12.3 <- smallest and largest of results/stage15_table.csv: ST_Exp3, C2_E_by_t_J = 12.2592
    traced 5.3 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 5.29617
@@ -200,6 +207,7 @@ numbers_check --rebuild: 734 traced to a named value, 67 found in their table's 
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
    traced 360 <- results/stage15_table.csv: tau_s where {'test': 'M50_ST_Exp3'} = 360
+   traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
    traced 5.5 <- results/stage15_cross_section.json: A1_summary.dt_C8_s.min, negated = 5.48377
    traced 34.5 <- results/stage15_cross_section.json: A1_summary.dt_C8_s.max = 34.5232
    traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
@@ -306,7 +314,6 @@ numbers_check --rebuild: 734 traced to a named value, 67 found in their table's 
    traced 5.04 <- results/stage15_paper_numbers.json: B4.draws.5.E_J = 5.04499
    traced 3.75 <- results/stage10_heldout.json: table, M50_PT_Exp4, f9_lo = 3.75
    traced 4.06 <- results/stage10_heldout.json: table, M50_PT_Exp4, f9_hi = 4.0625
-   traced 9 <- results/stage14_needs.csv: need_21s_source of PT_Exp4, the step whose search set the coarser bracket = 9
    traced 4.66 <- results/stage14_needs.csv: need_21s_lo_J where {'test': 'M50_PT_Exp4'} = 4.6569
    traced 4.85 <- results/stage14_needs.csv: need_21s_hi_J where {'test': 'M50_PT_Exp4'} = 4.851
    traced 215.6 <- results/stage15_readings.json: 1.PT_Exp4.lumped_cross_s = 215.6
@@ -474,13 +481,9 @@ numbers_check --rebuild: 734 traced to a named value, 67 found in their table's 
    traced 2.0 <- manuscript/data/comparators.csv: value where {'key': 'torrescastro2020passive', 'quantity': 'energy the next cell absorbs before it fails, mean'} = 2
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
-   traced 16.3 <- results/stage10_paper_numbers.json: part_a.tri21_C2_lo_hcentral.nodes.away.window.rms_K = 16.2554
-   traced 16.8 <- results/stage10_paper_numbers.json: part_a.tri21_C2_hi_hcentral.nodes.away.window.rms_K = 16.8348
    traced 37 <- results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
    traced 12.5 <- results/stage15_paper_numbers.json: B3b.result.P_hi_W = 12.5
    traced 20 <- results/stage15_paper_numbers.json: B4.shift.least_shift_K = 20
-   traced 233.6 <- results/stage15_paper_numbers.json: B3b run s15_B3_PT_Exp4_hold12.5W: far_jump.T_C = 233.595
-   traced 240.4 <- results/stage15_paper_numbers.json: B4.shift_runs, the run shifted by 20 K: far_jump.T_C = 240.351
    traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
    traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
@@ -544,7 +547,6 @@ numbers_check --rebuild: 734 traced to a named value, 67 found in their table's 
    traced 720 <- results/manuscript_numbers.json: constants.M_ref_g = 720
    traced 65 <- src/stage13_tign.py: /the reaction heat of the (65) g cell/ = 65
    traced 3,034 <- src/stage13_section.py: Section(): nr x nt = 3034
-   traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
 == main.tex: declarations  [map]
    [label] 1.11  ...every step are archived at Zenodo,   (all versions; version 1.11.0,  , holds every result used here), an...
    [identifier] 4.0  ...tests are those of Fransson et al.~ , published under CC~BY~4.0. The kinetic posterior files are the su...
@@ -727,7 +729,7 @@ numbers_check --rebuild: 734 traced to a named value, 67 found in their table's 
    traced 120 <- results/stage15_table.csv: tau_s where {'test': 'M50_PT_Exp4'} = 120
    traced 240 <- results/stage15_table.csv: tau_s where {'test': 'M50_PT_Exp4'} = 240
    traced 360 <- results/stage15_table.csv: tau_s where {'test': 'M50_PT_Exp4'} = 360
-   [name] 21700  ..., the last outlasting the longest combustion reported for a 21700 cell, about 300 s (Supplementary Sectio...
+   [name] 21700  ..., the last outlasting the longest combustion reported for a 21700 cell, about 300 s~ ; in PT-Exp4 also th...
    traced 300 <- results/stage14_inputs.csv: value where {'key': 't_flame_max'} = 300
    traced 5 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 5
    traced 360 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 360
@@ -883,6 +885,9 @@ numbers_check --rebuild: 734 traced to a named value, 67 found in their table's 
 == manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt  [map]
    [year or date] 2026  ...om one cell to the next. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
+   traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
    traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
    traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
@@ -899,9 +904,14 @@ numbers_check --rebuild: 734 traced to a named value, 67 found in their table's 
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
+   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
 == manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt  [map]
    [year or date] 2026  ...t follows a failing one. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
+   traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
    traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
    traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
@@ -918,9 +928,14 @@ numbers_check --rebuild: 734 traced to a named value, 67 found in their table's 
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
+   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
 == manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt  [map]
    [year or date] 2026  ...t published experiments. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
+   traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
    traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
    traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
@@ -937,6 +952,8 @@ numbers_check --rebuild: 734 traced to a named value, 67 found in their table's 
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
+   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
 == counts written in words (main.tex)
    words ok 'halved up to sixteen times' = 16 <- src/reactive.py: /K_MAX = (16)/
    words ok 'thirteen of the fourteen with strong triggers' = 13 <- stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket
@@ -944,6 +961,7 @@ numbers_check --rebuild: 734 traced to a named value, 67 found in their table's 
    words ok 'under three of the shapes' = 3 <- results/stage15_table.csv: ST_Exp3 shapes with a cross-section need
    words ok 'nine of them with both zero' = 9 <- results/stage13_twobody.csv: low and high searches with both zero
    words ok 'six of them foreseen' = 6 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2, foreseen
+   words ok 'at the high contact ten of the outcomes rest on the reactive cross-section alone' = 10 <- results/stage15_nodelivery.csv: high-contact rows, rule x
    words ok 'four of them known beforehand to be fixed, or nearly' = 4 <- manuscript/rebuild/data/predictions_registry.csv: held rows of Table S2 whose expectation records them as fixed
    words ok 'Nine propagated' = 9 <- inputs/fransson2024/m50_tests.csv: tests with propagated Yes
    words ok 'thirteen of the sixteen tests' = 13 <- results/stage7_triggers.csv: tests whose E_J exceeds the calorimetry's 33,222.9 J
@@ -955,7 +973,7 @@ numbers_check --rebuild: 734 traced to a named value, 67 found in their table's 
    words ok 'in seven propagated tests' = 7 <- results/stage14_needs.csv: propagated tests read at the measured time
    words ok 'Of the five tests that did not propagate and report low maxima' = 5 <- inputs/fransson2024/m50_tests.csv: tests that did not propagate, below 600 C
    words ok 'four need none' = 4 <- results/stage9_paper_numbers.json: part_a.A3 tests with an overshoot
-   words ok 'In twenty-five of them a run reproduces' = 25 <- results/stage15_table.csv: matched cases outside ST_Exp3
+   words ok 'In twenty-five of them a run of the resolved neighbour reproduces' = 25 <- results/stage15_table.csv: matched cases outside ST_Exp3
    words ok 'in the same thirty-two cases' = 32 <- results/stage15_table.csv: cases outside ST_Exp3
    words ok 'in the other seven, shorter deliveries' = 7 <- results/stage15_table.csv: cases outside ST_Exp3 whose cross-section need is a threshold
    words ok 'or, in twelve, to 332' = 12 <- results/stage15_cross_section.json: A1_rows that end at 332 s

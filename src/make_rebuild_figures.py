@@ -374,7 +374,7 @@ def fig4():
     def mark(x, y, status, col):
         """t: the time reproduced only within the search's resolution (a dot); b: interpolated (a bar)."""
         if status == "threshold":
-            ax.plot(x, y, marker=".", ms=2.6, color=col, ls="none", zorder=6)
+            ax.plot(x, y, marker=".", ms=3.6, color=col, ls="none", zorder=6)
         elif status == "bracketed":
             ax.plot(x, y, marker="_", ms=7.0, mew=1.2, color=INK, ls="none", zorder=6)
 
@@ -502,9 +502,17 @@ def fig6():
              ("A5", "conduction through the holder"), ("A6", "the neighbour's own discharge (parallel)")]
     fig, ax = plt.subplots(figsize=(7.2, 3.3), constrained_layout=True)
     y = np.arange(len(paths))[::-1]
-    bands = [(0.2635, 5.9624, C_LUMP, 0.13, "lumped neighbour's needs, strong triggers, 21.4 s pulse"),
-             (4.064, 8.116, C_RES, 0.16, "resolved neighbour's needs, strong triggers, four shapes"),
-             (76.74, 89.34, INK, 0.10, "calorimetry of this cell: ejected energy, median to largest")]
+    # the bands read from the files: the lumped needs with the pulse and the resolved needs under the four shapes,
+    # after the strong triggers (results/stage15_table.csv, every propagated test but ST_Exp3), and the Databank's
+    # median and largest ejected energy (results/stage14_inputs.csv)
+    t15 = [r for r in read_csv(os.path.join(RES, "stage15_table.csv")) if r["test"] != "M50_ST_Exp3"]
+    lum = [float(r["C2_E_by_t_J"]) / 1e3 for r in t15 if r["delivery"] == "21.39 s pulse"]
+    res = [float(r["C8_xs_E_by_t_J"]) / 1e3 for r in t15 if r["C8_xs_E_by_t_J"]]
+    inp = {r["key"]: float(r["value"]) for r in read_csv(os.path.join(RES, "stage14_inputs.csv"))
+           if r["key"] in ("db_Eej_median", "db_Eej_max")}
+    bands = [(min(lum), max(lum), C_LUMP, 0.13, "lumped needs, strong triggers, 21.4 s pulse"),
+             (min(res), max(res), C_RES, 0.16, "resolved needs, strong triggers, four shapes"),
+             (inp["db_Eej_median"] / 1e3, inp["db_Eej_max"] / 1e3, INK, 0.10, "ejected energy measured, median to largest")]
     for lo, hi, col, al, lab in bands:
         ax.axvspan(lo, hi, color=col, alpha=al, lw=0, zorder=0)
     for yy, (p, lab) in zip(y, paths):
@@ -532,7 +540,7 @@ def fig6():
     h = [Rectangle((0, 0), 1, 1, color=C_SKY, label="upper bound within 21.4 s"),
          Rectangle((0, 0), 1, 1, color="#9e9e9e", label="upper bound in total")]
     h += [Rectangle((0, 0), 1, 1, color=col, alpha=al + 0.1, label=lab) for _, _, col, al, lab in bands]
-    ax.legend(handles=h, loc="upper center", bbox_to_anchor=(0.45, -0.17), ncol=2, fontsize=6.8)
+    ax.legend(handles=h, loc="upper center", bbox_to_anchor=(0.42, -0.17), ncol=2, fontsize=6.8)
     grid(ax, "x")
     save(fig, 6)
 

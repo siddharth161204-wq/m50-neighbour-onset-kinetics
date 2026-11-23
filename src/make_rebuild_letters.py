@@ -64,29 +64,30 @@ def main():
             ("Propagation models of modules choose what share of a failing cell's vented heat reaches its neighbour, "
              "a share the published tests do not measure, and treat each cell as one temperature or as a resolved "
              "field. The manuscript asks how much of that heat must reach a neighbour for it to follow, and whether "
-             "published tests can say, for two touching LG M50 cells with decomposition kinetics fitted to calorimetry "
-             "of NCM811 and of graphite with its electrolyte (the M50's negative electrode adds silicon), against "
+             "published tests can say, for two touching LG M50 cells, with kinetics fitted to calorimetry of NCM811 "
+             "and of graphite with electrolyte (the M50's negative electrode adds silicon), against "
              "sixteen published two-cell tests."),
             "",
             ("In the model, with the failing cell's energy held to calorimetry, conduction and radiation leave the "
-             "neighbour at least 29 K short of runaway. With each test's trigger fitted to its measured peak, the "
-             "tests that propagated after strong triggers (fitted body energies of 31.6 to 54.3 kJ) need 4.1 to 8.1 kJ "
-             "delivered by their measured times to the side of a resolved neighbour facing the failing cell, by a "
-             "two-dimensional reduced model, and 0.2 to 6.0 kJ for a lumped neighbour: 5.3 to 10.6 % and 0.3 to 7.8 % "
-             "of the median 76.74 kJ that calorimetry measured in this cell's ejecta."),
+             "neighbour at least 29 K short of runaway. With each trigger fitted to its test's measured peak, the "
+             "model's neighbour needs, to run away when the tests propagated after strong triggers (31.6 to 54.3 kJ), "
+             "4.1 to 8.1 kJ through its side facing the failing cell if resolved, by a two-dimensional reduced model, "
+             "and 0.2 to 6.0 kJ if lumped: "
+             "5.3 to 10.6 % and 0.3 to 7.8 % of the median 76.74 kJ that calorimetry measured in this cell's ejecta."),
             "",
-            ("That estimate depends on the neighbour's treatment, in a direction set by the trigger. With a 21.4 s "
+            ("That estimate depends on the neighbour's treatment. With a 21.4 s "
              "pulse the least delivered heat that runs the resolved neighbour away is 1.36 to 2.27 times the lumped "
              "neighbour's in two strong-trigger tests searched in three dimensions and 0.80 to 0.91 times in one with a "
-             "weak trigger, so a share calibrated with one treatment needs a trigger-dependent correction to serve the "
-             "other. Earlier propagation models represent the cell one way or the other; the manuscript sets the two "
-             "side by side on the same inputs and tests. The reduced model reproduced the outcome of all 151 earlier "
+             "weak trigger, so in these tests a share calibrated with one treatment would need a correction, whose sign "
+             "went with the trigger, to serve the other. Propagation models treat the cell one way or the other; "
+             "here the two share every input. The reduced model reproduced the outcome of all 151 earlier "
              "three-dimensional runs, most of them far from a threshold, at a fraction of their cost."),
             "",
-            ("Published inputs bound no path of the ejecta's heat to the facing side below 27.9 kJ within 21.4 s, "
+            ("Published inputs cap no path of the ejecta's heat to the facing side below 27.9 kJ within 21.4 s, "
              "more than either treatment needs, so the sixteen tests cannot remove that dependence; a heat flux "
              "measured where the neighbour faces the failing cell, to well within the 1.7 to 4.3 kJ by which the two "
-             "treatments' needs differ, could, if the model is otherwise right."),
+             "treatments' needs differ, could, if the model is otherwise right and the resolved needs are computed in "
+             "three dimensions."),
             "",
             j["fit"],
             "",
@@ -104,8 +105,8 @@ def main():
             (f"Would the manuscript below be within the scope of the {j['name']}? It estimates, against sixteen "
              "published two-cell tests, how much heat must reach a neighbouring lithium-ion cell for thermal runaway "
              "to propagate; it shows that the estimate depends on whether the neighbour is modelled as one "
-             "temperature or as a resolved field, in a direction set by the failing cell, and names the measurement "
-             "that would remove that dependence. "
+             "temperature or as a resolved field, in a direction that went with the failing cell in the tests "
+             "searched, and names the measurement that could remove that dependence. "
              + j["fit"].replace("It falls", "It belongs", 1)
              + " " + author + ". The title and abstract follow."),
             "",

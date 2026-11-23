@@ -116,10 +116,33 @@ STRIP = {
     (8, "P1"): ("; the hot spot is close to 255.7 C in several misses", ""),
     (9, "P1"): (" (the hot spot crosses at 11.9 to 18.5 s at the threshold's upper end)", ""),
     (9, "P2"): (" (seven upper-end crossings lie inside the window; ST_Exp3's lies at 61.4 s)", ""),
+    # counts the study's expectation drew from a sizing estimate on earlier, unreported runs (sixth read, A4)
+    (7, "P1"): ("Study's expectation: Holds, with eight.", "Study's expectation: Holds."),
+    (8, "P2"): ("Study's expectation: Holds, with all seven below 0.3.", "Study's expectation: Holds."),
+    # the analyses that foresaw step 14's verdicts, quoted in short (sixth read, B6)
+    (14, "P1"): ("the file's analysis, written before any bound, says P1 is expected to fail",
+                 "the file's analysis, written before any bound: with no source placing the flame, the bound takes the "
+                 "largest share of an emitter's directions that strike the facing half, at least a quarter at the half's "
+                 "end edge, so P1 is expected to fail"),
+    (14, "P2"): ("the file's analysis says P2 is expected to fail",
+                 "the file's analysis: with no source for the share of the vent gas that passes the neighbour, the "
+                 "whole of it counts, and its flux over 21.39 s is expected to exceed 5.96 kJ by a wide margin, so P2 "
+                 "is expected to fail"),
+    (14, "P6"): ("the file's analysis says P6 is expected to hold",
+                 "the file's analysis: the bound is the neighbour's stored energy, 65,520 J, so P6 is expected to hold"),
+    (11, "P4"): ("the smallest radial conductivity", "the smallest conductivity across the layers"),
+    (15, "P2"): ("registered with it: 7,062 J", "registered with it: 7.06 kJ"),
     # step 6's six runs on which these two rest are reported in the supplement's Section S3: a pointer, no removal
     (12, "P1"): ("fixed by Stage 6's records", "fixed by Stage 6's records (SREFREGISTRY)"),
     (12, "P2"): ("(Stage 6, with other tabs)", "(Stage 6, with other tabs; SREFREGISTRY)"),
 }
+
+
+def short_date(d):
+    """2026-10-10 as 10 Oct (Table S1's push dates, all in 2026)."""
+    y, m, dd = d.split("-")
+    assert y == "2026"
+    return "%d %s" % (int(dd), ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][int(m) - 1])
 
 
 def unreported(stage, lab):
@@ -133,14 +156,14 @@ STEPS = [
     (3, "The onsets over 200 kinetic draws and 30 thermal draws", "predictions_stage3.md", "2026-10-12"),
     (4, "Which submodel of the kinetic posterior sets the lead of the hot spot", "predictions_v11.md", "2026-10-16"),
     (5, "The cans in contact and joined by tabs, against the sixteen measured tests", "predictions_v12.md", "2026-10-21"),
-    (6, "Why the model does not propagate: the tests' 150 C criterion and the trigger's measured durations", "predictions_stage6.md", "2026-10-23"),
+    (6, "Why the model does not propagate: propagation read at 150 C, the least onset temperature of propagation Fransson et al. observed, and the trigger released over the two measured rise times", "predictions_stage6.md", "2026-10-23"),
     (7, "Seven ignition criteria scored test by test, each test with its own trigger", "predictions_stage7.md", "2026-10-26"),
     (8, "The delivered fraction of the ejected energy that each test's outcome requires", "predictions_stage8.md", "2026-10-26"),
     (9, "The delivered fraction read from each test's time and peak", "predictions_stage9.md", "2026-10-29"),
     (10, "The one published history, the thermocouple's angle and held-out scores", "predictions_stage10.md", "2026-10-30"),
-    (11, "Bands of the central numbers under four kinetic draws chosen by rank and four thermal draws at the extremes", "predictions_stage11.md", "2026-11-02"),
+    (11, "Bands of the earlier steps' main numbers under four kinetic draws chosen by rank and four thermal draws at the extremes", "predictions_stage11.md", "2026-11-02"),
     (12, "The trigger held to calorimetry's body energy and one ejected energy for every test", "predictions_stage12.md", "2026-11-03"),
-    (13, "The mechanism of each threshold: reduced models of skin conduction and of an ignition temperature", "predictions_stage13.md", "2026-11-16"),
+    (13, "Reduced models of each threshold: skin conduction and an ignition temperature", "predictions_stage13.md", "2026-11-16"),
     (14, "What each path can deliver to the neighbour, bounded from published inputs", "predictions_stage14.md", "2026-11-17"),
     (15, "The resolved neighbour's own runaway: a reactive cross-section and three-dimensional searches", "predictions_stage15.md", "2026-11-18"),
 ]
@@ -259,20 +282,25 @@ def main():
             "listed_failed_foreseen")
     tot = {k: sum(s[k] for s in steps) for k in keys}
     t1 = [r"\begin{table}[!htbp]", r"\centering", r"\scriptsize",
-          r"\caption{The study's fifteen steps, each with its own predictions committed to the public repository "
-          r"and pushed before its runs (the date is that of the push, UTC): how many predictions each registered, how "
-          r"many of them Table~\ref{tab:s-registry} lists, those whose runs the main text or this supplement reports, "
-          r"and how many of these held and failed; a failure is foreseen when the predictions file recorded it as "
-          r"expected before the runs. The verdicts of the others are in the public archive (Section~\ref{sec:s-registry}).}",
-          r"\label{tab:s-steps}", r"\setlength{\tabcolsep}{3pt}", r"\begin{tabular}{rp{0.36\textwidth}lrrrrr}", r"\toprule",
-          r"Step & What it asked & Registered & Predictions & Listed & Held & Failed & Foreseen \\", r"\midrule"]
+          r"\caption{The study's fifteen steps, each with its own predictions pushed to the public repository before "
+          r"its runs (the push's date, UTC, in 2026): how many predictions each registered, and how many held and "
+          r"failed among those Table~\ref{tab:s-registry} lists, whose runs the main text or this supplement reports, "
+          r"and among the others; a listed failure is foreseen when the predictions file recorded it as expected "
+          r"before the runs.}",
+          r"\label{tab:s-steps}", r"\setlength{\tabcolsep}{2pt}",
+          r"\begin{tabular}{rp{0.345\textwidth}lrrrrrrr}", r"\toprule",
+          r" & & & & \multicolumn{4}{c}{Listed in Table~\ref{tab:s-registry}} & \multicolumn{2}{c}{Not listed} \\",
+          r"\cmidrule(lr){5-8}\cmidrule(lr){9-10}",
+          r"Step & What it asked & Pushed & Predictions & All & Held & Failed & Foreseen & Held & Failed \\",
+          r"\midrule"]
     for s in steps:
-        cells = (("%d & %d & %d & %d" % (s["listed"], s["listed_held"], s["listed_failed"], s["listed_failed_foreseen"]))
-                 if s["listed"] else "0 & & &")
-        t1.append("%d & %s & %s & %d & %s \\\\" % (s["step"], tex(s["question"]), s["registered_utc_date"],
-                                                s["committed"], cells))
-    t1 += [r"\midrule", r"All & & & %d & %d & %d & %d & %d \\" % (tot["committed"], tot["listed"], tot["listed_held"],
-                                                                tot["listed_failed"], tot["listed_failed_foreseen"]),
+        nh, nf = s["held"] - s["listed_held"], s["failed"] - s["listed_failed"]
+        t1.append("%d & %s & %s & %d & %d & %d & %d & %d & %d & %d \\\\" % (
+            s["step"], tex(s["question"]), short_date(s["registered_utc_date"]), s["committed"], s["listed"], s["listed_held"],
+            s["listed_failed"], s["listed_failed_foreseen"], nh, nf))
+    t1 += [r"\midrule", r"All & & & %d & %d & %d & %d & %d & %d & %d \\" % (
+        tot["committed"], tot["listed"], tot["listed_held"], tot["listed_failed"], tot["listed_failed_foreseen"],
+        tot["held"] - tot["listed_held"], tot["failed"] - tot["listed_failed"]),
            r"\bottomrule", r"\end{tabular}", r"\end{table}"]
     open(os.path.join(OUTT, "s1_steps.tex"), "w").write("\n".join(t1) + "\n")
 

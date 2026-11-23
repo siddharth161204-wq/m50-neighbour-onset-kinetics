@@ -1,8 +1,11 @@
-numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in their table's source files, 244 broad matches (supplement only), 30 counts written in words checked, 0 failures, 194 structural (not looked for)
+numbers_check --rebuild --supplement: 1041 traced to a named value, 2327 found in their table's source files, 281 broad matches (supplement only), 31 counts written in words checked, 0 failures, 248 structural (not looked for)
 
 == main.tex: title  [map]
 == main.tex: abstract  [map]
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
+   traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
    traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
    traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
@@ -19,6 +22,8 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
+   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
 == main.tex: Introduction to Discussion, with figure captions  [map]
    [name] 18650  ...the vent matters: fractional thermal runaway calorimetry of 18650 cells finds that typically 20 to 30\,\%...
    traced 20 <- manuscript/data/comparators.csv: value where {'key': 'walker2019decoupling', 'quantity': 'share of the total energy released through the casing, low'} = 20
@@ -190,6 +195,8 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    traced 177 <- results/stage15_table.csv: t_measured_s where {'test': 'M50_ST_Exp3', 'delivery': '21.39 s pulse'} = 177
    traced 240 <- results/stage15_table.csv: tau_s where {'test': 'M50_ST_Exp3'} = 240
    traced 360 <- results/stage15_table.csv: tau_s where {'test': 'M50_ST_Exp3'} = 360
+   traced 25.6 <- results/stage15_xs/*.json: M50_ST_Exp3, con over 360 s, the run at the top of the grid, its delivered energy (the last point of results/stage15_cross_section.json A2_at_measured) = 25.6281
+   traced 196.4 <- results/stage15_xs/*.json: M50_ST_Exp3, con over 360 s, the run at the top of the grid, its C8 time (the last point of results/stage15_cross_section.json A2_at_measured) = 196.394
    traced 11.5 <- smallest and largest of results/stage15_table.csv: ST_Exp3, C2_E_by_t_J = 11.4655
    traced 12.3 <- smallest and largest of results/stage15_table.csv: ST_Exp3, C2_E_by_t_J = 12.2592
    traced 5.3 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 5.29617
@@ -200,6 +207,7 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
    traced 360 <- results/stage15_table.csv: tau_s where {'test': 'M50_ST_Exp3'} = 360
+   traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
    traced 5.5 <- results/stage15_cross_section.json: A1_summary.dt_C8_s.min, negated = 5.48377
    traced 34.5 <- results/stage15_cross_section.json: A1_summary.dt_C8_s.max = 34.5232
    traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
@@ -306,7 +314,6 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    traced 5.04 <- results/stage15_paper_numbers.json: B4.draws.5.E_J = 5.04499
    traced 3.75 <- results/stage10_heldout.json: table, M50_PT_Exp4, f9_lo = 3.75
    traced 4.06 <- results/stage10_heldout.json: table, M50_PT_Exp4, f9_hi = 4.0625
-   traced 9 <- results/stage14_needs.csv: need_21s_source of PT_Exp4, the step whose search set the coarser bracket = 9
    traced 4.66 <- results/stage14_needs.csv: need_21s_lo_J where {'test': 'M50_PT_Exp4'} = 4.6569
    traced 4.85 <- results/stage14_needs.csv: need_21s_hi_J where {'test': 'M50_PT_Exp4'} = 4.851
    traced 215.6 <- results/stage15_readings.json: 1.PT_Exp4.lumped_cross_s = 215.6
@@ -474,13 +481,9 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    traced 2.0 <- manuscript/data/comparators.csv: value where {'key': 'torrescastro2020passive', 'quantity': 'energy the next cell absorbs before it fails, mean'} = 2
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
-   traced 16.3 <- results/stage10_paper_numbers.json: part_a.tri21_C2_lo_hcentral.nodes.away.window.rms_K = 16.2554
-   traced 16.8 <- results/stage10_paper_numbers.json: part_a.tri21_C2_hi_hcentral.nodes.away.window.rms_K = 16.8348
    traced 37 <- results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
    traced 12.5 <- results/stage15_paper_numbers.json: B3b.result.P_hi_W = 12.5
    traced 20 <- results/stage15_paper_numbers.json: B4.shift.least_shift_K = 20
-   traced 233.6 <- results/stage15_paper_numbers.json: B3b run s15_B3_PT_Exp4_hold12.5W: far_jump.T_C = 233.595
-   traced 240.4 <- results/stage15_paper_numbers.json: B4.shift_runs, the run shifted by 20 K: far_jump.T_C = 240.351
    traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
    traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
@@ -544,7 +547,6 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    traced 720 <- results/manuscript_numbers.json: constants.M_ref_g = 720
    traced 65 <- src/stage13_tign.py: /the reaction heat of the (65) g cell/ = 65
    traced 3,034 <- src/stage13_section.py: Section(): nr x nt = 3034
-   traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
 == main.tex: declarations  [map]
    [label] 1.11  ...every step are archived at Zenodo,   (all versions; version 1.11.0,  , holds every result used here), an...
    [identifier] 4.0  ...tests are those of Fransson et al.~ , published under CC~BY~4.0. The kinetic posterior files are the su...
@@ -727,7 +729,7 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    traced 120 <- results/stage15_table.csv: tau_s where {'test': 'M50_PT_Exp4'} = 120
    traced 240 <- results/stage15_table.csv: tau_s where {'test': 'M50_PT_Exp4'} = 240
    traced 360 <- results/stage15_table.csv: tau_s where {'test': 'M50_PT_Exp4'} = 360
-   [name] 21700  ..., the last outlasting the longest combustion reported for a 21700 cell, about 300 s (Supplementary Sectio...
+   [name] 21700  ..., the last outlasting the longest combustion reported for a 21700 cell, about 300 s~ ; in PT-Exp4 also th...
    traced 300 <- results/stage14_inputs.csv: value where {'key': 't_flame_max'} = 300
    traced 5 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 5
    traced 360 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 360
@@ -883,6 +885,9 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
 == manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt  [map]
    [year or date] 2026  ...om one cell to the next. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
+   traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
    traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
    traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
@@ -899,9 +904,14 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
+   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
 == manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt  [map]
    [year or date] 2026  ...t follows a failing one. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
+   traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
    traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
    traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
@@ -918,9 +928,14 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
+   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
 == manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt  [map]
    [year or date] 2026  ...t published experiments. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
+   traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
    traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
    traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
    traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
@@ -937,6 +952,8 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
+   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
 == manuscript/rebuild/supplement.tex  [broad]
    broad 11 <- results/note_numbers.json.headline_0.15.tau30.hottest_s | results/stage3_numbers.json.headline_3a.hottest_onset_s.p50 | results/v11_sensitivity.json.definitions~str | results/v12_numbers.json.exploratory.hottest_node_at_peak.grid_mean_parallel_hcentral_gcentral_tau10.r_mm
    broad 9 <- results/note_numbers.json.only_local_cases[2]~str | results/stage3_numbers.json.V4_amended_D25.sd_C | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_restriction.an_ele.rows_used | results/stage6_numbers.json.part_b_sets.total_by_contact.central.hot_t_255_7_s[0]
@@ -952,7 +969,17 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   broad 7 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.1.0 | results/stage3_numbers.json.combined_210.hottest_onset_s.p2.5 | results/v11_sensitivity.json.exploratory.sei_heat_release_half.mode.short_mode_width_s | results/v12_numbers.json.grid.tab_high_minus_low.parallel_hlow_tau30.res_peak_mean_C
+   broad 150 <- results/note_numbers.json.stage2_table[4].mean_peak_reactive_C~str | results/v12_numbers.json.grid.by_contact.high.res_peak_mean_C.max | results/stage6_numbers.json.part_a_mean_reaches_150_fact.peak_C[0] | results/stage7_paper_numbers.json.sensitivities_central.release_17.53s.C5.time_errors_s.M50_SP_Exp3
+   traced 138.5 <- predictions_stage7.md: /the lumped neighbour reaches (138\.5) C/ = 138.5
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   broad 13 <- results/stage3_numbers.json.headline_3a_extra.lead_modes.first.lead_s[0] | results/v11_sensitivity.json.restriction.separator.by_case.500 mW/K.restricted.p2.5 | results/v12_numbers.json.fact.by_contact.high.res_peak_hottest_C.min_run~str | results/stage6_numbers.json.part_b_sets.body_by_contact.central.hot_150C.times_s[0]
+   [label] 13  ...ber, so that step 13's P7 is the seventh prediction of step 13. \item 150\degC{} (steps 5 to 7): the l...
+   broad 150 <- results/note_numbers.json.stage2_table[4].mean_peak_reactive_C~str | results/v12_numbers.json.grid.by_contact.high.res_peak_mean_C.max | results/stage6_numbers.json.part_a_mean_reaches_150_fact.peak_C[0] | results/stage7_paper_numbers.json.sensitivities_central.release_17.53s.C5.time_errors_s.M50_SP_Exp3
+   broad 5 <- results/note_numbers.json.V0.ln_k.cat1 | results/stage3_numbers.json.V4_amended_D25.mean_offset_C | results/v12_numbers.json.grid.tab_high_minus_low.parallel_hlow_tau10.res_peak_hottest_C | results/stage7_paper_numbers.json.aged_vs_fresh.low.largest_change_hot_138_5_crossing_s
+   [label] 7  ...seventh prediction of step 13. \item 150\degC{} (steps 5 to 7): the least onset temperature of propag...
+   [label] 3  ...propagation in Fransson et al.'s tests, read off their Fig.~3a, which they give as the minimum a neig...
+   [label] 2.1  ...n, not their test of propagation, the second spike (Section~2.1 of the main text). \item $E_\mathrm{b}$...
    broad 3.105 <- results/stage8_paper_numbers.json.inputs.ratio.central | manuscript/data/parameters.csv:71:value | manuscript/data/parameters_table.csv:24:value
    broad 3.105 <- results/stage8_paper_numbers.json.inputs.ratio.central | manuscript/data/parameters.csv:71:value | manuscript/data/parameters_table.csv:24:value
    broad 2.22 <- results/stage8_paper_numbers.json.inputs.ratio.low | results/stage11_paper_numbers.json.clock.per_test.M50_SP_Exp2.shift_from_mean_s.d83 | manuscript/data/parameters.csv:71:range_or_bracket | manuscript/data/parameters_table.csv:24:value
@@ -1001,6 +1028,14 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    broad 1110 <- results/stage7_triggers.csv:321:T1max_C | manuscript/data/parameters.csv:16:range_or_bracket
    [exponent or subscript] -1  ...{-1}$\,K$^{-1}$) and its specific heat (842 to 1110~J\,kg$^{-1}$\,K$^{-1}$)~ ; a thermophysical standa...
    [exponent or subscript] -1  ...{-1}$) and its specific heat (842 to 1110~J\,kg$^{-1}$\,K$^{-1}$)~ ; a thermophysical standard deviati...
+   [label] 2  ..., called central in the records: the roll's values in Table~2 of the main text, 1.3 and 25~W\,m$^{-1}...
+   traced 1.3 <- results/manuscript_numbers.json: constants.k_radial_W_mK = 1.3
+   traced 25 <- results/manuscript_numbers.json: constants.k_axial_W_mK = 25
+   [exponent or subscript] -1  ...oll's values in Table~2 of the main text, 1.3 and 25~W\,m$^{-1}$\,K$^{-1}$ across and along the layers...
+   [exponent or subscript] -1  ...es in Table~2 of the main text, 1.3 and 25~W\,m$^{-1}$\,K$^{-1}$ across and along the layers and 950~J...
+   broad 950 <- results/manuscript_numbers.json.constants.cp_cell_J_kgK
+   [exponent or subscript] -1  ...{-1}$\,K$^{-1}$ across and along the layers and 950~J\,kg$^{-1}$\,K$^{-1}$, inside those ranges though...
+   [exponent or subscript] -1  ...{-1}$ across and along the layers and 950~J\,kg$^{-1}$\,K$^{-1}$, inside those ranges though not at th...
    broad 11 <- results/note_numbers.json.headline_0.15.tau30.hottest_s | results/stage3_numbers.json.headline_3a.hottest_onset_s.p50 | results/v11_sensitivity.json.definitions~str | results/v12_numbers.json.exploratory.hottest_node_at_peak.grid_mean_parallel_hcentral_gcentral_tau10.r_mm
    traced 1.008 <- results/stage11_paper_numbers.json: draws.kr_min.k_radial_W_mK = 1.00836
    traced 1.375 <- results/stage11_paper_numbers.json: draws.kr_max.k_radial_W_mK = 1.3755
@@ -1008,8 +1043,8 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    [exponent or subscript] -1  ...ctivity across the layers (1.008 and 1.375~W\,m$^{-1}$\,K$^{-1}$) and the smallest and largest specifi...
    traced 849 <- results/stage11_paper_numbers.json: draws.c_min.c_roll_J_kgK = 848.616
    traced 1109 <- results/stage11_paper_numbers.json: draws.c_max.c_roll_J_kgK = 1109.08
-   [exponent or subscript] -1  ...he smallest and largest specific heat (849 and 1109~J\,kg$^{-1}$\,K$^{-1}$); its eight draws are these...
-   [exponent or subscript] -1  ...t and largest specific heat (849 and 1109~J\,kg$^{-1}$\,K$^{-1}$); its eight draws are these four and ...
+   [exponent or subscript] -1  ...he smallest and largest specific heat (849 and 1109~J\,kg$^{-1}$\,K$^{-1}$), each setting all three pr...
+   [exponent or subscript] -1  ...t and largest specific heat (849 and 1109~J\,kg$^{-1}$\,K$^{-1}$), each setting all three properties, ...
    broad 5 <- results/note_numbers.json.V0.ln_k.cat1 | results/stage3_numbers.json.V4_amended_D25.mean_offset_C | results/v12_numbers.json.grid.tab_high_minus_low.parallel_hlow_tau10.res_peak_hottest_C | results/stage7_paper_numbers.json.aged_vs_fresh.low.largest_change_hot_138_5_crossing_s
    traced 5,248 <- results/v12_numbers.json: runs.all = 5248
    broad 4,800 <- results/v12_numbers.json.runs.fact
@@ -1017,7 +1052,21 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    broad 7 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.1.0 | results/stage3_numbers.json.combined_210.hottest_onset_s.p2.5 | results/v11_sensitivity.json.exploratory.sei_heat_release_half.mode.short_mode_width_s | results/v12_numbers.json.grid.tab_high_minus_low.parallel_hlow_tau30.res_peak_mean_C
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    broad 5 <- results/note_numbers.json.V0.ln_k.cat1 | results/stage3_numbers.json.V4_amended_D25.mean_offset_C | results/v12_numbers.json.grid.tab_high_minus_low.parallel_hlow_tau10.res_peak_hottest_C | results/stage7_paper_numbers.json.aged_vs_fresh.low.largest_change_hot_138_5_crossing_s
-   [label] 5  ...two-node energy balance. The measured values quoted in step 5: the mean heating rate of propagating n...
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   traced 538 <- predictions_v12.md: /would raise it (538) K adiabatically/ = 538
+   traced 269 <- predictions_v12.md: /would raise them (269) K/ = 269
+   traced 181 <- predictions_v12.md: /time scale C/\(2G\) of (181) s/ = 181
+   traced 614 <- predictions_v12.md: /\((614) s and 132 s at the low/ = 614
+   traced 132 <- predictions_v12.md: /614 s and (132) s at the low/ = 132
+   traced 145 <- predictions_v12.md: /passive peak near (145) to 170 C/ = 145
+   traced 170 <- predictions_v12.md: /passive peak near 145 to (170) C/ = 170
+   traced 200 <- predictions_v12.md: /(200) to 250 s after the release/ = 200
+   traced 250 <- predictions_v12.md: /200 to (250) s after the release/ = 250
+   traced 190 <- predictions_v12.md: /sits near (190) to 200 C/ = 190
+   traced 200 <- predictions_v12.md: /sits near 190 to (200) C/ = 200
+   traced 220 <- predictions_v12.md: /must pass about (220) C/ = 220
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   [label] 5  ... carry it to 255.7\degC. The measured values quoted in step 5: the mean heating rate of propagating n...
    traced 0.4 <- predictions_v12.md: /average heat rate for propagation to occur was (0\.4)/ = 0.4
    [exponent or subscript] -1  ...an heating rate of propagating neighbours, about 0.4~K\,s$^{-1}$, as Fransson et al.\ state it in thei...
    broad 9 <- results/note_numbers.json.only_local_cases[2]~str | results/stage3_numbers.json.V4_amended_D25.sd_C | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_restriction.an_ele.rows_used | results/stage6_numbers.json.part_b_sets.total_by_contact.central.hot_t_255_7_s[0]
@@ -1027,7 +1076,8 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    broad 3 <- results/note_numbers.json.V0.ln_k.cat3~key | results/stage3_numbers.json.V4_registered.T_in_p2.5_C~key | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_T_C.by_group.separator.variance | results/v12_numbers.json.central_case.series_minus_parallel.tau10.res_peak_mean_C
    broad 0.027 <- results/stage3_numbers.json.decomposition.hottest_onset_s.ratio_thermal_to_kinetic | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_restriction.elec_evap.narrowing | results/stage8_paper_numbers.json.exploratory.C2.mid.median_f | results/stage12_paper_numbers.json.P4.largest_f_max[1]
    broad 8 <- results/note_numbers.json.stage2_table[0].hottest_reaches_278.9C_s~str | results/stage3_numbers.json.V4_amended_D25.sd_C | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.joint_variance | results/v12_numbers.json.exploratory.time_above_150C.grid_mean_parallel_hcentral_gcentral_tau10.toward.from_s
-   [label] 12  ...l's response rises with the trigger's energy. $E^*$ in step 12: the delivered energy at which the lump...
+   [label] 12  ...rger trigger never needs more delivered heat. $E^*$ in step 12, a different quantity from the threshol...
+   broad 11 <- results/note_numbers.json.headline_0.15.tau30.hottest_s | results/stage3_numbers.json.headline_3a.hottest_onset_s.p50 | results/v11_sensitivity.json.definitions~str | results/v12_numbers.json.exploratory.hottest_node_at_peak.grid_mean_parallel_hcentral_gcentral_tau10.r_mm
    broad 13 <- results/stage3_numbers.json.headline_3a_extra.lead_modes.first.lead_s[0] | results/v11_sensitivity.json.restriction.separator.by_case.500 mW/K.restricted.p2.5 | results/v12_numbers.json.fact.by_contact.high.res_peak_hottest_C.min_run~str | results/stage6_numbers.json.part_b_sets.body_by_contact.central.hot_150C.times_s[0]
    [label] 2.5  ...the two-body model (step 13): the reduced models of Section~2.5 and Appendix~B of the main text. The ca...
    broad 14 <- results/note_numbers.json.sei_storage_exploratory.0_days.headline.two_E21495_tau30_G0.5.hottest_node[0] | results/stage3_numbers.json.decomposition.lead_s.sd_kinetic | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_restriction.elec_evap.restricted.p2.5 | results/stage6_numbers.json.part_b_sets.total.hot_150C.times_s[1]
@@ -1049,6 +1099,8 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    [label] 4  ...ain text reports results of steps 5 and 7 to 15. Steps 1 to 4 concern when the chemistry starts in an...
    broad 6 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.10.0 | results/v12_numbers.json.grid.tab_high_minus_low.parallel_hlow_tau10.res_peak_mean_C | results/stage6_numbers.json.part_b_sets.total.hot_150C.times_s[0] | results/stage7_paper_numbers.json.part_c_timing.event_C5.away_reaches_255_7_after_start_s[0]
    broad 150 <- results/note_numbers.json.stage2_table[4].mean_peak_reactive_C~str | results/v12_numbers.json.grid.by_contact.high.res_peak_mean_C.max | results/stage6_numbers.json.part_a_mean_reaches_150_fact.peak_C[0] | results/stage7_paper_numbers.json.sensitivities_central.release_17.53s.C5.time_errors_s.M50_SP_Exp3
+   broad 17.53 <- results/stage6_numbers.json.part_b_sets.body_by_tau.17.53~key | manuscript/data/parameters.csv:39:file_evidence
+   broad 25.24 <- results/stage6_numbers.json.part_b_sets.body_by_tau.25.24~key | manuscript/data/parameters.csv:39:file_evidence
    broad 3 <- results/note_numbers.json.V0.ln_k.cat3~key | results/stage3_numbers.json.V4_registered.T_in_p2.5_C~key | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_T_C.by_group.separator.variance | results/v12_numbers.json.central_case.series_minus_parallel.tau10.res_peak_mean_C
    broad 11 <- results/note_numbers.json.headline_0.15.tau30.hottest_s | results/stage3_numbers.json.headline_3a.hottest_onset_s.p50 | results/v11_sensitivity.json.definitions~str | results/v12_numbers.json.exploratory.hottest_node_at_peak.grid_mean_parallel_hcentral_gcentral_tau10.r_mm
    [label] 6  ...the kinetic draws, which step 11 used, and six runs of step 6 on which step 12's predictions file dre...
@@ -1194,10 +1246,20 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    broad 7 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.1.0 | results/stage3_numbers.json.combined_210.hottest_onset_s.p2.5 | results/v11_sensitivity.json.exploratory.sei_heat_release_half.mode.short_mode_width_s | results/v12_numbers.json.grid.tab_high_minus_low.parallel_hlow_tau30.res_peak_mean_C
    broad 12 <- results/note_numbers.json.levels_reached_two_strip.lumped.0.15 | results/stage3_numbers.json.headline_3a.hottest_onset_s.mean | results/v11_sensitivity.json.exploratory.sets.central half, ncm811.short_mode_width_s | results/stage6_numbers.json.part_b_sets.total_by_contact.low.hot_t_peak_s[0]
    broad 9 <- results/note_numbers.json.only_local_cases[2]~str | results/stage3_numbers.json.V4_amended_D25.sd_C | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_restriction.an_ele.rows_used | results/stage6_numbers.json.part_b_sets.total_by_contact.central.hot_t_255_7_s[0]
+   broad 15 <- results/note_numbers.json.sei_storage_exploratory.0_days.headline.two_E33223_tau30_G0.2.hottest_node[0] | results/stage3_numbers.json.headline_3a.lead_s.p2.5 | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.full.p2.5 | results/stage6_numbers.json.part_b_sets.total_by_tau.21.39.hot_t_peak_s[1]
+   traced 5 <- predictions_stage15.md: /less (5) % and plus 5 %/ = 5
    [label] 3  ...est}    Table~  gives, test by test, the brackets that Fig.~3 of the main text draws and the needs wi...
    [label] 2  ... the main text draws and the needs with the pulse that Fig.~2a draws; Table~  gives the needs under e...
    broad 0.0125 <- results/stage7_paper_numbers.json.aged_vs_fresh.high.lumped_peak_fresh_minus_aged_K[0] | results/stage8_paper_numbers.json.part_a.per_test.M50_PT_Exp2.fC1.hi | results/stage9_paper_numbers.json.part_b.120.per_test.M50_PP_Exp2.ft_C2.f_t_minus_fs_lo | results/stage10_paper_numbers.json.part_c.held_out.fC2.parallel_to_series.d_log
    [label] 13  ...and PT-Exp3 and the lumped bracket of PT-Exp1 again in step 13 (Table~ ), and the lumped brackets of P...
+   broad 12 <- results/note_numbers.json.levels_reached_two_strip.lumped.0.15 | results/stage3_numbers.json.headline_3a.hottest_onset_s.mean | results/v11_sensitivity.json.exploratory.sets.central half, ncm811.short_mode_width_s | results/stage6_numbers.json.part_b_sets.total_by_contact.low.hot_t_peak_s[0]
+   broad 9 <- results/note_numbers.json.only_local_cases[2]~str | results/stage3_numbers.json.V4_amended_D25.sd_C | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_restriction.an_ele.rows_used | results/stage6_numbers.json.part_b_sets.total_by_contact.central.hot_t_255_7_s[0]
+   traced 4.66 <- results/stage14_needs.csv: need_21s_lo_J where {'test': 'M50_PT_Exp4'} = 4.6569
+   traced 5.04 <- results/stage15_paper_numbers.json: B4.draws.5.E_J = 5.04499
+   traced 3.75 <- results/stage10_heldout.json: table, M50_PT_Exp4, f9_lo = 3.75
+   traced 4.06 <- results/stage10_heldout.json: table, M50_PT_Exp4, f9_hi = 4.0625
+   [label] 3.4  ...4~kJ (3.75 to 4.06\,\% of its ejected energy), and Sections~3.4 and 3.5 of the main text use its upper ...
+   [label] 3.5  ...75 to 4.06\,\% of its ejected energy), and Sections~3.4 and 3.5 of the main text use its upper end. The...
    broad 1 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.1.0~key | results/stage3_numbers.json.V4_registered.main_cluster_share | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.an_ele.share | results/v12_numbers.json.grid.G_tab_W_K.low
    traced 5 <- predictions_stage15.md: /less (5) % and plus 5 %/ = 5
    broad 10 <- results/note_numbers.json.headline_0.15.tau10~key | results/stage3_numbers.json.nine_cases_3a.two_E33223_tau10_G0.5.lead_p2.5_s | results/v11_sensitivity.json.exploratory.sets.central half, an_ele.short_mode_width_s | results/v12_numbers.json.all_runs.t_T1max_s.min
@@ -1258,7 +1320,23 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    broad 0.01 <- results/note_numbers.json.V2.synthetic_max_rel | results/stage3_numbers.json.V5.worst_relative_change | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.separator.variance | results/v12_numbers.json.grid.G_tab_W_K.low
    [label] 3  ...each path can deliver}    Each input of the bounds of Table~3 of the main text was read at its source...
    broad 1 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.1.0~key | results/stage3_numbers.json.V4_registered.main_cluster_share | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.an_ele.share | results/v12_numbers.json.grid.tab_high_minus_low.series_hcentral_tau10.lum_peak_C
+   [label] 3  ...published inputs surveyed allow under the settings of Table~3 of the main text; the gas's rests on a ...
+   traced 181 <- results/stage14_raytrace.json: w_grid points = 181
+   traced 147 <- results/stage14_raytrace.json: w_grid points, part column = 147
+   broad 30 <- results/note_numbers.json.headline_0.15.tau30~key | results/v11_sensitivity.json.restriction.an_ele.by_case.100 mW/K.per_reaction_restriction.elec_evap.restricted.p2.5 | results/v12_numbers.json.central_case.runs.parallel_tau10.resolved_minus_lumped_peak_K | results/stage6_numbers.json.part_a_sets_with_series.sens.hot.t_cross_max_s
+   broad 0.01 <- results/note_numbers.json.stage2_table[0].resolved_layered_cathode_conversion_volume_mean_900s~str | results/stage3_numbers.json.variance_share_thermal_over_kinetic.lumped_onset_s | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.separator.variance | results/v12_numbers.json.grid.G_tab_W_K.low
+   broad 0.1 <- results/note_numbers.json.headline_0.15~key | results/stage3_numbers.json.V4_registered.delayed_share | results/v11_sensitivity.json.shares.100 mW/K.hottest_onset_s.by_group.separator.variance | results/v12_numbers.json.grid.G_contact_W_K.low
+   broad 1 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.1.0~key | results/stage3_numbers.json.V4_registered.main_cluster_share | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.an_ele.share | results/v12_numbers.json.grid.tab_high_minus_low.series_hcentral_tau10.lum_peak_C
+   traced 28 <- results/stage14_raytrace.json: w_grid points, part edge = 28
+   broad 15 <- results/note_numbers.json.sei_storage_exploratory.0_days.headline.two_E33223_tau30_G0.2.hottest_node[0] | results/stage3_numbers.json.headline_3a.lead_s.p2.5 | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.full.p2.5 | results/stage6_numbers.json.part_b_sets.body_by_tau.21.39.hot_t_peak_s[1]
+   [start of a time window] 0  ...hing the facing half's end edge, every 15\textdegree{} from 0 to 90\textdegree{} from the line of con...
+   broad 90 <- results/v12_numbers.json.exploratory.time_above_150C.grid_mean_parallel_hcentral_ghigh_tau10.toward.duration_s | results/stage7_paper_numbers.json.P_details.P6.by_connection.parallel.lumped_peaks_C[2] | results/stage8_paper_numbers.json.part_a.fC2.t_cross_at_upper_end_s.M50_ST_Exp1 | results/stage9_paper_numbers.json.part_a.A3_lumped.M50_PP_Exp3.overshoot_K
+   broad 0.01 <- results/note_numbers.json.stage2_table[0].resolved_layered_cathode_conversion_volume_mean_900s~str | results/stage3_numbers.json.variance_share_thermal_over_kinetic.lumped_onset_s | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.separator.variance | results/v12_numbers.json.grid.G_tab_W_K.low
+   broad 0.3 <- results/stage3_numbers.json.P3_distribution.50 mW/K | results/v11_sensitivity.json.shares.500 mW/K.lead_s.by_group.separator.variance | results/v12_numbers.json.central_case.runs.series_tau10.toward_below_hottest_K | results/stage8_paper_numbers.json.part_a.per_test.M50_PT_Exp1.fC3_exploratory.value
    broad 0.0038 <- results/explore_sei_storage.json.storage.7_days.self_heating_at_25C_K_per_min | manuscript/data/parameters.csv:8:range_or_bracket | results/stage13_paper_numbers.json.conditioning[8].B2_f_star~str
+   broad 0.05 <- results/stage3_numbers.json.nine_cases_3a.two_E33223_tau10_G0.1.share_only_hottest | results/v11_sensitivity.json.shares.100 mW/K.hottest_onset_s.by_group.separator.variance | results/v12_numbers.json.grid.G_contact_W_K.low | results/stage6_numbers.json.part_b_sets.total.reaction_heat_resolved_J[1]
+   broad 0.5 <- results/note_numbers.json.V0.cathode_peak.peak_W_per_g | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_share_of_resamples_largest.sei_decomp | results/v12_numbers.json.exploratory.section2_rate_without_propagation.grid_mean_parallel_hcentral_gcentral_tau10.lumped.rate_C_per_s | results/stage8_paper_numbers.json.part_a.per_test.M50_PT_Exp1.fC2.lo
+   broad 1.5 <- results/note_numbers.json.stage2_heat_ratio_lumped_over_resolved.two_E33223_tau10_G0.2 | results/v12_numbers.json.grid.tab_high_minus_low.series_hcentral_tau10.lum_peak_C | results/stage8_paper_numbers.json.exploratory.logistic.intercept | results/stage9_paper_numbers.json.part_b.360.per_test.M50_SP_Exp3.ft_C2.power_W
    traced 30 <- results/stage14_corrections.json: A3.narrow_jet_strikes_for_phi_below_deg = 30
    traced 89.34 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_max'} = 89.3378
    traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
@@ -1339,6 +1417,9 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    broad 3.1 <- results/v12_numbers.json.grid.tab_high_minus_low.parallel_hhigh_tau30.res_peak_away_C | results/stage8_paper_numbers.json.inputs.ratio.central | results/stage9_paper_numbers.json.verdict_details.P2.rows[2].best_run.dt_s | results/stage10_paper_numbers.json.part_a.none_hcentral.nodes.side.window.rise_last_model_K
    broad 79.9 <- results/stage7_paper_numbers.json.sensitivities_central.release_17.53s.C3.time_errors_s.M50_PP_Exp1 | results/stage10_paper_numbers.json.part_a.con240_C2_hcentral.nodes.away.window.max_abs_K
    broad 8.4 <- results/stage6_numbers.json.part_b_sets.bracket.hot_150C.times_s[0] | results/stage8_paper_numbers.json.part_c.0.2.C3.times_s[11] | results/stage10_paper_numbers.json.part_a.con360_C2_hcentral.nodes.side_out.window.rise_last_model_K | results/stage11_paper_numbers.json.far_face.per_test.M50_PT_Exp1.thermal_K.c_min
+   broad 80.0 <- results/stage10_paper_numbers.json.measured.dip_after_spike_C | results/stage11_paper_numbers.json.clock.per_test.M50_ST_Exp3.t_draw_s.d83 | results/stage15_cross_section.json.A1_rows[64].far_peak_3d_C
+   broad 8.5 <- results/note_numbers.json.stage2_table[0].layered_cathode_consumed_at_a_node_s~str | results/stage3_numbers.json.V4_amended_D25.sd_C | results/stage8_paper_numbers.json.part_c.0.2.C3.times_s[12] | results/stage9_paper_numbers.json.verdict_details.P2.rows[1].best_run.dt_s
+   broad 0.5 <- results/note_numbers.json.V0.cathode_peak.peak_W_per_g | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_share_of_resamples_largest.sei_decomp | results/v12_numbers.json.exploratory.section2_rate_without_propagation.grid_mean_parallel_hcentral_gcentral_tau10.lumped.rate_C_per_s | results/stage8_paper_numbers.json.part_a.per_test.M50_PT_Exp1.fC2.lo
    traced 141.0 <- results/stage10_paper_numbers.json: measured.at_45_s_C = 140.997
    broad 45 <- results/note_numbers.json.sei_storage_exploratory.3_days.lead_s.two_E21495_tau30_G0.5 | results/stage3_numbers.json.headline_3a.lumped_onset_s.mean | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_restriction.elec_evap.restricted.width_s | results/stage7_paper_numbers.json.part_b.C5.low.time_error_median_s
    traced 197.3 <- results/stage10_paper_numbers.json: measured.at_onset_C = 197.254
@@ -1384,6 +1465,12 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    [year or date] 2020  ...tic NMC and LFP & braced stack & no \\ Torres-Castro et al. 2020~  & pouch & stacks & no \\ \bottomrule ...
    [label] 2  ...ves the needs of every test under the four shapes that Fig.~2 of the main text draws: for the nine te...
    broad 0.5 <- results/note_numbers.json.V0.cathode_peak.peak_W_per_g | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_share_of_resamples_largest.sei_decomp | results/v12_numbers.json.grid.G_tab_W_K.low | results/stage7_paper_numbers.json.aged_vs_fresh.central.largest_change_hot_255_7_crossing_s
+   broad 0 <- results/note_numbers.json.headline_0.15~key | results/stage3_numbers.json.V4_registered.delayed_share | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.ncm811.variance | results/v12_numbers.json.central_case.runs.series_tau10.res_energy_residual_rel
+   broad 0.0125 <- results/stage7_paper_numbers.json.aged_vs_fresh.high.lumped_peak_fresh_minus_aged_K[0] | results/stage8_paper_numbers.json.part_a.per_test.M50_PT_Exp2.fC1.hi | results/stage9_paper_numbers.json.part_b.120.per_test.M50_PP_Exp2.ft_C2.f_t_minus_fs_lo | results/stage10_paper_numbers.json.part_c.held_out.fC2.parallel_to_series.d_log
+   broad 0.025 <- results/stage8_paper_numbers.json.part_a.per_test.M50_PT_Exp2.fC2.hi | results/stage10_paper_numbers.json.part_c.held_out.f9.parallel_to_series.d_log | results/stage12_scorecard.json.part_c.fstar_C2_fixed.M50_ST_Exp4.f_fixed[1] | results/stage13_paper_numbers.json.map[0].fourier~str
+   broad 0.05 <- results/stage3_numbers.json.nine_cases_3a.two_E33223_tau10_G0.1.share_only_hottest | results/v11_sensitivity.json.shares.100 mW/K.hottest_onset_s.by_group.separator.variance | results/v12_numbers.json.grid.G_contact_W_K.low | results/stage6_numbers.json.part_b_sets.total.reaction_heat_resolved_J[1]
+   broad 0.1 <- results/note_numbers.json.headline_0.15~key | results/stage3_numbers.json.V4_registered.delayed_share | results/v11_sensitivity.json.shares.100 mW/K.hottest_onset_s.by_group.separator.variance | results/v12_numbers.json.grid.G_contact_W_K.low
+   broad 0.2 <- results/note_numbers.json.headline_0.15~key | results/stage3_numbers.json.nine_cases_3a.two_E33223_tau10_G0.05.share_only_hottest | results/v11_sensitivity.json.rank_shares.500 mW/K.hottest_onset_s.separator.rho | results/v12_numbers.json.central_case.runs.parallel_tau10.toward_below_hottest_K
    [label] 4  ...he reduced models}    Table~  gives the numbers behind Fig.~4a of the main text and its Section~3.4: ...
    [label] 3.4  ...the numbers behind Fig.~4a of the main text and its Section~3.4: the resolved model's local threshold w...
    traced 5 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 5
@@ -1414,9 +1501,9 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    traced 0.44 <- results/stage13_twobody.csv: low contact, weak triggers, the midpoint less B2 = 0.441706
    traced $-0.43 <- smallest and largest of results/stage13_twobody.csv: high contact, B2 less the midpoint = -0.433408
    traced 0.19 <- smallest and largest of results/stage13_twobody.csv: high contact, B2 less the midpoint = 0.191961
-   traced 32 <- results/stage13_twobody.csv: central searches over 120 and 360 s = 32
-   traced 120 <- results/stage13_twobody.csv: tau_d_s of those searches = 120
-   traced 360 <- results/stage13_twobody.csv: tau_d_s of those searches = 360
+   broad 32 <- results/v11_sensitivity.json.restriction.an_ele.by_case.100 mW/K.narrowing_95_bootstrap_note~str | results/v12_numbers.json.central_case.runs.series_tau10.resolved_minus_lumped_peak_K | results/stage6_numbers.json.part_b_sets.body_by_contact.central.hot_t_peak_s[0] | results/stage10_paper_numbers.json.part_a.con120_C2_lo_hcentral.nodes.away.window.rms_K
+   broad 120 <- results/v12_numbers.json.exploratory.section2_rate_without_propagation.grid_mean_parallel_hlow_ghigh_tau10.toward.T_end_C | results/stage6_numbers.json.part_b_sets.peak_by_contact.low.mean_peak_C[0] | results/stage9_paper_numbers.json.definitions.taus_B_s[0] | results/stage10_paper_numbers.json.part_a.con240_C2_hcentral.nodes.facing.after_section_I.max_abs_K
+   broad 360 <- results/v12_numbers.json.exploratory.time_above_150C.grid_mean_parallel_hhigh_gcentral_tau30.lumped.duration_s | results/stage9_paper_numbers.json.definitions.taus_B_s[2] | results/stage7_triggers.csv:105:T1max_C | results/stage15_cross_section.json.A2[30].runs[6][2]
    traced 29 <- results/stage13_twobody.csv: central searches over 120 and 360 s within the tolerance = 29
    traced 120 <- results/stage13_twobody.csv: tau_d_s of those searches = 120
    traced 7 <- smallest and largest of results/stage13_twobody.csv: central searches outside the tolerance, by how much = 7.35326
@@ -1435,178 +1522,397 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    [label] 9  ...and of PT-Exp1 and PT-Exp3 at the high contact (steps 7 and 9).   { }{}   { }{}  \section{The archive...
    traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   [label] 3.1  ...'s fitted trigger, and how it is established, which Section~3.1 of the main text summarises. No test's ...
+   traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   [label] 7  ... contact the hottest point stays below 255.7\degC{} in step 7's three-dimensional runs to 900~s in al...
+   traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   broad 9 <- results/note_numbers.json.only_local_cases[2]~str | results/stage3_numbers.json.V4_amended_D25.sd_C | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_restriction.an_ele.rows_used | results/stage6_numbers.json.part_b_sets.total_by_contact.central.hot_t_255_7_s[0]
+   [label] 10  ...t, and the other eight were carried to 900~s in steps 9 and 10; at the high contact it does so in thre...
+   broad 11 <- results/note_numbers.json.headline_0.15.tau30.hottest_s | results/stage3_numbers.json.headline_3a.hottest_onset_s.p50 | results/v11_sensitivity.json.definitions~str | results/v12_numbers.json.exploratory.hottest_node_at_peak.grid_mean_parallel_hcentral_gcentral_tau10.r_mm
+   traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
 == manuscript/rebuild/tables/s10_twobody.tex  [table:s10_twobody.tex]
+   [label] 2.5  ...{The lumped threshold against the two-body model of Section~2.5 of the main text (kJ): above, with the ...
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
-   [label] 2.5  ... and the high contact against the two-body model of Section~2.5 of the main text (kJ): the search's bra...
-   table 10 <- results/stage13_twobody.csv:9:n_runs
-   table 300 <- results/stage13_twobody.csv:2:n_runs
-   table 9.0 <- results/stage13_twobody.csv:2:E_b_J
-   table 12.43 <- results/stage13_twobody.csv:2:lum_lo_J
-   table 12.62 <- results/stage13_twobody.csv:2:lum_hi_J
-   table 12.25 <- results/stage13_twobody.csv:2:B2_E_J
-   table -0.28 <- results/stage13_twobody.csv:2:B2_minus_mid_J
-   table 1.25 <- results/stage13_twobody.csv:2:P8_tol_J
-   table 12.82 <- results/stage13_twobody.csv:4:lum_lo_J
-   table 13.01 <- results/stage13_twobody.csv:4:lum_hi_J
-   table 12.64 <- results/stage13_twobody.csv:4:B2_E_J
-   table -0.28 <- results/stage13_twobody.csv:2:B2_minus_mid_J
-   table 1.29 <- results/stage13_twobody.csv:4:P8_tol_J
+   table 32 <- results/stage13_twobody.csv:12:E_b_J
+   table 120 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:34:tau_s
+   table 360 <- results/stage13_twobody.csv:6:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:35:tau_s
+   table 32 <- results/stage13_twobody.csv:12:E_b_J
+   table 10 <- results/stage13_twobody.csv:9:n_runs | manuscript/rebuild/data/s10_twobody.csv:8:lum_hi_J
+   table 300 <- results/stage13_twobody.csv:2:n_runs | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   table 9.0 <- results/stage13_twobody.csv:2:E_b_J | manuscript/rebuild/data/s10_twobody.csv:26:two_body_J
+   table 12.43 <- results/stage13_twobody.csv:2:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:2:lum_lo_J
+   table 12.62 <- results/stage13_twobody.csv:2:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:2:lum_hi_J
+   table 12.25 <- results/stage13_twobody.csv:2:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:2:two_body_J
+   table -0.28 <- results/stage13_twobody.csv:2:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:2:diff_J
+   table 1.25 <- results/stage13_twobody.csv:2:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:2:tol_J
+   table 12.82 <- results/stage13_twobody.csv:4:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:3:lum_lo_J
+   table 13.01 <- results/stage13_twobody.csv:4:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:3:lum_hi_J
+   table 12.64 <- results/stage13_twobody.csv:4:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:3:two_body_J
+   table -0.28 <- results/stage13_twobody.csv:2:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:2:diff_J
+   table 1.29 <- results/stage13_twobody.csv:4:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:3:tol_J
    table 43.4 <- results/stage13_twobody.csv:7:E_b_J
-   table 8.76 <- results/stage13_twobody.csv:7:lum_lo_J
-   table 8.89 <- results/stage13_twobody.csv:7:lum_hi_J
-   table 9.31 <- results/stage13_twobody.csv:7:B2_E_J
-   table 0.48 <- results/stage13_twobody.csv:7:B2_minus_mid_J
-   table 0.88 <- results/stage13_twobody.csv:7:P8_tol_J
-   table 0.09 <- results/stage13_twobody.csv:9:lum_lo_J
-   table 0.11 <- results/stage13_twobody.csv:5:B2_t_ignition_s
-   table 0.29 <- results/stage13_twobody.csv:6:B2_t_ignition_s
-   table 0.19 <- results/stage13_twobody.csv:8:B2_t_margin_s
-   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J
+   table 8.76 <- results/stage13_twobody.csv:7:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:4:lum_lo_J
+   table 8.89 <- results/stage13_twobody.csv:7:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:4:lum_hi_J
+   table 9.31 <- results/stage13_twobody.csv:7:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:4:two_body_J
+   table 0.48 <- results/stage13_twobody.csv:7:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:4:diff_J
+   table 0.88 <- results/stage13_twobody.csv:7:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:4:tol_J
+   table 0.09 <- results/stage13_twobody.csv:9:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:5:lum_lo_J
+   table 0.11 <- results/stage13_twobody.csv:5:B2_t_ignition_s | manuscript/rebuild/data/s10_twobody.csv:5:lum_hi_J
+   table 0.29 <- results/stage13_twobody.csv:6:B2_t_ignition_s | manuscript/rebuild/data/s10_twobody.csv:5:two_body_J
+   table 0.19 <- results/stage13_twobody.csv:8:B2_t_margin_s | manuscript/rebuild/data/s10_twobody.csv:5:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
    table 31.6 <- results/stage13_twobody.csv:12:E_b_J
-   table 10.74 <- results/stage13_twobody.csv:12:lum_lo_J
-   table 10.91 <- results/stage13_twobody.csv:12:lum_hi_J
-   table 11.07 <- results/stage13_twobody.csv:12:B2_E_J
-   table 0.25 <- results/stage13_twobody.csv:8:archived_t_cross_s
-   table 1.08 <- results/stage13_twobody.csv:12:P8_tol_J
-   table 6.97 <- results/stage13_twobody.csv:14:B2_E_J
-   table 7.07 <- results/stage13_twobody.csv:14:lum_hi_J
-   table 6.97 <- results/stage13_twobody.csv:14:B2_E_J
-   table -0.05 <- results/stage13_twobody.csv:2:test
-   table 0.70 <- results/stage13_twobody.csv:14:P8_tol_J
+   table 10.74 <- results/stage13_twobody.csv:12:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:6:lum_lo_J
+   table 10.91 <- results/stage13_twobody.csv:12:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:6:lum_hi_J
+   table 11.07 <- results/stage13_twobody.csv:12:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:6:two_body_J
+   table 0.25 <- results/stage13_twobody.csv:8:archived_t_cross_s | manuscript/rebuild/data/s10_twobody.csv:6:diff_J
+   table 1.08 <- results/stage13_twobody.csv:12:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:6:tol_J
+   table 6.97 <- results/stage13_twobody.csv:14:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:7:lum_lo_J
+   table 7.07 <- results/stage13_twobody.csv:14:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:7:lum_hi_J
+   table 6.97 <- results/stage13_twobody.csv:14:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:7:lum_lo_J
+   table -0.05 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.70 <- results/stage13_twobody.csv:14:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:7:tol_J
    table 40.0 <- results/stage13_twobody.csv:17:E_b_J
-   table 9.44 <- results/stage13_twobody.csv:17:lum_lo_J
-   table 9.58 <- results/stage13_twobody.csv:17:lum_hi_J
-   table 9.88 <- results/stage13_twobody.csv:17:B2_E_J
-   table 0.37 <- results/stage13_twobody.csv:17:B2_minus_mid_J
-   table 0.95 <- results/stage13_twobody.csv:17:P8_tol_J
-   table 2.20 <- results/stage13_twobody.csv:19:lum_lo_J
-   table 2.23 <- results/stage13_twobody.csv:11:lum_lo_J
-   table 2.34 <- results/stage13_twobody.csv:19:B2_E_J
-   table 0.12 <- results/stage13_twobody.csv:5:tau_d_s
-   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J
+   table 9.44 <- results/stage13_twobody.csv:17:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:8:lum_lo_J
+   table 9.58 <- results/stage13_twobody.csv:17:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:8:lum_hi_J
+   table 9.88 <- results/stage13_twobody.csv:17:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:8:two_body_J
+   table 0.37 <- results/stage13_twobody.csv:17:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:8:diff_J
+   table 0.95 <- results/stage13_twobody.csv:17:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:8:tol_J
+   table 2.20 <- results/stage13_twobody.csv:19:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:9:lum_lo_J
+   table 2.23 <- results/stage13_twobody.csv:11:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:9:lum_hi_J
+   table 2.34 <- results/stage13_twobody.csv:19:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:9:two_body_J
+   table 0.12 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:9:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
    table 51.1 <- results/stage13_twobody.csv:22:E_b_J
-   table 7.47 <- results/stage13_twobody.csv:22:lum_lo_J
-   table 7.58 <- results/stage13_twobody.csv:22:lum_hi_J
-   table 7.93 <- results/stage13_twobody.csv:22:B2_E_J
-   table 0.41 <- results/stage13_twobody.csv:22:B2_minus_mid_J
-   table 0.75 <- results/stage13_twobody.csv:22:P8_tol_J
-   table 0 <- results/stage13_twobody.csv:2:test
-   table 0.00 <- results/stage13_twobody.csv:2:test
-   table 0.00 <- results/stage13_twobody.csv:2:test
-   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J
+   table 7.47 <- results/stage13_twobody.csv:22:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:10:lum_lo_J
+   table 7.58 <- results/stage13_twobody.csv:22:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:10:lum_hi_J
+   table 7.93 <- results/stage13_twobody.csv:22:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:10:two_body_J
+   table 0.41 <- results/stage13_twobody.csv:22:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:10:diff_J
+   table 0.75 <- results/stage13_twobody.csv:22:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:10:tol_J
+   table 0 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
    table 41.0 <- results/stage13_twobody.csv:27:E_b_J
-   table 9.29 <- results/stage13_twobody.csv:27:lum_lo_J
-   table 9.43 <- results/stage13_twobody.csv:27:lum_hi_J
-   table 9.72 <- results/stage13_twobody.csv:27:B2_E_J
-   table 0.36 <- results/stage13_twobody.csv:3:B2_minus_mid_J
-   table 0.94 <- results/stage13_twobody.csv:27:P8_tol_J
-   table 1.60 <- results/stage13_twobody.csv:29:lum_lo_J
-   table 1.63 <- results/stage13_twobody.csv:29:lum_hi_J
-   table 1.76 <- results/stage13_twobody.csv:29:B2_E_J
-   table 0.15 <- results/stage13_twobody.csv:16:B2_minus_mid_J
-   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J
+   table 9.29 <- results/stage13_twobody.csv:27:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:12:lum_lo_J
+   table 9.43 <- results/stage13_twobody.csv:27:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:12:lum_hi_J
+   table 9.72 <- results/stage13_twobody.csv:27:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:12:two_body_J
+   table 0.36 <- results/stage13_twobody.csv:3:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:12:diff_J
+   table 0.94 <- results/stage13_twobody.csv:27:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:12:tol_J
+   table 1.60 <- results/stage13_twobody.csv:29:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:13:lum_lo_J
+   table 1.63 <- results/stage13_twobody.csv:29:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:13:lum_hi_J
+   table 1.76 <- results/stage13_twobody.csv:29:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:13:two_body_J
+   table 0.15 <- results/stage13_twobody.csv:16:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:13:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
    table 43.9 <- results/stage13_twobody.csv:2:B2_f
-   table 8.68 <- results/stage13_twobody.csv:32:lum_lo_J
-   table 8.81 <- results/stage13_twobody.csv:32:lum_hi_J
-   table 9.22 <- results/stage13_twobody.csv:32:B2_E_J
-   table 0.48 <- results/stage13_twobody.csv:7:B2_minus_mid_J
-   table 0.87 <- results/stage13_twobody.csv:32:P8_tol_J
-   table 0 <- results/stage13_twobody.csv:2:test
-   table 0.00 <- results/stage13_twobody.csv:2:test
-   table 0.00 <- results/stage13_twobody.csv:2:test
-   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J
+   table 8.68 <- results/stage13_twobody.csv:32:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:14:lum_lo_J
+   table 8.81 <- results/stage13_twobody.csv:32:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:14:lum_hi_J
+   table 9.22 <- results/stage13_twobody.csv:32:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:14:two_body_J
+   table 0.48 <- results/stage13_twobody.csv:7:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:4:diff_J
+   table 0.87 <- results/stage13_twobody.csv:32:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:14:tol_J
+   table 0 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
    table 46.9 <- results/stage13_twobody.csv:37:E_b_J
-   table 8.18 <- results/stage13_twobody.csv:37:lum_lo_J
-   table 8.31 <- results/stage13_twobody.csv:37:lum_hi_J
-   table 8.70 <- results/stage13_twobody.csv:37:B2_E_J
-   table 0.45 <- results/stage13_twobody.csv:3:B2_f
-   table 0.82 <- results/stage13_twobody.csv:37:P8_tol_J
-   table 0 <- results/stage13_twobody.csv:2:test
-   table 0.00 <- results/stage13_twobody.csv:2:test
-   table 0.00 <- results/stage13_twobody.csv:2:test
-   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J
+   table 8.18 <- results/stage13_twobody.csv:37:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:16:lum_lo_J
+   table 8.31 <- results/stage13_twobody.csv:37:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:16:lum_hi_J
+   table 8.70 <- results/stage13_twobody.csv:37:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:16:two_body_J
+   table 0.45 <- results/stage13_twobody.csv:3:B2_f | manuscript/rebuild/data/s10_twobody.csv:16:diff_J
+   table 0.82 <- results/stage13_twobody.csv:37:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:16:tol_J
+   table 0 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
    table 51.1 <- results/stage13_twobody.csv:22:E_b_J
-   table 7.83 <- results/stage13_twobody.csv:42:lum_lo_J
-   table 7.95 <- results/stage13_twobody.csv:42:lum_hi_J
-   table 8.32 <- results/stage13_twobody.csv:42:B2_E_J
-   table 0.43 <- results/stage13_twobody.csv:42:B2_minus_mid_J
-   table 0.79 <- results/stage13_twobody.csv:42:P8_tol_J
-   table 0 <- results/stage13_twobody.csv:2:test
-   table 0.00 <- results/stage13_twobody.csv:2:test
-   table 0.00 <- results/stage13_twobody.csv:2:test
-   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J
+   table 7.83 <- results/stage13_twobody.csv:42:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:18:lum_lo_J
+   table 7.95 <- results/stage13_twobody.csv:42:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:18:lum_hi_J
+   table 8.32 <- results/stage13_twobody.csv:42:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:18:two_body_J
+   table 0.43 <- results/stage13_twobody.csv:42:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:18:diff_J
+   table 0.79 <- results/stage13_twobody.csv:42:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:18:tol_J
+   table 0 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
    table 46.5 <- results/stage13_twobody.csv:47:E_b_J
-   table 8.57 <- results/stage13_twobody.csv:47:lum_lo_J
-   table 8.70 <- results/stage13_twobody.csv:37:B2_E_J
-   table 9.11 <- results/stage13_twobody.csv:47:B2_E_J
-   table 0.47 <- results/stage13_twobody.csv:5:B2_f
-   table 0.86 <- results/stage13_twobody.csv:47:P8_tol_J
-   table 0 <- results/stage13_twobody.csv:2:test
-   table 0.00 <- results/stage13_twobody.csv:2:test
-   table 0.00 <- results/stage13_twobody.csv:2:test
-   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J
+   table 8.57 <- results/stage13_twobody.csv:47:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:20:lum_lo_J
+   table 8.70 <- results/stage13_twobody.csv:37:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:16:two_body_J
+   table 9.11 <- results/stage13_twobody.csv:47:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:20:two_body_J
+   table 0.47 <- results/stage13_twobody.csv:5:B2_f | manuscript/rebuild/data/s10_twobody.csv:20:diff_J
+   table 0.86 <- results/stage13_twobody.csv:47:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:20:tol_J
+   table 0 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
    table 16.6 <- results/stage13_twobody.csv:52:E_b_J
-   table 12.13 <- results/stage13_twobody.csv:52:lum_lo_J
-   table 12.31 <- results/stage13_twobody.csv:52:lum_hi_J
-   table 11.78 <- results/stage13_twobody.csv:52:B2_E_J
-   table -0.44 <- results/stage13_twobody.csv:2:B2_f
-   table 1.22 <- results/stage13_twobody.csv:52:P8_tol_J
-   table 11.90 <- results/stage13_twobody.csv:54:lum_lo_J
-   table 12.08 <- results/stage13_twobody.csv:54:lum_hi_J
-   table 11.56 <- results/stage13_twobody.csv:54:B2_E_J
-   table -0.43 <- results/stage13_twobody.csv:42:B2_minus_mid_J
-   table 1.20 <- results/stage13_twobody.csv:54:P8_tol_J
+   table 12.13 <- results/stage13_twobody.csv:52:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:22:lum_lo_J
+   table 12.31 <- results/stage13_twobody.csv:52:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:22:lum_hi_J
+   table 11.78 <- results/stage13_twobody.csv:52:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:22:two_body_J
+   table -0.44 <- results/stage13_twobody.csv:2:B2_f | manuscript/rebuild/data/s10_twobody.csv:22:diff_J
+   table 1.22 <- results/stage13_twobody.csv:52:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:22:tol_J
+   table 11.90 <- results/stage13_twobody.csv:54:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:23:lum_lo_J
+   table 12.08 <- results/stage13_twobody.csv:54:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:23:lum_hi_J
+   table 11.56 <- results/stage13_twobody.csv:54:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:23:two_body_J
+   table -0.43 <- results/stage13_twobody.csv:42:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:18:diff_J
+   table 1.20 <- results/stage13_twobody.csv:54:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:23:tol_J
    table 48.8 <- results/stage13_twobody.csv:57:E_b_J
-   table 8.20 <- results/stage13_twobody.csv:57:lum_lo_J
-   table 8.33 <- results/stage13_twobody.csv:57:lum_hi_J
-   table 8.71 <- results/stage13_twobody.csv:57:B2_E_J
-   table 0.45 <- results/stage13_twobody.csv:3:B2_f
-   table 0.83 <- results/stage13_twobody.csv:57:P8_tol_J
-   table 0 <- results/stage13_twobody.csv:2:test
-   table 0.00 <- results/stage13_twobody.csv:2:test
-   table 0.00 <- results/stage13_twobody.csv:2:test
-   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J
+   table 8.20 <- results/stage13_twobody.csv:57:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:24:lum_lo_J
+   table 8.33 <- results/stage13_twobody.csv:57:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:24:lum_hi_J
+   table 8.71 <- results/stage13_twobody.csv:57:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:24:two_body_J
+   table 0.45 <- results/stage13_twobody.csv:3:B2_f | manuscript/rebuild/data/s10_twobody.csv:16:diff_J
+   table 0.83 <- results/stage13_twobody.csv:57:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:24:tol_J
+   table 0 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
    table 46.8 <- results/stage13_twobody.csv:62:E_b_J
-   table 8.51 <- results/stage13_twobody.csv:62:lum_lo_J
-   table 8.64 <- results/stage13_twobody.csv:62:lum_hi_J
-   table 9.05 <- results/stage13_twobody.csv:62:B2_E_J
-   table 0.47 <- results/stage13_twobody.csv:5:B2_f
-   table 0.86 <- results/stage13_twobody.csv:47:P8_tol_J
-   table 0 <- results/stage13_twobody.csv:2:test
-   table 0.00 <- results/stage13_twobody.csv:2:test
-   table 0.00 <- results/stage13_twobody.csv:2:test
-   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J
+   table 8.51 <- results/stage13_twobody.csv:62:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:26:lum_lo_J
+   table 8.64 <- results/stage13_twobody.csv:62:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:26:lum_hi_J
+   table 9.05 <- results/stage13_twobody.csv:62:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:26:two_body_J
+   table 0.47 <- results/stage13_twobody.csv:5:B2_f | manuscript/rebuild/data/s10_twobody.csv:20:diff_J
+   table 0.86 <- results/stage13_twobody.csv:47:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:20:tol_J
+   table 0 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
    table 48.7 <- results/stage13_twobody.csv:67:E_b_J
-   table 8.21 <- results/stage13_twobody.csv:67:lum_lo_J
-   table 8.34 <- results/stage13_twobody.csv:67:lum_hi_J
-   table 8.73 <- results/stage13_twobody.csv:67:B2_E_J
-   table 0.45 <- results/stage13_twobody.csv:3:B2_f
-   table 0.83 <- results/stage13_twobody.csv:57:P8_tol_J
-   table 0 <- results/stage13_twobody.csv:2:test
-   table 0.00 <- results/stage13_twobody.csv:2:test
-   table 0.00 <- results/stage13_twobody.csv:2:test
-   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J
+   table 8.21 <- results/stage13_twobody.csv:67:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:28:lum_lo_J
+   table 8.34 <- results/stage13_twobody.csv:67:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:28:lum_hi_J
+   table 8.73 <- results/stage13_twobody.csv:67:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:28:two_body_J
+   table 0.45 <- results/stage13_twobody.csv:3:B2_f | manuscript/rebuild/data/s10_twobody.csv:16:diff_J
+   table 0.83 <- results/stage13_twobody.csv:57:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:24:tol_J
+   table 0 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
    table 54.3 <- results/stage13_twobody.csv:72:E_b_J
-   table 7.31 <- results/stage13_twobody.csv:72:lum_lo_J
-   table 7.43 <- results/stage13_twobody.csv:72:lum_hi_J
-   table 7.78 <- results/stage13_twobody.csv:72:B2_E_J
-   table 0.41 <- results/stage13_twobody.csv:22:B2_minus_mid_J
-   table 0.74 <- results/stage13_twobody.csv:71:B2_f
-   table 0 <- results/stage13_twobody.csv:2:test
-   table 0.00 <- results/stage13_twobody.csv:2:test
-   table 0.00 <- results/stage13_twobody.csv:2:test
-   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J
+   table 7.31 <- results/stage13_twobody.csv:72:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:30:lum_lo_J
+   table 7.43 <- results/stage13_twobody.csv:72:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:30:lum_hi_J
+   table 7.78 <- results/stage13_twobody.csv:72:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:30:two_body_J
+   table 0.41 <- results/stage13_twobody.csv:22:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:10:diff_J
+   table 0.74 <- results/stage13_twobody.csv:71:B2_f | manuscript/rebuild/data/s10_twobody.csv:30:tol_J
+   table 0 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
    table 39.6 <- results/stage13_twobody.csv:77:E_b_J
-   table 9.73 <- results/stage13_twobody.csv:77:lum_lo_J
-   table 9.88 <- results/stage13_twobody.csv:17:B2_E_J
-   table 10.19 <- results/stage13_twobody.csv:77:B2_E_J
-   table 0.38 <- results/stage13_twobody.csv:13:B2_minus_mid_J
-   table 0.98 <- results/stage13_twobody.csv:70:lum_hi_J
-   table 2.67 <- results/stage13_twobody.csv:79:lum_lo_J
-   table 2.71 <- results/stage13_twobody.csv:79:lum_hi_J
-   table 2.84 <- results/stage13_twobody.csv:21:B2_f
-   table 0.15 <- results/stage13_twobody.csv:16:B2_minus_mid_J
-   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J
+   table 9.73 <- results/stage13_twobody.csv:77:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:32:lum_lo_J
+   table 9.88 <- results/stage13_twobody.csv:17:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:8:two_body_J
+   table 10.19 <- results/stage13_twobody.csv:77:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:32:two_body_J
+   table 0.38 <- results/stage13_twobody.csv:13:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:32:diff_J
+   table 0.98 <- results/stage13_twobody.csv:70:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:32:tol_J
+   table 2.67 <- results/stage13_twobody.csv:79:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:33:lum_lo_J
+   table 2.71 <- results/stage13_twobody.csv:79:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:33:lum_hi_J
+   table 2.84 <- results/stage13_twobody.csv:21:B2_f | manuscript/rebuild/data/s10_twobody.csv:33:two_body_J
+   table 0.15 <- results/stage13_twobody.csv:16:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:13:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 120 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:34:tau_s
+   table 9.0 <- results/stage13_twobody.csv:2:E_b_J | manuscript/rebuild/data/s10_twobody.csv:26:two_body_J
+   table 13.10 <- results/stage13_twobody.csv:5:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:34:lum_lo_J
+   table 13.30 <- results/stage13_twobody.csv:5:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:34:lum_hi_J
+   table 13.10 <- results/stage13_twobody.csv:5:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:34:lum_lo_J
+   table -0.10 <- results/stage13_twobody.csv:5:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:5:mid_J
+   table 1.32 <- results/stage13_twobody.csv:65:B2_f | manuscript/rebuild/data/s10_twobody.csv:34:tol_J
+   table 360 <- results/stage13_twobody.csv:6:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:35:tau_s
+   table 16.16 <- results/stage13_twobody.csv:6:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:35:lum_lo_J
+   table 16.41 <- results/stage13_twobody.csv:6:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:35:lum_hi_J
+   table 16.91 <- results/stage13_twobody.csv:6:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:35:two_body_J
+   table 0.63 <- results/stage13_twobody.csv:6:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:35:diff_J
+   table 1.63 <- results/stage13_twobody.csv:29:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:13:lum_hi_J
+   table 120 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:34:tau_s
+   table 43.4 <- results/stage13_twobody.csv:7:E_b_J
+   table 2.53 <- results/stage13_twobody.csv:8:lum_mid_J | manuscript/rebuild/data/s10_twobody.csv:36:lum_lo_J
+   table 2.57 <- results/stage13_twobody.csv:10:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:36:lum_hi_J
+   table 2.78 <- results/stage13_twobody.csv:10:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:36:two_body_J
+   table 0.22 <- results/stage13_twobody.csv:9:B2_f | manuscript/rebuild/data/s10_twobody.csv:36:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 360 <- results/stage13_twobody.csv:6:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:35:tau_s
+   table 2.23 <- results/stage13_twobody.csv:11:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:9:lum_hi_J
+   table 2.27 <- results/stage13_twobody.csv:11:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:37:lum_hi_J
+   table 2.45 <- results/stage13_twobody.csv:11:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:37:two_body_J
+   table 0.20 <- results/stage13_twobody.csv:9:B2_t_margin_s | manuscript/rebuild/data/s10_twobody.csv:37:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 120 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:34:tau_s
+   table 31.6 <- results/stage13_twobody.csv:12:E_b_J
+   table 6.58 <- results/stage13_twobody.csv:15:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:38:lum_lo_J
+   table 6.68 <- results/stage13_twobody.csv:15:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:38:lum_hi_J
+   table 6.58 <- results/stage13_twobody.csv:15:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:38:lum_lo_J
+   table -0.05 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.66 <- manuscript/rebuild/data/s10_twobody.csv:38:tol_J
+   table 360 <- results/stage13_twobody.csv:6:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:35:tau_s
+   table 6.42 <- results/stage13_twobody.csv:16:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:39:lum_lo_J
+   table 6.52 <- results/stage13_twobody.csv:16:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:39:lum_hi_J
+   table 6.62 <- results/stage13_twobody.csv:16:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:39:two_body_J
+   table 0.15 <- results/stage13_twobody.csv:16:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:13:diff_J
+   table 0.65 <- results/stage13_twobody.csv:68:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:39:tol_J
+   table 120 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:34:tau_s
+   table 40.0 <- results/stage13_twobody.csv:17:E_b_J
+   table 3.71 <- results/stage13_twobody.csv:20:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:40:lum_lo_J
+   table 3.77 <- results/stage13_twobody.csv:20:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:40:lum_hi_J
+   table 3.94 <- results/stage13_twobody.csv:20:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:40:two_body_J
+   table 0.20 <- results/stage13_twobody.csv:9:B2_t_margin_s | manuscript/rebuild/data/s10_twobody.csv:37:diff_J
+   table 0.37 <- results/stage13_twobody.csv:17:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:8:diff_J
+   table 360 <- results/stage13_twobody.csv:6:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:35:tau_s
+   table 3.37 <- results/stage13_twobody.csv:8:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:41:lum_lo_J
+   table 3.43 <- results/stage13_twobody.csv:21:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:41:lum_hi_J
+   table 3.53 <- results/stage13_twobody.csv:21:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:41:two_body_J
+   table 0.13 <- results/stage13_twobody.csv:13:B2_t_margin_s | manuscript/rebuild/data/s10_twobody.csv:41:diff_J
+   table 0.34 <- manuscript/rebuild/data/s10_twobody.csv:41:tol_J
+   table 120 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:34:tau_s
+   table 51.1 <- results/stage13_twobody.csv:22:E_b_J
+   table 0 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.12 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:9:diff_J
+   table 0.12 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:9:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 360 <- results/stage13_twobody.csv:6:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:35:tau_s
+   table 0 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.11 <- results/stage13_twobody.csv:5:B2_t_ignition_s | manuscript/rebuild/data/s10_twobody.csv:5:lum_hi_J
+   table 0.11 <- results/stage13_twobody.csv:5:B2_t_ignition_s | manuscript/rebuild/data/s10_twobody.csv:5:lum_hi_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 120 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:34:tau_s
+   table 41.0 <- results/stage13_twobody.csv:27:E_b_J
+   table 3.40 <- results/stage13_twobody.csv:21:lum_mid_J | manuscript/rebuild/data/s10_twobody.csv:41:mid_J
+   table 3.45 <- results/stage13_twobody.csv:30:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:44:lum_hi_J
+   table 3.61 <- results/stage13_twobody.csv:30:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:44:two_body_J
+   table 0.19 <- results/stage13_twobody.csv:8:B2_t_margin_s | manuscript/rebuild/data/s10_twobody.csv:5:diff_J
+   table 0.34 <- manuscript/rebuild/data/s10_twobody.csv:41:tol_J
+   table 360 <- results/stage13_twobody.csv:6:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:35:tau_s
+   table 3.08 <- results/stage13_twobody.csv:31:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:45:lum_lo_J
+   table 3.12 <- results/stage13_twobody.csv:31:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:45:lum_hi_J
+   table 3.22 <- results/stage13_twobody.csv:31:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:45:two_body_J
+   table 0.12 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:9:diff_J
+   table 0.31 <- results/stage13_twobody.csv:45:B2_f | manuscript/rebuild/data/s10_twobody.csv:45:tol_J
+   table 120 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:34:tau_s
+   table 43.9 <- results/stage13_twobody.csv:2:B2_f
+   table 2.34 <- results/stage13_twobody.csv:19:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:9:two_body_J
+   table 2.38 <- results/stage13_twobody.csv:35:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:46:lum_hi_J
+   table 2.61 <- results/stage13_twobody.csv:35:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:46:two_body_J
+   table 0.25 <- results/stage13_twobody.csv:8:archived_t_cross_s | manuscript/rebuild/data/s10_twobody.csv:6:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 360 <- results/stage13_twobody.csv:6:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:35:tau_s
+   table 2.09 <- results/stage13_twobody.csv:36:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:47:lum_lo_J
+   table 2.13 <- results/stage13_twobody.csv:36:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:47:lum_hi_J
+   table 2.30 <- results/stage13_twobody.csv:36:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:47:two_body_J
+   table 0.19 <- results/stage13_twobody.csv:8:B2_t_margin_s | manuscript/rebuild/data/s10_twobody.csv:5:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 120 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:34:tau_s
+   table 46.9 <- results/stage13_twobody.csv:37:E_b_J
+   table 1.29 <- results/stage13_twobody.csv:4:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:3:tol_J
+   table 1.31 <- results/stage13_twobody.csv:40:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:48:lum_hi_J
+   table 1.58 <- results/stage13_twobody.csv:40:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:48:two_body_J
+   table 0.28 <- results/stage13_twobody.csv:2:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:2:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 360 <- results/stage13_twobody.csv:6:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:35:tau_s
+   table 1.13 <- results/stage13_twobody.csv:41:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:49:lum_lo_J
+   table 1.15 <- results/stage13_twobody.csv:41:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:49:lum_hi_J
+   table 1.39 <- results/stage13_twobody.csv:29:B2_f | manuscript/rebuild/data/s10_twobody.csv:49:two_body_J
+   table 0.25 <- results/stage13_twobody.csv:8:archived_t_cross_s | manuscript/rebuild/data/s10_twobody.csv:6:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 120 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:34:tau_s
+   table 51.1 <- results/stage13_twobody.csv:22:E_b_J
+   table 0.14 <- results/stage13_twobody.csv:7:B2_t_margin_s | manuscript/rebuild/data/s10_twobody.csv:50:lum_lo_J
+   table 0.16 <- results/stage13_twobody.csv:13:archived_t_cross_s | manuscript/rebuild/data/s10_twobody.csv:50:lum_hi_J
+   table 0.49 <- results/stage13_twobody.csv:45:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:50:two_body_J
+   table 0.35 <- results/stage13_twobody.csv:45:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:50:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 360 <- results/stage13_twobody.csv:6:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:35:tau_s
+   table 0.13 <- results/stage13_twobody.csv:13:B2_t_margin_s | manuscript/rebuild/data/s10_twobody.csv:41:diff_J
+   table 0.14 <- results/stage13_twobody.csv:7:B2_t_margin_s | manuscript/rebuild/data/s10_twobody.csv:50:lum_lo_J
+   table 0.43 <- results/stage13_twobody.csv:42:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:18:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 120 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:34:tau_s
+   table 46.5 <- results/stage13_twobody.csv:47:E_b_J
+   table 1.75 <- results/stage13_twobody.csv:50:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:52:lum_lo_J
+   table 1.78 <- results/stage13_twobody.csv:50:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:52:lum_hi_J
+   table 2.04 <- results/stage13_twobody.csv:50:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:52:two_body_J
+   table 0.28 <- results/stage13_twobody.csv:2:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:2:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 360 <- results/stage13_twobody.csv:6:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:35:tau_s
+   table 1.53 <- results/stage13_twobody.csv:51:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:53:lum_lo_J
+   table 1.55 <- results/stage13_twobody.csv:51:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:53:lum_hi_J
+   table 1.78 <- results/stage13_twobody.csv:50:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:52:lum_hi_J
+   table 0.24 <- results/stage13_twobody.csv:41:B2_t_margin_s | manuscript/rebuild/data/s10_twobody.csv:53:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 120 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:34:tau_s
+   table 16.6 <- results/stage13_twobody.csv:52:E_b_J
+   table 11.04 <- results/stage13_twobody.csv:55:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:54:lum_lo_J
+   table 11.20 <- results/stage13_twobody.csv:55:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:54:lum_hi_J
+   table 10.87 <- results/stage13_twobody.csv:55:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:54:two_body_J
+   table -0.24 <- results/stage13_twobody.csv:41:B2_t_margin_s | manuscript/rebuild/data/s10_twobody.csv:53:diff_J
+   table 1.11 <- manuscript/rebuild/data/s10_twobody.csv:54:tol_J
+   table 360 <- results/stage13_twobody.csv:6:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:35:tau_s
+   table 12.53 <- results/stage13_twobody.csv:2:lum_mid_J | manuscript/rebuild/data/s10_twobody.csv:2:mid_J
+   table 12.72 <- results/stage13_twobody.csv:56:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:55:lum_hi_J
+   table 13.12 <- results/stage13_twobody.csv:56:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:55:two_body_J
+   table 0.49 <- results/stage13_twobody.csv:45:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:50:two_body_J
+   table 1.26 <- results/stage13_twobody.csv:60:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:55:tol_J
+   table 120 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:34:tau_s
+   table 48.8 <- results/stage13_twobody.csv:57:E_b_J
+   table 0.93 <- results/stage13_twobody.csv:60:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:56:lum_lo_J
+   table 0.95 <- results/stage13_twobody.csv:17:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:8:tol_J
+   table 1.26 <- results/stage13_twobody.csv:60:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:55:tol_J
+   table 0.32 <- results/stage13_twobody.csv:60:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:56:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 360 <- results/stage13_twobody.csv:6:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:35:tau_s
+   table 0.83 <- results/stage13_twobody.csv:57:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:24:tol_J
+   table 0.84 <- results/stage13_twobody.csv:61:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:57:lum_hi_J
+   table 1.10 <- results/stage13_twobody.csv:61:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:57:two_body_J
+   table 0.26 <- results/stage13_twobody.csv:61:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:57:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 120 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:34:tau_s
+   table 46.8 <- results/stage13_twobody.csv:62:E_b_J
+   table 1.62 <- results/stage13_twobody.csv:29:lum_mid_J | manuscript/rebuild/data/s10_twobody.csv:13:mid_J
+   table 1.65 <- results/stage13_twobody.csv:63:B2_f | manuscript/rebuild/data/s10_twobody.csv:58:lum_hi_J
+   table 1.93 <- results/stage13_twobody.csv:65:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:58:two_body_J
+   table 0.29 <- results/stage13_twobody.csv:6:B2_t_ignition_s | manuscript/rebuild/data/s10_twobody.csv:5:two_body_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 360 <- results/stage13_twobody.csv:6:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:35:tau_s
+   table 1.43 <- results/stage13_twobody.csv:66:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:59:lum_lo_J
+   table 1.46 <- results/stage13_twobody.csv:66:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:59:lum_hi_J
+   table 1.68 <- results/stage13_twobody.csv:8:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:59:two_body_J
+   table 0.23 <- results/stage13_twobody.csv:33:archived_t_cross_s | manuscript/rebuild/data/s10_twobody.csv:59:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 120 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:34:tau_s
+   table 48.7 <- results/stage13_twobody.csv:67:E_b_J
+   table 0.97 <- results/stage13_twobody.csv:70:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:60:lum_lo_J
+   table 0.98 <- results/stage13_twobody.csv:70:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:32:tol_J
+   table 1.28 <- results/stage13_twobody.csv:70:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:60:two_body_J
+   table 0.31 <- results/stage13_twobody.csv:45:B2_f | manuscript/rebuild/data/s10_twobody.csv:45:tol_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 360 <- results/stage13_twobody.csv:6:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:35:tau_s
+   table 0.85 <- results/stage13_twobody.csv:70:B2_f | manuscript/rebuild/data/s10_twobody.csv:61:lum_lo_J
+   table 0.86 <- results/stage13_twobody.csv:47:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:20:tol_J
+   table 1.12 <- results/stage13_twobody.csv:71:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:61:two_body_J
+   table 0.27 <- results/stage13_twobody.csv:16:B2_t_ignition_s | manuscript/rebuild/data/s10_twobody.csv:61:diff_J
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 120 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:34:tau_s
+   table 54.3 <- results/stage13_twobody.csv:72:E_b_J
+   table 0 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 360 <- results/stage13_twobody.csv:6:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:35:tau_s
+   table 0 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.00 <- results/stage13_twobody.csv:2:test | manuscript/rebuild/data/s10_twobody.csv:2:test
+   table 0.30 <- results/stage13_twobody.csv:9:P8_tol_J | manuscript/rebuild/data/s10_twobody.csv:5:tol_J
+   table 120 <- results/stage13_twobody.csv:5:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:34:tau_s
+   table 39.6 <- results/stage13_twobody.csv:77:E_b_J
+   table 4.12 <- results/stage13_twobody.csv:80:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:64:lum_lo_J
+   table 4.19 <- results/stage13_twobody.csv:80:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:64:lum_hi_J
+   table 4.32 <- results/stage13_twobody.csv:80:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:64:two_body_J
+   table 0.16 <- results/stage13_twobody.csv:13:archived_t_cross_s | manuscript/rebuild/data/s10_twobody.csv:50:lum_hi_J
+   table 0.42 <- manuscript/rebuild/data/s10_twobody.csv:64:tol_J
+   table 360 <- results/stage13_twobody.csv:6:tau_d_s | manuscript/rebuild/data/s10_twobody.csv:35:tau_s
+   table 3.69 <- results/stage13_twobody.csv:81:lum_lo_J | manuscript/rebuild/data/s10_twobody.csv:65:lum_lo_J
+   table 3.75 <- results/stage13_twobody.csv:81:lum_hi_J | manuscript/rebuild/data/s10_twobody.csv:65:lum_hi_J
+   table 3.86 <- results/stage13_twobody.csv:81:B2_E_J | manuscript/rebuild/data/s10_twobody.csv:65:two_body_J
+   table 0.14 <- results/stage13_twobody.csv:7:B2_t_margin_s | manuscript/rebuild/data/s10_twobody.csv:50:lum_lo_J
+   table 0.37 <- results/stage13_twobody.csv:17:B2_minus_mid_J | manuscript/rebuild/data/s10_twobody.csv:8:diff_J
 == manuscript/rebuild/tables/s11_archived.tex  [each row recomputed from the archived runs]
    row PT-Exp1 & 16 & 1 & 4 & 3 & 4 & 4 & 1.0 to 9.8 & 0 & 0
    row PT-Exp2 & 50 & 0 & 8 & 10 & 16 & 16 & 67.4 to 134.8 & 50 & 0
@@ -1693,8 +1999,12 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    table 0 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | manuscript/rebuild/data/step11_local_kJ.csv:2:test
    table 2 <- manuscript/rebuild/data/step11_lumped_kJ.csv:3:lo_kJ | manuscript/rebuild/data/step11_local_kJ.csv:3:hi_kJ
    table 1.008 <- results/stage11_draws.csv:6:k_radial_W_mK
-   [exponent or subscript] -1  ...ace[2pt] Least conductivity across the layers, 1.008 W\,m$^{-1}$\,K$^{-1}$ & (12.89, 13.24] & (1.70, 3...
-   [exponent or subscript] -1  ...east conductivity across the layers, 1.008 W\,m$^{-1}$\,K$^{-1}$ & (12.89, 13.24] & (1.70, 3.41] & (1....
+   table 25.35 <- results/stage11_draws.csv:6:k_axial_W_mK
+   [exponent or subscript] -1  ...east conductivity across the layers: 1.008 and 25.35 W\,m$^{-1}$\,K$^{-1}$, 1030 J\,kg$^{-1}$\,K$^{-1}...
+   [exponent or subscript] -1  ...ctivity across the layers: 1.008 and 25.35 W\,m$^{-1}$\,K$^{-1}$, 1030 J\,kg$^{-1}$\,K$^{-1}$ & (12.89...
+   table 1030 <- results/stage11_draws.csv:6:c_roll_J_kgK
+   [exponent or subscript] -1  ...layers: 1.008 and 25.35 W\,m$^{-1}$\,K$^{-1}$, 1030 J\,kg$^{-1}$\,K$^{-1}$ & (12.89, 13.24] & (1.70, 3...
+   [exponent or subscript] -1  ...008 and 25.35 W\,m$^{-1}$\,K$^{-1}$, 1030 J\,kg$^{-1}$\,K$^{-1}$ & (12.89, 13.24] & (1.70, 3.41] & (1....
    table 12.89 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:hi_kJ
    table 13.24 <- manuscript/rebuild/data/step11_lumped_kJ.csv:14:hi_kJ
    table 1.70 <- manuscript/rebuild/data/step11_lumped_kJ.csv:3:lo_kJ | manuscript/rebuild/data/step11_local_kJ.csv:3:hi_kJ
@@ -1703,8 +2013,12 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    table 3.61 <- manuscript/rebuild/data/step11_lumped_kJ.csv:4:hi_kJ
    table 0 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | manuscript/rebuild/data/step11_local_kJ.csv:2:test
    table 1.375 <- results/stage11_draws.csv:7:k_radial_W_mK
-   [exponent or subscript] -1  ...& 0 \\ Largest conductivity across the layers, 1.375 W\,m$^{-1}$\,K$^{-1}$ & (12.89, 13.24] & (1.70, 3...
-   [exponent or subscript] -1  ...gest conductivity across the layers, 1.375 W\,m$^{-1}$\,K$^{-1}$ & (12.89, 13.24] & (1.70, 3.41] & (1....
+   table 25.31 <- results/stage11_draws.csv:7:k_axial_W_mK
+   [exponent or subscript] -1  ...gest conductivity across the layers: 1.375 and 25.31 W\,m$^{-1}$\,K$^{-1}$, 1050 J\,kg$^{-1}$\,K$^{-1}...
+   [exponent or subscript] -1  ...ctivity across the layers: 1.375 and 25.31 W\,m$^{-1}$\,K$^{-1}$, 1050 J\,kg$^{-1}$\,K$^{-1}$ & (12.89...
+   table 1050 <- results/stage11_draws.csv:7:c_roll_J_kgK
+   [exponent or subscript] -1  ...layers: 1.375 and 25.31 W\,m$^{-1}$\,K$^{-1}$, 1050 J\,kg$^{-1}$\,K$^{-1}$ & (12.89, 13.24] & (1.70, 3...
+   [exponent or subscript] -1  ...375 and 25.31 W\,m$^{-1}$\,K$^{-1}$, 1050 J\,kg$^{-1}$\,K$^{-1}$ & (12.89, 13.24] & (1.70, 3.41] & (1....
    table 12.89 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:hi_kJ
    table 13.24 <- manuscript/rebuild/data/step11_lumped_kJ.csv:14:hi_kJ
    table 1.70 <- manuscript/rebuild/data/step11_lumped_kJ.csv:3:lo_kJ | manuscript/rebuild/data/step11_local_kJ.csv:3:hi_kJ
@@ -1712,18 +2026,26 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    table 1.80 <- manuscript/rebuild/data/step11_lumped_kJ.csv:4:lo_kJ
    table 3.61 <- manuscript/rebuild/data/step11_lumped_kJ.csv:4:hi_kJ
    table 0 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | manuscript/rebuild/data/step11_local_kJ.csv:2:test
+   table 1.177 <- results/stage11_draws.csv:8:k_radial_W_mK
+   table 25.68 <- results/stage11_draws.csv:8:k_axial_W_mK
+   [exponent or subscript] -1  ...0, 3.61] & 0 \\ Least specific heat: 1.177 and 25.68 W\,m$^{-1}$\,K$^{-1}$, 849 J\,kg$^{-1}$\,K$^{-1}$...
+   [exponent or subscript] -1  ... 0 \\ Least specific heat: 1.177 and 25.68 W\,m$^{-1}$\,K$^{-1}$, 849 J\,kg$^{-1}$\,K$^{-1}$ & (10.80,...
    table 849 <- results/stage11_draws.csv:8:c_roll_J_kgK
-   [exponent or subscript] -1  ....41] & (1.80, 3.61] & 0 \\ Least specific heat, 849 J\,kg$^{-1}$\,K$^{-1}$ & (10.80, 11.15] & (0.00, 1...
-   [exponent or subscript] -1  ...80, 3.61] & 0 \\ Least specific heat, 849 J\,kg$^{-1}$\,K$^{-1}$ & (10.80, 11.15] & (0.00, 1.70] & 0 &...
+   [exponent or subscript] -1  ...ic heat: 1.177 and 25.68 W\,m$^{-1}$\,K$^{-1}$, 849 J\,kg$^{-1}$\,K$^{-1}$ & (10.80, 11.15] & (0.00, 1...
+   [exponent or subscript] -1  ....177 and 25.68 W\,m$^{-1}$\,K$^{-1}$, 849 J\,kg$^{-1}$\,K$^{-1}$ & (10.80, 11.15] & (0.00, 1.70] & 0 &...
    table 10.80 <- manuscript/rebuild/data/step11_lumped_kJ.csv:30:lo_kJ
    table 11.15 <- manuscript/rebuild/data/step11_lumped_kJ.csv:30:hi_kJ
    table 0.00 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | manuscript/rebuild/data/step11_local_kJ.csv:2:test
    table 1.70 <- manuscript/rebuild/data/step11_lumped_kJ.csv:3:lo_kJ | manuscript/rebuild/data/step11_local_kJ.csv:3:hi_kJ
    table 0 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | manuscript/rebuild/data/step11_local_kJ.csv:2:test
    table 0 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | manuscript/rebuild/data/step11_local_kJ.csv:2:test
+   table 1.196 <- results/stage11_draws.csv:9:k_radial_W_mK
+   table 25.42 <- results/stage11_draws.csv:9:k_axial_W_mK
+   [exponent or subscript] -1  ...0] & 0 & 0 \\ Largest specific heat: 1.196 and 25.42 W\,m$^{-1}$\,K$^{-1}$, 1109 J\,kg$^{-1}$\,K$^{-1}...
+   [exponent or subscript] -1  ... \\ Largest specific heat: 1.196 and 25.42 W\,m$^{-1}$\,K$^{-1}$, 1109 J\,kg$^{-1}$\,K$^{-1}$ & (13.59...
    table 1109 <- results/stage11_draws.csv:9:c_roll_J_kgK
-   [exponent or subscript] -1  ...(0.00, 1.70] & 0 & 0 \\ Largest specific heat, 1109 J\,kg$^{-1}$\,K$^{-1}$ & (13.59, 13.94] & (3.41, 5...
-   [exponent or subscript] -1  ...0] & 0 & 0 \\ Largest specific heat, 1109 J\,kg$^{-1}$\,K$^{-1}$ & (13.59, 13.94] & (3.41, 5.11] & (1....
+   [exponent or subscript] -1  ...c heat: 1.196 and 25.42 W\,m$^{-1}$\,K$^{-1}$, 1109 J\,kg$^{-1}$\,K$^{-1}$ & (13.59, 13.94] & (3.41, 5...
+   [exponent or subscript] -1  ...196 and 25.42 W\,m$^{-1}$\,K$^{-1}$, 1109 J\,kg$^{-1}$\,K$^{-1}$ & (13.59, 13.94] & (3.41, 5.11] & (1....
    table 13.59 <- manuscript/rebuild/data/step11_lumped_kJ.csv:34:lo_kJ
    table 13.94 <- manuscript/rebuild/data/step11_lumped_kJ.csv:34:hi_kJ
    table 3.41 <- manuscript/rebuild/data/step11_lumped_kJ.csv:3:hi_kJ
@@ -1773,33 +2095,49 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    table 0 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | manuscript/rebuild/data/step11_local_kJ.csv:2:test
    table 2 <- manuscript/rebuild/data/step11_lumped_kJ.csv:3:lo_kJ | manuscript/rebuild/data/step11_local_kJ.csv:3:hi_kJ
    table 1.008 <- results/stage11_draws.csv:6:k_radial_W_mK
-   [exponent or subscript] -1  ...ace[2pt] Least conductivity across the layers, 1.008 W\,m$^{-1}$\,K$^{-1}$ & (3.83, 4.18] & 0 & 0 & 0 ...
-   [exponent or subscript] -1  ...east conductivity across the layers, 1.008 W\,m$^{-1}$\,K$^{-1}$ & (3.83, 4.18] & 0 & 0 & 0 \\ Largest...
+   table 25.35 <- results/stage11_draws.csv:6:k_axial_W_mK
+   [exponent or subscript] -1  ...east conductivity across the layers: 1.008 and 25.35 W\,m$^{-1}$\,K$^{-1}$, 1030 J\,kg$^{-1}$\,K$^{-1}...
+   [exponent or subscript] -1  ...ctivity across the layers: 1.008 and 25.35 W\,m$^{-1}$\,K$^{-1}$, 1030 J\,kg$^{-1}$\,K$^{-1}$ & (3.83,...
+   table 1030 <- results/stage11_draws.csv:6:c_roll_J_kgK
+   [exponent or subscript] -1  ...layers: 1.008 and 25.35 W\,m$^{-1}$\,K$^{-1}$, 1030 J\,kg$^{-1}$\,K$^{-1}$ & (3.83, 4.18] & 0 & 0 & 0 ...
+   [exponent or subscript] -1  ...008 and 25.35 W\,m$^{-1}$\,K$^{-1}$, 1030 J\,kg$^{-1}$\,K$^{-1}$ & (3.83, 4.18] & 0 & 0 & 0 \\ Largest...
    table 3.83 <- manuscript/rebuild/data/step11_local_kJ.csv:22:lo_kJ
    table 4.18 <- manuscript/rebuild/data/step11_local_kJ.csv:2:lo_kJ
    table 0 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | manuscript/rebuild/data/step11_local_kJ.csv:2:test
    table 0 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | manuscript/rebuild/data/step11_local_kJ.csv:2:test
    table 0 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | manuscript/rebuild/data/step11_local_kJ.csv:2:test
    table 1.375 <- results/stage11_draws.csv:7:k_radial_W_mK
-   [exponent or subscript] -1  ...& 0 \\ Largest conductivity across the layers, 1.375 W\,m$^{-1}$\,K$^{-1}$ & (4.18, 4.53] & (0.00, 1.7...
-   [exponent or subscript] -1  ...gest conductivity across the layers, 1.375 W\,m$^{-1}$\,K$^{-1}$ & (4.18, 4.53] & (0.00, 1.70] & 0 & 0...
+   table 25.31 <- results/stage11_draws.csv:7:k_axial_W_mK
+   [exponent or subscript] -1  ...gest conductivity across the layers: 1.375 and 25.31 W\,m$^{-1}$\,K$^{-1}$, 1050 J\,kg$^{-1}$\,K$^{-1}...
+   [exponent or subscript] -1  ...ctivity across the layers: 1.375 and 25.31 W\,m$^{-1}$\,K$^{-1}$, 1050 J\,kg$^{-1}$\,K$^{-1}$ & (4.18,...
+   table 1050 <- results/stage11_draws.csv:7:c_roll_J_kgK
+   [exponent or subscript] -1  ...layers: 1.375 and 25.31 W\,m$^{-1}$\,K$^{-1}$, 1050 J\,kg$^{-1}$\,K$^{-1}$ & (4.18, 4.53] & (0.00, 1.7...
+   [exponent or subscript] -1  ...375 and 25.31 W\,m$^{-1}$\,K$^{-1}$, 1050 J\,kg$^{-1}$\,K$^{-1}$ & (4.18, 4.53] & (0.00, 1.70] & 0 & 0...
    table 4.18 <- manuscript/rebuild/data/step11_local_kJ.csv:2:lo_kJ
    table 4.53 <- manuscript/rebuild/data/step11_local_kJ.csv:2:hi_kJ
    table 0.00 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | manuscript/rebuild/data/step11_local_kJ.csv:2:test
    table 1.70 <- manuscript/rebuild/data/step11_lumped_kJ.csv:3:lo_kJ | manuscript/rebuild/data/step11_local_kJ.csv:3:hi_kJ
    table 0 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | manuscript/rebuild/data/step11_local_kJ.csv:2:test
    table 0 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | manuscript/rebuild/data/step11_local_kJ.csv:2:test
+   table 1.177 <- results/stage11_draws.csv:8:k_radial_W_mK
+   table 25.68 <- results/stage11_draws.csv:8:k_axial_W_mK
+   [exponent or subscript] -1  ....70] & 0 & 0 \\ Least specific heat: 1.177 and 25.68 W\,m$^{-1}$\,K$^{-1}$, 849 J\,kg$^{-1}$\,K$^{-1}$...
+   [exponent or subscript] -1  ... 0 \\ Least specific heat: 1.177 and 25.68 W\,m$^{-1}$\,K$^{-1}$, 849 J\,kg$^{-1}$\,K$^{-1}$ & (3.83, ...
    table 849 <- results/stage11_draws.csv:8:c_roll_J_kgK
-   [exponent or subscript] -1  ... & (0.00, 1.70] & 0 & 0 \\ Least specific heat, 849 J\,kg$^{-1}$\,K$^{-1}$ & (3.83, 4.18] & 0 & 0 & 0 ...
-   [exponent or subscript] -1  ...1.70] & 0 & 0 \\ Least specific heat, 849 J\,kg$^{-1}$\,K$^{-1}$ & (3.83, 4.18] & 0 & 0 & 0 \\ Largest...
+   [exponent or subscript] -1  ...ic heat: 1.177 and 25.68 W\,m$^{-1}$\,K$^{-1}$, 849 J\,kg$^{-1}$\,K$^{-1}$ & (3.83, 4.18] & 0 & 0 & 0 ...
+   [exponent or subscript] -1  ....177 and 25.68 W\,m$^{-1}$\,K$^{-1}$, 849 J\,kg$^{-1}$\,K$^{-1}$ & (3.83, 4.18] & 0 & 0 & 0 \\ Largest...
    table 3.83 <- manuscript/rebuild/data/step11_local_kJ.csv:22:lo_kJ
    table 4.18 <- manuscript/rebuild/data/step11_local_kJ.csv:2:lo_kJ
    table 0 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | manuscript/rebuild/data/step11_local_kJ.csv:2:test
    table 0 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | manuscript/rebuild/data/step11_local_kJ.csv:2:test
    table 0 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | manuscript/rebuild/data/step11_local_kJ.csv:2:test
+   table 1.196 <- results/stage11_draws.csv:9:k_radial_W_mK
+   table 25.42 <- results/stage11_draws.csv:9:k_axial_W_mK
+   [exponent or subscript] -1  ... 0 & 0 & 0 \\ Largest specific heat: 1.196 and 25.42 W\,m$^{-1}$\,K$^{-1}$, 1109 J\,kg$^{-1}$\,K$^{-1}...
+   [exponent or subscript] -1  ... \\ Largest specific heat: 1.196 and 25.42 W\,m$^{-1}$\,K$^{-1}$, 1109 J\,kg$^{-1}$\,K$^{-1}$ & (4.18,...
    table 1109 <- results/stage11_draws.csv:9:c_roll_J_kgK
-   [exponent or subscript] -1  ...3, 4.18] & 0 & 0 & 0 \\ Largest specific heat, 1109 J\,kg$^{-1}$\,K$^{-1}$ & (4.18, 4.53] & (0.00, 1.7...
-   [exponent or subscript] -1  ... 0 & 0 & 0 \\ Largest specific heat, 1109 J\,kg$^{-1}$\,K$^{-1}$ & (4.18, 4.53] & (0.00, 1.70] & 0 & 0...
+   [exponent or subscript] -1  ...c heat: 1.196 and 25.42 W\,m$^{-1}$\,K$^{-1}$, 1109 J\,kg$^{-1}$\,K$^{-1}$ & (4.18, 4.53] & (0.00, 1.7...
+   [exponent or subscript] -1  ...196 and 25.42 W\,m$^{-1}$\,K$^{-1}$, 1109 J\,kg$^{-1}$\,K$^{-1}$ & (4.18, 4.53] & (0.00, 1.70] & 0 & 0...
    table 4.18 <- manuscript/rebuild/data/step11_local_kJ.csv:2:lo_kJ
    table 4.53 <- manuscript/rebuild/data/step11_local_kJ.csv:2:hi_kJ
    table 0.00 <- manuscript/rebuild/data/step11_lumped_kJ.csv:2:test | manuscript/rebuild/data/step11_local_kJ.csv:2:test
@@ -1824,32 +2162,48 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    table 172.9 <- results/stage11_overshoot.csv:23:peak_f0_C
    table 163.4 <- results/stage11_overshoot.csv:30:peak_f0_C
    table 1.008 <- results/stage11_draws.csv:6:k_radial_W_mK
-   [exponent or subscript] -1  ...contact: least conductivity across the layers, 1.008 W\,m$^{-1}$\,K$^{-1}$ & 59.3 & 129.0 & 157.6 & 16...
-   [exponent or subscript] -1  ...east conductivity across the layers, 1.008 W\,m$^{-1}$\,K$^{-1}$ & 59.3 & 129.0 & 157.6 & 168.5 & 159....
+   table 25.35 <- results/stage11_draws.csv:6:k_axial_W_mK
+   [exponent or subscript] -1  ...east conductivity across the layers: 1.008 and 25.35 W\,m$^{-1}$\,K$^{-1}$, 1030 J\,kg$^{-1}$\,K$^{-1}...
+   [exponent or subscript] -1  ...ctivity across the layers: 1.008 and 25.35 W\,m$^{-1}$\,K$^{-1}$, 1030 J\,kg$^{-1}$\,K$^{-1}$ & 59.3 &...
+   table 1030 <- results/stage11_draws.csv:6:c_roll_J_kgK
+   [exponent or subscript] -1  ...layers: 1.008 and 25.35 W\,m$^{-1}$\,K$^{-1}$, 1030 J\,kg$^{-1}$\,K$^{-1}$ & 59.3 & 129.0 & 157.6 & 16...
+   [exponent or subscript] -1  ...008 and 25.35 W\,m$^{-1}$\,K$^{-1}$, 1030 J\,kg$^{-1}$\,K$^{-1}$ & 59.3 & 129.0 & 157.6 & 168.5 & 159....
    table 59.3 <- results/stage11_overshoot.csv:3:peak_f0_C
    table 129.0 <- results/stage11_overshoot.csv:10:peak_f0_C
    table 157.6 <- results/stage11_overshoot.csv:17:peak_f0_C
    table 168.5 <- results/stage11_overshoot.csv:24:peak_f0_C
    table 159.4 <- results/stage11_overshoot.csv:31:peak_f0_C
    table 1.375 <- results/stage11_draws.csv:7:k_radial_W_mK
-   [exponent or subscript] -1  ...ntact: largest conductivity across the layers, 1.375 W\,m$^{-1}$\,K$^{-1}$ & 60.0 & 131.2 & 160.5 & 17...
-   [exponent or subscript] -1  ...gest conductivity across the layers, 1.375 W\,m$^{-1}$\,K$^{-1}$ & 60.0 & 131.2 & 160.5 & 172.1 & 162....
+   table 25.31 <- results/stage11_draws.csv:7:k_axial_W_mK
+   [exponent or subscript] -1  ...gest conductivity across the layers: 1.375 and 25.31 W\,m$^{-1}$\,K$^{-1}$, 1050 J\,kg$^{-1}$\,K$^{-1}...
+   [exponent or subscript] -1  ...ctivity across the layers: 1.375 and 25.31 W\,m$^{-1}$\,K$^{-1}$, 1050 J\,kg$^{-1}$\,K$^{-1}$ & 60.0 &...
+   table 1050 <- results/stage11_draws.csv:7:c_roll_J_kgK
+   [exponent or subscript] -1  ...layers: 1.375 and 25.31 W\,m$^{-1}$\,K$^{-1}$, 1050 J\,kg$^{-1}$\,K$^{-1}$ & 60.0 & 131.2 & 160.5 & 17...
+   [exponent or subscript] -1  ...375 and 25.31 W\,m$^{-1}$\,K$^{-1}$, 1050 J\,kg$^{-1}$\,K$^{-1}$ & 60.0 & 131.2 & 160.5 & 172.1 & 162....
    table 60.0 <- results/stage11_overshoot.csv:4:peak_f0_C
    table 131.2 <- results/stage11_overshoot.csv:11:peak_f0_C
    table 160.5 <- results/stage11_overshoot.csv:18:peak_f0_C
    table 172.1 <- results/stage11_overshoot.csv:25:peak_f0_C
    table 162.7 <- results/stage11_overshoot.csv:32:peak_f0_C
+   table 1.177 <- results/stage11_draws.csv:8:k_radial_W_mK
+   table 25.68 <- results/stage11_draws.csv:8:k_axial_W_mK
+   [exponent or subscript] -1  ...entral contact: least specific heat: 1.177 and 25.68 W\,m$^{-1}$\,K$^{-1}$, 849 J\,kg$^{-1}$\,K$^{-1}$...
+   [exponent or subscript] -1  ...tact: least specific heat: 1.177 and 25.68 W\,m$^{-1}$\,K$^{-1}$, 849 J\,kg$^{-1}$\,K$^{-1}$ & 62.6 & ...
    table 849 <- results/stage11_draws.csv:8:c_roll_J_kgK
-   [exponent or subscript] -1  ... 162.7 \\ Central contact: least specific heat, 849 J\,kg$^{-1}$\,K$^{-1}$ & 62.6 & 139.3 & 171.7 & 18...
-   [exponent or subscript] -1  ...Central contact: least specific heat, 849 J\,kg$^{-1}$\,K$^{-1}$ & 62.6 & 139.3 & 171.7 & 185.3 & 174....
+   [exponent or subscript] -1  ...ic heat: 1.177 and 25.68 W\,m$^{-1}$\,K$^{-1}$, 849 J\,kg$^{-1}$\,K$^{-1}$ & 62.6 & 139.3 & 171.7 & 18...
+   [exponent or subscript] -1  ....177 and 25.68 W\,m$^{-1}$\,K$^{-1}$, 849 J\,kg$^{-1}$\,K$^{-1}$ & 62.6 & 139.3 & 171.7 & 185.3 & 174....
    table 62.6 <- results/stage11_overshoot.csv:5:peak_f0_C
    table 139.3 <- results/stage11_overshoot.csv:12:peak_f0_C
    table 171.7 <- results/stage11_overshoot.csv:19:peak_f0_C
    table 185.3 <- results/stage11_overshoot.csv:26:peak_f0_C
    table 174.2 <- results/stage11_overshoot.csv:33:peak_f0_C
+   table 1.196 <- results/stage11_draws.csv:9:k_radial_W_mK
+   table 25.42 <- results/stage11_draws.csv:9:k_axial_W_mK
+   [exponent or subscript] -1  ...tral contact: largest specific heat: 1.196 and 25.42 W\,m$^{-1}$\,K$^{-1}$, 1109 J\,kg$^{-1}$\,K$^{-1}...
+   [exponent or subscript] -1  ...ct: largest specific heat: 1.196 and 25.42 W\,m$^{-1}$\,K$^{-1}$, 1109 J\,kg$^{-1}$\,K$^{-1}$ & 58.8 &...
    table 1109 <- results/stage11_draws.csv:9:c_roll_J_kgK
-   [exponent or subscript] -1  ...4.2 \\ Central contact: largest specific heat, 1109 J\,kg$^{-1}$\,K$^{-1}$ & 58.8 & 127.5 & 155.5 & 16...
-   [exponent or subscript] -1  ...tral contact: largest specific heat, 1109 J\,kg$^{-1}$\,K$^{-1}$ & 58.8 & 127.5 & 155.5 & 166.3 & 157....
+   [exponent or subscript] -1  ...c heat: 1.196 and 25.42 W\,m$^{-1}$\,K$^{-1}$, 1109 J\,kg$^{-1}$\,K$^{-1}$ & 58.8 & 127.5 & 155.5 & 16...
+   [exponent or subscript] -1  ...196 and 25.42 W\,m$^{-1}$\,K$^{-1}$, 1109 J\,kg$^{-1}$\,K$^{-1}$ & 58.8 & 127.5 & 155.5 & 166.3 & 157....
    table 58.8 <- results/stage11_overshoot.csv:6:peak_f0_C
    table 127.5 <- results/stage11_overshoot.csv:13:peak_f0_C
    table 155.5 <- results/stage11_overshoot.csv:20:peak_f0_C
@@ -1869,6 +2223,10 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    table 151 <- results/stage15_cross_section.json.A1_summary.runs
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   table 360 <- results/stage15_cross_section.json.A1[60].archived~str
+   table 0.1 <- results/stage15_cross_section.json.A1[0].archived~str
+   table 9 <- results/stage15_cross_section.json.A1[0].archived~str
+   [label] 12  ...ion its search interpolated, while the need is that of step 12's run, which met the measured time.} \\...
    table 0 <- results/stage15_cross_section.json.A1[0].archived~str
    table 10 <- results/stage15_cross_section.json.A1[0].key~str
    table 900 <- results/stage15_cross_section.json.A1[0].archived~str
@@ -2726,78 +3084,158 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    table 900 <- results/stage15_cross_section.json.A1[0].archived~str
    table 33.1 <- results/stage15_cross_section.json.A1_rows[93].t_C8_3d_s
    table 32.8 <- results/stage15_cross_section.json.A1[21].archived~str
+== manuscript/rebuild/tables/s15_nodelivery.tex  [table:s15_nodelivery.tex]
+   traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   [exponent or subscript] 3  ...e-dimensional run to 900~s, so the mean cannot reach it; $^{3}$, a three-dimensional run carried to 9...
+   traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   [label] 3.7  ...to 900~s; $^{x}$, the reactive cross-section alone (Section~3.7 of the main text). The peak is the thre...
+   table 51.0 <- results/stage15_nodelivery.csv:2:mean_peak_3d_C
+   table 61.5 <- results/stage15_nodelivery.csv:3:mean_peak_3d_C
+   table 63.2 <- results/stage15_nodelivery.csv:4:mean_peak_3d_C
+   table 125.0 <- results/stage15_nodelivery.csv:5:mean_peak_3d_C
+   table 166.3 <- results/stage15_nodelivery.csv:6:mean_peak_3d_C
+   table 171.4 <- results/stage15_nodelivery.csv:7:mean_peak_xs_C
+   table 103.6 <- results/stage15_nodelivery.csv:8:mean_peak_3d_C
+   table 136.3 <- results/stage15_nodelivery.csv:9:mean_peak_3d_C
+   table 142.7 <- results/stage15_nodelivery.csv:10:mean_peak_3d_C
+   table 119.1 <- results/stage15_nodelivery.csv:11:mean_peak_3d_C
+   table 158.1 <- results/stage15_nodelivery.csv:12:mean_peak_3d_C
+   table 162.7 <- results/stage15_nodelivery.csv:13:mean_peak_xs_C
+   table 137.5 <- results/stage15_nodelivery.csv:14:mean_peak_3d_C
+   table 183.6 <- results/stage15_nodelivery.csv:15:mean_peak_3d_C
+   [exponent or subscript] 3  ...58.1$^{h}$ & 162.7$^{x}$ \\ PP-Exp1 & 137.5$^{h}$ & 183.6$^{3}$ & 190.1$^{x}$ \\ PP-Exp2 & 120.8$^{h}...
+   table 190.1 <- results/stage15_nodelivery.csv:16:mean_peak_xs_C
+   table 120.8 <- results/stage15_nodelivery.csv:17:mean_peak_3d_C
+   table 160.5 <- results/stage15_nodelivery.csv:18:mean_peak_3d_C
+   table 165.2 <- results/stage15_nodelivery.csv:19:mean_peak_xs_C
+   table 125.8 <- results/stage15_nodelivery.csv:20:mean_peak_3d_C
+   table 167.4 <- results/stage15_nodelivery.csv:21:mean_peak_3d_C
+   table 176.5 <- results/stage15_nodelivery.csv:22:mean_peak_3d_C
+   [exponent or subscript] 3  ...65.2$^{x}$ \\ PP-Exp3 & 125.8$^{h}$ & 167.4$^{h}$ & 176.5$^{3}$ \\ PP-Exp4 & 130.7$^{h}$ & 174.2$^{3}...
+   table 130.7 <- results/stage15_nodelivery.csv:23:mean_peak_3d_C
+   table 174.2 <- results/stage15_nodelivery.csv:24:mean_peak_3d_C
+   [exponent or subscript] 3  ...67.4$^{h}$ & 176.5$^{3}$ \\ PP-Exp4 & 130.7$^{h}$ & 174.2$^{3}$ & 179.9$^{x}$ \\ ST-Exp1 & 131.2$^{h}...
+   table 179.9 <- results/stage15_nodelivery.csv:25:mean_peak_xs_C
+   table 131.2 <- results/stage15_nodelivery.csv:26:mean_peak_3d_C
+   table 179.5 <- results/stage15_nodelivery.csv:27:mean_peak_3d_C
+   [exponent or subscript] 3  ...74.2$^{3}$ & 179.9$^{x}$ \\ ST-Exp1 & 131.2$^{h}$ & 179.5$^{3}$ & 190.8$^{3}$ \\ ST-Exp2 & 124.1$^{h}...
+   table 190.8 <- results/stage15_nodelivery.csv:28:mean_peak_3d_C
+   [exponent or subscript] 3  ...79.9$^{x}$ \\ ST-Exp1 & 131.2$^{h}$ & 179.5$^{3}$ & 190.8$^{3}$ \\ ST-Exp2 & 124.1$^{h}$ & 169.5$^{3}...
+   table 124.1 <- results/stage15_nodelivery.csv:29:mean_peak_3d_C
+   table 169.5 <- results/stage15_nodelivery.csv:30:mean_peak_3d_C
+   [exponent or subscript] 3  ...79.5$^{3}$ & 190.8$^{3}$ \\ ST-Exp2 & 124.1$^{h}$ & 169.5$^{3}$ & 179.5$^{3}$ \\ ST-Exp3 & 68.0$^{h}$...
+   table 179.5 <- results/stage15_nodelivery.csv:27:mean_peak_3d_C
+   [exponent or subscript] 3  ...90.8$^{3}$ \\ ST-Exp2 & 124.1$^{h}$ & 169.5$^{3}$ & 179.5$^{3}$ \\ ST-Exp3 & 68.0$^{h}$ & 88.2$^{h}$ ...
+   table 68.0 <- results/stage15_nodelivery.csv:32:mean_peak_3d_C
+   table 88.2 <- results/stage15_nodelivery.csv:33:mean_peak_3d_C
+   table 91.7 <- results/stage15_nodelivery.csv:34:mean_peak_xs_C
+   table 127.7 <- results/stage15_nodelivery.csv:35:mean_peak_3d_C
+   table 174.6 <- results/stage15_nodelivery.csv:36:mean_peak_3d_C
+   [exponent or subscript] 3  ... 88.2$^{h}$ & 91.7$^{h}$ \\ ST-Exp4 & 127.7$^{h}$ & 174.6$^{3}$ & 185.2$^{x}$ \\ SP-Exp1 & 124.7$^{h}...
+   table 185.2 <- results/stage15_nodelivery.csv:37:mean_peak_xs_C
+   table 124.7 <- results/stage15_nodelivery.csv:38:mean_peak_3d_C
+   table 170.3 <- results/stage15_nodelivery.csv:39:mean_peak_3d_C
+   [exponent or subscript] 3  ...74.6$^{3}$ & 185.2$^{x}$ \\ SP-Exp1 & 124.7$^{h}$ & 170.3$^{3}$ & 180.4$^{x}$ \\ SP-Exp2 & 127.6$^{h}...
+   table 180.4 <- results/stage15_nodelivery.csv:40:mean_peak_xs_C
+   table 127.6 <- results/stage15_nodelivery.csv:41:mean_peak_3d_C
+   table 174.4 <- results/stage15_nodelivery.csv:42:mean_peak_3d_C
+   [exponent or subscript] 3  ...70.3$^{3}$ & 180.4$^{x}$ \\ SP-Exp2 & 127.6$^{h}$ & 174.4$^{3}$ & 185.0$^{x}$ \\ SP-Exp3 & 136.0$^{h}...
+   table 185.0 <- results/stage15_nodelivery.csv:43:mean_peak_xs_C
+   table 136.0 <- results/stage15_nodelivery.csv:44:mean_peak_3d_C
+   table 186.2 <- results/stage15_nodelivery.csv:45:mean_peak_3d_C
+   [exponent or subscript] 3  ...74.4$^{3}$ & 185.0$^{x}$ \\ SP-Exp3 & 136.0$^{h}$ & 186.2$^{3}$ & 199.2$^{x}$ \\ SP-Exp4 & 112.9$^{h}...
+   table 199.2 <- results/stage15_nodelivery.csv:46:mean_peak_xs_C
+   table 112.9 <- results/stage15_nodelivery.csv:47:mean_peak_3d_C
+   table 153.8 <- results/stage15_nodelivery.csv:48:mean_peak_3d_C
+   table 162.3 <- results/stage15_nodelivery.csv:49:mean_peak_xs_C
 == manuscript/rebuild/tables/s1_steps.tex  [table:s1_steps.tex]
-   table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
+   table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
-   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
-   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
-   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 3 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
    table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 3 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
    traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
    table 30 <- manuscript/rebuild/data/steps.csv:4:question | manuscript/rebuild/data/predictions_registry.csv:2:expectation
-   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
-   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 12 <- manuscript/rebuild/data/steps.csv:4:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 6 <- manuscript/rebuild/data/steps.csv:4:committed | manuscript/rebuild/data/predictions_registry.csv:14:prediction
    table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 3 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   table 3 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
    table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
-   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
-   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 16 <- manuscript/rebuild/data/steps.csv:5:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:25:statement
    table 5 <- manuscript/rebuild/data/steps.csv:5:committed | manuscript/rebuild/data/predictions_registry.csv:6:prediction
    table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 5 <- manuscript/rebuild/data/steps.csv:5:committed | manuscript/rebuild/data/predictions_registry.csv:6:prediction
-   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
-   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 21 <- manuscript/rebuild/data/steps.csv:6:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:statement
    table 7 <- manuscript/rebuild/data/steps.csv:6:committed | manuscript/rebuild/data/predictions_registry.csv:26:prediction
    table 7 <- manuscript/rebuild/data/steps.csv:6:committed | manuscript/rebuild/data/predictions_registry.csv:26:prediction
    table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 6 <- manuscript/rebuild/data/steps.csv:4:committed | manuscript/rebuild/data/predictions_registry.csv:14:prediction
    table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 6 <- manuscript/rebuild/data/steps.csv:4:committed | manuscript/rebuild/data/predictions_registry.csv:14:prediction
    table 150 <- manuscript/rebuild/data/steps.csv:7:question | manuscript/rebuild/data/predictions_registry.csv:12:statement
-   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
-   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 23 <- manuscript/rebuild/data/steps.csv:7:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:4:source
    table 7 <- manuscript/rebuild/data/steps.csv:6:committed | manuscript/rebuild/data/predictions_registry.csv:26:prediction
    table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 6 <- manuscript/rebuild/data/steps.csv:4:committed | manuscript/rebuild/data/predictions_registry.csv:14:prediction
    table 7 <- manuscript/rebuild/data/steps.csv:6:committed | manuscript/rebuild/data/predictions_registry.csv:26:prediction
-   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
-   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 26 <- manuscript/rebuild/data/steps.csv:8:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:10:source
    table 8 <- manuscript/rebuild/data/steps.csv:8:committed | manuscript/rebuild/data/predictions_registry.csv:10:expectation
    table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 5 <- manuscript/rebuild/data/steps.csv:5:committed | manuscript/rebuild/data/predictions_registry.csv:6:prediction
    table 8 <- manuscript/rebuild/data/steps.csv:8:committed | manuscript/rebuild/data/predictions_registry.csv:10:expectation
-   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
-   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 26 <- manuscript/rebuild/data/steps.csv:8:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:10:source
    table 8 <- manuscript/rebuild/data/steps.csv:8:committed | manuscript/rebuild/data/predictions_registry.csv:10:expectation
    table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 3 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
    table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
    table 9 <- manuscript/rebuild/data/steps.csv:10:step | manuscript/rebuild/data/predictions_registry.csv:10:expectation
-   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
-   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 29 <- manuscript/rebuild/data/steps.csv:10:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 8 <- manuscript/rebuild/data/steps.csv:8:committed | manuscript/rebuild/data/predictions_registry.csv:10:expectation
    table 6 <- manuscript/rebuild/data/steps.csv:4:committed | manuscript/rebuild/data/predictions_registry.csv:14:prediction
    table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
    table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
-   table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
-   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
+   table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 30 <- manuscript/rebuild/data/steps.csv:4:question | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 8 <- manuscript/rebuild/data/steps.csv:8:committed | manuscript/rebuild/data/predictions_registry.csv:10:expectation
@@ -2805,56 +3243,60 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
    table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 3 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
    table 11 <- manuscript/rebuild/data/steps.csv:5:predictions_file | manuscript/rebuild/data/predictions_registry.csv:2:expectation
-   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
-   table 11 <- manuscript/rebuild/data/steps.csv:5:predictions_file | manuscript/rebuild/data/predictions_registry.csv:2:expectation
-   table 02 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
    table 6 <- manuscript/rebuild/data/steps.csv:4:committed | manuscript/rebuild/data/predictions_registry.csv:14:prediction
    table 5 <- manuscript/rebuild/data/steps.csv:5:committed | manuscript/rebuild/data/predictions_registry.csv:6:prediction
    table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
    table 3 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
    table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 12 <- manuscript/rebuild/data/steps.csv:4:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
-   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
-   table 11 <- manuscript/rebuild/data/steps.csv:5:predictions_file | manuscript/rebuild/data/predictions_registry.csv:2:expectation
-   table 03 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
+   table 3 <- manuscript/rebuild/data/steps.csv:3:committed | manuscript/rebuild/data/predictions_registry.csv:4:prediction
    table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 13 <- manuscript/rebuild/data/steps.csv:14:step | manuscript/rebuild/data/predictions_registry.csv:76:stage
-   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
-   table 11 <- manuscript/rebuild/data/steps.csv:5:predictions_file | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 16 <- manuscript/rebuild/data/steps.csv:5:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:25:statement
    table 10 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 8 <- manuscript/rebuild/data/steps.csv:8:committed | manuscript/rebuild/data/predictions_registry.csv:10:expectation
    table 6 <- manuscript/rebuild/data/steps.csv:4:committed | manuscript/rebuild/data/predictions_registry.csv:14:prediction
    table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
    table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 14 <- manuscript/rebuild/data/steps.csv:15:step | manuscript/rebuild/data/predictions_registry.csv:35:foreseen_basis
-   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
-   table 11 <- manuscript/rebuild/data/steps.csv:5:predictions_file | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 17 <- manuscript/rebuild/data/steps.csv:15:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:80:source
    table 6 <- manuscript/rebuild/data/steps.csv:4:committed | manuscript/rebuild/data/predictions_registry.csv:14:prediction
    table 6 <- manuscript/rebuild/data/steps.csv:4:committed | manuscript/rebuild/data/predictions_registry.csv:14:prediction
    table 4 <- manuscript/rebuild/data/steps.csv:2:committed | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
    table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 15 <- manuscript/rebuild/data/steps.csv:16:step | manuscript/rebuild/data/predictions_registry.csv:2:statement
-   table 2026 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date
-   table 11 <- manuscript/rebuild/data/steps.csv:5:predictions_file | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    traced 18 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2 = 18
    table 8 <- manuscript/rebuild/data/steps.csv:8:committed | manuscript/rebuild/data/predictions_registry.csv:10:expectation
    table 8 <- manuscript/rebuild/data/steps.csv:8:committed | manuscript/rebuild/data/predictions_registry.csv:10:expectation
    table 7 <- manuscript/rebuild/data/steps.csv:6:committed | manuscript/rebuild/data/predictions_registry.csv:26:prediction
    table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
+   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    traced 98 <- manuscript/rebuild/data/predictions_registry.csv: rows = 98
    traced 52 <- manuscript/rebuild/data/predictions_registry.csv: rows, listed in Table S2 = 52
    traced 34 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict held, listed in Table S2 = 34
    traced 18 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2 = 18
    traced 6 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2, foreseen = 6
+   table 22 <- manuscript/rebuild/data/predictions_registry.csv:3:statement
+   table 24 <- manuscript/rebuild/data/predictions_registry.csv:27:foreseen_basis
 == manuscript/rebuild/tables/s2_registry.tex  [table:s2_registry.tex]
    traced 52 <- manuscript/rebuild/data/predictions_registry.csv: rows, listed in Table S2 = 52
    traced 98 <- manuscript/rebuild/data/predictions_registry.csv: rows = 98
@@ -2868,8 +3310,8 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    table 5 <- manuscript/rebuild/data/predictions_registry.csv:6:prediction
    table 20 <- manuscript/rebuild/data/predictions_registry.csv:10:statement
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
-   table 145 <- manuscript/rebuild/data/predictions_registry.csv:21:expectation
-   table 170 <- manuscript/rebuild/data/predictions_registry.csv:21:expectation
+   traced 145 <- predictions_v12.md: /passive peak near (145) to 170 C/ = 145
+   traced 170 <- predictions_v12.md: /passive peak near 145 to (170) C/ = 170
    table 5 <- manuscript/rebuild/data/predictions_registry.csv:6:prediction
    table 150 <- manuscript/rebuild/data/predictions_registry.csv:12:statement
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
@@ -2900,6 +3342,7 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    table 9 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
    table 16 <- manuscript/rebuild/data/predictions_registry.csv:25:statement
+   table 6 <- manuscript/rebuild/data/predictions_registry.csv:14:prediction
    table 8 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
    table 0 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 7 <- manuscript/rebuild/data/predictions_registry.csv:26:prediction
@@ -2907,7 +3350,6 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    table 8 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
    table 7 <- manuscript/rebuild/data/predictions_registry.csv:26:prediction
    table 0 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
-   table 0.3 <- manuscript/rebuild/data/predictions_registry.csv:6:statement
    table 0.3 <- manuscript/rebuild/data/predictions_registry.csv:6:statement
    table 8 <- manuscript/rebuild/data/predictions_registry.csv:10:expectation
    table 0.05 <- manuscript/rebuild/data/predictions_registry.csv:20:source
@@ -2999,6 +3441,8 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    table 14 <- manuscript/rebuild/data/predictions_registry.csv:35:foreseen_basis
    table 5.96 <- manuscript/rebuild/data/predictions_registry.csv:87:statement
+   traced 21.39 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   table 5.96 <- manuscript/rebuild/data/predictions_registry.csv:87:statement
    table 14 <- manuscript/rebuild/data/predictions_registry.csv:35:foreseen_basis
    table 0.26 <- manuscript/rebuild/data/predictions_registry.csv:6:statement
    table 14 <- manuscript/rebuild/data/predictions_registry.csv:35:foreseen_basis
@@ -3007,13 +3451,14 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    table 14 <- manuscript/rebuild/data/predictions_registry.csv:35:foreseen_basis
    table 14 <- manuscript/rebuild/data/predictions_registry.csv:35:foreseen_basis
    table 1 <- manuscript/rebuild/data/predictions_registry.csv:2:stage
+   broad 65,520 <- results/stage7_paper_numbers.json.triggers.levels.E_event_J
    table 15 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
    table 15 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
    table 15 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
    traced 21.39 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    table 6 <- manuscript/rebuild/data/predictions_registry.csv:14:prediction
    table 10 <- manuscript/rebuild/data/predictions_registry.csv:2:expectation
-   broad 7,062 <- results/stage15_paper_numbers.json.B1.M50_PT_Exp4.bracket.mid_J
+   table 7.06 <- manuscript/rebuild/data/predictions_registry.csv:93:expectation_in_table_s2
    table 15 <- manuscript/rebuild/data/predictions_registry.csv:2:statement
    table 1.25 <- manuscript/rebuild/data/predictions_registry.csv:94:statement
    table 1.49 <- manuscript/rebuild/data/predictions_registry.csv:94:expectation
@@ -3164,6 +3609,11 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
    traced 0.5 <- results/stage15_cross_section.json: settings.width_ft = 0.5
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   table 0.2 <- results/stage15_table.csv:2:C8_3d_t_at_bracket_hi_s | results/stage14_needs.csv:2:trigger_max_C
+   traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
+   table 360 <- results/stage15_table.csv:5:delivery
+   traced 196.4 <- results/stage15_xs/*.json: M50_ST_Exp3, con over 360 s, the run at the top of the grid, its C8 time (the last point of results/stage15_cross_section.json A2_at_measured) = 196.394
+   traced 25.6 <- results/stage15_xs/*.json: M50_ST_Exp3, con over 360 s, the run at the top of the grid, its delivered energy (the last point of results/stage15_cross_section.json A2_at_measured) = 25.6281
    table 5 <- results/stage15_table.csv:2:C2_E_J | results/stage14_needs.csv:2:threshold_C1_hi_J
    table 272 <- results/stage15_table.csv:2:t_measured_s | results/stage14_needs.csv:5:time_to_propagation_s
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
@@ -3534,6 +3984,7 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    words ok 'under three of the shapes' = 3 <- results/stage15_table.csv: ST_Exp3 shapes with a cross-section need
    words ok 'nine of them with both zero' = 9 <- results/stage13_twobody.csv: low and high searches with both zero
    words ok 'six of them foreseen' = 6 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2, foreseen
+   words ok 'at the high contact ten of the outcomes rest on the reactive cross-section alone' = 10 <- results/stage15_nodelivery.csv: high-contact rows, rule x
    words ok 'four of them known beforehand to be fixed, or nearly' = 4 <- manuscript/rebuild/data/predictions_registry.csv: held rows of Table S2 whose expectation records them as fixed
    words ok 'Nine propagated' = 9 <- inputs/fransson2024/m50_tests.csv: tests with propagated Yes
    words ok 'thirteen of the sixteen tests' = 13 <- results/stage7_triggers.csv: tests whose E_J exceeds the calorimetry's 33,222.9 J
@@ -3545,7 +3996,7 @@ numbers_check --rebuild --supplement: 986 traced to a named value, 2024 found in
    words ok 'in seven propagated tests' = 7 <- results/stage14_needs.csv: propagated tests read at the measured time
    words ok 'Of the five tests that did not propagate and report low maxima' = 5 <- inputs/fransson2024/m50_tests.csv: tests that did not propagate, below 600 C
    words ok 'four need none' = 4 <- results/stage9_paper_numbers.json: part_a.A3 tests with an overshoot
-   words ok 'In twenty-five of them a run reproduces' = 25 <- results/stage15_table.csv: matched cases outside ST_Exp3
+   words ok 'In twenty-five of them a run of the resolved neighbour reproduces' = 25 <- results/stage15_table.csv: matched cases outside ST_Exp3
    words ok 'in the same thirty-two cases' = 32 <- results/stage15_table.csv: cases outside ST_Exp3
    words ok 'in the other seven, shorter deliveries' = 7 <- results/stage15_table.csv: cases outside ST_Exp3 whose cross-section need is a threshold
    words ok 'or, in twelve, to 332' = 12 <- results/stage15_cross_section.json: A1_rows that end at 332 s

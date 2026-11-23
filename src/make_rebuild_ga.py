@@ -1,7 +1,7 @@
 """Graphical abstract of the rebuilt manuscript (Brief 29), drawn from the results files only.
 
 Left: the two cells and where the delivered heat enters, with conduction's shortfall. Right: the estimate (Brief 30),
-the heat the propagated tests with strong triggers need by their measured times under each reading of the neighbour,
+the heat the model's neighbour needs by the measured times of the propagated tests with strong triggers, under each reading,
 each delivery shape (results/stage15_table.csv), against the ejecta's measured energy; below, its model dependence
 (the threshold ratios, results/stage15_paper_numbers.json B1 against the lumped brackets) and the measurement. Every label it draws is also
 written, one per line, to manuscript/rebuild/ga_text.txt, which the numbers check reads.
@@ -79,12 +79,12 @@ def main():
         ax.add_patch(FancyArrowPatch((4.1, 5.4 + dy * 1.25), (5.25, 5.4 + dy * 1.05), arrowstyle="-|>", mutation_scale=9,
                                      color=C_HEAT, lw=1.3))
     T(ax, 5.0, 8.6, "heat delivered to the facing half", ha="center", va="center", fontsize=7.5, color="#9a5b00")
-    T(ax, 5.0, 1.45, f"with calorimetry's energy, conduction\nand radiation alone leave the\nneighbour at least {short:.0f} K short of runaway",
+    T(ax, 5.0, 1.45, f"with calorimetry's energy, conduction\nand radiation alone leave the modelled\nneighbour at least {short:.0f} K short of runaway",
       ha="center", va="center", fontsize=7.0, color=MUTED, linespacing=1.25)
 
-    # ---------------------------------------------------------------- right: what the tests need
+    # ---------------------------------------------------------------- right: what the model's neighbour needs
     ax2 = fig.add_axes([0.45, 0.34, 0.52, 0.48])
-    T(fig, 0.45, 0.975, "heat the tests need by their measured times,\nafter strong triggers (kJ)", ha="left", va="top",
+    T(fig, 0.45, 0.975, "heat the model's neighbour needs by the measured\ntimes, after strong triggers (kJ)", ha="left", va="top",
       fontsize=7.8, color=INK, linespacing=1.2)
     for y, vals, col, face, name in ((1.25, res, C_RES, "white", "resolved neighbour"),
                                      (0.0, lum, C_LUMP, C_LUMP, "lumped neighbour")):
@@ -92,15 +92,15 @@ def main():
         jit = [((i % 4) - 1.5) * 0.06 for i in range(len(vals))]
         ax2.scatter(vals, [y + j for j in jit], s=12, facecolors=face, edgecolors=col, linewidths=0.9, zorder=3)
         pct = f"{100 * min(vals) / e_fix:.1f} to {100 * max(vals) / e_fix:.1f} %"
-        T(ax2, 0.0, y + 0.22, f"{name}: {rng(vals)} kJ,\n{pct} of the {e_fix:.2f} kJ in this cell's ejecta",
+        T(ax2, 0.0, y + 0.22, f"{name}: {rng(vals)} kJ,\n{pct} of the {e_fix:.2f} kJ measured in this cell's ejecta",
           ha="left", va="bottom", fontsize=7.0, color=INK, linespacing=1.15)
     ax2.set_ylim(-0.3, 2.25); ax2.set_yticks([])
     ax2.set_xlim(0, 8.5); ax2.set_xticks([0, 2, 4, 6, 8]); ax2.tick_params(labelsize=7.5)
     ax2.grid(True, axis="x", color=GRID, lw=0.6, zorder=0)
     foot = (f"With a 21.4 s pulse the resolved neighbour's least energy for runaway is {r_lo:.2f} to {r_hi:.2f} times\n"
-            f"the lumped one's after two strong triggers and {w_lo:.2f} to {w_hi:.2f} times after a weak one.\n"
-            f"Published inputs bound no path to the facing half below {bound:.1f} kJ within 21.4 s;\n"
-            f"a heat flux measured there would remove the dependence.")
+            f"the lumped one's in two strong-trigger tests and {w_lo:.2f} to {w_hi:.2f} times in a weak-trigger test.\n"
+            f"Published inputs cap no path to the facing half below {bound:.1f} kJ within 21.4 s, above both needs;\n"
+            f"a heat flux measured there could decide between the readings, if the model holds otherwise.")
     T(fig, 0.5, 0.015, foot, ha="center", va="bottom", fontsize=7.0, color=MUTED, linespacing=1.25)
 
     for ext, kw in (("pdf", {}), ("png", {"dpi": 300}), ("tif", {"dpi": 300, "pil_kwargs": {"compression": "tiff_lzw"}})):
