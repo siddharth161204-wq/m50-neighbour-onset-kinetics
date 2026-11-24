@@ -202,7 +202,11 @@ def fig2():
     tt = tests_table()
     nd = needs_table()
     xs = {r["test"]: r for r in cross_section()["A2"] if r["shape"] == "tri"}
-    b1 = stage15_numbers()["B1"]
+    b1 = {t: {"bracket": dict(v["bracket"])} for t, v in stage15_numbers()["B1"].items()}
+    s16 = json.load(open(os.path.join(RES, "stage16_scorecard.json")))
+    if s16["T"].get("status") == "done":               # step 16's three-dimensional threshold of PT-Exp1
+        T = s16["T"]
+        b1[T["test"]] = {"bracket": {"lo_J": T["lo_J"], "hi_J": T["hi_J"], "mid_J": T["mid_J"]}}
     order = sorted(TESTS, key=lambda t: tt[t]["E_b_J"])
     fig, ax = plt.subplots(figsize=(7.2, 3.3), constrained_layout=True)
     x = np.arange(len(order))
@@ -522,11 +526,14 @@ def fig6():
     # median and largest ejected energy (results/stage14_inputs.csv)
     t15 = [r for r in read_csv(os.path.join(RES, "stage15_table.csv")) if r["test"] != "M50_ST_Exp3"]
     lum = [float(r["C2_E_by_t_J"]) / 1e3 for r in t15 if r["delivery"] == "21.39 s pulse"]
-    res = [float(r["C8_xs_E_by_t_J"]) / 1e3 for r in t15 if r["C8_xs_E_by_t_J"]]
+    # the resolved needs with the same pulse, bracketed in three dimensions (step 16), so that the two bands compare
+    s16 = json.load(open(os.path.join(RES, "stage16_scorecard.json")))
+    n3 = [r for r in s16["N"] if r["status"] == "done"]
+    res = [r["lo_J"] / 1e3 for r in n3] + [r["hi_J"] / 1e3 for r in n3]
     inp = {r["key"]: float(r["value"]) for r in read_csv(os.path.join(RES, "stage14_inputs.csv"))
            if r["key"] in ("db_Eej_median", "db_Eej_max")}
     bands = [(min(lum), max(lum), C_LUMP, 0.13, "lumped needs, strong triggers, 21.4 s pulse"),
-             (min(res), max(res), C_RES, 0.16, "resolved needs, strong triggers, four shapes"),
+             (min(res), max(res), C_RES, 0.16, "resolved needs (three-dimensional), the same"),
              (inp["db_Eej_median"] / 1e3, inp["db_Eej_max"] / 1e3, INK, 0.10, "ejected energy measured, median to largest")]
     for lo, hi, col, al, lab in bands:
         ax.axvspan(lo, hi, color=col, alpha=al, lw=0, zorder=0)
