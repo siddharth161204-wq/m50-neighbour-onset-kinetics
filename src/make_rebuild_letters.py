@@ -84,21 +84,22 @@ def main():
              "kinetics fitted to calorimetry of NCM811 and graphite, against sixteen published two-cell tests."),
             "",
             ("Each failing cell's energy is fitted to its own measured peak temperature, 31.6 to 54.3 kJ in fourteen "
-             "tests (strong triggers) and 9.0 and 16.6 kJ in two (weak), and the neighbour is solved both as one "
+             "tests (strong triggers), mostly above the 33.2 kJ that calorimetry measured at most for this cell, and "
+             "9.0 and 16.6 kJ in two (weak), and the neighbour is solved both as one "
              "temperature and as a three-dimensional field; in each, the heat it needs through its side facing the "
              "failing cell to run away at the test's measured time is searched, and the bounds that published inputs "
              "set on each path that could deliver it are worked out."),
             "",
-            ("From a failing cell releasing at most 33.2 kJ, the most that calorimetry measured for this cell, "
-             "conduction and radiation leave the neighbour at least 29 K short of runaway. With heat delivered over "
-             "21.4 s, the mean of the two rise times read from the two published records, the eight tests that "
-             f"propagated after strong triggers need {H['n3'][0]:.2f} to {H['n3'][1]:.2f} kJ if the neighbour is "
-             f"resolved in three dimensions and {H['nl'][0]:.2f} to {H['nl'][1]:.2f} kJ if it is lumped, "
-             f"{H['sh'][0]:.1f} to {H['sh'][1]:.1f} % and {H['sh'][2]:.1f} to {H['sh'][3]:.1f} % of the Databank's "
-             "median ejecta energy for this cell, 76.74 kJ. To run away at all, the resolved neighbour needs at least "
-             f"{H['rs'][0]:.2f} times the lumped neighbour's energy after the {words[H['ns']]} strong triggers "
-             f"searched in three dimensions and at most {H['rw'][1]:.2f} times after both weak ones. Published "
-             "inputs do not exclude any path delivering 27.9 kJ to the facing side within 21.4 s."),
+            ("At either energy, conduction and radiation run no resolved neighbour away, so heat must also arrive "
+             "through its side facing the failing cell. With heat delivered over 21.4 s, the mean of the two rise "
+             "times read from the two published records, the eight tests that propagated after strong triggers need "
+             f"{H['n3'][0]:.2f} to {H['n3'][1]:.2f} kJ if the neighbour is resolved in three dimensions and "
+             f"{H['nl'][0]:.2f} to {H['nl'][1]:.2f} kJ if it is lumped. To run away at all, the resolved neighbour "
+             f"needs at least {H['rs'][0]:.2f} times the lumped neighbour's energy after the {words[H['ns']]} strong "
+             f"triggers searched in three dimensions and at most {H['rw'][1]:.2f} times after both weak ones, so in "
+             "these tests a heat share calibrated with one representation needs a correction that depends on the "
+             "trigger before it can serve the other. Published inputs rule out no path delivering 27.9 kJ to the facing side within "
+             "21.4 s."),
             "",
             ("For readers who model propagation in packs, the paper gives the heat a neighbour needs under each of the "
              "two common representations of a cell, set against sixteen tests, the factor between them and its "

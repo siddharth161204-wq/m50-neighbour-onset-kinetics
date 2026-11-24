@@ -1,23 +1,17 @@
-numbers_check --rebuild: 749 traced to a named value, 161 found in their table's source files, 0 broad matches (supplement only), 37 counts written in words checked, 0 failures, 69 structural (not looked for)
+numbers_check --rebuild: 701 traced to a named value, 161 found in their table's source files, 0 broad matches (supplement only), 37 counts written in words checked, 0 failures, 69 structural (not looked for)
 
 == main.tex: title  [map]
 == main.tex: abstract  [map]
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
    traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
    traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
-   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
    traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
-   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
@@ -883,16 +877,10 @@ numbers_check --rebuild: 749 traced to a named value, 161 found in their table's
    table 0.79 <- results/stage16_needs.csv:29:share_by_t_m_plus_10 | results/stage16_scorecard.json.X[19].share_by_t_m_plus_10
    table -0.89 <- results/stage15_cross_section.json.A1[4].key~str | results/stage7_triggers.csv:251:T1max_C
 == manuscript/rebuild/highlights.txt  [map]
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
    traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
-   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
 == manuscript/rebuild/keywords.txt  [map]
 == manuscript/rebuild/titles.md  [map]
 == manuscript/rebuild/ga_text.txt  [map]
@@ -913,20 +901,14 @@ numbers_check --rebuild: 749 traced to a named value, 161 found in their table's
 == manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt  [map]
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
-   traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
-   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
    traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 9.0 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_PT_Exp1'} = 8.97677
+   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
    traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
-   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
@@ -936,20 +918,14 @@ numbers_check --rebuild: 749 traced to a named value, 161 found in their table's
 == manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt  [map]
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
-   traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
-   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
    traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 9.0 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_PT_Exp1'} = 8.97677
+   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
    traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
-   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
@@ -959,20 +935,14 @@ numbers_check --rebuild: 749 traced to a named value, 161 found in their table's
 == manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt  [map]
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
-   traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
-   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
    traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 9.0 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_PT_Exp1'} = 8.97677
+   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
    traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
-   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
@@ -983,20 +953,14 @@ numbers_check --rebuild: 749 traced to a named value, 161 found in their table's
    [year or date] 2026  ...om one cell to the next. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
    traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
    traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
-   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
    traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
-   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
@@ -1005,20 +969,14 @@ numbers_check --rebuild: 749 traced to a named value, 161 found in their table's
    [year or date] 2026  ...t follows a failing one. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
    traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
    traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
-   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
    traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
-   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
@@ -1027,20 +985,14 @@ numbers_check --rebuild: 749 traced to a named value, 161 found in their table's
    [year or date] 2026  ...t published experiments. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
    traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
    traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
-   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
    traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
-   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
@@ -1073,8 +1025,8 @@ numbers_check --rebuild: 749 traced to a named value, 161 found in their table's
    words ok 'at least four delivery paths' = 4 <- results/stage15_table.csv: the fewest of the paths A1 to A4 whose bound reaches a need at the measured time
    words ok 'none of the three quantities' = 3 <- results/stage10_heldout.json: predictors
    words ok 'all twelve of the needs with the pulse' = 12 <- results/stage14_needs.csv: non-zero needs over 21.39 s
-   words ok 'strong triggers, fourteen tests' = 14 <- results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ
-   words ok 'after four strong triggers searched in three dimensions|after the four strong triggers whose threshold was bracketed|in the four strong-trigger tests bracketed in three dimensions|rests on four tests after strong triggers' = 4 <- rebuild_headline.thresholds_3d: strong-trigger tests (E_J above 30 kJ)
+   words ok 'in fourteen \(strong triggers\)|in fourteen tests \(strong triggers\)' = 14 <- results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ
+   words ok 'energy after four strong triggers, at most|after four strong triggers searched in three dimensions|after the four strong triggers whose threshold was bracketed|in the four strong-trigger tests bracketed in three dimensions|rests on four tests after strong triggers' = 4 <- rebuild_headline.thresholds_3d: strong-trigger tests (E_J above 30 kJ)
    words ok 'the two after weak ones|the two with weak triggers' = 2 <- rebuild_headline.thresholds_3d: weak-trigger tests (E_J below 30 kJ)
    words ok 'in the three strong-trigger tests bracketed in three dimensions whose lumped threshold is not zero' = 3 <- rebuild_headline.threshold_ratio_spans: strong-trigger tests whose lumped threshold is not zero
    words ok 'in the six tests whose threshold was bracketed in three dimensions|of the six tests bracketed in three dimensions' = 6 <- rebuild_headline.thresholds_3d: tests
