@@ -1830,7 +1830,7 @@
    "test": "M50_ST_Exp4",
    "delivery": "120 s constant power",
    "search": "X",
-   "status": "unfinished",
+   "status": "done",
    "t_m_s": 342.0,
    "E_e_J": 151555.61857762307,
    "E_b_J": 48810.183116786815,
@@ -1843,8 +1843,8 @@
    "lumped_E_J": 947.2226161101443,
    "lumped_status": "matched",
    "lumped_t_s": 338.04028887423635,
-   "n_runs_counted": 5,
-   "n_runs_step16": 4,
+   "n_runs_counted": 7,
+   "n_runs_step16": 6,
    "runs": [
     {
      "E_J": 947.2226161101444,
@@ -1879,6 +1879,22 @@
      "class": "late"
     },
     {
+     "E_J": 4546.577017735071,
+     "t_C8_s": null,
+     "t_end_s": 900.0,
+     "source": "stage16",
+     "id": "s16_X_ST_Exp4_con120_f0.029999396",
+     "class": "late"
+    },
+    {
+     "E_J": 4670.692582235504,
+     "t_C8_s": 292.5672407344617,
+     "t_end_s": 292.6,
+     "source": "stage16",
+     "id": "s16_X_ST_Exp4_con120_f0.030818340",
+     "class": "early"
+    },
+    {
      "E_J": 4918.923862791989,
      "t_C8_s": 231.25799562157948,
      "t_end_s": 231.3,
@@ -1886,13 +1902,31 @@
      "id": "s16_X_ST_Exp4_con120_f0.032456229",
      "class": "early"
     }
-   ]
+   ],
+   "lo_J": 4546.577017735071,
+   "lo_id": "s16_X_ST_Exp4_con120_f0.029999396",
+   "lo_t_C8_s": null,
+   "lo_source": "stage16",
+   "hi_J": 4670.692582235504,
+   "hi_id": "s16_X_ST_Exp4_con120_f0.030818340",
+   "hi_t_C8_s": 292.5672407344617,
+   "hi_source": "stage16",
+   "width_J": 124.11556450043281,
+   "mid_J": 4608.634799985288,
+   "lo_by_t_J": 4546.577017735071,
+   "hi_by_t_J": 4670.692582235504,
+   "mid_by_t_J": 4608.634799985288,
+   "d": 0.06732774922762667,
+   "lo_minus_lumped_J": 3599.354401624927,
+   "hi_minus_lumped_J": 3723.46996612536,
+   "lo_runs_away": false,
+   "at_threshold": true
   },
   {
    "test": "M50_SP_Exp1",
    "delivery": "120 s constant power",
    "search": "X",
-   "status": "unfinished",
+   "status": "done",
    "t_m_s": 223.0,
    "E_e_J": 145363.9946716313,
    "E_b_J": 46816.10134352055,
@@ -1905,8 +1939,8 @@
    "lumped_E_J": 2169.39470224665,
    "lumped_status": "bracketed",
    "lumped_t_s": 223.0,
-   "n_runs_counted": 3,
-   "n_runs_step16": 2,
+   "n_runs_counted": 7,
+   "n_runs_step16": 6,
    "runs": [
     {
      "E_J": 2169.4122564794257,
@@ -1925,6 +1959,38 @@
      "class": "late"
     },
     {
+     "E_J": 4592.0343460053555,
+     "t_C8_s": null,
+     "t_end_s": 900.0,
+     "source": "stage16",
+     "id": "s16_X_SP_Exp1_con120_f0.031589902",
+     "class": "late"
+    },
+    {
+     "E_J": 4995.804645805012,
+     "t_C8_s": null,
+     "t_end_s": 900.0,
+     "source": "stage16",
+     "id": "s16_X_SP_Exp1_con120_f0.034367552",
+     "class": "late"
+    },
+    {
+     "E_J": 5197.68979570484,
+     "t_C8_s": 281.66874684306003,
+     "t_end_s": 281.7,
+     "source": "stage16",
+     "id": "s16_X_SP_Exp1_con120_f0.035756377",
+     "class": "late"
+    },
+    {
+     "E_J": 5298.6322979727565,
+     "t_C8_s": 249.5199459498981,
+     "t_end_s": 249.6,
+     "source": "stage16",
+     "id": "s16_X_SP_Exp1_con120_f0.036450789",
+     "class": "late"
+    },
+    {
      "E_J": 5399.574945604669,
      "t_C8_s": 229.65886165121293,
      "t_end_s": 229.7,
@@ -1932,13 +1998,31 @@
      "id": "s16_X_SP_Exp1_con120_f0.037145202",
      "class": "early"
     }
-   ]
+   ],
+   "lo_J": 5298.6322979727565,
+   "lo_id": "s16_X_SP_Exp1_con120_f0.036450789",
+   "lo_t_C8_s": 249.5199459498981,
+   "lo_source": "stage16",
+   "hi_J": 5399.574945604669,
+   "hi_id": "s16_X_SP_Exp1_con120_f0.037145202",
+   "hi_t_C8_s": 229.65886165121293,
+   "hi_source": "stage16",
+   "width_J": 100.94264763191222,
+   "mid_J": 5349.103621788712,
+   "lo_by_t_J": 5298.6322979727565,
+   "hi_by_t_J": 5399.574945604669,
+   "mid_by_t_J": 5349.103621788712,
+   "d": 0.009435480255983182,
+   "lo_minus_lumped_J": 3129.2375957261065,
+   "hi_minus_lumped_J": 3230.1802433580187,
+   "lo_runs_away": true,
+   "at_threshold": false
   },
   {
    "test": "M50_SP_Exp2",
    "delivery": "120 s constant power",
    "search": "X",
-   "status": "not started",
+   "status": "unfinished",
    "t_m_s": 149.0,
    "E_e_J": 151335.05182270228,
    "E_b_J": 48739.14712486386,
@@ -1951,8 +2035,8 @@
    "lumped_E_J": 2837.5322216756676,
    "lumped_status": "matched",
    "lumped_t_s": 157.0037960230369,
-   "n_runs_counted": 1,
-   "n_runs_step16": 0,
+   "n_runs_counted": 4,
+   "n_runs_step16": 3,
    "runs": [
     {
      "E_J": 2837.5322216756676,
@@ -1961,6 +2045,30 @@
      "source": "archive",
      "id": "s9_con120_fresh_both_ns_M50_SP_Exp2_f0.018750000",
      "class": "late"
+    },
+    {
+     "E_J": 4358.617928406505,
+     "t_C8_s": null,
+     "t_end_s": 900.0,
+     "source": "stage16",
+     "id": "s16_X_SP_Exp2_con120_f0.028801113",
+     "class": "late"
+    },
+    {
+     "E_J": 5119.1608574394495,
+     "t_C8_s": 207.988184156843,
+     "t_end_s": 208.0,
+     "source": "stage16",
+     "id": "s16_X_SP_Exp2_con120_f0.033826670",
+     "class": "late"
+    },
+    {
+     "E_J": 5879.703635137341,
+     "t_C8_s": 153.48800660502587,
+     "t_end_s": 153.5,
+     "source": "stage16",
+     "id": "s16_X_SP_Exp2_con120_f0.038852226",
+     "class": "early"
     }
    ]
   },
@@ -1968,7 +2076,7 @@
    "test": "M50_SP_Exp3",
    "delivery": "120 s constant power",
    "search": "X",
-   "status": "not started",
+   "status": "unfinished",
    "t_m_s": 210.0,
    "E_e_J": 168628.53572637576,
    "E_b_J": 54308.70715825306,
@@ -1981,8 +2089,8 @@
    "lumped_E_J": 218.74658739381155,
    "lumped_status": "bracketed",
    "lumped_t_s": 210.0,
-   "n_runs_counted": 1,
-   "n_runs_step16": 0,
+   "n_runs_counted": 4,
+   "n_runs_step16": 3,
    "runs": [
     {
      "E_J": 218.71121083710938,
@@ -1991,6 +2099,30 @@
      "source": "archive",
      "id": "s9_con120_fresh_both_ns_M50_SP_Exp3_f0.001297000",
      "class": "late"
+    },
+    {
+     "E_J": 2141.5281053364683,
+     "t_C8_s": null,
+     "t_end_s": 900.0,
+     "source": "stage16",
+     "id": "s16_X_SP_Exp3_con120_f0.012699678",
+     "class": "late"
+    },
+    {
+     "E_J": 3102.9365525861476,
+     "t_C8_s": null,
+     "t_end_s": 900.0,
+     "source": "stage16",
+     "id": "s16_X_SP_Exp3_con120_f0.018401017",
+     "class": "late"
+    },
+    {
+     "E_J": 4064.344999835827,
+     "t_C8_s": 193.82396088611378,
+     "t_end_s": 193.9,
+     "source": "stage16",
+     "id": "s16_X_SP_Exp3_con120_f0.024102356",
+     "class": "early"
     }
    ]
   },
@@ -2519,7 +2651,9 @@
      "M50_PT_Exp4 120 s constant power": true,
      "M50_PP_Exp1 120 s constant power": true,
      "M50_PP_Exp2 120 s constant power": true,
-     "M50_PP_Exp4 120 s constant power": false
+     "M50_PP_Exp4 120 s constant power": false,
+     "M50_ST_Exp4 120 s constant power": true,
+     "M50_SP_Exp1 120 s constant power": true
     },
     "d": {
      "M50_PT_Exp4 240 s constant power": 0.05006855857082712,
@@ -2533,7 +2667,9 @@
      "M50_PT_Exp4 120 s constant power": 0.08600325031643666,
      "M50_PP_Exp1 120 s constant power": 0.09790189825609086,
      "M50_PP_Exp2 120 s constant power": 0.08459564259707052,
-     "M50_PP_Exp4 120 s constant power": 0.14391624751270743
+     "M50_PP_Exp4 120 s constant power": 0.14391624751270743,
+     "M50_ST_Exp4 120 s constant power": 0.06732774922762667,
+     "M50_SP_Exp1 120 s constant power": 0.009435480255983182
     }
    },
    "P11": {
@@ -2550,7 +2686,9 @@
      "M50_PT_Exp4 120 s constant power": true,
      "M50_PP_Exp1 120 s constant power": true,
      "M50_PP_Exp2 120 s constant power": true,
-     "M50_PP_Exp4 120 s constant power": true
+     "M50_PP_Exp4 120 s constant power": true,
+     "M50_ST_Exp4 120 s constant power": true,
+     "M50_SP_Exp1 120 s constant power": true
     }
    }
   },
@@ -2558,8 +2696,8 @@
   "held": 9,
   "failed": 2
  },
- "X_worker_hours": 5.125434383021461,
- "n_records": 104,
+ "X_worker_hours": 6.158211827874184,
+ "n_records": 116,
  "wall_s": {
   "N": [
    274.8340926170349,
@@ -2579,5 +2717,5 @@
   ]
  },
  "first_utc": "2026-11-24T07:35:00Z",
- "last_utc": "2026-11-24T12:47:57Z"
+ "last_utc": "2026-11-24T13:19:24Z"
 }
