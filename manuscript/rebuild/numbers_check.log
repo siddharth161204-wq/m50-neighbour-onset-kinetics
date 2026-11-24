@@ -1,4 +1,4 @@
-numbers_check --rebuild: 701 traced to a named value, 161 found in their table's source files, 0 broad matches (supplement only), 37 counts written in words checked, 0 failures, 69 structural (not looked for)
+numbers_check --rebuild: 695 traced to a named value, 161 found in their table's source files, 0 broad matches (supplement only), 37 counts written in words checked, 0 failures, 69 structural (not looked for)
 
 == main.tex: title  [map]
 == main.tex: abstract  [map]
@@ -450,13 +450,7 @@ numbers_check --rebuild: 701 traced to a named value, 161 found in their table's
    traced 250.6 <- results/stage16_scorecard.json: N, SP_Exp1, lo_t_C8_s (the run at the cross-section's need) = 250.62
    traced 223 <- inputs/fransson2024/m50_tests.csv: time_to_propagation_s where {'test': 'M50_SP_Exp1'} = 223
    traced 16 <- manuscript/rebuild/data/steps.csv: the step whose file is predictions_stage16.md = 16
-   traced 3.0 <- results/stage16_scorecard.json: N, the cross-section's need against the bracket's upper end (the smallest, negated) and lower end (the largest) = 2.95629
-   traced 10.5 <- results/stage16_scorecard.json: N, the cross-section's need against the bracket's upper end (the smallest, negated) and lower end (the largest) = 10.5096
-   traced 1.25 <- rebuild_headline.thresholds_3d: PT_Exp4's upper end over results/stage15_cross_section.json A2's E_star_J = 1.25
-   traced 5.5 <- rebuild_headline.thresholds_3d: ST_Exp4's ends over results/stage15_cross_section.json A2's E_star_J = 5.49862
-   traced 9.3 <- rebuild_headline.thresholds_3d: ST_Exp4's ends over results/stage15_cross_section.json A2's E_star_J = 9.2562
-   traced 5.0 <- rebuild_headline.thresholds_3d: SP_Exp3's ends over results/stage15_cross_section.json A2's E_star_J = 5
-   traced 15.0 <- rebuild_headline.thresholds_3d: SP_Exp3's ends over results/stage15_cross_section.json A2's E_star_J = 15
+   traced 15 <- rebuild_headline.thresholds_3d against results/stage15_cross_section.json A2's E_star_J: the largest upper end over the cross-section's value, among PT_Exp4, ST_Exp4 and SP_Exp3 = 15
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 5 <- predictions_stage15.md: /less (5) % and plus 5 %/ = 5

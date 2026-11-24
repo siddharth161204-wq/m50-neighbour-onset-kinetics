@@ -1192,6 +1192,8 @@ E += [
     (r"lies 3\.0\\,\\% below to 10\.5\\,\\% above", ["3.0", "10.5"], F(f"{S16}: N, the cross-section's need against the bracket's upper end (the smallest, negated) and lower end (the largest)",
                                                                        lambda: [-min(r["xs_E_by_t_J"] / r["hi_J"] - 1 for r in _json(S16)["N"]),
                                                                                 max(r["xs_E_by_t_J"] / r["lo_J"] - 1 for r in _json(S16)["N"])]), "pct"),
+    (r"not equal by construction, by up to 15\\,\\%", ["15"], F(f"rebuild_headline.thresholds_3d against {XS} A2's E_star_J: the largest upper end over the cross-section's value, among PT_Exp4, ST_Exp4 and SP_Exp3",
+                                                                    lambda: [max(th3(t)[2] / xs_star(t) - 1 for t in ("PT_Exp4", "ST_Exp4", "SP_Exp3"))]), "pct"),
     (r"by up to 1\.25\\,\\% in PT-Exp4", ["1.25"], F(f"rebuild_headline.thresholds_3d: PT_Exp4's upper end over {XS} A2's E_star_J", lambda: [th3("PT_Exp4")[2] / xs_star("PT_Exp4") - 1]), "pct"),
     (r"5\.5 to 9\.3\\,\\% in ST-Exp4", ["5.5", "9.3"], F(f"rebuild_headline.thresholds_3d: ST_Exp4's ends over {XS} A2's E_star_J",
                                                           lambda: [th3("ST_Exp4")[1] / xs_star("ST_Exp4") - 1, th3("ST_Exp4")[2] / xs_star("ST_Exp4") - 1]), "pct"),

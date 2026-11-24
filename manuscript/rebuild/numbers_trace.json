@@ -2515,45 +2515,9 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Across the brackets the cross-section's need lies 3.0\\,\\% below to 10.5\\,\\% above the three-dimensional need.",
-  "number": "3.0",
-  "source": "results/stage16_scorecard.json: N, the cross-section's need against the bracket's upper end (the smallest, negated) and lower end (the largest) = 2.95629"
- },
- {
-  "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Across the brackets the cross-section's need lies 3.0\\,\\% below to 10.5\\,\\% above the three-dimensional need.",
-  "number": "10.5",
-  "source": "results/stage16_scorecard.json: N, the cross-section's need against the bracket's upper end (the smallest, negated) and lower end (the largest) = 10.5096"
- },
- {
-  "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "At the thresholds after strong triggers the three-dimensional value lay above the cross-section's, by up to 1.25\\,\\% in PT-Exp4, 5.5 to 9.3\\,\\% in ST-Exp4 and 5.0 to 15.0\\,\\% in SP-Exp3.",
-  "number": "1.25",
-  "source": "rebuild_headline.thresholds_3d: PT_Exp4's upper end over results/stage15_cross_section.json A2's E_star_J = 1.25"
- },
- {
-  "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "At the thresholds after strong triggers the three-dimensional value lay above the cross-section's, by up to 1.25\\,\\% in PT-Exp4, 5.5 to 9.3\\,\\% in ST-Exp4 and 5.0 to 15.0\\,\\% in SP-Exp3.",
-  "number": "5.5",
-  "source": "rebuild_headline.thresholds_3d: ST_Exp4's ends over results/stage15_cross_section.json A2's E_star_J = 5.49862"
- },
- {
-  "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "At the thresholds after strong triggers the three-dimensional value lay above the cross-section's, by up to 1.25\\,\\% in PT-Exp4, 5.5 to 9.3\\,\\% in ST-Exp4 and 5.0 to 15.0\\,\\% in SP-Exp3.",
-  "number": "9.3",
-  "source": "rebuild_headline.thresholds_3d: ST_Exp4's ends over results/stage15_cross_section.json A2's E_star_J = 9.2562"
- },
- {
-  "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "At the thresholds after strong triggers the three-dimensional value lay above the cross-section's, by up to 1.25\\,\\% in PT-Exp4, 5.5 to 9.3\\,\\% in ST-Exp4 and 5.0 to 15.0\\,\\% in SP-Exp3.",
-  "number": "5.0",
-  "source": "rebuild_headline.thresholds_3d: SP_Exp3's ends over results/stage15_cross_section.json A2's E_star_J = 5"
- },
- {
-  "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "At the thresholds after strong triggers the three-dimensional value lay above the cross-section's, by up to 1.25\\,\\% in PT-Exp4, 5.5 to 9.3\\,\\% in ST-Exp4 and 5.0 to 15.0\\,\\% in SP-Exp3.",
-  "number": "15.0",
-  "source": "rebuild_headline.thresholds_3d: SP_Exp3's ends over results/stage15_cross_section.json A2's E_star_J = 15"
+  "sentence": "At the thresholds after strong triggers the three-dimensional value lay above the cross-section's wherever the two are not equal by construction, by up to 15\\,\\% (Table~ ).",
+  "number": "15",
+  "source": "rebuild_headline.thresholds_3d against results/stage15_cross_section.json A2's E_star_J: the largest upper end over the cross-section's value, among PT_Exp4, ST_Exp4 and SP_Exp3 = 15"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",

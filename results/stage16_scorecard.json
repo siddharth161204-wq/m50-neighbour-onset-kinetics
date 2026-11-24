@@ -835,8 +835,8 @@
    "lumped_E_J": 3965.869027317528,
    "lumped_status": "matched",
    "lumped_t_s": 146.67529554865243,
-   "n_runs_counted": 3,
-   "n_runs_step16": 2,
+   "n_runs_counted": 6,
+   "n_runs_step16": 5,
    "runs": [
     {
      "E_J": 3965.8690273175284,
@@ -853,6 +853,30 @@
      "source": "stage16",
      "id": "s16_X_PP_Exp1_con240_f0.042396543",
      "class": "late"
+    },
+    {
+     "E_J": 7415.489620281095,
+     "t_C8_s": 166.37094542561886,
+     "t_end_s": 166.4,
+     "source": "stage16",
+     "id": "s16_X_PP_Exp1_con240_f0.046745679",
+     "class": "late"
+    },
+    {
+     "E_J": 7760.451695440928,
+     "t_C8_s": 161.9505015095086,
+     "t_end_s": 161.975,
+     "source": "stage16",
+     "id": "s16_X_PP_Exp1_con240_f0.048920247",
+     "class": "early"
+    },
+    {
+     "E_J": 8105.413770600761,
+     "t_C8_s": 157.81702608815402,
+     "t_end_s": 157.825,
+     "source": "stage16",
+     "id": "s16_X_PP_Exp1_con240_f0.051094815",
+     "class": "early"
     },
     {
      "E_J": 9485.261912605332,
@@ -881,8 +905,8 @@
    "lumped_E_J": 7552.42559879539,
    "lumped_status": "matched",
    "lumped_t_s": 154.04905665744505,
-   "n_runs_counted": 2,
-   "n_runs_step16": 1,
+   "n_runs_counted": 3,
+   "n_runs_step16": 2,
    "runs": [
     {
      "E_J": 7552.425598795391,
@@ -890,6 +914,14 @@
      "t_end_s": 900.0,
      "source": "archive",
      "id": "s9_con240_fresh_both_ns_M50_PP_Exp2_f0.059375000",
+     "class": "late"
+    },
+    {
+     "E_J": 10026.49388680833,
+     "t_C8_s": 176.1404522140083,
+     "t_end_s": 176.15,
+     "source": "stage16",
+     "id": "s16_X_PP_Exp2_con240_f0.078825414",
      "class": "late"
     },
     {
@@ -1813,8 +1845,8 @@
   "held": 10,
   "failed": 1
  },
- "X_worker_hours": 0.39697330858972335,
- "n_records": 40,
+ "X_worker_hours": 0.6626553916268878,
+ "n_records": 44,
  "wall_s": {
   "N": [
    274.8340926170349,
@@ -1834,5 +1866,5 @@
   ]
  },
  "first_utc": "2026-11-24T07:35:00Z",
- "last_utc": "2026-11-24T10:24:31Z"
+ "last_utc": "2026-11-24T10:32:45Z"
 }
