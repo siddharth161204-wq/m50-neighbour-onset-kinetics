@@ -289,7 +289,7 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The sector, 45\\textdegree{} either side, is the earlier two-cell study's~ , an assumption (Table~ ); the wedge's conductance $k_\\mathrm{air}/\\delta$ falls below the room's convection coefficient short of its edge, and beyond it the can loses heat to the room by convection; everywhere it radiates to the room and receives the trigger's radiation shared over $\\theta$ by the local view factor.",
+  "sentence": "The sector, 45\\textdegree{} either side, is the earlier two-cell study's~ , an assumption (Table~ ); beyond the sector the can loses heat to the room by convection; everywhere it radiates to the room and receives the trigger's radiation shared over $\\theta$ by the local view factor.",
   "number": "45",
   "source": "src/v12_mesh.py: SECTOR = math.pi / 4, the wedge sector's half-angle, in degrees = 45"
  },
@@ -559,33 +559,33 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The study registered 109 predictions in all, of which 64 held and 43 failed, and two were not scored (Supplementary Table~S1, step by step); Supplementary Table~S2 lists, with their expectations, the 63 that the runs reported here and in the supplement bear on, and every prediction, with its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ .",
+  "sentence": "The study registered 109 predictions in all, of which 65 held and 44 failed (Supplementary Table~S1, step by step); Supplementary Table~S2 lists, with their expectations, the 63 that the runs reported here and in the supplement bear on, and every prediction, with its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ .",
   "number": "109",
   "source": "manuscript/rebuild/data/predictions_registry.csv: rows = 109"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The study registered 109 predictions in all, of which 64 held and 43 failed, and two were not scored (Supplementary Table~S1, step by step); Supplementary Table~S2 lists, with their expectations, the 63 that the runs reported here and in the supplement bear on, and every prediction, with its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ .",
-  "number": "64",
-  "source": "manuscript/rebuild/data/predictions_registry.csv: rows with verdict held = 64"
+  "sentence": "The study registered 109 predictions in all, of which 65 held and 44 failed (Supplementary Table~S1, step by step); Supplementary Table~S2 lists, with their expectations, the 63 that the runs reported here and in the supplement bear on, and every prediction, with its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ .",
+  "number": "65",
+  "source": "manuscript/rebuild/data/predictions_registry.csv: rows with verdict held = 65"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The study registered 109 predictions in all, of which 64 held and 43 failed, and two were not scored (Supplementary Table~S1, step by step); Supplementary Table~S2 lists, with their expectations, the 63 that the runs reported here and in the supplement bear on, and every prediction, with its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ .",
-  "number": "43",
-  "source": "manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed = 43"
+  "sentence": "The study registered 109 predictions in all, of which 65 held and 44 failed (Supplementary Table~S1, step by step); Supplementary Table~S2 lists, with their expectations, the 63 that the runs reported here and in the supplement bear on, and every prediction, with its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ .",
+  "number": "44",
+  "source": "manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed = 44"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The study registered 109 predictions in all, of which 64 held and 43 failed, and two were not scored (Supplementary Table~S1, step by step); Supplementary Table~S2 lists, with their expectations, the 63 that the runs reported here and in the supplement bear on, and every prediction, with its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ .",
+  "sentence": "The study registered 109 predictions in all, of which 65 held and 44 failed (Supplementary Table~S1, step by step); Supplementary Table~S2 lists, with their expectations, the 63 that the runs reported here and in the supplement bear on, and every prediction, with its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ .",
   "number": "63",
   "source": "manuscript/rebuild/data/predictions_registry.csv: rows, listed in Table S2 = 63"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Of the 63, 42 held, six of them known beforehand to be fixed, or nearly, by earlier records or by construction, and 19 failed, six of them foreseen, three in the files' analyses and three in their expectations, and two were not scored; two departures from this order are in Supplementary Section~S2.",
-  "number": "19",
-  "source": "manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2 = 19"
+  "sentence": "Of the 63, 43 held, seven of them known beforehand to be fixed, or nearly, by earlier records or by construction, and 20 failed, seven of them foreseen, three in the files' analyses and four in their expectations; two departures from this order are in Supplementary Section~S2.",
+  "number": "20",
+  "source": "manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2 = 20"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
@@ -1033,31 +1033,73 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "(a) For the nine tests that propagated, in order of the measured time: the energy delivered to the facing half by the time at which the lumped neighbour (blue) or the resolved neighbour's mean (green; hollow, reactive cross-section; filled, the three-dimensional bracket's midpoint, with the pulse, after strong triggers) reaches 255.7\\degC, within 10~s of the measured time (by 10~s after it in three dimensions), for the four delivery shapes; where the measured time is reproduced only within the search's resolution of the threshold, the least energy on the search's grid whose runaway comes before it is shown, which can lie above the threshold of Fig.~ by up to that resolution (a dot inside the marker; t in Supplementary Table~S7), and a dash marks a need interpolated between two runs (b in Table~S7); in ST-Exp3 with the 360~s delivery no energy on the grid brings the resolved runaway within 10~s of the measured time.",
+  "sentence": "With constant power, three-dimensional searches bracketed the needs over 240~s in all eight tests and over 120~s in six (Table~ ): 3.88 to 7.67~kJ by the runaway, above the lumped need in each; SP-Exp3's over 240~s, 3.88 to 4.01~kJ, is below the least the cross-section gives under any shape.",
+  "number": "240",
+  "source": "src/stage16_run.py: X_SHAPES, the constant-power durations X searched (s) = 240"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "With constant power, three-dimensional searches bracketed the needs over 240~s in all eight tests and over 120~s in six (Table~ ): 3.88 to 7.67~kJ by the runaway, above the lumped need in each; SP-Exp3's over 240~s, 3.88 to 4.01~kJ, is below the least the cross-section gives under any shape.",
+  "number": "120",
+  "source": "src/stage16_run.py: X_SHAPES, the constant-power durations X searched (s) = 120"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "With constant power, three-dimensional searches bracketed the needs over 240~s in all eight tests and over 120~s in six (Table~ ): 3.88 to 7.67~kJ by the runaway, above the lumped need in each; SP-Exp3's over 240~s, 3.88 to 4.01~kJ, is below the least the cross-section gives under any shape.",
+  "number": "3.88",
+  "source": "results/stage16_scorecard.json: X, the closed searches' smallest lower end and largest upper end by the runaway (lo_by_t_J, hi_by_t_J) = 3.87617"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "With constant power, three-dimensional searches bracketed the needs over 240~s in all eight tests and over 120~s in six (Table~ ): 3.88 to 7.67~kJ by the runaway, above the lumped need in each; SP-Exp3's over 240~s, 3.88 to 4.01~kJ, is below the least the cross-section gives under any shape.",
+  "number": "7.67",
+  "source": "results/stage16_scorecard.json: X, the closed searches' smallest lower end and largest upper end by the runaway (lo_by_t_J, hi_by_t_J) = 7.67168"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "With constant power, three-dimensional searches bracketed the needs over 240~s in all eight tests and over 120~s in six (Table~ ): 3.88 to 7.67~kJ by the runaway, above the lumped need in each; SP-Exp3's over 240~s, 3.88 to 4.01~kJ, is below the least the cross-section gives under any shape.",
+  "number": "240",
+  "source": "src/stage16_run.py: X_SHAPES, the constant-power durations X searched (s) = 240"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "With constant power, three-dimensional searches bracketed the needs over 240~s in all eight tests and over 120~s in six (Table~ ): 3.88 to 7.67~kJ by the runaway, above the lumped need in each; SP-Exp3's over 240~s, 3.88 to 4.01~kJ, is below the least the cross-section gives under any shape.",
+  "number": "3.88",
+  "source": "results/stage16_scorecard.json: X, the closed searches' smallest lower end and largest upper end by the runaway (lo_by_t_J, hi_by_t_J) = 3.87617"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "With constant power, three-dimensional searches bracketed the needs over 240~s in all eight tests and over 120~s in six (Table~ ): 3.88 to 7.67~kJ by the runaway, above the lumped need in each; SP-Exp3's over 240~s, 3.88 to 4.01~kJ, is below the least the cross-section gives under any shape.",
+  "number": "4.01",
+  "source": "results/stage16_scorecard.json: X, SP_Exp3 over 240 s, lo_by_t_J and hi_by_t_J = 4.00606"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "(a) For the nine tests that propagated, in order of the measured time: the energy delivered to the facing half by the time at which the lumped neighbour (blue) or the resolved neighbour's mean (green; hollow, reactive cross-section; filled, the three-dimensional bracket's midpoint, after strong triggers, where searched) reaches 255.7\\degC, within 10~s of the measured time (by 10~s after it in three dimensions), for the four delivery shapes; where the measured time is reproduced only within the search's resolution of the threshold, the least energy on the search's grid whose runaway comes before it is shown, which can lie above the threshold of Fig.~ by up to that resolution (a dot inside the marker; t in Supplementary Table~S7), and a dash marks a need interpolated between two runs (b in Table~S7); in ST-Exp3 with the 360~s delivery no energy on the grid brings the resolved runaway within 10~s of the measured time.",
   "number": "255.7",
   "source": "results/manuscript_numbers.json: constants.level_propagation_C = 255.682"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "(a) For the nine tests that propagated, in order of the measured time: the energy delivered to the facing half by the time at which the lumped neighbour (blue) or the resolved neighbour's mean (green; hollow, reactive cross-section; filled, the three-dimensional bracket's midpoint, with the pulse, after strong triggers) reaches 255.7\\degC, within 10~s of the measured time (by 10~s after it in three dimensions), for the four delivery shapes; where the measured time is reproduced only within the search's resolution of the threshold, the least energy on the search's grid whose runaway comes before it is shown, which can lie above the threshold of Fig.~ by up to that resolution (a dot inside the marker; t in Supplementary Table~S7), and a dash marks a need interpolated between two runs (b in Table~S7); in ST-Exp3 with the 360~s delivery no energy on the grid brings the resolved runaway within 10~s of the measured time.",
+  "sentence": "(a) For the nine tests that propagated, in order of the measured time: the energy delivered to the facing half by the time at which the lumped neighbour (blue) or the resolved neighbour's mean (green; hollow, reactive cross-section; filled, the three-dimensional bracket's midpoint, after strong triggers, where searched) reaches 255.7\\degC, within 10~s of the measured time (by 10~s after it in three dimensions), for the four delivery shapes; where the measured time is reproduced only within the search's resolution of the threshold, the least energy on the search's grid whose runaway comes before it is shown, which can lie above the threshold of Fig.~ by up to that resolution (a dot inside the marker; t in Supplementary Table~S7), and a dash marks a need interpolated between two runs (b in Table~S7); in ST-Exp3 with the 360~s delivery no energy on the grid brings the resolved runaway within 10~s of the measured time.",
   "number": "10",
   "source": "predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "(a) For the nine tests that propagated, in order of the measured time: the energy delivered to the facing half by the time at which the lumped neighbour (blue) or the resolved neighbour's mean (green; hollow, reactive cross-section; filled, the three-dimensional bracket's midpoint, with the pulse, after strong triggers) reaches 255.7\\degC, within 10~s of the measured time (by 10~s after it in three dimensions), for the four delivery shapes; where the measured time is reproduced only within the search's resolution of the threshold, the least energy on the search's grid whose runaway comes before it is shown, which can lie above the threshold of Fig.~ by up to that resolution (a dot inside the marker; t in Supplementary Table~S7), and a dash marks a need interpolated between two runs (b in Table~S7); in ST-Exp3 with the 360~s delivery no energy on the grid brings the resolved runaway within 10~s of the measured time.",
+  "sentence": "(a) For the nine tests that propagated, in order of the measured time: the energy delivered to the facing half by the time at which the lumped neighbour (blue) or the resolved neighbour's mean (green; hollow, reactive cross-section; filled, the three-dimensional bracket's midpoint, after strong triggers, where searched) reaches 255.7\\degC, within 10~s of the measured time (by 10~s after it in three dimensions), for the four delivery shapes; where the measured time is reproduced only within the search's resolution of the threshold, the least energy on the search's grid whose runaway comes before it is shown, which can lie above the threshold of Fig.~ by up to that resolution (a dot inside the marker; t in Supplementary Table~S7), and a dash marks a need interpolated between two runs (b in Table~S7); in ST-Exp3 with the 360~s delivery no energy on the grid brings the resolved runaway within 10~s of the measured time.",
   "number": "10",
   "source": "predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "(a) For the nine tests that propagated, in order of the measured time: the energy delivered to the facing half by the time at which the lumped neighbour (blue) or the resolved neighbour's mean (green; hollow, reactive cross-section; filled, the three-dimensional bracket's midpoint, with the pulse, after strong triggers) reaches 255.7\\degC, within 10~s of the measured time (by 10~s after it in three dimensions), for the four delivery shapes; where the measured time is reproduced only within the search's resolution of the threshold, the least energy on the search's grid whose runaway comes before it is shown, which can lie above the threshold of Fig.~ by up to that resolution (a dot inside the marker; t in Supplementary Table~S7), and a dash marks a need interpolated between two runs (b in Table~S7); in ST-Exp3 with the 360~s delivery no energy on the grid brings the resolved runaway within 10~s of the measured time.",
+  "sentence": "(a) For the nine tests that propagated, in order of the measured time: the energy delivered to the facing half by the time at which the lumped neighbour (blue) or the resolved neighbour's mean (green; hollow, reactive cross-section; filled, the three-dimensional bracket's midpoint, after strong triggers, where searched) reaches 255.7\\degC, within 10~s of the measured time (by 10~s after it in three dimensions), for the four delivery shapes; where the measured time is reproduced only within the search's resolution of the threshold, the least energy on the search's grid whose runaway comes before it is shown, which can lie above the threshold of Fig.~ by up to that resolution (a dot inside the marker; t in Supplementary Table~S7), and a dash marks a need interpolated between two runs (b in Table~S7); in ST-Exp3 with the 360~s delivery no energy on the grid brings the resolved runaway within 10~s of the measured time.",
   "number": "360",
   "source": "results/stage15_table.csv: tau_s where {'test': 'M50_ST_Exp3'} = 360"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "(a) For the nine tests that propagated, in order of the measured time: the energy delivered to the facing half by the time at which the lumped neighbour (blue) or the resolved neighbour's mean (green; hollow, reactive cross-section; filled, the three-dimensional bracket's midpoint, with the pulse, after strong triggers) reaches 255.7\\degC, within 10~s of the measured time (by 10~s after it in three dimensions), for the four delivery shapes; where the measured time is reproduced only within the search's resolution of the threshold, the least energy on the search's grid whose runaway comes before it is shown, which can lie above the threshold of Fig.~ by up to that resolution (a dot inside the marker; t in Supplementary Table~S7), and a dash marks a need interpolated between two runs (b in Table~S7); in ST-Exp3 with the 360~s delivery no energy on the grid brings the resolved runaway within 10~s of the measured time.",
+  "sentence": "(a) For the nine tests that propagated, in order of the measured time: the energy delivered to the facing half by the time at which the lumped neighbour (blue) or the resolved neighbour's mean (green; hollow, reactive cross-section; filled, the three-dimensional bracket's midpoint, after strong triggers, where searched) reaches 255.7\\degC, within 10~s of the measured time (by 10~s after it in three dimensions), for the four delivery shapes; where the measured time is reproduced only within the search's resolution of the threshold, the least energy on the search's grid whose runaway comes before it is shown, which can lie above the threshold of Fig.~ by up to that resolution (a dot inside the marker; t in Supplementary Table~S7), and a dash marks a need interpolated between two runs (b in Table~S7); in ST-Exp3 with the 360~s delivery no energy on the grid brings the resolved runaway within 10~s of the measured time.",
   "number": "10",
   "source": "predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10"
  },
@@ -1567,43 +1609,37 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The two-body model, which asks whether the neighbour reaches $T_\\mathrm{ign}$ with enough of that reaction's heat (2,667~J in all) left to carry it to 255.7\\degC{} ( ), lies within the larger of 10\\,\\% and 300~J of the lumped threshold in all 32 searches at the low and high contacts registered for it, nine of them with both zero (Supplementary Table~S10), but at the low contact above the bracket's midpoint after every strong trigger, by 0.25 to 0.48~kJ, and below it after the two weak ones (Supplementary Section~S12).",
+  "sentence": "The two-body model (Section~ ; that reaction's heat is 2,667~J in all) lies within the larger of 10\\,\\% and 300~J of the lumped threshold in all 32 searches at the low and high contacts registered for it, nine of them with both zero (Supplementary Table~S10), but at the low contact above the bracket's midpoint after every strong trigger, by 0.25 to 0.48~kJ, and below it after the two weak ones (Supplementary Section~S12).",
   "number": "2,667",
   "source": "results/stage13_tign.csv: cat1_heat_total_J where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'own'} = 2667.2"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The two-body model, which asks whether the neighbour reaches $T_\\mathrm{ign}$ with enough of that reaction's heat (2,667~J in all) left to carry it to 255.7\\degC{} ( ), lies within the larger of 10\\,\\% and 300~J of the lumped threshold in all 32 searches at the low and high contacts registered for it, nine of them with both zero (Supplementary Table~S10), but at the low contact above the bracket's midpoint after every strong trigger, by 0.25 to 0.48~kJ, and below it after the two weak ones (Supplementary Section~S12).",
-  "number": "255.7",
-  "source": "results/manuscript_numbers.json: constants.level_propagation_C = 255.682"
- },
- {
-  "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The two-body model, which asks whether the neighbour reaches $T_\\mathrm{ign}$ with enough of that reaction's heat (2,667~J in all) left to carry it to 255.7\\degC{} ( ), lies within the larger of 10\\,\\% and 300~J of the lumped threshold in all 32 searches at the low and high contacts registered for it, nine of them with both zero (Supplementary Table~S10), but at the low contact above the bracket's midpoint after every strong trigger, by 0.25 to 0.48~kJ, and below it after the two weak ones (Supplementary Section~S12).",
+  "sentence": "The two-body model (Section~ ; that reaction's heat is 2,667~J in all) lies within the larger of 10\\,\\% and 300~J of the lumped threshold in all 32 searches at the low and high contacts registered for it, nine of them with both zero (Supplementary Table~S10), but at the low contact above the bracket's midpoint after every strong trigger, by 0.25 to 0.48~kJ, and below it after the two weak ones (Supplementary Section~S12).",
   "number": "10",
   "source": "predictions_stage13.md: /within the larger of (10) % and 300 J/ = 10"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The two-body model, which asks whether the neighbour reaches $T_\\mathrm{ign}$ with enough of that reaction's heat (2,667~J in all) left to carry it to 255.7\\degC{} ( ), lies within the larger of 10\\,\\% and 300~J of the lumped threshold in all 32 searches at the low and high contacts registered for it, nine of them with both zero (Supplementary Table~S10), but at the low contact above the bracket's midpoint after every strong trigger, by 0.25 to 0.48~kJ, and below it after the two weak ones (Supplementary Section~S12).",
+  "sentence": "The two-body model (Section~ ; that reaction's heat is 2,667~J in all) lies within the larger of 10\\,\\% and 300~J of the lumped threshold in all 32 searches at the low and high contacts registered for it, nine of them with both zero (Supplementary Table~S10), but at the low contact above the bracket's midpoint after every strong trigger, by 0.25 to 0.48~kJ, and below it after the two weak ones (Supplementary Section~S12).",
   "number": "300",
   "source": "predictions_stage13.md: /within the larger of 10 % and (300) J/ = 300"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The two-body model, which asks whether the neighbour reaches $T_\\mathrm{ign}$ with enough of that reaction's heat (2,667~J in all) left to carry it to 255.7\\degC{} ( ), lies within the larger of 10\\,\\% and 300~J of the lumped threshold in all 32 searches at the low and high contacts registered for it, nine of them with both zero (Supplementary Table~S10), but at the low contact above the bracket's midpoint after every strong trigger, by 0.25 to 0.48~kJ, and below it after the two weak ones (Supplementary Section~S12).",
+  "sentence": "The two-body model (Section~ ; that reaction's heat is 2,667~J in all) lies within the larger of 10\\,\\% and 300~J of the lumped threshold in all 32 searches at the low and high contacts registered for it, nine of them with both zero (Supplementary Table~S10), but at the low contact above the bracket's midpoint after every strong trigger, by 0.25 to 0.48~kJ, and below it after the two weak ones (Supplementary Section~S12).",
   "number": "32",
   "source": "results/stage13_paper_numbers.json: scorecard.P8.n_within = 32"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The two-body model, which asks whether the neighbour reaches $T_\\mathrm{ign}$ with enough of that reaction's heat (2,667~J in all) left to carry it to 255.7\\degC{} ( ), lies within the larger of 10\\,\\% and 300~J of the lumped threshold in all 32 searches at the low and high contacts registered for it, nine of them with both zero (Supplementary Table~S10), but at the low contact above the bracket's midpoint after every strong trigger, by 0.25 to 0.48~kJ, and below it after the two weak ones (Supplementary Section~S12).",
+  "sentence": "The two-body model (Section~ ; that reaction's heat is 2,667~J in all) lies within the larger of 10\\,\\% and 300~J of the lumped threshold in all 32 searches at the low and high contacts registered for it, nine of them with both zero (Supplementary Table~S10), but at the low contact above the bracket's midpoint after every strong trigger, by 0.25 to 0.48~kJ, and below it after the two weak ones (Supplementary Section~S12).",
   "number": "0.25",
   "source": "smallest and largest of results/stage13_twobody.csv: low contact, strong triggers, B2 less the midpoint = 0.249186"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The two-body model, which asks whether the neighbour reaches $T_\\mathrm{ign}$ with enough of that reaction's heat (2,667~J in all) left to carry it to 255.7\\degC{} ( ), lies within the larger of 10\\,\\% and 300~J of the lumped threshold in all 32 searches at the low and high contacts registered for it, nine of them with both zero (Supplementary Table~S10), but at the low contact above the bracket's midpoint after every strong trigger, by 0.25 to 0.48~kJ, and below it after the two weak ones (Supplementary Section~S12).",
+  "sentence": "The two-body model (Section~ ; that reaction's heat is 2,667~J in all) lies within the larger of 10\\,\\% and 300~J of the lumped threshold in all 32 searches at the low and high contacts registered for it, nine of them with both zero (Supplementary Table~S10), but at the low contact above the bracket's midpoint after every strong trigger, by 0.25 to 0.48~kJ, and below it after the two weak ones (Supplementary Section~S12).",
   "number": "0.48",
   "source": "smallest and largest of results/stage13_twobody.csv: low contact, strong triggers, B2 less the midpoint = 0.482264"
  },
@@ -2197,13 +2233,13 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "From published inputs alone, what the ejecta can release in this rig is at most 225.8~kJ, with the heat of burning their gas taken from another cell, and every path of the ejecta is bounded in total by that alone; the holder's conduction is not determinable, energy conservation alone capping it at 247.3~kJ, all that the trigger can release (Table~ , Fig.~ ).",
+  "sentence": "From published inputs, what the ejecta can release in this rig is at most 225.8~kJ, with the heat of burning their gas taken from another cell, and every path of the ejecta is bounded in total by that alone; the holder's conduction is not determinable, energy conservation alone capping it at 247.3~kJ, all that the trigger can release (Table~ , Fig.~ ).",
   "number": "225.8",
   "source": "results/stage14_corrections.json: E_avail_J = 225.838"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "From published inputs alone, what the ejecta can release in this rig is at most 225.8~kJ, with the heat of burning their gas taken from another cell, and every path of the ejecta is bounded in total by that alone; the holder's conduction is not determinable, energy conservation alone capping it at 247.3~kJ, all that the trigger can release (Table~ , Fig.~ ).",
+  "sentence": "From published inputs, what the ejecta can release in this rig is at most 225.8~kJ, with the heat of burning their gas taken from another cell, and every path of the ejecta is bounded in total by that alone; the holder's conduction is not determinable, energy conservation alone capping it at 247.3~kJ, all that the trigger can release (Table~ , Fig.~ ).",
   "number": "247.3",
   "source": "results/stage14_corrections.json: E_global_J = 247.333"
  },
@@ -2521,6 +2557,36 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "With constant power, where its runaway can lag, the cross-section's need lay 0.9 to 15.7\\,\\% above the three-dimensional midpoint in the fourteen searches closed, beyond the 10\\,\\% registered in PP-Exp1 over 240~s and PP-Exp4 over 120~s (P10, failed, as its file expected).",
+  "number": "0.9",
+  "source": "results/stage16_scorecard.json: X, d of the closed searches, the smallest and the largest = 0.943548"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "With constant power, where its runaway can lag, the cross-section's need lay 0.9 to 15.7\\,\\% above the three-dimensional midpoint in the fourteen searches closed, beyond the 10\\,\\% registered in PP-Exp1 over 240~s and PP-Exp4 over 120~s (P10, failed, as its file expected).",
+  "number": "15.7",
+  "source": "results/stage16_scorecard.json: X, d of the closed searches, the smallest and the largest = 15.7493"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "With constant power, where its runaway can lag, the cross-section's need lay 0.9 to 15.7\\,\\% above the three-dimensional midpoint in the fourteen searches closed, beyond the 10\\,\\% registered in PP-Exp1 over 240~s and PP-Exp4 over 120~s (P10, failed, as its file expected).",
+  "number": "10",
+  "source": "predictions_stage16.md: /Scored: \\|d\\| <= (0\\.10) for every X search closed/ = 10"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "With constant power, where its runaway can lag, the cross-section's need lay 0.9 to 15.7\\,\\% above the three-dimensional midpoint in the fourteen searches closed, beyond the 10\\,\\% registered in PP-Exp1 over 240~s and PP-Exp4 over 120~s (P10, failed, as its file expected).",
+  "number": "240",
+  "source": "src/stage16_run.py: X_SHAPES, the constant-power durations X searched (s) = 240"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "With constant power, where its runaway can lag, the cross-section's need lay 0.9 to 15.7\\,\\% above the three-dimensional midpoint in the fourteen searches closed, beyond the 10\\,\\% registered in PP-Exp1 over 240~s and PP-Exp4 over 120~s (P10, failed, as its file expected).",
+  "number": "120",
+  "source": "src/stage16_run.py: X_SHAPES, the constant-power durations X searched (s) = 120"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
   "sentence": "(a) The time the resolved neighbour's mean reaches 255.7\\degC, in the runs where both models run away.",
   "number": "255.7",
   "source": "results/manuscript_numbers.json: constants.level_propagation_C = 255.682"
@@ -2539,73 +2605,85 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
+  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section (3.88 to 7.67~kJ in three dimensions where searched) and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
   "number": "4.45",
   "source": "results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
+  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section (3.88 to 7.67~kJ in three dimensions where searched) and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
   "number": "7.54",
   "source": "results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
+  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section (3.88 to 7.67~kJ in three dimensions where searched) and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
   "number": "0.26",
   "source": "smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
+  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section (3.88 to 7.67~kJ in three dimensions where searched) and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
   "number": "5.96",
   "source": "smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
+  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section (3.88 to 7.67~kJ in three dimensions where searched) and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
   "number": "4.1",
   "source": "smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
+  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section (3.88 to 7.67~kJ in three dimensions where searched) and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
   "number": "8.1",
   "source": "smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
+  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section (3.88 to 7.67~kJ in three dimensions where searched) and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
+  "number": "3.88",
+  "source": "results/stage16_scorecard.json: X, the closed searches' smallest lower end and largest upper end by the runaway (lo_by_t_J, hi_by_t_J) = 3.87617"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section (3.88 to 7.67~kJ in three dimensions where searched) and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
+  "number": "7.67",
+  "source": "results/stage16_scorecard.json: X, the closed searches' smallest lower end and largest upper end by the runaway (lo_by_t_J, hi_by_t_J) = 7.67168"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section (3.88 to 7.67~kJ in three dimensions where searched) and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
   "number": "0.2",
   "source": "smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
+  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section (3.88 to 7.67~kJ in three dimensions where searched) and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
   "number": "6.0",
   "source": "smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 5.9624"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
+  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section (3.88 to 7.67~kJ in three dimensions where searched) and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
   "number": "10.3",
   "source": "smallest and largest of results/stage15_table.csv: ST_Exp3, C8_xs_E_by_t_J = 10.3125"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
+  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section (3.88 to 7.67~kJ in three dimensions where searched) and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
   "number": "13.8",
   "source": "smallest and largest of results/stage15_table.csv: ST_Exp3, C8_xs_E_by_t_J = 13.8435"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
+  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section (3.88 to 7.67~kJ in three dimensions where searched) and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
   "number": "11.5",
   "source": "smallest and largest of results/stage15_table.csv: ST_Exp3, C2_E_by_t_J = 11.4655"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
+  "sentence": "Through the model, each test's outcome and time fix how much of it the model's neighbour must receive by the measured time: after strong triggers, with the pulse, 4.45 to 7.54~kJ read through a resolved neighbour in three dimensions and 0.26 to 5.96~kJ read through a lumped one, and over the four shapes 4.1 to 8.1~kJ by the reactive cross-section (3.88 to 7.67~kJ in three dimensions where searched) and 0.2 to 6.0~kJ lumped; after the weak one, 10.3 to 13.8 and 11.5 to 12.3~kJ.",
   "number": "12.3",
   "source": "smallest and largest of results/stage15_table.csv: ST_Exp3, C2_E_by_t_J = 12.2592"
  },
@@ -2710,6 +2788,18 @@
   "sentence": "Where the trigger's energy was shifted, the lumped threshold fell as it rose (Section~ ), so triggers held within that range would raise the lumped needs after the thirteen and lower them after the two; for the resolved needs this was not computed, and with the body energy held to 33.2~kJ only the runs of Section~ were made.",
   "number": "33.2",
   "source": "results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "The reactive cross-section has neither the cell's ends nor its tabs and was checked only at the central contact, yet it gives ten of the sixteen resolved thresholds, the resolved needs over 360~s and two over 120~s, those after the weak trigger, and ten of the high-contact outcomes; the two-body model was scored at the low and high contacts only.",
+  "number": "360",
+  "source": "src/stage16_run.py: X_SHAPES, the constant-power durations X searched (s) = 360"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "The reactive cross-section has neither the cell's ends nor its tabs and was checked only at the central contact, yet it gives ten of the sixteen resolved thresholds, the resolved needs over 360~s and two over 120~s, those after the weak trigger, and ten of the high-contact outcomes; the two-body model was scored at the low and high contacts only.",
+  "number": "120",
+  "source": "src/stage16_run.py: X_SHAPES, the constant-power durations X searched (s) = 120"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
@@ -3505,39 +3595,27 @@
  },
  {
   "segment": "manuscript/rebuild/tables/t4_3d.tex",
-  "sentence": "\\centering \\footnotesize \\caption{The resolved neighbour in three dimensions, with the 21.4~s pulse at the central contact, beside the reactive cross-section (a reduced model) and the lumped neighbour (kJ).",
-  "number": "21.4",
-  "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
- },
- {
-  "segment": "manuscript/rebuild/tables/t4_3d.tex",
-  "sentence": "Above, the needs of the eight tests that propagated after strong triggers, in order of the measured time: the least energy delivered to the facing half with which the neighbour runs away by 10~s after the measured time; a three-dimensional need is bracketed between the highest energy run whose mean reaches 255.7\\textdegree C later, or not within 900~s, and the lowest whose mean reaches it by then.",
+  "sentence": "Needs, in order of the measured time, after the strong triggers of the eight tests that propagated: the least energy delivered to the facing half, counted to the runaway, with which the neighbour runs away by 10~s after the measured time, bracketed in three dimensions between a run that does and the highest below it that does not; the difference sets the cross-section's need against the bracket's midpoint. $^{t}$: reproduced only within the search's resolution of the threshold (in three dimensions, the bracket's lower end does not run away within 900~s; for the other two, Supplementary Table~S7); $^{b}$: interpolated between two runs bracketing the measured time (Supplementary Table~S7).",
   "number": "10",
   "source": "src/stage16_run.py: /WINDOW_S = ([0-9.]+)/ = 10"
  },
  {
   "segment": "manuscript/rebuild/tables/t4_3d.tex",
-  "sentence": "Above, the needs of the eight tests that propagated after strong triggers, in order of the measured time: the least energy delivered to the facing half with which the neighbour runs away by 10~s after the measured time; a three-dimensional need is bracketed between the highest energy run whose mean reaches 255.7\\textdegree C later, or not within 900~s, and the lowest whose mean reaches it by then.",
-  "number": "255.7",
-  "source": "results/manuscript_numbers.json: constants.level_propagation_C = 255.682"
- },
- {
-  "segment": "manuscript/rebuild/tables/t4_3d.tex",
-  "sentence": "Above, the needs of the eight tests that propagated after strong triggers, in order of the measured time: the least energy delivered to the facing half with which the neighbour runs away by 10~s after the measured time; a three-dimensional need is bracketed between the highest energy run whose mean reaches 255.7\\textdegree C later, or not within 900~s, and the lowest whose mean reaches it by then.",
+  "sentence": "Needs, in order of the measured time, after the strong triggers of the eight tests that propagated: the least energy delivered to the facing half, counted to the runaway, with which the neighbour runs away by 10~s after the measured time, bracketed in three dimensions between a run that does and the highest below it that does not; the difference sets the cross-section's need against the bracket's midpoint. $^{t}$: reproduced only within the search's resolution of the threshold (in three dimensions, the bracket's lower end does not run away within 900~s; for the other two, Supplementary Table~S7); $^{b}$: interpolated between two runs bracketing the measured time (Supplementary Table~S7).",
   "number": "900",
   "source": "results/manuscript_numbers.json: constants.run_end_s = 900"
  },
  {
   "segment": "manuscript/rebuild/tables/t4_3d.tex",
-  "sentence": "The cross-section's need is set against the bracket's midpoint (difference, \\%). $^{t}$: the measured time is reproduced only within the search's resolution of the threshold, in three dimensions because the bracket's lower end does not run away within 900~s, and for the other two as in Supplementary Table~S7.",
+  "sentence": "Thresholds with the pulse, in order of the trigger's fitted energy: the least energy with which the neighbour runs away within 900~s, and the ratio of the resolved to the lumped threshold across the brackets, rounded outward; 0: the lumped neighbour runs away with none. $^{n}$: bracketed by the need's two runs, read after the runs (PT-Exp4's threshold search gave (6.71, 7.42]).}",
   "number": "900",
   "source": "results/manuscript_numbers.json: constants.run_end_s = 900"
  },
  {
   "segment": "manuscript/rebuild/tables/t4_3d.tex",
-  "sentence": "Below, the thresholds of the tests bracketed in three dimensions, in order of the trigger's fitted body energy: the least energy at which the neighbour runs away within 900~s, with the ratio of the resolved to the lumped threshold across the brackets, rounded outward (a lumped bracket whose lower end is zero bounds the ratio only below). $^{n}$: bracketed by the two runs that bracket the need, read after the runs; PT-Exp4's threshold search gave (6.71, 7.42].}",
-  "number": "900",
-  "source": "results/manuscript_numbers.json: constants.run_end_s = 900"
+  "sentence": "\\toprule {\\textit{Needs with the 21.4~s pulse}} \\\\ Test & Time (s) & Three-dimensional & Cross-section & Difference (\\%) & Lumped \\\\ \\midrule PP-Exp2 & 147 & (7.42, 7.54] & 7.65 & +2.3 & 5.96 \\\\ SP-Exp2 & 149 & (6.33, 6.50] & 6.50 & +1.3 & 3.78 \\\\ PP-Exp1 & 152 & (5.46, 5.65] & 6.04 & +8.6 & 2.97 \\\\ SP-Exp3 & 210 & (4.45, 4.58] & 4.58 & +1.5 & 0.26 \\\\ SP-Exp1 & 223 & (5.96, 6.15] & 5.96 & $-$1.5 & 2.73 \\\\ PT-Exp4 & 272 & (7.06, 7.15]$^{t}$ & 7.44$^{t}$ & +4.7 & 4.85$^{t}$ \\\\ PP-Exp4 & 275 & (5.52, 5.65] & 6.05$^{t}$ & +8.3 & 1.82 \\\\ ST-Exp4 & 342 & (5.32, 5.51]$^{t}$ & 5.51$^{t}$ & +1.7 & 1.18 \\\\ \\midrule {\\textit{Needs with constant power over 240~s}} \\\\ PP-Exp2 & 147 & (7.57, 7.67] & 8.04 & +5.5 & 4.85 \\\\ SP-Exp2 & 149 & (6.09, 6.18] & 6.32 & +3.0 & 3.40 \\\\ PP-Exp1 & 152 & (5.12, 5.24] & 6.00 & +15.7 & 2.42 \\\\ SP-Exp3 & 210 & (3.88, 4.01] & 4.18 & +6.0 & 0.23$^{b}$ \\\\ SP-Exp1 & 223 & (5.54, 5.67] & 5.78 & +3.2 & 2.12 \\\\ PT-Exp4 & 272 & (6.40, 6.50] & 6.77 & +5.0 & 3.49 \\\\ PP-Exp4 & 275 & (4.48, 4.66] & 5.03 & +9.9 & 1.36$^{t}$ \\\\ ST-Exp4 & 342 & (4.10, 4.29]$^{t}$ & 4.48$^{t}$ & +6.8 & 0.95$^{t}$ \\\\ \\midrule {\\textit{Needs with constant power over 120~s}} \\\\ PP-Exp2 & 147 & (7.09, 7.19] & 7.74 & +8.5 & 4.77 \\\\ PP-Exp1 & 152 & (4.88, 4.99] & 5.42 & +9.8 & 1.98 \\\\ SP-Exp1 & 223 & (5.30, 5.40] & 5.40 & +0.9 & 2.17$^{b}$ \\\\ PT-Exp4 & 272 & (6.57, 6.68]$^{t}$ & 7.20$^{t}$ & +8.6 & 3.88$^{t}$ \\\\ PP-Exp4 & 275 & (4.71, 4.84]$^{t}$ & 5.46$^{t}$ & +14.4 & 1.46$^{b}$ \\\\ ST-Exp4 & 342 & (4.55, 4.67]$^{t}$ & 4.92$^{t}$ & +6.7 & 0.95 \\\\ \\midrule {\\textit{Thresholds}} \\\\ Test & Trigger & Three-dimensional & Cross-section & Lumped & Ratio \\\\ \\midrule SP-Exp3 & 54.3 & (3.70, 4.06] & 3.53 & 0 & \\\\ ST-Exp4 & 48.8 & (5.32, 5.51]$^{n}$ & 5.04 & (0.00, 1.89] & $\\geq$2.80 \\\\ PP-Exp2 & 41.0 & (6.51, 7.20] & 6.85 & (3.18, 4.77] & 1.36--2.27 \\\\ PT-Exp4 & 40.0 & (7.06, 7.15]$^{n}$ & 7.06 & (4.66, 4.85] & 1.45--1.54 \\\\ ST-Exp3 & 16.6 & (9.77, 10.80] & 10.28 & (11.95, 12.11] & 0.80--0.91 \\\\ PT-Exp1 & 9.0 & (10.24, 11.32] & 10.78 & (12.85, 12.89] & 0.79--0.89 \\\\ \\bottomrule",
+  "number": "21.4",
+  "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
  },
  {
   "segment": "manuscript/rebuild/highlights.txt",

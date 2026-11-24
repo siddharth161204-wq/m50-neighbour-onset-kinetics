@@ -1228,6 +1228,33 @@ E += [
                                                     lambda: [_json(S16)["V"]["C8_change"]["hi"]["rel"], _json(S16)["V"]["C8_change"]["lo"]["rel"]]), "pct"),
 ]
 
+
+def x16(done=True):
+    return [r for r in _json(S16)["X"] if (r["status"] == "done") == done]
+
+
+E += [
+    (r"3\.88 to 7\.67", ["3.88", "7.67"], F(f"{S16}: X, the closed searches' smallest lower end and largest upper end by the runaway (lo_by_t_J, hi_by_t_J)",
+                                             lambda: [min(r["lo_by_t_J"] for r in x16()), max(r["hi_by_t_J"] for r in x16())]), "kJ"),
+    (r"SP-Exp3's over 240~s, 3\.88 to 4\.01", ["3.88", "4.01"], F(f"{S16}: X, SP_Exp3 over 240 s, lo_by_t_J and hi_by_t_J",
+                                             lambda: [[r["lo_by_t_J"], r["hi_by_t_J"]] for r in x16() if r["test"] == "M50_SP_Exp3" and r["delivery"].startswith("240")][0]), "kJ"),
+    (r"need lay 0\.9 to 15\.7\\,\\% above", ["0.9", "15.7"], F(f"{S16}: X, d of the closed searches, the smallest and the largest",
+                                             lambda: [min(r["d"] for r in x16()), max(r["d"] for r in x16())]), "pct"),
+    (r"the 10\\,\\% registered in PP-Exp1 over 240", ["10"], MD("predictions_stage16.md", r"Scored: \|d\| <= (0\.10) for every X search closed"), "pct"),
+]
+
+
+def x_shapes():
+    import re as _re
+    m = _re.search(r"X_SHAPES = \(([^)]*)\)", open(os.path.join(ROOT, "src", "stage16_run.py")).read())
+    return [float(x) for x in m.group(1).split(",") if x.strip()]
+
+
+E += [
+    (r"needs over 240~s in all eight tests and over 120~s in six|SP-Exp3's over 240~s, 3\.88|in PP-Exp1 over 240~s and PP-Exp4 over 120~s|the resolved needs over 360~s and two over 120~s",
+     ["240", "120", "360"], F("src/stage16_run.py: X_SHAPES, the constant-power durations X searched (s)", lambda: x_shapes()), None),
+]
+
 WORDS = [
     (r"halved up to sixteen times", 16, MD("src/reactive.py", r"K_MAX = (16)")),
     (r"thirteen of the fourteen with strong triggers", 13, F("stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket",
@@ -1301,4 +1328,12 @@ WORDS += [
      F(f"{REGF}: listed failures whose expectation itself says they fail", lambda: [float(foreseen_split()[1])])),
     (_W[fixed_held()] + r" of them known beforehand to be fixed, or nearly", fixed_held(),
      F(f"{REGF}: held rows of Table S2 whose expectation records them as fixed", lambda: [float(fixed_held())])),
+]
+
+WORDS += [
+    (r"over 240.s in all eight tests and over 120.s in six", 6,
+     F(f"{S16}: X, closed searches over 120 s", lambda: [float(sum(1 for r in x16() if r["delivery"].startswith("120")))])),
+    (r"the fourteen searches closed", 14, F(f"{S16}: X, closed searches", lambda: [float(len(x16()))])),
+    (r"two over 120.s, those after the weak trigger", 2,
+     F(f"{S16}: X, searches over 120 s not closed", lambda: [float(sum(1 for r in _json(S16)["X"] if r["delivery"].startswith("120") and r["status"] != "done"))])),
 ]

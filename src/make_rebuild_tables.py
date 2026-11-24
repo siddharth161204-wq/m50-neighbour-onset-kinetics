@@ -736,24 +736,23 @@ def table4():
     b1 = json.load(open(os.path.join(RES, "stage15_paper_numbers.json")))["B1"]
     xs = {r["test"]: r for r in json.load(open(os.path.join(RES, "stage15_cross_section.json")))["A2"] if r["shape"] == "tri"}
     N = sorted(s16["N"], key=lambda r: float(tt[r["test"]]["time_to_propagation_s"]))
-    lines = [r"\begin{table}[!tbp]", r"\centering", r"\footnotesize",
-             r"\caption{The resolved neighbour in three dimensions, with the 21.4~s pulse at the central contact, beside "
-             r"the reactive cross-section (a reduced model) and the lumped neighbour (kJ). Above, the needs of the eight "
-             r"tests that propagated after strong triggers, in order of the measured time: the least energy delivered to "
-             r"the facing half with which the neighbour runs away by 10~s after the measured time; a three-dimensional "
-             r"need is bracketed between the highest energy run whose mean reaches 255.7\textdegree C later, or not "
-             r"within 900~s, and the lowest whose mean reaches it by then. The cross-section's need is set against the "
-             r"bracket's midpoint (difference, \%). $^{t}$: the measured time is reproduced only within the search's "
-             r"resolution of the threshold, in three dimensions because the bracket's lower end does not run away "
-             r"within 900~s, and for the other two as in Supplementary Table~S7. Below, the thresholds of the tests "
-             r"bracketed in three dimensions, in order of the trigger's fitted body energy: the least energy at which "
-             r"the neighbour runs away within 900~s, with the ratio of the resolved to the lumped threshold across "
-             r"the brackets, rounded outward (a lumped bracket whose lower end is zero bounds the ratio only below). "
-             r"$^{n}$: bracketed by the two runs that bracket the need, read after the runs; PT-Exp4's threshold "
-             r"search gave (6.71, 7.42].}",
+    lines = [r"\begin{table}[!tbp]", r"\centering", r"\scriptsize",
+             r"\caption{The resolved neighbour in three dimensions at the central contact, beside the reactive "
+             r"cross-section (a reduced model) and the lumped neighbour (kJ). Needs, in order of the measured time, "
+             r"after the strong triggers of the eight tests that propagated: the least energy delivered to the facing "
+             r"half, counted to the runaway, with which the neighbour runs away by 10~s after the measured time, "
+             r"bracketed in three dimensions between a run that does and the highest below it that does not; the "
+             r"difference sets the cross-section's need against the bracket's midpoint. $^{t}$: reproduced only "
+             r"within the search's resolution of the threshold (in three dimensions, the bracket's lower end does not "
+             r"run away within 900~s; for the other two, Supplementary Table~S7); $^{b}$: interpolated between two runs "
+             r"bracketing the measured time (Supplementary Table~S7). Thresholds with the pulse, in order "
+             r"of the trigger's fitted energy: the least energy with which the neighbour runs away within 900~s, and "
+             r"the ratio of the resolved to the lumped threshold across the brackets, rounded outward; 0: the lumped "
+             r"neighbour runs away with none. $^{n}$: bracketed by the need's two runs, read after the runs "
+             r"(PT-Exp4's threshold search gave (6.71, 7.42]).}",
              r"\label{tab:3d}", r"\setlength{\tabcolsep}{4pt}",
              r"\begin{tabular}{lrrrrr}", r"\toprule",
-             r"\multicolumn{6}{l}{\textit{Needs at the measured times}} \\",
+             r"\multicolumn{6}{l}{\textit{Needs with the 21.4~s pulse}} \\",
              r"Test & Time (s) & Three-dimensional & Cross-section & Difference (\%) & Lumped \\", r"\midrule"]
     mark = {"matched": "", "threshold": r"$^{t}$", "bracketed": r"$^{b}$"}
     for r in N:
@@ -773,8 +772,7 @@ def table4():
                           key=lambda r: float(tt[r["test"]]["time_to_propagation_s"]))
             if not rows:
                 continue
-            lines += [r"\midrule", r"\multicolumn{6}{l}{\textit{Needs with constant power over %s~s, counted as "
-                                    r"delivered by the runaway}} \\" % tau_lab.split()[0]]
+            lines += [r"\midrule", r"\multicolumn{6}{l}{\textit{Needs with constant power over %s~s}} \\" % tau_lab.split()[0]]
             for r in rows:
                 t = r["test"]
                 lines.append(" & ".join([tex_name(t), "%.0f" % float(tt[t]["time_to_propagation_s"]),
