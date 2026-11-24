@@ -1,7 +1,4 @@
-numbers_check --rebuild --supplement: 1082 traced to a named value, 3022 found in their table's source files, 325 broad matches (supplement only), 40 counts written in words checked, 1 failures, 261 structural (not looked for)
-
-FAILURES:
-  manuscript/rebuild/supplement.tex: 6.16  [NOT FOUND]  ...s delivery not reached when the six worker-hours were used (6.16, with the runs then under way). Counted...
+numbers_check --rebuild --supplement: 1083 traced to a named value, 3022 found in their table's source files, 325 broad matches (supplement only), 40 counts written in words checked, 0 failures, 261 structural (not looked for)
 
 == main.tex: title  [map]
 == main.tex: abstract  [map]
@@ -1740,7 +1737,7 @@ FAILURES:
    broad 240 <- results/stage9_paper_numbers.json.definitions.taus_B_s[1] | results/stage11_paper_numbers.json.clock.per_test.M50_ST_Exp4.t_draw_s.d83 | results/stage13_readings.json.reading_1.dur10_peak_f0.1_C | results/stage15_paper_numbers.json.runs.wall_s.min
    broad 120 <- results/v12_numbers.json.exploratory.section2_rate_without_propagation.grid_mean_parallel_hlow_ghigh_tau10.toward.T_end_C | results/stage6_numbers.json.part_b_sets.peak_by_contact.low.mean_peak_C[0] | results/stage9_paper_numbers.json.definitions.taus_B_s[0] | results/stage10_paper_numbers.json.part_a.con240_C2_hcentral.nodes.facing.after_section_I.max_abs_K
    broad 360 <- results/v12_numbers.json.exploratory.time_above_150C.grid_mean_parallel_hhigh_gcentral_tau30.lumped.duration_s | results/stage9_paper_numbers.json.definitions.taus_B_s[2] | results/stage7_triggers.csv:105:T1max_C | results/stage15_cross_section.json.A2[30].runs[6][2]
-   NOT FOUND 6.16  ...s delivery not reached when the six worker-hours were used (6.16, with the runs then under way). Counted...
+   traced 6.16 <- results/stage16_scorecard.json: X_worker_hours = 6.15821
    traced 10 <- src/stage16_run.py: /WINDOW_S = ([0-9.]+)/ = 10
    broad 0.9 <- results/note_numbers.json.stage2_scorecard.P5b.lumped_rise_K[0] | results/stage3_numbers.json.nine_cases_3a.two_E33223_tau30_G0.2.share_sei_start | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.an_ele.share_95_bootstrap[0] | results/stage9_paper_numbers.json.part_b.360.per_test.M50_SP_Exp4.fmax.f_max
    broad 15.7 <- results/stage6_numbers.json.part_b_sets.body_by_contact.high.toward_150C.times_s[1] | results/stage13_paper_numbers.json.A3.cases[1].A2 | results/stage13_checks.json.V1.A2[0].banded | results/stage13_readings.json.reading_1.f_line
