@@ -1,31 +1,20 @@
-numbers_check --rebuild --supplement: 1115 traced to a named value, 2650 found in their table's source files, 332 broad matches (supplement only), 37 counts written in words checked, 6 failures, 263 structural (not looked for)
+numbers_check --rebuild --supplement: 1082 traced to a named value, 3022 found in their table's source files, 325 broad matches (supplement only), 40 counts written in words checked, 1 failures, 261 structural (not looked for)
 
 FAILURES:
-  manuscript/rebuild/supplement.tex: 45.8  [NOT FOUND]  ...s at 218.2\degC, and at 11.32~kJ it reaches 255.7\degC{} at 45.8~s while the lumped neighbour peaks at 2...
-  manuscript/rebuild/supplement.tex: 306.8  [NOT FOUND]  ...ed together, the runaway at the bracket's lower end came at 306.8~s against 298.8~s, and at its upper end...
-  manuscript/rebuild/tables/s3_thresholds.tex: 5.65  [NOT FOUND]  ...] \\ PP-Exp1 & 0 & 0 & (4.53, 4.56] &  & 2.97; 6.04; (5.46, 5.65] \\ PP-Exp2 & (0.00, 1.59] & (3.18, 4.7...
-  manuscript/rebuild/tables/s3_thresholds.tex: 5.65  [NOT FOUND]  ...& (0.00, 1.82] & (5.58, 5.62] &  & 1.82; 6.05$^{t}$; (5.52, 5.65] \\ ST-Exp1 & 0 & (0.00, 1.98] & (4.42,...
-  manuscript/rebuild/tables/s7_needs.tex: 5.65  [NOT FOUND]  ... & 152 & 21.4~s pulse & 2.97 & 6.04 & 6.04 & 156.3 & (5.46, 5.65] \\  &  & 120~s power & 1.98 & 5.42 & 5...
-  manuscript/rebuild/tables/s7_needs.tex: 5.65  [NOT FOUND]  ... & 21.4~s pulse & 1.82 & 6.05$^{t}$ & 6.05 & 216.9 & (5.52, 5.65] \\  &  & 120~s power & 1.46$^{b}$ & 5....
+  manuscript/rebuild/supplement.tex: 6.16  [NOT FOUND]  ...s delivery not reached when the six worker-hours were used (6.16, with the runs then under way). Counted...
 
 == main.tex: title  [map]
 == main.tex: abstract  [map]
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
    traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
    traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
-   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
    traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
-   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
@@ -125,21 +114,16 @@ FAILURES:
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
    traced 0.125 <- src/stage16_run.py: /FINAL_FRAC = ([0-9.]+)/ = 0.125
    traced 5 <- predictions_stage9.md: /within (5) K of it/ = 5
-   traced 2 <- src/stage15_inputs.py: /DIFF_S = (2\.0)/ = 2
-   traced 1 <- src/stage15_inputs.py: /RISE_JUMP = (1\.0)/ = 1
-   [exponent or subscript] -1  ...begin when its rate of rise over 2~s first reaches 1~K\,s$^{-1}$ after having reached 0.5~K\,s$^{-1}$ ...
-   traced 0.5 <- src/stage15_inputs.py: /RISE_SLOW = (0\.5)/ = 0.5
-   [exponent or subscript] -1  ...first reaches 1~K\,s$^{-1}$ after having reached 0.5~K\,s$^{-1}$ and fallen below it (Supplementary Se...
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 109 <- manuscript/rebuild/data/predictions_registry.csv: rows = 109
-   traced 64 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict held = 64
-   traced 43 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed = 43
+   traced 65 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict held = 65
+   traced 44 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed = 44
    traced 63 <- manuscript/rebuild/data/predictions_registry.csv: rows, listed in Table S2 = 63
-   [identifier] 10.5281  ...h its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ . Of the 63, 42 held, ...
-   [identifier] 63  ...the public archive at doi:10.5281/zenodo.23279455~ . Of the 63, 42 held, six of them known beforehand ...
-   [identifier] 42  ...public archive at doi:10.5281/zenodo.23279455~ . Of the 63, 42 held, six of them known beforehand to b...
-   traced 19 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2 = 19
+   [identifier] 10.5281  ...h its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ . Of the 63, 43 held, ...
+   [identifier] 63  ...the public archive at doi:10.5281/zenodo.23279455~ . Of the 63, 43 held, seven of them known beforehan...
+   [identifier] 43  ...public archive at doi:10.5281/zenodo.23279455~ . Of the 63, 43 held, seven of them known beforehand to...
+   traced 20 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2 = 20
    traced 7 <- manuscript/rebuild/data/steps.csv: the step of predictions_stage7.md (the per-test triggers) = 7
    traced 8 <- manuscript/rebuild/data/steps.csv: the step of predictions_stage8.md (the delivered fraction) = 8
    traced 15 <- manuscript/rebuild/data/steps.csv: the step of predictions_stage15.md (the resolved neighbour's own runaway) = 15
@@ -214,6 +198,13 @@ FAILURES:
    traced 360 <- results/stage15_table.csv: tau_s where {'test': 'M50_ST_Exp3'} = 360
    traced 11.5 <- smallest and largest of results/stage15_table.csv: ST_Exp3, C2_E_by_t_J = 11.4655
    traced 12.3 <- smallest and largest of results/stage15_table.csv: ST_Exp3, C2_E_by_t_J = 12.2592
+   traced 240 <- src/stage16_run.py: X_SHAPES, the constant-power durations X searched (s) = 240
+   traced 120 <- src/stage16_run.py: X_SHAPES, the constant-power durations X searched (s) = 120
+   traced 3.88 <- results/stage16_scorecard.json: X, the closed searches' smallest lower end and largest upper end by the runaway (lo_by_t_J, hi_by_t_J) = 3.87617
+   traced 7.67 <- results/stage16_scorecard.json: X, the closed searches' smallest lower end and largest upper end by the runaway (lo_by_t_J, hi_by_t_J) = 7.67168
+   traced 240 <- src/stage16_run.py: X_SHAPES, the constant-power durations X searched (s) = 240
+   traced 3.88 <- results/stage16_scorecard.json: X, the closed searches' smallest lower end and largest upper end by the runaway (lo_by_t_J, hi_by_t_J) = 3.87617
+   traced 4.01 <- results/stage16_scorecard.json: X, SP_Exp3 over 240 s, lo_by_t_J and hi_by_t_J = 4.00606
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
    traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
@@ -305,7 +296,6 @@ FAILURES:
    traced 95 <- predictions_stage13.md: /the central (95) % of the 200 draws/ = 95
    traced 73.3 <- results/stage13_tign.csv: carrying_share where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'own'} = 73.3174
    traced 2,667 <- results/stage13_tign.csv: cat1_heat_total_J where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'own'} = 2667.2
-   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 10 <- predictions_stage13.md: /within the larger of (10) % and 300 J/ = 10
    traced 300 <- predictions_stage13.md: /within the larger of 10 % and (300) J/ = 300
    traced 32 <- results/stage13_paper_numbers.json: scorecard.P8.n_within = 32
@@ -469,13 +459,12 @@ FAILURES:
    traced 250.6 <- results/stage16_scorecard.json: N, SP_Exp1, lo_t_C8_s (the run at the cross-section's need) = 250.62
    traced 223 <- inputs/fransson2024/m50_tests.csv: time_to_propagation_s where {'test': 'M50_SP_Exp1'} = 223
    traced 16 <- manuscript/rebuild/data/steps.csv: the step whose file is predictions_stage16.md = 16
-   traced 3.0 <- results/stage16_scorecard.json: N, the cross-section's need against the bracket's upper end (the smallest, negated) and lower end (the largest) = 2.95629
-   traced 10.5 <- results/stage16_scorecard.json: N, the cross-section's need against the bracket's upper end (the smallest, negated) and lower end (the largest) = 10.5096
-   traced 1.25 <- rebuild_headline.thresholds_3d: PT_Exp4's upper end over results/stage15_cross_section.json A2's E_star_J = 1.25
-   traced 5.5 <- rebuild_headline.thresholds_3d: ST_Exp4's ends over results/stage15_cross_section.json A2's E_star_J = 5.49862
-   traced 9.3 <- rebuild_headline.thresholds_3d: ST_Exp4's ends over results/stage15_cross_section.json A2's E_star_J = 9.2562
-   traced 5.0 <- rebuild_headline.thresholds_3d: SP_Exp3's ends over results/stage15_cross_section.json A2's E_star_J = 5
-   traced 15.0 <- rebuild_headline.thresholds_3d: SP_Exp3's ends over results/stage15_cross_section.json A2's E_star_J = 15
+   traced 15 <- rebuild_headline.thresholds_3d against results/stage15_cross_section.json A2's E_star_J: the largest upper end over the cross-section's value, among PT_Exp4, ST_Exp4 and SP_Exp3 = 15
+   traced 0.9 <- results/stage16_scorecard.json: X, d of the closed searches, the smallest and the largest = 0.943548
+   traced 15.7 <- results/stage16_scorecard.json: X, d of the closed searches, the smallest and the largest = 15.7493
+   traced 10 <- predictions_stage16.md: /Scored: \|d\| <= (0\.10) for every X search closed/ = 10
+   traced 240 <- src/stage16_run.py: X_SHAPES, the constant-power durations X searched (s) = 240
+   traced 120 <- src/stage16_run.py: X_SHAPES, the constant-power durations X searched (s) = 120
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 5 <- predictions_stage15.md: /less (5) % and plus 5 %/ = 5
@@ -485,6 +474,8 @@ FAILURES:
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
    traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
    traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
+   traced 3.88 <- results/stage16_scorecard.json: X, the closed searches' smallest lower end and largest upper end by the runaway (lo_by_t_J, hi_by_t_J) = 3.87617
+   traced 7.67 <- results/stage16_scorecard.json: X, the closed searches' smallest lower end and largest upper end by the runaway (lo_by_t_J, hi_by_t_J) = 7.67168
    traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
    traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 5.9624
    traced 10.3 <- smallest and largest of results/stage15_table.csv: ST_Exp3, C8_xs_E_by_t_J = 10.3125
@@ -508,6 +499,8 @@ FAILURES:
    traced 18.7 <- results/stage14_inputs.csv: range_lo where {'key': 'db_Ebody_max'} = 18.6715
    traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
    traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   traced 360 <- src/stage16_run.py: X_SHAPES, the constant-power durations X searched (s) = 360
+   traced 120 <- src/stage16_run.py: X_SHAPES, the constant-power durations X searched (s) = 120
    traced 11 <- manuscript/rebuild/data/predictions_registry.csv: the step of P1 under every kinetic draw = 11
    traced 2.70 <- results/stage11_scorecard.json: P1, ST_Exp2's posterior-mean f*, times its ejected energy (results/stage8_ejected.csv) = 2.7049
    traced 1.80 <- results/stage11_thresholds.csv: hi of ST_Exp2's C2 brackets under draws 188 and 83, times its ejected energy = 1.80326
@@ -795,14 +788,13 @@ FAILURES:
    traced 15.6 <- results/stage14_bounds.json: A6/conditional_25C_J/21.39 = 15.6394
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
 == manuscript/rebuild/tables/t4_3d.tex  [table:t4_3d.tex]
-   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 10 <- src/stage16_run.py: /WINDOW_S = ([0-9.]+)/ = 10
-   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
-   traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   table 0 <- results/stage16_needs.csv:2:test | results/stage16_scorecard.json.N[0].test~str
    table 6.71 <- results/stage16_scorecard.json.N[0].runs[4].E_J | results/stage15_table.csv:2:C8_3d_bracket_J
    table 7.42 <- results/stage16_needs.csv:4:lo_J | results/stage16_scorecard.json.N[0].runs[8].E_J
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    table 147 <- results/stage16_needs.csv:4:t_m_s | results/stage16_scorecard.json.N[2].t_m_s
    table 7.42 <- results/stage16_needs.csv:4:lo_J | results/stage16_scorecard.json.N[0].runs[8].E_J
    table 7.54 <- results/stage16_needs.csv:4:hi_J | results/stage16_scorecard.json.N[2].runs[4].E_J
@@ -851,6 +843,92 @@ FAILURES:
    table 5.51 <- results/stage16_needs.csv:6:xs_E_J | results/stage16_scorecard.json.N[4].xs_E_J
    table 1.7 <- results/stage16_needs.csv:6:d | results/stage16_scorecard.json.N[4].d
    table 1.18 <- results/stage16_needs.csv:6:lumped_E_by_t_J | results/stage16_scorecard.json.N[4].lumped_E_by_t_J
+   table 240 <- results/stage16_needs.csv:10:delivery | results/stage16_scorecard.json.X[0].delivery~str
+   table 147 <- results/stage16_needs.csv:4:t_m_s | results/stage16_scorecard.json.N[2].t_m_s
+   table 7.57 <- results/stage16_needs.csv:12:lo_by_t_J | results/stage16_scorecard.json.X[2].lo_by_t_J
+   table 7.67 <- results/stage16_needs.csv:11:mid_J | results/stage16_scorecard.json.X[1].mid_J
+   table 8.04 <- results/stage16_needs.csv:12:xs_E_by_t_J | results/stage16_scorecard.json.X[2].xs_E_by_t_J
+   table 5.5 <- results/stage16_needs.csv:3:lo_J | results/stage16_scorecard.json.N[1].runs[3].E_J
+   table 4.85 <- results/stage16_needs.csv:2:lumped_E_by_t_J | results/stage16_scorecard.json.N[0].lumped_E_by_t_J
+   table 149 <- results/stage16_needs.csv:8:t_m_s | results/stage16_scorecard.json.N[6].t_m_s
+   table 6.09 <- results/stage16_needs.csv:16:lo_by_t_J | results/stage16_scorecard.json.X[6].lo_by_t_J
+   table 6.18 <- results/stage16_needs.csv:16:hi_by_t_J | results/stage16_scorecard.json.X[6].hi_by_t_J
+   table 6.32 <- results/stage16_needs.csv:16:xs_E_by_t_J | results/stage16_scorecard.json.X[6].xs_E_by_t_J
+   table 3.0 <- results/stage16_needs.csv:2:n_runs_step16 | results/stage16_scorecard.json.N[0].n_runs_step16
+   table 3.40 <- results/stage16_needs.csv:16:lumped_E_by_t_J | results/stage16_scorecard.json.N[6].runs[1].id~str
+   table 152 <- results/stage16_needs.csv:3:t_m_s | results/stage16_scorecard.json.N[1].t_m_s
+   table 5.12 <- results/stage16_needs.csv:11:lo_by_t_J | results/stage16_scorecard.json.X[1].lo_by_t_J
+   table 5.24 <- results/stage16_needs.csv:11:hi_by_t_J | results/stage16_scorecard.json.X[1].hi_by_t_J
+   table 6.00 <- results/stage16_needs.csv:3:n_runs_counted | results/stage16_scorecard.json.N[1].n_runs_counted
+   table 15.7 <- results/stage16_needs.csv:11:d | results/stage16_scorecard.json.X[1].d
+   table 2.42 <- results/stage16_needs.csv:11:lumped_E_by_t_J | results/stage16_scorecard.json.X[1].lumped_E_by_t_J
+   table 210 <- results/stage16_needs.csv:9:t_m_s | results/stage16_scorecard.json.N[7].t_m_s
+   table 3.88 <- results/stage16_needs.csv:5:hi_id | results/stage16_scorecard.json.N[3].runs[4].id~str
+   table 4.01 <- results/stage16_needs.csv:17:hi_by_t_J | results/stage16_scorecard.json.X[7].hi_by_t_J
+   table 4.18 <- results/stage16_needs.csv:8:lo_id | results/stage16_scorecard.json.N[6].runs[4].id~str
+   table 6.0 <- results/stage16_needs.csv:3:xs_E_J | results/stage16_scorecard.json.N[1].xs_E_J
+   table 0.23 <- results/stage16_needs.csv:6:xs_t_C8_s | results/stage16_scorecard.json.N[4].xs_t_C8_s
+   table 223 <- results/stage16_needs.csv:7:t_m_s | results/stage16_scorecard.json.N[5].t_m_s
+   table 5.54 <- results/stage16_needs.csv:15:lo_by_t_J | results/stage16_scorecard.json.X[5].lo_by_t_J
+   table 5.67 <- results/stage16_needs.csv:15:hi_by_t_J | results/stage16_scorecard.json.X[5].hi_by_t_J
+   table 5.78 <- results/stage16_needs.csv:15:xs_E_by_t_J | results/stage16_scorecard.json.N[3].runs[5].E_J
+   table 3.2 <- results/stage16_needs.csv:7:lo_minus_lumped_J | results/stage16_scorecard.json.N[5].lo_minus_lumped_J
+   table 2.12 <- results/stage16_needs.csv:15:lumped_E_by_t_J | results/stage16_scorecard.json.X[5].lumped_E_by_t_J
+   table 272 <- results/stage16_needs.csv:2:t_m_s | results/stage16_scorecard.json.N[0].t_m_s
+   table 6.40 <- results/stage16_needs.csv:10:lo_J | results/stage16_scorecard.json.X[0].runs[5].E_J
+   table 6.50 <- results/stage16_needs.csv:8:xs_E_J | results/stage16_scorecard.json.N[6].xs_E_J
+   table 6.77 <- results/stage16_needs.csv:10:xs_E_J | results/stage16_scorecard.json.X[0].xs_E_J
+   table 5.0 <- results/stage16_needs.csv:3:n_runs_step16 | results/stage16_scorecard.json.N[0].runs[3].E_J
+   table 3.49 <- results/stage16_needs.csv:10:lumped_E_by_t_J | results/stage16_scorecard.json.X[0].lumped_E_by_t_J
+   table 275 <- results/stage16_needs.csv:5:t_m_s | results/stage16_scorecard.json.N[3].t_m_s
+   table 4.48 <- results/stage16_needs.csv:13:lo_J | results/stage16_scorecard.json.X[3].runs[1].E_J
+   table 4.66 <- results/stage16_needs.csv:13:hi_J | results/stage16_scorecard.json.N[0].runs[2].E_J
+   table 5.03 <- results/stage16_needs.csv:13:xs_E_J | results/stage16_scorecard.json.X[3].xs_E_J
+   table 9.9 <- results/stage16_needs.csv:13:d | results/stage16_scorecard.json.X[3].d
+   table 1.36 <- results/stage16_needs.csv:13:lumped_E_by_t_J | results/stage16_scorecard.json.X[3].lumped_E_by_t_J
+   table 342 <- results/stage16_needs.csv:6:t_m_s | results/stage16_scorecard.json.N[4].t_m_s
+   table 4.10 <- results/stage16_needs.csv:7:lo_id | results/stage16_scorecard.json.N[5].runs[1].id~str
+   table 4.29 <- results/stage16_needs.csv:8:hi_id | results/stage16_scorecard.json.N[6].runs[5].id~str
+   table 4.48 <- results/stage16_needs.csv:13:lo_J | results/stage16_scorecard.json.X[3].runs[1].E_J
+   table 6.8 <- results/stage16_needs.csv:10:xs_E_J | results/stage16_scorecard.json.X[0].xs_E_J
+   table 0.95 <- results/stage16_needs.csv:14:lumped_E_by_t_J | results/stage16_scorecard.json.X[4].lumped_E_by_t_J
+   table 120 <- results/stage16_needs.csv:18:delivery | results/stage16_scorecard.json.X[8].delivery~str
+   table 147 <- results/stage16_needs.csv:4:t_m_s | results/stage16_scorecard.json.N[2].t_m_s
+   table 7.09 <- results/stage16_needs.csv:20:lo_J | results/stage16_scorecard.json.X[10].runs[3].E_J
+   table 7.19 <- results/stage16_needs.csv:20:hi_J | results/stage16_scorecard.json.X[10].runs[4].E_J
+   table 7.74 <- results/stage16_needs.csv:20:xs_E_J | results/stage16_scorecard.json.X[10].xs_E_J
+   table 8.5 <- results/stage16_needs.csv:20:d | results/stage16_scorecard.json.X[10].d
+   table 4.77 <- results/stage16_needs.csv:20:lumped_E_by_t_J | results/stage16_scorecard.json.X[10].lumped_E_by_t_J
+   table 152 <- results/stage16_needs.csv:3:t_m_s | results/stage16_scorecard.json.N[1].t_m_s
+   table 4.88 <- results/stage16_needs.csv:19:lo_J | results/stage16_scorecard.json.X[9].runs[4].E_J
+   table 4.99 <- results/stage16_needs.csv:19:hi_J | results/stage16_scorecard.json.N[3].runs[2].E_J
+   table 5.42 <- results/stage16_needs.csv:19:xs_E_J | results/stage16_scorecard.json.X[9].xs_E_J
+   table 9.8 <- results/stage16_needs.csv:19:d | results/stage16_scorecard.json.X[2].runs[6].id~str
+   table 1.98 <- results/stage16_needs.csv:19:lumped_E_by_t_J | results/stage16_scorecard.json.X[9].lumped_E_by_t_J
+   table 223 <- results/stage16_needs.csv:7:t_m_s | results/stage16_scorecard.json.N[5].t_m_s
+   table 5.30 <- results/stage16_needs.csv:23:lo_J | results/stage16_scorecard.json.X[13].runs[5].E_J
+   table 5.40 <- results/stage16_needs.csv:23:xs_E_J | results/stage16_scorecard.json.X[13].xs_E_J
+   table 5.40 <- results/stage16_needs.csv:23:xs_E_J | results/stage16_scorecard.json.X[13].xs_E_J
+   table 0.9 <- results/stage16_needs.csv:14:lumped_E_by_t_J | results/stage16_scorecard.json.N[0].runs[0].id~str
+   table 2.17 <- results/stage16_needs.csv:23:lumped_E_by_t_J | results/stage16_scorecard.json.X[7].runs[2].id~str
+   table 272 <- results/stage16_needs.csv:2:t_m_s | results/stage16_scorecard.json.N[0].t_m_s
+   table 6.57 <- results/stage16_needs.csv:18:lo_J | results/stage16_scorecard.json.X[8].runs[4].E_J
+   table 6.68 <- results/stage16_needs.csv:18:hi_J | results/stage16_scorecard.json.X[8].runs[5].E_J
+   table 7.20 <- results/stage16_needs.csv:18:xs_E_J | results/stage16_scorecard.json.N[2].runs[2].E_J
+   table 8.6 <- results/stage16_needs.csv:3:d | results/stage16_scorecard.json.N[1].d
+   table 3.88 <- results/stage16_needs.csv:5:hi_id | results/stage16_scorecard.json.N[3].runs[4].id~str
+   table 275 <- results/stage16_needs.csv:5:t_m_s | results/stage16_scorecard.json.N[3].t_m_s
+   table 4.71 <- results/stage16_needs.csv:21:lo_J | results/stage16_scorecard.json.X[11].runs[3].E_J
+   table 4.84 <- results/stage16_needs.csv:21:hi_J | results/stage16_scorecard.json.X[11].runs[4].E_J
+   table 5.46 <- results/stage16_needs.csv:3:lo_J | results/stage16_scorecard.json.N[1].runs[3].E_J
+   table 14.4 <- results/stage16_needs.csv:21:d | results/stage16_scorecard.json.X[11].d
+   table 1.46 <- results/stage16_needs.csv:4:lo_minus_lumped_J | results/stage16_scorecard.json.N[2].lo_minus_lumped_J
+   table 342 <- results/stage16_needs.csv:6:t_m_s | results/stage16_scorecard.json.N[4].t_m_s
+   table 4.55 <- results/stage16_needs.csv:22:lo_J | results/stage16_scorecard.json.X[12].runs[4].E_J
+   table 4.67 <- results/stage16_needs.csv:22:hi_J | results/stage16_scorecard.json.X[1].runs[2].id~str
+   table 4.92 <- results/stage16_needs.csv:22:xs_E_J | results/stage16_scorecard.json.X[10].runs[1].id~str
+   table 6.7 <- results/stage16_needs.csv:18:hi_J | results/stage16_scorecard.json.N[0].runs[4].E_J
+   table 0.95 <- results/stage16_needs.csv:14:lumped_E_by_t_J | results/stage16_scorecard.json.X[4].lumped_E_by_t_J
    table 54.3 <- results/stage16_needs.csv:9:E_b_J | results/stage16_scorecard.json.N[7].E_b_J
    table 3.70 <- results/stage16_needs.csv:5:lo_minus_lumped_J | results/stage16_scorecard.json.N[3].lo_minus_lumped_J
    table 4.06 <- results/stage16_needs.csv:25:xs_E_J | results/stage16_scorecard.json.N[0].runs[3].id~str
@@ -862,12 +940,12 @@ FAILURES:
    table 5.04 <- results/stage16_needs.csv:26:lumped_E_J | results/stage16_scorecard.json.N[0].runs[3].E_J
    table 0.00 <- results/stage16_needs.csv:2:test | results/stage16_scorecard.json.N[0].test~str
    table 1.89 <- results/stage14_needs.csv:13:threshold_C2_hi_J | results/stage15_cross_section.json.A1_rows[12].hot_cross_3d_s
-   table 2.80 <- results/stage15_paper_numbers.json.B3a.history.pass_100_measured_s | results/stage15_cross_section.json.A1_rows[120].hot_cross_xs_s
+   table 2.80 <- results/stage16_needs.csv:18:hi_minus_lumped_J | results/stage16_scorecard.json.X[8].hi_minus_lumped_J
    table 41.0 <- results/stage16_needs.csv:4:E_b_J | results/stage16_scorecard.json.N[2].E_b_J
    table 6.51 <- results/stage16_scorecard.json.N[2].runs[1].E_J | results/stage15_table.csv:10:C8_3d_bracket_J
    table 7.20 <- results/stage16_needs.csv:18:xs_E_J | results/stage16_scorecard.json.N[2].runs[2].E_J
    table 6.85 <- results/stage15_table.csv:5:C1_E_by_t_J | results/stage15_paper_numbers.json.B1.M50_PP_Exp2.bracket.mid_J
-   table 3.18 <- results/stage14_needs.csv:7:threshold_C2_lo_J | results/stage15_cross_section.json.A1_rows[103].rxn_xs_J
+   table 3.18 <- results/stage16_needs.csv:15:d | results/stage16_scorecard.json.X[5].d
    table 4.77 <- results/stage16_needs.csv:20:lumped_E_by_t_J | results/stage16_scorecard.json.X[10].lumped_E_by_t_J
    table 1.36 <- results/stage16_needs.csv:13:lumped_E_by_t_J | results/stage16_scorecard.json.X[3].lumped_E_by_t_J
    table -2.27 <- results/stage16_needs.csv:4:d | results/stage16_scorecard.json.N[2].d
@@ -875,7 +953,7 @@ FAILURES:
    table 7.06 <- results/stage16_needs.csv:2:lo_J | results/stage16_scorecard.json.N[0].runs[5].E_J
    table 7.15 <- results/stage16_needs.csv:2:hi_J | results/stage16_scorecard.json.N[0].runs[6].E_J
    table 7.06 <- results/stage16_needs.csv:2:lo_J | results/stage16_scorecard.json.N[0].runs[5].E_J
-   table 4.66 <- results/stage16_scorecard.json.N[0].runs[2].E_J | results/stage15_table.csv:11:C1_share_of_76.74kJ
+   table 4.66 <- results/stage16_needs.csv:13:hi_J | results/stage16_scorecard.json.N[0].runs[2].E_J
    table 4.85 <- results/stage16_needs.csv:2:lumped_E_by_t_J | results/stage16_scorecard.json.N[0].lumped_E_by_t_J
    table 1.45 <- results/stage16_needs.csv:9:d | results/stage16_scorecard.json.N[7].d
    table -1.54 <- results/stage15_table.csv:22:C2_share_of_76.74kJ | results/stage14_needs.csv:17:threshold_C1_hi_J
@@ -896,16 +974,10 @@ FAILURES:
    table 0.79 <- results/stage16_needs.csv:29:share_by_t_m_plus_10 | results/stage16_scorecard.json.X[19].share_by_t_m_plus_10
    table -0.89 <- results/stage15_cross_section.json.A1[4].key~str | results/stage7_triggers.csv:251:T1max_C
 == manuscript/rebuild/highlights.txt  [map]
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
    traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
-   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
 == manuscript/rebuild/keywords.txt  [map]
 == manuscript/rebuild/titles.md  [map]
 == manuscript/rebuild/ga_text.txt  [map]
@@ -926,20 +998,14 @@ FAILURES:
 == manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt  [map]
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
-   traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
-   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
    traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 9.0 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_PT_Exp1'} = 8.97677
+   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
    traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
-   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
@@ -949,20 +1015,14 @@ FAILURES:
 == manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt  [map]
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
-   traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
-   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
    traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 9.0 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_PT_Exp1'} = 8.97677
+   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
    traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
-   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
@@ -972,20 +1032,14 @@ FAILURES:
 == manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt  [map]
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
-   traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
-   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
    traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
+   traced 9.0 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_PT_Exp1'} = 8.97677
+   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
    traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
-   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
@@ -996,20 +1050,14 @@ FAILURES:
    [year or date] 2026  ...om one cell to the next. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
    traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
    traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
-   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
    traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
-   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
@@ -1018,20 +1066,14 @@ FAILURES:
    [year or date] 2026  ...t follows a failing one. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
    traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
    traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
-   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
    traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
-   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
@@ -1040,20 +1082,14 @@ FAILURES:
    [year or date] 2026  ...t published experiments. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
    traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
    traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
-   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
    traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
-   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
@@ -1228,8 +1264,8 @@ FAILURES:
    traced 11.48 <- results/stage3a_metrics.json: mean_model_stage1_onsets_s/two_E33223_tau30_G0.5/hottest_node = 11.4759
    broad 2.83 <- results/stage3_numbers.json.decomposition.hottest_onset_s.sd_kinetic | results/v12_numbers.json.central_case.series_minus_parallel.tau10.res_peak_mean_C
    broad 0.076 <- results/stage3_numbers.json.decomposition.hottest_onset_s.sd_thermal | results/stage9_paper_numbers.json.part_b.360.per_test.M50_PP_Exp2.ft_C1.f_t | results/stage15_cross_section.json.A2_at_measured[3].f | results/stage13_skin.csv:2:A1_pure_skin_f
-   traced 6 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2, foreseen = 6
-   traced 19 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2 = 19
+   traced 7 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2, foreseen = 7
+   traced 20 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2 = 20
    broad 13 <- results/stage3_numbers.json.headline_3a_extra.lead_modes.first.lead_s[0] | results/v11_sensitivity.json.restriction.separator.by_case.500 mW/K.restricted.p2.5 | results/v12_numbers.json.fact.by_contact.high.res_peak_hottest_C.min_run~str | results/stage6_numbers.json.part_b_sets.body_by_contact.central.hot_150C.times_s[0]
    traced 720 <- results/manuscript_numbers.json: constants.M_ref_g = 720
    traced 1100 <- inputs/kinetics/SOURCE.md: /specific heat (1100) J/\(kg K\)/ = 1100
@@ -1308,11 +1344,11 @@ FAILURES:
    broad 10 <- results/note_numbers.json.headline_0.15.tau10~key | results/stage3_numbers.json.nine_cases_3a.two_E33223_tau10_G0.5.lead_p2.5_s | results/v11_sensitivity.json.exploratory.sets.central half, an_ele.short_mode_width_s | results/v12_numbers.json.all_runs.t_T1max_s.min
    [exponent or subscript] -1  ...ws by the three contacts, the tab bracket (5 and 10~mW\,K$^{-1}$), the two releases and the two connec...
    traced 109 <- manuscript/rebuild/data/predictions_registry.csv: rows = 109
-   traced 64 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict held = 64
-   traced 43 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed = 43
+   traced 65 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict held = 65
+   traced 44 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed = 44
    traced 63 <- manuscript/rebuild/data/predictions_registry.csv: rows, listed in Table S2 = 63
-   traced 42 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict held, listed in Table S2 = 42
-   traced 19 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2 = 19
+   traced 43 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict held, listed in Table S2 = 43
+   traced 20 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2 = 20
    [identifier] 10.5281  ...tions file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ . The other 46 are tho...
    [identifier] 46  ... public archive at doi:10.5281/zenodo.23279455~ . The other 46 are those of steps 1 to 4 and 6 and tho...
    [identifier] 1  ...:10.5281/zenodo.23279455~ . The other 46 are those of steps 1 to 4 and 6 and those of steps 7 to 11 a...
@@ -1431,9 +1467,10 @@ FAILURES:
    broad 1.5 <- results/note_numbers.json.stage2_heat_ratio_lumped_over_resolved.two_E33223_tau10_G0.2 | results/stage3_numbers.json.variance_share_thermal_over_kinetic.lead_s | results/v11_sensitivity.json.rank_shares.100 mW/K.lead_s.separator.rank_share | results/v12_numbers.json.grid.tab_high_minus_low.series_hcentral_tau10.lum_peak_C
    broad 0.01 <- results/note_numbers.json.V2.synthetic_max_rel | results/stage3_numbers.json.V5.worst_relative_change | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.separator.variance | results/v12_numbers.json.grid.G_tab_W_K.low
    broad 16 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.0.15 | results/stage3_numbers.json.decomposition.lumped_onset_s.sd_combined | results/v12_numbers.json.exploratory.hottest_node_at_peak.grid_mean_series_hlow_glow_tau10.z_mm | results/stage6_numbers.json.part_b_sets.body_by_contact.high.hot_150C.times_s[1]
+   broad 116 <- results/v11_sensitivity.json.exploratory.minor_runs_onset_ranges.500 mW/K.separator.hottest_onset_T_C[1] | results/v12_numbers.json.fact.by_contact.low.lum_peak_C.max | results/stage7_paper_numbers.json.V4.n_event_deliveries | results/stage8_paper_numbers.json.part_a.per_test.M50_PT_Exp1.fC3_exploratory.peak_lo_C
    broad 2.0\times10^{-12} <- results/note_numbers.json.levels_reached_two_strip.resolved_mean.1.0 | results/stage3_numbers.json.V6.energy_residual_max_abs | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.ncm811.share_95_bootstrap[0] | results/v12_numbers.json.central_case.runs.series_tau10.res_energy_residual_rel
-   broad 1.1 <- results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.an_ele.share_95_bootstrap[1] | results/v12_numbers.json.grid.tab_high_minus_low.series_hhigh_tau10.lum_peak_C | results/stage7_paper_numbers.json.triggers.T1max_by_tau_minus_target_K.17.53[0] | results/stage9_paper_numbers.json.part_b.240.per_test.M50_SP_Exp3.ft_C2.power_W
-   broad 2.7 <- results/stage3_numbers.json.decomposition.hottest_onset_s.ratio_thermal_to_kinetic | results/v11_sensitivity.json.restriction.an_ele.by_case.500 mW/K.per_reaction_restriction.elec_evap.narrowing | results/stage7_paper_numbers.json.triggers.T1max_low_minus_target_K[0] | results/stage8_paper_numbers.json.part_c.0.3.C1.times_s[3]
+   traced 1.1 <- results/stage16_scorecard.json: V, C8_change rel of the upper and lower end = 1.1163
+   traced 2.7 <- results/stage16_scorecard.json: V, C8_change rel of the upper and lower end = 2.69017
    [label] 4  ...each path can deliver}    Each input of the bounds of Table~4 of the main text was read at its source...
    broad 1 <- results/note_numbers.json.levels_reached_two_strip.hottest_node.1.0~key | results/stage3_numbers.json.V4_registered.main_cluster_share | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.an_ele.share | results/v12_numbers.json.grid.tab_high_minus_low.series_hcentral_tau10.lum_peak_C
    [label] 4  ...published inputs surveyed allow under the settings of Table~4 of the main text; the gas's rests on a ...
@@ -1690,16 +1727,28 @@ FAILURES:
    broad 218.2 <- results/stage3_numbers.json.nine_cases_3a.two_E33223_tau10_G0.2.lead_p50_s | results/stage9_paper_numbers.json.part_c.sensitivities.aged.C2_M50_PP_Exp4.ft_aged.t_hi | results/stage7_triggers.csv:140:T1max_C | results/stage13_tign.csv:78:T_ign_C
    broad 11.32 <- results/stage6_numbers.json.part_b_sets.peak.toward_150C.times_s[0] | results/stage13_tign.csv:627:RT2_over_E_K
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
-   NOT FOUND 45.8  ...s at 218.2\degC, and at 11.32~kJ it reaches 255.7\degC{} at 45.8~s while the lumped neighbour peaks at 2...
+   traced 45.8 <- results/stage16_scorecard.json: T.t_C8_hi_s = 45.7863
    traced 204.2 <- results/stage16_runs.csv: s16_T_PT_Exp1_s+1, lumped_peak_C = 204.178
    broad 5 <- results/note_numbers.json.V0.ln_k.cat1 | results/stage3_numbers.json.V4_amended_D25.mean_offset_C | results/v11_sensitivity.json.shares.100 mW/K.hottest_onset_s.by_group.separator.variance | results/v12_numbers.json.grid.G_contact_W_K.low
    traced 1.5 <- predictions_stage15.md: /the mesh refined by (1\.5)/ = 1.5
-   NOT FOUND 306.8  ...ed together, the runaway at the bracket's lower end came at 306.8~s against 298.8~s, and at its upper end...
-   broad 298.8 <- results/stage15_cross_section.json.A1_rows[86].t_mean_peak_xs_s
-   broad 252.1 <- results/stage15_accounts.json.accounts.acc_PT_Exp4.rows[4].lumped.radiation_out
-   broad 249.3 <- results/stage6_numbers.json.part_b_sets.peak_by_contact.central.lumped_t_peak_s[0]
-   broad 2.7 <- results/stage7_paper_numbers.json.triggers.T1max_low_minus_target_K[0] | results/stage8_paper_numbers.json.part_c.0.3.C1.times_s[3] | results/stage9_paper_numbers.json.runs.wall_s.resolved.sum_h | results/stage10_paper_numbers.json.part_a.con120_C2_hi_hcentral.nodes.side.window.rise_last_model_K
-   broad 1.1 <- results/stage3_numbers.json.variance_share_thermal_over_kinetic.lumped_onset_s | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.an_ele.share_95_bootstrap[1] | results/v12_numbers.json.grid.tab_high_minus_low.series_hhigh_tau10.lum_peak_C | results/stage7_paper_numbers.json.triggers.T1max_by_tau_minus_target_K.17.53[0]
+   traced 306.8 <- results/stage16_scorecard.json: V.C8_change.lo.refined_t_C8_s = 306.837
+   traced 298.8 <- results/stage16_scorecard.json: V.C8_change.lo.base_t_C8_s = 298.799
+   traced 252.1 <- results/stage16_scorecard.json: V.C8_change.hi.refined_t_C8_s = 252.092
+   traced 249.3 <- results/stage16_scorecard.json: V.C8_change.hi.base_t_C8_s = 249.309
+   traced 2.7 <- results/stage16_scorecard.json: V, C8_change rel of the lower and upper end = 2.69017
+   traced 1.1 <- results/stage16_scorecard.json: V, C8_change rel of the lower and upper end = 1.1163
+   broad 240 <- results/stage9_paper_numbers.json.definitions.taus_B_s[1] | results/stage11_paper_numbers.json.clock.per_test.M50_ST_Exp4.t_draw_s.d83 | results/stage13_readings.json.reading_1.dur10_peak_f0.1_C | results/stage15_paper_numbers.json.runs.wall_s.min
+   broad 120 <- results/v12_numbers.json.exploratory.section2_rate_without_propagation.grid_mean_parallel_hlow_ghigh_tau10.toward.T_end_C | results/stage6_numbers.json.part_b_sets.peak_by_contact.low.mean_peak_C[0] | results/stage9_paper_numbers.json.definitions.taus_B_s[0] | results/stage10_paper_numbers.json.part_a.con240_C2_hcentral.nodes.facing.after_section_I.max_abs_K
+   broad 360 <- results/v12_numbers.json.exploratory.time_above_150C.grid_mean_parallel_hhigh_gcentral_tau30.lumped.duration_s | results/stage9_paper_numbers.json.definitions.taus_B_s[2] | results/stage7_triggers.csv:105:T1max_C | results/stage15_cross_section.json.A2[30].runs[6][2]
+   NOT FOUND 6.16  ...s delivery not reached when the six worker-hours were used (6.16, with the runs then under way). Counted...
+   traced 10 <- src/stage16_run.py: /WINDOW_S = ([0-9.]+)/ = 10
+   broad 0.9 <- results/note_numbers.json.stage2_scorecard.P5b.lumped_rise_K[0] | results/stage3_numbers.json.nine_cases_3a.two_E33223_tau30_G0.2.share_sei_start | results/v11_sensitivity.json.shares.500 mW/K.hottest_onset_s.by_group.an_ele.share_95_bootstrap[0] | results/stage9_paper_numbers.json.part_b.360.per_test.M50_SP_Exp4.fmax.f_max
+   broad 15.7 <- results/stage6_numbers.json.part_b_sets.body_by_contact.high.toward_150C.times_s[1] | results/stage13_paper_numbers.json.A3.cases[1].A2 | results/stage13_checks.json.V1.A2[0].banded | results/stage13_readings.json.reading_1.f_line
+   broad 10 <- results/note_numbers.json.headline_0.15.tau10~key | results/stage3_numbers.json.V4_registered.no_short_share | results/v11_sensitivity.json.restriction.separator.by_case.100 mW/K.narrowing_95_bootstrap[0] | results/v12_numbers.json.all_runs.t_T1max_s.min
+   broad 240 <- results/stage9_paper_numbers.json.definitions.taus_B_s[1] | results/stage11_paper_numbers.json.clock.per_test.M50_ST_Exp4.t_draw_s.d83 | results/stage13_readings.json.reading_1.dur10_peak_f0.1_C | results/stage15_paper_numbers.json.runs.wall_s.min
+   broad 15.7 <- results/stage6_numbers.json.part_b_sets.body_by_contact.high.toward_150C.times_s[1] | results/stage13_paper_numbers.json.A3.cases[1].A2 | results/stage13_checks.json.V1.A2[0].banded | results/stage13_readings.json.reading_1.f_line
+   broad 120 <- results/v12_numbers.json.exploratory.section2_rate_without_propagation.grid_mean_parallel_hlow_ghigh_tau10.toward.T_end_C | results/stage6_numbers.json.part_b_sets.peak_by_contact.low.mean_peak_C[0] | results/stage9_paper_numbers.json.definitions.taus_B_s[0] | results/stage10_paper_numbers.json.part_a.con240_C2_hcentral.nodes.facing.after_section_I.max_abs_K
+   broad 14.4 <- results/stage3_numbers.json.V6.high_k.highk_25.max_abs_Tmean_minus_lumped_K | results/stage9_paper_numbers.json.part_a.A1.M50_PP_Exp2.C2.grid[4].t_c_s | results/stage10_paper_numbers.json.part_c.held_out.fC2.series_to_parallel.band_log[1] | results/stage11_paper_numbers.json.thresholds.C1_M50_PT_Exp1.thermal.kr_min.f_star
 == manuscript/rebuild/tables/s10_twobody.tex  [table:s10_twobody.tex]
    [label] 2.5  ...{The lumped threshold against the two-body model of Section~2.5 of the main text (kJ): above, with the ...
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
@@ -3386,6 +3435,249 @@ FAILURES:
    table 306.8 <- results/stage16_runs.csv:35:t_C8_s | results/stage16_scorecard.json.V.refined.lo.t_C8_s
    table 5.652 <- results/stage16_runs.csv:13:E_J | results/stage16_scorecard.json.N[3].runs[4].E_J
    table 252.1 <- results/stage16_runs.csv:36:t_C8_s | results/stage16_scorecard.json.V.refined.hi.t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 3.701 <- results/stage16_runs.csv:37:E_J | results/stage16_scorecard.json.N[3].lo_minus_lumped_J
+   table 280.1 <- results/stage16_runs.csv:37:t_C8_s | results/stage16_scorecard.json.X[9].runs[1].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 4.560 <- results/stage16_runs.csv:38:E_J | results/stage16_scorecard.json.X[9].runs[2].E_J
+   table 181.0 <- results/stage16_runs.csv:38:t_C8_s | results/stage16_scorecard.json.X[9].runs[2].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 4.775 <- results/stage16_runs.csv:39:E_J | results/stage16_scorecard.json.X[9].runs[3].E_J
+   table 168.3 <- results/stage16_runs.csv:39:t_C8_s | results/stage16_scorecard.json.X[9].runs[3].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 4.883 <- results/stage16_runs.csv:40:E_J | results/stage16_scorecard.json.X[9].runs[4].E_J
+   table 162.8 <- results/stage16_runs.csv:40:t_C8_s | results/stage16_scorecard.json.X[9].runs[4].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 4.990 <- results/stage16_runs.csv:41:E_J | results/stage16_scorecard.json.X[9].runs[5].E_J
+   table 157.7 <- results/stage16_runs.csv:41:t_C8_s | results/stage16_scorecard.json.X[9].runs[5].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 5.419 <- results/stage16_runs.csv:42:E_J | results/stage16_scorecard.json.X[9].xs_E_J
+   table 141.1 <- results/stage16_runs.csv:42:t_C8_s | results/stage16_scorecard.json.X[9].runs[6].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 6.726 <- results/stage16_runs.csv:43:E_J | results/stage16_scorecard.json.X[1].runs[1].E_J
+   table 176.2 <- results/stage16_runs.csv:43:t_C8_s | results/stage16_scorecard.json.X[1].runs[1].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 7.415 <- results/stage16_runs.csv:44:E_J | results/stage16_scorecard.json.X[1].runs[2].E_J
+   table 166.4 <- results/stage16_runs.csv:44:t_C8_s | results/stage16_scorecard.json.X[1].runs[2].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 7.588 <- results/stage16_runs.csv:45:E_J | results/stage16_scorecard.json.X[1].runs[3].E_J
+   table 164.1 <- results/stage16_runs.csv:45:t_C8_s | results/stage16_scorecard.json.X[1].runs[3].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 7.760 <- results/stage16_runs.csv:46:E_J | results/stage16_scorecard.json.X[1].runs[4].E_J
+   table 162.0 <- results/stage16_runs.csv:46:t_C8_s | results/stage16_scorecard.json.X[1].runs[4].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 8.105 <- results/stage16_runs.csv:47:E_J | results/stage16_scorecard.json.X[1].runs[5].E_J
+   table 157.8 <- results/stage16_runs.csv:41:t_end_s | results/stage16_scorecard.json.X[1].runs[5].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 9.485 <- results/stage16_runs.csv:48:E_J | results/stage16_scorecard.json.X[1].xs_E_J
+   table 143.6 <- results/stage16_runs.csv:48:t_C8_s | results/stage16_scorecard.json.X[1].runs[6].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 6.257 <- results/stage16_runs.csv:49:E_J | results/stage16_scorecard.json.X[10].runs[1].E_J
+   table 234.2 <- results/stage16_runs.csv:49:peak_mean_C
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 7.000 <- results/stage16_runs.csv:2:started_utc | results/stage16_scorecard.json.N[3].n_runs_counted
+   table 166.2 <- results/stage16_runs.csv:50:t_C8_s | results/stage16_scorecard.json.X[10].runs[2].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 7.093 <- results/stage16_runs.csv:51:E_J | results/stage16_scorecard.json.X[10].runs[3].E_J
+   table 159.9 <- results/stage16_runs.csv:51:t_C8_s | results/stage16_scorecard.json.X[10].runs[3].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 7.186 <- results/stage16_runs.csv:52:E_J | results/stage16_scorecard.json.X[10].runs[4].E_J
+   table 154.5 <- results/stage16_runs.csv:52:t_C8_s | results/stage16_scorecard.json.X[10].runs[4].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 7.372 <- results/stage16_runs.csv:53:E_J | results/stage16_scorecard.json.X[10].runs[5].E_J
+   table 145.6 <- results/stage16_runs.csv:53:t_C8_s | results/stage16_scorecard.json.X[10].runs[5].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 7.743 <- results/stage16_runs.csv:54:E_J | results/stage16_scorecard.json.X[10].xs_E_J
+   table 132.2 <- results/stage16_runs.csv:54:t_C8_s | results/stage16_scorecard.json.N[3].width_J
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 10.026 <- results/stage16_runs.csv:55:E_J | results/stage16_scorecard.json.X[2].runs[1].E_J
+   table 176.1 <- results/stage16_runs.csv:55:t_C8_s | results/stage16_scorecard.json.X[2].runs[1].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 11.264 <- results/stage16_runs.csv:56:E_J | results/stage16_scorecard.json.X[2].runs[2].E_J
+   table 161.4 <- results/stage16_runs.csv:56:t_C8_s | results/stage16_scorecard.json.X[2].runs[2].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 11.573 <- results/stage16_runs.csv:57:E_J | results/stage16_scorecard.json.X[2].runs[3].E_J
+   table 158.1 <- results/stage16_runs.csv:57:t_C8_s | results/stage16_scorecard.json.X[2].runs[3].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 11.727 <- results/stage16_runs.csv:58:E_J | results/stage16_scorecard.json.X[2].runs[4].E_J
+   table 156.5 <- results/stage16_runs.csv:58:t_C8_s | results/stage16_scorecard.json.X[2].runs[4].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 11.882 <- results/stage16_runs.csv:59:E_J | results/stage16_scorecard.json.X[2].runs[5].E_J
+   table 155.0 <- results/stage16_runs.csv:59:t_C8_s | results/stage16_scorecard.json.X[2].runs[5].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 12.501 <- results/stage16_runs.csv:60:E_J | results/stage16_scorecard.json.X[2].xs_E_J
+   table 149.2 <- results/stage16_runs.csv:60:t_C8_s | results/stage16_scorecard.json.X[2].runs[6].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 3.463 <- results/stage16_runs.csv:61:E_J | results/stage16_scorecard.json.X[11].runs[1].E_J
+   table 201.7 <- results/stage16_runs.csv:61:peak_mean_C
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 4.463 <- results/stage16_runs.csv:13:in_rxn_J | results/stage16_scorecard.json.X[11].runs[2].E_J
+   table 219.9 <- results/stage16_runs.csv:62:peak_mean_C
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 4.713 <- results/stage16_runs.csv:63:E_J | results/stage16_scorecard.json.X[11].runs[3].E_J
+   table 249.7 <- results/stage16_runs.csv:51:wall_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 4.838 <- results/stage16_runs.csv:64:E_J | results/stage16_scorecard.json.X[11].runs[4].E_J
+   table 269.3 <- results/stage16_runs.csv:64:t_C8_s | results/stage16_scorecard.json.X[11].runs[4].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 4.963 <- results/stage16_runs.csv:65:E_J | results/stage16_scorecard.json.X[11].runs[5].E_J
+   table 239.9 <- results/stage16_runs.csv:65:t_C8_s | results/stage16_scorecard.json.X[11].runs[5].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 5.463 <- results/stage16_runs.csv:66:E_J | results/stage16_scorecard.json.X[11].xs_E_J
+   table 183.1 <- results/stage16_runs.csv:66:t_C8_s | results/stage16_scorecard.json.X[11].runs[6].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 4.297 <- results/stage16_runs.csv:67:E_J | results/stage16_scorecard.json.X[3].runs[0].E_J
+   table 246.4 <- results/stage16_runs.csv:67:peak_mean_C
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 4.479 <- results/stage16_runs.csv:68:E_J | results/stage16_scorecard.json.X[3].runs[1].E_J
+   table 292.7 <- results/stage16_runs.csv:68:t_C8_s | results/stage16_scorecard.json.X[3].runs[1].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 4.661 <- results/stage16_runs.csv:69:E_J | results/stage16_scorecard.json.X[3].runs[2].E_J
+   table 268.5 <- results/stage16_runs.csv:69:t_C8_s | results/stage16_scorecard.json.X[3].runs[2].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 5.025 <- results/stage16_runs.csv:70:E_J | results/stage16_scorecard.json.X[3].xs_E_J
+   table 245.5 <- results/stage16_runs.csv:70:t_C8_s | results/stage16_scorecard.json.X[3].runs[3].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 5.539 <- results/stage16_runs.csv:71:E_J | results/stage16_scorecard.json.X[8].runs[2].E_J
+   table 202.8 <- results/stage16_runs.csv:71:peak_mean_C
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 6.368 <- results/stage16_runs.csv:72:E_J | results/stage16_scorecard.json.X[8].runs[3].E_J
+   table 220.3 <- results/stage16_runs.csv:72:peak_mean_C
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 6.575 <- results/stage16_runs.csv:73:E_J | results/stage16_scorecard.json.X[8].runs[4].E_J
+   table 244.5 <- results/stage16_runs.csv:73:peak_mean_C
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 6.679 <- results/stage16_runs.csv:74:E_J | results/stage16_scorecard.json.X[8].runs[5].E_J
+   table 249.3 <- results/stage16_runs.csv:13:t_C8_s | results/stage16_scorecard.json.N[3].runs[4].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 6.782 <- results/stage16_runs.csv:75:E_J | results/stage16_scorecard.json.X[8].runs[6].E_J
+   table 219.3 <- results/stage16_runs.csv:75:t_C8_s | results/stage16_scorecard.json.X[8].runs[6].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 7.197 <- results/stage16_runs.csv:76:E_J | results/stage16_scorecard.json.N[2].runs[2].E_J
+   table 167.7 <- results/stage16_runs.csv:76:t_C8_s | results/stage16_scorecard.json.X[8].runs[7].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 6.403 <- results/stage16_runs.csv:77:E_J | results/stage16_scorecard.json.X[0].runs[5].E_J
+   table 285.8 <- results/stage16_runs.csv:77:t_C8_s | results/stage16_scorecard.json.X[0].runs[5].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 6.500 <- results/stage16_runs.csv:78:E_J | results/stage16_scorecard.json.X[0].runs[6].E_J
+   table 272.3 <- results/stage16_runs.csv:78:t_C8_s | results/stage16_scorecard.json.X[0].runs[6].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 3.784 <- results/stage16_runs.csv:79:E_J | results/stage16_scorecard.json.X[13].runs[1].E_J
+   table 200.2 <- results/stage16_runs.csv:79:peak_mean_C
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 4.592 <- results/stage16_runs.csv:80:E_J | results/stage16_scorecard.json.X[13].runs[2].E_J
+   table 211.5 <- results/stage16_runs.csv:80:peak_mean_C
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 4.996 <- results/stage16_runs.csv:81:E_J | results/stage16_scorecard.json.X[13].runs[3].E_J
+   table 228.4 <- results/stage16_runs.csv:81:peak_mean_C | results/stage16_scorecard.json.X[11].xs_t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 5.198 <- results/stage16_runs.csv:82:E_J | results/stage16_scorecard.json.X[13].runs[4].E_J
+   table 281.7 <- results/stage16_runs.csv:82:t_C8_s | results/stage16_scorecard.json.X[13].runs[4].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 5.299 <- results/stage16_runs.csv:83:E_J | results/stage16_scorecard.json.X[13].runs[5].E_J
+   table 249.5 <- results/stage16_runs.csv:83:t_C8_s | results/stage16_scorecard.json.X[13].runs[5].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 5.400 <- results/stage16_runs.csv:84:E_J | results/stage16_scorecard.json.X[13].xs_E_J
+   table 229.7 <- results/stage16_runs.csv:84:t_C8_s | results/stage16_scorecard.json.X[13].runs[6].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 4.310 <- results/stage16_runs.csv:85:E_J | results/stage16_scorecard.json.X[5].runs[1].E_J
+   table 215.4 <- results/stage16_runs.csv:85:peak_mean_C
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 5.329 <- results/stage16_runs.csv:86:E_J | results/stage16_scorecard.json.X[5].runs[2].E_J
+   table 251.2 <- results/stage16_runs.csv:86:t_C8_s | results/stage16_scorecard.json.X[5].runs[2].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 5.584 <- results/stage16_runs.csv:87:E_J | results/stage16_scorecard.json.X[5].runs[3].E_J
+   table 240.0 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 5.711 <- results/stage16_runs.csv:88:E_J | results/stage16_scorecard.json.X[5].runs[4].E_J
+   table 235.8 <- results/stage16_runs.csv:88:t_C8_s | results/stage16_scorecard.json.X[5].runs[4].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 5.839 <- results/stage16_runs.csv:89:E_J | results/stage16_scorecard.json.X[5].runs[5].E_J
+   table 231.9 <- results/stage16_runs.csv:89:t_C8_s | results/stage16_scorecard.json.X[5].runs[5].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 6.348 <- results/stage16_runs.csv:90:E_J | results/stage16_scorecard.json.X[5].xs_E_J
+   table 217.8 <- results/stage16_runs.csv:90:t_C8_s | results/stage16_scorecard.json.X[5].runs[6].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 4.359 <- results/stage16_runs.csv:91:E_J | results/stage16_scorecard.json.X[14].runs[1].E_J
+   table 219.4 <- results/stage16_runs.csv:75:t_end_s | results/stage16_scorecard.json.X[8].runs[6].t_end_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 5.119 <- results/stage16_runs.csv:92:E_J | results/stage16_scorecard.json.X[14].runs[2].E_J
+   table 208.0 <- results/stage16_runs.csv:92:t_C8_s | results/stage16_scorecard.json.X[14].runs[2].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 5.880 <- results/stage16_runs.csv:93:E_J | results/stage16_scorecard.json.X[14].xs_E_J
+   table 153.5 <- results/stage16_runs.csv:93:t_C8_s | results/stage16_scorecard.json.X[14].runs[3].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 7.687 <- results/stage16_runs.csv:94:E_J | results/stage16_scorecard.json.X[6].runs[1].E_J
+   table 180.5 <- results/stage16_runs.csv:94:t_C8_s | results/stage16_scorecard.json.X[6].runs[1].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 8.693 <- results/stage16_runs.csv:95:E_J | results/stage16_scorecard.json.X[6].runs[2].E_J
+   table 166.4 <- results/stage16_runs.csv:44:t_C8_s | results/stage16_scorecard.json.X[1].runs[2].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 9.196 <- results/stage16_runs.csv:96:E_J | results/stage16_scorecard.json.X[6].runs[3].E_J
+   table 160.3 <- results/stage16_runs.csv:96:t_C8_s | results/stage16_scorecard.json.X[6].runs[3].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 9.321 <- results/stage16_runs.csv:97:E_J | results/stage16_scorecard.json.X[6].runs[4].E_J
+   table 158.9 <- results/stage16_runs.csv:97:t_C8_s | results/stage16_scorecard.json.X[6].runs[4].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 9.447 <- results/stage16_runs.csv:98:E_J | results/stage16_scorecard.json.X[6].runs[5].E_J
+   table 157.5 <- results/stage16_runs.csv:98:t_C8_s | results/stage16_scorecard.json.X[6].runs[5].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 9.699 <- results/stage16_runs.csv:99:E_J | results/stage16_scorecard.json.X[6].xs_E_J
+   table 154.8 <- results/stage16_runs.csv:99:t_C8_s | results/stage16_scorecard.json.X[6].runs[6].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 2.142 <- results/stage16_runs.csv:100:E_J | results/stage16_scorecard.json.X[15].runs[1].E_J
+   table 204.9 <- results/stage16_runs.csv:43:wall_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 3.103 <- results/stage16_runs.csv:101:E_J | results/stage16_scorecard.json.X[15].runs[2].E_J
+   table 236.8 <- results/stage16_runs.csv:101:peak_mean_C
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 4.064 <- results/stage16_runs.csv:102:E_J | results/stage16_scorecard.json.X[15].xs_E_J
+   table 193.8 <- results/stage16_runs.csv:102:t_C8_s | results/stage16_scorecard.json.X[15].runs[3].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 2.528 <- results/stage16_runs.csv:103:E_J | results/stage16_scorecard.json.X[7].runs[1].E_J
+   table 217.5 <- results/stage16_runs.csv:103:peak_mean_C
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 3.662 <- results/stage16_runs.csv:104:E_J | results/stage16_scorecard.json.X[7].runs[2].E_J
+   table 242.1 <- results/stage16_runs.csv:104:t_C8_s | results/stage16_scorecard.json.X[7].runs[2].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 4.229 <- results/stage16_runs.csv:105:E_J | results/stage16_scorecard.json.X[7].runs[3].E_J
+   table 221.5 <- results/stage16_runs.csv:105:t_C8_s | results/stage16_scorecard.json.X[7].runs[3].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 4.370 <- results/stage16_runs.csv:106:E_J | results/stage16_scorecard.json.X[7].runs[4].E_J
+   table 217.2 <- results/stage16_runs.csv:106:t_C8_s | results/stage16_scorecard.json.X[7].runs[4].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 4.512 <- results/stage16_runs.csv:107:E_J | results/stage16_scorecard.json.X[7].runs[5].E_J
+   table 213.1 <- results/stage16_runs.csv:107:t_C8_s | results/stage16_scorecard.json.X[7].runs[5].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 4.795 <- results/stage16_runs.csv:108:E_J | results/stage16_scorecard.json.X[7].xs_E_J
+   table 205.7 <- results/stage16_runs.csv:108:t_C8_s | results/stage16_scorecard.json.X[7].runs[6].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 2.933 <- results/stage16_runs.csv:38:in_rxn_J | results/stage16_scorecard.json.X[12].runs[1].E_J
+   table 197.2 <- results/stage16_runs.csv:109:peak_mean_C
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 3.926 <- results/stage16_runs.csv:110:E_J | results/stage16_scorecard.json.X[12].runs[2].E_J
+   table 209.1 <- results/stage16_runs.csv:110:peak_mean_C
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 4.422 <- results/stage16_runs.csv:111:E_J | results/stage16_scorecard.json.X[12].runs[3].E_J
+   table 224.2 <- results/stage16_runs.csv:111:peak_mean_C
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 4.547 <- results/stage16_runs.csv:112:E_J | results/stage16_scorecard.json.X[12].runs[4].E_J
+   table 238.3 <- results/stage16_runs.csv:112:peak_mean_C
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 4.671 <- results/stage16_runs.csv:113:E_J | results/stage16_scorecard.json.X[12].runs[5].E_J
+   table 292.6 <- results/stage16_runs.csv:113:t_C8_s | results/stage16_scorecard.json.X[12].runs[5].t_C8_s
+   table 120 <- results/stage16_runs.csv:37:id | results/stage16_scorecard.json.X[8].delivery~str
+   table 4.919 <- results/stage16_runs.csv:49:id | results/stage16_scorecard.json.X[10].runs[1].id~str
+   table 231.3 <- results/stage16_runs.csv:114:t_C8_s | results/stage16_scorecard.json.X[12].runs[6].t_C8_s
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 4.103 <- results/stage16_runs.csv:19:id | results/stage16_scorecard.json.N[5].runs[1].id~str
+   table 231.2 <- results/stage16_runs.csv:115:peak_mean_C
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 4.292 <- results/stage16_runs.csv:26:id | results/stage16_scorecard.json.N[6].runs[5].id~str
+   traced 316.5 <- results/stage13_skin.csv: res_t_cross_hi_s where {'test': 'M50_PT_Exp1', 'region': 'half', 'tau_d_s': '360.0'} = 316.544
+   table 240 <- results/stage16_runs.csv:43:id | results/stage16_scorecard.json.X[0].delivery~str
+   table 4.481 <- results/stage16_runs.csv:117:E_J | results/stage16_scorecard.json.X[4].xs_E_J
+   table 278.5 <- results/stage16_runs.csv:117:t_C8_s | results/stage16_scorecard.json.X[4].runs[2].t_C8_s
 == manuscript/rebuild/tables/s17_quoted.tex  [table:s17_quoted.tex]
    [label] 2  ... that the earlier study set without a primary source (Table~2 of the main text, $^{a}$), each with th...
    table 3.1 <- results/v12_numbers.json.grid.tab_high_minus_low.parallel_hhigh_tau30.res_peak_away_C | results/stage13_skin.csv:15:res_hi
@@ -3688,24 +3980,24 @@ FAILURES:
    table 24 <- manuscript/rebuild/data/steps.csv:17:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:27:foreseen_basis
    table 11 <- manuscript/rebuild/data/steps.csv:5:predictions_file | manuscript/rebuild/data/predictions_registry.csv:2:expectation
    table 11 <- manuscript/rebuild/data/steps.csv:5:predictions_file | manuscript/rebuild/data/predictions_registry.csv:2:expectation
-   table 8 <- manuscript/rebuild/data/steps.csv:8:committed | manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 9 <- manuscript/rebuild/data/steps.csv:10:step | manuscript/rebuild/data/predictions_registry.csv:10:expectation
+   table 2 <- manuscript/rebuild/data/steps.csv:2:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:3:prediction
    table 1 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
-   table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    table 0 <- manuscript/rebuild/data/steps.csv:2:step | manuscript/rebuild/data/predictions_registry.csv:2:stage
    broad 109 <- results/note_numbers.json.sei_storage_exploratory.1_days.ramp_1Kps_T_at_0.15Kpm_C | results/v11_sensitivity.json.shares.500 mW/K.lead_s.by_group.an_ele.share_95_bootstrap[1] | results/v12_numbers.json.fact.by_contact.low.res_peak_away_C.max | results/stage7_paper_numbers.json.triggers.T1max_by_tau_minus_target_K.17.53[0]
    broad 63 <- results/note_numbers.json.stage2_table[1].lumped_layered_cathode_conversion_900s~str | results/v11_sensitivity.json.predictions_commit~str | results/v12_numbers.json.exploratory.section2_rate_without_propagation.grid_mean_parallel_hhigh_ghigh_tau30.lumped.rate_C_per_s | results/stage7_paper_numbers.json.triggers.levels.E_event_low_J
-   table 42 <- manuscript/rebuild/data/predictions_registry.csv:3:statement
-   table 19 <- manuscript/rebuild/data/predictions_registry.csv:2:source
-   table 6 <- manuscript/rebuild/data/steps.csv:4:committed | manuscript/rebuild/data/predictions_registry.csv:14:prediction
+   table 43 <- manuscript/rebuild/data/predictions_registry.csv:43:source
+   table 20 <- manuscript/rebuild/data/predictions_registry.csv:10:statement
+   table 7 <- manuscript/rebuild/data/steps.csv:6:committed | manuscript/rebuild/data/predictions_registry.csv:26:prediction
    table 22 <- manuscript/rebuild/data/predictions_registry.csv:3:statement
    table 24 <- manuscript/rebuild/data/steps.csv:17:registered_utc_date | manuscript/rebuild/data/predictions_registry.csv:27:foreseen_basis
 == manuscript/rebuild/tables/s2_registry.tex  [table:s2_registry.tex]
    broad 63 <- results/note_numbers.json.stage2_table[1].lumped_layered_cathode_conversion_900s~str | results/v11_sensitivity.json.predictions_commit~str | results/v12_numbers.json.exploratory.section2_rate_without_propagation.grid_mean_parallel_hhigh_ghigh_tau30.lumped.rate_C_per_s | results/stage7_paper_numbers.json.triggers.levels.E_event_low_J
    broad 109 <- results/note_numbers.json.sei_storage_exploratory.1_days.ramp_1Kps_T_at_0.15Kpm_C | results/v11_sensitivity.json.shares.500 mW/K.lead_s.by_group.an_ele.share_95_bootstrap[1] | results/v12_numbers.json.fact.by_contact.low.res_peak_away_C.max | results/stage7_paper_numbers.json.triggers.T1max_by_tau_minus_target_K.17.53[0]
-   table 42 <- manuscript/rebuild/data/predictions_registry.csv:3:statement
-   table 19 <- manuscript/rebuild/data/predictions_registry.csv:2:source
-   table 6 <- manuscript/rebuild/data/predictions_registry.csv:14:prediction
+   table 43 <- manuscript/rebuild/data/predictions_registry.csv:43:source
+   table 20 <- manuscript/rebuild/data/predictions_registry.csv:10:statement
+   table 7 <- manuscript/rebuild/data/predictions_registry.csv:26:prediction
    table 5 <- manuscript/rebuild/data/predictions_registry.csv:6:prediction
    traced 147 <- smallest and largest of inputs/fransson2024/m50_tests.csv: time_to_propagation_s = 147
    traced 342 <- smallest and largest of inputs/fransson2024/m50_tests.csv: time_to_propagation_s = 342
@@ -3935,19 +4227,19 @@ FAILURES:
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
    table 6.71 <- results/stage15_cross_section.json.A1[28].key~str | results/stage15_table.csv:2:C8_3d_bracket_J
    table 7.42 <- results/stage15_cross_section.json.for_predictions.PT_Exp4_upper.1.05.E_J | results/stage15_table.csv:2:C8_3d_bracket_J
-   broad 4.36 <- results/stage11_paper_numbers.json.thresholds.C1_M50_PT_Exp1.mean.E_star_J
+   table 4.36 <- results/stage16_scorecard.json.X[14].runs[1].E_J
    table 4.53 <- results/stage14_needs.csv:2:threshold_C1_hi_J | results/stage15_cross_section.json.A1[6].key~str
-   table 12.85 <- results/stage13_twobody.csv:3:lum_lo_J
+   table 12.85 <- results/stage13_twobody.csv:3:lum_lo_J | results/stage16_scorecard.json.T.lumped_bracket_J[0]
    table 12.89 <- results/stage14_needs.csv:2:threshold_C2_hi_J | results/stage13_twobody.csv:3:lum_hi_J
    table 10.75 <- results/stage15_cross_section.json.A2[0].lo_J
    table 10.81 <- results/stage15_cross_section.json.A2[0].hi_J
-   broad 10.24 <- results/stage10_paper_numbers.json.part_a.tri21_C1_hi_hcentral.nodes.facing.window.diff_at_end_K | results/stage13_tign.csv:242:RT2_over_E_K
-   broad 11.32 <- results/stage6_numbers.json.part_b_sets.peak.toward_150C.times_s[0] | results/stage13_tign.csv:627:RT2_over_E_K
+   table 10.24 <- results/stage16_scorecard.json.T.runs[0].E_J
+   table 11.32 <- results/stage16_scorecard.json.T.runs[1].E_J
    table 0.00 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
    table 1.68 <- results/stage14_needs.csv:3:threshold_C1_hi_J | results/stage13_twobody.csv:8:lum_lo_J
    table 1.68 <- results/stage14_needs.csv:3:threshold_C1_hi_J | results/stage13_twobody.csv:8:lum_lo_J
    table 3.37 <- results/stage14_needs.csv:3:threshold_C2_hi_J | results/stage15_cross_section.json.A1_rows[121].rxn_xs_J
-   table 6.33 <- results/stage15_cross_section.json.A2[1].lo_J
+   table 6.33 <- results/stage15_cross_section.json.A2[1].lo_J | results/stage16_scorecard.json.N[5].runs[3].E_J
    table 6.38 <- results/stage15_cross_section.json.A2[1].hi_J
    table 2.61 <- results/stage13_twobody.csv:35:B2_E_J
    table 2.68 <- results/stage15_cross_section.json.A2[33].E_star_J | results/stage15_table.csv:36:C8_xs_E_star_J
@@ -3962,19 +4254,19 @@ FAILURES:
    table 7.04 <- results/stage15_cross_section.json.A2[3].lo_J | results/stage15_table.csv:27:C8_xs_share_of_76.74kJ
    table 7.08 <- results/stage15_cross_section.json.A2[3].hi_J | results/stage15_paper_numbers.json.B1.M50_ST_Exp3.runs[0].C1_t_s
    table 7.06 <- results/stage15_cross_section.json.A2[3].E_star_J | results/stage15_table.csv:2:C8_xs_E_star_J
-   broad 7.15 <- results/stage15_accounts.json.accounts.acc_PT_Exp4.rows[6].resolved.contact_and_wedge
+   table 7.15 <- results/stage16_scorecard.json.N[0].runs[6].E_J | results/stage16_needs.csv:2:hi_J
    table 4.85 <- results/stage14_needs.csv:5:need_21s_hi_J | results/stage15_cross_section.json.A1[145].key~str
    table 7.44 <- results/stage15_cross_section.json.A1_rows[81].hot_cross_xs_s | results/stage15_table.csv:2:C8_xs_E_J
    table 7.06 <- results/stage15_cross_section.json.A2[3].E_star_J | results/stage15_table.csv:2:C8_xs_E_star_J
-   broad 7.15 <- results/stage15_accounts.json.accounts.acc_PT_Exp4.rows[6].resolved.contact_and_wedge
+   table 7.15 <- results/stage16_scorecard.json.N[0].runs[6].E_J | results/stage16_needs.csv:2:hi_J
    table 0 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
    table 0 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
    table 4.53 <- results/stage14_needs.csv:2:threshold_C1_hi_J | results/stage15_cross_section.json.A1[6].key~str
-   table 4.56 <- results/stage15_cross_section.json.A1[117].key~str
+   table 4.56 <- results/stage15_cross_section.json.A1[117].key~str | results/stage16_scorecard.json.X[9].runs[2].E_J
    table 2.97 <- results/stage14_needs.csv:6:need_21s_lo_J | results/stage15_cross_section.json.A2_at_measured[31].points[0][0]
    table 6.04 <- results/stage15_cross_section.json.A2_at_measured[4].E_J | results/stage15_table.csv:6:C8_xs_E_J
    table 5.46 <- results/stage15_cross_section.json.A2_at_measured[2].f | results/stage15_table.csv:15:C8_xs_E_J
-   NOT FOUND 5.65  ...] \\ PP-Exp1 & 0 & 0 & (4.53, 4.56] &  & 2.97; 6.04; (5.46, 5.65] \\ PP-Exp2 & (0.00, 1.59] & (3.18, 4.7...
+   table 5.65 <- results/stage16_scorecard.json.N[1].runs[4].E_J | results/stage16_needs.csv:3:hi_J
    table 0.00 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
    table 1.59 <- results/stage14_needs.csv:7:threshold_C1_hi_J | results/stage15_cross_section.json.A2[33].f_star
    table 3.18 <- results/stage14_needs.csv:7:threshold_C2_lo_J | results/stage15_cross_section.json.A1_rows[103].rxn_xs_J
@@ -3986,7 +4278,7 @@ FAILURES:
    table 5.96 <- results/stage14_needs.csv:7:need_21s_lo_J | results/stage15_cross_section.json.A2_at_measured[24].E_J
    table 7.65 <- results/stage15_cross_section.json.A2_at_measured[8].E_J | results/stage15_table.csv:10:C8_xs_E_J
    table 7.42 <- results/stage15_cross_section.json.for_predictions.PT_Exp4_upper.1.05.E_J | results/stage15_table.csv:2:C8_3d_bracket_J
-   table 7.54 <- results/stage15_cross_section.json.A1_rows[80].hot_cross_3d_s
+   table 7.54 <- results/stage15_cross_section.json.A1_rows[80].hot_cross_3d_s | results/stage16_scorecard.json.N[2].runs[4].E_J
    table 0.00 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
    table 0.85 <- results/stage14_needs.csv:8:threshold_C1_hi_J | results/stage15_cross_section.json.A1_rows[7].mean_peak_3d_C
    table 2.56 <- results/stage14_needs.csv:8:threshold_C2_lo_J | results/stage13_twobody.csv:33:lum_mid_J
@@ -3996,21 +4288,21 @@ FAILURES:
    table 0 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
    table 0.00 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
    table 1.82 <- results/stage14_needs.csv:9:threshold_C2_hi_J | results/stage15_cross_section.json.A1_rows[62].E_J
-   table 5.58 <- results/stage15_cross_section.json.A2[7].lo_J
+   table 5.58 <- results/stage15_cross_section.json.A2[7].lo_J | results/stage16_scorecard.json.X[5].runs[3].E_J
    table 5.62 <- results/stage15_cross_section.json.A2[7].hi_J
    table 1.82 <- results/stage14_needs.csv:9:threshold_C2_hi_J | results/stage15_cross_section.json.A1_rows[62].E_J
-   table 6.05 <- results/stage15_table.csv:14:C8_xs_E_J
+   table 6.05 <- results/stage15_table.csv:14:C8_xs_E_J | results/stage16_scorecard.json.N[3].xs_E_J
    table 5.52 <- results/stage15_cross_section.json.A2[12].E_star_J | results/stage15_table.csv:26:C8_xs_E_star_J
-   NOT FOUND 5.65  ...& (0.00, 1.82] & (5.58, 5.62] &  & 1.82; 6.05$^{t}$; (5.52, 5.65] \\ ST-Exp1 & 0 & (0.00, 1.98] & (4.42,...
+   table 5.65 <- results/stage16_scorecard.json.N[1].runs[4].E_J | results/stage16_needs.csv:3:hi_J
    table 0 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
    table 0.00 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
    table 1.98 <- results/stage14_needs.csv:6:need_120s_lo_J | results/stage15_cross_section.json.A1_rows[0].E_J
-   table 4.42 <- results/stage15_cross_section.json.A2[8].lo_J
+   table 4.42 <- results/stage15_cross_section.json.A2[8].lo_J | results/stage16_scorecard.json.X[12].runs[3].E_J
    table 4.44 <- results/stage15_cross_section.json.A1[47].key~str
    table 0 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
    table 1.80 <- results/stage14_needs.csv:11:threshold_C2_lo_J | results/stage15_cross_section.json.A1_rows[121].hot_peak_3d_C
    table 2.70 <- results/stage14_needs.csv:11:threshold_C2_hi_J | results/stage13_skin.csv:16:res_mid
-   table 5.58 <- results/stage15_cross_section.json.A2[7].lo_J
+   table 5.58 <- results/stage15_cross_section.json.A2[7].lo_J | results/stage16_scorecard.json.X[5].runs[3].E_J
    table 5.62 <- results/stage15_cross_section.json.A2[7].hi_J
    broad 4.04 <- results/stage9_paper_numbers.json.part_a.A2.M50_ST_Exp3.C1.E_bracket_J[0]
    table 4.20 <- results/stage15_cross_section.json.A2_at_measured[21].points[1][0] | results/stage15_table.csv:18:C1_E_J
@@ -4027,17 +4319,17 @@ FAILURES:
    table 1.89 <- results/stage14_needs.csv:13:threshold_C2_hi_J | results/stage15_cross_section.json.A1_rows[12].hot_cross_3d_s
    table 5.03 <- results/stage15_cross_section.json.A2[11].lo_J | results/stage15_table.csv:16:C8_xs_E_J
    table 5.06 <- results/stage15_cross_section.json.A2[11].hi_J | results/stage15_table.csv:3:C2_share_of_76.74kJ
-   broad 5.32 <- results/stage8_paper_numbers.json.part_c.0.1.C1.times_s[3] | results/stage9_paper_numbers.json.part_b.360.per_test.M50_PP_Exp2.ft_C1.dtc_df_s | results/stage10_paper_numbers.json.part_a.con120_C2_lo_hcentral.nodes.side_out.window.mean_K
+   table 5.32 <- results/stage16_scorecard.json.N[4].runs[1].E_J | results/stage16_needs.csv:6:lo_J
    table 5.51 <- results/stage15_cross_section.json.A2_at_measured[1].points[0][0] | results/stage15_table.csv:22:C8_xs_E_J
    table 1.18 <- results/stage14_needs.csv:13:need_21s_lo_J | results/stage15_cross_section.json.A1_rows[14].hot_peak_3d_C
    table 5.51 <- results/stage15_cross_section.json.A2_at_measured[1].points[0][0] | results/stage15_table.csv:22:C8_xs_E_J
-   broad 5.32 <- results/stage8_paper_numbers.json.part_c.0.1.C1.times_s[3] | results/stage9_paper_numbers.json.part_b.360.per_test.M50_PP_Exp2.ft_C1.dtc_df_s | results/stage10_paper_numbers.json.part_a.con120_C2_lo_hcentral.nodes.side_out.window.mean_K
+   table 5.32 <- results/stage16_scorecard.json.N[4].runs[1].E_J | results/stage16_needs.csv:6:lo_J
    table 5.51 <- results/stage15_cross_section.json.A2_at_measured[1].points[0][0] | results/stage15_table.csv:22:C8_xs_E_J
    table 0 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
    table 1.82 <- results/stage14_needs.csv:9:threshold_C2_hi_J | results/stage15_cross_section.json.A1_rows[62].E_J
    table 3.63 <- results/stage14_needs.csv:14:threshold_C2_hi_J | results/stage15_cross_section.json.A2_at_measured[20].hi_f
-   table 5.50 <- results/stage15_cross_section.json.A2[7].runs[5][0]
-   table 5.54 <- results/stage15_cross_section.json.A2[12].hi_J
+   table 5.50 <- results/stage15_cross_section.json.A2[7].runs[5][0] | results/stage16_scorecard.json.X[10].runs[2].id~str
+   table 5.54 <- results/stage15_cross_section.json.A2[12].hi_J | results/stage16_scorecard.json.X[5].lo_by_t_J
    table 2.73 <- results/stage14_needs.csv:14:need_21s_lo_J | results/stage15_cross_section.json.A1_rows[109].E_J
    table 5.96 <- results/stage14_needs.csv:7:need_21s_lo_J | results/stage15_cross_section.json.A2_at_measured[24].E_J
    table 5.96 <- results/stage14_needs.csv:7:need_21s_lo_J | results/stage15_cross_section.json.A2_at_measured[24].E_J
@@ -4049,7 +4341,7 @@ FAILURES:
    table 5.08 <- results/stage15_cross_section.json.A2[13].hi_J | results/stage15_table.csv:17:C8_xs_E_star_J
    table 3.78 <- results/stage14_needs.csv:15:need_21s_lo_J | results/stage15_cross_section.json.A1_rows[110].E_J
    table 6.50 <- results/stage15_cross_section.json.A2[1].runs[5][0] | results/stage15_table.csv:30:C8_xs_E_J
-   table 6.33 <- results/stage15_cross_section.json.A2[1].lo_J
+   table 6.33 <- results/stage15_cross_section.json.A2[1].lo_J | results/stage16_scorecard.json.N[5].runs[3].E_J
    table 6.50 <- results/stage15_cross_section.json.A2[1].runs[5][0] | results/stage15_table.csv:30:C8_xs_E_J
    table 0 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
    table 0 <- results/stage14_needs.csv:2:test | results/stage15_cross_section.json.A1[0].archived~str
@@ -4073,7 +4365,7 @@ FAILURES:
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
    table 0.2 <- results/stage15_table.csv:2:C8_3d_t_at_bracket_hi_s | results/stage14_needs.csv:2:trigger_max_C
    traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
-   table 360 <- results/stage15_table.csv:5:delivery
+   table 360 <- results/stage15_table.csv:5:delivery | results/stage16_scorecard.json.X[16].delivery~str
    traced 196.4 <- results/stage15_xs/*.json: M50_ST_Exp3, con over 360 s, the run at the top of the grid, its C8 time (the last point of results/stage15_cross_section.json A2_at_measured) = 196.394
    traced 25.6 <- results/stage15_xs/*.json: M50_ST_Exp3, con over 360 s, the run at the top of the grid, its delivered energy (the last point of results/stage15_cross_section.json A2_at_measured) = 25.6281
    traced 16 <- manuscript/rebuild/data/steps.csv: the step of predictions_stage16.md = 16
@@ -4082,265 +4374,293 @@ FAILURES:
    table 272 <- results/stage15_table.csv:2:t_measured_s | results/stage14_needs.csv:5:time_to_propagation_s
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    table 4.85 <- results/stage15_table.csv:2:C2_E_J | results/stage14_needs.csv:5:need_21s_hi_J
-   table 7.44 <- results/stage15_table.csv:2:C8_xs_E_J
-   table 7.44 <- results/stage15_table.csv:2:C8_xs_E_J
-   table 188.5 <- results/stage15_table.csv:2:C8_xs_t_s
-   table 7.06 <- results/stage15_table.csv:2:C8_xs_E_star_J
-   broad 7.15 <- results/stage15_accounts.json.accounts.acc_PT_Exp4.rows[6].resolved.contact_and_wedge
-   table 120 <- results/stage15_table.csv:3:delivery
+   table 7.44 <- results/stage15_table.csv:2:C8_xs_E_J | results/stage16_scorecard.json.N[0].xs_E_J
+   table 7.44 <- results/stage15_table.csv:2:C8_xs_E_J | results/stage16_scorecard.json.N[0].xs_E_J
+   table 188.5 <- results/stage15_table.csv:2:C8_xs_t_s | results/stage16_scorecard.json.N[0].xs_t_C8_s
+   table 7.06 <- results/stage15_table.csv:2:C8_xs_E_star_J | results/stage16_scorecard.json.N[0].runs[5].E_J
+   table 7.15 <- results/stage16_scorecard.json.N[0].runs[6].E_J | results/stage16_needs.csv:2:hi_J
+   table 120 <- results/stage15_table.csv:3:delivery | results/stage16_scorecard.json.X[8].delivery~str
    table 3.88 <- results/stage15_table.csv:3:C2_E_J | results/stage14_needs.csv:5:need_120s_hi_J
-   table 7.20 <- results/stage15_table.csv:3:C8_xs_E_J
-   table 7.20 <- results/stage15_table.csv:3:C8_xs_E_J
-   table 200.6 <- results/stage15_table.csv:3:C8_xs_t_s
-   table 240 <- results/stage15_table.csv:4:delivery
+   table 7.20 <- results/stage15_table.csv:3:C8_xs_E_J | results/stage16_scorecard.json.N[2].runs[2].E_J
+   table 7.20 <- results/stage15_table.csv:3:C8_xs_E_J | results/stage16_scorecard.json.N[2].runs[2].E_J
+   table 200.6 <- results/stage15_table.csv:3:C8_xs_t_s | results/stage16_scorecard.json.X[8].xs_t_C8_s
+   table 6.57 <- results/stage15_table.csv:5:C2_share_of_76.74kJ | results/stage16_scorecard.json.X[8].runs[4].E_J
+   table 6.68 <- results/stage16_scorecard.json.X[8].runs[5].E_J | results/stage16_needs.csv:18:hi_J
+   table 240 <- results/stage15_table.csv:4:delivery | results/stage16_scorecard.json.X[0].delivery~str
    table 3.49 <- results/stage15_table.csv:4:C2_E_J | results/stage14_needs.csv:5:need_120s_lo_J
-   table 6.77 <- results/stage15_table.csv:4:C8_xs_E_J
-   table 6.77 <- results/stage15_table.csv:4:C8_xs_E_J
-   table 271.4 <- results/stage15_table.csv:4:C2_t_s
-   table 360 <- results/stage15_table.csv:5:delivery
-   table 3.76 <- results/stage15_table.csv:5:C2_E_by_t_J
-   table 7.28 <- results/stage15_table.csv:5:C8_xs_E_by_t_J
-   table 9.39 <- results/stage15_table.csv:5:C8_xs_E_J
-   table 278.9 <- results/stage15_table.csv:5:C8_xs_t_s
+   table 6.77 <- results/stage15_table.csv:4:C8_xs_E_J | results/stage16_scorecard.json.X[0].xs_E_J
+   table 6.77 <- results/stage15_table.csv:4:C8_xs_E_J | results/stage16_scorecard.json.X[0].xs_E_J
+   table 271.4 <- results/stage15_table.csv:4:C2_t_s | results/stage16_scorecard.json.X[0].xs_t_C8_s
+   table 6.40 <- results/stage15_table.csv:4:C8_xs_E_star_J | results/stage16_scorecard.json.X[0].runs[5].E_J
+   table 6.50 <- results/stage15_table.csv:30:C8_xs_E_J | results/stage16_scorecard.json.N[6].xs_E_J
+   table 360 <- results/stage15_table.csv:5:delivery | results/stage16_scorecard.json.X[16].delivery~str
+   table 3.76 <- results/stage15_table.csv:5:C2_E_by_t_J | results/stage16_scorecard.json.X[16].lumped_E_by_t_J
+   table 7.28 <- results/stage15_table.csv:5:C8_xs_E_by_t_J | results/stage16_scorecard.json.X[16].xs_E_by_t_J
+   table 9.39 <- results/stage15_table.csv:5:C8_xs_E_J | results/stage16_scorecard.json.X[16].xs_E_J
+   table 278.9 <- results/stage15_table.csv:5:C8_xs_t_s | results/stage16_scorecard.json.X[16].xs_t_C8_s
    table 152 <- results/stage15_table.csv:6:t_measured_s | results/stage14_needs.csv:6:time_to_propagation_s
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    table 2.97 <- results/stage15_table.csv:6:C2_E_J | results/stage14_needs.csv:6:need_21s_lo_J
-   table 6.04 <- results/stage15_table.csv:6:C8_xs_E_J
-   table 6.04 <- results/stage15_table.csv:6:C8_xs_E_J
-   table 156.3 <- results/stage15_table.csv:6:C8_xs_t_s
-   table 5.46 <- results/stage15_table.csv:15:C8_xs_E_J
-   NOT FOUND 5.65  ... & 152 & 21.4~s pulse & 2.97 & 6.04 & 6.04 & 156.3 & (5.46, 5.65] \\  &  & 120~s power & 1.98 & 5.42 & 5...
-   table 120 <- results/stage15_table.csv:3:delivery
+   table 6.04 <- results/stage15_table.csv:6:C8_xs_E_J | results/stage16_scorecard.json.N[1].xs_E_J
+   table 6.04 <- results/stage15_table.csv:6:C8_xs_E_J | results/stage16_scorecard.json.N[1].xs_E_J
+   table 156.3 <- results/stage15_table.csv:6:C8_xs_t_s | results/stage16_scorecard.json.N[1].xs_t_C8_s
+   table 5.46 <- results/stage15_table.csv:15:C8_xs_E_J | results/stage16_scorecard.json.N[1].runs[3].E_J
+   table 5.65 <- results/stage16_scorecard.json.N[1].runs[4].E_J | results/stage16_needs.csv:3:hi_J
+   table 120 <- results/stage15_table.csv:3:delivery | results/stage16_scorecard.json.X[8].delivery~str
    table 1.98 <- results/stage15_table.csv:7:C2_E_J | results/stage14_needs.csv:6:need_120s_lo_J
-   table 5.42 <- results/stage15_table.csv:7:C8_xs_E_J
-   table 5.42 <- results/stage15_table.csv:7:C8_xs_E_J
-   table 161.5 <- results/stage15_table.csv:7:C8_xs_t_s
-   table 240 <- results/stage15_table.csv:4:delivery
-   table 2.42 <- results/stage15_table.csv:8:C2_E_by_t_J
-   table 6.00 <- results/stage15_table.csv:2:C2_stage14_paths
-   table 9.49 <- results/stage15_table.csv:8:C8_xs_E_J
-   table 151.7 <- results/stage15_table.csv:8:C8_xs_t_s
-   table 360 <- results/stage15_table.csv:5:delivery
-   table 2.42 <- results/stage15_table.csv:8:C2_E_by_t_J
-   table 5.94 <- results/stage15_table.csv:9:C8_xs_E_by_t_J
-   table 13.84 <- results/stage15_table.csv:9:C8_xs_E_J
-   table 154.4 <- results/stage15_table.csv:9:C8_xs_t_s
+   table 5.42 <- results/stage15_table.csv:7:C8_xs_E_J | results/stage16_scorecard.json.X[9].xs_E_J
+   table 5.42 <- results/stage15_table.csv:7:C8_xs_E_J | results/stage16_scorecard.json.X[9].xs_E_J
+   table 161.5 <- results/stage15_table.csv:7:C8_xs_t_s | results/stage16_scorecard.json.X[9].xs_t_C8_s
+   table 4.88 <- results/stage16_scorecard.json.X[9].runs[4].E_J | results/stage16_needs.csv:19:lo_J
+   table 4.99 <- results/stage16_scorecard.json.N[3].runs[2].E_J | results/stage16_needs.csv:19:hi_J
+   table 240 <- results/stage15_table.csv:4:delivery | results/stage16_scorecard.json.X[0].delivery~str
+   table 2.42 <- results/stage15_table.csv:8:C2_E_by_t_J | results/stage16_scorecard.json.X[1].lumped_E_by_t_J
+   table 6.00 <- results/stage15_table.csv:2:C2_stage14_paths | results/stage16_scorecard.json.N[1].n_runs_counted
+   table 9.49 <- results/stage15_table.csv:8:C8_xs_E_J | results/stage16_scorecard.json.X[1].xs_E_J
+   table 151.7 <- results/stage15_table.csv:8:C8_xs_t_s | results/stage16_scorecard.json.X[1].xs_t_C8_s
+   table 5.12 <- results/stage16_scorecard.json.X[1].lo_by_t_J | results/stage16_needs.csv:11:lo_by_t_J
+   table 5.24 <- results/stage16_scorecard.json.X[1].hi_by_t_J | results/stage16_needs.csv:11:hi_by_t_J
+   table 360 <- results/stage15_table.csv:5:delivery | results/stage16_scorecard.json.X[16].delivery~str
+   table 2.42 <- results/stage15_table.csv:8:C2_E_by_t_J | results/stage16_scorecard.json.X[1].lumped_E_by_t_J
+   table 5.94 <- results/stage15_table.csv:9:C8_xs_E_by_t_J | results/stage16_scorecard.json.X[2].runs[0].id~str
+   table 13.84 <- results/stage15_table.csv:9:C8_xs_E_J | results/stage16_scorecard.json.X[17].xs_E_J
+   table 154.4 <- results/stage15_table.csv:9:C8_xs_t_s | results/stage16_scorecard.json.X[2].xs_t_C8_s
    table 147 <- results/stage15_table.csv:8:C2_t_s | results/stage14_needs.csv:7:time_to_propagation_s
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    table 5.96 <- results/stage15_table.csv:10:C2_E_J | results/stage14_needs.csv:7:need_21s_lo_J
-   table 7.65 <- results/stage15_table.csv:10:C8_xs_E_J
-   table 7.65 <- results/stage15_table.csv:10:C8_xs_E_J
-   table 148.4 <- results/stage15_table.csv:10:C8_xs_t_s
-   table 7.42 <- results/stage15_table.csv:2:C8_3d_bracket_J
-   broad 7.54 <- results/stage15_cross_section.json.A1_rows[80].hot_cross_3d_s | results/stage15_accounts.json.accounts.acc_PP_Exp3.rows[11].lumped.stored
-   table 120 <- results/stage15_table.csv:3:delivery
+   table 7.65 <- results/stage15_table.csv:10:C8_xs_E_J | results/stage16_scorecard.json.N[2].xs_E_J
+   table 7.65 <- results/stage15_table.csv:10:C8_xs_E_J | results/stage16_scorecard.json.N[2].xs_E_J
+   table 148.4 <- results/stage15_table.csv:10:C8_xs_t_s | results/stage16_scorecard.json.N[2].xs_t_C8_s
+   table 7.42 <- results/stage15_table.csv:2:C8_3d_bracket_J | results/stage16_scorecard.json.N[0].runs[8].E_J
+   table 7.54 <- results/stage16_scorecard.json.N[2].runs[4].E_J | results/stage16_needs.csv:4:hi_J
+   table 120 <- results/stage15_table.csv:3:delivery | results/stage16_scorecard.json.X[8].delivery~str
    table 4.77 <- results/stage15_table.csv:11:C2_E_J | results/stage14_needs.csv:7:threshold_C2_hi_J
-   table 7.74 <- results/stage15_table.csv:11:C8_xs_E_J
-   table 7.74 <- results/stage15_table.csv:11:C8_xs_E_J
-   table 143.7 <- results/stage15_table.csv:11:C8_xs_t_s
-   table 240 <- results/stage15_table.csv:4:delivery
+   table 7.74 <- results/stage15_table.csv:11:C8_xs_E_J | results/stage16_scorecard.json.X[10].xs_E_J
+   table 7.74 <- results/stage15_table.csv:11:C8_xs_E_J | results/stage16_scorecard.json.X[10].xs_E_J
+   table 143.7 <- results/stage15_table.csv:11:C8_xs_t_s | results/stage16_scorecard.json.X[10].xs_t_C8_s
+   table 7.09 <- results/stage15_table.csv:33:C2_E_J | results/stage14_needs.csv:15:need_360s_lo_J
+   table 7.19 <- results/stage16_scorecard.json.X[10].runs[4].E_J | results/stage16_needs.csv:20:hi_J
+   table 240 <- results/stage15_table.csv:4:delivery | results/stage16_scorecard.json.X[0].delivery~str
    table 4.85 <- results/stage15_table.csv:2:C2_E_J | results/stage14_needs.csv:5:need_21s_hi_J
-   table 8.04 <- results/stage15_table.csv:12:C8_xs_E_by_t_J
-   table 12.50 <- results/stage15_table.csv:12:C8_xs_E_J
-   table 154.4 <- results/stage15_table.csv:9:C8_xs_t_s
-   table 360 <- results/stage15_table.csv:5:delivery
-   table 5.33 <- results/stage15_table.csv:13:C2_E_by_t_J
-   table 8.12 <- results/stage15_table.csv:13:C8_xs_E_by_t_J
-   table 19.52 <- results/stage15_table.csv:13:C8_xs_E_J
-   table 149.7 <- results/stage15_table.csv:13:C8_xs_t_s
+   table 8.04 <- results/stage15_table.csv:12:C8_xs_E_by_t_J | results/stage16_scorecard.json.X[2].xs_E_by_t_J
+   table 12.50 <- results/stage15_table.csv:12:C8_xs_E_J | results/stage16_scorecard.json.X[2].xs_E_J
+   table 154.4 <- results/stage15_table.csv:9:C8_xs_t_s | results/stage16_scorecard.json.X[2].xs_t_C8_s
+   table 7.57 <- results/stage16_scorecard.json.X[2].lo_by_t_J | results/stage16_needs.csv:12:lo_by_t_J
+   table 7.67 <- results/stage16_scorecard.json.X[1].mid_J | results/stage16_needs.csv:11:mid_J
+   table 360 <- results/stage15_table.csv:5:delivery | results/stage16_scorecard.json.X[16].delivery~str
+   table 5.33 <- results/stage15_table.csv:13:C2_E_by_t_J | results/stage16_scorecard.json.X[5].runs[2].E_J
+   table 8.12 <- results/stage15_table.csv:13:C8_xs_E_by_t_J | results/stage16_scorecard.json.X[18].xs_E_by_t_J
+   table 19.52 <- results/stage15_table.csv:13:C8_xs_E_J | results/stage16_scorecard.json.X[18].xs_E_J
+   table 149.7 <- results/stage15_table.csv:13:C8_xs_t_s | results/stage16_scorecard.json.X[18].xs_t_C8_s
    table 275 <- results/stage15_table.csv:14:t_measured_s | results/stage14_needs.csv:9:time_to_propagation_s
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    table 1.82 <- results/stage15_table.csv:14:C2_E_J | results/stage14_needs.csv:9:threshold_C2_hi_J
-   table 6.05 <- results/stage15_table.csv:14:C8_xs_E_J
-   table 6.05 <- results/stage15_table.csv:14:C8_xs_E_J
-   table 216.9 <- results/stage15_table.csv:14:C8_xs_t_s
-   table 5.52 <- results/stage15_table.csv:26:C8_xs_E_star_J
-   NOT FOUND 5.65  ... & 21.4~s pulse & 1.82 & 6.05$^{t}$ & 6.05 & 216.9 & (5.52, 5.65] \\  &  & 120~s power & 1.46$^{b}$ & 5....
-   table 120 <- results/stage15_table.csv:3:delivery
+   table 6.05 <- results/stage15_table.csv:14:C8_xs_E_J | results/stage16_scorecard.json.N[3].xs_E_J
+   table 6.05 <- results/stage15_table.csv:14:C8_xs_E_J | results/stage16_scorecard.json.N[3].xs_E_J
+   table 216.9 <- results/stage15_table.csv:14:C8_xs_t_s | results/stage16_scorecard.json.N[3].xs_t_C8_s
+   table 5.52 <- results/stage15_table.csv:26:C8_xs_E_star_J | results/stage16_scorecard.json.N[3].runs[3].E_J
+   table 5.65 <- results/stage16_scorecard.json.N[1].runs[4].E_J | results/stage16_needs.csv:3:hi_J
+   table 120 <- results/stage15_table.csv:3:delivery | results/stage16_scorecard.json.X[8].delivery~str
    table 1.46 <- results/stage15_table.csv:15:C2_E_J | results/stage14_needs.csv:9:need_120s_lo_J
-   table 5.46 <- results/stage15_table.csv:15:C8_xs_E_J
-   table 5.46 <- results/stage15_table.csv:15:C8_xs_E_J
-   table 228.4 <- results/stage15_table.csv:15:C8_xs_t_s
-   table 240 <- results/stage15_table.csv:4:delivery
+   table 5.46 <- results/stage15_table.csv:15:C8_xs_E_J | results/stage16_scorecard.json.N[1].runs[3].E_J
+   table 5.46 <- results/stage15_table.csv:15:C8_xs_E_J | results/stage16_scorecard.json.N[1].runs[3].E_J
+   table 228.4 <- results/stage15_table.csv:15:C8_xs_t_s | results/stage16_scorecard.json.X[11].xs_t_C8_s
+   table 4.71 <- results/stage16_scorecard.json.X[11].runs[3].E_J | results/stage16_needs.csv:21:lo_J
+   table 4.84 <- results/stage16_scorecard.json.X[11].runs[4].E_J | results/stage16_needs.csv:21:hi_J
+   table 240 <- results/stage15_table.csv:4:delivery | results/stage16_scorecard.json.X[0].delivery~str
    table 1.36 <- results/stage15_table.csv:16:C2_E_J | results/stage14_needs.csv:9:need_240s_hi_J
-   table 5.03 <- results/stage15_table.csv:16:C8_xs_E_J
-   table 5.03 <- results/stage15_table.csv:16:C8_xs_E_J
-   table 272.8 <- results/stage15_table.csv:16:C8_xs_t_s
-   table 360 <- results/stage15_table.csv:5:delivery
-   table 1.39 <- results/stage15_table.csv:17:C2_E_by_t_J
-   table 5.40 <- results/stage15_table.csv:17:C8_xs_E_by_t_J
-   table 6.91 <- results/stage15_table.csv:17:C8_xs_E_J
-   table 281.3 <- results/stage15_table.csv:17:C8_xs_t_s
+   table 5.03 <- results/stage15_table.csv:16:C8_xs_E_J | results/stage16_scorecard.json.X[3].xs_E_J
+   table 5.03 <- results/stage15_table.csv:16:C8_xs_E_J | results/stage16_scorecard.json.X[3].xs_E_J
+   table 272.8 <- results/stage15_table.csv:16:C8_xs_t_s | results/stage16_scorecard.json.X[3].xs_t_C8_s
+   table 4.48 <- results/stage15_table.csv:24:C8_xs_E_J | results/stage16_scorecard.json.X[3].runs[1].E_J
+   table 4.66 <- results/stage15_table.csv:11:C1_share_of_76.74kJ | results/stage14_needs.csv:5:threshold_C2_lo_J
+   table 360 <- results/stage15_table.csv:5:delivery | results/stage16_scorecard.json.X[16].delivery~str
+   table 1.39 <- results/stage15_table.csv:17:C2_E_by_t_J | results/stage16_scorecard.json.X[19].lumped_E_by_t_J
+   table 5.40 <- results/stage15_table.csv:17:C8_xs_E_by_t_J | results/stage16_scorecard.json.X[13].xs_E_J
+   table 6.91 <- results/stage15_table.csv:17:C8_xs_E_J | results/stage16_scorecard.json.X[19].xs_E_J
+   table 281.3 <- results/stage15_table.csv:17:C8_xs_t_s | results/stage16_scorecard.json.X[19].xs_t_C8_s
    table 177 <- results/stage15_table.csv:18:t_measured_s | results/stage14_needs.csv:12:time_to_propagation_s
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    table 12.11 <- results/stage15_table.csv:18:C2_E_J | results/stage14_needs.csv:12:need_21s_hi_J
    table 10.31 <- results/stage15_table.csv:18:C8_xs_E_J
    table 10.31 <- results/stage15_table.csv:18:C8_xs_E_J
    table 114.0 <- results/stage15_table.csv:18:C8_xs_t_at_E_star_hi_s
-   table 120 <- results/stage15_table.csv:3:delivery
+   table 120 <- results/stage15_table.csv:3:delivery | results/stage16_scorecard.json.X[8].delivery~str
    table 11.47 <- results/stage15_table.csv:19:C2_E_J | results/stage14_needs.csv:12:need_120s_hi_J
    table 12.55 <- results/stage15_table.csv:19:C8_xs_E_J
    table 12.55 <- results/stage15_table.csv:19:C8_xs_E_J
    table 160.1 <- results/stage15_table.csv:19:C8_xs_t_s
-   table 240 <- results/stage15_table.csv:4:delivery
+   table 240 <- results/stage15_table.csv:4:delivery | results/stage16_scorecard.json.X[0].delivery~str
    table 12.26 <- results/stage15_table.csv:20:C2_E_by_t_J
-   table 13.84 <- results/stage15_table.csv:9:C8_xs_E_J
+   table 13.84 <- results/stage15_table.csv:9:C8_xs_E_J | results/stage16_scorecard.json.X[17].xs_E_J
    table 18.77 <- results/stage15_table.csv:20:C8_xs_E_J
    table 177.0 <- results/stage15_table.csv:18:t_measured_s | results/stage14_needs.csv:12:time_to_propagation_s
-   table 360 <- results/stage15_table.csv:5:delivery
+   table 360 <- results/stage15_table.csv:5:delivery | results/stage16_scorecard.json.X[16].delivery~str
    table 12.25 <- results/stage15_table.csv:21:C2_E_by_t_J
    table 342 <- results/stage15_table.csv:22:t_measured_s | results/stage14_needs.csv:13:time_to_propagation_s
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    table 1.18 <- results/stage15_table.csv:10:C1_E_by_t_J | results/stage14_needs.csv:13:need_21s_lo_J
-   table 5.51 <- results/stage15_table.csv:22:C8_xs_E_J
-   table 5.51 <- results/stage15_table.csv:22:C8_xs_E_J
-   table 231.8 <- results/stage15_table.csv:22:C8_xs_t_s
-   broad 5.32 <- results/stage8_paper_numbers.json.part_c.0.1.C1.times_s[3] | results/stage9_paper_numbers.json.part_b.360.per_test.M50_PP_Exp2.ft_C1.dtc_df_s | results/stage10_paper_numbers.json.part_a.con120_C2_lo_hcentral.nodes.side_out.window.mean_K
-   table 5.51 <- results/stage15_table.csv:22:C8_xs_E_J
-   table 120 <- results/stage15_table.csv:3:delivery
+   table 5.51 <- results/stage15_table.csv:22:C8_xs_E_J | results/stage16_scorecard.json.N[4].xs_E_J
+   table 5.51 <- results/stage15_table.csv:22:C8_xs_E_J | results/stage16_scorecard.json.N[4].xs_E_J
+   table 231.8 <- results/stage15_table.csv:22:C8_xs_t_s | results/stage16_scorecard.json.N[4].xs_t_C8_s
+   table 5.32 <- results/stage16_scorecard.json.N[4].runs[1].E_J | results/stage16_needs.csv:6:lo_J
+   table 5.51 <- results/stage15_table.csv:22:C8_xs_E_J | results/stage16_scorecard.json.N[4].xs_E_J
+   table 120 <- results/stage15_table.csv:3:delivery | results/stage16_scorecard.json.X[8].delivery~str
    table 0.95 <- results/stage15_table.csv:23:C2_E_J | results/stage14_needs.csv:13:need_120s_lo_J
-   table 4.92 <- results/stage15_table.csv:23:C8_xs_E_J
-   table 4.92 <- results/stage15_table.csv:23:C8_xs_E_J
-   table 233.7 <- results/stage15_table.csv:23:C8_xs_t_s
-   table 240 <- results/stage15_table.csv:4:delivery
+   table 4.92 <- results/stage15_table.csv:23:C8_xs_E_J | results/stage16_scorecard.json.X[10].runs[1].id~str
+   table 4.92 <- results/stage15_table.csv:23:C8_xs_E_J | results/stage16_scorecard.json.X[10].runs[1].id~str
+   table 233.7 <- results/stage15_table.csv:23:C8_xs_t_s | results/stage16_scorecard.json.X[12].xs_t_C8_s
+   table 4.55 <- results/stage15_table.csv:4:C2_share_of_76.74kJ | results/stage16_scorecard.json.X[12].runs[4].E_J
+   table 4.67 <- results/stage16_scorecard.json.X[1].runs[2].id~str | results/stage16_needs.csv:22:hi_J
+   table 240 <- results/stage15_table.csv:4:delivery | results/stage16_scorecard.json.X[0].delivery~str
    table 0.95 <- results/stage15_table.csv:23:C2_E_J | results/stage14_needs.csv:13:need_120s_lo_J
-   table 4.48 <- results/stage15_table.csv:24:C8_xs_E_J
-   table 4.48 <- results/stage15_table.csv:24:C8_xs_E_J
-   table 272.6 <- results/stage15_table.csv:24:C8_xs_t_s
-   table 360 <- results/stage15_table.csv:5:delivery
-   table 1.08 <- results/stage15_table.csv:25:C2_E_by_t_J
-   table 4.74 <- results/stage15_table.csv:25:C8_xs_E_by_t_J
-   table 4.92 <- results/stage15_table.csv:23:C8_xs_E_J
-   table 347.1 <- results/stage15_table.csv:25:C8_xs_t_s
+   table 4.48 <- results/stage15_table.csv:24:C8_xs_E_J | results/stage16_scorecard.json.X[3].runs[1].E_J
+   table 4.48 <- results/stage15_table.csv:24:C8_xs_E_J | results/stage16_scorecard.json.X[3].runs[1].E_J
+   table 272.6 <- results/stage15_table.csv:24:C8_xs_t_s | results/stage16_scorecard.json.X[4].xs_t_C8_s
+   table 4.10 <- results/stage16_scorecard.json.N[5].runs[1].id~str | results/stage16_needs.csv:7:lo_id
+   table 4.29 <- results/stage16_scorecard.json.N[6].runs[5].id~str | results/stage16_needs.csv:8:hi_id
+   table 360 <- results/stage15_table.csv:5:delivery | results/stage16_scorecard.json.X[16].delivery~str
+   table 1.08 <- results/stage15_table.csv:25:C2_E_by_t_J | results/stage16_scorecard.json.X[20].lumped_E_by_t_J
+   table 4.74 <- results/stage15_table.csv:25:C8_xs_E_by_t_J | results/stage16_scorecard.json.X[20].xs_E_by_t_J
+   table 4.92 <- results/stage15_table.csv:23:C8_xs_E_J | results/stage16_scorecard.json.X[10].runs[1].id~str
+   table 347.1 <- results/stage15_table.csv:25:C8_xs_t_s | results/stage16_scorecard.json.X[20].xs_t_C8_s
    table 223 <- results/stage15_table.csv:26:t_measured_s | results/stage14_needs.csv:14:time_to_propagation_s
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    table 2.73 <- results/stage15_table.csv:26:C2_E_J | results/stage14_needs.csv:14:need_21s_lo_J
    table 5.96 <- results/stage15_table.csv:10:C2_E_J | results/stage14_needs.csv:7:need_21s_lo_J
    table 5.96 <- results/stage15_table.csv:10:C2_E_J | results/stage14_needs.csv:7:need_21s_lo_J
-   table 223.2 <- results/stage15_table.csv:26:C8_xs_t_s
+   table 223.2 <- results/stage15_table.csv:26:C8_xs_t_s | results/stage16_scorecard.json.N[5].xs_t_C8_s
    table 5.96 <- results/stage15_table.csv:10:C2_E_J | results/stage14_needs.csv:7:need_21s_lo_J
-   table 6.15 <- results/stage14_needs.csv:17:threshold_C2_hi_J
-   table 120 <- results/stage15_table.csv:3:delivery
+   table 6.15 <- results/stage14_needs.csv:17:threshold_C2_hi_J | results/stage16_scorecard.json.N[5].runs[2].E_J
+   table 120 <- results/stage15_table.csv:3:delivery | results/stage16_scorecard.json.X[8].delivery~str
    table 2.17 <- results/stage15_table.csv:27:C2_E_J | results/stage14_needs.csv:14:need_120s_lo_J
-   table 5.40 <- results/stage15_table.csv:17:C8_xs_E_by_t_J
-   table 5.40 <- results/stage15_table.csv:17:C8_xs_E_by_t_J
-   table 230.1 <- results/stage15_table.csv:27:C8_xs_t_s
-   table 240 <- results/stage15_table.csv:4:delivery
-   table 2.12 <- results/stage15_table.csv:28:C2_E_by_t_J
-   table 5.78 <- results/stage15_table.csv:28:C8_xs_E_by_t_J
-   table 6.35 <- results/stage15_table.csv:28:C8_xs_E_J
+   table 5.40 <- results/stage15_table.csv:17:C8_xs_E_by_t_J | results/stage16_scorecard.json.X[13].xs_E_J
+   table 5.40 <- results/stage15_table.csv:17:C8_xs_E_by_t_J | results/stage16_scorecard.json.X[13].xs_E_J
+   table 230.1 <- results/stage15_table.csv:27:C8_xs_t_s | results/stage16_scorecard.json.X[13].xs_t_C8_s
+   table 5.30 <- results/stage15_table.csv:35:C8_xs_share_of_76.74kJ | results/stage16_scorecard.json.X[13].runs[5].E_J
+   table 5.40 <- results/stage15_table.csv:17:C8_xs_E_by_t_J | results/stage16_scorecard.json.X[13].xs_E_J
+   table 240 <- results/stage15_table.csv:4:delivery | results/stage16_scorecard.json.X[0].delivery~str
+   table 2.12 <- results/stage15_table.csv:28:C2_E_by_t_J | results/stage16_scorecard.json.X[5].lumped_E_by_t_J
+   table 5.78 <- results/stage15_table.csv:28:C8_xs_E_by_t_J | results/stage16_scorecard.json.N[3].runs[5].E_J
+   table 6.35 <- results/stage15_table.csv:28:C8_xs_E_J | results/stage16_scorecard.json.X[5].xs_E_J
    table 218.7 <- results/stage15_table.csv:28:C8_xs_t_s | results/stage14_needs.csv:16:need_120s_lo_J
-   table 360 <- results/stage15_table.csv:5:delivery
-   table 2.19 <- results/stage15_table.csv:29:C2_E_by_t_J
-   table 5.79 <- results/stage15_table.csv:29:C8_xs_E_by_t_J
-   table 9.56 <- results/stage15_table.csv:29:C8_xs_E_J
-   table 218.1 <- results/stage15_table.csv:29:C8_xs_t_s
+   table 5.54 <- results/stage16_scorecard.json.X[5].lo_by_t_J | results/stage16_needs.csv:15:lo_by_t_J
+   table 5.67 <- results/stage16_scorecard.json.X[5].hi_by_t_J | results/stage16_needs.csv:15:hi_by_t_J
+   table 360 <- results/stage15_table.csv:5:delivery | results/stage16_scorecard.json.X[16].delivery~str
+   table 2.19 <- results/stage15_table.csv:29:C2_E_by_t_J | results/stage16_scorecard.json.X[21].lumped_E_by_t_J
+   table 5.79 <- results/stage15_table.csv:29:C8_xs_E_by_t_J | results/stage16_scorecard.json.X[21].xs_E_by_t_J
+   table 9.56 <- results/stage15_table.csv:29:C8_xs_E_J | results/stage16_scorecard.json.X[21].xs_E_J
+   table 218.1 <- results/stage15_table.csv:29:C8_xs_t_s | results/stage16_scorecard.json.X[21].xs_t_C8_s
    table 149 <- results/stage15_table.csv:11:C2_t_s | results/stage14_needs.csv:15:time_to_propagation_s
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    table 3.78 <- results/stage15_table.csv:30:C2_E_J | results/stage14_needs.csv:15:need_21s_lo_J
-   table 6.50 <- results/stage15_table.csv:30:C8_xs_E_J
-   table 6.50 <- results/stage15_table.csv:30:C8_xs_E_J
-   table 148.6 <- results/stage15_table.csv:30:C8_xs_t_s
-   broad 6.33 <- results/stage15_cross_section.json.A2[1].lo_J
-   table 6.50 <- results/stage15_table.csv:30:C8_xs_E_J
-   table 120 <- results/stage15_table.csv:3:delivery
+   table 6.50 <- results/stage15_table.csv:30:C8_xs_E_J | results/stage16_scorecard.json.N[6].xs_E_J
+   table 6.50 <- results/stage15_table.csv:30:C8_xs_E_J | results/stage16_scorecard.json.N[6].xs_E_J
+   table 148.6 <- results/stage15_table.csv:30:C8_xs_t_s | results/stage16_scorecard.json.N[6].xs_t_C8_s
+   table 6.33 <- results/stage16_scorecard.json.N[5].runs[3].E_J | results/stage16_needs.csv:8:lo_J
+   table 6.50 <- results/stage15_table.csv:30:C8_xs_E_J | results/stage16_scorecard.json.N[6].xs_E_J
+   table 120 <- results/stage15_table.csv:3:delivery | results/stage16_scorecard.json.X[8].delivery~str
    table 2.84 <- results/stage15_table.csv:31:C2_E_J | results/stage14_needs.csv:15:need_120s_lo_J
-   table 5.88 <- results/stage15_table.csv:31:C8_xs_E_J
-   table 5.88 <- results/stage15_table.csv:31:C8_xs_E_J
+   table 5.88 <- results/stage15_table.csv:31:C8_xs_E_J | results/stage16_scorecard.json.X[14].xs_E_J
+   table 5.88 <- results/stage15_table.csv:31:C8_xs_E_J | results/stage16_scorecard.json.X[14].xs_E_J
    table 158.7 <- results/stage15_table.csv:19:C2_t_s | results/stage14_needs.csv:10:E_e_J
-   table 240 <- results/stage15_table.csv:4:delivery
-   table 3.40 <- results/stage15_table.csv:32:C2_E_by_t_J
-   table 6.32 <- results/stage15_table.csv:2:C2_share_of_76.74kJ
-   table 9.70 <- results/stage15_table.csv:2:C8_xs_share_of_76.74kJ
-   table 156.4 <- results/stage15_table.csv:32:C8_xs_t_s
-   table 360 <- results/stage15_table.csv:5:delivery
-   table 3.04 <- results/stage15_table.csv:33:C2_E_by_t_J
-   table 6.50 <- results/stage15_table.csv:30:C8_xs_E_J
-   table 15.84 <- results/stage15_table.csv:33:C8_xs_E_J
-   table 147.7 <- results/stage15_table.csv:33:C8_xs_t_s
+   table 240 <- results/stage15_table.csv:4:delivery | results/stage16_scorecard.json.X[0].delivery~str
+   table 3.40 <- results/stage15_table.csv:32:C2_E_by_t_J | results/stage16_scorecard.json.N[6].runs[1].id~str
+   table 6.32 <- results/stage15_table.csv:2:C2_share_of_76.74kJ | results/stage16_scorecard.json.X[6].xs_E_by_t_J
+   table 9.70 <- results/stage15_table.csv:2:C8_xs_share_of_76.74kJ | results/stage16_scorecard.json.X[6].xs_E_J
+   table 156.4 <- results/stage15_table.csv:32:C8_xs_t_s | results/stage16_scorecard.json.X[6].xs_t_C8_s
+   table 6.09 <- results/stage16_scorecard.json.X[6].lo_by_t_J | results/stage16_needs.csv:16:lo_by_t_J
+   table 6.18 <- results/stage16_scorecard.json.X[6].hi_by_t_J | results/stage16_needs.csv:16:hi_by_t_J
+   table 360 <- results/stage15_table.csv:5:delivery | results/stage16_scorecard.json.X[16].delivery~str
+   table 3.04 <- results/stage15_table.csv:33:C2_E_by_t_J | results/stage16_scorecard.json.X[22].lumped_E_by_t_J
+   table 6.50 <- results/stage15_table.csv:30:C8_xs_E_J | results/stage16_scorecard.json.N[6].xs_E_J
+   table 15.84 <- results/stage15_table.csv:33:C8_xs_E_J | results/stage16_scorecard.json.X[22].xs_E_J
+   table 147.7 <- results/stage15_table.csv:33:C8_xs_t_s | results/stage16_scorecard.json.X[22].xs_t_C8_s
    table 210 <- results/stage15_table.csv:34:t_measured_s | results/stage14_needs.csv:16:time_to_propagation_s
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    table 0.26 <- results/stage15_table.csv:4:C1_t_s | results/stage14_needs.csv:16:need_21s_lo_J
-   table 4.58 <- results/stage15_table.csv:16:C8_xs_E_star_J
-   table 4.58 <- results/stage15_table.csv:16:C8_xs_E_star_J
-   table 209.9 <- results/stage15_table.csv:34:C8_xs_t_s
-   table 4.45 <- results/stage15_table.csv:23:C8_xs_E_star_J
-   table 4.58 <- results/stage15_table.csv:16:C8_xs_E_star_J
-   table 120 <- results/stage15_table.csv:3:delivery
+   table 4.58 <- results/stage15_table.csv:16:C8_xs_E_star_J | results/stage16_scorecard.json.N[7].xs_E_J
+   table 4.58 <- results/stage15_table.csv:16:C8_xs_E_star_J | results/stage16_scorecard.json.N[7].xs_E_J
+   table 209.9 <- results/stage15_table.csv:34:C8_xs_t_s | results/stage16_scorecard.json.N[7].xs_t_C8_s
+   table 4.45 <- results/stage15_table.csv:23:C8_xs_E_star_J | results/stage16_scorecard.json.N[7].runs[6].E_J
+   table 4.58 <- results/stage15_table.csv:16:C8_xs_E_star_J | results/stage16_scorecard.json.N[7].xs_E_J
+   table 120 <- results/stage15_table.csv:3:delivery | results/stage16_scorecard.json.X[8].delivery~str
    table 0.22 <- results/stage15_table.csv:14:C8_xs_t_s | results/stage14_needs.csv:14:time_to_propagation_s
-   table 4.06 <- results/stage15_table.csv:34:C8_3d_bracket_J
-   table 4.06 <- results/stage15_table.csv:34:C8_3d_bracket_J
-   table 201.9 <- results/stage15_table.csv:35:C8_xs_t_s
-   table 240 <- results/stage15_table.csv:4:delivery
-   table 0.23 <- results/stage15_table.csv:15:C8_xs_t_s
+   table 4.06 <- results/stage15_table.csv:34:C8_3d_bracket_J | results/stage16_scorecard.json.N[0].runs[3].id~str
+   table 4.06 <- results/stage15_table.csv:34:C8_3d_bracket_J | results/stage16_scorecard.json.N[0].runs[3].id~str
+   table 201.9 <- results/stage15_table.csv:35:C8_xs_t_s | results/stage16_scorecard.json.X[15].xs_t_C8_s
+   table 240 <- results/stage15_table.csv:4:delivery | results/stage16_scorecard.json.X[0].delivery~str
+   table 0.23 <- results/stage15_table.csv:15:C8_xs_t_s | results/stage16_scorecard.json.N[4].xs_t_C8_s
    table 4.18 <- results/stage15_table.csv:36:C8_xs_E_by_t_J | results/stage14_needs.csv:2:threshold_C1_lo_J
-   table 4.80 <- results/stage15_table.csv:36:C8_xs_E_J
-   table 209.2 <- results/stage15_table.csv:36:C8_xs_t_s
-   table 360 <- results/stage15_table.csv:5:delivery
-   table 0.30 <- results/stage15_table.csv:3:C8_xs_t_at_E_star_hi_s
+   table 4.80 <- results/stage15_table.csv:36:C8_xs_E_J | results/stage16_scorecard.json.X[7].xs_E_J
+   table 209.2 <- results/stage15_table.csv:36:C8_xs_t_s | results/stage16_scorecard.json.X[7].xs_t_C8_s
+   table 3.88 <- results/stage15_table.csv:3:C2_E_J | results/stage14_needs.csv:5:need_120s_hi_J
+   table 4.01 <- results/stage16_scorecard.json.X[7].hi_by_t_J | results/stage16_needs.csv:17:hi_by_t_J
+   table 360 <- results/stage15_table.csv:5:delivery | results/stage16_scorecard.json.X[16].delivery~str
+   table 0.30 <- results/stage15_table.csv:3:C8_xs_t_at_E_star_hi_s | results/stage16_scorecard.json.N[3].runs[3].t_C8_s
    table 4.18 <- results/stage15_table.csv:36:C8_xs_E_by_t_J | results/stage14_needs.csv:2:threshold_C1_lo_J
-   table 7.22 <- results/stage15_table.csv:37:C8_xs_E_J
-   table 208.8 <- results/stage15_table.csv:37:C8_xs_t_s
+   table 7.22 <- results/stage15_table.csv:37:C8_xs_E_J | results/stage16_scorecard.json.X[23].xs_E_J
+   table 208.8 <- results/stage15_table.csv:37:C8_xs_t_s | results/stage16_scorecard.json.X[23].xs_t_C8_s
    table 71 <- results/stage14_needs.csv:2:neighbour_max_C
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    table 2.09 <- results/stage14_needs.csv:2:need_21s_lo_J
-   table 120 <- results/stage15_table.csv:3:delivery
+   table 120 <- results/stage15_table.csv:3:delivery | results/stage16_scorecard.json.X[8].delivery~str
    table 1.52 <- results/stage14_needs.csv:2:need_120s_lo_J
-   table 240 <- results/stage15_table.csv:4:delivery
-   table 1.01 <- results/stage14_needs.csv:2:need_240s_lo_J
-   table 360 <- results/stage15_table.csv:5:delivery
+   table 240 <- results/stage15_table.csv:4:delivery | results/stage16_scorecard.json.X[0].delivery~str
+   table 1.01 <- results/stage14_needs.csv:2:need_240s_lo_J | results/stage16_scorecard.json.X[11].runs[0].id~str
+   table 360 <- results/stage15_table.csv:5:delivery | results/stage16_scorecard.json.X[16].delivery~str
    table 1.23 <- results/stage15_table.csv:23:C2_share_of_76.74kJ | results/stage14_needs.csv:2:need_360s_lo_J
    table 808 <- results/stage14_needs.csv:3:neighbour_max_C
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    table 75.81 <- results/stage14_needs.csv:3:need_21s_lo_J
-   table 120 <- results/stage15_table.csv:3:delivery
+   table 120 <- results/stage15_table.csv:3:delivery | results/stage16_scorecard.json.X[8].delivery~str
    table 96.87 <- results/stage14_needs.csv:3:need_120s_lo_J
-   table 240 <- results/stage15_table.csv:4:delivery
-   table 360 <- results/stage15_table.csv:5:delivery
+   table 240 <- results/stage15_table.csv:4:delivery | results/stage16_scorecard.json.X[0].delivery~str
+   table 360 <- results/stage15_table.csv:5:delivery | results/stage16_scorecard.json.X[16].delivery~str
    table 118 <- results/stage14_needs.csv:4:neighbour_max_C
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    table 0.00 <- results/stage15_table.csv:2:test | results/stage14_needs.csv:2:test
-   table 120 <- results/stage15_table.csv:3:delivery
+   table 120 <- results/stage15_table.csv:3:delivery | results/stage16_scorecard.json.X[8].delivery~str
    table 0.00 <- results/stage15_table.csv:2:test | results/stage14_needs.csv:2:test
-   table 240 <- results/stage15_table.csv:4:delivery
+   table 240 <- results/stage15_table.csv:4:delivery | results/stage16_scorecard.json.X[0].delivery~str
    table 0.00 <- results/stage15_table.csv:2:test | results/stage14_needs.csv:2:test
-   table 360 <- results/stage15_table.csv:5:delivery
+   table 360 <- results/stage15_table.csv:5:delivery | results/stage16_scorecard.json.X[16].delivery~str
    table 0.00 <- results/stage15_table.csv:2:test | results/stage14_needs.csv:2:test
    table 105 <- results/stage14_needs.csv:8:neighbour_max_C
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    table 0.00 <- results/stage15_table.csv:2:test | results/stage14_needs.csv:2:test
-   table 120 <- results/stage15_table.csv:3:delivery
+   table 120 <- results/stage15_table.csv:3:delivery | results/stage16_scorecard.json.X[8].delivery~str
    table 0.00 <- results/stage15_table.csv:2:test | results/stage14_needs.csv:2:test
-   table 240 <- results/stage15_table.csv:4:delivery
+   table 240 <- results/stage15_table.csv:4:delivery | results/stage16_scorecard.json.X[0].delivery~str
    table 0.00 <- results/stage15_table.csv:2:test | results/stage14_needs.csv:2:test
-   table 360 <- results/stage15_table.csv:5:delivery
+   table 360 <- results/stage15_table.csv:5:delivery | results/stage16_scorecard.json.X[16].delivery~str
    table 0.00 <- results/stage15_table.csv:2:test | results/stage14_needs.csv:2:test
    table 128 <- results/stage14_needs.csv:10:neighbour_max_C
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    table 0.00 <- results/stage15_table.csv:2:test | results/stage14_needs.csv:2:test
-   table 120 <- results/stage15_table.csv:3:delivery
+   table 120 <- results/stage15_table.csv:3:delivery | results/stage16_scorecard.json.X[8].delivery~str
    table 0.00 <- results/stage15_table.csv:2:test | results/stage14_needs.csv:2:test
-   table 240 <- results/stage15_table.csv:4:delivery
+   table 240 <- results/stage15_table.csv:4:delivery | results/stage16_scorecard.json.X[0].delivery~str
    table 0.00 <- results/stage15_table.csv:2:test | results/stage14_needs.csv:2:test
-   table 360 <- results/stage15_table.csv:5:delivery
+   table 360 <- results/stage15_table.csv:5:delivery | results/stage16_scorecard.json.X[16].delivery~str
    table 0.00 <- results/stage15_table.csv:2:test | results/stage14_needs.csv:2:test
    table 133 <- results/stage14_needs.csv:11:neighbour_max_C
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    table 0.00 <- results/stage15_table.csv:2:test | results/stage14_needs.csv:2:test
-   table 120 <- results/stage15_table.csv:3:delivery
+   table 120 <- results/stage15_table.csv:3:delivery | results/stage16_scorecard.json.X[8].delivery~str
    table 0.00 <- results/stage15_table.csv:2:test | results/stage14_needs.csv:2:test
-   table 240 <- results/stage15_table.csv:4:delivery
+   table 240 <- results/stage15_table.csv:4:delivery | results/stage16_scorecard.json.X[0].delivery~str
    table 0.00 <- results/stage15_table.csv:2:test | results/stage14_needs.csv:2:test
-   table 360 <- results/stage15_table.csv:5:delivery
+   table 360 <- results/stage15_table.csv:5:delivery | results/stage16_scorecard.json.X[16].delivery~str
    table 0.00 <- results/stage15_table.csv:2:test | results/stage14_needs.csv:2:test
    table 626 <- results/stage14_needs.csv:17:neighbour_max_C
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    table 32.67 <- results/stage14_needs.csv:17:need_21s_lo_J
-   table 120 <- results/stage15_table.csv:3:delivery
+   table 120 <- results/stage15_table.csv:3:delivery | results/stage16_scorecard.json.X[8].delivery~str
    table 40.35 <- results/stage14_needs.csv:17:need_120s_lo_J
-   table 240 <- results/stage15_table.csv:4:delivery
+   table 240 <- results/stage15_table.csv:4:delivery | results/stage16_scorecard.json.X[0].delivery~str
    table 76.86 <- results/stage14_needs.csv:17:need_240s_lo_J
-   table 360 <- results/stage15_table.csv:5:delivery
+   table 360 <- results/stage15_table.csv:5:delivery | results/stage16_scorecard.json.X[16].delivery~str
    table 115.30 <- results/stage14_needs.csv:17:need_360s_lo_J
 == manuscript/rebuild/tables/s8_reduced.tex  [each cell against the file value it is converted from]
    cell 0.025 <- results/stage13_skin.csv {'test': 'M50_PT_Exp1', 'region': 'half', 'tau_d_s': '5.0'} fourier x 1
@@ -4485,13 +4805,16 @@ FAILURES:
    words ok 'at least four delivery paths' = 4 <- results/stage15_table.csv: the fewest of the paths A1 to A4 whose bound reaches a need at the measured time
    words ok 'none of the three quantities' = 3 <- results/stage10_heldout.json: predictors
    words ok 'all twelve of the needs with the pulse' = 12 <- results/stage14_needs.csv: non-zero needs over 21.39 s
-   words ok 'strong triggers, fourteen tests' = 14 <- results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ
-   words ok 'after four strong triggers searched in three dimensions|after the four strong triggers whose threshold was bracketed|in the four strong-trigger tests bracketed in three dimensions|rests on four tests after strong triggers' = 4 <- rebuild_headline.thresholds_3d: strong-trigger tests (E_J above 30 kJ)
+   words ok 'in fourteen \(strong triggers\)|in fourteen tests \(strong triggers\)' = 14 <- results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ
+   words ok 'energy after four strong triggers, at most|after four strong triggers searched in three dimensions|after the four strong triggers whose threshold was bracketed|in the four strong-trigger tests bracketed in three dimensions|rests on four tests after strong triggers' = 4 <- rebuild_headline.thresholds_3d: strong-trigger tests (E_J above 30 kJ)
    words ok 'the two after weak ones|the two with weak triggers' = 2 <- rebuild_headline.thresholds_3d: weak-trigger tests (E_J below 30 kJ)
    words ok 'in the three strong-trigger tests bracketed in three dimensions whose lumped threshold is not zero' = 3 <- rebuild_headline.threshold_ratio_spans: strong-trigger tests whose lumped threshold is not zero
    words ok 'in the six tests whose threshold was bracketed in three dimensions|of the six tests bracketed in three dimensions' = 6 <- rebuild_headline.thresholds_3d: tests
    words ok 'the eight strong triggers among the tests that propagated' = 8 <- results/stage16_scorecard.json: N searches
-   words ok 'six of them foreseen' = 6 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2, foreseen
+   words ok 'seven of them foreseen' = 7 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2, foreseen
    words ok 'three in the files' analyses' = 3 <- manuscript/rebuild/data/predictions_registry.csv: listed failures foreseen in the files' analyses
-   words ok 'three in their expectations' = 3 <- manuscript/rebuild/data/predictions_registry.csv: listed failures whose expectation itself says they fail
-   words ok 'six of them known beforehand to be fixed, or nearly' = 6 <- manuscript/rebuild/data/predictions_registry.csv: held rows of Table S2 whose expectation records them as fixed
+   words ok 'four in their expectations' = 4 <- manuscript/rebuild/data/predictions_registry.csv: listed failures whose expectation itself says they fail
+   words ok 'seven of them known beforehand to be fixed, or nearly' = 7 <- manuscript/rebuild/data/predictions_registry.csv: held rows of Table S2 whose expectation records them as fixed
+   words ok 'over 240.s in all eight tests and over 120.s in six' = 6 <- results/stage16_scorecard.json: X, closed searches over 120 s
+   words ok 'the fourteen searches closed' = 14 <- results/stage16_scorecard.json: X, closed searches
+   words ok 'two over 120.s, those after the weak trigger' = 2 <- results/stage16_scorecard.json: X, searches over 120 s not closed
