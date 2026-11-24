@@ -108,7 +108,9 @@ def table2():
          r"\cite{bergman2011fundamentals}; assumed$^{a}$, as in \cite{chen2021simplified}"),
         ("Room convection; ambient and start", r"10 W\,m$^{-2}$\,K$^{-1}$; 25\textdegree C", r"assumed$^{a}$"),
         (r"\textit{Trigger}", None, None),
-        ("Model and release", "one temperature; triangular over 21.39 s", r"\cite{fransson2024exploring}"),
+        ("Model and release", ("one temperature; triangular over 21.39 s, the mean of the two rise times read from "
+                               "the two published records (17.53 and 25.24 s; Supplementary Section~S7)"),
+         r"read from \cite{fransson2024exploring}"),
         (r"Body energy $E_\mathrm{b}$", "9.0 to 54.3 kJ, one per test (Table 1); 33.2 kJ held to calorimetry",
          r"\cite{fransson2024exploring,finegan2024databank}"),
         (r"\textit{Kinetics}", None, None),
@@ -204,21 +206,24 @@ def table_s3():
     xs = {r["test"]: r for r in json.load(open(os.path.join(RES, "stage15_cross_section.json")))["A2"] if r["shape"] == "tri"}
     b1 = json.load(open(os.path.join(RES, "stage15_paper_numbers.json")))["B1"]
     tab = read_csv(os.path.join(RES, "stage15_table.csv"))
+    s16 = _s16()
+    n16 = {r["test"]: r for r in s16["N"]}
     lines = [r"{\footnotesize\setlength{\tabcolsep}{3pt}", r"\begin{longtable}{p{0.1\textwidth}p{0.13\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.18\textwidth}}",
              r"\caption{The thresholds of the sixteen tests with the 21.4~s pulse at the central contact (kJ; a bracket is the largest "
              r"energy run that does not meet the criterion and the smallest that does), and, for the nine propagated "
              r"tests, their needs: the least energy with which the lumped neighbour and the resolved neighbour (by "
-             r"the reactive cross-section) run away within 10~s of the measured time, counted as delivered by the "
+             r"the reactive cross-section, and in the eight tests with strong triggers bracketed in three dimensions) "
+             r"run away within 10~s of the measured time, counted as delivered by the "
              r"run's own runaway. An energy marked $^{t}$ is the least energy "
              r"run whose runaway comes before the measured time when the next lower run, 0.5\,\% of the test's "
              r"ejected energy below, gives none within 900~s: the measured time is reproduced only between the two, "
              r"within that resolution of the threshold, and the value, the higher, can exceed the bracket beside it. Supplementary Table~\ref{tab:s-needs} gives the other delivery shapes.}"
              r"\label{tab:s-thresholds}\\",
              r"\toprule", r"Test & Hottest point & Lumped & Resolved, cross-section & Resolved, three-dimensional & "
-             r"Needs: lumped; resolved \\", r"\midrule", r"\endfirsthead",
+             r"Needs: lumped; cross-section; three-dimensional \\", r"\midrule", r"\endfirsthead",
              r"\multicolumn{6}{l}{\textit{Continued}} \\", r"\toprule",
              r"Test & Hottest point & Lumped & Resolved, cross-section & Resolved, three-dimensional & "
-             r"Needs: lumped; resolved \\", r"\midrule", r"\endhead"]
+             r"Needs: lumped; cross-section; three-dimensional \\", r"\midrule", r"\endhead"]
     for t in TESTS:
         r = nd[t]
         (lo1, hi1), (lo2, hi2) = RB.brackets(r)          # the narrowest bracket the archive holds (Stage 13 refined four)
@@ -226,11 +231,16 @@ def table_s3():
         c2 = "0" if hi2 == 0 else "(%s, %s]" % (kj(lo2, 2), kj(hi2, 2))
         c8 = "(%s, %s]" % (kj(xs[t]["lo_J"], 2), kj(xs[t]["hi_J"], 2))
         d3 = "(%s, %s]" % (kj(b1[t]["bracket"]["lo_J"], 2), kj(b1[t]["bracket"]["hi_J"], 2)) if t in b1 else ""
+        if t == s16["T"].get("test") and s16["T"].get("status") == "done":
+            d3 = "(%s, %s]" % (kj(s16["T"]["lo_J"], 2), kj(s16["T"]["hi_J"], 2))
         row = next((x for x in tab if x["test"] == t and x["delivery"].startswith("21.39")), None)
         if row is not None:
             mk2 = r"$^{t}$" if row["C2_status"] == "threshold" else ""
             mk8 = r"$^{t}$" if row["C8_xs_status"] == "threshold" else ""
             need = "%s%s; %s%s" % (kj(row["C2_E_by_t_J"], 2), mk2, kj(row["C8_xs_E_by_t_J"], 2), mk8)
+            q = n16.get(t)
+            if q is not None and q["status"] == "done":
+                need += "; (%s, %s]" % (kj(q["lo_J"], 2), kj(q["hi_J"], 2))
         else:
             need = ""
         lines.append(" & ".join([tex_name(t), c1, c2, c8, d3, need]) + r" \\")
@@ -248,10 +258,13 @@ def table_s7():
     tests, results/stage14_needs.csv for the seven that did not propagate)."""
     tab = read_csv(os.path.join(RES, "stage15_table.csv"))
     nd = {r["test"]: r for r in read_csv(os.path.join(RES, "stage14_needs.csv"))}
-    head = (r"Test & Time (s) & Delivery & Lumped & Resolved & Resolved, in all & Its runaway (s) \\")
-    lines = [r"{\footnotesize\setlength{\tabcolsep}{3pt}",
-             r"\begin{longtable}{p{0.09\textwidth}p{0.065\textwidth}p{0.17\textwidth}p{0.1\textwidth}p{0.1\textwidth}"
-             r"p{0.11\textwidth}p{0.09\textwidth}}",
+    s16 = _s16()
+    d3 = {(r["test"], r["delivery"]): r for r in s16["N"] + s16["X"]}
+    head = (r"Test & Time (s) & Delivery & Lumped & Resolved & Resolved, in all & Its runaway (s) & "
+            r"Three-dimensional \\")
+    lines = [r"{\scriptsize\setlength{\tabcolsep}{3pt}",
+             r"\begin{longtable}{p{0.08\textwidth}p{0.06\textwidth}p{0.12\textwidth}p{0.09\textwidth}p{0.09\textwidth}"
+             r"p{0.09\textwidth}p{0.08\textwidth}p{0.17\textwidth}}",
              r"\caption{The needs of the nine tests that propagated under the four delivery shapes (kJ): the least "
              r"energy with which the lumped neighbour (Lumped), and the resolved neighbour by the reactive cross-section "
              r"(Resolved), run away within 10~s of the measured time (Time), counted as delivered by the run's own "
@@ -264,11 +277,13 @@ def table_s7():
              r"to the measured time; a dash, no energy on the search's grid, which ran to 0.2 of the test's ejected "
              r"energy above the threshold's upper end, brought the runaway within 10~s of the measured time (in ST-Exp3 "
              r"over 360~s it came no earlier than 196.4~s, with 25.6~kJ). The four shapes deliver the "
-             r"same energy by the runaway only where the delivery ends before it. Below, for the seven tests that did not propagate, the energy "
+             r"same energy by the runaway only where the delivery ends before it. Three-dimensional: the need bracketed "
+             r"in three dimensions (step 16), counted as delivered by 10~s after the measured time; the searches with "
+             r"constant power that the computing allowed are given, and one not finished is marked so. Below, for the seven tests that did not propagate, the energy "
              r"that puts the far face's peak at the measured maximum, within 5~K, under each shape; $^{a}$, a maximum "
              r"that may not be the neighbour's surface (exploratory); a dash, a far face that stays below the measured "
              r"maximum with up to the test's whole ejected energy.}\label{tab:s-needs}\\",
-             r"\toprule", head, r"\midrule", r"\endfirsthead", r"\multicolumn{7}{l}{\textit{Continued}} \\",
+             r"\toprule", head, r"\midrule", r"\endfirsthead", r"\multicolumn{8}{l}{\textit{Continued}} \\",
              r"\toprule", head, r"\midrule", r"\endhead"]
     for t in TESTS:
         rows = [x for x in tab if x["test"] == t]
@@ -283,11 +298,20 @@ def table_s7():
                 t8 = "%.1f" % float(x["C8_xs_t_s"])
             else:
                 c8, e8, t8 = "--", "", ""
+            q = d3.get((t, key))
+            if q is None:
+                c3 = ""
+            elif q["status"] == "done":
+                c3 = "(%s, %s]" % (kj(q["lo_by_t_J"], 2), kj(q["hi_by_t_J"], 2))
+            elif q["status"] in ("unfinished", "stopped", "out of range", "not monotone"):
+                c3 = q["status"]
+            else:
+                c3 = ""
             lines.append(" & ".join([tex_name(t) if i == 0 else "", x["t_measured_s"].split(".")[0] if i == 0 else "",
-                                     lab, c2, c8, e8, t8]) + r" \\")
+                                     lab, c2, c8, e8, t8, c3]) + r" \\")
         lines.append(r"\midrule")
-    lines += [r"\multicolumn{7}{l}{\textit{Tests that did not propagate}} \\",
-              r"Test & Peak (\textdegree C) & Delivery & \multicolumn{4}{l}{Far face's peak at the measured peak (kJ)} \\",
+    lines += [r"\multicolumn{8}{l}{\textit{Tests that did not propagate}} \\",
+              r"Test & Peak (\textdegree C) & Delivery & \multicolumn{5}{l}{Far face's peak at the measured peak (kJ)} \\",
               r"\midrule"]
     keys = [("need_21s", "21.4~s pulse"), ("need_120s", "120~s power"), ("need_240s", "240~s power"),
             ("need_360s", "360~s power")]
@@ -305,7 +329,7 @@ def table_s7():
             else:
                 v = "(%s, %s]" % (kj(lo, 2), kj(hi, 2))
             mx = (r["neighbour_max_C"] + (r"$^{a}$" if expl else "")) if i == 0 else ""
-            lines.append(" & ".join([tex_name(t) if i == 0 else "", mx, lab, r"\multicolumn{4}{l}{%s}" % v]) + r" \\")
+            lines.append(" & ".join([tex_name(t) if i == 0 else "", mx, lab, r"\multicolumn{5}{l}{%s}" % v]) + r" \\")
     lines += [r"\bottomrule", r"\end{longtable}", r"}"]
     return "\n".join(lines) + "\n"
 
@@ -683,6 +707,311 @@ def table_s15():
     return "\n".join(lines)
 
 
+def _s16():
+    return json.load(open(os.path.join(RES, "stage16_scorecard.json")))
+
+
+def _br(lo, hi, nd=2):
+    return "(%s, %s]" % (kj(lo, nd), kj(hi, nd))
+
+
+def table4():
+    """Table 4 of the main text: the resolved needs and thresholds in three dimensions with the 21.4 s pulse at the
+    central contact (step 16, results/stage16_scorecard.json; step 15, results/stage15_paper_numbers.json), beside the
+    reduced model's (results/stage15_table.csv, results/stage15_cross_section.json) and the lumped neighbour's
+    (results/stage15_table.csv; the thresholds' brackets by rebuild_brackets from results/stage14_needs.csv); and the
+    needs with constant power that step 16 found in three dimensions, where it found any."""
+    s16 = _s16()
+    tt = {r["test"]: r for r in read_csv(os.path.join(ROOT, "inputs", "fransson2024", "m50_tests.csv"))}
+    trig = {r["test"]: float(r["E_J"]) for r in read_csv(os.path.join(RES, "stage7_triggers.csv")) if r["kind"] == "test"}
+    nd = {r["test"]: r for r in read_csv(os.path.join(RES, "stage14_needs.csv"))}
+    b1 = json.load(open(os.path.join(RES, "stage15_paper_numbers.json")))["B1"]
+    xs = {r["test"]: r for r in json.load(open(os.path.join(RES, "stage15_cross_section.json")))["A2"] if r["shape"] == "tri"}
+    N = sorted(s16["N"], key=lambda r: float(tt[r["test"]]["time_to_propagation_s"]))
+    lines = [r"\begin{table}[!tbp]", r"\centering", r"\footnotesize",
+             r"\caption{The resolved neighbour in three dimensions, with the 21.4~s pulse at the central contact, beside "
+             r"the reactive cross-section (a reduced model) and the lumped neighbour (kJ). Above, the needs of the eight "
+             r"tests that propagated after strong triggers, in order of the measured time: the least energy delivered to "
+             r"the facing half with which the neighbour runs away within 10~s of the measured time; a three-dimensional "
+             r"need is bracketed between the highest energy run whose mean reaches 255.7\textdegree C later, or not at "
+             r"all, and the lowest whose mean reaches it by then. The cross-section's need is set against the "
+             r"bracket's midpoint (difference, \%). $^{t}$, as in Supplementary Table~S7: the measured time is "
+             r"reproduced only within the search's resolution of the threshold. Below, the thresholds of the tests "
+             r"searched in three dimensions, in order of the trigger's fitted body energy: the least energy at which the "
+             r"neighbour runs away within 900~s, with the ratio of the resolved to the lumped threshold by the brackets' "
+             r"midpoints.}",
+             r"\label{tab:3d}", r"\setlength{\tabcolsep}{4pt}",
+             r"\begin{tabular}{lrrrrr}", r"\toprule",
+             r"\multicolumn{6}{l}{\textit{Needs at the measured times}} \\",
+             r"Test & Time (s) & Three-dimensional & Cross-section & Difference (\%) & Lumped \\", r"\midrule"]
+    mark = {"matched": "", "threshold": r"$^{t}$", "bracketed": r"$^{b}$"}
+    for r in N:
+        t = r["test"]
+        if r["status"] != "done":
+            cell, diff = r["status"], ""
+        else:
+            cell, diff = _br(r["lo_J"], r["hi_J"]), "%+.1f" % (100 * r["d"])
+        lines.append(" & ".join([tex_name(t), "%.0f" % float(tt[t]["time_to_propagation_s"]), cell,
+                                 kj(r["xs_E_by_t_J"], 2) + mark.get(r["xs_status"], ""), diff,
+                                 kj(r["lumped_E_by_t_J"], 2) + mark.get(r["lumped_status"], "")]) + r" \\")
+    X = [r for r in s16["X"] if r["status"] == "done"]
+    if X:
+        for tau_lab in ("240 s constant power", "120 s constant power", "360 s constant power"):
+            rows = sorted([r for r in X if r["delivery"] == tau_lab],
+                          key=lambda r: float(tt[r["test"]]["time_to_propagation_s"]))
+            if not rows:
+                continue
+            lines += [r"\midrule", r"\multicolumn{6}{l}{\textit{Needs with constant power over %s~s, counted as "
+                                    r"delivered by the runaway}} \\" % tau_lab.split()[0]]
+            for r in rows:
+                t = r["test"]
+                lines.append(" & ".join([tex_name(t), "%.0f" % float(tt[t]["time_to_propagation_s"]),
+                                         _br(r["lo_by_t_J"], r["hi_by_t_J"]),
+                                         kj(r["xs_E_by_t_J"], 2) + mark.get(r["xs_status"], ""),
+                                         "%+.1f" % (100 * r["d"]),
+                                         kj(r["lumped_E_by_t_J"], 2) + mark.get(r["lumped_status"], "")]) + r" \\")
+    lines += [r"\midrule", r"\multicolumn{6}{l}{\textit{Thresholds}} \\",
+              r"Test & Trigger & Three-dimensional & Cross-section & Lumped & Ratio \\", r"\midrule"]
+    th = []
+    for t, v in b1.items():
+        th.append((t, v["bracket"]["lo_J"], v["bracket"]["hi_J"]))
+    T = s16["T"]
+    if T.get("status") == "done":
+        th.append((T["test"], T["lo_J"], T["hi_J"]))
+    for t, lo, hi in sorted(th, key=lambda x: -trig[x[0]]):
+        (l1, h1), (l2, h2) = RB.brackets(nd[t])
+        lump = "0" if h2 == 0 else _br(l2, h2)
+        ratio = "" if h2 == 0 else "%.2f" % (0.5 * (lo + hi) / (0.5 * (l2 + h2)))
+        lines.append(" & ".join([tex_name(t), kj(trig[t]), _br(lo, hi), kj(xs[t]["E_star_J"], 2), lump, ratio])
+                     + r" \\")
+    lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}", ""]
+    return "\n".join(lines)
+
+
+def table_s16():
+    """Supplementary Table S16: every run of step 16 (results/stage16_runs.csv), search by search, with the archived
+    runs that close a bracket (results/stage16_scorecard.json)."""
+    s16 = _s16()
+    runs = read_csv(os.path.join(RES, "stage16_runs.csv"))
+    tt = {r["test"]: r for r in read_csv(os.path.join(ROOT, "inputs", "fransson2024", "m50_tests.csv"))}
+    head = r"Search & Test & Delivery & Energy (kJ) & Mean reaches 255.7\textdegree C & Class \\"
+    lines = [r"{\scriptsize\setlength{\tabcolsep}{4pt}",
+             r"\begin{longtable}{llllll}",
+             r"\caption{The runs of step 16, search by search: N, the needs with the 21.4~s pulse; T, PT-Exp1's "
+             r"threshold; V, the need refined (the mesh by a factor of 1.5 and every step limit halved, together); X, "
+             r"the needs with constant power. Each gives the energy delivered to the facing half, when the resolved "
+             r"neighbour's mean reaches 255.7\textdegree C (or its peak where it does not within 900~s), and, for "
+             r"a need, whether that comes no later than 10~s after the measured time (early) or later or not at all "
+             r"(late). An asterisk marks an archived run that closes a bracket. The brackets are in "
+             r"Table~4 of the main text and Table~\ref{tab:s-needs}.}\label{tab:s-step16}\\",
+             r"\toprule", head, r"\midrule", r"\endfirsthead", r"\multicolumn{6}{l}{\textit{Continued}} \\",
+             r"\toprule", head, r"\midrule", r"\endhead"]
+    order = {"T": 0, "N": 1, "V": 2, "X": 3}
+    lab = lambda r: ("pulse" if r["shape"] == "tri" else "%.0f~s" % float(r["tau_s"]))
+    closing = {}
+    for r in s16["N"] + s16["X"]:
+        if r["status"] == "done":
+            for side in ("lo", "hi"):
+                if r[side + "_source"] != "stage16":
+                    closing[r[side + "_id"]] = (r, side)
+    tm = lambda t: float(tt[t]["time_to_propagation_s"])
+
+    def outcome(c8, t, peak):
+        return ("%.1f~s" % float(t)) if c8 == "True" else ("no; peak %.1f\\textdegree C" % float(peak))
+
+    srt = sorted(runs, key=lambda r: (order.get(r["kind"], 9), r["test"], lab(r), float(r["E_J"])))
+    for r in srt:
+        if r["failed"] == "True":
+            lines.append(" & ".join([r["kind"], tex_name(r["test"]), lab(r), kj(r["E_J"], 3), "failed", ""]) + r" \\")
+            continue
+        if r["kind"] in ("N", "X", "V"):
+            lim = tm(r["test"]) + 10.0
+            cl = "early" if (r["C8"] == "True" and float(r["t_C8_s"]) <= lim + 1e-9) else "late"
+        else:
+            cl = ""
+        lines.append(" & ".join([r["kind"], tex_name(r["test"]), lab(r), kj(r["E_J"], 3),
+                                 outcome(r["C8"], r["t_C8_s"], r["peak_mean_C"]), cl]) + r" \\")
+    if closing:
+        lines.append(r"\midrule")
+        for rid, (r, side) in sorted(closing.items(), key=lambda x: x[1][0]["test"]):
+            t = r[side + "_t_C8_s"]
+            lines.append(" & ".join(["N" if r["search"] == "N" else "X", tex_name(r["test"]) + "$^{*}$",
+                                     "pulse" if r["delivery"].startswith("21.39") else r["delivery"].split()[0] + "~s",
+                                     kj(r[side + "_J"], 3),
+                                     ("%.1f~s" % t) if t is not None else "no", "early" if side == "hi" else "late"])
+                         + r" \\")
+    lines += [r"\bottomrule", r"\end{longtable}", r"}", ""]
+    return "\n".join(lines)
+
+
+def _ns_value(pattern, idx=0, nd=1, unit="entry"):
+    """A value as the numbers check traces it: the entry of manuscript/rebuild/number_sources.py whose context is
+    `pattern`, its selector read from the files, its unit change applied, rounded to nd decimals; with the file and key
+    it is read from."""
+    sys.path.insert(0, os.path.join(ROOT, "manuscript", "rebuild"))
+    import number_sources as NS
+    for rx, nums, sel, u in NS.E:
+        if rx == pattern:
+            v = float(sel()[idx])
+            u = u if unit == "entry" else unit
+            if u == "kJ":
+                v /= 1000.0
+            elif u == "pct":
+                v *= 100.0
+            elif u == "abs":
+                v = abs(v)
+            return ("%%.%df" % nd) % v, sel.where
+    raise KeyError(pattern)
+
+
+def quoted_rows():
+    """Read 7's list A (Brief 31, item 4): the results the main text and the supplement quote from runs or computations
+    that no other table or figure shows, with the inputs held as assumptions from the earlier study. Every value is
+    read by the numbers check's own entry for it (manuscript/rebuild/number_sources.py), or from the parameters file
+    (manuscript/data/parameters.csv) for the inputs."""
+    V = _ns_value
+    rows = []
+
+    def add(where, what, parts, src):
+        import re
+        rows.append({"where": where, "what": what, "value": "; ".join(parts),
+                     "source": re.sub(r"(?<!\\)_", r"\\_", src)})
+
+    a, w1 = V(r"at most at 226\.7")
+    b, _ = V(r"226\.7\\degC, 29\.0~K short")
+    c, w2 = V(r"lumped neighbour at 180\.6")
+    add("3.1", "With body energies up to 33.2 kJ and no delivered heat, over the 5,248 runs at every contact, tab "
+        "conductance, release time and connection and under the 200 kinetic draws: the highest peak of the resolved "
+        "neighbour's hottest point, its margin to 255.7 \\textdegree C, and the lumped neighbour's highest peak",
+        [a + " \\textdegree C", b + " K", c + " \\textdegree C"], "step 5's runs; " + w1.split(":")[0] + ", all\\_runs")
+    sys.path.insert(0, os.path.join(ROOT, "manuscript", "rebuild"))
+    import number_sources as NS
+    hp = [e for e in NS.E if e[0] == r"226\.4 (to|and) 226\.7"]
+    v226 = ["%.1f" % float(e[2]()[0]) for e in hp]
+    lp, wl = V(r"175\.9 (to|and) 177\.4|lumped neighbour at most at 177\.4")
+    add("3.1", "The eight tests with the largest fitted triggers held to 33.2 kJ, no delivered heat: the hottest "
+        "point's peak at the high contact (two connections) and the lumped neighbour's highest peak",
+        [" and ".join(v226) + " \\textdegree C", lp + " \\textdegree C"],
+        "step 12's runs; " + wl.split(":")[0] + ", part\\_a.high")
+    a, w = V(r"within 21\.7~s")
+    add("3.1", "With the fitted triggers and no delivered heat, the latest time by which conduction carries the "
+        "hottest point over 255.7 \\textdegree C in the eight tests with the largest triggers", [a + " s"],
+        "step 12's runs; " + w.split(":")[0] + ", part\\_a.central")
+    a, w = V(r"low contact its hottest point peaks at most at 162\.6|in all sixteen tests, peaking at most at 162\.6")
+    add("3.1", "With the fitted triggers and no delivered heat at the low contact, the highest peak of the hottest "
+        "point over the sixteen tests", [a + " \\textdegree C"], "step 7's runs; " + w.split(":")[0])
+    a, w = V(r"106 to 128", 0, 0)
+    b, _ = V(r"106 to 128", 1, 0)
+    c, _ = V(r"22\.4 to 22\.6", 0)
+    d, _ = V(r"22\.4 to 22\.6", 1)
+    e, _ = V(r"4\.1 to 4\.8~kJ", 0)
+    f, _ = V(r"4\.1 to 4\.8~kJ", 1)
+    add("3.3", "In the three-dimensional threshold searches of PT-Exp4, PP-Exp2 and SP-Exp3: the lumped neighbour's "
+        "runaway times, its reaction heat by 900 s, and the resolved neighbour's reaction heat by its own runaway",
+        [a + " to " + b + " s", c + " to " + d + " kJ", e + " to " + f + " kJ"],
+        "step 15's runs; results/stage15\\_paper\\_numbers.json, B1")
+    a, w = V(r"runs away at 61\.5")
+    add("3.3", "ST-Exp3 with 10.80 kJ over 21.4 s: the resolved neighbour's runaway", [a + " s"],
+        "step 15's run; results/stage15\\_paper\\_numbers.json, B1")
+    a, w = V(r"316\.5~s")
+    b, _ = V(r"mean at 240\.1")
+    add("3.4", "PT-Exp1 with a 360 s pulse at the upper end of the local threshold's bracket: the hottest point's "
+        "crossing, on the cell's axis, and the mean then", [a + " s", b + " \\textdegree C"],
+        "step 13's run; results/stage13\\_skin.csv")
+    a, w = V(r"230\.4")
+    b, _ = V(r"73\.3")
+    add("3.4", "The lumped neighbour's ignition temperature with the trigger at 25 \\textdegree C, and the share of "
+        "the low-temperature cathode reaction in the reaction heat at the ignition temperature",
+        [a + " \\textdegree C", b + " \\%"], "step 13's computation; results/stage13\\_tign.csv")
+    a, w = V(r"2\.1 to 2\.3", 0)
+    b, _ = V(r"2\.1 to 2\.3", 1)
+    add("3.4", "With no delivered heat in PT-Exp4, PP-Exp3 and ST-Exp2 at the central contact, the heat the lumped "
+        "neighbour has taken in through the contact and wedge by 250 s beyond the resolved one's",
+        [a + " to " + b + " kJ"], "step 15's accounts of archived runs; results/stage15\\_accounts.json")
+    a, w = V(r"first two draws, at 191\.0 and 196\.5", 0)
+    b, _ = V(r"first two draws, at 191\.0 and 196\.5", 1)
+    add("3.4", "PT-Exp4 with 5.04 kJ over 21.4 s: the lumped neighbour's runaway under the kinetic draws ranked 5 "
+        "and 50", [a + " and " + b + " s"], "step 15's runs; results/stage15\\_paper\\_numbers.json, B4")
+    a, w = V(r"270\.3~s")
+    b, _ = V(r"jump at 240\.4|jump beginning at 240\.4|233\.6 and 240\.4")
+    add("3.4", "PT-Exp4 with 5.04 kJ over 21.4 s and every rate law shifted by 20 K: the resolved neighbour's "
+        "runaway, and the far face's reading where its jump begins", [a + " s", b + " \\textdegree C"],
+        "step 15's run; results/stage15\\_paper\\_numbers.json, B4")
+    a, w = V(r"369\.3")
+    add("3.5", "PT-Exp4, the 5.04 kJ pulse followed by 10 W: the resolved neighbour's runaway", [a + " s"],
+        "step 15's run; results/stage15\\_paper\\_numbers.json, B3b")
+    hp = [e for e in NS.E if e[0] == r"16\.3 and 16\.8|16\.3 to 16\.8"]
+    v16 = ["%.1f" % float(e[2]()[0]) for e in hp]
+    b, _ = V(r"51\.4~K")
+    add("3.5", "PT-Exp4: the root mean square of the far face's difference from the record over 0 to 271.5 s with "
+        "4.66 and 5.04 kJ over 21.4 s, and over 0 to 181.9 s with 7.42 kJ", [" and ".join(v16) + " K", b + " K"],
+        "steps 10 and 15; results/stage10\\_paper\\_numbers.json, results/stage15\\_paper\\_numbers.json")
+    a, w = V(r"235\.5 and 235\.8", 1)
+    b, _ = V(r"235\.5 and 235\.8", 0)
+    add("3.5", "PT-Exp4 with 7.42 kJ over 21.4 s, read post hoc: the two side probes' readings where the far face's "
+        "jump begins", [a + " and " + b + " \\textdegree C"], "step 15's run; its series, read by its independent "
+        "read (results/stage15\\_independent\\_read.md)")
+    a, w = V(r"17 to 71~s", 0, 0)
+    b, _ = V(r"17 to 71~s", 1, 0)
+    c, _ = V(r"against 246 to 512~s", 0, 0)
+    d, _ = V(r"against 246 to 512~s", 1, 0)
+    add("3.7", "Wall time of a run on one two-core machine: the reactive cross-section, and the three-dimensional "
+        "model in the same searches", [a + " to " + b + " s", c + " to " + d + " s"],
+        "results/stage15\\_xs/*.json and results/stage15\\_runs/*.json, wall\\_s")
+    a, w = V(r"came 6\.01 to 17\.13", 0, 2)
+    b, _ = V(r"came 6\.01 to 17\.13", 1, 2)
+    four = ["%.2f" % float(e[2]()[0]) for e in NS.E if e[0] == r"at 6\.25, 10\.23, 16\.04 and 17\.02"]
+    c, _ = V(r"at 11\.48~s under the posterior mean", 0, 2)
+    sd_k = json.load(open(os.path.join(RES, "stage3a_metrics.json")))["metrics"]["two_E33223_tau30_G0.5"]["onset_s"]["hottest_node"]["sd"]
+    sd_t = json.load(open(os.path.join(RES, "stage3bc_metrics.json")))["thermal_30_at_mean_kinetics"]["hottest_onset_s"]["sd"]
+    add("S2", "Step 3, the earlier geometry's case (33.2 kJ over 30 s, a 500 mW\\,K$^{-1}$ busbar): the hot spot's "
+        "onset over the 200 kinetic draws, under the four draws step 11 took, under the posterior mean, and its "
+        "standard deviation over the kinetic and over the 30 thermal draws",
+        [a + " to " + b + " s", ", ".join(four) + " s", c + " s", "%.2f and %.3f s" % (sd_k, sd_t)],
+        "step 3's runs; results/stage3a\\_onsets.csv, stage3a\\_metrics.json, stage11\\_draws.csv, stage3bc\\_metrics.json")
+    par = {r["symbol"]: r for r in read_csv(os.path.join(ROOT, "manuscript", "data", "parameters.csv"))}
+    for sym, what, val in (("g_tab", "Tab conductance per tab", "6.8 mW\\,K$^{-1}$ (5 and 10 as brackets)"),
+                           ("k_can", "Can conductivity", "15 W\\,m$^{-1}$\\,K$^{-1}$"),
+                           ("m_can; c_can", "Can mass and specific heat", "9 g; 500 J\\,kg$^{-1}$\\,K$^{-1}$"),
+                           ("k_air", "Air in the wedge", "0.03 W\\,m$^{-1}$\\,K$^{-1}$"),
+                           ("theta_s", "Contact sector, either side of the line of contact", "45\\textdegree"),
+                           ("h_room", "Room convection", "10 W\\,m$^{-2}$\\,K$^{-1}$"),
+                           ("m_cell", "Cell mass", "65 g")):
+        ev = par[sym]["file_evidence"].split(";")[0]
+        add("Table 2", what + ", set by the earlier study without a primary source and held here as an assumption",
+            [val], ev.replace("_", "\\_"))
+    return rows
+
+
+def table_s17():
+    rows = quoted_rows()
+    with open(os.path.join(ROOT, "manuscript", "rebuild", "data", "s17_quoted.csv"), "w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=["where", "what", "value", "source"])
+        w.writeheader()
+        w.writerows(rows)
+    lines = [r"{\scriptsize\setlength{\tabcolsep}{4pt}",
+             r"\begin{longtable}{>{\raggedright\arraybackslash}p{0.07\textwidth}>{\raggedright\arraybackslash}p{0.41\textwidth}"
+             r">{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.25\textwidth}}",
+             r"\caption{Results that the main text (by section) and the supplement quote from runs or computations "
+             r"that no other table or figure shows, and the inputs that the earlier study set without a primary source "
+             r"(Table~2 of the main text, $^{a}$), each with the runs or the code it comes from. Every value here is "
+             r"read from its file by the numbers check's own entry for it.}\label{tab:s-quoted}\\",
+             r"\toprule", r"Where & Result & Value & From \\", r"\midrule", r"\endfirsthead",
+             r"\multicolumn{4}{l}{\textit{Continued}} \\", r"\toprule", r"Where & Result & Value & From \\",
+             r"\midrule", r"\endhead"]
+    import re as _re
+
+    def paths(src):
+        """File paths in \\nolinkurl, so that xurl may break them; the underscores unescaped inside."""
+        return _re.sub(r"((?:[A-Za-z0-9.*\-]|\\_)+/(?:[A-Za-z0-9./*\-]|\\_)+)",
+                       lambda m: r"\nolinkurl{%s}" % m.group(1).replace("\\_", "_"), src)
+
+    for r in rows:
+        lines.append("%s & %s & %s & %s \\\\" % (r["where"], r["what"], r["value"], paths(r["source"])))
+    lines += [r"\bottomrule", r"\end{longtable}", r"}", ""]
+    return "\n".join(lines)
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     for name, fn in [("t1_tests.tex", table1), ("t2_parameters.tex", table2), ("t3_bounds.tex", table3),
@@ -690,7 +1019,8 @@ def main():
                      ("s9_heldout.tex", table_s9), ("s10_twobody.tex", table_s10),
                      ("s11_archived.tex", table_s11), ("s12_step11.tex", table_s12),
                      ("s13_farface.tex", table_s13), ("s14_archived_runs.tex", table_s14),
-                     ("s15_nodelivery.tex", table_s15)]:
+                     ("s15_nodelivery.tex", table_s15), ("s17_quoted.tex", table_s17),
+                     ("t4_3d.tex", table4), ("s16_step16.tex", table_s16)]:
         open(os.path.join(OUT, name), "w").write(fn())
     print("tables written to", os.path.relpath(OUT, ROOT))
 

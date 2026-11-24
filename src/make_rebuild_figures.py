@@ -184,12 +184,13 @@ def fig1():
         ax.annotate(lab, (tt, LEVEL_C), xytext=off, fontsize=6.3, color=col, ha="left", va="center",
                     arrowprops=dict(arrowstyle="-", color=col, lw=0.6))
     ax.set_xlim(0, 300)
-    ax.set_ylim(0, 600)
+    ax.set_ylim(0, 720)                    # head room for the legend above every curve (read 7, D19)
+    ax.set_yticks(range(0, 701, 100))
     ax.set_xlabel("Time from the start of the trigger's release (s)")
     ax.set_ylabel("Temperature (°C)")
     ax.set_title("PT-Exp4, 7.4 kJ delivered to the facing half over 21.4 s", loc="left", fontsize=7.5)
     grid(ax)
-    ax.legend(loc="upper right", fontsize=6.3, handlelength=2.2)
+    ax.legend(loc="upper right", fontsize=6.0, handlelength=1.6, ncol=2, columnspacing=0.9, borderaxespad=0.3)
     ax.text(-0.13, 1.04, "(b)", transform=ax.transAxes, fontsize=9, fontweight="bold", va="bottom")
     save(fig, 1)
 
@@ -359,40 +360,50 @@ NONE_Y = 0.1                                                        # Fig. 4b: t
 
 
 def fig4():
-    """What each neighbour model needs at the measured times (the nine propagated tests, four deliveries), and the
-    energy read from each non-propagated test's measured maximum."""
+    """What each neighbour model needs at the measured times (the nine propagated tests, four deliveries): the lumped
+    neighbour, the resolved neighbour by the reactive cross-section, and the resolved neighbour in three dimensions
+    where step 16 searched it (results/stage16_scorecard.json); and the energy read from each non-propagated test's
+    measured maximum."""
     tt = tests_table()
     rows = read_csv(os.path.join(RES, "stage15_table.csv"))
     nd = needs_table()
+    s16p = os.path.join(RES, "stage16_scorecard.json")
+    s16 = json.load(open(s16p)) if os.path.exists(s16p) else {"N": [], "X": []}
+    d3 = {(r["test"], r["delivery"]): r for r in s16["N"] + s16["X"] if r["status"] == "done"}
     deliveries = [("21.39 s pulse", "o", "pulse over 21.4 s"), ("120 s constant power", "s", "120 s"),
                   ("240 s constant power", "^", "240 s"), ("360 s constant power", "D", "360 s")]
     prop = sorted([t for t in TESTS if tt[t]["propagated"]], key=lambda t: tt[t]["time_s"])
     nonp = [t for t in TESTS if not tt[t]["propagated"]]
-    fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.6), constrained_layout=True, gridspec_kw={"width_ratios": [2.0, 1.0]})
+    fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.8), constrained_layout=True, gridspec_kw={"width_ratios": [2.1, 1.0]})
     ax = axs[0]
 
-    def mark(x, y, status, col):
-        """t: the time reproduced only within the search's resolution (a dot); b: interpolated (a bar)."""
-        if status == "threshold":
-            ax.plot(x, y, marker=".", ms=3.6, color=col, ls="none", zorder=6)
-        elif status == "bracketed":
-            ax.plot(x, y, marker="_", ms=7.0, mew=1.2, color=INK, ls="none", zorder=6)
+    def letter(x, y, status, col):
+        """t: the time reproduced only within the search's resolution of the threshold; b: interpolated."""
+        if status in ("threshold", "bracketed"):
+            ax.annotate({"threshold": "t", "bracketed": "b"}[status], (x, y), xytext=(0, 4.2),
+                        textcoords="offset points", ha="center", va="bottom", fontsize=6.2, color=col,
+                        fontweight="bold")
 
     for i, t in enumerate(prop):
         for j, (dname, mk, _) in enumerate(deliveries):
             r = next((r for r in rows if r["test"] == t and r["delivery"] == dname), None)
             if r is None:
                 continue
-            dx = -0.27 + 0.18 * j
+            dx = -0.3 + 0.2 * j
             e2 = fnum(r["C2_E_by_t_J"])
             e8 = fnum(r["C8_xs_E_by_t_J"])
             if e2 is not None and r["C2_status"] in ("matched", "threshold", "bracketed"):
                 y2 = max(e2, 1.0) / 1e3
-                ax.plot(i + dx, y2, marker=mk, ms=4.4, mfc=C_LUMP, mec=C_LUMP, ls="none")
-                mark(i + dx, y2, r["C2_status"], "white")
+                ax.plot(i + dx, y2, marker=mk, ms=4.2, mfc=C_LUMP, mec=C_LUMP, ls="none")
+                letter(i + dx, y2, r["C2_status"], C_LUMP)
             if e8 is not None and r["C8_xs_status"] in ("matched", "threshold"):
-                ax.plot(i + dx, e8 / 1e3, marker=mk, ms=4.8, mfc="white", mec=C_RES, mew=1.2, ls="none")
-                mark(i + dx, e8 / 1e3, r["C8_xs_status"], C_RES)
+                ax.plot(i + dx - 0.035, e8 / 1e3, marker=mk, ms=4.4, mfc="white", mec=C_RES, mew=1.1, ls="none")
+                letter(i + dx - 0.035, e8 / 1e3, r["C8_xs_status"], C_RES)
+            q = d3.get((t, dname))
+            if q is not None:
+                lo, hi = q["lo_by_t_J"] / 1e3, q["hi_by_t_J"] / 1e3
+                ax.plot([i + dx + 0.05] * 2, [lo, hi], color=C_RES, lw=1.4, solid_capstyle="butt")
+                ax.plot(i + dx + 0.05, 0.5 * (lo + hi), marker=mk, ms=4.0, mfc=C_RES, mec=C_RES, ls="none")
     ax.set_yscale("log")
     ax.set_ylim(0.12, 100)
     ax.set_xticks(range(len(prop)))
@@ -400,13 +411,17 @@ def fig4():
     ax.set_ylabel("Energy delivered to the facing half\nby the runaway (kJ)")
     ax.set_title("Propagated tests, in order of the measured time", loc="left", fontsize=7.5)
     grid(ax)
-    h = [Line2D([], [], color=C_LUMP, marker="o", ls="none", ms=4.2, label="lumped neighbour reaches 255.7 °C"),
-         Line2D([], [], color=C_RES, marker="o", mfc="white", ls="none", ms=4.6, mew=1.2,
-                label="resolved neighbour's mean reaches 255.7 °C")]
+    h = [Line2D([], [], color=C_LUMP, marker="o", ls="none", ms=4.2, label="lumped neighbour"),
+         Line2D([], [], color=C_RES, marker="o", mfc="white", ls="none", ms=4.4, mew=1.1,
+                label="resolved: reactive cross-section"),
+         Line2D([], [], color=C_RES, marker="o", ls="-", lw=1.4, ms=4.0,
+                label="resolved: three-dimensional (bracket)")]
     h += [Line2D([], [], color=MUTED, marker=mk, ls="none", ms=4.2, label=lab) for _, mk, lab in deliveries]
-    h += [Line2D([], [], color=INK, marker=".", ms=5.0, ls="none", label="dot inside: time met within the grid's resolution (t)"),
-          Line2D([], [], color=INK, marker="_", ms=7.0, mew=1.2, ls="none", label="dash: interpolated between two runs")]
-    fig.legend(handles=h, loc="outside lower center", fontsize=6.4, ncol=4, frameon=False)
+    h += [Line2D([], [], color="none", marker="$t$", ms=6.0, mec=INK, mfc=INK, ls="none",
+                 label="time met only within the search's resolution"),
+          Line2D([], [], color="none", marker="$b$", ms=6.0, mec=INK, mfc=INK, ls="none",
+                 label="interpolated between two runs")]
+    fig.legend(handles=h, loc="outside lower center", fontsize=6.3, ncol=3, frameon=False)
     panel(ax, "a")
     ax = axs[1]
     for i, t in enumerate(nonp):
@@ -547,11 +562,16 @@ def fig6():
 
 # ------------------------------------------------------------------------------------------------ Figure 7
 def fig7():
-    """The reactive cross-section against the three-dimensional model."""
+    """The reactive cross-section against the three-dimensional model: (a) the time the mean reaches 255.7 C and (b)
+    its peak in the archived runs (results/stage15_cross_section.json, A1_rows); (c) the thresholds searched in three
+    dimensions with the pulse (step 15, results/stage15_paper_numbers.json; step 16, results/stage16_scorecard.json);
+    (d) the needs with the pulse at the measured times (step 16)."""
     d = cross_section()
     rows = d["A1_rows"]
-    fig, axs = plt.subplots(1, 3, figsize=(7.2, 2.6), constrained_layout=True)
-    shapes = {"tri": ("o", "pulse over 21.4 s"), "con": ("s", "constant power")}
+    s16p = os.path.join(RES, "stage16_scorecard.json")
+    s16 = json.load(open(s16p)) if os.path.exists(s16p) else None
+    fig, axs = plt.subplots(2, 2, figsize=(7.2, 5.4), constrained_layout=True)
+    axs = axs.ravel()
     par = lambda r: r["test"].split("_")[1] in ("PT", "PP")
     ax = axs[0]
     for r in rows:
@@ -567,6 +587,12 @@ def fig7():
     ax.set_ylabel("Reactive cross-section (s)")
     ax.set_title("Time the mean reaches 255.7 °C", loc="left", fontsize=7.2)
     grid(ax, "both")
+    h = [Line2D([], [], marker="o", mfc="white", mec=C_RES, ls="none", ms=3.6, label="series tests"),
+         Line2D([], [], marker="o", mfc="white", mec=C_PURPLE, ls="none", ms=3.6, label="parallel tests"),
+         Line2D([], [], marker="o", color=MUTED, mfc="white", ls="none", ms=3.6, label="pulse over 21.4 s"),
+         Line2D([], [], marker="s", color=MUTED, mfc="white", ls="none", ms=3.6, label="constant power"),
+         Line2D([], [], marker="^", color=MUTED, mfc="white", ls="none", ms=3.6, label="no delivery (b)")]
+    ax.legend(handles=h, loc="upper left", fontsize=6.2, title="(a) and (b)", title_fontsize=6.2)
     panel(ax, "a")
     ax = axs[1]
     for r in rows:
@@ -582,31 +608,50 @@ def fig7():
     ax.set_ylabel("Reactive cross-section (°C)")
     ax.set_title("Peak of the mean, runs without runaway", loc="left", fontsize=7.2)
     grid(ax, "both")
-    h = [Line2D([], [], marker="o", mfc="white", mec=C_RES, ls="none", ms=3.6, label="series tests"),
-         Line2D([], [], marker="o", mfc="white", mec=C_PURPLE, ls="none", ms=3.6, label="parallel tests"),
-         Line2D([], [], marker="o", color=MUTED, mfc="white", ls="none", ms=3.6, label="pulse over 21.4 s"),
-         Line2D([], [], marker="s", color=MUTED, mfc="white", ls="none", ms=3.6, label="constant power"),
-         Line2D([], [], marker="^", color=MUTED, mfc="white", ls="none", ms=3.6, label="no delivery")]
-    ax.legend(handles=h, loc="upper left", fontsize=6.3)
     panel(ax, "b")
     ax = axs[2]
     b1 = stage15_numbers()["B1"]
     xs = {r["test"]: r for r in d["A2"] if r["shape"] == "tri"}
-    for i, t in enumerate(["M50_SP_Exp3", "M50_PP_Exp2", "M50_PT_Exp4", "M50_ST_Exp3"]):
-        br = b1[t]["bracket"]
-        ax.plot([i, i], [br["lo_J"] / 1e3, br["hi_J"] / 1e3], color=C_RES, lw=3, solid_capstyle="butt")
-        ax.plot(i, br["mid_J"] / 1e3, marker="D", color=C_RES, ms=4, ls="none")
-        ax.plot(i + 0.15, xs[t]["E_star_J"] / 1e3, marker="o", mfc="white", mec=INK, ms=4.4, ls="none")
-    ax.set_xticks(range(4))
-    ax.set_xticklabels(["SP-Exp3", "PP-Exp2", "PT-Exp4", "ST-Exp3"], fontsize=6.3)
+    th = [(t, v["bracket"]["lo_J"], v["bracket"]["hi_J"]) for t, v in b1.items()]
+    if s16 and s16["T"].get("status") == "done":
+        th.append((s16["T"]["test"], s16["T"]["lo_J"], s16["T"]["hi_J"]))
+    tt = tests_table()
+    th = sorted(th, key=lambda x: -tt[x[0]]["E_b_J"])
+    for i, (t, lo, hi) in enumerate(th):
+        ax.plot([i, i], [lo / 1e3, hi / 1e3], color=C_RES, lw=3, solid_capstyle="butt")
+        ax.plot(i, 0.5 * (lo + hi) / 1e3, marker="D", color=C_RES, ms=4, ls="none")
+        ax.plot(i + 0.18, xs[t]["E_star_J"] / 1e3, marker="o", mfc="white", mec=INK, ms=4.4, ls="none")
+    ax.set_xticks(range(len(th)))
+    ax.set_xticklabels([short(t) for t, _, _ in th], fontsize=6.3)
     ax.set_ylabel("Resolved threshold over 21.4 s (kJ)")
-    ax.set_ylim(0, 12)
-    ax.set_title("Thresholds", loc="left", fontsize=7.2)
+    ax.set_ylim(0, 13)
+    ax.set_xlim(-0.5, len(th) - 0.3)
+    ax.set_title("Thresholds, in order of the trigger's energy", loc="left", fontsize=7.2)
     h = [Line2D([], [], color=C_RES, marker="D", lw=3, ms=4, label="three-dimensional (bracket)"),
          Line2D([], [], color=INK, marker="o", mfc="white", lw=0, ms=4.4, label="reactive cross-section")]
-    ax.legend(handles=h, loc="upper left", fontsize=6.3)
+    ax.legend(handles=h, loc="upper left", fontsize=6.2)
     grid(ax)
     panel(ax, "c")
+    ax = axs[3]
+    if s16:
+        N = [r for r in s16["N"] if r["status"] == "done"]
+        N = sorted(N, key=lambda r: tt[r["test"]]["time_s"])
+        for i, r in enumerate(N):
+            ax.plot([i, i], [r["lo_J"] / 1e3, r["hi_J"] / 1e3], color=C_RES, lw=3, solid_capstyle="butt")
+            ax.plot(i, r["mid_J"] / 1e3, marker="D", color=C_RES, ms=4, ls="none")
+            ax.plot(i + 0.18, r["xs_E_by_t_J"] / 1e3, marker="o", mfc="white", mec=INK, ms=4.4, ls="none")
+            ax.plot(i - 0.18, r["lumped_E_by_t_J"] / 1e3, marker="s", color=C_LUMP, ms=3.8, ls="none")
+        ax.set_xticks(range(len(N)))
+        ax.set_xticklabels(["%s\n%.0f s" % (short(r["test"]), tt[r["test"]]["time_s"]) for r in N], fontsize=6.0)
+    ax.set_ylabel("Need with the 21.4 s pulse (kJ)")
+    ax.set_ylim(0, 9)
+    ax.set_title("Needs at the measured times, strong triggers", loc="left", fontsize=7.2)
+    h = [Line2D([], [], color=C_RES, marker="D", lw=3, ms=4, label="resolved, three-dimensional (bracket)"),
+         Line2D([], [], color=INK, marker="o", mfc="white", lw=0, ms=4.4, label="resolved, reactive cross-section"),
+         Line2D([], [], color=C_LUMP, marker="s", lw=0, ms=3.8, label="lumped")]
+    ax.legend(handles=h, loc="lower left", fontsize=6.0, ncol=1)
+    grid(ax)
+    panel(ax, "d")
     save(fig, 7)
 
 

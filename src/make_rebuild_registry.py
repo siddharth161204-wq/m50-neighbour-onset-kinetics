@@ -1,15 +1,14 @@
-"""The registry of the study's 98 predictions and its fifteen steps, for the rebuilt manuscript's supplement.
+"""The registry of the study's predictions and its sixteen steps, for the rebuilt manuscript's supplement.
 
-Rows 1 to 74 (Stages 1 to 12) are manuscript/data/predictions_by_stage.csv unchanged. Rows 75 to 98 (Stages 13 to
-15) are shortened here from predictions_stage13.md, predictions_stage14.md and predictions_stage15.md (each row names
-its file and line), with the verdicts read from results/stage13_scorecard.json, stage14_scorecard.json and
-stage15_scorecard.json. A failure counts as foreseen under the rule of the counts file
+Rows 1 to 74 (Stages 1 to 12) are manuscript/data/predictions_by_stage.csv unchanged. Rows 75 to 109 (Stages 13 to
+16) are shortened here from predictions_stage13.md to predictions_stage16.md (each row names its file and line), with
+the verdicts read from results/stage13_scorecard.json to stage16_scorecard.json. A failure counts as foreseen under the rule of the counts file
 (manuscript/data/predictions_by_stage_counts.md): the predictions file recorded it, before the runs, as expected or as
 fixed by its design or by earlier records.
 
 Supplementary Table S2 lists only the predictions whose runs the manuscript or its supplement reports (Brief 30, item
 6): UNREPORTED names the others, each with the reason, and STRIP the reasons in a listed prediction's expectation that
-rest on runs neither document reports, which leave the table. The registry file keeps all 98, with a column saying
+rest on runs neither document reports, which leave the table. The registry file keeps all of them, with a column saying
 whether the table lists each and, if not, why.
 
 Writes manuscript/rebuild/data/predictions_registry.csv and manuscript/rebuild/data/steps.csv, and the supplement's
@@ -76,7 +75,31 @@ NEW = [
      "likely; the reduced model's values: no runaway in any of the five runs, the least shift 20.0 K", "predictions_stage15.md:122"),
     (15, "P8", "PT_Exp4's run with 6,209 J over 240 s, carried to 900 s, runs away.", "likely; the reduced model's value, registered with it: no runaway, the mean peaking at 220.5 C", "predictions_stage15.md:124"),
 ]
-FORESEEN = {(14, "P1"), (14, "P2")}
+NEW += [
+    (16, "P1", "With the 21.4 s pulse, the reactive cross-section's need lies within 10 % of the three-dimensional need in each of the eight strong-trigger tests that propagated.",
+     "holds, the cross-section's need 2 to 9 % above, since its search stopped at the first run within 10 s of the measured time and the three-dimensional runaway came earlier near the thresholds", "predictions_stage16.md:30"),
+    (16, "P2", "With the pulse, the cross-section's need lies above the three-dimensional need in each of the eight tests.",
+     "holds, for the reasons of P1; least sure in PP-Exp4 and ST-Exp4, whose needs lie near their thresholds", "predictions_stage16.md:32"),
+    (16, "P3", "With the pulse, every three-dimensional need lies within 4.1 to 8.1 kJ.",
+     "holds; the cross-section's runs put the needs at 4.31 to 7.46 kJ", "predictions_stage16.md:34"),
+    (16, "P4", "With the pulse, the resolved need exceeds the lumped need in each of the eight tests.",
+     "holds; fixed, or nearly, by earlier records in seven of the eight, where a three-dimensional run at or above the lumped need already ran away late or not at all", "predictions_stage16.md:36"),
+    (16, "P5", "With the pulse, the resolved need exceeds the lumped need by 1.0 to 5.0 kJ in each of the eight tests.",
+     "holds, by 1.4 to 4.1 kJ on the cross-section's runs", "predictions_stage16.md:38"),
+    (16, "P6", "After PT-Exp1's weak trigger the resolved threshold with the pulse lies below the lumped threshold, in three dimensions.",
+     "holds; the cross-section's threshold is 0.84 times the lumped one, and the three-dimensional thresholds lay within 15 % of the cross-section's in the four tests searched", "predictions_stage16.md:40"),
+    (16, "P7", "PT-Exp1's ratio of the resolved to the lumped threshold, by the brackets' midpoints, lies between 0.75 and 0.95.",
+     "holds, at 0.84, fixed by construction if the search's first two runs close its bracket", "predictions_stage16.md:42"),
+    (16, "P8", "Refining the mesh by 1.5 and halving every step limit moves a need by at most one bracket width.",
+     "holds, most likely with both ends of the bracket keeping their outcome", "predictions_stage16.md:44"),
+    (16, "P9", "That refinement moves the runaway time by less than 3 % at both ends of the need's bracket.",
+     "holds, at about +1.5 %, as the earlier refinement at PT-Exp4's threshold", "predictions_stage16.md:46"),
+    (16, "P10", "With constant power, the cross-section's needs lie within 10 % of the three-dimensional needs found.",
+     "fails in at least one search, since with constant power the cross-section's runaway came up to 34.5 s after the three-dimensional model's", "predictions_stage16.md:48"),
+    (16, "P11", "With constant power, the resolved need exceeds the lumped need in every three-dimensional search closed.",
+     "holds; fixed, or nearly, by earlier records in 21 of the 24 cases", "predictions_stage16.md:50"),
+]
+FORESEEN = {(14, "P1"), (14, "P2"), (16, "P10")}
 
 # The predictions whose runs neither the manuscript nor its supplement reports (Brief 30, item 6), with the reason. They
 # leave Supplementary Table S2; each, with its file and its verdict, stays in this registry file and in the archive.
@@ -166,6 +189,7 @@ STEPS = [
     (13, "Reduced models of each threshold: skin conduction and an ignition temperature", "predictions_stage13.md", "2026-11-16"),
     (14, "What each path can deliver to the neighbour, bounded from published inputs", "predictions_stage14.md", "2026-11-17"),
     (15, "The resolved neighbour's own runaway: a reactive cross-section and three-dimensional searches", "predictions_stage15.md", "2026-11-18"),
+    (16, "The resolved needs and a second weak-trigger threshold in three dimensions, and a refinement at a need", "predictions_stage16.md", "2026-11-24"),
 ]
 
 
@@ -215,12 +239,17 @@ def main():
     v13 = json.load(open(os.path.join(RES, "stage13_scorecard.json")))
     v14 = json.load(open(os.path.join(RES, "stage14_scorecard.json")))
     v15 = json.load(open(os.path.join(RES, "stage15_scorecard.json")))["scorecard"]["predictions"]
+    p16 = os.path.join(RES, "stage16_scorecard.json")
+    v16 = json.load(open(p16))["scorecard"]["predictions"] if os.path.exists(p16) else {}
 
     def verdict(stage, lab):
         if stage == 13:
             return "held" if v13[lab]["holds"] else "failed"
         if stage == 14:
             return "held" if v14[lab]["holds"] else "failed"
+        if stage == 16:
+            h = v16.get(lab, {}).get("held")
+            return "held" if h is True else ("failed" if h is False else "not scored")
         return v15[lab]["verdict"]
 
     rows = []
@@ -282,7 +311,7 @@ def main():
             "listed_failed_foreseen")
     tot = {k: sum(s[k] for s in steps) for k in keys}
     t1 = [r"\begin{table}[!htbp]", r"\centering", r"\scriptsize",
-          r"\caption{The study's fifteen steps, each with its own predictions pushed to the public repository before "
+          r"\caption{The study's sixteen steps, each with its own predictions pushed to the public repository before "
           r"its runs (the push's date, UTC, in 2026): how many predictions each registered, and how many held and "
           r"failed among those Table~\ref{tab:s-registry} lists, whose runs the main text or this supplement reports, "
           r"and among the others; a listed failure is foreseen when the predictions file recorded it as expected "

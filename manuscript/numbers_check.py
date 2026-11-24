@@ -214,6 +214,18 @@ TABLE_SOURCES = {
     "s13_farface.tex": ["results/stage11_overshoot.csv", "results/stage11_draws.csv"],
     "s14_archived_runs.tex": ["results/stage15_cross_section.json"],
     "s15_nodelivery.tex": ["results/stage15_nodelivery.csv"],
+    # Brief 31: the three-dimensional needs and thresholds (main text, Table 4), step 16's runs, and the results the
+    # texts quote that no other table shows (read 7's list A), each against the files it is made from
+    "t4_3d.tex": ["results/stage16_needs.csv", "results/stage16_scorecard.json", "results/stage15_table.csv",
+                  "results/stage14_needs.csv", "results/stage15_paper_numbers.json", "results/stage15_cross_section.json",
+                  "results/stage7_triggers.csv", "inputs/fransson2024/m50_tests.csv"],
+    "s16_step16.tex": ["results/stage16_runs.csv", "results/stage16_scorecard.json"],
+    "s17_quoted.tex": ["results/v12_numbers.json", "results/stage12_paper_numbers.json", "results/stage7_crossings.csv",
+                       "results/stage15_paper_numbers.json", "results/stage13_skin.csv", "results/stage13_tign.csv",
+                       "results/stage15_accounts.json", "results/stage10_paper_numbers.json",
+                       "results/stage3a_onsets.csv", "results/stage3a_metrics.json", "results/stage11_draws.csv",
+                       "results/stage3bc_metrics.json", "manuscript/data/parameters.csv",
+                       "manuscript/rebuild/data/s17_quoted.csv"],
 }
 MONTHS = r"(January|February|March|April|May|June|July|August|September|October|November|December)"
 
@@ -336,6 +348,9 @@ def rb_segments(rb):
     segs.append(("main.tex: declarations", cut(r"\section*{CRediT", r"\bibliography"), "map"))
     for f in sorted(glob.glob(os.path.join(rb, "tables", "t*.tex"))):
         t = open(f).read()
+        if os.path.basename(f) == "t4_3d.tex":
+            segs.append((os.path.relpath(f, ROOT), t, "table:t4_3d.tex"))
+            continue
         if os.path.basename(f) == "t1_tests.tex":
             i = t.index(r"\begin{tabular}")
             segs.append((os.path.relpath(f, ROOT) + ": caption", t[:i], "map"))
@@ -576,7 +591,7 @@ def rebuild(a):
                     counts["table"] += 1
                     lines.append(f"   table {raw} <- " + " | ".join(hit))
                     continue
-            if mode == "broad" or mode.startswith("table:"):
+            if mode == "broad" or (mode.startswith("table:") and mode != "table:t4_3d.tex"):
                 dec = max(0, round(-math.log10(2 * tol)))
                 hit = matches(v, dec, broad, unit_after(after) or ("table" if mode.startswith("table:") else ""))
                 if hit:

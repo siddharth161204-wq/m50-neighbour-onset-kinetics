@@ -362,7 +362,7 @@ E = [
                                          lambda: [r["E_star_J"] for r in _json(XS)["A2"] if r["shape"] == "tri" and r["test"] in ("M50_PP_Exp1", "M50_SP_Exp3")]), "kJ"),
     (r"above 7\.06~kJ|midpoint 7\.06|midpoints, 7\.06", ["7.06"], J(S15, B1 + "PT_Exp4.bracket.mid_J"), "kJ"),
     (r"6\.71 (to|and) 7\.42", ["6.71"], J(S15, B1 + "PT_Exp4.bracket.lo_J"), "kJ"),
-    (r"6\.71 (to|and) 7\.42|At 7\.42~kJ|of the 7\.42~kJ run", ["7.42"], J(S15, B1 + "PT_Exp4.bracket.hi_J"), "kJ"),
+    (r"6\.71 (to|and) 7\.42|At 7\.42~kJ|of the 7\.42~kJ run|post hoc, the 7\.42~kJ run", ["7.42"], J(S15, B1 + "PT_Exp4.bracket.hi_J"), "kJ"),
     (r"6\.85~kJ in PP|PP-Exp2 \(6\.85~kJ\)|7\.06 and 6\.85 against", ["6.85"], J(S15, B1 + "PP_Exp2.bracket.mid_J"), "kJ"),
     (r"6\.51 (to|and) 7\.20", ["6.51"], J(S15, B1 + "PP_Exp2.bracket.lo_J"), "kJ"),
     (r"6\.51 (to|and) 7\.20", ["7.20"], J(S15, B1 + "PP_Exp2.bracket.hi_J"), "kJ"),
@@ -450,7 +450,7 @@ E = [
     (r"51\.4~K", ["51.4"], J(S15, "B3a.history.rms_K"), None),
     (r"255\.9", ["255.9"], b3b("12.5", "t_C8_s"), None),
     (r"369\.3", ["369.3"], b3b("10.0", "t_C8_s"), None),
-    (r"constant 12\.5~W|with 12\.5~W|followed by 12\.5~W|and 12\.5~W, with it|the 12\.5~W hold", ["12.5"], J(S15, "B3b.result.P_hi_W"), None),
+    (r"constant 12\.5~W|with 12\.5~W|followed by 12\.5~W|and 12\.5~W, with it|the 12\.5~W hold|and 12\.5~W \(at 255", ["12.5"], J(S15, "B3b.result.P_hi_W"), None),
     (r"by 10~W", ["10"], J(S15, "B3b.result.P_lo_W"), None),
     (r"added 2\.9 and 3\.5", ["2.9"], b3b("12.5", "delivered_J", "delivery2"), "kJ"),
     (r"added 2\.9 and 3\.5", ["3.5"], b3b("10.0", "delivered_J", "delivery2"), "kJ"),
@@ -568,7 +568,7 @@ E = [
     (r"threshold is 10\.28", ["10.28"], J(S15, B1 + "ST_Exp3.bracket.mid_J"), "kJ"),
     (r"150 to 300 ?J per kJ", ["150"], MD("predictions_stage13.md", r"falls by (150) to 300 J per kJ"), None),
     (r"150 to 300 ?J per kJ", ["300"], MD("predictions_stage13.md", r"falls by 150 to (300) J per kJ"), None),
-    (r"by 250 ?s the lumped", ["250"], F("results/stage15_accounts.json: the accounts' rows at t_s 250",
+    (r"by 250 ?s the lumped|resolved one by 250 ?s through", ["250"], F("results/stage15_accounts.json: the accounts' rows at t_s 250",
                                          lambda: sorted({r["t_s"] for v in _json("results/stage15_accounts.json")["accounts"].values()
                                                          for r in v["rows"] if r["t_s"] == 250.0})), None),
     (r"rank 5, 50, 151 and 196", ["5", "50", "151", "196"], F(f"{CONST}: constants.kin_ranks", lambda: _json(CONST)["constants"]["kin_ranks"]), None),
@@ -580,7 +580,7 @@ E = [
     (r"starts at 32\.2", ["32.2"], C("inputs/fransson2024/pt_exp4_history.csv", "T_neighbour_C", t_s="0.0"), None),
     (r"begins at 173 ?s", ["173"], F(f"{S15}: B1.M50_PT_Exp4, the run at the bracket's upper end: far_jump.t_s",
                                      lambda: [r["far_jump"]["t_s"] for r in _json(S15)["B1"]["M50_PT_Exp4"]["runs"] if r["C8"]]), None),
-    (r"6\.2 ?kJ (at constant power )?over 240|332~s, 6\.2~kJ, 5|with 6\.2~kJ, 5", ["6.2"], J(S15, ["B2", "0.05", "E_J"]), "kJ"),
+    (r"6\.2 ?kJ (at constant power )?over 240|332~s, 6\.2~kJ, 5|with 6\.2~kJ, 5|run of 6\.2~kJ, 5", ["6.2"], J(S15, ["B2", "0.05", "E_J"]), "kJ"),
     (r"6\.2 ?kJ (at constant power )?over 240|energy, at constant power over 240", ["240"], C(TAB15, "tau_s", test="M50_PT_Exp4"), None),
     (r"peaking at 241\.4", ["241.4"], J(S15, ["B2", "0.05", "peak_mean_C"]), None),
     (r"mean (peaking )?at 220\.5", ["220.5"], MD("predictions_stage15.md", r"6,209 J no C8 \(mean peak (220\.5) C\)"), None),
@@ -702,8 +702,8 @@ E += [
     (r"internal-short rate|self-heating, at 199", ["1"], MD("DECISIONS.md", r"T_on at the paper's stated trigger \((1) C/min\)"), None),
     (r"band of 255\.7 to 302\.1", ["255.7"], MD("DECISIONS.md", r"below the paper's band of (255\.7) to 302\.1"), None),
     (r"band of 255\.7 to 302\.1", ["302.1"], MD("DECISIONS.md", r"below the paper's band of 255\.7 to (302\.1)"), None),
-    (r"runs from 146\.3 to 191\.4", ["146.3"], J("results/stage3_numbers.json", ["V4_registered", "T_in_p2.5_C"]), None),
-    (r"runs from 146\.3 to 191\.4", ["191.4"], J("results/stage3_numbers.json", ["V4_registered", "T_in_p97.5_C"]), None),
+    (r"runs from 146\.3 to 191\.4|onset of 146\.3 to 191\.4", ["146.3"], J("results/stage3_numbers.json", ["V4_registered", "T_in_p2.5_C"]), None),
+    (r"runs from 146\.3 to 191\.4|onset of 146\.3 to 191\.4", ["191.4"], J("results/stage3_numbers.json", ["V4_registered", "T_in_p97.5_C"]), None),
     (r"191\.4\\degC\{\} \(central 95|\(central 95\\,\\%\)", ["95"], MD("DECISIONS.md", r"(95) %"), None),
     (r"Over the 200 draws below|the 200 draws below", ["200"], J(S13, "scorecard.P7.n_draws"), None),
 ]
@@ -884,8 +884,8 @@ E += [
 V4 = "results/stage3_v4.json"
 V4A = "results/stage3_v4_amended.json"
 E += [
-    (r"Over the 164 of the 200 draws|the 164 such draws", ["164"], J(V4, "main_cluster_T_in_C.n"), None),
-    (r"Over the 164 of the 200 draws|kinetic draws went through the same emulation", ["200"], J(V4, "n_draws"), None),
+    (r"Over the 164 of the 200 draws|the 164 such draws|draws described below, the 164", ["164"], J(V4, "main_cluster_T_in_C.n"), None),
+    (r"Over the 164 of the 200 draws|kinetic draws went through the same emulation|Of the 200 posterior draws", ["200"], J(V4, "n_draws"), None),
     (r"runs from 146\.3 to 191\.4|gave 146\.3 to 191\.4", ["191.4"], J(V4, ["main_cluster_T_in_C", "p97.5"]), None),
     (r"gave 146\.3 to 191\.4", ["146.3"], J(V4, ["main_cluster_T_in_C", "p2.5"]), None),
     (r"lie within 5~K of the band's edges and their mean within 5~K", ["5"], J(V4A, "tolerance_C"), None),
@@ -948,17 +948,17 @@ E += [
     (r"first two draws, at 191\.0 and 196\.5", ["191.0", "196.5"],
      F(f"{S15}: B4 draws of rank 5 and 50, lumped_C2_t_s", lambda: [_get(_json(S15), "B4.draws.5.lumped_C2_t_s"),
                                                                     _get(_json(S15), "B4.draws.50.lumped_C2_t_s")]), None),
-    (r"a run made in step~10|Table~S1, step~10\) and stopped", ["10"], F(f"{XS}: A1_rows, the archived 6,209 J run's id, s10_...",
+    (r"a run made in step~10|Table~S1, step~10\) and stopped|\(step~10 of Supplementary Table", ["10"], F(f"{XS}: A1_rows, the archived 6,209 J run's id, s10_...",
                                          lambda: [int(archived_6209()[0]["id"][1:3])]), None),
-    (r"S1\) and stopped at 332|step~10\) and stopped at 332", ["332"], F(f"{XS}: A1_rows, the archived 6,209 J run: t_end_s", lambda: [r["t_end_s"] for r in archived_6209()]), None),
-    (r"its peak 20\.9~K lower|its peak 20\.9~K below that run", ["20.9"],
+    (r"S1\) and stopped at 332|step~10\) and stopped at 332|stopped there at 332|run stopped at 332~s \(20\.9", ["332"], F(f"{XS}: A1_rows, the archived 6,209 J run: t_end_s", lambda: [r["t_end_s"] for r in archived_6209()]), None),
+    (r"its peak 20\.9~K lower|its peak 20\.9~K below that run|\(20\.9~K below its peak over 900|outcome, 20\.9~K below that run", ["20.9"],
      F(f"{S15}: B2 0.05 peak_mean_C less the reduced model's registered peak (predictions_stage15.md)",
        lambda: [float(_get(_json(S15), ["B2", "0.05", "peak_mean_C"])) -
                 float(re.search(r"6,209 J no C8 \(mean peak (220\.5) C\)", open(os.path.join(ROOT, "predictions_stage15.md")).read()).group(1))]), None),
     (r"came 5\.5~s earlier to 34\.5~s later", ["5.5"], F(f"{XS}: A1_summary.dt_C8_s.min, negated", lambda: [-float(_get(_json(XS), "A1_summary.dt_C8_s.min"))]), None),
     (r"more than the 10~s of a match", ["10"], MD("predictions_stage9.md", r"crossing lies within (10) s of the measured time"), None),
     (r"against 246 to 512~s", ["246", "512"], lo_hi("results/stage15_runs/*.json: wall_s of the B1 runs", b1_wall), None),
-    (r"Table~S1, step~11\) under", ["11"], F(f"{REG}: the step of P1 under every kinetic draw", lambda: step_of("P1", "under every kinetic draw")), None),
+    (r"Table~S1, step~11\) under|\(step~11 of Supplementary Table~S1\)", ["11"], F(f"{REG}: the step of P1 under every kinetic draw", lambda: step_of("P1", "under every kinetic draw")), None),
     (r"in steps of 0\.1~s, halved", ["0.1"], MD("src/reactive.py", r"DT_BASE = (0\.1)"), None),
     (r"exceeds about 1~K a step", ["1"], MD("src/reactive.py", r"DT_TARGET = (1)\.0"), None),
     (r"by more than 4~K being repeated", ["4"], MD("src/reactive.py", r"DT_ACCEPT = (4)\.0"), None),
@@ -1083,6 +1083,15 @@ B30R2 = [
 ]
 E += B30R2
 
+# Brief 31 (24 November 2026): sentences changed for read 7's items and the three-dimensional needs
+E += [
+    (r"below its smallest, 18\.7|for this cell, 18\.7 to 33\.2", ["18.7"], C(INP14, "range_lo", key="db_Ebody_max"), "kJ"),
+    (r"for this cell, 18\.7 to 33\.2", ["33.2"], C(INP14, "value", key="db_Ebody_max"), "kJ"),
+    (r"from 3\.8~K higher", ["3.8"], J(XS, "A1_summary.d_mean_peak_K.max"), None),
+    (r"more than 10~s after the measured time", ["10"], MD("src/stage16_run.py", r"WINDOW_S = ([0-9.]+)"), None),
+    (r"at most 0\.125", ["0.125"], MD("src/stage16_run.py", r"FINAL_FRAC = ([0-9.]+)"), "pct"),
+]
+
 WORDS = [
     (r"halved up to sixteen times", 16, MD("src/reactive.py", r"K_MAX = (16)")),
     (r"thirteen of the fourteen with strong triggers", 13, F("stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket",
@@ -1096,7 +1105,7 @@ WORDS = [
     (r"four of them known beforehand to be fixed, or nearly", 4, F("manuscript/rebuild/data/predictions_registry.csv: held rows of Table S2 whose expectation records them as fixed",
                                                         lambda: [float(sum(1 for r in _csv("manuscript/rebuild/data/predictions_registry.csv") if r["verdict"] == "held" and r["in_table_s2"] == "yes" and "fixed" in r["expectation"]))])),
     (r"Nine propagated", 9, F(f"{TESTS}: tests with propagated Yes", _n_tests(lambda r: r["propagated"] == "Yes"))),
-    (r"thirteen of the sixteen tests", 13, F(f"{TRIG}: tests whose E_J exceeds the calorimetry's 33,222.9 J",
+    (r"thirteen of the sixteen fitted energies|Thirteen of these exceed 33", 13, F(f"{TRIG}: tests whose E_J exceeds the calorimetry's 33,222.9 J",
                                                lambda: [float(sum(1 for x in trig_E() if float(x) > 33222.9))])),
     (r"the fourteen with strong triggers", 14, F(f"{TRIG}: tests whose E_J exceeds 30 kJ",
                                                       lambda: [float(sum(1 for x in trig_E() if float(x) > 30000))])),
@@ -1104,6 +1113,12 @@ WORDS = [
                                          lambda: [float(sum(1 for x in trig_E() if float(x) < 30000))])),
     (r"zero in the eight tests", 8, F(f"{NEEDS}: tests whose local threshold is zero",
                                       _n_needs(lambda r: r["threshold_C1_hi_J"] and float(r["threshold_C1_hi_J"]) == 0))),
+    (r"two lie below its smallest|two below it and one inside", 2, F(f"{TRIG}: tests whose E_J lies below the Databank's smallest body energy, {INP14} db_Ebody_max range_lo",
+                                                                    lambda: [float(sum(1 for x in trig_E() if float(x) < float([r["range_lo"] for r in _csv(INP14) if r["key"] == "db_Ebody_max"][0])))])),
+    (r"and one inside", 1, F(f"{TRIG}: tests whose E_J lies within the Databank's body energies, {INP14} db_Ebody_max",
+                             lambda: [float(sum(1 for x in trig_E() if float([r["range_lo"] for r in _csv(INP14) if r["key"] == "db_Ebody_max"][0]) <= float(x) <= float([r["value"] for r in _csv(INP14) if r["key"] == "db_Ebody_max"][0])))])),
+    (r"the eight largest are therefore also run", 8, F(f"{CAP}: tests run with their fitted trigger",
+                                                       lambda: [float(len({r['test'] for r in _csv(CAP)}))])),
     (r"in the eight tests with the largest fitted triggers", 8, F(f"{CAP}: tests run with their fitted trigger",
                                                                   lambda: [float(len({r['test'] for r in _csv(CAP)}))])),
     (r"zero in two tests", 2, F(f"{NEEDS}: tests whose lumped threshold is zero",
