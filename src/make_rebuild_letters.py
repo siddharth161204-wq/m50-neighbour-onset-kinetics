@@ -99,7 +99,7 @@ def main():
              f"needs at least {H['rs'][0]:.2f} times the lumped neighbour's energy after the {words[H['ns']]} strong "
              f"triggers searched in three dimensions and at most {H['rw'][1]:.2f} times after both weak ones, at nominal "
              "inputs, so in "
-             "these tests a heat share calibrated with one representation needs a correction that depends on the "
+             "these tests a heat share calibrated with one representation may need a correction that depends on the "
              "trigger before it can serve the other. Published inputs rule out no path delivering 27.9 kJ to the facing side within "
              "21.4 s."),
             "",

@@ -40,3 +40,24 @@ List 3. Borderline items
 The table offered as the trace for main-text numbers therefore does not match the main text one to one, which makes the trace harder to follow.
 
 Verdict: Lists 1 and 2 are both empty.
+
+---
+
+## What changed after read 9
+
+Lists 1 and 2 are empty, so the test passed. Under the brief, every borderline item that costs no run and no words beyond the limits was mended, and the others are listed here with the reason each stays. Main text and appendices stand at 7,998 words, the abstract at 200; both numbers checks are at 0 failures.
+
+Mended.
+- 3.2. The abstract now says that a heat share calibrated with either reading "may need" a trigger-dependent correction for the other, at nominal inputs; the word was paid for by dropping "measured" before "facing-side heat flux". The fourth highlight and the letters say "may need" too.
+- 3.3. Conclusion 5 now says that the cross-section's needs agree with the three-dimensional midpoints "at its own coarser resolution"; Section 3.7, to which Section 4.2 refers, gives that resolution, brackets 0.62 to 0.84 kJ wide.
+- 3.4. Section 4.1 now says the needed energies are at most about a quarter of "the Databank's median ejected energy for this cell, 76.74 kJ", the base its figures use, rather than "of what the ejecta carry".
+- 3.5. Section 3.6 now caps the holder's conduction at "all that published inputs let the trigger release", and Table 4's caption adds that with the fitted triggers' own energies, up to 168.6 kJ ejected and 222.9 kJ in all, the bounds set by the ejecta's energy and the holder's cap would only rise.
+- 3.6. Conclusion 1 now points to Supplementary Section S3, where step 6's peak of 226.75 °C, which sets the least margin of 28.9 K, is reported (it is also in Table S17).
+- 3.7. Table S17 now gives the lumped thresholds of PP-Exp3, ST-Exp2 and PT-Exp3 with the trigger's body energy shifted 2 kJ down and up, and the fall per kJ that Fig. 4b prints, from `results/stage13_scorecard.json`.
+- 3.9. The three rows of Table S17 that no text quotes any longer (Section 3.3's 106 to 128 s, 22.4 to 22.6 kJ and 4.1 to 4.8 kJ; Section 3.4's 240.4 °C; Section 3.5's 235.5 and 235.8 °C), left behind when earlier cuts for length removed their sentences, were taken out; the table's caption now says its values are read by the numbers check's entries where a text quotes them.
+
+Not mended, with the reason each stays.
+- 3.1 (the abstract's "at either energy" rests, at the high contact, on the reactive cross-section for ten outcomes). Section 3.1 says so, with the cross-section's highest mean there, 199.2 °C, 56 K short. The abstract is at its 200 words and cannot carry the qualification without losing a statement the brief requires.
+- 3.8 (Table S17 traces results to their files but holds no run data). A run's result can be shown only by its record; the table names each record, and the archive holds them all. Printing the records is beyond what the two documents can carry.
+
+To make room for the mends within 8,000 words, Section 2.1 no longer repeats that the history was read out of the figure's vector paths (Section S7 says so, and Section 4.4 says it was read from a figure).

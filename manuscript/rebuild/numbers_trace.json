@@ -61,25 +61,25 @@
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either needs a trigger-dependent correction for the other.",
+  "sentence": "The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either may need a trigger-dependent correction for the other.",
   "number": "1.36",
   "source": "results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36"
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either needs a trigger-dependent correction for the other.",
+  "sentence": "The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either may need a trigger-dependent correction for the other.",
   "number": "0.91",
   "source": "results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91"
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "Published inputs rule out no path delivering 27.9~kJ within 21.4~s; a measured facing-side heat flux could test the needs.",
+  "sentence": "Published inputs rule out no path delivering 27.9~kJ within 21.4~s; a facing-side heat flux could test the needs.",
   "number": "27.9",
   "source": "results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564"
  },
  {
   "segment": "main.tex: abstract",
-  "sentence": "Published inputs rule out no path delivering 27.9~kJ within 21.4~s; a measured facing-side heat flux could test the needs.",
+  "sentence": "Published inputs rule out no path delivering 27.9~kJ within 21.4~s; a facing-side heat flux could test the needs.",
   "number": "21.4",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
  },
@@ -2257,13 +2257,13 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "By estimates from published inputs, what the ejecta can release is at most 225.8~kJ, with the heat of burning their gas taken from another cell, and every path of the ejecta is bounded in total by that alone; the holder's conduction is not determinable, energy conservation alone capping it at 247.3~kJ, all that the trigger can release (Table~ , Fig.~ ).",
+  "sentence": "By estimates from published inputs, what the ejecta can release is at most 225.8~kJ, with the heat of burning their gas taken from another cell, and every path of the ejecta is bounded in total by that alone; the holder's conduction is not determinable, energy conservation alone capping it at 247.3~kJ, all that published inputs let the trigger release (Table~ , Fig.~ ).",
   "number": "225.8",
   "source": "results/stage14_corrections.json: E_avail_J = 225.838"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "By estimates from published inputs, what the ejecta can release is at most 225.8~kJ, with the heat of burning their gas taken from another cell, and every path of the ejecta is bounded in total by that alone; the holder's conduction is not determinable, energy conservation alone capping it at 247.3~kJ, all that the trigger can release (Table~ , Fig.~ ).",
+  "sentence": "By estimates from published inputs, what the ejecta can release is at most 225.8~kJ, with the heat of burning their gas taken from another cell, and every path of the ejecta is bounded in total by that alone; the holder's conduction is not determinable, energy conservation alone capping it at 247.3~kJ, all that published inputs let the trigger release (Table~ , Fig.~ ).",
   "number": "247.3",
   "source": "results/stage14_corrections.json: E_global_J = 247.333"
  },
@@ -2737,27 +2737,27 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Either way the needed energies are at most about a quarter of what the ejecta carry: the lumped neighbour needs at most 12.3~kJ by its runaway, and the deliveries with which the resolved neighbour runs away carry 5.3 to 25.4\\,\\% of the Databank's median for this cell, 76.74~kJ~ , in all over their shapes.",
+  "sentence": "Either way the needed energies are at most about a quarter of the Databank's median ejected energy for this cell, 76.74~kJ~ : the lumped neighbour needs at most 12.3~kJ by its runaway, and the deliveries with which the resolved neighbour runs away carry 5.3 to 25.4\\,\\% of it in all over their shapes.",
+  "number": "76.74",
+  "source": "results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "Either way the needed energies are at most about a quarter of the Databank's median ejected energy for this cell, 76.74~kJ~ : the lumped neighbour needs at most 12.3~kJ by its runaway, and the deliveries with which the resolved neighbour runs away carry 5.3 to 25.4\\,\\% of it in all over their shapes.",
   "number": "12.3",
   "source": "results/stage15_table.csv: C2_E_by_t_J, the largest = 12.2592"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Either way the needed energies are at most about a quarter of what the ejecta carry: the lumped neighbour needs at most 12.3~kJ by its runaway, and the deliveries with which the resolved neighbour runs away carry 5.3 to 25.4\\,\\% of the Databank's median for this cell, 76.74~kJ~ , in all over their shapes.",
+  "sentence": "Either way the needed energies are at most about a quarter of the Databank's median ejected energy for this cell, 76.74~kJ~ : the lumped neighbour needs at most 12.3~kJ by its runaway, and the deliveries with which the resolved neighbour runs away carry 5.3 to 25.4\\,\\% of it in all over their shapes.",
   "number": "5.3",
   "source": "smallest and largest of results/stage15_table.csv: C8_xs_share_of_76.74kJ = 5.29617"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Either way the needed energies are at most about a quarter of what the ejecta carry: the lumped neighbour needs at most 12.3~kJ by its runaway, and the deliveries with which the resolved neighbour runs away carry 5.3 to 25.4\\,\\% of the Databank's median for this cell, 76.74~kJ~ , in all over their shapes.",
+  "sentence": "Either way the needed energies are at most about a quarter of the Databank's median ejected energy for this cell, 76.74~kJ~ : the lumped neighbour needs at most 12.3~kJ by its runaway, and the deliveries with which the resolved neighbour runs away carry 5.3 to 25.4\\,\\% of it in all over their shapes.",
   "number": "25.4",
   "source": "smallest and largest of results/stage15_table.csv: C8_xs_share_of_76.74kJ = 25.4319"
- },
- {
-  "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Either way the needed energies are at most about a quarter of what the ejecta carry: the lumped neighbour needs at most 12.3~kJ by its runaway, and the deliveries with which the resolved neighbour runs away carry 5.3 to 25.4\\,\\% of the Databank's median for this cell, 76.74~kJ~ , in all over their shapes.",
-  "number": "76.74",
-  "source": "results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
@@ -2881,13 +2881,13 @@
  },
  {
   "segment": "main.tex: Conclusions",
-  "sentence": "\\item In the model, with the trigger's body energy no larger than the largest that calorimetry gives for this cell, conduction and radiation leave the neighbour's hottest point at least 28.9~K short of 255.7\\degC{} at every contact conductance considered.",
+  "sentence": "\\item In the model, with the trigger's body energy no larger than the largest that calorimetry gives for this cell, conduction and radiation leave the neighbour's hottest point at least 28.9~K short of 255.7\\degC{} at every contact conductance considered (Supplementary Section~S3).",
   "number": "28.9",
   "source": "results/manuscript_numbers.json: constants.level_propagation_C less the highest hottest-point peak with at most 33.2 kJ and no delivery, over step 5 (results/v12_numbers.json: all_runs.res_peak_hottest_C.max), step 6 (results/stage6_runs/*_hhigh_*_E33.22.json: resolved.peak_hottest_C) and step 12 (results/stage12_paper_numbers.json: part_a.high.hot_spot_peak_C) = 28.9299"
  },
  {
   "segment": "main.tex: Conclusions",
-  "sentence": "\\item In the model, with the trigger's body energy no larger than the largest that calorimetry gives for this cell, conduction and radiation leave the neighbour's hottest point at least 28.9~K short of 255.7\\degC{} at every contact conductance considered.",
+  "sentence": "\\item In the model, with the trigger's body energy no larger than the largest that calorimetry gives for this cell, conduction and radiation leave the neighbour's hottest point at least 28.9~K short of 255.7\\degC{} at every contact conductance considered (Supplementary Section~S3).",
   "number": "255.7",
   "source": "results/manuscript_numbers.json: constants.level_propagation_C = 255.682"
  },
@@ -2983,13 +2983,13 @@
  },
  {
   "segment": "main.tex: Conclusions",
-  "sentence": "\\item At the central contact a reactive cross-section gave the outcome of the three-dimensional model in all 151 archived runs it was set against afterwards, most of them far from a threshold, and needs with the pulse within 10\\,\\% of the three-dimensional brackets' midpoints, at a small part of its cost.",
+  "sentence": "\\item At the central contact a reactive cross-section gave the outcome of the three-dimensional model in all 151 archived runs it was set against afterwards, most of them far from a threshold, and needs with the pulse, at its own coarser resolution, within 10\\,\\% of the three-dimensional brackets' midpoints, at a small part of its cost.",
   "number": "151",
   "source": "results/stage15_cross_section.json: A1_summary.runs = 151"
  },
  {
   "segment": "main.tex: Conclusions",
-  "sentence": "\\item At the central contact a reactive cross-section gave the outcome of the three-dimensional model in all 151 archived runs it was set against afterwards, most of them far from a threshold, and needs with the pulse within 10\\,\\% of the three-dimensional brackets' midpoints, at a small part of its cost.",
+  "sentence": "\\item At the central contact a reactive cross-section gave the outcome of the three-dimensional model in all 151 archived runs it was set against afterwards, most of them far from a threshold, and needs with the pulse, at its own coarser resolution, within 10\\,\\% of the three-dimensional brackets' midpoints, at a small part of its cost.",
   "number": "10",
   "source": "predictions_stage16.md: /Scored: \\|d\\| <= (0\\.10) in each of the eight/ = 10"
  },
@@ -3451,9 +3451,15 @@
  },
  {
   "segment": "manuscript/rebuild/tables/t3_bounds.tex",
-  "sentence": "With the fitted triggers' own ejected energies, up to 168.6~kJ, the bounds set by the ejecta's energy would only rise.",
+  "sentence": "With the fitted triggers' own energies, up to 168.6~kJ ejected and 222.9~kJ in all, the bounds set by the ejecta's energy and the holder's cap would only rise.",
   "number": "168.6",
   "source": "results/stage8_ejected.csv: the largest E_e_J of the sixteen tests = 168.629"
+ },
+ {
+  "segment": "manuscript/rebuild/tables/t3_bounds.tex",
+  "sentence": "With the fitted triggers' own energies, up to 168.6~kJ ejected and 222.9~kJ in all, the bounds set by the ejecta's energy and the holder's cap would only rise.",
+  "number": "222.9",
+  "source": "results/stage8_ejected.csv: the largest E_b_J plus E_e_J of the sixteen tests = 222.932"
  },
  {
   "segment": "manuscript/rebuild/tables/t3_bounds.tex",
@@ -3643,25 +3649,25 @@
  },
  {
   "segment": "manuscript/rebuild/highlights.txt",
-  "sentence": "Conduction and radiation alone run the resolved neighbour away in no test Strong-trigger tests need 4.45 to 7.54 kJ resolved, 0.26 to 5.96 kJ lumped Resolved threshold above lumped after four strong triggers, below after two weak A heat share calibrated lumped needs a trigger-dependent correction when resolved Published inputs rule out no path; a facing-side heat flux could test the needs",
+  "sentence": "Conduction and radiation alone run the resolved neighbour away in no test Strong-trigger tests need 4.45 to 7.54 kJ resolved, 0.26 to 5.96 kJ lumped Resolved threshold above lumped after four strong triggers, below after two weak A heat share calibrated lumped may need a trigger-dependent correction if resolved Published inputs rule out no path; a facing-side heat flux could test the needs",
   "number": "4.45",
   "source": "results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052"
  },
  {
   "segment": "manuscript/rebuild/highlights.txt",
-  "sentence": "Conduction and radiation alone run the resolved neighbour away in no test Strong-trigger tests need 4.45 to 7.54 kJ resolved, 0.26 to 5.96 kJ lumped Resolved threshold above lumped after four strong triggers, below after two weak A heat share calibrated lumped needs a trigger-dependent correction when resolved Published inputs rule out no path; a facing-side heat flux could test the needs",
+  "sentence": "Conduction and radiation alone run the resolved neighbour away in no test Strong-trigger tests need 4.45 to 7.54 kJ resolved, 0.26 to 5.96 kJ lumped Resolved threshold above lumped after four strong triggers, below after two weak A heat share calibrated lumped may need a trigger-dependent correction if resolved Published inputs rule out no path; a facing-side heat flux could test the needs",
   "number": "7.54",
   "source": "results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609"
  },
  {
   "segment": "manuscript/rebuild/highlights.txt",
-  "sentence": "Conduction and radiation alone run the resolved neighbour away in no test Strong-trigger tests need 4.45 to 7.54 kJ resolved, 0.26 to 5.96 kJ lumped Resolved threshold above lumped after four strong triggers, below after two weak A heat share calibrated lumped needs a trigger-dependent correction when resolved Published inputs rule out no path; a facing-side heat flux could test the needs",
+  "sentence": "Conduction and radiation alone run the resolved neighbour away in no test Strong-trigger tests need 4.45 to 7.54 kJ resolved, 0.26 to 5.96 kJ lumped Resolved threshold above lumped after four strong triggers, below after two weak A heat share calibrated lumped may need a trigger-dependent correction if resolved Published inputs rule out no path; a facing-side heat flux could test the needs",
   "number": "0.26",
   "source": "smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635"
  },
  {
   "segment": "manuscript/rebuild/highlights.txt",
-  "sentence": "Conduction and radiation alone run the resolved neighbour away in no test Strong-trigger tests need 4.45 to 7.54 kJ resolved, 0.26 to 5.96 kJ lumped Resolved threshold above lumped after four strong triggers, below after two weak A heat share calibrated lumped needs a trigger-dependent correction when resolved Published inputs rule out no path; a facing-side heat flux could test the needs",
+  "sentence": "Conduction and radiation alone run the resolved neighbour away in no test Strong-trigger tests need 4.45 to 7.54 kJ resolved, 0.26 to 5.96 kJ lumped Resolved threshold above lumped after four strong triggers, below after two weak A heat share calibrated lumped may need a trigger-dependent correction if resolved Published inputs rule out no path; a facing-side heat flux could test the needs",
   "number": "5.96",
   "source": "smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624"
  },
@@ -3811,13 +3817,13 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "To run away at all, the resolved neighbour needs at least 1.36 times the lumped neighbour's energy after the four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so in these tests a heat share calibrated with one representation needs a correction that depends on the trigger before it can serve the other.",
+  "sentence": "To run away at all, the resolved neighbour needs at least 1.36 times the lumped neighbour's energy after the four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so in these tests a heat share calibrated with one representation may need a correction that depends on the trigger before it can serve the other.",
   "number": "1.36",
   "source": "results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "To run away at all, the resolved neighbour needs at least 1.36 times the lumped neighbour's energy after the four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so in these tests a heat share calibrated with one representation needs a correction that depends on the trigger before it can serve the other.",
+  "sentence": "To run away at all, the resolved neighbour needs at least 1.36 times the lumped neighbour's energy after the four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so in these tests a heat share calibrated with one representation may need a correction that depends on the trigger before it can serve the other.",
   "number": "0.91",
   "source": "results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91"
  },
@@ -3901,13 +3907,13 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "To run away at all, the resolved neighbour needs at least 1.36 times the lumped neighbour's energy after the four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so in these tests a heat share calibrated with one representation needs a correction that depends on the trigger before it can serve the other.",
+  "sentence": "To run away at all, the resolved neighbour needs at least 1.36 times the lumped neighbour's energy after the four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so in these tests a heat share calibrated with one representation may need a correction that depends on the trigger before it can serve the other.",
   "number": "1.36",
   "source": "results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "To run away at all, the resolved neighbour needs at least 1.36 times the lumped neighbour's energy after the four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so in these tests a heat share calibrated with one representation needs a correction that depends on the trigger before it can serve the other.",
+  "sentence": "To run away at all, the resolved neighbour needs at least 1.36 times the lumped neighbour's energy after the four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so in these tests a heat share calibrated with one representation may need a correction that depends on the trigger before it can serve the other.",
   "number": "0.91",
   "source": "results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91"
  },
@@ -3991,13 +3997,13 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "To run away at all, the resolved neighbour needs at least 1.36 times the lumped neighbour's energy after the four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so in these tests a heat share calibrated with one representation needs a correction that depends on the trigger before it can serve the other.",
+  "sentence": "To run away at all, the resolved neighbour needs at least 1.36 times the lumped neighbour's energy after the four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so in these tests a heat share calibrated with one representation may need a correction that depends on the trigger before it can serve the other.",
   "number": "1.36",
   "source": "results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "To run away at all, the resolved neighbour needs at least 1.36 times the lumped neighbour's energy after the four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so in these tests a heat share calibrated with one representation needs a correction that depends on the trigger before it can serve the other.",
+  "sentence": "To run away at all, the resolved neighbour needs at least 1.36 times the lumped neighbour's energy after the four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so in these tests a heat share calibrated with one representation may need a correction that depends on the trigger before it can serve the other.",
   "number": "0.91",
   "source": "results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91"
  },
@@ -4081,25 +4087,25 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either needs a trigger-dependent correction for the other.",
+  "sentence": "The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either may need a trigger-dependent correction for the other.",
   "number": "1.36",
   "source": "results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either needs a trigger-dependent correction for the other.",
+  "sentence": "The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either may need a trigger-dependent correction for the other.",
   "number": "0.91",
   "source": "results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "Published inputs rule out no path delivering 27.9 kJ within 21.4 s; a measured facing-side heat flux could test the needs.",
+  "sentence": "Published inputs rule out no path delivering 27.9 kJ within 21.4 s; a facing-side heat flux could test the needs.",
   "number": "27.9",
   "source": "results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",
-  "sentence": "Published inputs rule out no path delivering 27.9 kJ within 21.4 s; a measured facing-side heat flux could test the needs.",
+  "sentence": "Published inputs rule out no path delivering 27.9 kJ within 21.4 s; a facing-side heat flux could test the needs.",
   "number": "21.4",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
  },
@@ -4165,25 +4171,25 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either needs a trigger-dependent correction for the other.",
+  "sentence": "The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either may need a trigger-dependent correction for the other.",
   "number": "1.36",
   "source": "results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either needs a trigger-dependent correction for the other.",
+  "sentence": "The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either may need a trigger-dependent correction for the other.",
   "number": "0.91",
   "source": "results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "Published inputs rule out no path delivering 27.9 kJ within 21.4 s; a measured facing-side heat flux could test the needs.",
+  "sentence": "Published inputs rule out no path delivering 27.9 kJ within 21.4 s; a facing-side heat flux could test the needs.",
   "number": "27.9",
   "source": "results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt",
-  "sentence": "Published inputs rule out no path delivering 27.9 kJ within 21.4 s; a measured facing-side heat flux could test the needs.",
+  "sentence": "Published inputs rule out no path delivering 27.9 kJ within 21.4 s; a facing-side heat flux could test the needs.",
   "number": "21.4",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
  },
@@ -4249,25 +4255,25 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either needs a trigger-dependent correction for the other.",
+  "sentence": "The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either may need a trigger-dependent correction for the other.",
   "number": "1.36",
   "source": "results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either needs a trigger-dependent correction for the other.",
+  "sentence": "The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either may need a trigger-dependent correction for the other.",
   "number": "0.91",
   "source": "results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "Published inputs rule out no path delivering 27.9 kJ within 21.4 s; a measured facing-side heat flux could test the needs.",
+  "sentence": "Published inputs rule out no path delivering 27.9 kJ within 21.4 s; a facing-side heat flux could test the needs.",
   "number": "27.9",
   "source": "results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt",
-  "sentence": "Published inputs rule out no path delivering 27.9 kJ within 21.4 s; a measured facing-side heat flux could test the needs.",
+  "sentence": "Published inputs rule out no path delivering 27.9 kJ within 21.4 s; a facing-side heat flux could test the needs.",
   "number": "21.4",
   "source": "results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865"
  }

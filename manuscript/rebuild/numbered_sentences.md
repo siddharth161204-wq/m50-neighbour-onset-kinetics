@@ -1,7 +1,7 @@
 # Every numbered sentence of the rebuilt manuscript, with its sources (20 November 2026)
 
 Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numbers_trace.json`). Each sentence is followed by its numbers, the file and value each is read from, and "new" where the manuscript as submitted on 17 November 2026 does not state that number. Sentences are as the check reads them, with LaTeX spacing marks (~ is a space).
-165 numbered sentences; 103 of them carry a number the submitted manuscript does not state (322 numbers in all).
+165 numbered sentences; 104 of them carry a number the submitted manuscript does not state (323 numbers in all).
 
 
 
@@ -19,10 +19,10 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
    - 7.54 (new): results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    - 0.26: smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    - 5.96: smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-3. The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either needs a trigger-dependent correction for the other.
+3. The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either may need a trigger-dependent correction for the other.
    - 1.36 (new): results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    - 0.91 (new): results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
-4. Published inputs rule out no path delivering 27.9~kJ within 21.4~s; a measured facing-side heat flux could test the needs.
+4. Published inputs rule out no path delivering 27.9~kJ within 21.4~s; a facing-side heat flux could test the needs.
    - 27.9: results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    - 21.4 (new): results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
 
@@ -473,7 +473,7 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
    - 0.5: src/stage15_inputs.py: /RISE_SLOW = (0\.5)/ = 0.5
 87. The 4.66~kJ run of Section~ is not drawn.}
    - 4.66: results/stage14_needs.csv: need_21s_lo_J where {'test': 'M50_PT_Exp4'} = 4.6569
-88. By estimates from published inputs, what the ejecta can release is at most 225.8~kJ, with the heat of burning their gas taken from another cell, and every path of the ejecta is bounded in total by that alone; the holder's conduction is not determinable, energy conservation alone capping it at 247.3~kJ, all that the trigger can release (Table~ , Fig.~ ).
+88. By estimates from published inputs, what the ejecta can release is at most 225.8~kJ, with the heat of burning their gas taken from another cell, and every path of the ejecta is bounded in total by that alone; the holder's conduction is not determinable, energy conservation alone capping it at 247.3~kJ, all that published inputs let the trigger release (Table~ , Fig.~ ).
    - 225.8 (new): results/stage14_corrections.json: E_avail_J = 225.838
    - 247.3 (new): results/stage14_corrections.json: E_global_J = 247.333
 89. Within 21.4~s, radiation can deliver at most 27.9~kJ, a black body at 1500\degC{} filling the facing half's view (a flame held on the vent's axis would send about 0.38\,\% of its radiation there, about 0.85~kJ of the 225.8~kJ, but no source places the flame); gas beside the neighbour, a breach's jet facing it and solids and melt on it at most 195.5, 225.8 and 225.8~kJ; and the neighbour's own discharge in the parallel tests, from inside, 65.5~kJ.
@@ -568,11 +568,11 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
    - 13.8: smallest and largest of results/stage15_table.csv: ST_Exp3, C8_xs_E_by_t_J = 13.8435
    - 11.5: smallest and largest of results/stage15_table.csv: ST_Exp3, C2_E_by_t_J = 11.4655
    - 12.3 (new): smallest and largest of results/stage15_table.csv: ST_Exp3, C2_E_by_t_J = 12.2592
-103. Either way the needed energies are at most about a quarter of what the ejecta carry: the lumped neighbour needs at most 12.3~kJ by its runaway, and the deliveries with which the resolved neighbour runs away carry 5.3 to 25.4\,\% of the Databank's median for this cell, 76.74~kJ~ , in all over their shapes.
+103. Either way the needed energies are at most about a quarter of the Databank's median ejected energy for this cell, 76.74~kJ~ : the lumped neighbour needs at most 12.3~kJ by its runaway, and the deliveries with which the resolved neighbour runs away carry 5.3 to 25.4\,\% of it in all over their shapes.
+   - 76.74: results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    - 12.3 (new): results/stage15_table.csv: C2_E_by_t_J, the largest = 12.2592
    - 5.3 (new): smallest and largest of results/stage15_table.csv: C8_xs_share_of_76.74kJ = 5.29617
    - 25.4 (new): smallest and largest of results/stage15_table.csv: C8_xs_share_of_76.74kJ = 25.4319
-   - 76.74: results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
 104. Torres-Castro et al.'s estimate for pouch cells, 2.0~kJ absorbed on average by the next cell before it failed~ , lies inside the lumped range found here, though a different cell cannot choose between the readings of this one.
    - 2.0: manuscript/data/comparators.csv: value where {'key': 'torrescastro2020passive', 'quantity': 'energy the next cell absorbs before it fails, mean'} = 2
 105. Since the resolved threshold is at least 1.36 times the lumped one in the three strong-trigger tests bracketed in three dimensions whose lumped threshold is not zero and at most 0.91 times after both weak triggers, a heat share calibrated in this model with either neighbour could not be carried to the other in these tests without a correction whose sign went with the trigger.
@@ -606,7 +606,7 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 
 ## main.tex: Conclusions
 
-114. \item In the model, with the trigger's body energy no larger than the largest that calorimetry gives for this cell, conduction and radiation leave the neighbour's hottest point at least 28.9~K short of 255.7\degC{} at every contact conductance considered.
+114. \item In the model, with the trigger's body energy no larger than the largest that calorimetry gives for this cell, conduction and radiation leave the neighbour's hottest point at least 28.9~K short of 255.7\degC{} at every contact conductance considered (Supplementary Section~S3).
    - 28.9: results/manuscript_numbers.json: constants.level_propagation_C less the highest hottest-point peak with at most 33.2 kJ and no delivery, over step 5 (results/v12_numbers.json: all_runs.res_peak_hottest_C.max), step 6 (results/stage6_runs/*_hhigh_*_E33.22.json: resolved.peak_hottest_C) and step 12 (results/stage12_paper_numbers.json: part_a.high.hot_spot_peak_C) = 28.9299
    - 255.7: results/manuscript_numbers.json: constants.level_propagation_C = 255.682
 115. \item By the tests' measured times after strong triggers, with the 21.4~s pulse, the resolved neighbour needs 4.45 to 7.54~kJ in three dimensions, in two tests its threshold, and the lumped neighbour 0.26 to 5.96~kJ; published inputs cannot bound at least four delivery paths below 27.9~kJ within 21.4~s, so the bounds exclude neither.
@@ -627,7 +627,7 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 117. \item In PT-Exp4, with 5.04~kJ, which runs the lumped neighbour away under the posterior mean and under two of four kinetic draws, the resolved neighbour runs away under none of these and only once every rate law is shifted by more than 17.5~K.
    - 5.04 (new): results/stage15_paper_numbers.json: B4.draws.5.E_J = 5.04499
    - 17.5: results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
-118. \item At the central contact a reactive cross-section gave the outcome of the three-dimensional model in all 151 archived runs it was set against afterwards, most of them far from a threshold, and needs with the pulse within 10\,\% of the three-dimensional brackets' midpoints, at a small part of its cost.
+118. \item At the central contact a reactive cross-section gave the outcome of the three-dimensional model in all 151 archived runs it was set against afterwards, most of them far from a threshold, and needs with the pulse, at its own coarser resolution, within 10\,\% of the three-dimensional brackets' midpoints, at a small part of its cost.
    - 151: results/stage15_cross_section.json: A1_summary.runs = 151
    - 10: predictions_stage16.md: /Scored: \|d\| <= (0\.10) in each of the eight/ = 10
 119. \noindent A heat flux measured on the facing side of a neighbour, away from the line of contact, to well within the 1.46 to 4.33~kJ by which the readings' needs differ, could test the resolved and the lumped reading of these tests, if the model is otherwise right.
@@ -730,8 +730,9 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
    - 136.5 (new): results/stage14_inputs.csv: value where {'key': 'vendra_Qt_max'} = 136.5
    - 1500 (new): results/stage14_inputs.csv: value where {'key': 'T_flame_max'} = 1500
    - 398.5 (new): results/stage14_inputs.csv: value where {'key': 'u_vent_max'} = 398.5
-131. With the fitted triggers' own ejected energies, up to 168.6~kJ, the bounds set by the ejecta's energy would only rise.
+131. With the fitted triggers' own energies, up to 168.6~kJ ejected and 222.9~kJ in all, the bounds set by the ejecta's energy and the holder's cap would only rise.
    - 168.6: results/stage8_ejected.csv: the largest E_e_J of the sixteen tests = 168.629
+   - 222.9 (new): results/stage8_ejected.csv: the largest E_b_J plus E_e_J of the sixteen tests = 222.932
 132. rr>{\raggedright\arraybackslash} >{\raggedright\arraybackslash} } \toprule Path & {21.4 s} & {Total} & What sets the bound & Measurement that would bound it \\ & (kJ) & (kJ) & & \\ \midrule Radiation from a vent's jet or flame & 27.9 & 225.8 & a black body at 1500\textdegree C filling the facing half's view (the holder may reflect); a flame held on the vent's axis, about 0.85~kJ & the flame's position and temperature beside the cells \\ Gas beside the neighbour, burning or not & 195.5 & 225.8 & convection by Churchill and Bernstein's relation~ at 398.5~m\,s$^{-1}$~ , at the film temperature of gas at 1500\textdegree C over a can at 25\textdegree C, with hydrogen's properties at 1000~K, the highest tabulated, which give a larger coefficient than air's~ , at most twice the whole-cylinder mean on one half, as the other half's cannot be negative; radiation at 1500\textdegree C & the gas's temperature and velocity in the wedges beside the line of contact \\ A breach's jet facing the neighbour & 225.8 & 225.8 & what the ejecta can release; a narrow jet strikes only from within 30\textdegree{} of the line of centres, a sixth of the circumference & where breaches face and what they carry \\ Solids and melt on or against the facing half & 225.8 & 225.8 & what the ejecta can release; melt falls onto it from a breach on the trigger's lower half, half of the circumference & the debris left on the neighbour \\ Conduction through the cell holder & -- & -- & not determinable: the inserts' material and contact are not given; energy conservation alone caps it at 247.3~kJ, all the trigger can release, the most measured for this cell in all (110.8~kJ~ ) with the vent gas burning & the holder's inserts and their contact \\ The neighbour's own discharge (parallel tests; for comparison) & 65.5 & 65.5 & heats from inside: the stored energy, 18.2~Wh, in every window; beside it, a short across 24~m$\Omega$~ at 4.189~V and 25\textdegree C, 731~W or 15.6~kJ within 21.4~s & the current between parallel cells \\ \bottomrule
    - 21.4 (new): results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    - 27.9: results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
@@ -773,7 +774,7 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
 
 ## manuscript/rebuild/highlights.txt
 
-136. Conduction and radiation alone run the resolved neighbour away in no test Strong-trigger tests need 4.45 to 7.54 kJ resolved, 0.26 to 5.96 kJ lumped Resolved threshold above lumped after four strong triggers, below after two weak A heat share calibrated lumped needs a trigger-dependent correction when resolved Published inputs rule out no path; a facing-side heat flux could test the needs
+136. Conduction and radiation alone run the resolved neighbour away in no test Strong-trigger tests need 4.45 to 7.54 kJ resolved, 0.26 to 5.96 kJ lumped Resolved threshold above lumped after four strong triggers, below after two weak A heat share calibrated lumped may need a trigger-dependent correction if resolved Published inputs rule out no path; a facing-side heat flux could test the needs
    - 4.45 (new): results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
    - 7.54 (new): results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    - 0.26: smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
@@ -812,7 +813,7 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
    - 7.54 (new): results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    - 0.26: smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    - 5.96: smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-141. To run away at all, the resolved neighbour needs at least 1.36 times the lumped neighbour's energy after the four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so in these tests a heat share calibrated with one representation needs a correction that depends on the trigger before it can serve the other.
+141. To run away at all, the resolved neighbour needs at least 1.36 times the lumped neighbour's energy after the four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so in these tests a heat share calibrated with one representation may need a correction that depends on the trigger before it can serve the other.
    - 1.36 (new): results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    - 0.91 (new): results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
 142. Published inputs rule out no path delivering 27.9 kJ to the facing side within 21.4 s.
@@ -835,7 +836,7 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
    - 7.54 (new): results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    - 0.26: smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    - 5.96: smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-146. To run away at all, the resolved neighbour needs at least 1.36 times the lumped neighbour's energy after the four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so in these tests a heat share calibrated with one representation needs a correction that depends on the trigger before it can serve the other.
+146. To run away at all, the resolved neighbour needs at least 1.36 times the lumped neighbour's energy after the four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so in these tests a heat share calibrated with one representation may need a correction that depends on the trigger before it can serve the other.
    - 1.36 (new): results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    - 0.91 (new): results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
 147. Published inputs rule out no path delivering 27.9 kJ to the facing side within 21.4 s.
@@ -858,7 +859,7 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
    - 7.54 (new): results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    - 0.26: smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    - 5.96: smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-151. To run away at all, the resolved neighbour needs at least 1.36 times the lumped neighbour's energy after the four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so in these tests a heat share calibrated with one representation needs a correction that depends on the trigger before it can serve the other.
+151. To run away at all, the resolved neighbour needs at least 1.36 times the lumped neighbour's energy after the four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so in these tests a heat share calibrated with one representation may need a correction that depends on the trigger before it can serve the other.
    - 1.36 (new): results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    - 0.91 (new): results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
 152. Published inputs rule out no path delivering 27.9 kJ to the facing side within 21.4 s.
@@ -881,10 +882,10 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
    - 7.54 (new): results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    - 0.26: smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    - 5.96: smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-156. The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either needs a trigger-dependent correction for the other.
+156. The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either may need a trigger-dependent correction for the other.
    - 1.36 (new): results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    - 0.91 (new): results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
-157. Published inputs rule out no path delivering 27.9 kJ within 21.4 s; a measured facing-side heat flux could test the needs.
+157. Published inputs rule out no path delivering 27.9 kJ within 21.4 s; a facing-side heat flux could test the needs.
    - 27.9: results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    - 21.4 (new): results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
 
@@ -902,10 +903,10 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
    - 7.54 (new): results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    - 0.26: smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    - 5.96: smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-160. The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either needs a trigger-dependent correction for the other.
+160. The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either may need a trigger-dependent correction for the other.
    - 1.36 (new): results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    - 0.91 (new): results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
-161. Published inputs rule out no path delivering 27.9 kJ within 21.4 s; a measured facing-side heat flux could test the needs.
+161. Published inputs rule out no path delivering 27.9 kJ within 21.4 s; a facing-side heat flux could test the needs.
    - 27.9: results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    - 21.4 (new): results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
 
@@ -923,9 +924,9 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
    - 7.54 (new): results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    - 0.26: smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    - 5.96: smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
-164. The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either needs a trigger-dependent correction for the other.
+164. The resolved threshold is at least 1.36 times the lumped one after four strong triggers searched in three dimensions and at most 0.91 times after both weak ones, at nominal inputs, so here a heat share calibrated with either may need a trigger-dependent correction for the other.
    - 1.36 (new): results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    - 0.91 (new): results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
-165. Published inputs rule out no path delivering 27.9 kJ within 21.4 s; a measured facing-side heat flux could test the needs.
+165. Published inputs rule out no path delivering 27.9 kJ within 21.4 s; a facing-side heat flux could test the needs.
    - 27.9: results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    - 21.4 (new): results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865

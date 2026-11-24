@@ -226,7 +226,7 @@ TABLE_SOURCES = {
                        "results/stage15_accounts.json", "results/stage10_paper_numbers.json",
                        "results/stage3a_onsets.csv", "results/stage3a_metrics.json", "results/stage11_draws.csv",
                        "results/stage3bc_metrics.json", "manuscript/data/parameters.csv",
-                       "manuscript/rebuild/data/s17_quoted.csv"],
+                       "results/stage13_scorecard.json", "manuscript/rebuild/data/s17_quoted.csv"],
 }
 MONTHS = r"(January|February|March|April|May|June|July|August|September|October|November|December)"
 

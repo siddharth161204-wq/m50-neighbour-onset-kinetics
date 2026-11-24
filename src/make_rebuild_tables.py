@@ -186,8 +186,9 @@ def table3():
              r"can release at most 225.8~kJ: the most calorimetry measured for this cell's ejecta, 89.34~kJ~\cite{finegan2024databank}, "
              r"with the heat of burning the vent gas in open air, at most 136.5~kJ on another 21700 "
              r"cell~\cite{vendra2022numerical}; gas and flame are taken at up to 1500\textdegree C~\cite{chen2020experimental}, "
-             r"the vent gas at up to 398.5~m\,s$^{-1}$~\cite{gillich2024mechanical}. With the fitted triggers' own ejected "
-             r"energies, up to " + _ee_max_kJ() + r"~kJ, the bounds set by the ejecta's energy would only rise. The "
+             r"the vent gas at up to 398.5~m\,s$^{-1}$~\cite{gillich2024mechanical}. With the fitted triggers' own "
+             r"energies, up to " + _ee_max_kJ() + r"~kJ ejected and " + _eall_max_kJ() + r"~kJ in all, the bounds set "
+             r"by the ejecta's energy and the holder's cap would only rise. The "
              r"neighbour's own "
              r"discharge heats "
              r"it from inside and is set beside the paths for comparison.}",
@@ -938,16 +939,6 @@ def quoted_rows():
     a, w = N("204.2")
     add("3.3", "PT-Exp1 with 11.32 kJ over 21.4 s, the upper end of its three-dimensional threshold's bracket: the "
         "lumped neighbour's peak", [a + " \\textdegree C"], "step 16's run; " + w.split(":")[0])
-    a, w = V(r"106 to 128", 0, 0)
-    b, _ = V(r"106 to 128", 1, 0)
-    c, _ = V(r"22\.4 to 22\.6", 0)
-    d, _ = V(r"22\.4 to 22\.6", 1)
-    e, _ = V(r"4\.1 to 4\.8~kJ", 0)
-    f, _ = V(r"4\.1 to 4\.8~kJ", 1)
-    add("3.3", "In the three-dimensional threshold searches of PT-Exp4, PP-Exp2 and SP-Exp3: the lumped neighbour's "
-        "runaway times, its reaction heat by 900 s, and the resolved neighbour's reaction heat by its own runaway",
-        [a + " to " + b + " s", c + " to " + d + " kJ", e + " to " + f + " kJ"],
-        "step 15's runs; results/stage15\\_paper\\_numbers.json, B1")
     a, w = V(r"runs away at 61\.5")
     add("3.3", "ST-Exp3 with 10.80 kJ over 21.4 s: the resolved neighbour's runaway", [a + " s"],
         "step 15's run; results/stage15\\_paper\\_numbers.json, B1")
@@ -981,10 +972,15 @@ def quoted_rows():
         [a + " to " + b + " \\textdegree C", c + " \\textdegree C"],
         "step 15's runs; results/stage15\\_paper\\_numbers.json, B4")
     a, w = V(r"270\.3~s")
-    b, _ = V(r"jump at 240\.4|jump beginning at 240\.4|233\.6 and 240\.4")
     add("3.4", "PT-Exp4 with 5.04 kJ over 21.4 s and every rate law shifted by 20 K: the resolved neighbour's "
-        "runaway, and the far face's reading where its jump begins", [a + " s", b + " \\textdegree C"],
-        "step 15's run; results/stage15\\_paper\\_numbers.json, B4")
+        "runaway", [a + " s"], "step 15's run; results/stage15\\_paper\\_numbers.json, B4")
+    p10 = json.load(open(os.path.join(RES, "stage13_scorecard.json")))["P10"]["cases"]
+    br = lambda x: "(%.2f, %.2f]" % (x[0] / 1000.0, x[1] / 1000.0)
+    short = {"M50_PP_Exp3": "PP-Exp3", "M50_ST_Exp2": "ST-Exp2", "M50_PT_Exp3": "PT-Exp3"}
+    add("3.4", "The lumped threshold with the trigger's body energy shifted by 2 kJ down and up (Fig. 4b of the main text), and its "
+        "fall for each kJ added, the difference of the two brackets' midpoints over 4 kJ",
+        ["%s %s and %s kJ, %.0f J" % (short[c["test"]], br(c["minus2"]), br(c["plus2"]), c["slope_J_per_kJ"])
+         for c in p10], "step 13's runs; results/stage13\\_scorecard.json, P10 cases")
     a, w = V(r"369\.3")
     b, _ = N("255.9")
     c, _ = N("233.6")
@@ -1006,11 +1002,6 @@ def quoted_rows():
     add("3.5", "PT-Exp4: the root mean square of the far face's difference from the record over 0 to 271.5 s with "
         "4.66 and 5.04 kJ over 21.4 s, and over 0 to 181.9 s with 7.42 kJ", [" and ".join(v16) + " K", b + " K"],
         "steps 10 and 15; results/stage10\\_paper\\_numbers.json, results/stage15\\_paper\\_numbers.json")
-    a, w = V(r"235\.5 and 235\.8", 1)
-    b, _ = V(r"235\.5 and 235\.8", 0)
-    add("3.5", "PT-Exp4 with 7.42 kJ over 21.4 s, read post hoc: the two side probes' readings where the far face's "
-        "jump begins", [a + " and " + b + " \\textdegree C"], "step 15's run; its series, read by its independent "
-        "read (results/stage15\\_independent\\_read.md)")
     a, w = V(r"17 to 71~s", 0, 0)
     b, _ = V(r"17 to 71~s", 1, 0)
     c, _ = V(r"against 246 to 512~s", 0, 0)
@@ -1111,6 +1102,12 @@ def _ee_max_kJ():
                          if r["kind"] == "test") / 1000.0)
 
 
+def _eall_max_kJ():
+    """The largest body and ejected energy together that the model takes for a test (kJ)."""
+    return "%.1f" % (max(float(r["E_b_J"]) + float(r["E_e_J"]) for r in read_csv(os.path.join(RES, "stage8_ejected.csv"))
+                         if r["kind"] == "test") / 1000.0)
+
+
 def table_s17():
     rows = quoted_rows()
     with open(os.path.join(ROOT, "manuscript", "rebuild", "data", "s17_quoted.csv"), "w", newline="") as fh:
@@ -1124,7 +1121,7 @@ def table_s17():
              r"other table or figure shows, every result of a run that the text of this supplement (S2, S3) quotes "
              r"and no other table gives, and the inputs that the earlier study set without a primary source (Table~2 "
              r"of the main text, $^{a}$), each with the runs or the code it comes from. Every value here is read from "
-             r"its file by the numbers check's own entry for it.}\label{tab:s-quoted}\\",
+             r"its file, by the numbers check's own entry for it where a text quotes it.}\label{tab:s-quoted}\\",
              r"\toprule", r"Where & Result & Value & From \\", r"\midrule", r"\endfirsthead",
              r"\multicolumn{4}{l}{\textit{Continued}} \\", r"\toprule", r"Where & Result & Value & From \\",
              r"\midrule", r"\endhead"]
