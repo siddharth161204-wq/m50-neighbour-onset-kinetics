@@ -173,6 +173,9 @@ def scorecard(nrows, trow, v, xrows):
             elif c.get("one_mesh_only"):
                 oks.append(False)
         P["P9"] = {"held": bool(oks) and all(oks), "C8_change": ch}
+    elif v.get("status") in ("running", "pending", None):
+        P["P8"] = {"held": None, "why": "V has not yet ended: not scored"}
+        P["P9"] = {"held": None, "why": "V has not yet ended: not scored"}
     else:
         P["P8"] = {"held": False, "why": "V ended " + v.get("status", "?")}
         P["P9"] = {"held": False, "why": "V ended " + v.get("status", "?")}

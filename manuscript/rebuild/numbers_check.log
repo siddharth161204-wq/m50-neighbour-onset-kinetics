@@ -1,29 +1,31 @@
-numbers_check --rebuild: 759 traced to a named value, 117 found in their table's source files, 0 broad matches (supplement only), 34 counts written in words checked, 0 failures, 72 structural (not looked for)
+numbers_check --rebuild: 746 traced to a named value, 161 found in their table's source files, 0 broad matches (supplement only), 35 counts written in words checked, 2 failures, 73 structural (not looked for)
+
+FAILURES:
+  main.tex: Introduction to Discussion, with figure captions: 16  [MISMATCH: manuscript/rebuild/data/steps.csv: the step whose file is predictions_stage16.md = ]  ...~s against the measured 223~s (Supplementary Table~S2, step~16, P1 and P2). Across the brackets the cr...
+  manuscript/rebuild/highlights.txt: 3  [NO ENTRY]  ... To match strong-trigger tests: 4.45 to 7.54 kJ resolved in 3-D, 0.26 to 5.96 lumped These are 5.8 to...
 
 == main.tex: title  [map]
 == main.tex: abstract  [map]
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
-   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
-   traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
-   traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
-   traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
-   traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 5.9624
-   traced 5.3 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 5.29617
-   traced 10.6 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 10.5756
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 0.285044
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
+   traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
+   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
+   traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
+   traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
+   traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
+   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
+   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
+   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
+   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
+   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
-   traced 2.27 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the upper end rounded up = 2.27
-   traced 0.80 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.8
-   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
+   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
-   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
-   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
 == main.tex: Introduction to Discussion, with figure captions  [map]
    [name] 18650  ...the vent matters: fractional thermal runaway calorimetry of 18650 cells finds that typically 20 to 30\,\%...
    traced 20 <- manuscript/data/comparators.csv: value where {'key': 'walker2019decoupling', 'quantity': 'share of the total energy released through the casing, low'} = 20
@@ -126,9 +128,6 @@ numbers_check --rebuild: 759 traced to a named value, 117 found in their table's
    [exponent or subscript] -1  ...first reaches 1~K\,s$^{-1}$ after having reached 0.5~K\,s$^{-1}$ and fallen below it (Supplementary Se...
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
-   traced 25 <- results/stage14_inputs.csv: /0\.5 C for 30 s, (25) C/ = 25
-   traced 15.6 <- results/stage14_bounds.json: A6/conditional_25C_J/21.39 = 15.6394
-   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 98 <- manuscript/rebuild/data/predictions_registry.csv: rows = 98
    traced 56 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict held = 56
    traced 42 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed = 42
@@ -182,34 +181,34 @@ numbers_check --rebuild: 759 traced to a named value, 117 found in their table's
    traced 2.09 <- results/stage14_needs.csv: need_21s_lo_J where {'test': 'M50_PT_Exp1'} = 2.0907
    traced 0.1 <- predictions_stage10.md: /by more than (0\.1) in the mean log score/ = 0.1
    traced 0.062 <- results/stage10_paper_numbers.json: part_c.largest_d_log = 0.0624263
-   traced 0.23 <- smallest and largest of results/stage10_paper_numbers.json: part_c.held_out: p_log = 0.226477
-   traced 0.75 <- smallest and largest of results/stage10_paper_numbers.json: part_c.held_out: p_log = 0.751725
-   traced 34.5 <- results/stage15_cross_section.json: A1_summary.dt_C8_s.max = 34.5232
+   traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
+   traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
+   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 10 <- src/stage16_run.py: /WINDOW_S = ([0-9.]+)/ = 10
+   traced 1.46 <- results/stage16_scorecard.json N against results/stage15_table.csv C2_E_by_t_J: the smallest lower end and the largest upper end of the resolved need less the lumped need, rounded outward (rebuild_headline.differences_kJ) = 1.46
+   traced 4.33 <- results/stage16_scorecard.json N against results/stage15_table.csv C2_E_by_t_J: the smallest lower end and the largest upper end of the resolved need less the lumped need, rounded outward (rebuild_headline.differences_kJ) = 4.33
+   traced 4.45 <- results/stage16_scorecard.json: N, SP_Exp3, lo_J = 4.45052
+   traced 4.58 <- results/stage16_scorecard.json: N, SP_Exp3, hi_J = 4.58171
+   traced 0.26 <- results/stage15_table.csv: C2_E_by_t_J where {'test': 'M50_SP_Exp3', 'delivery': '21.39 s pulse'} = 0.2635
+   traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   traced 254.6 <- results/stage16_scorecard.json: N, ST_Exp4, hi_t_C8_s = 254.647
+   traced 342 <- inputs/fransson2024/m50_tests.csv: time_to_propagation_s where {'test': 'M50_ST_Exp4'} = 342
+   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
+   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
+   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
+   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
+   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
    traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
    traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
-   traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
    traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
    traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 5.9624
-   traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
-   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
-   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
-   traced 4.58 <- results/stage15_table.csv: C8_xs_E_by_t_J where {'test': 'M50_SP_Exp3', 'delivery': '21.39 s pulse'} = 4.58171
-   traced 0.26 <- results/stage15_table.csv: C2_E_by_t_J where {'test': 'M50_SP_Exp3', 'delivery': '21.39 s pulse'} = 0.2635
    traced 10.3 <- smallest and largest of results/stage15_table.csv: ST_Exp3, C8_xs_E_by_t_J = 10.3125
    traced 13.8 <- smallest and largest of results/stage15_table.csv: ST_Exp3, C8_xs_E_by_t_J = 13.8435
-   traced 177 <- results/stage15_table.csv: t_measured_s where {'test': 'M50_ST_Exp3', 'delivery': '21.39 s pulse'} = 177
-   traced 240 <- results/stage15_table.csv: tau_s where {'test': 'M50_ST_Exp3'} = 240
    traced 360 <- results/stage15_table.csv: tau_s where {'test': 'M50_ST_Exp3'} = 360
-   traced 25.6 <- results/stage15_xs/*.json: M50_ST_Exp3, con over 360 s, the run at the top of the grid, its delivered energy (the last point of results/stage15_cross_section.json A2_at_measured) = 25.6281
-   traced 196.4 <- results/stage15_xs/*.json: M50_ST_Exp3, con over 360 s, the run at the top of the grid, its C8 time (the last point of results/stage15_cross_section.json A2_at_measured) = 196.394
    traced 11.5 <- smallest and largest of results/stage15_table.csv: ST_Exp3, C2_E_by_t_J = 11.4655
    traced 12.3 <- smallest and largest of results/stage15_table.csv: ST_Exp3, C2_E_by_t_J = 12.2592
-   traced 5.3 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 5.29617
-   traced 10.6 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 10.5756
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 0.285044
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 7.76949
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
+   traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
    traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
    traced 360 <- results/stage15_table.csv: tau_s where {'test': 'M50_ST_Exp3'} = 360
    traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
@@ -226,39 +225,49 @@ numbers_check --rebuild: 759 traced to a named value, 117 found in their table's
    traced 4.5 <- results/stage15_cross_section.json: A2, the 21.39 s pulse, E_star_J of the two tests whose lumped neighbour needs no delivery = 4.54167
    traced 3.5 <- results/stage15_cross_section.json: A2, the 21.39 s pulse, E_star_J of the two tests whose lumped neighbour needs no delivery = 3.52778
    traced 5 <- predictions_stage15.md: /less (5) % and plus 5 %/ = 5
-   traced 6.71 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.lo_J = 6.70937
-   traced 7.42 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.hi_J = 7.41562
    traced 6.51 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.bracket.lo_J = 6.51146
    traced 7.20 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.bracket.hi_J = 7.19687
-   traced 1.38 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PT_Exp4, rounded outward = 1.38
-   traced 1.60 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PT_Exp4, rounded outward = 1.6
+   traced 7.06 <- rebuild_headline.thresholds_3d: PT_Exp4 (B1 narrowed by N) = 7.0625
+   traced 7.15 <- rebuild_headline.thresholds_3d: PT_Exp4 (B1 narrowed by N) = 7.15078
+   traced 6.71 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.lo_J = 6.70937
+   traced 7.42 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.hi_J = 7.41562
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 2.27 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the upper end rounded up = 2.27
-   traced 4.66 <- results/stage14_needs.csv: need_21s_lo_J where {'test': 'M50_PT_Exp4'} = 4.6569
-   traced 4.85 <- results/stage14_needs.csv: need_21s_hi_J where {'test': 'M50_PT_Exp4'} = 4.851
+   traced 1.45 <- rebuild_headline.threshold_ratio_spans: PT_Exp4, rounded outward = 1.45
+   traced 1.54 <- rebuild_headline.threshold_ratio_spans: PT_Exp4, rounded outward = 1.54
    traced 3.18 <- results/stage14_needs.csv: threshold_C2_lo_J where {'test': 'M50_PP_Exp2'} = 3.18
    traced 4.77 <- results/stage14_needs.csv: threshold_C2_hi_J where {'test': 'M50_PP_Exp2'} = 4.77
-   traced 1.49 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.ratio_to_C2 = 1.48559
-   traced 1.72 <- results/stage15_paper_numbers.json: B1.M50_PP_Exp2.ratio_to_C2 = 1.72434
+   traced 4.66 <- results/stage14_needs.csv: need_21s_lo_J where {'test': 'M50_PT_Exp4'} = 4.6569
+   traced 4.85 <- results/stage14_needs.csv: need_21s_hi_J where {'test': 'M50_PT_Exp4'} = 4.851
+   traced 5.32 <- rebuild_headline.thresholds_3d: ST_Exp4 (N) = 5.31889
+   traced 5.51 <- rebuild_headline.thresholds_3d: ST_Exp4 (N) = 5.50833
+   traced 2.80 <- rebuild_headline.strong_unbounded_lower: ST_Exp4 = 2.8
+   traced 1.89 <- results/stage14_needs.csv by rebuild_brackets: ST_Exp4's lumped bracket, upper end = 1.8944
    traced 3.70 <- results/stage15_paper_numbers.json: B1.M50_SP_Exp3.bracket.lo_J = 3.70417
    traced 4.06 <- results/stage15_paper_numbers.json: B1.M50_SP_Exp3.bracket.hi_J = 4.05694
-   traced 3.88 <- results/stage15_paper_numbers.json: B1.M50_SP_Exp3.bracket.mid_J = 3.88056
-   traced 106 <- smallest and largest of results/stage15_paper_numbers.json: B1 runs of PT_Exp4, PP_Exp2, SP_Exp3: lumped_C2_t_s = 106.141
-   traced 128 <- smallest and largest of results/stage15_paper_numbers.json: B1 runs of PT_Exp4, PP_Exp2, SP_Exp3: lumped_C2_t_s = 127.543
-   traced 22.4 <- smallest and largest of results/stage15_paper_numbers.json: B1 runs of PT_Exp4, PP_Exp2, SP_Exp3: lumped_rxn_J = 22.3795
-   traced 22.6 <- smallest and largest of results/stage15_paper_numbers.json: B1 runs of PT_Exp4, PP_Exp2, SP_Exp3: lumped_rxn_J = 22.5889
-   traced 4.1 <- smallest and largest of results/stage15_paper_numbers.json: B1 runs of PT_Exp4, PP_Exp2, SP_Exp3 with the mean's runaway: rxn_J = 4.07541
-   traced 4.8 <- smallest and largest of results/stage15_paper_numbers.json: B1 runs of PT_Exp4, PP_Exp2, SP_Exp3 with the mean's runaway: rxn_J = 4.79567
    traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
    traced 9.77 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.bracket.lo_J = 9.76719
    traced 10.80 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.bracket.hi_J = 10.7953
-   traced 10.28 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.bracket.mid_J = 10.2812
-   traced 0.85 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.ratio_to_C2 = 0.854599
-   traced 12.03 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.E_C2_J = 12.0305
    traced 0.80 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.8
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
+   traced 11.95 <- results/stage14_needs.csv: need_21s_lo_J where {'test': 'M50_ST_Exp3'} = 11.95
+   traced 12.11 <- results/stage14_needs.csv: need_21s_hi_J where {'test': 'M50_ST_Exp3'} = 12.1115
    traced 10.80 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3.bracket.hi_J = 10.7953
    traced 61.5 <- results/stage15_paper_numbers.json: B1.M50_ST_Exp3, the run at the bracket's upper end: t_C8_s = 61.5222
+   traced 9.0 <- results/stage7_triggers.csv: E_J of PT_Exp1 = 8.97677
+   [label] 16  ...ghbour does not; after PT-Exp1's (9.0~kJ), searched in step~16, it lies between 10.24 and 11.32~kJ, 0....
+   traced 10.24 <- results/stage16_scorecard.json: T, lo_J and hi_J = 10.2422
+   traced 11.32 <- results/stage16_scorecard.json: T, lo_J and hi_J = 11.3203
+   traced 0.79 <- results/stage16_scorecard.json: T, ratio_lo rounded down and ratio_hi rounded up = 0.79
+   traced 0.89 <- results/stage16_scorecard.json: T, ratio_lo rounded down and ratio_hi rounded up = 0.89
+   traced 12.85 <- results/stage16_scorecard.json: T, lumped_bracket_J = 12.8488
+   traced 12.89 <- results/stage16_scorecard.json: T, lumped_bracket_J = 12.8924
+   traced 0.84 <- results/stage16_scorecard.json: T.ratio_mid = 0.837664
+   traced 0.75 <- predictions_stage16.md: /holds if (0\.75) <= R <= 0\.95/ = 0.75
+   traced 0.95 <- predictions_stage16.md: /holds if 0\.75 <= R <= (0\.95)/ = 0.95
+   traced 11.32 <- results/stage16_scorecard.json: T, lo_J and hi_J = 11.3203
+   traced 45.8 <- results/stage16_scorecard.json: T.t_C8_hi_s = 45.7863
+   traced 204.2 <- results/stage16_runs.csv: s16_T_PT_Exp1_s+1, lumped_peak_C = 204.178
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 120 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 120
@@ -270,13 +279,10 @@ numbers_check --rebuild: 759 traced to a named value, 117 found in their table's
    traced 60 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_ST_Exp3', 'region': 'half'} = 60
    traced 0.025 <- results/stage13_skin.csv: fourier where {'test': 'M50_PT_Exp1', 'region': 'half', 'tau_d_s': '5.0'} = 0.0250038
    traced 0.60 <- results/stage13_skin.csv: fourier where {'test': 'M50_PT_Exp1', 'region': 'half', 'tau_d_s': '120.0'} = 0.600091
-   traced 5.565\times10^{-7} <- results/stage13_sentences.md: /\(([\d.]+e-7) m2/s\)/ = 5.565e-07
-   [exponent or subscript] -1  ... 0.025 to 0.60, with $\alpha=5.565\times10^{-7}$~m$^2$\,s$^{-1}$ the roll's diffusivity across its lay...
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 1.1 <- results/stage13_skin.csv: the largest shortfall of inert_peak_minus_level_K up to a Fourier number of 0.6 = 1.13572
    traced 360 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 360
    traced 1.80 <- results/stage13_skin.csv: fourier where {'test': 'M50_PT_Exp1', 'region': 'half', 'tau_d_s': '360.0'} = 1.80027
-   traced 18.9 <- results/stage13_skin.csv: inert_peak_minus_level_K where {'test': 'M50_PT_Exp1', 'region': 'half', 'tau_d_s': '360.0'} = 18.9319
    traced 316.5 <- results/stage13_skin.csv: res_t_cross_hi_s where {'test': 'M50_PT_Exp1', 'region': 'half', 'tau_d_s': '360.0'} = 316.544
    traced 240.1 <- results/stage13_skin.csv: res_mean_at_cross_hi_C where {'test': 'M50_PT_Exp1', 'region': 'half', 'tau_d_s': '360.0'} = 240.119
    traced 2.90 <- results/stage13_paper_numbers.json: scorecard/P9/ratio/21.39 = 2.89706
@@ -286,13 +292,10 @@ numbers_check --rebuild: 759 traced to a named value, 117 found in their table's
    traced 0.94 <- results/stage13_paper_numbers.json: scorecard/P9/ratio/360 = 0.938279
    traced 1.80 <- results/stage13_skin.csv: fourier where {'test': 'M50_PT_Exp1', 'region': 'half', 'tau_d_s': '360.0'} = 1.80027
    traced 218.5 <- results/stage13_paper_numbers.json: scorecard.P7.mean_C = 218.484
-   traced 230.4 <- results/stage13_tign.csv: T_ign_C where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'ambient'} = 230.379
-   traced 25 <- results/manuscript_numbers.json: constants.T_amb_C = 25
    traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
    traced 215.3 <- results/stage13_paper_numbers.json: scorecard/P7/p2.5_C = 215.257
    traced 221.4 <- results/stage13_paper_numbers.json: scorecard/P7/p97.5_C = 221.395
    traced 95 <- predictions_stage13.md: /the central (95) % of the 200 draws/ = 95
-   traced 6.1 <- results/stage13_paper_numbers.json: scorecard.P7.span_K = 6.13765
    traced 73.3 <- results/stage13_tign.csv: carrying_share where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'own'} = 73.3174
    traced 2,667 <- results/stage13_tign.csv: cat1_heat_total_J where {'kinetics': 'mean', 'connection': 'parallel', 'trigger': 'own'} = 2667.2
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
@@ -301,10 +304,6 @@ numbers_check --rebuild: 759 traced to a named value, 117 found in their table's
    traced 32 <- results/stage13_paper_numbers.json: scorecard.P8.n_within = 32
    traced 0.25 <- smallest and largest of results/stage13_twobody.csv: low contact, strong triggers, B2 less the midpoint = 0.249186
    traced 0.48 <- smallest and largest of results/stage13_twobody.csv: low contact, strong triggers, B2 less the midpoint = 0.482264
-   traced 29 <- results/stage13_twobody.csv: central-contact searches over 120 and 360 s within the larger of 10 % and 300 J = 29
-   traced 32 <- results/stage13_twobody.csv: central-contact searches over 120 and 360 s = 32
-   traced 120 <- results/stage13_twobody.csv: tau_d_s of those searches = 120
-   traced 360 <- results/stage13_twobody.csv: tau_d_s of those searches = 360
    traced 393 <- smallest and largest of results/stage13_paper_numbers.json: scorecard.P10.cases: slope_J_per_kJ = 393.034
    traced 456 <- smallest and largest of results/stage13_paper_numbers.json: scorecard.P10.cases: slope_J_per_kJ = 456.135
    traced 150 <- predictions_stage13.md: /falls by (150) to 300 J per kJ/ = 150
@@ -335,7 +334,6 @@ numbers_check --rebuild: 759 traced to a named value, 117 found in their table's
    traced 221.1 <- results/stage15_paper_numbers.json: B4.shift_runs, the run shifted by 17.5 K: peak_mean_C = 221.105
    traced 20 <- results/stage15_paper_numbers.json: B4.shift.least_shift_K = 20
    traced 270.3 <- results/stage15_paper_numbers.json: B4.shift.t_C8_s = 270.338
-   traced 240.4 <- results/stage15_paper_numbers.json: B4.shift_runs, the run shifted by 20 K: far_jump.T_C = 240.351
    traced 2 <- src/stage13_inputs.py: /for d in \(-2000\.0, (2000\.0)\)/ = 2
    traced 200 <- results/stage13_paper_numbers.json: scorecard.P7.n_draws = 200
    traced 5.04 <- results/stage15_paper_numbers.json: B4.draws.5.E_J = 5.04499
@@ -366,8 +364,8 @@ numbers_check --rebuild: 759 traced to a named value, 117 found in their table's
    [start of a time window] 0  ...jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K fro...
    traced 181.9 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4, the run at the bracket's upper end: t_C8_s = 181.923
    traced 51.4 <- results/stage15_paper_numbers.json: B3a.history.rms_K = 51.4421
-   traced 2.5 <- predictions_stage15.md: /then steps of (2\.5) W/ = 2.5
-   traced 12.5 <- results/stage15_paper_numbers.json: B3b.start_W = 12.5
+   traced 7.15 <- results/stage16_scorecard.json: N, PT_Exp4, hi_J = 7.15078
+   traced 250.8 <- results/stage16_scorecard.json: N, PT_Exp4, hi_t_C8_s = 250.784
    traced 5.04 <- results/stage15_paper_numbers.json: B4.draws.5.E_J = 5.04499
    traced 10 <- results/stage15_paper_numbers.json: B3b.result.P_lo_W = 10
    traced 271.5 <- results/stage10_paper_numbers.json: measured.onset_figure_s = 271.5
@@ -377,19 +375,14 @@ numbers_check --rebuild: 759 traced to a named value, 117 found in their table's
    traced 255.9 <- results/stage15_paper_numbers.json: B3b run s15_B3_PT_Exp4_hold12.5W: t_C8_s = 255.856
    traced 233.6 <- results/stage15_paper_numbers.json: B3b run s15_B3_PT_Exp4_hold12.5W: far_jump.T_C = 233.595
    traced 6.2 <- results/stage15_paper_numbers.json: B2/0.05/E_J = 6.20922
-   traced 5 <- predictions_stage15.md: /at f = (0\.05) \(6,209 J/ = 5
    traced 240 <- results/stage15_table.csv: tau_s where {'test': 'M50_PT_Exp4'} = 240
    traced 10 <- results/stage15_cross_section.json: A1_rows, the archived 6,209 J run's id, s10_... = 10
    traced 332 <- results/stage15_cross_section.json: A1_rows, the archived 6,209 J run: t_end_s = 332
-   traced 60 <- src/stage10_run.py: /Table 3's 272 s plus (60) s/ = 60
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
    traced 241.4 <- results/stage15_paper_numbers.json: B2/0.05/peak_mean_C = 241.354
    traced 220.5 <- predictions_stage15.md: /6,209 J no C8 \(mean peak (220\.5) C\)/ = 220.5
    traced 20.9 <- results/stage15_paper_numbers.json: B2 0.05 peak_mean_C less the reduced model's registered peak (predictions_stage15.md) = 20.8544
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
-   traced 7.42 <- results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.hi_J = 7.41562
-   traced 235.5 <- results/stage15_independent_read.md: the two side probes' readings at the far face's jump = 235.5
-   traced 235.8 <- results/stage15_independent_read.md: the two side probes' readings at the far face's jump = 235.79
    [label] 10  ...hermocouple (black; Fransson et al.~ , supplementary Figure~10, read from the figure) against the mode...
    traced 12.5 <- results/stage15_paper_numbers.json: B3b.result.P_hi_W = 12.5
    traced 5.0 <- results/stage15_readings.json: 1.PT_Exp4.E_J = 5.045
@@ -436,8 +429,6 @@ numbers_check --rebuild: 759 traced to a named value, 117 found in their table's
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 12.1 <- results/stage15_table.csv: C2_E_by_t_J where {'test': 'M50_ST_Exp3', 'delivery': '21.39 s pulse'} = 12.111
-   traced 10.3 <- smallest and largest of results/stage15_table.csv: ST_Exp3, C8_xs_E_by_t_J = 10.3125
-   traced 13.8 <- smallest and largest of results/stage15_table.csv: ST_Exp3, C8_xs_E_by_t_J = 13.8435
    traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
    traced 332 <- results/stage15_cross_section.json: A1_rows, the earliest end of a run = 332
@@ -459,14 +450,32 @@ numbers_check --rebuild: 759 traced to a named value, 117 found in their table's
    traced 332 <- results/stage15_cross_section.json: A1_rows, the archived 6,209 J run: t_end_s = 332
    traced 20.9 <- results/stage15_paper_numbers.json: B2 0.05 peak_mean_C less the reduced model's registered peak (predictions_stage15.md) = 20.8544
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
-   traced 9.1 <- results/stage15_paper_numbers.json: B1.M50_SP_Exp3.rel_diff_xs = 9.09091
    traced 17 <- smallest and largest of results/stage15_xs/*.json: wall_s = 16.9846
    traced 71 <- smallest and largest of results/stage15_xs/*.json: wall_s = 71.3495
    traced 246 <- smallest and largest of results/stage15_runs/*.json: wall_s of the B1 runs = 245.934
    traced 512 <- smallest and largest of results/stage15_runs/*.json: wall_s of the B1 runs = 512.452
+   [label] 16  ...h the pulse, against the three-dimensional searches of step~16 (Table~ ), the cross-section's need lie...
+   traced 1.5 <- results/stage16_scorecard.json: N, d (the cross-section's need against the bracket's midpoint), the smallest negated and the largest = 1.50032
+   traced 8.6 <- results/stage16_scorecard.json: N, d (the cross-section's need against the bracket's midpoint), the smallest negated and the largest = 8.60726
+   traced 10 <- predictions_stage16.md: /Scored: \|d\| <= (0\.10) in each of the eight/ = 10
+   traced 5.96 <- results/stage16_scorecard.json: N, SP_Exp1, xs_E_by_t_J = 5.96468
+   traced 250.6 <- results/stage16_scorecard.json: N, SP_Exp1, lo_t_C8_s (the run at the cross-section's need) = 250.62
+   traced 223 <- inputs/fransson2024/m50_tests.csv: time_to_propagation_s where {'test': 'M50_SP_Exp1'} = 223
+   MISMATCH 16  ...~s against the measured 223~s (Supplementary Table~S2, step~16, P1 and P2). Across the brackets the cr...  tried: manuscript/rebuild/data/steps.csv: the step whose file is predictions_stage16.md = 
+   traced 3.0 <- results/stage16_scorecard.json: N, the cross-section's need against the bracket's upper end (the smallest, negated) and lower end (the largest) = 2.95629
+   traced 10.5 <- results/stage16_scorecard.json: N, the cross-section's need against the bracket's upper end (the smallest, negated) and lower end (the largest) = 10.5096
+   traced 1.25 <- rebuild_headline.thresholds_3d: PT_Exp4's upper end over results/stage15_cross_section.json A2's E_star_J = 1.25
+   traced 5.5 <- rebuild_headline.thresholds_3d: ST_Exp4's ends over results/stage15_cross_section.json A2's E_star_J = 5.49862
+   traced 9.3 <- rebuild_headline.thresholds_3d: ST_Exp4's ends over results/stage15_cross_section.json A2's E_star_J = 9.2562
+   traced 5.0 <- rebuild_headline.thresholds_3d: SP_Exp3's ends over results/stage15_cross_section.json A2's E_star_J = 5
+   traced 15.0 <- rebuild_headline.thresholds_3d: SP_Exp3's ends over results/stage15_cross_section.json A2's E_star_J = 15
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 5 <- predictions_stage15.md: /less (5) % and plus 5 %/ = 5
+   traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
+   traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
+   traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
+   traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
    traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
    traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
    traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
@@ -482,11 +491,10 @@ numbers_check --rebuild: 759 traced to a named value, 117 found in their table's
    traced 2.0 <- manuscript/data/comparators.csv: value where {'key': 'torrescastro2020passive', 'quantity': 'energy the next cell absorbs before it fails, mean'} = 2
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
+   traced 10 <- predictions_stage16.md: /Scored: \|d\| <= (0\.10) in each of the eight/ = 10
    traced 37 <- results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008
-   traced 12.5 <- results/stage15_paper_numbers.json: B3b.result.P_hi_W = 12.5
-   traced 20 <- results/stage15_paper_numbers.json: B4.shift.least_shift_K = 20
-   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
-   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
+   traced 1.46 <- results/stage16_scorecard.json N against results/stage15_table.csv C2_E_by_t_J: the smallest lower end and the largest upper end of the resolved need less the lumped need, rounded outward (rebuild_headline.differences_kJ) = 1.46
+   traced 4.33 <- results/stage16_scorecard.json N against results/stage15_table.csv C2_E_by_t_J: the smallest lower end and the largest upper end of the resolved need less the lumped need, rounded outward (rebuild_headline.differences_kJ) = 4.33
    traced 0.85 <- results/stage14_independent_read.md: /at most about (\d+) J \(1\.11 %\)/ = 0.849
    traced 8.5 <- results/stage10_paper_numbers.json: measured.dip_after_spike_t_s = 8.5
    traced 102 <- results/stage10_paper_numbers.json: measured.spike_on_the_samples_C = 101.711
@@ -501,26 +509,29 @@ numbers_check --rebuild: 759 traced to a named value, 117 found in their table's
 == main.tex: Conclusions  [map]
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
-   traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
-   traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
-   traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
-   traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 5.9624
-   traced 5.3 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 5.29617
-   traced 10.6 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 10.5756
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 0.285044
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 7.76949
+   traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
+   traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
+   traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
+   traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
+   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
+   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
+   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
+   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
+   traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
    traced 2.27 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the upper end rounded up = 2.27
-   traced 0.80 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.8
-   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
+   traced 0.79 <- rebuild_headline.weak_range: ST_Exp3 (B1) and PT_Exp1 (T), rounded outward = 0.79
+   traced 0.91 <- rebuild_headline.weak_range: ST_Exp3 (B1) and PT_Exp1 (T), rounded outward = 0.91
    traced 5.04 <- results/stage15_paper_numbers.json: B4.draws.5.E_J = 5.04499
    traced 17.5 <- results/stage15_paper_numbers.json: B4.shift_runs: the largest shift_K without the mean's runaway = 17.5
    traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
-   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
-   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
+   traced 10 <- predictions_stage16.md: /Scored: \|d\| <= (0\.10) in each of the eight/ = 10
+   traced 1.46 <- results/stage16_scorecard.json N against results/stage15_table.csv C2_E_by_t_J: the smallest lower end and the largest upper end of the resolved need less the lumped need, rounded outward (rebuild_headline.differences_kJ) = 1.46
+   traced 4.33 <- results/stage16_scorecard.json N against results/stage15_table.csv C2_E_by_t_J: the smallest lower end and the largest upper end of the resolved need less the lumped need, rounded outward (rebuild_headline.differences_kJ) = 4.33
 == main.tex: appendices  [map]
    traced 45 <- src/v12_mesh.py: SECTOR = math.pi / 4, the wedge sector's half-angle, in degrees = 45
    traced 0.1 <- src/reactive.py: /DT_BASE = (0\.1)/ = 0.1
@@ -551,7 +562,7 @@ numbers_check --rebuild: 759 traced to a named value, 117 found in their table's
    traced 65 <- src/stage13_tign.py: /the reaction heat of the (65) g cell/ = 65
    traced 3,034 <- src/stage13_section.py: Section(): nr x nt = 3034
 == main.tex: declarations  [map]
-   [label] 1.11  ...every step are archived at Zenodo,   (all versions; version 1.11.0,  , holds every result used here), an...
+   [label] 1.13  ...every step are archived at Zenodo,   (all versions; version 1.13.0 holds every result used here), and in...
    [identifier] 4.0  ...tests are those of Fransson et al.~ , published under CC~BY~4.0. The kinetic posterior files are the su...
 == manuscript/rebuild/tables/t1_tests.tex: caption  [map]
    [label] 3  ...ll tests of LG M50 cells of Fransson et al.~  (their Tables 3 and 4), named as they name them without...
@@ -778,242 +789,269 @@ numbers_check --rebuild: 759 traced to a named value, 117 found in their table's
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
 == manuscript/rebuild/tables/t4_3d.tex  [table:t4_3d.tex]
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
-   traced 10 <- predictions_stage9.md: /crossing lies within (10) s of the measured time/ = 10
+   traced 10 <- src/stage16_run.py: /WINDOW_S = ([0-9.]+)/ = 10
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
+   table 6.71 <- results/stage16_scorecard.json.N[0].runs[4].E_J | results/stage15_table.csv:2:C8_3d_bracket_J
+   table 7.42 <- results/stage16_needs.csv:4:lo_J | results/stage16_scorecard.json.N[0].runs[8].E_J
    table 147 <- results/stage16_needs.csv:4:t_m_s | results/stage16_scorecard.json.N[2].t_m_s
+   table 7.42 <- results/stage16_needs.csv:4:lo_J | results/stage16_scorecard.json.N[0].runs[8].E_J
+   table 7.54 <- results/stage16_needs.csv:4:hi_J | results/stage16_scorecard.json.N[2].runs[4].E_J
    table 7.65 <- results/stage16_needs.csv:4:xs_E_J | results/stage16_scorecard.json.N[2].xs_E_J
+   table 2.3 <- results/stage16_needs.csv:2:hi_minus_lumped_J | results/stage16_scorecard.json.N[0].hi_minus_lumped_J
    table 5.96 <- results/stage16_needs.csv:4:lumped_E_by_t_J | results/stage16_scorecard.json.N[2].lumped_E_by_t_J
    table 149 <- results/stage16_needs.csv:8:t_m_s | results/stage16_scorecard.json.N[6].t_m_s
+   table 6.33 <- results/stage16_needs.csv:8:lo_J | results/stage16_scorecard.json.N[5].runs[3].E_J
    table 6.50 <- results/stage16_needs.csv:8:xs_E_J | results/stage16_scorecard.json.N[6].xs_E_J
+   table 6.50 <- results/stage16_needs.csv:8:xs_E_J | results/stage16_scorecard.json.N[6].xs_E_J
+   table 1.3 <- results/stage16_needs.csv:8:d | results/stage16_scorecard.json.N[0].runs[1].id~str
    table 3.78 <- results/stage16_needs.csv:8:lumped_E_by_t_J | results/stage16_scorecard.json.N[6].lumped_E_by_t_J
    table 152 <- results/stage16_needs.csv:3:t_m_s | results/stage16_scorecard.json.N[1].t_m_s
+   table 5.46 <- results/stage16_needs.csv:3:lo_J | results/stage16_scorecard.json.N[1].runs[3].E_J
+   table 5.65 <- results/stage16_needs.csv:3:hi_J | results/stage16_scorecard.json.N[1].runs[4].E_J
    table 6.04 <- results/stage16_needs.csv:3:xs_E_J | results/stage16_scorecard.json.N[1].xs_E_J
+   table 8.6 <- results/stage16_needs.csv:3:d | results/stage16_scorecard.json.N[1].d
    table 2.97 <- results/stage16_needs.csv:3:lumped_E_by_t_J | results/stage16_scorecard.json.N[1].lumped_E_by_t_J
    table 210 <- results/stage16_needs.csv:9:t_m_s | results/stage16_scorecard.json.N[7].t_m_s
+   table 4.45 <- results/stage16_needs.csv:9:lo_J | results/stage16_scorecard.json.N[7].runs[6].E_J
    table 4.58 <- results/stage16_needs.csv:9:xs_E_J | results/stage16_scorecard.json.N[7].xs_E_J
-   table 0.26 <- results/stage16_needs.csv:9:lumped_E_by_t_J | results/stage16_scorecard.json.N[7].lumped_E_by_t_J
+   table 4.58 <- results/stage16_needs.csv:9:xs_E_J | results/stage16_scorecard.json.N[7].xs_E_J
+   table 1.5 <- results/stage16_needs.csv:4:lo_minus_lumped_J | results/stage16_scorecard.json.N[2].lo_minus_lumped_J
+   table 0.26 <- results/stage16_needs.csv:9:lumped_E_by_t_J | results/stage16_scorecard.json.N[1].runs[1].t_C8_s
    table 223 <- results/stage16_needs.csv:7:t_m_s | results/stage16_scorecard.json.N[5].t_m_s
    table 5.96 <- results/stage16_needs.csv:4:lumped_E_by_t_J | results/stage16_scorecard.json.N[2].lumped_E_by_t_J
+   table 6.15 <- results/stage16_needs.csv:7:hi_J | results/stage16_scorecard.json.N[5].runs[2].E_J
+   table 5.96 <- results/stage16_needs.csv:4:lumped_E_by_t_J | results/stage16_scorecard.json.N[2].lumped_E_by_t_J
+   table -1.5 <- results/stage16_needs.csv:4:lo_minus_lumped_J | results/stage16_scorecard.json.N[2].lo_minus_lumped_J
    table 2.73 <- results/stage16_needs.csv:7:lumped_E_by_t_J | results/stage16_scorecard.json.N[5].lumped_E_by_t_J
    table 272 <- results/stage16_needs.csv:2:t_m_s | results/stage16_scorecard.json.N[0].t_m_s
+   table 7.06 <- results/stage16_needs.csv:2:lo_J | results/stage16_scorecard.json.N[0].runs[5].E_J
+   table 7.15 <- results/stage16_needs.csv:2:hi_J | results/stage16_scorecard.json.N[0].runs[6].E_J
    table 7.44 <- results/stage16_needs.csv:2:xs_E_J | results/stage16_scorecard.json.N[0].xs_E_J
+   table 4.7 <- results/stage16_needs.csv:2:d | results/stage16_scorecard.json.N[0].runs[2].E_J
    table 4.85 <- results/stage16_needs.csv:2:lumped_E_by_t_J | results/stage16_scorecard.json.N[0].lumped_E_by_t_J
    table 275 <- results/stage16_needs.csv:5:t_m_s | results/stage16_scorecard.json.N[3].t_m_s
+   table 5.52 <- results/stage16_needs.csv:5:lo_J | results/stage16_scorecard.json.N[3].runs[3].E_J
+   table 5.65 <- results/stage16_needs.csv:3:hi_J | results/stage16_scorecard.json.N[1].runs[4].E_J
    table 6.05 <- results/stage16_needs.csv:5:xs_E_J | results/stage16_scorecard.json.N[3].xs_E_J
+   table 8.3 <- results/stage16_needs.csv:5:d | results/stage16_scorecard.json.N[3].d
    table 1.82 <- results/stage16_needs.csv:5:lumped_E_by_t_J | results/stage16_scorecard.json.N[3].lumped_E_by_t_J
    table 342 <- results/stage16_needs.csv:6:t_m_s | results/stage16_scorecard.json.N[4].t_m_s
+   table 5.32 <- results/stage16_needs.csv:6:lo_J | results/stage16_scorecard.json.N[4].runs[1].E_J
    table 5.51 <- results/stage16_needs.csv:6:xs_E_J | results/stage16_scorecard.json.N[4].xs_E_J
+   table 5.51 <- results/stage16_needs.csv:6:xs_E_J | results/stage16_scorecard.json.N[4].xs_E_J
+   table 1.7 <- results/stage16_needs.csv:6:d | results/stage16_scorecard.json.N[4].d
    table 1.18 <- results/stage16_needs.csv:6:lumped_E_by_t_J | results/stage16_scorecard.json.N[4].lumped_E_by_t_J
    table 54.3 <- results/stage16_needs.csv:9:E_b_J | results/stage16_scorecard.json.N[7].E_b_J
-   table 3.70 <- results/stage16_scorecard.json.N[7].runs[3].E_J | results/stage15_table.csv:31:C2_share_of_76.74kJ
+   table 3.70 <- results/stage16_needs.csv:5:lo_minus_lumped_J | results/stage16_scorecard.json.N[3].lo_minus_lumped_J
    table 4.06 <- results/stage16_needs.csv:25:xs_E_J | results/stage16_scorecard.json.N[0].runs[3].id~str
    table 3.53 <- results/stage15_table.csv:8:C8_xs_E_star_J | results/stage15_paper_numbers.json.B1.M50_SP_Exp3.E_star_xs_J
    table 0 <- results/stage16_needs.csv:2:test | results/stage16_scorecard.json.N[0].test~str
+   table 48.8 <- results/stage16_needs.csv:6:E_b_J | results/stage16_scorecard.json.N[4].E_b_J
+   table 5.32 <- results/stage16_needs.csv:6:lo_J | results/stage16_scorecard.json.N[4].runs[1].E_J
+   table 5.51 <- results/stage16_needs.csv:6:xs_E_J | results/stage16_scorecard.json.N[4].xs_E_J
+   table 5.04 <- results/stage16_needs.csv:26:lumped_E_J | results/stage16_scorecard.json.N[0].runs[3].E_J
+   table 0.00 <- results/stage16_needs.csv:2:test | results/stage16_scorecard.json.N[0].test~str
+   table 1.89 <- results/stage14_needs.csv:13:threshold_C2_hi_J | results/stage15_cross_section.json.A1_rows[12].hot_cross_3d_s
+   table 2.80 <- results/stage15_paper_numbers.json.B3a.history.pass_100_measured_s | results/stage15_cross_section.json.A1_rows[120].hot_cross_xs_s
    table 41.0 <- results/stage16_needs.csv:4:E_b_J | results/stage16_scorecard.json.N[2].E_b_J
    table 6.51 <- results/stage16_scorecard.json.N[2].runs[1].E_J | results/stage15_table.csv:10:C8_3d_bracket_J
    table 7.20 <- results/stage16_needs.csv:18:xs_E_J | results/stage16_scorecard.json.N[2].runs[2].E_J
    table 6.85 <- results/stage15_table.csv:5:C1_E_by_t_J | results/stage15_paper_numbers.json.B1.M50_PP_Exp2.bracket.mid_J
    table 3.18 <- results/stage14_needs.csv:7:threshold_C2_lo_J | results/stage15_cross_section.json.A1_rows[103].rxn_xs_J
    table 4.77 <- results/stage16_needs.csv:20:lumped_E_by_t_J | results/stage16_scorecard.json.X[10].lumped_E_by_t_J
-   table 1.72 <- results/stage15_paper_numbers.json.B1.M50_PP_Exp2.ratio_to_C2 | results/stage15_cross_section.json.A1_rows[120].hot_peak_3d_C
+   table 1.36 <- results/stage16_needs.csv:13:lumped_E_by_t_J | results/stage16_scorecard.json.X[3].lumped_E_by_t_J
+   table -2.27 <- results/stage16_needs.csv:4:d | results/stage16_scorecard.json.N[2].d
    table 40.0 <- results/stage16_needs.csv:2:E_b_J | results/stage16_scorecard.json.N[0].E_b_J
-   table 6.71 <- results/stage16_scorecard.json.N[0].runs[4].E_J | results/stage15_table.csv:2:C8_3d_bracket_J
-   table 7.42 <- results/stage16_scorecard.json.N[0].runs[5].E_J | results/stage15_table.csv:2:C8_3d_bracket_J
-   table 7.06 <- results/stage15_table.csv:2:C8_xs_E_star_J | results/stage15_paper_numbers.json.B1.M50_PT_Exp4.bracket.mid_J
+   table 7.06 <- results/stage16_needs.csv:2:lo_J | results/stage16_scorecard.json.N[0].runs[5].E_J
+   table 7.15 <- results/stage16_needs.csv:2:hi_J | results/stage16_scorecard.json.N[0].runs[6].E_J
+   table 7.06 <- results/stage16_needs.csv:2:lo_J | results/stage16_scorecard.json.N[0].runs[5].E_J
    table 4.66 <- results/stage16_scorecard.json.N[0].runs[2].E_J | results/stage15_table.csv:11:C1_share_of_76.74kJ
    table 4.85 <- results/stage16_needs.csv:2:lumped_E_by_t_J | results/stage16_scorecard.json.N[0].lumped_E_by_t_J
-   table 1.49 <- results/stage16_scorecard.json.X[13].runs[0].id~str | results/stage15_paper_numbers.json.B1.M50_PT_Exp4.ratio_to_C2
+   table 1.45 <- results/stage16_needs.csv:9:d | results/stage16_scorecard.json.N[7].d
+   table -1.54 <- results/stage15_table.csv:22:C2_share_of_76.74kJ | results/stage14_needs.csv:17:threshold_C1_hi_J
    table 16.6 <- results/stage15_table.csv:20:C2_E_J | results/stage14_needs.csv:12:need_240s_lo_J
    table 9.77 <- results/stage15_table.csv:18:C8_3d_bracket_J | results/stage15_paper_numbers.json.B1.M50_ST_Exp3.runs[0].E_J
    table 10.80 <- results/stage15_table.csv:18:C8_3d_bracket_J | results/stage15_paper_numbers.json.B1.M50_ST_Exp3.runs[1].E_J
    table 10.28 <- results/stage15_table.csv:18:C8_xs_E_star_J | results/stage15_paper_numbers.json.B1.M50_ST_Exp3.bracket.mid_J
    table 11.95 <- results/stage14_needs.csv:12:need_21s_lo_J
    table 12.11 <- results/stage15_table.csv:18:C2_E_J | results/stage14_needs.csv:12:need_21s_hi_J
-   table 0.85 <- results/stage14_needs.csv:8:threshold_C1_hi_J | results/stage15_paper_numbers.json.B1.M50_ST_Exp3.ratio_to_C2
+   table 0.80 <- results/stage15_table.csv:11:C1_E_by_t_J | results/stage15_cross_section.json.A1_summary.by_delivery.tri21.dt_C8_s.max
+   table -0.91 <- results/stage14_needs.csv:9:need_240s_lo_J | results/stage15_cross_section.json.A1[38].archived~str
+   table 9.0 <- results/stage16_needs.csv:2:n_runs_counted | results/stage16_scorecard.json.N[0].n_runs_counted
+   table 10.24 <- results/stage16_scorecard.json.T.runs[0].E_J
+   table 11.32 <- results/stage16_scorecard.json.T.runs[1].E_J
+   table 10.78 <- results/stage16_scorecard.json.T.xs_threshold_J | results/stage15_cross_section.json.A2[0].E_star_J
+   table 12.85 <- results/stage16_scorecard.json.T.lumped_bracket_J[0]
+   table 12.89 <- results/stage16_scorecard.json.T.lumped_bracket_J[1] | results/stage14_needs.csv:2:threshold_C2_hi_J
+   table 0.79 <- results/stage16_needs.csv:29:share_by_t_m_plus_10 | results/stage16_scorecard.json.X[19].share_by_t_m_plus_10
+   table -0.89 <- results/stage15_cross_section.json.A1[4].key~str | results/stage7_triggers.csv:251:T1max_C
 == manuscript/rebuild/highlights.txt  [map]
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
-   traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
-   traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
-   traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
-   traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 5.9624
-   traced 5.3 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 5.29617
-   traced 10.6 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 10.5756
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 0.285044
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
-   traced 2.27 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the upper end rounded up = 2.27
-   traced 0.80 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.8
-   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
+   traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
+   traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
+   NO ENTRY 3  ... To match strong-trigger tests: 4.45 to 7.54 kJ resolved in 3-D, 0.26 to 5.96 lumped These are 5.8 to...
+   traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
+   traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
+   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
+   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
+   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
+   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
 == manuscript/rebuild/keywords.txt  [map]
 == manuscript/rebuild/titles.md  [map]
 == manuscript/rebuild/ga_text.txt  [map]
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
-   traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
-   traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
-   traced 5.3 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 5.29617
-   traced 10.6 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 10.5756
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
-   traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
-   traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 5.9624
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 0.285044
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
+   traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
+   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
+   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
+   traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
+   traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
+   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
+   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
-   traced 2.27 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the upper end rounded up = 2.27
-   traced 0.80 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.8
-   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
+   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
 == manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt  [map]
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
-   traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
-   traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
-   traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
-   traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 5.9624
-   traced 5.3 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 5.29617
-   traced 10.6 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 10.5756
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 0.285044
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
+   traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
+   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
+   traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
+   traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
+   traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
+   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
+   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
+   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
+   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
+   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
-   traced 2.27 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the upper end rounded up = 2.27
-   traced 0.80 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.8
-   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
-   traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
+   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
-   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
-   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
    traced 98 <- manuscript/rebuild/data/predictions_registry.csv: rows = 98
    [year or date] 2026  ...mitted before its runs.  I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
 == manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt  [map]
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
-   traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
-   traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
-   traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
-   traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 5.9624
-   traced 5.3 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 5.29617
-   traced 10.6 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 10.5756
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 0.285044
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
+   traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
+   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
+   traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
+   traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
+   traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
+   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
+   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
+   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
+   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
+   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
-   traced 2.27 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the upper end rounded up = 2.27
-   traced 0.80 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.8
-   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
-   traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
+   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
-   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
-   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
    traced 98 <- manuscript/rebuild/data/predictions_registry.csv: rows = 98
    [year or date] 2026  ...mitted before its runs.  I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
 == manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt  [map]
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
-   traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
-   traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
-   traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
-   traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 5.9624
-   traced 5.3 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 5.29617
-   traced 10.6 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 10.5756
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 0.285044
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
+   traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
+   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
+   traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
+   traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
+   traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
+   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
+   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
+   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
+   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
+   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
-   traced 2.27 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the upper end rounded up = 2.27
-   traced 0.80 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.8
-   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
-   traced 151 <- results/stage15_cross_section.json: A1_summary.runs = 151
+   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
-   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
-   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
    traced 98 <- manuscript/rebuild/data/predictions_registry.csv: rows = 98
    [year or date] 2026  ...mitted before its runs.  I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
 == manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt  [map]
    [year or date] 2026  ...om one cell to the next. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
-   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
-   traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
-   traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
-   traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
-   traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 5.9624
-   traced 5.3 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 5.29617
-   traced 10.6 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 10.5756
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 0.285044
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
+   traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
+   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
+   traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
+   traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
+   traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
+   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
+   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
+   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
+   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
+   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
-   traced 2.27 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the upper end rounded up = 2.27
-   traced 0.80 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.8
-   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
+   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
-   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
-   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
 == manuscript/rebuild/letters/Enquiry_J_Energy_Storage.txt  [map]
    [year or date] 2026  ...t follows a failing one. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
-   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
-   traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
-   traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
-   traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
-   traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 5.9624
-   traced 5.3 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 5.29617
-   traced 10.6 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 10.5756
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 0.285044
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
+   traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
+   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
+   traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
+   traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
+   traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
+   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
+   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
+   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
+   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
+   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
-   traced 2.27 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the upper end rounded up = 2.27
-   traced 0.80 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.8
-   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
+   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
-   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
-   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
 == manuscript/rebuild/letters/Enquiry_J_Power_Sources.txt  [map]
    [year or date] 2026  ...t published experiments. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
-   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
-   traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
    traced 54.3 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 54.3037
-   traced 4.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 4.06435
-   traced 8.1 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, every case outside ST_Exp3 (matched, or within the search's resolution of the threshold) = 8.11583
-   traced 0.2 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 0.218747
-   traced 6.0 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J of the same thirty-two cases = 5.9624
-   traced 5.3 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 5.29617
-   traced 10.6 <- smallest and largest of results/stage15_table.csv: C8_xs_E_by_t_J, the thirty-two strong-trigger cases, over results/stage14_inputs.csv db_Eej_median = 10.5756
-   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 0.285044
-   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the same thirty-two cases, over results/stage14_inputs.csv db_Eej_median = 7.76949
-   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
+   traced 9.0 <- smallest and largest of results/stage7_triggers.csv: E_J of the sixteen tests = 8.97677
+   traced 16.6 <- results/stage7_triggers.csv: E_J where {'kind': 'test', 'test': 'M50_ST_Exp3'} = 16.6412
+   traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
+   traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
+   traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
+   traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
+   traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
+   traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
+   traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
+   traced 9.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 9.82013
+   traced 0.3 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 0.343362
+   traced 7.8 <- smallest and largest of results/stage15_table.csv: C2_E_by_t_J, the eight strong-trigger needs with the pulse, over results/stage14_inputs.csv db_Eej_median = 7.76949
+   traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 1.36 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the lower end rounded down, a lower bound (the ratio of the shown ends, 6.51 and 4.77 kJ) = 1.36
-   traced 2.27 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): PP_Exp2, the upper end rounded up = 2.27
-   traced 0.80 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.8
-   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, rounded outward = 0.91
+   traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
-   traced 1.7 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 1.68676
-   traced 4.3 <- smallest and largest of results/stage15_table.csv: the pulse, C8_xs_E_by_t_J less C2_E_by_t_J outside ST_Exp3 = 4.32433
 == counts written in words (main.tex)
    words ok 'halved up to sixteen times' = 16 <- src/reactive.py: /K_MAX = (16)/
    words ok 'thirteen of the fourteen with strong triggers' = 13 <- stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket
@@ -1036,16 +1074,17 @@ numbers_check --rebuild: 759 traced to a named value, 117 found in their table's
    words ok 'in seven propagated tests' = 7 <- results/stage14_needs.csv: propagated tests read at the measured time
    words ok 'Of the five tests that did not propagate and report low maxima' = 5 <- inputs/fransson2024/m50_tests.csv: tests that did not propagate, below 600 C
    words ok 'four need none' = 4 <- results/stage9_paper_numbers.json: part_a.A3 tests with an overshoot
-   words ok 'In twenty-five of them a run of the resolved neighbour reproduces' = 25 <- results/stage15_table.csv: matched cases outside ST_Exp3
    words ok 'in the same thirty-two cases' = 32 <- results/stage15_table.csv: cases outside ST_Exp3
-   words ok 'in the other seven, shorter deliveries' = 7 <- results/stage15_table.csv: cases outside ST_Exp3 whose cross-section need is a threshold
+   words ok 'seven of which reproduce the measured time only within' = 7 <- results/stage15_table.csv: cases outside ST_Exp3 whose cross-section need is a threshold
    words ok 'or, in twelve, to 332' = 12 <- results/stage15_cross_section.json: A1_rows that end at 332 s
    words ok 'rests in ten tests, PT-Exp2|ten of the high-contact outcomes' = 10 <- results/stage15_nodelivery.csv: high-contact rows whose whole-cell outcome comes from the cross-section
-   words ok 'the twelve tests not searched in three dimensions|twelve of the sixteen resolved thresholds' = 12 <- results/stage15_paper_numbers.json: the sixteen tests less those searched in three dimensions (B1)
+   words ok 'ten of the sixteen resolved thresholds' = 10 <- rebuild_headline.thresholds_3d: the sixteen tests less those whose threshold is bracketed in three dimensions
    words ok 'at least four delivery paths' = 4 <- results/stage15_table.csv: the fewest of the paths A1 to A4 whose bound reaches a need at the measured time
    words ok 'none of the three quantities' = 3 <- results/stage10_heldout.json: predictors
    words ok 'all twelve of the needs with the pulse' = 12 <- results/stage14_needs.csv: non-zero needs over 21.39 s
-   words ok 'radiation reaches ten' = 10 <- results/stage14_needs.csv against results/stage14_bounds_corrected.csv A1: non-zero needs at or below the radiation bound
-   words ok 'five of the six parallel needs' = 5 <- results/stage14_needs.csv against results/stage14_bounds_corrected.csv A6: parallel non-zero needs at or below the discharge bound
-   words ok 'of the six parallel needs' = 6 <- results/stage14_needs.csv: parallel non-zero needs
-   words ok 'in the four tests it searched' = 4 <- results/stage15_paper_numbers.json: B1 tests
+   words ok 'strong triggers, fourteen tests' = 14 <- results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ
+   words ok 'after four strong triggers searched in three dimensions|after the four strong triggers whose threshold was bracketed|in the four strong-trigger tests bracketed in three dimensions|rests on four tests after strong triggers' = 4 <- rebuild_headline.thresholds_3d: strong-trigger tests (E_J above 30 kJ)
+   words ok 'the two after weak ones|the two with weak triggers' = 2 <- rebuild_headline.thresholds_3d: weak-trigger tests (E_J below 30 kJ)
+   words ok 'in the three strong-trigger tests bracketed in three dimensions whose lumped threshold is not zero' = 3 <- rebuild_headline.threshold_ratio_spans: strong-trigger tests whose lumped threshold is not zero
+   words ok 'in the six tests whose threshold was bracketed in three dimensions|of the six tests bracketed in three dimensions' = 6 <- rebuild_headline.thresholds_3d: tests
+   words ok 'the eight strong triggers among the tests that propagated' = 8 <- results/stage16_scorecard.json: N searches

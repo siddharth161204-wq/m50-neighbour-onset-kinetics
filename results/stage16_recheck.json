@@ -1,0 +1,203 @@
+{
+ "N": {
+  "M50_PT_Exp4": {
+   "status": "done",
+   "lo_J": 7062.499960397711,
+   "hi_J": 7150.781113659824,
+   "lo_id": "s16_N_PT_Exp4_tri21_f0.056871102",
+   "hi_id": "s16_N_PT_Exp4_tri21_f0.057581990",
+   "lo_t": null,
+   "hi_t": 250.7837577471818,
+   "d": 0.046930591215482466,
+   "lo_by_t": 7062.499960397711,
+   "hi_by_t": 7150.781113659824,
+   "lumped": 4851.0
+  },
+  "M50_PP_Exp1": {
+   "status": "done",
+   "lo_J": 5461.797521212638,
+   "hi_J": 5653.135631478405,
+   "lo_id": "s16_N_PP_Exp1_tri21_f0.034430017",
+   "hi_id": "s16_N_PP_Exp1_tri21_f0.035636172",
+   "lo_t": 172.1934676809689,
+   "hi_t": 160.8480809701286,
+   "d": 0.0860725680399143,
+   "lo_by_t": 5461.797521212638,
+   "hi_by_t": 5653.135631478405,
+   "lumped": 2974.4
+  },
+  "M50_PP_Exp2": {
+   "status": "done",
+   "lo_J": 7423.0169008391995,
+   "hi_J": 7536.087810143836,
+   "lo_id": "s16_N_PP_Exp2_tri21_f0.058357626",
+   "hi_id": "s16_N_PP_Exp2_tri21_f0.059246557",
+   "lo_t": 160.58736908529482,
+   "hi_t": 149.86750588562916,
+   "d": 0.022676020086802525,
+   "lo_by_t": 7423.0169008391995,
+   "hi_by_t": 7536.087810143836,
+   "lumped": 5962.4
+  },
+  "M50_PP_Exp4": {
+   "status": "done",
+   "lo_J": 5519.796553901079,
+   "hi_J": 5651.969582867469,
+   "lo_id": "s16_N_PP_Exp4_tri21_f0.037932499",
+   "hi_id": "s16_N_PP_Exp4_tri21_f0.038840803",
+   "lo_t": 298.79911944083847,
+   "hi_t": 249.30915814683704,
+   "d": 0.08281686790024989,
+   "lo_by_t": 5519.796553901079,
+   "hi_by_t": 5651.969582867469,
+   "lumped": 1819.0
+  },
+  "M50_ST_Exp4": {
+   "status": "done",
+   "lo_J": 5318.888991333543,
+   "hi_J": 5508.333514555572,
+   "lo_id": "s16_N_ST_Exp4_tri21_f0.035095294",
+   "hi_id": "s16_N_ST_Exp4_tri21_f0.036345294",
+   "lo_t": null,
+   "hi_t": 254.647067754586,
+   "d": 0.01749705934671203,
+   "lo_by_t": 5318.888991333543,
+   "hi_by_t": 5508.333514555572,
+   "lumped": 1184.0
+  },
+  "M50_SP_Exp1": {
+   "status": "done",
+   "lo_J": 5964.679219258572,
+   "hi_J": 6146.384212598111,
+   "lo_id": "s16_N_SP_Exp1_tri21_f0.041032714",
+   "hi_id": "s16_N_SP_Exp1_tri21_f0.042282714",
+   "lo_t": 250.61961782951252,
+   "hi_t": 214.41678110078973,
+   "d": -0.015003235103107207,
+   "lo_by_t": 5964.679219258572,
+   "hi_by_t": 6146.384212598111,
+   "lumped": 2725.6
+  },
+  "M50_SP_Exp2": {
+   "status": "done",
+   "lo_J": 6325.668813307263,
+   "hi_J": 6495.15499124558,
+   "lo_id": "s16_N_SP_Exp2_tri21_f0.041799099",
+   "hi_id": "s16_N_SP_Exp2_tri21_f0.042919039",
+   "lo_t": 161.59879047995588,
+   "hi_t": 150.32604762468245,
+   "d": 0.013219602536590314,
+   "lo_by_t": 6325.668813307263,
+   "hi_by_t": 6495.15499124558,
+   "lumped": 3783.4
+  },
+  "M50_SP_Exp3": {
+   "status": "done",
+   "lo_J": 4450.515644761122,
+   "hi_J": 4581.706116128205,
+   "lo_id": "s16_N_SP_Exp3_tri21_f0.026392423",
+   "hi_id": "s16_N_SP_Exp3_tri21_f0.027170408",
+   "lo_t": 221.909485726871,
+   "hi_t": 210.64621774093857,
+   "d": 0.01452471991258267,
+   "lo_by_t": 4450.515644761122,
+   "hi_by_t": 4581.706116128205,
+   "lumped": 263.5
+  }
+ },
+ "X": {
+  "M50_PT_Exp4 240 s constant power": {
+   "status": "open",
+   "lo_J": 6209.216730491447,
+   "hi_J": 6597.292776147162
+  },
+  "M50_PP_Exp1 240 s constant power": {
+   "status": "open"
+  },
+  "M50_PP_Exp2 240 s constant power": {
+   "status": "open"
+  },
+  "M50_PP_Exp4 240 s constant power": {
+   "status": "open"
+  },
+  "M50_ST_Exp4 240 s constant power": {
+   "status": "open"
+  },
+  "M50_SP_Exp1 240 s constant power": {
+   "status": "open"
+  },
+  "M50_SP_Exp2 240 s constant power": {
+   "status": "open"
+  },
+  "M50_SP_Exp3 240 s constant power": {
+   "status": "open"
+  },
+  "M50_PT_Exp4 120 s constant power": {
+   "status": "open"
+  },
+  "M50_PP_Exp1 120 s constant power": {
+   "status": "open"
+  },
+  "M50_PP_Exp2 120 s constant power": {
+   "status": "open"
+  },
+  "M50_PP_Exp4 120 s constant power": {
+   "status": "open"
+  },
+  "M50_ST_Exp4 120 s constant power": {
+   "status": "open"
+  },
+  "M50_SP_Exp1 120 s constant power": {
+   "status": "open"
+  },
+  "M50_SP_Exp2 120 s constant power": {
+   "status": "open"
+  },
+  "M50_SP_Exp3 120 s constant power": {
+   "status": "open"
+  },
+  "M50_PT_Exp4 360 s constant power": {
+   "status": "open"
+  },
+  "M50_PP_Exp1 360 s constant power": {
+   "status": "open"
+  },
+  "M50_PP_Exp2 360 s constant power": {
+   "status": "open"
+  },
+  "M50_PP_Exp4 360 s constant power": {
+   "status": "open"
+  },
+  "M50_ST_Exp4 360 s constant power": {
+   "status": "open"
+  },
+  "M50_SP_Exp1 360 s constant power": {
+   "status": "open"
+  },
+  "M50_SP_Exp2 360 s constant power": {
+   "status": "open"
+  },
+  "M50_SP_Exp3 360 s constant power": {
+   "status": "open"
+  }
+ },
+ "agree": true,
+ "differences": [],
+ "T": {
+  "lo_J": 10242.18749579637,
+  "hi_J": 11320.312486551113,
+  "ratio_mid": 0.8376641472758036
+ },
+ "verdicts": {
+  "P1": true,
+  "P2": false,
+  "P3": true,
+  "P4": true,
+  "P5": true,
+  "P6": true,
+  "P7": true,
+  "P10": null,
+  "P11": null
+ },
+ "verdicts_agree": true
+}

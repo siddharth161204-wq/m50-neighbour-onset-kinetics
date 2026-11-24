@@ -43,7 +43,7 @@ def main():
     # in three dimensions (step 16, each bracket's two ends drawn) and the lumped neighbour (results/stage15_table.csv)
     n3 = HL.needs_3d()
     res_pts = [0.5 * (lo + hi) / 1000 for _, lo, hi in n3]
-    res_rng = HL.range_3d_kJ()
+    res_rng = HL.range_3d_kJ(2)
     lum = [x / 1000 for _, x in HL.needs_lumped()]
     e_fix = [float(r["value"]) for r in csv.DictReader(open(os.path.join(ROOT, "results", "stage14_inputs.csv")))
              if r["key"] == "db_Eej_median"][0] / 1000
@@ -52,10 +52,10 @@ def main():
              if r["path"] == "A1" and r["window_s"] == "21.39"][0] / 1000
     sys.path.insert(0, os.path.join(ROOT, "manuscript", "rebuild"))
     import number_sources as NS
-    r_lo = min(math.floor(100 * NS.ratio_span(t)[0]) / 100 for t in ("PT_Exp4", "PP_Exp2"))   # rounded outward
-    r_hi = math.ceil(NS.ratio_span("PP_Exp2")[1] * 100) / 100
+    r_lo = HL.strong_bounded_range()[0]                    # the least ratio after strong triggers, rounded down
     w_lo, w_hi = HL.weak_range()                           # ST-Exp3 (step 15) and PT-Exp1 (step 16), rounded outward
-    sh = HL.shares_pct()
+    n_s = sum(1 for x in HL.thresholds_3d() if x[0] not in ("M50_ST_Exp3", "M50_PT_Exp1"))
+    sh = HL.shares_pct_round()
 
     def rng(v, nd=1):
         return f"{min(v):.{nd}f} to {max(v):.{nd}f}"
@@ -82,12 +82,12 @@ def main():
         ax.add_patch(FancyArrowPatch((4.1, 5.4 + dy * 1.25), (5.25, 5.4 + dy * 1.05), arrowstyle="-|>", mutation_scale=9,
                                      color=C_HEAT, lw=1.3))
     T(ax, 5.0, 8.6, "heat delivered to the facing half", ha="center", va="center", fontsize=7.5, color="#9a5b00")
-    T(ax, 5.0, 1.45, f"within calorimetry's energy for this cell,\nconduction and radiation leave the modelled\nneighbour at least {short:.0f} K short of runaway",
+    T(ax, 5.0, 1.05, f"with no more energy than calorimetry\nmeasured for this cell, conduction and\nradiation leave the modelled neighbour\nat least {short:.0f} K short of runaway",
       ha="center", va="center", fontsize=7.0, color=MUTED, linespacing=1.25)
 
     # ---------------------------------------------------------------- right: what the model's neighbour needs
     ax2 = fig.add_axes([0.45, 0.34, 0.52, 0.48])
-    T(fig, 0.45, 0.975, "heat the model's neighbour needs over 21.4 s to run away\nat the measured times, after strong triggers (kJ)",
+    T(fig, 0.45, 0.975, "heat the model's neighbour needs over 21.4 s\nto run away at the measured times,\nafter strong triggers (kJ)",
       ha="left", va="top", fontsize=7.8, color=INK, linespacing=1.2)
     for y, vals, lo_hi, pct, col, face, name in (
             (1.25, res_pts, res_rng, (sh[0], sh[1]), C_RES, C_RES, "resolved neighbour (three-dimensional)"),
@@ -95,15 +95,16 @@ def main():
         ax2.plot([lo_hi[0], lo_hi[1]], [y, y], color=col, lw=5, alpha=0.25, solid_capstyle="round", zorder=2)
         jit = [((i % 4) - 1.5) * 0.06 for i in range(len(vals))]
         ax2.scatter(vals, [y + j for j in jit], s=12, facecolors=face, edgecolors=col, linewidths=0.9, zorder=3)
-        T(ax2, 0.0, y + 0.22, f"{name}: {lo_hi[0]:.1f} to {lo_hi[1]:.1f} kJ,\n{pct[0]:.1f} to {pct[1]:.1f} % of the "
+        T(ax2, 0.0, y + 0.22, f"{name}: {lo_hi[0]:.2f} to {lo_hi[1]:.2f} kJ,\n{pct[0]:.1f} to {pct[1]:.1f} % of the "
           f"Databank's median for this cell's ejecta", ha="left", va="bottom", fontsize=7.0, color=INK, linespacing=1.15)
     ax2.set_ylim(-0.3, 2.25); ax2.set_yticks([])
     ax2.set_xlim(0, 8.5); ax2.set_xticks([0, 2, 4, 6, 8]); ax2.tick_params(labelsize=7.5)
     ax2.grid(True, axis="x", color=GRID, lw=0.6, zorder=0)
-    foot = (f"The least energy that runs the resolved neighbour away is {r_lo:.2f} to {r_hi:.2f} times the lumped\n"
-            f"neighbour's after two strong triggers and {w_lo:.2f} to {w_hi:.2f} times after both weak ones. Published\n"
-            f"inputs cannot bound any delivery path below {bound:.1f} kJ; a heat flux measured on the\n"
-            f"facing side could test the needs.")
+    words = {3: "three", 4: "four", 5: "five", 6: "six"}
+    foot = (f"To run away at all, the resolved neighbour needs at least {r_lo:.2f} times the lumped neighbour's\n"
+            f"energy after the {words[n_s]} strong triggers searched in three dimensions and at most {w_hi:.2f} times\n"
+            f"after both weak ones. Published inputs do not exclude any path delivering {bound:.1f} kJ\n"
+            f"to the facing half within 21.4 s; a heat flux measured there could test the needs.")
     T(fig, 0.5, 0.015, foot, ha="center", va="bottom", fontsize=7.0, color=MUTED, linespacing=1.25)
 
     for ext, kw in (("pdf", {}), ("png", {"dpi": 300}), ("tif", {"dpi": 300, "pil_kwargs": {"compression": "tiff_lzw"}})):

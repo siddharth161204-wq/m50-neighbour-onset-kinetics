@@ -53,11 +53,13 @@ def main():
     import rebuild_headline as HL
     sys.path.insert(0, RB)
     import number_sources as NS
-    # the strong triggers' ratio across the brackets, rounded outward, as the manuscript and the graphical abstract give it
-    r_lo = min(math.floor(100 * NS.ratio_span(t)[0]) / 100 for t in ("PT_Exp4", "PP_Exp2"))
-    r_hi = math.ceil(NS.ratio_span("PP_Exp2")[1] * 100) / 100
-    H = {"n3": HL.range_3d_kJ(), "nl": HL.range_lumped_kJ(), "sh": HL.shares_pct(), "rs": (r_lo, r_hi),
-         "rw": HL.weak_range()}
+    # step 16's needs and thresholds in three dimensions, as the abstract gives them (src/rebuild_headline.py): the
+    # needs' range across the brackets, the shares rounded as usual, the ratio's least value after strong triggers and
+    # its largest after weak ones, both rounded outward
+    H = {"n3": HL.range_3d_kJ(2), "nl": HL.range_lumped_kJ(2), "sh": HL.shares_pct_round(),
+         "rs": HL.strong_bounded_range(), "rw": HL.weak_range(),
+         "ns": sum(1 for x in HL.thresholds_3d() if x[0] not in ("M50_ST_Exp3", "M50_PT_Exp1"))}
+    words = {4: "four", 3: "three", 5: "five", 6: "six"}
     import csv
     with open(os.path.join(RB, "data", "predictions_registry.csv")) as fh:
         n_pred = sum(1 for _ in csv.DictReader(fh))
@@ -81,20 +83,22 @@ def main():
              "for it to follow, and whether published tests can say, for two touching LG M50 cells modelled with "
              "kinetics fitted to calorimetry of NCM811 and graphite, against sixteen published two-cell tests."),
             "",
-            ("Each failing cell's energy is fitted to its test's peak temperature, and the neighbour is solved both as "
-             "one temperature and as a three-dimensional field; in each, the heat it needs through its side facing the "
+            ("Each failing cell's energy is fitted to its own measured peak temperature, 31.6 to 54.3 kJ in fourteen "
+             "tests (strong triggers) and 9.0 and 16.6 kJ in two (weak), and the neighbour is solved both as one "
+             "temperature and as a three-dimensional field; in each, the heat it needs through its side facing the "
              "failing cell to run away at the test's measured time is searched, and the bounds that published inputs "
              "set on each path that could deliver it are worked out."),
             "",
-            ("From a failing cell releasing at most the 33.2 kJ that calorimetry measured for this cell, conduction and "
-             "radiation leave the neighbour at least 29 K short of runaway. With heat delivered over 21.4 s, the eight "
-             f"tests that propagated after strong triggers need {H['n3'][0]:.1f} to {H['n3'][1]:.1f} kJ if the "
-             f"neighbour is resolved and {H['nl'][0]:.1f} to {H['nl'][1]:.1f} kJ if it is lumped, "
+            ("From a failing cell releasing at most 33.2 kJ, the most that calorimetry measured for this cell, "
+             "conduction and radiation leave the neighbour at least 29 K short of runaway. With heat delivered over "
+             "21.4 s, the mean of the two rise times read from the two published records, the eight tests that "
+             f"propagated after strong triggers need {H['n3'][0]:.2f} to {H['n3'][1]:.2f} kJ if the neighbour is "
+             f"resolved in three dimensions and {H['nl'][0]:.2f} to {H['nl'][1]:.2f} kJ if it is lumped, "
              f"{H['sh'][0]:.1f} to {H['sh'][1]:.1f} % and {H['sh'][2]:.1f} to {H['sh'][3]:.1f} % of the Databank's "
-             "median ejecta energy for this cell. The least energy that runs the resolved neighbour away is "
-             f"{H['rs'][0]:.2f} to {H['rs'][1]:.2f} times the lumped neighbour's after two strong triggers and "
-             f"{H['rw'][0]:.2f} to {H['rw'][1]:.2f} times after both weak ones. Published inputs cannot bound any "
-             "delivery path below 27.9 kJ."),
+             "median ejecta energy for this cell, 76.74 kJ. To run away at all, the resolved neighbour needs at least "
+             f"{H['rs'][0]:.2f} times the lumped neighbour's energy after the {words[H['ns']]} strong triggers "
+             f"searched in three dimensions and at most {H['rw'][1]:.2f} times after both weak ones. Published "
+             "inputs do not exclude any path delivering 27.9 kJ to the facing side within 21.4 s."),
             "",
             ("For readers who model propagation in packs, the paper gives the heat a neighbour needs under each of the "
              "two common representations of a cell, set against sixteen tests, the factor between them and its "

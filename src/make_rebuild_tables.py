@@ -18,6 +18,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import rebuild_brackets as RB                     # noqa: E402  (the narrowest bracket on each threshold)
+import rebuild_headline as HL                    # noqa: E402  (the three-dimensional thresholds, step 16)
 ROOT = os.path.join(HERE, "..")
 RES = os.path.join(ROOT, "results")
 OUT = os.path.join(ROOT, "manuscript", "rebuild", "tables")
@@ -732,14 +733,17 @@ def table4():
              r"\caption{The resolved neighbour in three dimensions, with the 21.4~s pulse at the central contact, beside "
              r"the reactive cross-section (a reduced model) and the lumped neighbour (kJ). Above, the needs of the eight "
              r"tests that propagated after strong triggers, in order of the measured time: the least energy delivered to "
-             r"the facing half with which the neighbour runs away within 10~s of the measured time; a three-dimensional "
-             r"need is bracketed between the highest energy run whose mean reaches 255.7\textdegree C later, or not at "
-             r"all, and the lowest whose mean reaches it by then. The cross-section's need is set against the "
-             r"bracket's midpoint (difference, \%). $^{t}$, as in Supplementary Table~S7: the measured time is "
-             r"reproduced only within the search's resolution of the threshold. Below, the thresholds of the tests "
-             r"searched in three dimensions, in order of the trigger's fitted body energy: the least energy at which the "
-             r"neighbour runs away within 900~s, with the ratio of the resolved to the lumped threshold by the brackets' "
-             r"midpoints.}",
+             r"the facing half with which the neighbour runs away by 10~s after the measured time; a three-dimensional "
+             r"need is bracketed between the highest energy run whose mean reaches 255.7\textdegree C later, or not "
+             r"within 900~s, and the lowest whose mean reaches it by then. The cross-section's need is set against the "
+             r"bracket's midpoint (difference, \%). $^{t}$: the measured time is reproduced only within the search's "
+             r"resolution of the threshold, in three dimensions because the bracket's lower end does not run away "
+             r"within 900~s, and for the other two as in Supplementary Table~S7. Below, the thresholds of the tests "
+             r"bracketed in three dimensions, in order of the trigger's fitted body energy: the least energy at which "
+             r"the neighbour runs away within 900~s, with the ratio of the resolved to the lumped threshold across "
+             r"the brackets, rounded outward (a lumped bracket whose lower end is zero bounds the ratio only below). "
+             r"$^{n}$: bracketed by the two runs that bracket the need, read after the runs; PT-Exp4's threshold "
+             r"search gave (6.71, 7.42].}",
              r"\label{tab:3d}", r"\setlength{\tabcolsep}{4pt}",
              r"\begin{tabular}{lrrrrr}", r"\toprule",
              r"\multicolumn{6}{l}{\textit{Needs at the measured times}} \\",
@@ -750,7 +754,8 @@ def table4():
         if r["status"] != "done":
             cell, diff = r["status"], ""
         else:
-            cell, diff = _br(r["lo_J"], r["hi_J"]), "%+.1f" % (100 * r["d"])
+            cell = _br(r["lo_J"], r["hi_J"]) + ("" if r["lo_runs_away"] else r"$^{t}$")
+            diff = "%+.1f" % (100 * r["d"])
         lines.append(" & ".join([tex_name(t), "%.0f" % float(tt[t]["time_to_propagation_s"]), cell,
                                  kj(r["xs_E_by_t_J"], 2) + mark.get(r["xs_status"], ""), diff,
                                  kj(r["lumped_E_by_t_J"], 2) + mark.get(r["lumped_status"], "")]) + r" \\")
@@ -766,24 +771,23 @@ def table4():
             for r in rows:
                 t = r["test"]
                 lines.append(" & ".join([tex_name(t), "%.0f" % float(tt[t]["time_to_propagation_s"]),
-                                         _br(r["lo_by_t_J"], r["hi_by_t_J"]),
+                                         _br(r["lo_by_t_J"], r["hi_by_t_J"]) + ("" if r["lo_runs_away"] else r"$^{t}$"),
                                          kj(r["xs_E_by_t_J"], 2) + mark.get(r["xs_status"], ""),
                                          "%+.1f" % (100 * r["d"]),
                                          kj(r["lumped_E_by_t_J"], 2) + mark.get(r["lumped_status"], "")]) + r" \\")
     lines += [r"\midrule", r"\multicolumn{6}{l}{\textit{Thresholds}} \\",
               r"Test & Trigger & Three-dimensional & Cross-section & Lumped & Ratio \\", r"\midrule"]
-    th = []
-    for t, v in b1.items():
-        th.append((t, v["bracket"]["lo_J"], v["bracket"]["hi_J"]))
-    T = s16["T"]
-    if T.get("status") == "done":
-        th.append((T["test"], T["lo_J"], T["hi_J"]))
-    for t, lo, hi in sorted(th, key=lambda x: -trig[x[0]]):
+    for t, lo, hi, src in sorted(HL.thresholds_3d(), key=lambda x: -trig[x[0]]):
         (l1, h1), (l2, h2) = RB.brackets(nd[t])
         lump = "0" if h2 == 0 else _br(l2, h2)
-        ratio = "" if h2 == 0 else "%.2f" % (0.5 * (lo + hi) / (0.5 * (l2 + h2)))
-        lines.append(" & ".join([tex_name(t), kj(trig[t]), _br(lo, hi), kj(xs[t]["E_star_J"], 2), lump, ratio])
-                     + r" \\")
+        if h2 == 0:
+            ratio = ""
+        elif l2 == 0:
+            ratio = r"$\geq$%.2f" % HL.down(lo / h2, 2)
+        else:
+            ratio = "%.2f--%.2f" % (HL.down(lo / h2, 2), HL.up(hi / l2, 2))
+        lines.append(" & ".join([tex_name(t), kj(trig[t]), _br(lo, hi) + (r"$^{n}$" if "N" in src else ""),
+                                 kj(xs[t]["E_star_J"], 2), lump, ratio]) + r" \\")
     lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}", ""]
     return "\n".join(lines)
 

@@ -32,6 +32,7 @@ from matplotlib.lines import Line2D
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import rebuild_brackets as RB                     # noqa: E402
+import rebuild_headline as HL                    # noqa: E402
 ROOT = os.path.join(HERE, "..")
 RES = os.path.join(ROOT, "results")
 OUT = os.path.join(ROOT, "manuscript", "rebuild", "figures")
@@ -202,11 +203,9 @@ def fig2():
     tt = tests_table()
     nd = needs_table()
     xs = {r["test"]: r for r in cross_section()["A2"] if r["shape"] == "tri"}
-    b1 = {t: {"bracket": dict(v["bracket"])} for t, v in stage15_numbers()["B1"].items()}
-    s16 = json.load(open(os.path.join(RES, "stage16_scorecard.json")))
-    if s16["T"].get("status") == "done":               # step 16's three-dimensional threshold of PT-Exp1
-        T = s16["T"]
-        b1[T["test"]] = {"bracket": {"lo_J": T["lo_J"], "hi_J": T["hi_J"], "mid_J": T["mid_J"]}}
+    # every threshold bracketed in three dimensions (rebuild_headline.thresholds_3d: step 15's B1, step 16's T, and
+    # step 16's need searches whose lower end does not run away, PT-Exp4 narrowed and ST-Exp4)
+    b1 = {t: {"bracket": {"lo_J": lo, "hi_J": hi, "mid_J": 0.5 * (lo + hi)}} for t, lo, hi, _ in HL.thresholds_3d()}
     order = sorted(TESTS, key=lambda t: tt[t]["E_b_J"])
     fig, ax = plt.subplots(figsize=(7.2, 3.3), constrained_layout=True)
     x = np.arange(len(order))
@@ -617,11 +616,8 @@ def fig7():
     grid(ax, "both")
     panel(ax, "b")
     ax = axs[2]
-    b1 = stage15_numbers()["B1"]
     xs = {r["test"]: r for r in d["A2"] if r["shape"] == "tri"}
-    th = [(t, v["bracket"]["lo_J"], v["bracket"]["hi_J"]) for t, v in b1.items()]
-    if s16 and s16["T"].get("status") == "done":
-        th.append((s16["T"]["test"], s16["T"]["lo_J"], s16["T"]["hi_J"]))
+    th = [(t, lo, hi) for t, lo, hi, _ in HL.thresholds_3d()]     # B1, T, and the need searches' (rebuild_headline)
     tt = tests_table()
     th = sorted(th, key=lambda x: -tt[x[0]]["E_b_J"])
     for i, (t, lo, hi) in enumerate(th):
