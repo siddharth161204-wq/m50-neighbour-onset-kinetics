@@ -52,6 +52,8 @@ def main():
              if r["path"] == "A1" and r["window_s"] == "21.39"][0] / 1000
     sys.path.insert(0, os.path.join(ROOT, "manuscript", "rebuild"))
     import number_sources as NS
+    import math
+    short = math.floor(10 * next(e for e in NS.E if e[1] == ["28.9"])[2]()[0]) / 10   # the least margin, rounded down
     r_lo = HL.strong_bounded_range()[0]                    # the least ratio after strong triggers, rounded down
     w_lo, w_hi = HL.weak_range()                           # ST-Exp3 (step 15) and PT-Exp1 (step 16), rounded outward
     n_s = sum(1 for x in HL.thresholds_3d() if x[0] not in ("M50_ST_Exp3", "M50_PT_Exp1"))
@@ -82,12 +84,12 @@ def main():
         ax.add_patch(FancyArrowPatch((4.1, 5.4 + dy * 1.25), (5.25, 5.4 + dy * 1.05), arrowstyle="-|>", mutation_scale=9,
                                      color=C_HEAT, lw=1.3))
     T(ax, 5.0, 8.6, "heat delivered to the facing half", ha="center", va="center", fontsize=7.5, color="#9a5b00")
-    T(ax, 5.0, 1.05, f"with no more energy than calorimetry\nmeasured for this cell, conduction and\nradiation leave the modelled neighbour\nat least {short:.0f} K short of runaway",
+    T(ax, 5.0, 1.05, f"with no more energy than calorimetry\nmeasured for this cell, conduction and\nradiation leave the modelled neighbour\nat least {short:.1f} K short of runaway",
       ha="center", va="center", fontsize=7.0, color=MUTED, linespacing=1.25)
 
     # ---------------------------------------------------------------- right: what the model's neighbour needs
     ax2 = fig.add_axes([0.45, 0.34, 0.52, 0.48])
-    T(fig, 0.45, 0.975, "heat the model's neighbour needs over 21.4 s\nto run away at the measured times,\nafter strong triggers (kJ)",
+    T(fig, 0.45, 0.975, "heat the model's neighbour needs over 21.4 s\nto run away by the measured times,\nafter strong triggers (kJ)",
       ha="left", va="top", fontsize=7.8, color=INK, linespacing=1.2)
     for y, vals, lo_hi, pct, col, face, name in (
             (1.25, res_pts, res_rng, (sh[0], sh[1]), C_RES, C_RES, "resolved neighbour (three-dimensional)"),
@@ -103,7 +105,8 @@ def main():
     words = {3: "three", 4: "four", 5: "five", 6: "six"}
     foot = (f"To run away at all, the resolved neighbour needs at least {r_lo:.2f} times the lumped neighbour's\n"
             f"energy after the {words[n_s]} strong triggers searched in three dimensions and at most {w_hi:.2f} times\n"
-            f"after both weak ones. Published inputs do not exclude any path delivering {bound:.1f} kJ\n"
+            f"after both weak ones, at nominal inputs. Published inputs do not exclude any path delivering\n"
+            f"{bound:.1f} kJ "
             f"to the facing half within 21.4 s; a heat flux measured there could test the needs.")
     T(fig, 0.5, 0.015, foot, ha="center", va="bottom", fontsize=7.0, color=MUTED, linespacing=1.25)
 

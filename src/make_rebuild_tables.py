@@ -109,10 +109,11 @@ def table2():
          r"\cite{bergman2011fundamentals}; assumed$^{a}$, as in \cite{chen2021simplified}"),
         ("Room convection; ambient and start", r"10 W\,m$^{-2}$\,K$^{-1}$; 25\textdegree C", r"assumed$^{a}$"),
         (r"\textit{Trigger}", None, None),
-        ("Model and release", ("one temperature; triangular over 21.39 s, the mean of the two rise times read from "
-                               "the two published records (17.53 and 25.24 s; Supplementary Section~S7)"),
-         r"read from \cite{fransson2024exploring}"),
-        (r"Body energy $E_\mathrm{b}$", "9.0 to 54.3 kJ, one per test (Table 1); 33.2 kJ held to calorimetry",
+        ("Model and release", ("one temperature; triangular over 21.39 s, the mean of the two rise times derived from "
+                               "the two published records, each a peak rise over a printed heating rate (17.53 "
+                               "and 25.24 s; Supplementary Section~S7)"),
+         r"derived from \cite{fransson2024exploring}"),
+        (r"Body energy $E_\mathrm{b}$", "9.0 to 54.3 kJ, one per test (Table 1); 33.2 kJ, the most calorimetry measured for this cell, in the runs of Section~\\ref{sec:res-conduction}",
          r"\cite{fransson2024exploring,finegan2024databank}"),
         (r"\textit{Kinetics}", None, None),
         ("Model", "Bayesian chemical reaction neural network: posterior mean, and 200 joint draws",
@@ -180,11 +181,15 @@ def table3():
     lines = [r"\begin{table}[!tbp]", r"\centering", r"\scriptsize",
              r"\caption{What each path can deliver to the neighbour's facing half, from published inputs alone "
              r"(Supplementary Table~S5): the upper bound within the pulse's 21.4~s and in total (every lower bound is "
-             r"zero), what sets it, and the measurement that would bound it more tightly. The ejecta can release at "
-             r"most 225.8~kJ in the rig: the most calorimetry measured for this cell's ejecta, 89.34~kJ~\cite{finegan2024databank}, "
+             r"zero), what sets it, and the measurement that would bound it more tightly; the bounds are estimates of "
+             r"the most the published inputs allow rather than strict limits (Supplementary Section~S6). The ejecta "
+             r"can release at most 225.8~kJ: the most calorimetry measured for this cell's ejecta, 89.34~kJ~\cite{finegan2024databank}, "
              r"with the heat of burning the vent gas in open air, at most 136.5~kJ on another 21700 "
              r"cell~\cite{vendra2022numerical}; gas and flame are taken at up to 1500\textdegree C~\cite{chen2020experimental}, "
-             r"the vent gas at up to 398.5~m\,s$^{-1}$~\cite{gillich2024mechanical}. The neighbour's own discharge heats "
+             r"the vent gas at up to 398.5~m\,s$^{-1}$~\cite{gillich2024mechanical}. With the fitted triggers' own ejected "
+             r"energies, up to " + _ee_max_kJ() + r"~kJ, the bounds set by the ejecta's energy would only rise. The "
+             r"neighbour's own "
+             r"discharge heats "
              r"it from inside and is set beside the paths for comparison.}",
              r"\label{tab:bounds}", r"\renewcommand{\arraystretch}{0.95}",
              r"\setlength{\tabcolsep}{3pt}",
@@ -217,8 +222,8 @@ def table_s3():
              r"run away within 10~s of the measured time, counted as delivered by the "
              r"run's own runaway. An energy marked $^{t}$ is the least energy "
              r"run whose runaway comes before the measured time when the next lower run, 0.5\,\% of the test's "
-             r"ejected energy below, gives none within 900~s: the measured time is reproduced only between the two, "
-             r"within that resolution of the threshold, and the value, the higher, can exceed the bracket beside it. "
+             r"ejected energy below, gives none within 900~s: no run reproduces the measured time, and the value, the "
+             r"higher, is the threshold to within that resolution and can exceed the bracket beside it. "
              r"$^{n}$: a three-dimensional threshold bracketed by the two runs that bracket the need, whose lower end "
              r"does not run away within 900~s (Section~\ref{sec:s-step16}); PT-Exp4's threshold search gave (6.71, 7.42]. "
              r"Supplementary Table~\ref{tab:s-needs} gives the other delivery shapes.}"
@@ -279,7 +284,7 @@ def table_s7():
              r"runaway; for the resolved neighbour, the energy of that delivery in all, over its whole shape, and the "
              r"time of its runaway in that run. $^{t}$, the least energy run whose runaway comes before the measured "
              r"time, the next lower run, 0.5\,\% of the test's ejected energy below, giving none within 900~s, so that "
-             r"the measured time is reproduced only between the two, within that resolution of the threshold; the "
+             r"no run reproduces the measured time and the energy is the threshold to within that resolution; the "
              r"energy is counted to that run's runaway; "
              r"$^{b}$, interpolated between the two runs whose runaways bracket the measured time, and counted "
              r"to the measured time; a dash, no energy on the search's grid, which ran to 0.2 of the test's ejected "
@@ -738,18 +743,16 @@ def table4():
     N = sorted(s16["N"], key=lambda r: float(tt[r["test"]]["time_to_propagation_s"]))
     lines = [r"\begin{table}[!tbp]", r"\centering", r"\scriptsize",
              r"\caption{The resolved neighbour in three dimensions at the central contact, beside the reactive "
-             r"cross-section (a reduced model) and the lumped neighbour (kJ). Needs, in order of the measured time, "
-             r"after the strong triggers of the eight tests that propagated: the least energy delivered to the facing "
-             r"half, counted to the runaway, with which the neighbour runs away by 10~s after the measured time, "
-             r"bracketed in three dimensions between a run that does and the highest below it that does not; the "
-             r"difference sets the cross-section's need against the bracket's midpoint. $^{t}$: reproduced only "
-             r"within the search's resolution of the threshold (in three dimensions, the bracket's lower end does not "
-             r"run away within 900~s; for the other two, Supplementary Table~S7); $^{b}$: interpolated between two runs "
-             r"bracketing the measured time (Supplementary Table~S7). Thresholds with the pulse, in order "
-             r"of the trigger's fitted energy: the least energy with which the neighbour runs away within 900~s, and "
-             r"the ratio of the resolved to the lumped threshold across the brackets, rounded outward; 0: the lumped "
-             r"neighbour runs away with none. $^{n}$: bracketed by the need's two runs, read after the runs "
-             r"(PT-Exp4's threshold search gave (6.71, 7.42]).}",
+             r"cross-section (a reduced model) and the lumped neighbour (kJ). Needs after the eight strong triggers "
+             r"whose tests propagated, by measured time: the least energy delivered to the facing half that runs the "
+             r"neighbour away by 10~s after the measured time, bracketed in three dimensions and counted to that time, "
+             r"and for the other two counted to their own runaways (the same with the pulse); the cross-section's is "
+             r"the upper end of a bracket 0.5\,\% of the test's ejected energy wide, set against the bracket's "
+             r"midpoint. $^{t}$: no run reproduces the measured time, so the need is the threshold (Supplementary "
+             r"Table~S7); $^{b}$: interpolated between two runs. Thresholds with the pulse, by the trigger's fitted "
+             r"energy: the least energy that runs the neighbour away within 900~s, and the ratio of resolved to lumped "
+             r"across the brackets, rounded outward; 0: runs away with none; $^{n}$: bracketed by the need's two runs, "
+             r"read after them (PT-Exp4's threshold search gave (6.71, 7.42]).}",
              r"\label{tab:3d}", r"\setlength{\tabcolsep}{4pt}",
              r"\begin{tabular}{lrrrrr}", r"\toprule",
              r"\multicolumn{6}{l}{\textit{Needs with the 21.4~s pulse}} \\",
@@ -880,6 +883,21 @@ def quoted_rows():
     (manuscript/data/parameters.csv) for the inputs."""
     V = _ns_value
     rows = []
+    sys.path.insert(0, os.path.join(ROOT, "manuscript", "rebuild"))
+    import number_sources as _NS
+
+    def N(num, hint=None):
+        """The value an entry of the numbers check traces for the number as written, read from its file, and where;
+        hint, a piece of the entry's context, picks the entry where the number has more than one."""
+        nd = len(num.split(".")[1]) if "." in num else 0
+        for rx, nums, sel, u in _NS.E:
+            if num not in nums or (hint is not None and hint not in rx):
+                continue
+            v = float(sel()[nums.index(num)])
+            v = v / 1000.0 if u == "kJ" else (100.0 * v if u == "pct" else (abs(v) if u == "abs" else v))
+            if ("%%.%df" % nd) % v == num:
+                return ("%%.%df" % nd) % v, sel.where
+        raise KeyError(num)
 
     def add(where, what, parts, src):
         import re
@@ -898,10 +916,12 @@ def quoted_rows():
     hp = [e for e in NS.E if e[0] == r"226\.4 (to|and) 226\.7"]
     v226 = ["%.1f" % float(e[2]()[0]) for e in hp]
     lp, wl = V(r"175\.9 (to|and) 177\.4|lumped neighbour at most at 177\.4")
+    v192 = [N("191.9")[0], N("192.2")[0]]
     add("3.1", "The eight tests with the largest fitted triggers held to 33.2 kJ, no delivered heat: the hottest "
-        "point's peak at the high contact (two connections) and the lumped neighbour's highest peak",
-        [" and ".join(v226) + " \\textdegree C", lp + " \\textdegree C"],
-        "step 12's runs; " + wl.split(":")[0] + ", part\\_a.high")
+        "point's peak at the central and at the high contact (two connections each) and the lumped neighbour's "
+        "highest peak",
+        [" and ".join(v192) + " \\textdegree C", " and ".join(v226) + " \\textdegree C", lp + " \\textdegree C"],
+        "step 12's runs; " + wl.split(":")[0] + ", part\\_a.central and part\\_a.high")
     a, w = V(r"within 21\.7~s")
     add("3.1", "With the fitted triggers and no delivered heat, the latest time by which conduction carries the "
         "hottest point over 255.7 \\textdegree C in the eight tests with the largest triggers", [a + " s"],
@@ -909,6 +929,14 @@ def quoted_rows():
     a, w = V(r"low contact its hottest point peaks at most at 162\.6|in all sixteen tests, peaking at most at 162\.6")
     add("3.1", "With the fitted triggers and no delivered heat at the low contact, the highest peak of the hottest "
         "point over the sixteen tests", [a + " \\textdegree C"], "step 7's runs; " + w.split(":")[0])
+    a, w = N("13.8", "56")
+    b, _ = N("56.3", "56")
+    add("3.2", "With no delivered heat at the central contact, how far the far face's peak exceeds the measured "
+        "maximum in the four tests that did not propagate and need none", [a + " to " + b + " K"],
+        "step 9's runs; " + w.split(":")[0] + ", part\\_a.A3")
+    a, w = N("204.2")
+    add("3.3", "PT-Exp1 with 11.32 kJ over 21.4 s, the upper end of its three-dimensional threshold's bracket: the "
+        "lumped neighbour's peak", [a + " \\textdegree C"], "step 16's run; " + w.split(":")[0])
     a, w = V(r"106 to 128", 0, 0)
     b, _ = V(r"106 to 128", 1, 0)
     c, _ = V(r"22\.4 to 22\.6", 0)
@@ -927,11 +955,12 @@ def quoted_rows():
     add("3.4", "PT-Exp1 with a 360 s pulse at the upper end of the local threshold's bracket: the hottest point's "
         "crossing, on the cell's axis, and the mean then", [a + " s", b + " \\textdegree C"],
         "step 13's run; results/stage13\\_skin.csv")
-    a, w = V(r"230\.4")
-    b, _ = V(r"73\.3")
-    add("3.4", "The lumped neighbour's ignition temperature with the trigger at 25 \\textdegree C, and the share of "
-        "the low-temperature cathode reaction in the reaction heat at the ignition temperature",
-        [a + " \\textdegree C", b + " \\%"], "step 13's computation; results/stage13\\_tign.csv")
+    a, w = N("218.5")
+    b, _ = N("73.3")
+    add("3.4", "The lumped neighbour's ignition temperature with the trigger at the neighbour's own temperature, and "
+        "there, with every reactant at its initial amount, the share of the low-temperature cathode reaction in the "
+        "reaction heat under the posterior mean", [a + " \\textdegree C", b + " \\%"],
+        "step 13's computation; results/stage13\\_tign.csv (trigger own) and " + w.split(":")[0])
     a, w = V(r"2\.1 to 2\.3", 0)
     b, _ = V(r"2\.1 to 2\.3", 1)
     add("3.4", "With no delivered heat in PT-Exp4, PP-Exp3 and ST-Exp2 at the central contact, the heat the lumped "
@@ -939,16 +968,32 @@ def quoted_rows():
         [a + " to " + b + " kJ"], "step 15's accounts of archived runs; results/stage15\\_accounts.json")
     a, w = V(r"first two draws, at 191\.0 and 196\.5", 0)
     b, _ = V(r"first two draws, at 191\.0 and 196\.5", 1)
-    add("3.4", "PT-Exp4 with 5.04 kJ over 21.4 s: the lumped neighbour's runaway under the kinetic draws ranked 5 "
-        "and 50", [a + " and " + b + " s"], "step 15's runs; results/stage15\\_paper\\_numbers.json, B4")
+    c, wc = N("215.6")
+    add("3.4, S2", "PT-Exp4 with 5.04 kJ over 21.4 s: the lumped neighbour's runaway under the posterior mean and "
+        "under the kinetic draws ranked 5 and 50", [c + " s", a + " and " + b + " s"],
+        "step 15's runs; " + wc.split(":")[0] + " and results/stage15\\_paper\\_numbers.json, B4")
+    a, w = N("191.2")
+    b, _ = N("192.4")
+    c, _ = N("221.1")
+    add("3.4", "PT-Exp4 with 5.04 kJ over 21.4 s: the resolved neighbour's mean peak under the four kinetic draws "
+        "ranked 5, 50, 151 and 196, and with every rate law shifted by 17.5 K",
+        [a + " to " + b + " \\textdegree C", c + " \\textdegree C"],
+        "step 15's runs; results/stage15\\_paper\\_numbers.json, B4")
     a, w = V(r"270\.3~s")
     b, _ = V(r"jump at 240\.4|jump beginning at 240\.4|233\.6 and 240\.4")
     add("3.4", "PT-Exp4 with 5.04 kJ over 21.4 s and every rate law shifted by 20 K: the resolved neighbour's "
         "runaway, and the far face's reading where its jump begins", [a + " s", b + " \\textdegree C"],
         "step 15's run; results/stage15\\_paper\\_numbers.json, B4")
     a, w = V(r"369\.3")
-    add("3.5", "PT-Exp4, the 5.04 kJ pulse followed by 10 W: the resolved neighbour's runaway", [a + " s"],
-        "step 15's run; results/stage15\\_paper\\_numbers.json, B3b")
+    b, _ = N("255.9")
+    c, _ = N("233.6")
+    add("3.5", "PT-Exp4, the 5.04 kJ pulse followed by 10 W and by 12.5 W: the resolved neighbour's runaway, and "
+        "with 12.5 W the far face's reading where its jump begins", [a + " and " + b + " s", c + " \\textdegree C"],
+        "step 15's runs; results/stage15\\_paper\\_numbers.json, B3b")
+    a, w = N("241.4")
+    add("3.5", "PT-Exp4 with 6.2 kJ at constant power over 240 s, the run of step 10 carried on to 900 s: the "
+        "resolved neighbour's mean peak", [a + " \\textdegree C"],
+        "step 15's run; results/stage15\\_paper\\_numbers.json, B2")
     hp = [e for e in NS.E if e[0] == r"16\.3 and 16\.8|16\.3 to 16\.8"]
     v16 = ["%.1f" % float(e[2]()[0]) for e in hp]
     b, _ = V(r"51\.4~K")
@@ -978,6 +1023,47 @@ def quoted_rows():
         "standard deviation over the kinetic and over the 30 thermal draws",
         [a + " to " + b + " s", ", ".join(four) + " s", c + " s", "%.2f and %.3f s" % (sd_k, sd_t)],
         "step 3's runs; results/stage3a\\_onsets.csv, stage3a\\_metrics.json, stage11\\_draws.csv, stage3bc\\_metrics.json")
+    a, w = N("179.3")
+    b, wb = N("199.8")
+    add("2.3, S2", "The posterior-mean kinetics in the emulation of the kinetic source's accelerating-rate calorimetry: "
+        "the exotherm onset, and the temperature at which the self-heating reaches 1 K\\,min$^{-1}$",
+        [a + " \\textdegree C", b + " \\textdegree C"], "the emulation; " + w.split(":")[0])
+    n, w = N("164")
+    a, wa = N("146.3")
+    b, _ = N("191.4")
+    c, wc = N("178.8")
+    d, wd = N("161.9")
+    e, _ = N("195.7")
+    add("2.3, S2", "The 200 kinetic draws in the same emulation: how many reach that rate within 4,000 min (the "
+        "source's main cluster), their exotherm onsets (central 95\\,\\%) and mean, and the band of the check as "
+        "amended, their mean and two standard deviations", [n + " of 200", a + " to " + b + " \\textdegree C",
+                                                           c + " \\textdegree C", d + " to " + e + " \\textdegree C"],
+        "the emulation; " + w.split(":")[0] + ", " + wd.split(":")[0])
+    a, w = N("191.5")
+    b, _ = N("192.3")
+    c, _ = N("159.4")
+    d, _ = N("162.1")
+    add("S3", "Step 5's central case (the central contact and tab, the posterior-mean kinetics), over its two releases "
+        "and two connections: the hottest point's peak and the lumped neighbour's",
+        [a + " to " + b + " \\textdegree C", c + " to " + d + " \\textdegree C"],
+        "step 5's runs; " + w.split(":")[0] + ", central\\_case.span")
+    a, w = None, None
+    for rx, nums, sel, u in _NS.E:
+        if nums == ["13.8", "21.1"]:
+            lo, hi = sel()
+            a, b, w = "%.1f" % float(lo), "%.1f" % float(hi), sel.where
+    assert (a, b) == ("13.8", "21.1"), (a, b)
+    add("S3", "Step 9's runs with the pulse at or above the lower end of each propagated test's local threshold: the "
+        "latest crossing of 255.7 \\textdegree C by the hottest point, after the trigger's start",
+        [a + " to " + b + " s"], "step 9's runs; results/stage9\\_scorecard.json, P1 rows")
+    a, _ = N("192.16")
+    b, _ = N("191.90")
+    c, _ = N("226.14")
+    d, _ = N("226.75")
+    add("S3", "Step 6's runs with 33.2 kJ over 21.39 s under the posterior mean: the hottest point's peak at the "
+        "central contact and tabs in series and in parallel, and at the high contact with the low and the high tabs",
+        [a + " and " + b + " \\textdegree C", c + " to " + d + " \\textdegree C"],
+        "step 6's runs; results/stage6\\_runs/*E33.22.json, resolved.peak\\_hottest\\_C")
     par = {r["symbol"]: r for r in read_csv(os.path.join(ROOT, "manuscript", "data", "parameters.csv"))}
     for sym, what, val in (("g_tab", "Tab conductance per tab", "6.8 mW\\,K$^{-1}$ (5 and 10 as brackets)"),
                            ("k_can", "Can conductivity", "15 W\\,m$^{-1}$\\,K$^{-1}$"),
@@ -989,7 +1075,19 @@ def quoted_rows():
         ev = par[sym]["file_evidence"].split(";")[0]
         add("Table 2", what + ", set by the earlier study without a primary source and held here as an assumption",
             [val], ev.replace("_", "\\_"))
-    return rows
+
+    def order(r):
+        w = r["where"].split(",")[0]
+        if w[0].isdigit():
+            return (0, float(w))
+        return (1, float(w[1:])) if w.startswith("S") else (2, 0.0)
+    return sorted(rows, key=order)
+
+
+def _ee_max_kJ():
+    """The largest ejected energy the model takes for a test, 3.105 times its fitted body energy (kJ)."""
+    return "%.1f" % (max(float(r["E_e_J"]) for r in read_csv(os.path.join(RES, "stage8_ejected.csv"))
+                         if r["kind"] == "test") / 1000.0)
 
 
 def table_s17():
@@ -1001,10 +1099,11 @@ def table_s17():
     lines = [r"{\scriptsize\setlength{\tabcolsep}{4pt}",
              r"\begin{longtable}{>{\raggedright\arraybackslash}p{0.07\textwidth}>{\raggedright\arraybackslash}p{0.41\textwidth}"
              r">{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.25\textwidth}}",
-             r"\caption{Results that the main text (by section) and the supplement quote from runs or computations "
-             r"that no other table or figure shows, and the inputs that the earlier study set without a primary source "
-             r"(Table~2 of the main text, $^{a}$), each with the runs or the code it comes from. Every value here is "
-             r"read from its file by the numbers check's own entry for it.}\label{tab:s-quoted}\\",
+             r"\caption{Every result that the main text (by section) quotes from a run or a computation that no "
+             r"other table or figure shows, every result of a run that the text of this supplement (S2, S3) quotes "
+             r"and no other table gives, and the inputs that the earlier study set without a primary source (Table~2 "
+             r"of the main text, $^{a}$), each with the runs or the code it comes from. Every value here is read from "
+             r"its file by the numbers check's own entry for it.}\label{tab:s-quoted}\\",
              r"\toprule", r"Where & Result & Value & From \\", r"\midrule", r"\endfirsthead",
              r"\multicolumn{4}{l}{\textit{Continued}} \\", r"\toprule", r"Where & Result & Value & From \\",
              r"\midrule", r"\endhead"]

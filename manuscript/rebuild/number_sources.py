@@ -319,7 +319,7 @@ E = [
     (r"margin of 0\.1", ["0.1"], MD("predictions_stage10.md", r"by more than (0\.1) in the mean log score"), None),
     (r"5\\,\\% either side", ["5"], MD("predictions_stage15.md", r"less (5) % and plus 5 %"), None),
     (r"central 95", ["95"], MD("predictions_stage13.md", r"the central (95) % of the 200 draws"), None),
-    (r"shifted by 2~kJ", ["2"], MD("src/stage13_inputs.py", r"for d in \(-2000\.0, (2000\.0)\)"), "kJ"),
+    (r"shifted by 2~kJ|shifted, by 2~kJ in three tests", ["2"], MD("src/stage13_inputs.py", r"for d in \(-2000\.0, (2000\.0)\)"), "kJ"),
     (r"within 3\\,\\%", ["3"], MD("src/stage13_inputs.py", r"FIRST_STEP = (0\.03)"), "pct"),
     # ---------------------------------------------------------------- the tests and the trigger
     (r"147 to 342", ["147", "342"], lo_hi(f"{TESTS}: time_to_propagation_s", lambda: [r["time_to_propagation_s"] for r in _csv(TESTS)]), None),
@@ -349,7 +349,14 @@ E = [
     (r"63\.5 to 63\.8", ["63.8"], J(S12, "part_a.central.shortfall_hot_spot_K[1]"), None),
     (r"29\.0 to 29\.3", ["29.0"], J(S12, "part_a.high.shortfall_hot_spot_K[0]"), None),
     (r"29\.0 to 29\.3", ["29.3"], J(S12, "part_a.high.shortfall_hot_spot_K[1]"), None),
-    (r"at least 29~K|29~K short", ["29"], J(S12, "part_a.high.shortfall_hot_spot_K[0]"), None),
+    (r"at least 28\.9~K", ["28.9"], F("results/manuscript_numbers.json: constants.level_propagation_C less the highest "
+                                       "hottest-point peak with at most 33.2 kJ and no delivery, over step 5 (results/v12_numbers.json: "
+                                       "all_runs.res_peak_hottest_C.max), step 6 (results/stage6_runs/*_hhigh_*_E33.22.json: "
+                                       "resolved.peak_hottest_C) and step 12 (results/stage12_paper_numbers.json: part_a.high.hot_spot_peak_C)",
+                                       lambda: [_get(_json("results/manuscript_numbers.json"), "constants.level_propagation_C")
+                                                - max([float(_get(_json("results/v12_numbers.json"), "all_runs.res_peak_hottest_C.max"))]
+                                                      + [float(x) for x in _get(_json(S12), "part_a.high.hot_spot_peak_C")]
+                                                      + [s6_hot(c, "high", g)()[0] for c in ("series", "parallel") for g in ("low", "high")])]), None),
     (r"159\.8 (to|and) 161\.8", ["159.8"], J(S12, "part_a.central.lumped_peak_C[0]"), None),
     (r"159\.8 (to|and) 161\.8", ["161.8"], J(S12, "part_a.central.lumped_peak_C[1]"), None),
     (r"175\.9 (to|and) 177\.4", ["175.9"], J(S12, "part_a.high.lumped_peak_C[0]"), None),
@@ -629,7 +636,7 @@ E += [
     (r"exotherm onset of 179\.3", ["179.3"], J("results/note_numbers.json", "V1.T_in_C"), None),
     (r"main cluster, 169\.0 to 198\.0|169\.0 to 198\.0", ["169.0"], MD("DECISIONS.md", r"main-cluster mean, (169\.0) to 198\.0"), None),
     (r"main cluster, 169\.0 to 198\.0|169\.0 to 198\.0", ["198.0"], MD("DECISIONS.md", r"main-cluster mean, 169\.0 to (198\.0)"), None),
-    (r"next lower run, 0\.5\\,\\% of the test's ejected energy", ["0.5"], J(XS, "settings.width_ft"), "pct"),
+    (r"next lower run, 0\.5\\,\\% of the test's ejected energy|bracket, 0\.5\\,\\% of the test's ejected energy wide", ["0.5"], J(XS, "settings.width_ft"), "pct"),
     (r"least resistance at 25\\degC|4\.189~V and 25", ["25"], MD(INP14, r"0\.5 C for 30 s, (25) C"), None),
     (r"by a factor of 1\.5", ["1.5"], MD("predictions_stage15.md", r"the mesh refined by (1\.5)"), None),
     (r"at most at 199\.2", ["199.2"], lo_hi("results/stage15_nodelivery.csv: mean_peak_xs_C, high contact, outcome from the cross-section",
@@ -1142,6 +1149,10 @@ def xs_star(test):
     return next(r["E_star_J"] for r in _json(XS)["A2"] if r["shape"] == "tri" and r["test"] == "M50_" + test)
 
 
+def _ee16(test):
+    return float(next(r for r in _csv("results/stage8_ejected.csv") if r["kind"] == "test" and r["id"] == test)["E_e_J"])
+
+
 def run16(rid):
     return next(r for r in _csv("results/stage16_runs.csv") if r["id"] == rid)
 
@@ -1155,12 +1166,20 @@ E += [
     (r"5\.8 to 9\.8", ["5.8", "9.8"], F(f"{S16}: N, the smallest lower end and the largest upper end, over {INP14} db_Eej_median",
                                          lambda: [min(r["lo_J"] for r in _json(S16)["N"]) / _hl().e_fix(),
                                                   max(r["hi_J"] for r in _json(S16)["N"]) / _hl().e_fix()]), "pct"),
-    (r"by 10~s after the measured time|by 10~s after it in three dimensions", ["10"], MD("src/stage16_run.py", r"WINDOW_S = ([0-9.]+)"), None),
+    (r"by 10~s after the measured time|by 10~s after it in three dimensions|counted to 10~s after the measured time", ["10"], MD("src/stage16_run.py", r"WINDOW_S = ([0-9.]+)"), None),
     (r"1\.46 to 4\.33", ["1.46", "4.33"], F(f"{S16} N against {TAB15} C2_E_by_t_J: the smallest lower end and the largest upper end of the "
                                              "resolved need less the lumped need, rounded outward (rebuild_headline.differences_kJ)",
                                              lambda: list(_hl().differences_kJ(2))), None),
-    (r"comes at 254\.6~s, against the measured 342", ["254.6"], F(f"{S16}: N, ST_Exp4, hi_t_C8_s", lambda: [n16("ST_Exp4")["hi_t_C8_s"]]), None),
-    (r"comes at 254\.6~s, against the measured 342", ["342"], C(TESTS, "time_to_propagation_s", test="M50_ST_Exp4"), None),
+    (r"upper end runs away at 250\.8 and 254\.6~s", ["250.8"], F(f"{S16}: N, PT_Exp4, hi_t_C8_s", lambda: [n16("PT_Exp4")["hi_t_C8_s"]]), None),
+    (r"upper end runs away at 250\.8 and 254\.6~s", ["254.6"], F(f"{S16}: N, ST_Exp4, hi_t_C8_s", lambda: [n16("ST_Exp4")["hi_t_C8_s"]]), None),
+    (r"(against|before) the measured 272 and 342~s", ["272"], C(TESTS, "time_to_propagation_s", test="M50_PT_Exp4"), None),
+    (r"(against|before) the measured 272 and 342~s", ["342"], C(TESTS, "time_to_propagation_s", test="M50_ST_Exp4"), None),
+    (r"0\.62 to 0\.84~kJ wide", ["0.62", "0.84"], F(f"{XS}: settings.width_ft times results/stage8_ejected.csv: E_e_J, the smallest "
+                                                    f"and the largest over the eight needs of step 16 ({S16}: N)",
+                                                    lambda: [min(_json(XS)["settings"]["width_ft"] * _ee16(r["test"]) for r in _json(S16)["N"]),
+                                                             max(_json(XS)["settings"]["width_ft"] * _ee16(r["test"]) for r in _json(S16)["N"])]), "kJ"),
+    (r"ejected energies, up to 168\.6~kJ", ["168.6"], F("results/stage8_ejected.csv: the largest E_e_J of the sixteen tests",
+                                                       lambda: [max(float(r["E_e_J"]) for r in _csv("results/stage8_ejected.csv") if r["kind"] == "test")]), "kJ"),
     (r"between 7\.06 and 7\.15~kJ in PT-Exp4", ["7.06", "7.15"], F("rebuild_headline.thresholds_3d: PT_Exp4 (B1 narrowed by N)", lambda: list(th3("PT_Exp4")[1:3])), "kJ"),
     (r"1\.45 to 1\.54 times", ["1.45", "1.54"], F("rebuild_headline.threshold_ratio_spans: PT_Exp4, rounded outward",
                                                     lambda: [_hl().down(x[1], 2) for x in _hl().threshold_ratio_spans() if x[0] == "M50_PT_Exp4"] +
@@ -1295,7 +1314,7 @@ WORDS = [
     (r"four need none", 4, F("results/stage9_paper_numbers.json: part_a.A3 tests with an overshoot", lambda: [float(len(overshoot()))])),
     (r"in the same thirty-two cases", 32, F(f"{TAB15}: cases outside ST_Exp3",
                                                      lambda: [float(sum(1 for r in _csv(TAB15) if r["test"] != "M50_ST_Exp3"))])),
-    (r"in seven of them the cross-section reproduces the measured time only within", 7, F(f"{TAB15}: cases outside ST_Exp3 whose cross-section need is a threshold",
+    (r"in seven of them the cross-section's need is its threshold", 7, F(f"{TAB15}: cases outside ST_Exp3 whose cross-section need is a threshold",
                                                               lambda: [float(sum(1 for r in _csv(TAB15) if r["test"] != "M50_ST_Exp3"
                                                                                  and r["C8_xs_status"] == "threshold"))])),
     (r"or, in twelve, to 332", 12, F(f"{XS}: A1_rows that end at 332 s", lambda: [float(sum(1 for r in _json(XS)["A1_rows"] if r["t_end_s"] < 400))])),
