@@ -1,8 +1,7 @@
-numbers_check --rebuild: 746 traced to a named value, 161 found in their table's source files, 0 broad matches (supplement only), 35 counts written in words checked, 2 failures, 73 structural (not looked for)
+numbers_check --rebuild: 746 traced to a named value, 161 found in their table's source files, 0 broad matches (supplement only), 35 counts written in words checked, 1 failures, 73 structural (not looked for)
 
 FAILURES:
   main.tex: Introduction to Discussion, with figure captions: 16  [MISMATCH: manuscript/rebuild/data/steps.csv: the step whose file is predictions_stage16.md = ]  ...~s against the measured 223~s (Supplementary Table~S2, step~16, P1 and P2). Across the brackets the cr...
-  manuscript/rebuild/highlights.txt: 3  [NO ENTRY]  ... To match strong-trigger tests: 4.45 to 7.54 kJ resolved in 3-D, 0.26 to 5.96 lumped These are 5.8 to...
 
 == main.tex: title  [map]
 == main.tex: abstract  [map]
@@ -824,7 +823,7 @@ FAILURES:
    table 5.96 <- results/stage16_needs.csv:4:lumped_E_by_t_J | results/stage16_scorecard.json.N[2].lumped_E_by_t_J
    table 6.15 <- results/stage16_needs.csv:7:hi_J | results/stage16_scorecard.json.N[5].runs[2].E_J
    table 5.96 <- results/stage16_needs.csv:4:lumped_E_by_t_J | results/stage16_scorecard.json.N[2].lumped_E_by_t_J
-   table -1.5 <- results/stage16_needs.csv:4:lo_minus_lumped_J | results/stage16_scorecard.json.N[2].lo_minus_lumped_J
+   table 1.5 <- results/stage16_needs.csv:4:lo_minus_lumped_J | results/stage16_scorecard.json.N[2].lo_minus_lumped_J
    table 2.73 <- results/stage16_needs.csv:7:lumped_E_by_t_J | results/stage16_scorecard.json.N[5].lumped_E_by_t_J
    table 272 <- results/stage16_needs.csv:2:t_m_s | results/stage16_scorecard.json.N[0].t_m_s
    table 7.06 <- results/stage16_needs.csv:2:lo_J | results/stage16_scorecard.json.N[0].runs[5].E_J
@@ -892,7 +891,6 @@ FAILURES:
    traced 29 <- results/stage12_paper_numbers.json: part_a.high.shortfall_hot_spot_K[0] = 29
    traced 4.45 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 4.45052
    traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
-   NO ENTRY 3  ... To match strong-trigger tests: 4.45 to 7.54 kJ resolved in 3-D, 0.26 to 5.96 lumped These are 5.8 to...
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
    traced 5.8 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end, over results/stage14_inputs.csv db_Eej_median = 5.79938
@@ -1075,7 +1073,7 @@ FAILURES:
    words ok 'Of the five tests that did not propagate and report low maxima' = 5 <- inputs/fransson2024/m50_tests.csv: tests that did not propagate, below 600 C
    words ok 'four need none' = 4 <- results/stage9_paper_numbers.json: part_a.A3 tests with an overshoot
    words ok 'in the same thirty-two cases' = 32 <- results/stage15_table.csv: cases outside ST_Exp3
-   words ok 'seven of which reproduce the measured time only within' = 7 <- results/stage15_table.csv: cases outside ST_Exp3 whose cross-section need is a threshold
+   words ok 'in seven of them the cross-section reproduces the measured time only within' = 7 <- results/stage15_table.csv: cases outside ST_Exp3 whose cross-section need is a threshold
    words ok 'or, in twelve, to 332' = 12 <- results/stage15_cross_section.json: A1_rows that end at 332 s
    words ok 'rests in ten tests, PT-Exp2|ten of the high-contact outcomes' = 10 <- results/stage15_nodelivery.csv: high-contact rows whose whole-cell outcome comes from the cross-section
    words ok 'ten of the sixteen resolved thresholds' = 10 <- rebuild_headline.thresholds_3d: the sixteen tests less those whose threshold is bracketed in three dimensions

@@ -3,7 +3,7 @@
 Table 1, the sixteen tests: Fransson et al.'s measurements (inputs/fransson2024/m50_tests.csv) and the body energy
 fitted to each test's trigger peak (results/stage7_triggers.csv).
 Table 2, the model's parameters and their sources (the values are the model's inputs, as the code holds them).
-Table 3, what each path can deliver: the bounds after their independent read (results/stage14_bounds_corrected.csv).
+Table 4, what each path can deliver: the bounds after their independent read (results/stage14_bounds_corrected.csv).
 Table S3, the thresholds and needs of every test (results/stage14_needs.csv, results/stage15_cross_section.json,
 results/stage15_table.csv, results/stage15_paper_numbers.json).
 
@@ -218,7 +218,10 @@ def table_s3():
              r"run's own runaway. An energy marked $^{t}$ is the least energy "
              r"run whose runaway comes before the measured time when the next lower run, 0.5\,\% of the test's "
              r"ejected energy below, gives none within 900~s: the measured time is reproduced only between the two, "
-             r"within that resolution of the threshold, and the value, the higher, can exceed the bracket beside it. Supplementary Table~\ref{tab:s-needs} gives the other delivery shapes.}"
+             r"within that resolution of the threshold, and the value, the higher, can exceed the bracket beside it. "
+             r"$^{n}$: a three-dimensional threshold bracketed by the two runs that bracket the need, whose lower end "
+             r"does not run away within 900~s (Section~\ref{sec:s-step16}); PT-Exp4's threshold search gave (6.71, 7.42]. "
+             r"Supplementary Table~\ref{tab:s-needs} gives the other delivery shapes.}"
              r"\label{tab:s-thresholds}\\",
              r"\toprule", r"Test & Hottest point & Lumped & Resolved, cross-section & Resolved, three-dimensional & "
              r"Needs: lumped; cross-section; three-dimensional \\", r"\midrule", r"\endfirsthead",
@@ -231,9 +234,13 @@ def table_s3():
         c1 = "0" if hi1 == 0 else "(%s, %s]" % (kj(lo1, 2), kj(hi1, 2))
         c2 = "0" if hi2 == 0 else "(%s, %s]" % (kj(lo2, 2), kj(hi2, 2))
         c8 = "(%s, %s]" % (kj(xs[t]["lo_J"], 2), kj(xs[t]["hi_J"], 2))
-        d3 = "(%s, %s]" % (kj(b1[t]["bracket"]["lo_J"], 2), kj(b1[t]["bracket"]["hi_J"], 2)) if t in b1 else ""
-        if t == s16["T"].get("test") and s16["T"].get("status") == "done":
-            d3 = "(%s, %s]" % (kj(s16["T"]["lo_J"], 2), kj(s16["T"]["hi_J"], 2))
+        # every threshold bracketed in three dimensions (rebuild_headline.thresholds_3d): step 15's searches, step 16's
+        # T, and the need searches whose lower end does not run away ($^{n}$; PT-Exp4's threshold search gave the wider
+        # bracket of Table 4's caption)
+        th3 = {x[0]: x for x in HL.thresholds_3d()}
+        d3 = ""
+        if t in th3:
+            d3 = "(%s, %s]" % (kj(th3[t][1], 2), kj(th3[t][2], 2)) + (r"$^{n}$" if "N" in th3[t][3] else "")
         row = next((x for x in tab if x["test"] == t and x["delivery"].startswith("21.39")), None)
         if row is not None:
             mk2 = r"$^{t}$" if row["C2_status"] == "threshold" else ""
@@ -717,7 +724,7 @@ def _br(lo, hi, nd=2):
 
 
 def table4():
-    """Table 4 of the main text: the resolved needs and thresholds in three dimensions with the 21.4 s pulse at the
+    """Table 3 of the main text: the resolved needs and thresholds in three dimensions with the 21.4 s pulse at the
     central contact (step 16, results/stage16_scorecard.json; step 15, results/stage15_paper_numbers.json), beside the
     reduced model's (results/stage15_table.csv, results/stage15_cross_section.json) and the lumped neighbour's
     (results/stage15_table.csv; the thresholds' brackets by rebuild_brackets from results/stage14_needs.csv); and the
@@ -755,7 +762,7 @@ def table4():
             cell, diff = r["status"], ""
         else:
             cell = _br(r["lo_J"], r["hi_J"]) + ("" if r["lo_runs_away"] else r"$^{t}$")
-            diff = "%+.1f" % (100 * r["d"])
+            diff = ("%+.1f" % (100 * r["d"])).replace("-", "$-$")
         lines.append(" & ".join([tex_name(t), "%.0f" % float(tt[t]["time_to_propagation_s"]), cell,
                                  kj(r["xs_E_by_t_J"], 2) + mark.get(r["xs_status"], ""), diff,
                                  kj(r["lumped_E_by_t_J"], 2) + mark.get(r["lumped_status"], "")]) + r" \\")
@@ -773,7 +780,7 @@ def table4():
                 lines.append(" & ".join([tex_name(t), "%.0f" % float(tt[t]["time_to_propagation_s"]),
                                          _br(r["lo_by_t_J"], r["hi_by_t_J"]) + ("" if r["lo_runs_away"] else r"$^{t}$"),
                                          kj(r["xs_E_by_t_J"], 2) + mark.get(r["xs_status"], ""),
-                                         "%+.1f" % (100 * r["d"]),
+                                         ("%+.1f" % (100 * r["d"])).replace("-", "$-$"),
                                          kj(r["lumped_E_by_t_J"], 2) + mark.get(r["lumped_status"], "")]) + r" \\")
     lines += [r"\midrule", r"\multicolumn{6}{l}{\textit{Thresholds}} \\",
               r"Test & Trigger & Three-dimensional & Cross-section & Lumped & Ratio \\", r"\midrule"]
@@ -807,7 +814,7 @@ def table_s16():
              r"neighbour's mean reaches 255.7\textdegree C (or its peak where it does not within 900~s), and, for "
              r"a need, whether that comes no later than 10~s after the measured time (early) or later or not at all "
              r"(late). An asterisk marks an archived run that closes a bracket. The brackets are in "
-             r"Table~4 of the main text and Table~\ref{tab:s-needs}.}\label{tab:s-step16}\\",
+             r"Table~3 of the main text and Table~\ref{tab:s-needs}.}\label{tab:s-step16}\\",
              r"\toprule", head, r"\midrule", r"\endfirsthead", r"\multicolumn{6}{l}{\textit{Continued}} \\",
              r"\toprule", head, r"\midrule", r"\endhead"]
     order = {"T": 0, "N": 1, "V": 2, "X": 3}

@@ -1212,7 +1212,7 @@ WORDS = [
     (r"four need none", 4, F("results/stage9_paper_numbers.json: part_a.A3 tests with an overshoot", lambda: [float(len(overshoot()))])),
     (r"in the same thirty-two cases", 32, F(f"{TAB15}: cases outside ST_Exp3",
                                                      lambda: [float(sum(1 for r in _csv(TAB15) if r["test"] != "M50_ST_Exp3"))])),
-    (r"seven of which reproduce the measured time only within", 7, F(f"{TAB15}: cases outside ST_Exp3 whose cross-section need is a threshold",
+    (r"in seven of them the cross-section reproduces the measured time only within", 7, F(f"{TAB15}: cases outside ST_Exp3 whose cross-section need is a threshold",
                                                               lambda: [float(sum(1 for r in _csv(TAB15) if r["test"] != "M50_ST_Exp3"
                                                                                  and r["C8_xs_status"] == "threshold"))])),
     (r"or, in twelve, to 332", 12, F(f"{XS}: A1_rows that end at 332 s", lambda: [float(sum(1 for r in _json(XS)["A1_rows"] if r["t_end_s"] < 400))])),
