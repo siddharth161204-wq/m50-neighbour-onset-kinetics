@@ -1255,6 +1255,11 @@ E += [
      ["240", "120", "360"], F("src/stage16_run.py: X_SHAPES, the constant-power durations X searched (s)", lambda: x_shapes()), None),
 ]
 
+
+E += [
+    (r"six worker-hours were used \(6\.16", ["6.16"], J(S16, "X_worker_hours"), None),
+]
+
 WORDS = [
     (r"halved up to sixteen times", 16, MD("src/reactive.py", r"K_MAX = (16)")),
     (r"thirteen of the fourteen with strong triggers", 13, F("stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket",
