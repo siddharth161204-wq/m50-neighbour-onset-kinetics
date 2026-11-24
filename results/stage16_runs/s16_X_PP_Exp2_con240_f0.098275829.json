@@ -1,0 +1,237 @@
+{
+ "id": "s16_X_PP_Exp2_con240_f0.098275829",
+ "stage": 16,
+ "kind": "X",
+ "search": "X_M50_PP_Exp2_con240",
+ "test": "M50_PP_Exp2",
+ "kin": "mean",
+ "connection": "parallel",
+ "h": "central",
+ "g": "central",
+ "tau": 21.38651984299561,
+ "E_body_J": 40962.019712742374,
+ "T_amb_K": 298.15,
+ "refine": 1.0,
+ "dt_scale": 1.0,
+ "ratio": "central",
+ "r": 3.1052850376787346,
+ "E_e_J": 127198.74692708027,
+ "deliveries": [
+  {
+   "shape": "con",
+   "f": 0.098275829,
+   "tau_s": 240.0,
+   "t0_s": 0.0,
+   "E_J": 12500.562302020015
+  }
+ ],
+ "E_delivered_J": 12500.562302020015,
+ "geometry": "half",
+ "sei": "fresh",
+ "sei0": null,
+ "shift_K": 0.0,
+ "models": "both",
+ "stop_mean": true,
+ "t_end_s": 900.0,
+ "max_sub": 4096,
+ "accounts_dt": null,
+ "draw": null,
+ "h_c_W_m2K": 2000.0,
+ "G_tab_W_K": 0.0068,
+ "G_contact_W_K": 0.17011146022558063,
+ "g_pos_W_K": 0.0068,
+ "g_neg_W_K": 0.0068,
+ "T1max_C": 643.9921410348164,
+ "t_T1max_s": 20.54,
+ "n_nodes": 19355,
+ "resolved": {
+  "C8": true,
+  "t_C8_s": 149.19050171047695,
+  "stop_mean": {
+   "t_s": 149.19050171047695,
+   "frac": 0.6200684190782015,
+   "imax": 9904,
+   "Tmax_C": 317.6156517474368,
+   "where_hottest": {
+    "r_mm": 10.55,
+    "theta_deg": 0.0,
+    "z_mm": 35.05
+   },
+   "delivered_J": {
+    "delivery": 7771.182897755775
+   },
+   "rxn_J": 2045.655557478984
+  },
+  "t_end_s": 149.2,
+  "propagated": true,
+  "t_prop_s": 19.863603339979367,
+  "cross_s": {
+   "T_onset_low": 19.863603339979367,
+   "T_onset_mean": 36.403741805023856,
+   "T_onset_high": 135.2426744075891
+  },
+  "peak_hottest_C": 317.6156517474368,
+  "t_peak_hottest_s": 149.2,
+  "where_peak": {
+   "r_mm": 10.55,
+   "theta_deg": 0.0,
+   "z_mm": 35.05
+  },
+  "peak_mean_C": 255.7159255829489,
+  "t_peak_mean_s": 149.2,
+  "mean_end_C": 255.7159255829489,
+  "probe_peak": {
+   "away": {
+    "T_C": 242.57905743046217,
+    "t_s": 149.2
+   },
+   "side": {
+    "T_C": 276.6057919287282,
+    "t_s": 149.2
+   },
+   "facing": {
+    "T_C": 317.6071735316626,
+    "t_s": 149.2
+   },
+   "toward": {
+    "T_C": 317.6156517474368,
+    "t_s": 149.2
+   },
+   "side_out": {
+    "T_C": 270.85394771490087,
+    "t_s": 149.2
+   }
+  },
+  "in_rxn_J": 2045.655557478984,
+  "t_rxn_mark_s": null,
+  "far_jump": {
+   "t_s": 129.19050171047695,
+   "T_C": 204.72768374562452,
+   "rule": "20 s before C8"
+  },
+  "far_at_45_C": 89.51908752290637,
+  "far_at_271.5_C": null,
+  "energy_J": {
+   "in_bus": 621.4641723739443,
+   "in_gap": 4594.171291516257,
+   "in_rad": 1322.2810596450772,
+   "out_conv": 792.9131452031512,
+   "out_rad": 1315.133428821404,
+   "in_rxn": 2045.655557478984,
+   "in_delivery": 7771.182897755775
+  },
+  "stored_J": 14246.708404747096,
+  "net_in_J": 14246.708404745483,
+  "energy_residual_rel": 9.865287514484757e-14,
+  "sources": {
+   "delivery": {
+    "E_J": 12500.562302020015,
+    "tau_s": 240.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 7771.182897755775
+   }
+  },
+  "steps": 5968,
+  "rejected": 0,
+  "max_implicit_nodes": 0,
+  "steps_with_max_sub": 5968,
+  "implicit_node_steps_with_max_sub": 0,
+  "max_local_reaction_heating_K_per_s": 5.888964559932037,
+  "conversion_volume_mean_end": {
+   "sei": 0.04357731520350854,
+   "li_an": 0.03954723261990602,
+   "ele_liq": 0.1732894219777805,
+   "cat1": 0.4808217976625696,
+   "sep": 0.9999999999866699
+  },
+  "probe_where": {
+   "away": {
+    "r_mm": 10.55,
+    "theta_deg": 180.0,
+    "z_mm": 35.05
+   },
+   "side": {
+    "r_mm": 10.55,
+    "theta_deg": 88.27711686944409,
+    "z_mm": 35.05
+   },
+   "facing": {
+    "r_mm": 10.549999999999999,
+    "theta_deg": 0.3258527744819848,
+    "z_mm": 35.05
+   },
+   "toward": {
+    "r_mm": 10.55,
+    "theta_deg": 0.0,
+    "z_mm": 35.05
+   },
+   "side_out": {
+    "r_mm": 10.55,
+    "theta_deg": 94.39197574481449,
+    "z_mm": 35.05
+   }
+  }
+ },
+ "lumped": {
+  "propagated": true,
+  "t_prop_s": 117.05179898797687,
+  "peak_C": 532.0839972138236,
+  "t_peak_s": 137.5,
+  "reaction_heat_J": 22188.27877493919,
+  "t_end_s": 900.0,
+  "energy_J": {
+   "in_link": -3493.1235715347725,
+   "in_rad": 2162.2625927068834,
+   "out_conv": 8051.581252958034,
+   "out_rad": 19866.5496319411,
+   "in_delivery": 12500.562302020015,
+   "in_rxn": 22188.27877493919
+  },
+  "energy_residual_rel": 1.3189129231630876e-13,
+  "conversion_end": {
+   "sei": 1.0,
+   "li_an": 1.0,
+   "ele_liq": 1.0,
+   "cat1": 1.0,
+   "sep": 1.0
+  },
+  "cross_s": {
+   "T_onset_low": 117.05179898797687,
+   "T_onset_mean": 119.54661334301908,
+   "T_onset_high": 121.83206628266392
+  },
+  "sources": {
+   "delivery": {
+    "E_J": 12500.562302020015,
+    "tau_s": 240.0,
+    "t0_s": 0.0,
+    "shape": "constant",
+    "name": "delivery",
+    "delivered_J": 12500.562302020015
+   }
+  },
+  "stored_J": 5439.849213237041,
+  "net_in_J": 5439.849213232181
+ },
+ "wall_s": 266.668794631958,
+ "started_utc": "2026-11-24T10:20:05Z",
+ "finished_utc": "2026-11-24T10:24:31Z",
+ "machine": {
+  "label": "stage16-1",
+  "system": "Linux",
+  "release": "6.18.44-fc-v819",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "cpu_count": 2,
+  "python": "3.13.18",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "numba": "0.68.0",
+  "llvmlite": "0.50.0",
+  "skfem": "12.0.2",
+  "sparse_solver": "pardiso"
+ },
+ "worker": 1
+}

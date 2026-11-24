@@ -718,7 +718,7 @@
    "test": "M50_PT_Exp4",
    "delivery": "240 s constant power",
    "search": "X",
-   "status": "not started",
+   "status": "done",
    "t_m_s": 272.0,
    "E_e_J": 124184.33460982893,
    "E_b_J": 39994.954785774215,
@@ -731,8 +731,8 @@
    "lumped_E_J": 3492.6844109014387,
    "lumped_status": "matched",
    "lumped_t_s": 271.4110245798173,
-   "n_runs_counted": 6,
-   "n_runs_step16": 0,
+   "n_runs_counted": 8,
+   "n_runs_step16": 2,
    "runs": [
     {
      "E_J": 3492.684410901439,
@@ -775,6 +775,22 @@
      "class": "late"
     },
     {
+     "E_J": 6403.254753319304,
+     "t_C8_s": 285.7611525121872,
+     "t_end_s": 285.8,
+     "source": "stage16",
+     "id": "s16_X_PT_Exp4_con240_f0.051562500",
+     "class": "late"
+    },
+    {
+     "E_J": 6500.273764733233,
+     "t_C8_s": 272.2672882089392,
+     "t_end_s": 272.3,
+     "source": "stage16",
+     "id": "s16_X_PT_Exp4_con240_f0.052343750",
+     "class": "early"
+    },
+    {
      "E_J": 6597.292776147162,
      "t_C8_s": 263.22724096086677,
      "t_end_s": 332.0,
@@ -782,13 +798,31 @@
      "id": "s10_con240_fresh_hcentral_M50_PT_Exp4_f0.053125000_t332",
      "class": "early"
     }
-   ]
+   ],
+   "lo_J": 6403.254753319304,
+   "lo_id": "s16_X_PT_Exp4_con240_f0.051562500",
+   "lo_t_C8_s": 285.7611525121872,
+   "lo_source": "stage16",
+   "hi_J": 6500.273764733233,
+   "hi_id": "s16_X_PT_Exp4_con240_f0.052343750",
+   "hi_t_C8_s": 272.2672882089392,
+   "hi_source": "stage16",
+   "width_J": 97.01901141392955,
+   "mid_J": 6451.7642590262685,
+   "lo_by_t_J": 6403.254753319304,
+   "hi_by_t_J": 6500.273764733233,
+   "mid_by_t_J": 6451.7642590262685,
+   "d": 0.05006855857082712,
+   "lo_minus_lumped_J": 2910.570342417865,
+   "hi_minus_lumped_J": 3007.5893538317946,
+   "lo_runs_away": true,
+   "at_threshold": false
   },
   {
    "test": "M50_PP_Exp1",
    "delivery": "240 s constant power",
    "search": "X",
-   "status": "not started",
+   "status": "unfinished",
    "t_m_s": 152.0,
    "E_e_J": 158634.7610927011,
    "E_b_J": 51090.10019088603,
@@ -801,8 +835,8 @@
    "lumped_E_J": 3965.869027317528,
    "lumped_status": "matched",
    "lumped_t_s": 146.67529554865243,
-   "n_runs_counted": 1,
-   "n_runs_step16": 0,
+   "n_runs_counted": 3,
+   "n_runs_step16": 2,
    "runs": [
     {
      "E_J": 3965.8690273175284,
@@ -811,6 +845,22 @@
      "source": "archive",
      "id": "s9_con240_fresh_both_ns_M50_PP_Exp1_f0.025000000",
      "class": "late"
+    },
+    {
+     "E_J": 6725.56546996143,
+     "t_C8_s": 176.22958132364124,
+     "t_end_s": 176.25,
+     "source": "stage16",
+     "id": "s16_X_PP_Exp1_con240_f0.042396543",
+     "class": "late"
+    },
+    {
+     "E_J": 9485.261912605332,
+     "t_C8_s": 143.56221787079198,
+     "t_end_s": 143.575,
+     "source": "stage16",
+     "id": "s16_X_PP_Exp1_con240_f0.059793086",
+     "class": "early"
     }
    ]
   },
@@ -818,7 +868,7 @@
    "test": "M50_PP_Exp2",
    "delivery": "240 s constant power",
    "search": "X",
-   "status": "not started",
+   "status": "unfinished",
    "t_m_s": 147.0,
    "E_e_J": 127198.74692708027,
    "E_b_J": 40965.78000872151,
@@ -831,8 +881,8 @@
    "lumped_E_J": 7552.42559879539,
    "lumped_status": "matched",
    "lumped_t_s": 154.04905665744505,
-   "n_runs_counted": 1,
-   "n_runs_step16": 0,
+   "n_runs_counted": 2,
+   "n_runs_step16": 1,
    "runs": [
     {
      "E_J": 7552.425598795391,
@@ -841,6 +891,14 @@
      "source": "archive",
      "id": "s9_con240_fresh_both_ns_M50_PP_Exp2_f0.059375000",
      "class": "late"
+    },
+    {
+     "E_J": 12500.562302020015,
+     "t_C8_s": 149.19050171047695,
+     "t_end_s": 149.2,
+     "source": "stage16",
+     "id": "s16_X_PP_Exp2_con240_f0.098275829",
+     "class": "early"
     }
    ]
   },
@@ -1736,20 +1794,27 @@
     }
    },
    "P10": {
-    "held": null,
-    "why": "X closed no search: not scored"
+    "held": true,
+    "per_search": {
+     "M50_PT_Exp4 240 s constant power": true
+    },
+    "d": {
+     "M50_PT_Exp4 240 s constant power": 0.05006855857082712
+    }
    },
    "P11": {
-    "held": null,
-    "why": "X closed no search: not scored"
+    "held": true,
+    "per_search": {
+     "M50_PT_Exp4 240 s constant power": true
+    }
    }
   },
-  "scored": 9,
-  "held": 8,
+  "scored": 11,
+  "held": 10,
   "failed": 1
  },
- "X_worker_hours": 0.0,
- "n_records": 35,
+ "X_worker_hours": 0.39697330858972335,
+ "n_records": 40,
  "wall_s": {
   "N": [
    274.8340926170349,
@@ -1762,8 +1827,12 @@
   "V": [
    3046.6607031822205,
    3203.823805809021
+  ],
+  "X": [
+   204.9343192577362,
+   352.66124844551086
   ]
  },
  "first_utc": "2026-11-24T07:35:00Z",
- "last_utc": "2026-11-24T10:12:12Z"
+ "last_utc": "2026-11-24T10:24:31Z"
 }
