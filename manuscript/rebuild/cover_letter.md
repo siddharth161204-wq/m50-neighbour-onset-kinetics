@@ -18,7 +18,7 @@ For readers who model propagation in packs, the paper gives the heat a neighbour
 
 It falls within the journal's priority area of safety, as a computational study set against published experiments.
 
-The code, inputs and run records are archived openly, with the study's 98 predictions, each committed before its runs.
+The code, inputs and run records are archived openly, with the study's 109 predictions, each committed before its runs.
 
 I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), working independently. The manuscript has not been published and is not under consideration elsewhere.
 
@@ -44,7 +44,7 @@ For readers who model propagation in packs, the paper gives the heat a neighbour
 
 It falls within the journal's topics of modelling and of the safety of energy storage systems: it gives what a neighbouring cell in a module needs before it follows a failing one.
 
-The code, inputs and run records are archived openly, with the study's 98 predictions, each committed before its runs.
+The code, inputs and run records are archived openly, with the study's 109 predictions, each committed before its runs.
 
 I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), working independently, with no funding and no competing interests. The manuscript has not been published and is not under consideration elsewhere.
 
@@ -70,7 +70,7 @@ For readers who model propagation in packs, the paper gives the heat a neighbour
 
 It falls within fire safety science and engineering as a quantitative account of the heat that carries thermal runaway from one cell to the next.
 
-The code, inputs and run records are archived openly, with the study's 98 predictions, each committed before its runs.
+The code, inputs and run records are archived openly, with the study's 109 predictions, each committed before its runs.
 
 I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), working independently, with no funding and no competing interests. The manuscript has not been published and is not under consideration elsewhere.
 

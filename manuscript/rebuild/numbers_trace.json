@@ -613,57 +613,87 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The study registered 98 predictions in all, of which 56 held and 42 failed (Supplementary Table~S1, step by step); Supplementary Table~S2 lists, with their expectations, the 52 that the runs reported here and in the supplement bear on, and every prediction, with its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ .",
-  "number": "98",
-  "source": "manuscript/rebuild/data/predictions_registry.csv: rows = 98"
+  "sentence": "The study registered 109 predictions in all, of which 64 held and 43 failed, and two were not scored (Supplementary Table~S1, step by step); Supplementary Table~S2 lists, with their expectations, the 63 that the runs reported here and in the supplement bear on, and every prediction, with its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ .",
+  "number": "109",
+  "source": "manuscript/rebuild/data/predictions_registry.csv: rows = 109"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The study registered 98 predictions in all, of which 56 held and 42 failed (Supplementary Table~S1, step by step); Supplementary Table~S2 lists, with their expectations, the 52 that the runs reported here and in the supplement bear on, and every prediction, with its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ .",
-  "number": "56",
-  "source": "manuscript/rebuild/data/predictions_registry.csv: rows with verdict held = 56"
+  "sentence": "The study registered 109 predictions in all, of which 64 held and 43 failed, and two were not scored (Supplementary Table~S1, step by step); Supplementary Table~S2 lists, with their expectations, the 63 that the runs reported here and in the supplement bear on, and every prediction, with its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ .",
+  "number": "64",
+  "source": "manuscript/rebuild/data/predictions_registry.csv: rows with verdict held = 64"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The study registered 98 predictions in all, of which 56 held and 42 failed (Supplementary Table~S1, step by step); Supplementary Table~S2 lists, with their expectations, the 52 that the runs reported here and in the supplement bear on, and every prediction, with its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ .",
-  "number": "42",
-  "source": "manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed = 42"
+  "sentence": "The study registered 109 predictions in all, of which 64 held and 43 failed, and two were not scored (Supplementary Table~S1, step by step); Supplementary Table~S2 lists, with their expectations, the 63 that the runs reported here and in the supplement bear on, and every prediction, with its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ .",
+  "number": "43",
+  "source": "manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed = 43"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The study registered 98 predictions in all, of which 56 held and 42 failed (Supplementary Table~S1, step by step); Supplementary Table~S2 lists, with their expectations, the 52 that the runs reported here and in the supplement bear on, and every prediction, with its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ .",
-  "number": "52",
-  "source": "manuscript/rebuild/data/predictions_registry.csv: rows, listed in Table S2 = 52"
+  "sentence": "The study registered 109 predictions in all, of which 64 held and 43 failed, and two were not scored (Supplementary Table~S1, step by step); Supplementary Table~S2 lists, with their expectations, the 63 that the runs reported here and in the supplement bear on, and every prediction, with its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ .",
+  "number": "63",
+  "source": "manuscript/rebuild/data/predictions_registry.csv: rows, listed in Table S2 = 63"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Of the 52, 34 held, four of them known beforehand to be fixed, or nearly, by earlier records, and 18 failed, six of them foreseen in the files' own analyses; two departures from this order are in Supplementary Section~S2.",
-  "number": "18",
-  "source": "manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2 = 18"
+  "sentence": "Of the 63, 42 held, six of them known beforehand to be fixed, or nearly, by earlier records or by construction, and 19 failed, six of them foreseen, three in the files' analyses and three in their expectations, and two were not scored; two departures from this order are in Supplementary Section~S2.",
+  "number": "19",
+  "source": "manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2 = 19"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The per-test triggers, the delivered heat and the reading of the resolved neighbour as a whole entered in steps 7, 8 and 15, after earlier predictions failed, each registered before its runs.",
+  "sentence": "The per-test triggers (step~7), the delivered heat (step~8) and the reading of the resolved neighbour as a whole (step~15) entered after earlier predictions failed, and the needs in three dimensions (step~16) last, each registered before its runs.",
   "number": "7",
-  "source": "manuscript/rebuild/data/steps.csv: the steps that brought in each test's own trigger, the delivered fraction and the resolved neighbour's own runaway = 7"
+  "source": "manuscript/rebuild/data/steps.csv: the step of predictions_stage7.md (the per-test triggers) = 7"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Halving the mesh spacing and every step limit moved the hottest point's peak rise by at most 0.52\\,\\%; at both ends of PT-Exp4's resolved bracket, refining the mesh by a factor of 1.5 and halving every step limit left the outcome unchanged and moved the runaway time by at most 1.5\\,\\%.",
+  "sentence": "The per-test triggers (step~7), the delivered heat (step~8) and the reading of the resolved neighbour as a whole (step~15) entered after earlier predictions failed, and the needs in three dimensions (step~16) last, each registered before its runs.",
+  "number": "8",
+  "source": "manuscript/rebuild/data/steps.csv: the step of predictions_stage8.md (the delivered fraction) = 8"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "The per-test triggers (step~7), the delivered heat (step~8) and the reading of the resolved neighbour as a whole (step~15) entered after earlier predictions failed, and the needs in three dimensions (step~16) last, each registered before its runs.",
+  "number": "15",
+  "source": "manuscript/rebuild/data/steps.csv: the step of predictions_stage15.md (the resolved neighbour's own runaway) = 15"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "The per-test triggers (step~7), the delivered heat (step~8) and the reading of the resolved neighbour as a whole (step~15) entered after earlier predictions failed, and the needs in three dimensions (step~16) last, each registered before its runs.",
+  "number": "16",
+  "source": "manuscript/rebuild/data/steps.csv: the step of predictions_stage16.md = 16"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "Halving the mesh spacing and every step limit moved the hottest point's peak rise by at most 0.52\\,\\%; at both ends of PT-Exp4's threshold search's bracket, refining the mesh by a factor of 1.5 and halving every step limit left the outcome unchanged and moved the runaway time by at most 1.5\\,\\%, and at both ends of PP-Exp4's need, refining both together delayed the runaway by 1.1 and 2.7\\,\\% and left the need's bracket unchanged.",
   "number": "0.52",
   "source": "results/stage8_paper_numbers.json: checks.V3.v3mesh.relative_change = 0.515385"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Halving the mesh spacing and every step limit moved the hottest point's peak rise by at most 0.52\\,\\%; at both ends of PT-Exp4's resolved bracket, refining the mesh by a factor of 1.5 and halving every step limit left the outcome unchanged and moved the runaway time by at most 1.5\\,\\%.",
+  "sentence": "Halving the mesh spacing and every step limit moved the hottest point's peak rise by at most 0.52\\,\\%; at both ends of PT-Exp4's threshold search's bracket, refining the mesh by a factor of 1.5 and halving every step limit left the outcome unchanged and moved the runaway time by at most 1.5\\,\\%, and at both ends of PP-Exp4's need, refining both together delayed the runaway by 1.1 and 2.7\\,\\% and left the need's bracket unchanged.",
   "number": "1.5",
   "source": "predictions_stage15.md: /the mesh refined by (1\\.5)/ = 1.5"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Halving the mesh spacing and every step limit moved the hottest point's peak rise by at most 0.52\\,\\%; at both ends of PT-Exp4's resolved bracket, refining the mesh by a factor of 1.5 and halving every step limit left the outcome unchanged and moved the runaway time by at most 1.5\\,\\%.",
+  "sentence": "Halving the mesh spacing and every step limit moved the hottest point's peak rise by at most 0.52\\,\\%; at both ends of PT-Exp4's threshold search's bracket, refining the mesh by a factor of 1.5 and halving every step limit left the outcome unchanged and moved the runaway time by at most 1.5\\,\\%, and at both ends of PP-Exp4's need, refining both together delayed the runaway by 1.1 and 2.7\\,\\% and left the need's bracket unchanged.",
   "number": "1.5",
   "source": "results/stage15_checks.json: V4/s15_B1_PT_Exp4_s+1_r1.5/rel_change = 1.48397"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "Halving the mesh spacing and every step limit moved the hottest point's peak rise by at most 0.52\\,\\%; at both ends of PT-Exp4's threshold search's bracket, refining the mesh by a factor of 1.5 and halving every step limit left the outcome unchanged and moved the runaway time by at most 1.5\\,\\%, and at both ends of PP-Exp4's need, refining both together delayed the runaway by 1.1 and 2.7\\,\\% and left the need's bracket unchanged.",
+  "number": "1.1",
+  "source": "results/stage16_scorecard.json: V, C8_change of the upper and lower end (rel) = 1.1163"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "Halving the mesh spacing and every step limit moved the hottest point's peak rise by at most 0.52\\,\\%; at both ends of PT-Exp4's threshold search's bracket, refining the mesh by a factor of 1.5 and halving every step limit left the outcome unchanged and moved the runaway time by at most 1.5\\,\\%, and at both ends of PP-Exp4's need, refining both together delayed the runaway by 1.1 and 2.7\\,\\% and left the need's bracket unchanged.",
+  "number": "2.7",
+  "source": "results/stage16_scorecard.json: V, C8_change of the upper and lower end (rel) = 2.69017"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
@@ -2533,6 +2563,12 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
+  "sentence": "At the needs with the pulse, against the three-dimensional searches of step~16 (Table~ ), the cross-section's need lies 1.5\\,\\% below to 8.6\\,\\% above the three-dimensional bracket's midpoint, within the 10\\,\\% registered, but not above it in every test as registered: at SP-Exp1's cross-section need, 5.96~kJ, the three-dimensional runaway came at 250.6~s against the measured 223~s (Supplementary Table~S2, step~16, P1 and P2).",
+  "number": "16",
+  "source": "manuscript/rebuild/data/steps.csv: the step whose file is predictions_stage16.md = 16"
+ },
+ {
+  "segment": "main.tex: Introduction to Discussion, with figure captions",
   "sentence": "Across the brackets the cross-section's need lies 3.0\\,\\% below to 10.5\\,\\% above the three-dimensional need.",
   "number": "3.0",
   "source": "results/stage16_scorecard.json: N, the cross-section's need against the bracket's upper end (the smallest, negated) and lower end (the largest) = 2.95629"
@@ -3859,9 +3895,9 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_Fire_Safety_J.txt",
-  "sentence": "The code, inputs and run records are archived openly, with the study's 98 predictions, each committed before its runs.",
-  "number": "98",
-  "source": "manuscript/rebuild/data/predictions_registry.csv: rows = 98"
+  "sentence": "The code, inputs and run records are archived openly, with the study's 109 predictions, each committed before its runs.",
+  "number": "109",
+  "source": "manuscript/rebuild/data/predictions_registry.csv: rows = 109"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
@@ -3985,9 +4021,9 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt",
-  "sentence": "The code, inputs and run records are archived openly, with the study's 98 predictions, each committed before its runs.",
-  "number": "98",
-  "source": "manuscript/rebuild/data/predictions_registry.csv: rows = 98"
+  "sentence": "The code, inputs and run records are archived openly, with the study's 109 predictions, each committed before its runs.",
+  "number": "109",
+  "source": "manuscript/rebuild/data/predictions_registry.csv: rows = 109"
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
@@ -4111,9 +4147,9 @@
  },
  {
   "segment": "manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt",
-  "sentence": "The code, inputs and run records are archived openly, with the study's 98 predictions, each committed before its runs.",
-  "number": "98",
-  "source": "manuscript/rebuild/data/predictions_registry.csv: rows = 98"
+  "sentence": "The code, inputs and run records are archived openly, with the study's 109 predictions, each committed before its runs.",
+  "number": "109",
+  "source": "manuscript/rebuild/data/predictions_registry.csv: rows = 109"
  },
  {
   "segment": "manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt",

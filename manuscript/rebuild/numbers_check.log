@@ -1,7 +1,4 @@
-numbers_check --rebuild: 746 traced to a named value, 161 found in their table's source files, 0 broad matches (supplement only), 35 counts written in words checked, 1 failures, 73 structural (not looked for)
-
-FAILURES:
-  main.tex: Introduction to Discussion, with figure captions: 16  [MISMATCH: manuscript/rebuild/data/steps.csv: the step whose file is predictions_stage16.md = ]  ...~s against the measured 223~s (Supplementary Table~S2, step~16, P1 and P2). Across the brackets the cr...
+numbers_check --rebuild: 752 traced to a named value, 161 found in their table's source files, 0 broad matches (supplement only), 37 counts written in words checked, 0 failures, 71 structural (not looked for)
 
 == main.tex: title  [map]
 == main.tex: abstract  [map]
@@ -127,20 +124,23 @@ FAILURES:
    [exponent or subscript] -1  ...first reaches 1~K\,s$^{-1}$ after having reached 0.5~K\,s$^{-1}$ and fallen below it (Supplementary Se...
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
-   traced 98 <- manuscript/rebuild/data/predictions_registry.csv: rows = 98
-   traced 56 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict held = 56
-   traced 42 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed = 42
-   traced 52 <- manuscript/rebuild/data/predictions_registry.csv: rows, listed in Table S2 = 52
-   [identifier] 10.5281  ...h its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ . Of the 52, 34 held, ...
-   [identifier] 52  ...the public archive at doi:10.5281/zenodo.23279455~ . Of the 52, 34 held, four of them known beforehand...
-   [identifier] 34  ...public archive at doi:10.5281/zenodo.23279455~ . Of the 52, 34 held, four of them known beforehand to ...
-   traced 18 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2 = 18
-   traced 7 <- manuscript/rebuild/data/steps.csv: the steps that brought in each test's own trigger, the delivered fraction and the resolved neighbour's own runaway = 7
-   [label] 8  ...ng of the resolved neighbour as a whole entered in steps 7, 8 and 15, after earlier predictions faile...
-   [label] 15  ...the resolved neighbour as a whole entered in steps 7, 8 and 15, after earlier predictions failed, each...
+   traced 109 <- manuscript/rebuild/data/predictions_registry.csv: rows = 109
+   traced 64 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict held = 64
+   traced 43 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed = 43
+   traced 63 <- manuscript/rebuild/data/predictions_registry.csv: rows, listed in Table S2 = 63
+   [identifier] 10.5281  ...h its file and its verdict, is in the public archive at doi:10.5281/zenodo.23279455~ . Of the 63, 42 held, ...
+   [identifier] 63  ...the public archive at doi:10.5281/zenodo.23279455~ . Of the 63, 42 held, six of them known beforehand ...
+   [identifier] 42  ...public archive at doi:10.5281/zenodo.23279455~ . Of the 63, 42 held, six of them known beforehand to b...
+   traced 19 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2 = 19
+   traced 7 <- manuscript/rebuild/data/steps.csv: the step of predictions_stage7.md (the per-test triggers) = 7
+   traced 8 <- manuscript/rebuild/data/steps.csv: the step of predictions_stage8.md (the delivered fraction) = 8
+   traced 15 <- manuscript/rebuild/data/steps.csv: the step of predictions_stage15.md (the resolved neighbour's own runaway) = 15
+   traced 16 <- manuscript/rebuild/data/steps.csv: the step of predictions_stage16.md = 16
    traced 0.52 <- results/stage8_paper_numbers.json: checks.V3.v3mesh.relative_change = 0.515385
    traced 1.5 <- predictions_stage15.md: /the mesh refined by (1\.5)/ = 1.5
    traced 1.5 <- results/stage15_checks.json: V4/s15_B1_PT_Exp4_s+1_r1.5/rel_change = 1.48397
+   traced 1.1 <- results/stage16_scorecard.json: V, C8_change of the upper and lower end (rel) = 1.1163
+   traced 2.7 <- results/stage16_scorecard.json: V, C8_change of the upper and lower end (rel) = 2.69017
    traced 33.2 <- results/manuscript_numbers.json: constants.E_body_stage5_J = 33.2229
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
@@ -460,7 +460,7 @@ FAILURES:
    traced 5.96 <- results/stage16_scorecard.json: N, SP_Exp1, xs_E_by_t_J = 5.96468
    traced 250.6 <- results/stage16_scorecard.json: N, SP_Exp1, lo_t_C8_s (the run at the cross-section's need) = 250.62
    traced 223 <- inputs/fransson2024/m50_tests.csv: time_to_propagation_s where {'test': 'M50_SP_Exp1'} = 223
-   MISMATCH 16  ...~s against the measured 223~s (Supplementary Table~S2, step~16, P1 and P2). Across the brackets the cr...  tried: manuscript/rebuild/data/steps.csv: the step whose file is predictions_stage16.md = 
+   traced 16 <- manuscript/rebuild/data/steps.csv: the step whose file is predictions_stage16.md = 16
    traced 3.0 <- results/stage16_scorecard.json: N, the cross-section's need against the bracket's upper end (the smallest, negated) and lower end (the largest) = 2.95629
    traced 10.5 <- results/stage16_scorecard.json: N, the cross-section's need against the bracket's upper end (the smallest, negated) and lower end (the largest) = 10.5096
    traced 1.25 <- rebuild_headline.thresholds_3d: PT_Exp4's upper end over results/stage15_cross_section.json A2's E_star_J = 1.25
@@ -936,7 +936,7 @@ FAILURES:
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
-   traced 98 <- manuscript/rebuild/data/predictions_registry.csv: rows = 98
+   traced 109 <- manuscript/rebuild/data/predictions_registry.csv: rows = 109
    [year or date] 2026  ...mitted before its runs.  I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
 == manuscript/rebuild/letters/Cover_letter_J_Energy_Storage.txt  [map]
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
@@ -959,7 +959,7 @@ FAILURES:
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
-   traced 98 <- manuscript/rebuild/data/predictions_registry.csv: rows = 98
+   traced 109 <- manuscript/rebuild/data/predictions_registry.csv: rows = 109
    [year or date] 2026  ...mitted before its runs.  I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
 == manuscript/rebuild/letters/Cover_letter_J_Power_Sources.txt  [map]
    traced 31.6 <- results/stage7_triggers.csv: the smallest E_J of the tests whose body energy exceeds 30 kJ = 31.5878
@@ -982,7 +982,7 @@ FAILURES:
    traced 0.91 <- results/stage15_paper_numbers.json B1 against the lumped bracket (rebuild_brackets): ST_Exp3, the upper end rounded up, an upper bound = 0.91
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
-   traced 98 <- manuscript/rebuild/data/predictions_registry.csv: rows = 98
+   traced 109 <- manuscript/rebuild/data/predictions_registry.csv: rows = 109
    [year or date] 2026  ...mitted before its runs.  I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
 == manuscript/rebuild/letters/Enquiry_Fire_Safety_J.txt  [map]
    [year or date] 2026  ...om one cell to the next. I am a mechanical engineer (B.Tech 2026, COEP Technological University, Pune), ...
@@ -1056,9 +1056,7 @@ FAILURES:
    words ok 'After the eight strong triggers among the tests that propagated' = 8 <- results/stage15_table.csv: tests other than ST_Exp3
    words ok 'under three of the shapes' = 3 <- results/stage15_table.csv: ST_Exp3 shapes with a cross-section need
    words ok 'nine of them with both zero' = 9 <- results/stage13_twobody.csv: low and high searches with both zero
-   words ok 'six of them foreseen' = 6 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2, foreseen
    words ok 'at the high contact ten of the outcomes rest on the reactive cross-section alone' = 10 <- results/stage15_nodelivery.csv: high-contact rows, rule x
-   words ok 'four of them known beforehand to be fixed, or nearly' = 4 <- manuscript/rebuild/data/predictions_registry.csv: held rows of Table S2 whose expectation records them as fixed
    words ok 'Nine propagated' = 9 <- inputs/fransson2024/m50_tests.csv: tests with propagated Yes
    words ok 'thirteen of the sixteen fitted energies|Thirteen of these exceed 33' = 13 <- results/stage7_triggers.csv: tests whose E_J exceeds the calorimetry's 33,222.9 J
    words ok 'the fourteen with strong triggers' = 14 <- results/stage7_triggers.csv: tests whose E_J exceeds 30 kJ
@@ -1086,3 +1084,7 @@ FAILURES:
    words ok 'in the three strong-trigger tests bracketed in three dimensions whose lumped threshold is not zero' = 3 <- rebuild_headline.threshold_ratio_spans: strong-trigger tests whose lumped threshold is not zero
    words ok 'in the six tests whose threshold was bracketed in three dimensions|of the six tests bracketed in three dimensions' = 6 <- rebuild_headline.thresholds_3d: tests
    words ok 'the eight strong triggers among the tests that propagated' = 8 <- results/stage16_scorecard.json: N searches
+   words ok 'six of them foreseen' = 6 <- manuscript/rebuild/data/predictions_registry.csv: rows with verdict failed, listed in Table S2, foreseen
+   words ok 'three in the files' analyses' = 3 <- manuscript/rebuild/data/predictions_registry.csv: listed failures foreseen in the files' analyses
+   words ok 'three in their expectations' = 3 <- manuscript/rebuild/data/predictions_registry.csv: listed failures whose expectation itself says they fail
+   words ok 'six of them known beforehand to be fixed, or nearly' = 6 <- manuscript/rebuild/data/predictions_registry.csv: held rows of Table S2 whose expectation records them as fixed

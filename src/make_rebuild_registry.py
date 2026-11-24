@@ -189,7 +189,7 @@ STEPS = [
     (13, "Reduced models of each threshold: skin conduction and an ignition temperature", "predictions_stage13.md", "2026-11-16"),
     (14, "What each path can deliver to the neighbour, bounded from published inputs", "predictions_stage14.md", "2026-11-17"),
     (15, "The resolved neighbour's own runaway: a reactive cross-section and three-dimensional searches", "predictions_stage15.md", "2026-11-18"),
-    (16, "The resolved needs and a second weak-trigger threshold in three dimensions, and a refinement at a need", "predictions_stage16.md", "2026-11-24"),
+    (16, "The needs and PT-Exp1's threshold in three dimensions, and a refinement", "predictions_stage16.md", "2026-11-24"),
 ]
 
 
@@ -311,13 +311,12 @@ def main():
             "listed_failed_foreseen")
     tot = {k: sum(s[k] for s in steps) for k in keys}
     t1 = [r"\begin{table}[!htbp]", r"\centering", r"\scriptsize",
-          r"\caption{The study's sixteen steps, each with its own predictions pushed to the public repository before "
-          r"its runs (the push's date, UTC, in 2026): how many predictions each registered, and how many held and "
-          r"failed among those Table~\ref{tab:s-registry} lists, whose runs the main text or this supplement reports, "
-          r"and among the others; a listed failure is foreseen when the predictions file recorded it as expected "
-          r"before the runs.}",
+          r"\caption{The study's sixteen steps, each with its predictions pushed to the public repository before its "
+          r"runs (the push's date, UTC, 2026): the predictions each registered, and how many held and failed among "
+          r"those Table~\ref{tab:s-registry} lists, whose runs the main text or this supplement reports, and among "
+          r"the others; Section~\ref{sec:s-steps} defines a foreseen failure.}",
           r"\label{tab:s-steps}", r"\setlength{\tabcolsep}{2pt}",
-          r"\begin{tabular}{rp{0.345\textwidth}lrrrrrrr}", r"\toprule",
+          r"\begin{tabular}{rp{0.366\textwidth}lrrrrrrr}", r"\toprule",
           r" & & & & \multicolumn{4}{c}{Listed in Table~\ref{tab:s-registry}} & \multicolumn{2}{c}{Not listed} \\",
           r"\cmidrule(lr){5-8}\cmidrule(lr){9-10}",
           r"Step & What it asked & Pushed & Predictions & All & Held & Failed & Foreseen & Held & Failed \\",

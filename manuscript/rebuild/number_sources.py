@@ -482,9 +482,6 @@ E = [
     (r"17 to 71~s", ["17", "71"], lo_hi("results/stage15_xs/*.json: wall_s", wall_xs), None),
     (r"240 to 2,762", ["240", "2,762"], lo_hi(f"{S15}: runs.wall_s min and max", lambda: [_json(S15)["runs"]["wall_s"]["min"], _json(S15)["runs"]["wall_s"]["max"]]), None),
     # ---------------------------------------------------------------- pre-registration, checks, discussion, appendix
-    (r"Of 98 predictions|42 of 98|98 predictions", ["98"], count(), None),
-    (r"56 held", ["56"], count("held"), None),
-    (r"42 failed|42 of 98", ["42"], count("failed"), None),
     (r"2\\times10\^\{-11\}", ["2\\times10^{-11}"], J(S8, "checks.V4.largest_relative.resolved"), None),
     (r"0\.52\\,\\%", ["0.52"], J(S8, "checks.V3.v3mesh.relative_change"), "pct"),
     (r"by 1\.5\\,\\%|by at most 1\.5\\,\\%", ["1.5"], J("results/stage15_checks.json", ["V4", "s15_B1_PT_Exp4_s+1_r1.5", "rel_change"]), "pct"),
@@ -973,12 +970,6 @@ E += [
 # ---------------------------------------------------------------- Brief 30
 B30 = [
     # the registry: Section 2.7, Supplementary Sections S2 and S3, Tables S1 and S2
-    (r"lists, with their expectations, the 52|lists the 52|The 52 predictions|Of the 52|& 98 & 52", ["52"], count(listed=True), None),
-    (r"Of the 52, 34 held|34 of which held|: 34 held|& 52 & 34", ["34"], count("held", listed=True), None),
-    (r"and 18 failed|6 of the 18 failures|34 held and 18 failed|& 34 & 18", ["18"], count("failed", listed=True), None),
-    (r"6 of the 18 failures|6 of the failures foreseen|& 18 & 6", ["6"], count("failed", listed=True, foreseen=True), None),
-    (r"The other 46", ["46"], count(listed=False), None),
-    (r"of the 98 the study registered|& 98 & 52", ["98"], count(), None),
     # the needs as shares of the ejecta's measured energy (strong triggers, counted to the runaway)
     (r"5\.3 to 10\.6", ["5.3", "10.6"], share_of_ejecta("C8_xs_E_by_t_J", lambda: strong_rows(),
                                                         f"{TAB15}: C8_xs_E_by_t_J, the thirty-two strong-trigger cases"), "pct"),
@@ -1092,6 +1083,40 @@ E += [
     (r"at most 0\.125", ["0.125"], MD("src/stage16_run.py", r"FINAL_FRAC = ([0-9.]+)"), "pct"),
 ]
 
+# Brief 31: the registry's counts (manuscript/rebuild/data/predictions_registry.csv, step 16 included). The numbers as
+# written are read from the registry when this file loads, so that an entry applies only where the text writes the
+# registry's own count; the check then reads the count again through the selector.
+REGF = "manuscript/rebuild/data/predictions_registry.csv"
+
+
+def _cnt(verdict=None, listed=None, foreseen=None):
+    return str(int(count(verdict, listed, foreseen)()[0]))
+
+
+def foreseen_split():
+    """(in the files' analyses, in their expectations) among the listed failures counted as foreseen: a failure is
+    foreseen in its expectation when the expectation itself says it fails."""
+    rows = [r for r in _csv(REGF) if r["in_table_s2"] == "yes" and r["verdict"] == "failed" and r["foreseen"] == "yes"]
+    exp = [r for r in rows if re.search(r"Study's expectation: Fails|^fails", r["expectation"])]
+    return len(rows) - len(exp), len(exp)
+
+
+def fixed_held():
+    return sum(1 for r in _csv(REGF) if r["verdict"] == "held" and r["in_table_s2"] == "yes" and "fixed" in r["expectation"])
+
+
+E += [
+    (r"registered \d+ predictions in all|Of \d+ predictions|study's \d+ predictions|registered \d+ predictions", [_cnt()], count(), None),
+    (r"of which \d+ held and \d+ failed", [_cnt("held")], count("held"), None),
+    (r"of which \d+ held and \d+ failed", [_cnt("failed")], count("failed"), None),
+    (r"with their expectations, the \d+ that|Of the \d+, \d+ held|lists the \d+ that", [_cnt(listed=True)], count(listed=True), None),
+    (r"Of the \d+, \d+ held|the \d+ that the runs reported in the main text and here bear on, \d+ of which held", [_cnt("held", listed=True)], count("held", listed=True), None),
+    (r"and \d+ failed, \w+ of them foreseen|\d+ of which held and \d+ failed", [_cnt("failed", listed=True)], count("failed", listed=True), None),
+    (r"The other \d+ are", [_cnt(listed=False)], count(listed=False), None),
+    (r"rule \d+ of the \d+ failures that", [_cnt("failed", listed=True, foreseen=True)], count("failed", listed=True, foreseen=True), None),
+    (r"rule \d+ of the \d+ failures that", [_cnt("failed", listed=True)], count("failed", listed=True), None),
+]
+
 # Brief 31, step 16: the three-dimensional needs and thresholds with the pulse (results/stage16_scorecard.json), read
 # through src/rebuild_headline.py, which picks the brackets' ends and rounds a range across brackets outward
 def _hl():
@@ -1174,6 +1199,32 @@ E += [
     (r"0\.79 to 0\.91 times", ["0.79", "0.91"], F("rebuild_headline.weak_range: ST_Exp3 (B1) and PT_Exp1 (T), rounded outward", lambda: list(_hl().weak_range())), None),
 ]
 
+
+def step_of_file(f):
+    return [float(r["step"]) for r in _csv("manuscript/rebuild/data/steps.csv") if r["predictions_file"] == f]
+
+
+E += [
+    (r"delayed the runaway by 1\.1 and 2\.7", ["1.1", "2.7"], F(f"{S16}: V, C8_change of the upper and lower end (rel)",
+                                                                lambda: [_json(S16)["V"]["C8_change"]["hi"]["rel"], _json(S16)["V"]["C8_change"]["lo"]["rel"]]), "pct"),
+    (r"per-test triggers \(step~7\)", ["7"], F("manuscript/rebuild/data/steps.csv: the step of predictions_stage7.md (the per-test triggers)", lambda: step_of_file("predictions_stage7.md")), None),
+    (r"the delivered heat \(step~8\)", ["8"], F("manuscript/rebuild/data/steps.csv: the step of predictions_stage8.md (the delivered fraction)", lambda: step_of_file("predictions_stage8.md")), None),
+    (r"as a whole \(step~15\)", ["15"], F("manuscript/rebuild/data/steps.csv: the step of predictions_stage15.md (the resolved neighbour's own runaway)", lambda: step_of_file("predictions_stage15.md")), None),
+    (r"in three dimensions \(step~16\)|searched in step~16", ["16"], F("manuscript/rebuild/data/steps.csv: the step of predictions_stage16.md", lambda: step_of_file("predictions_stage16.md")), None),
+]
+
+E += [
+    (r"reaches 255\.7\\degC\{?\}? at 45\.8~s while the lumped", ["45.8"], J(S16, "T.t_C8_hi_s"), None),
+    (r"lower end came at 306\.8~s against 298\.8", ["306.8"], J(S16, "V.C8_change.lo.refined_t_C8_s"), None),
+    (r"lower end came at 306\.8~s against 298\.8", ["298.8"], J(S16, "V.C8_change.lo.base_t_C8_s"), None),
+    (r"upper end at 252\.1~s against 249\.3", ["252.1"], J(S16, "V.C8_change.hi.refined_t_C8_s"), None),
+    (r"upper end at 252\.1~s against 249\.3", ["249.3"], J(S16, "V.C8_change.hi.base_t_C8_s"), None),
+    (r"later by 2\.7 and 1\.1", ["2.7", "1.1"], F(f"{S16}: V, C8_change rel of the lower and upper end",
+                                                    lambda: [_json(S16)["V"]["C8_change"]["lo"]["rel"], _json(S16)["V"]["C8_change"]["hi"]["rel"]]), "pct"),
+    (r"delayed the runaway by 1\.1 and 2\.7|\{1\.1 and 2\.7\\,\\% \(runaway time", ["1.1", "2.7"], F(f"{S16}: V, C8_change rel of the upper and lower end",
+                                                    lambda: [_json(S16)["V"]["C8_change"]["hi"]["rel"], _json(S16)["V"]["C8_change"]["lo"]["rel"]]), "pct"),
+]
+
 WORDS = [
     (r"halved up to sixteen times", 16, MD("src/reactive.py", r"K_MAX = (16)")),
     (r"thirteen of the fourteen with strong triggers", 13, F("stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket",
@@ -1182,10 +1233,7 @@ WORDS = [
     (r"under three of the shapes", 3, F(f"{TAB15}: ST_Exp3 shapes with a cross-section need", lambda: [float(sum(1 for r in st3_rows() if r["C8_xs_E_by_t_J"]))])),
     (r"nine of them with both zero", 9, F("results/stage13_twobody.csv: low and high searches with both zero",
                                          lambda: [float(sum(1 for r in _csv("results/stage13_twobody.csv") if r["h"] in ("low", "high") and float(r["B2_E_J"] or 0) == 0 and float(r["lum_mid_J"] or 0) == 0))])),
-    (r"six of them foreseen", 6, count("failed", listed=True, foreseen=True)),
     (r"at the high contact ten of the outcomes rest on the reactive cross-section alone", 10, _nd("high", "x")),
-    (r"four of them known beforehand to be fixed, or nearly", 4, F("manuscript/rebuild/data/predictions_registry.csv: held rows of Table S2 whose expectation records them as fixed",
-                                                        lambda: [float(sum(1 for r in _csv("manuscript/rebuild/data/predictions_registry.csv") if r["verdict"] == "held" and r["in_table_s2"] == "yes" and "fixed" in r["expectation"]))])),
     (r"Nine propagated", 9, F(f"{TESTS}: tests with propagated Yes", _n_tests(lambda r: r["propagated"] == "Yes"))),
     (r"thirteen of the sixteen fitted energies|Thirteen of these exceed 33", 13, F(f"{TRIG}: tests whose E_J exceeds the calorimetry's 33,222.9 J",
                                                lambda: [float(sum(1 for x in trig_E() if float(x) > 33222.9))])),
@@ -1237,4 +1285,17 @@ WORDS = [
     (r"in the six tests whose threshold was bracketed in three dimensions|of the six tests bracketed in three dimensions", 6,
      F("rebuild_headline.thresholds_3d: tests", lambda: [float(len(_hl().thresholds_3d()))])),
     (r"the eight strong triggers among the tests that propagated", 8, F(f"{S16}: N searches", lambda: [float(len(_json(S16)["N"]))])),
+]
+
+_W = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine", 10: "ten",
+      11: "eleven", 12: "twelve"}
+WORDS += [
+    (_W[int(count("failed", listed=True, foreseen=True)()[0])] + r" of them foreseen", int(count("failed", listed=True, foreseen=True)()[0]),
+     count("failed", listed=True, foreseen=True)),
+    (_W[foreseen_split()[0]] + r" in the files' analyses", foreseen_split()[0],
+     F(f"{REGF}: listed failures foreseen in the files' analyses", lambda: [float(foreseen_split()[0])])),
+    (_W[foreseen_split()[1]] + r" in their expectations", foreseen_split()[1],
+     F(f"{REGF}: listed failures whose expectation itself says they fail", lambda: [float(foreseen_split()[1])])),
+    (_W[fixed_held()] + r" of them known beforehand to be fixed, or nearly", fixed_held(),
+     F(f"{REGF}: held rows of Table S2 whose expectation records them as fixed", lambda: [float(fixed_held())])),
 ]
