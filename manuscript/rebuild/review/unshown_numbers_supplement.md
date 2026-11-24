@@ -1,0 +1,39 @@
+# supplement: 37 numbers not shown in any table, caption or figure
+
+- **302.1**: rate calorimetry that the kinetic source simulated for its reference cell . The internal-short band: 255.7 to 302.1°C, the kinetic source's band of two standard deviations for
+- **138.5**: t later steps dropped: C3, the lumped neighbour at 150°C; C4 and C5, the hot spot and the lumped neighbour at 138.5°C, the peak of the separator's melting in the posterior-mea
+- **2.22**:  the Battery Failure Databank ; the bracket on that ratio is its smallest and its largest in those ten tests, 2.22 and 4.16, which rescale every fraction by 1.40 and 0.75. E_
+- **97.5**:  30 s with a 500 mW K^{-1} busbar and no delivered heat; the step's plan named them the 2.5th, 25th, 75th and 97.5th percentiles by nearest rank, which gives 5 and 50 from be
+- **0.998**: aws: 30 Latin hypercube draws of the roll's published thermal properties, its conductivity across the layers (0.998 to 1.38 W m^{-1} K^{-1}), along them (24.9 to 25.8 W m^{-1}
+- **24.9**: published thermal properties, its conductivity across the layers (0.998 to 1.38 W m^{-1} K^{-1}), along them (24.9 to 25.8 W m^{-1} K^{-1}) and its specific heat (842 to 1110
+- **1110**: yers (0.998 to 1.38 W m^{-1} K^{-1}), along them (24.9 to 25.8 W m^{-1} K^{-1}) and its specific heat (842 to 1110 J kg^{-1} K^{-1}) ; a thermophysical standard deviation is 
+- **538**: tep 5): the hand estimates its predictions file set out before the runs. The trigger's 33.2 kJ would raise it 538 K adiabatically, and both cells 269 K if shared; through th
+- **614**: 69 K if shared; through the contact alone the pair evens out on a time scale of 181 s at the central contact (614 and 132 s at the low and the high); a linear two-node balan
+- **0.027**: read the hot spot's onset time far more than the thermal properties did, the thermal standard deviation being 0.027 of the kinetic. A check on the mapping (step 8): a predicti
+- **1100**: ccelerating-rate calorimetry that the kinetic source simulated for its reference cell : its cell of 720 g and 1100 J kg^{-1} K^{-1}, 0.04 m^2 and 25 W m^{-2} K^{-1}, heated f
+- **0.04**: metry that the kinetic source simulated for its reference cell : its cell of 720 g and 1100 J kg^{-1} K^{-1}, 0.04 m^2 and 25 W m^{-2} K^{-1}, heated from 25°C in steps of 5 
+- **183.5**:  finds that rate, 179.3°C, inside the source's band of two standard deviations about its main cluster's mean (183.5°C), 169.0 to 198.0°C, as read from its figure; the self-hea
+- **169.0**: t rate, 179.3°C, inside the source's band of two standard deviations about its main cluster's mean (183.5°C), 169.0 to 198.0°C, as read from its figure; the self-heating reach
+- **198.0**: 79.3°C, inside the source's band of two standard deviations about its main cluster's mean (183.5°C), 169.0 to 198.0°C, as read from its figure; the self-heating reaches 1 K mi
+- **302.1**: heating reaches 1 K min^{-1}, the source's internal short, at 199.8°C, below the band of that event, 255.7 to 302.1°C, read the same way. The 200 kinetic draws went through th
+- **183.5**: ets of the draws in the source's main cluster lie within 5 K of the band's edges and their mean within 5 K of 183.5°C, failed: the 164 such draws gave 146.3 to 191.4°C, with a
+- **18.67**: d 30°C and with the body energy at the smallest and the median of the Databank's ten nail tests of this cell, 18.67 and 25.88 kJ; 4 with every mesh spacing, or every step limi
+- **25.88**:  with the body energy at the smallest and the median of the Databank's ten nail tests of this cell, 18.67 and 25.88 kJ; 4 with every mesh spacing, or every step limit, halved;
+- **83**: and P2, rest on runs that no other table gives; those runs are given here and in Table . Step 9's P1 rests on 83 of that step's runs with the 21.4 s pulse, those at or abov
+- **0.0038**: the can. On the vent's axis the largest share of an emitter's directions that strike the facing half is about 0.0038, from a finer scan in steps of 0.05 radius from 0.5 to 1.5 
+- **37.70**: eating rate the figure prints for its Section I, which its caption calls the region of the trigger's runaway (37.70 and 23.97 K s^{-1}), which gives 17.53 and 25.24 s. The sup
+- **23.97**: e the figure prints for its Section I, which its caption calls the region of the trigger's runaway (37.70 and 23.97 K s^{-1}), which gives 17.53 and 25.24 s. The supplement of
+- **0.0005**: code and separate calibrations, and resampled every 0.5 s from 0 to 500 s. The two readings differ by at most 0.0005 K on PT-Exp4's neighbour curve; the figure's own resolution
+- **2.47**: at most 0.0005 K on PT-Exp4's neighbour curve; the figure's own resolution, half the curves' stroke width, is 2.47 K and 0.45 s, and the recorded uncertainty is the larger. A
+- **1200**:  is 2.47 K and 0.45 s, and the recorded uncertainty is the larger. A third reading, from the page rendered at 1200 dpi, lies within the recorded uncertainty plus one pixel of
+- **32.2**: red at 1200 dpi, lies within the recorded uncertainty plus one pixel of the vector reading. PT-Exp4's record: 32.2°C at 0 s; a spike to 102.0°C at 3.1 s as the trigger runs a
+- **102.0**: in the recorded uncertainty plus one pixel of the vector reading. PT-Exp4's record: 32.2°C at 0 s; a spike to 102.0°C at 3.1 s as the trigger runs away, back to 79.9°C at 8.4 
+- **79.9**: ector reading. PT-Exp4's record: 32.2°C at 0 s; a spike to 102.0°C at 3.1 s as the trigger runs away, back to 79.9°C at 8.4 s (80.0°C at 8.5 s on the 0.5 s samples); 141.0°C 
+- **141.0**: to 102.0°C at 3.1 s as the trigger runs away, back to 79.9°C at 8.4 s (80.0°C at 8.5 s on the 0.5 s samples); 141.0°C at 45 s; a slow rise to 197.3°C at 271.50 s, where the fi
+- **271.50**: y, back to 79.9°C at 8.4 s (80.0°C at 8.5 s on the 0.5 s samples); 141.0°C at 45 s; a slow rise to 197.3°C at 271.50 s, where the figure marks the onset (Table 3 of the paper g
+- **267.5**:  to PT-Exp4's record from the end of the figure's Section I, 24.16 s, it finds the measured jump beginning at 267.5 s and 186.54°C, 10.72 K below the record's 197.25°C at 271.
+- **186.54**: s record from the end of the figure's Section I, 24.16 s, it finds the measured jump beginning at 267.5 s and 186.54°C, 10.72 K below the record's 197.25°C at 271.5 s, which th
+- **10.72**: rom the end of the figure's Section I, 24.16 s, it finds the measured jump beginning at 267.5 s and 186.54°C, 10.72 K below the record's 197.25°C at 271.5 s, which the figure 
+- **197.25**:  Section I, 24.16 s, it finds the measured jump beginning at 267.5 s and 186.54°C, 10.72 K below the record's 197.25°C at 271.5 s, which the figure marks and the registered com
+- **0.125**: ard while no run was early and downward while none was late, and then halved the bracket until it was at most 0.125 % of the ejected energy wide. PT-Exp1's threshold was searc
+- **4.33**: ing away at 250.6 s against the measured 223 s. Every bracket lies within 4.45 to 7.54 kJ (P3, held), 1.46 to 4.33 kJ above the lumped need (P4 and P5, held). In PT-Exp4 and 

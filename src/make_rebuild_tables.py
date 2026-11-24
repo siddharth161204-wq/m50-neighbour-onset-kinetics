@@ -895,8 +895,9 @@ def quoted_rows():
                 continue
             v = float(sel()[nums.index(num)])
             v = v / 1000.0 if u == "kJ" else (100.0 * v if u == "pct" else (abs(v) if u == "abs" else v))
-            if ("%%.%df" % nd) % v == num:
-                return ("%%.%df" % nd) % v, sel.where
+            txt = f"{v:,.{nd}f}" if "," in num else f"{v:.{nd}f}"
+            if txt == num:
+                return txt, sel.where
         raise KeyError(num)
 
     def add(where, what, parts, src):
@@ -990,6 +991,11 @@ def quoted_rows():
     add("3.5", "PT-Exp4, the 5.04 kJ pulse followed by 10 W and by 12.5 W: the resolved neighbour's runaway, and "
         "with 12.5 W the far face's reading where its jump begins", [a + " and " + b + " s", c + " \\textdegree C"],
         "step 15's runs; results/stage15\\_paper\\_numbers.json, B3b")
+    a, w = N("36.8")
+    b, wb = N("47.6")
+    add("3.5", "PT-Exp4 with 7.42 kJ over 21.4 s: how far the far face's jump begins above the measured 197.3 "
+        "\\textdegree C, and above the record's own jump read by the same rule", [a + " K", b + " K"],
+        "step 15's run; " + w.split(":")[0] + " and " + wb.split(":")[0])
     a, w = N("241.4")
     add("3.5", "PT-Exp4 with 6.2 kJ at constant power over 240 s, the run of step 10 carried on to 900 s: the "
         "resolved neighbour's mean peak", [a + " \\textdegree C"],
@@ -1023,6 +1029,19 @@ def quoted_rows():
         "standard deviation over the kinetic and over the 30 thermal draws",
         [a + " to " + b + " s", ", ".join(four) + " s", c + " s", "%.2f and %.3f s" % (sd_k, sd_t)],
         "step 3's runs; results/stage3a\\_onsets.csv, stage3a\\_metrics.json, stage11\\_draws.csv, stage3bc\\_metrics.json")
+    a, w = N("3.105")
+    add("2.1", "The median ratio of ejected to body energy over the Databank's ten nail tests of this cell, by which "
+        "each test's ejected energy is taken from its fitted body energy", [a],
+        "the Databank's rows; " + w.split(":")[0] + ", ratio\\_central")
+    e, we = N("1,743", "e=")
+    c, wc = N("841.7")
+    f, wf = N("1.2284")
+    h, wh = N("2,667")
+    add("App. B", "The reduced models' constants: the roll's effusivity across its layers, the can's heat capacity per "
+        "unit of the cell's outer area, the skin model's factor $\\Phi$, and the whole heat of the low-temperature "
+        "cathode reaction at the posterior mean",
+        [e + " J\\,m$^{-2}$\\,K$^{-1}$\\,s$^{-1/2}$", c + " J\\,m$^{-2}$\\,K$^{-1}$", f, h + " J"],
+        "step 13's computation; " + we.split(":")[0] + ", " + wf.split(":")[0] + ", " + wh.split(":")[0])
     a, w = N("179.3")
     b, wb = N("199.8")
     add("2.3, S2", "The posterior-mean kinetics in the emulation of the kinetic source's accelerating-rate calorimetry: "
@@ -1080,6 +1099,8 @@ def quoted_rows():
         w = r["where"].split(",")[0]
         if w[0].isdigit():
             return (0, float(w))
+        if w.startswith("App."):
+            return (0, 9.0)
         return (1, float(w[1:])) if w.startswith("S") else (2, 0.0)
     return sorted(rows, key=order)
 

@@ -268,7 +268,7 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
    - 3.5: results/stage15_cross_section.json: A2, the 21.39 s pulse, E_star_J of the two tests whose lumped neighbour needs no delivery = 3.52778
 57. The threshold searches opened 5\,\% either side of the cross-section's value, so that a bracket closed by its first two runs, as in PT-Exp4, PP-Exp2, ST-Exp3 and PT-Exp1, has that value as its midpoint.
    - 5: predictions_stage15.md: /less (5) % and plus 5 %/ = 5
-58. The resolved threshold lies between 6.51 and 7.20~kJ in PP-Exp2 and between 7.06 and 7.15~kJ in PT-Exp4, where the need's search narrowed the threshold search's 6.71 to 7.42~kJ, 1.36 to 2.27 and 1.45 to 1.54 times the lumped thresholds across the brackets (3.18 to 4.77 and 4.66 to 4.85~kJ), rounded outward, so the order holds at either end.
+58. The resolved threshold lies between 6.51 and 7.20~kJ in PP-Exp2 and between 7.06 and 7.15~kJ in PT-Exp4, where the need's runs, read after them, narrowed the threshold search's 6.71 to 7.42~kJ, 1.36 to 2.27 and 1.45 to 1.54 times the lumped thresholds across the brackets (3.18 to 4.77 and 4.66 to 4.85~kJ), rounded outward, so the order holds at either end.
    - 6.51 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.bracket.lo_J = 6.51146
    - 7.20 (new): results/stage15_paper_numbers.json: B1.M50_PP_Exp2.bracket.hi_J = 7.19687
    - 7.06 (new): rebuild_headline.thresholds_3d: PT_Exp4 (B1 narrowed by N) = 7.0625
@@ -473,7 +473,7 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
    - 0.5: src/stage15_inputs.py: /RISE_SLOW = (0\.5)/ = 0.5
 87. The 4.66~kJ run of Section~ is not drawn.}
    - 4.66: results/stage14_needs.csv: need_21s_lo_J where {'test': 'M50_PT_Exp4'} = 4.6569
-88. From published inputs, by estimates rather than strict limits, what the ejecta can release is at most 225.8~kJ, with the heat of burning their gas taken from another cell, and every path of the ejecta is bounded in total by that alone; the holder's conduction is not determinable, energy conservation alone capping it at 247.3~kJ, all that the trigger can release (Table~ , Fig.~ ).
+88. By estimates from published inputs, what the ejecta can release is at most 225.8~kJ, with the heat of burning their gas taken from another cell, and every path of the ejecta is bounded in total by that alone; the holder's conduction is not determinable, energy conservation alone capping it at 247.3~kJ, all that the trigger can release (Table~ , Fig.~ ).
    - 225.8 (new): results/stage14_corrections.json: E_avail_J = 225.838
    - 247.3 (new): results/stage14_corrections.json: E_global_J = 247.333
 89. Within 21.4~s, radiation can deliver at most 27.9~kJ, a black body at 1500\degC{} filling the facing half's view (a flame held on the vent's axis would send about 0.38\,\% of its radiation there, about 0.85~kJ of the 225.8~kJ, but no source places the flame); gas beside the neighbour, a breach's jet facing it and solids and melt on it at most 195.5, 225.8 and 225.8~kJ; and the neighbour's own discharge in the parallel tests, from inside, 65.5~kJ.
@@ -522,7 +522,7 @@ Written by `src/make_rebuild_sentences.py` from the numbers check's trace (`numb
    - 332 (new): results/stage15_cross_section.json: A1_rows, the archived 6,209 J run: t_end_s = 332
    - 20.9: results/stage15_paper_numbers.json: B2 0.05 peak_mean_C less the reduced model's registered peak (predictions_stage15.md) = 20.8544
    - 900: results/manuscript_numbers.json: constants.run_end_s = 900
-95. A run took 17 to 71~s, against 246 to 512~s for the three-dimensional runs of the same searches, both on one two-core machine.
+95. A run took 17 to 71~s, against 246 to 512~s for the three-dimensional runs of the same searches, on one two-core machine.
    - 17: smallest and largest of results/stage15_xs/*.json: wall_s = 16.9846
    - 71: smallest and largest of results/stage15_xs/*.json: wall_s = 71.3495
    - 246: smallest and largest of results/stage15_runs/*.json: wall_s of the B1 runs = 245.934

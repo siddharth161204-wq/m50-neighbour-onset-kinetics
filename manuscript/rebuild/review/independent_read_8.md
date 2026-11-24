@@ -70,3 +70,35 @@ Borderline because the origin is shown only indirectly.
 3.13 Main p.31 (Data availability) against reference [28] (p.35) and supplement reference [1] (p.46): "version 1.13.0 holds every result used here" versus "every result used here is in version v1.11.0, doi:10.5281/zenodo.24368356". Borderline because the documents name different archive versions as holding the results, and only v1.11.0 has its own DOI.
 
 Verdict: Lists 1 and 2 are not both empty. List 1 has two items and List 2 has two items.
+
+---
+
+## What changed after read 8
+
+Lists 1 and 2 were not empty, so every item in them was mended, with every borderline item that costs no run and no words beyond the limits (commits eb6c53d and the next). Main text and appendices stand at 7,996 words, the abstract at 200; both numbers checks are at 0 failures.
+
+List 1.
+- 1.1. The supplement's opening and its glossary now say sixteen steps.
+- 1.2. The main text was right and Table S17 wrong. The 73.3 % share belongs to the ignition temperature with the trigger at the neighbour's own temperature, 218.5 °C (`results/stage13_tign.csv`, trigger "own"); at 230.4 °C, with the trigger at 25 °C, the share is 83.7 %. Table S17 now pairs 73.3 % with 218.5 °C, and 230.4 °C, which no text quotes any longer, has left the table.
+
+List 2.
+- 2.1. Nowhere do the texts now say that the needs reproduce the measured times where no run did. The abstract says that 4.45 to 7.54 kJ runs the resolved neighbour away by the measured times, two of them at its threshold, the least that runs it away at all. Section 3.2 says that in PT-Exp4 and ST-Exp4 no run reproduces the measured time: the lower end does not run away within 900 s, and the upper end runs away at 250.8 and 254.6 s against 272 and 342 s, so these two needs are their thresholds. The same change was made in the Methods, where the definition of a threshold case no longer says that the time "is reproduced only between the two", and in the captions of Fig. 2, Table 3 and Tables S3 and S7, the Discussion ("set the least of it"), Conclusion 2, Section S17, the highlights ("Strong-trigger tests need..."), the graphical abstract and the letters. No run was added; the reader's alternative evidence, runs inside those brackets, would have been new runs outside step 16's registration.
+- 2.2. Table S17 now holds every result that the main text quotes from a run or a computation that no other table or figure shows, and every result of a run that the supplement's text quotes and no other table gives. New rows: the emulation's 179.3 and 199.8 °C; the 164 draws, with their 146.3 to 191.4 °C, mean of 178.8 °C and the amended band of 161.9 to 195.7 °C; the central-contact peaks of 191.9 and 192.2 °C; the far face's excess of 13.8 to 56.3 K; PT-Exp1's lumped peak of 204.2 °C; PT-Exp4's lumped runaway at 215.6 s; the four draws' 191.2 to 192.4 °C and the 17.5 K shift's 221.1 °C; the 12.5 W hold's 255.9 s and 233.6 °C; the 6.2 kJ run's 241.4 °C over 900 s; and the supplement's own step 5, step 6 and step 9 values. The main text's and the supplement's numbers were screened by script against every table, caption and figure (`review/unshown_numbers.py`, with its output after the mends in `review/unshown_numbers_main.md` and `review/unshown_numbers_supplement.md`), and Section S18's sentence and the table's caption now say exactly what the table holds. Three more rows were added on that screening: the Databank's median ratio, 3.105, by which each test's ejected energy is taken; the far face's jump in PT-Exp4's 7.42 kJ run above the measured 197.3 °C and above the record's own jump, 36.8 and 47.6 K; and the reduced models' constants of Appendix B (1,743, 841.7, 1.2284 and 2,667 J).
+
+List 3, mended.
+- 3.2. The 21.4 s is called "the two published records' mean rise time" in the abstract, and its rise times "derived from" the records in the Methods, Table 2 (each a peak rise over a printed heating rate), Section S2 (no longer "measured") and the letters.
+- 3.4. The abstract's ratio now carries "at nominal inputs", as do the graphical abstract and the letters; the body already said so.
+- 3.5. Section S3 now names the same seven predictions as Table S2: step 12's P1 to P4 and step 16's P4, P7 and P11. Step 15's P1, which holds partly by construction, was not recorded as fixed beforehand and is not among them.
+- The same reading of 2.1 found two more places, mended likewise: the Introduction now asks what the neighbour needs "by the tests' measured times" rather than "to reproduce the tests", and Section 3.3 labels PT-Exp4's threshold, narrowed by the need's runs, as read after them, as ST-Exp4's already was.
+- 3.6. Section 2.7 now says that the repository's history shows the files unchanged, and Sections S2 and S7 say the same of the code and the jump rule. Nothing else can be shown in the documents.
+- 3.7. Table 3's caption, Section 3.2 and the Discussion now say that the three-dimensional needs with constant power are counted to 10 s after the measured time, and the cross-section's and the lumped needs to their own runaways; with the pulse the two countings are the same. Section S17 says the same of the registered comparison.
+- 3.9. Section 3.6 and Table 4's caption call the bounds estimates of the most the published inputs allow, not strict limits. Table 4's caption adds that with the fitted triggers' own ejected energies, up to 168.6 kJ, the bounds set by the ejecta's energy would only rise.
+- 3.10. Section 3.7, Fig. 7d and Table 3 now say that the cross-section's need is the upper end of its own search's bracket, 0.62 to 0.84 kJ wide, 0.5 % of the test's ejected energy.
+- 3.11. Section 4.4 says that the trigger was shifted by 2 kJ in three tests, that the needs' direction is suggested by that shift, and that no need was computed with a shifted trigger.
+- 3.12. Conclusion 1 and the graphical abstract now say "at least 28.9 K". The least margin over steps 5, 6 and 12 is 28.93 K, at step 6's 226.75 °C.
+- 3.13. The archive's reference now names version 1.13.0, as the data availability statement does; its version DOI exists only once the author releases it.
+- 3.8. The four values that only Figs. 4d and 5 showed (191.2 to 192.4 °C, 221.1 °C, 255.9 s with 233.6 °C, and 241.4 °C) are now in Table S17 with their runs (see 2.2).
+
+List 3, not mended, with the reason each stays.
+- 3.1 (the abstract's "unmeasured in published tests"). Sections S6 and S8 now describe both surveys: searches written before they were run, and what they looked for and did not find, including any heat flux or deposited energy measured where a neighbour stands. The abstract keeps its four words, which rest on those surveys; it has no room to cite them.
+- 3.3 (the abstract's "at either energy" rests at the high contact on the cross-section for ten outcomes). Section 3.1 says so, with the cross-section's highest peak there, 199.2 °C. The abstract, at 200 words, has no room for it.
