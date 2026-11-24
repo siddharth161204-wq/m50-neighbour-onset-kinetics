@@ -90,8 +90,8 @@ def main():
              "failing cell to run away at the test's measured time is searched, and the bounds that published inputs "
              "set on each path that could deliver it are worked out."),
             "",
-            ("At either energy, conduction and radiation run no resolved neighbour away, so heat must also arrive "
-             "through its side facing the failing cell. With heat delivered over 21.4 s, the mean of the two rise "
+            ("At either energy, conduction and radiation run no resolved neighbour away, so further heat must reach it. "
+             "With heat delivered over 21.4 s, the mean of the two rise "
              "times read from the two published records, the eight tests that propagated after strong triggers need "
              f"{H['n3'][0]:.2f} to {H['n3'][1]:.2f} kJ if the neighbour is resolved in three dimensions and "
              f"{H['nl'][0]:.2f} to {H['nl'][1]:.2f} kJ if it is lumped. To run away at all, the resolved neighbour "
