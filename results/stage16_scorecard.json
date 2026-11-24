@@ -822,7 +822,7 @@
    "test": "M50_PP_Exp1",
    "delivery": "240 s constant power",
    "search": "X",
-   "status": "unfinished",
+   "status": "done",
    "t_m_s": 152.0,
    "E_e_J": 158634.7610927011,
    "E_b_J": 51090.10019088603,
@@ -835,8 +835,8 @@
    "lumped_E_J": 3965.869027317528,
    "lumped_status": "matched",
    "lumped_t_s": 146.67529554865243,
-   "n_runs_counted": 6,
-   "n_runs_step16": 5,
+   "n_runs_counted": 7,
+   "n_runs_step16": 6,
    "runs": [
     {
      "E_J": 3965.8690273175284,
@@ -863,6 +863,14 @@
      "class": "late"
     },
     {
+     "E_J": 7587.970657861012,
+     "t_C8_s": 164.12277780231213,
+     "t_end_s": 164.15,
+     "source": "stage16",
+     "id": "s16_X_PP_Exp1_con240_f0.047832963",
+     "class": "late"
+    },
+    {
      "E_J": 7760.451695440928,
      "t_C8_s": 161.9505015095086,
      "t_end_s": 161.975,
@@ -886,7 +894,25 @@
      "id": "s16_X_PP_Exp1_con240_f0.059793086",
      "class": "early"
     }
-   ]
+   ],
+   "lo_J": 7587.970657861012,
+   "lo_id": "s16_X_PP_Exp1_con240_f0.047832963",
+   "lo_t_C8_s": 164.12277780231213,
+   "lo_source": "stage16",
+   "hi_J": 7760.451695440928,
+   "hi_id": "s16_X_PP_Exp1_con240_f0.048920247",
+   "hi_t_C8_s": 161.9505015095086,
+   "hi_source": "stage16",
+   "width_J": 172.48103757991612,
+   "mid_J": 7674.21117665097,
+   "lo_by_t_J": 5121.880194056183,
+   "hi_by_t_J": 5238.304894422627,
+   "mid_by_t_J": 5180.092544239405,
+   "d": 0.1574928392026991,
+   "lo_minus_lumped_J": 2698.150978685162,
+   "hi_minus_lumped_J": 2814.575679051605,
+   "lo_runs_away": true,
+   "at_threshold": false
   },
   {
    "test": "M50_PP_Exp2",
@@ -905,8 +931,8 @@
    "lumped_E_J": 7552.42559879539,
    "lumped_status": "matched",
    "lumped_t_s": 154.04905665744505,
-   "n_runs_counted": 3,
-   "n_runs_step16": 2,
+   "n_runs_counted": 4,
+   "n_runs_step16": 3,
    "runs": [
     {
      "E_J": 7552.425598795391,
@@ -922,6 +948,14 @@
      "t_end_s": 176.15,
      "source": "stage16",
      "id": "s16_X_PP_Exp2_con240_f0.078825414",
+     "class": "late"
+    },
+    {
+     "E_J": 11263.5280308148,
+     "t_C8_s": 161.35858986143785,
+     "t_end_s": 161.375,
+     "source": "stage16",
+     "id": "s16_X_PP_Exp2_con240_f0.088550621",
      "class": "late"
     },
     {
@@ -1826,27 +1860,30 @@
     }
    },
    "P10": {
-    "held": true,
+    "held": false,
     "per_search": {
-     "M50_PT_Exp4 240 s constant power": true
+     "M50_PT_Exp4 240 s constant power": true,
+     "M50_PP_Exp1 240 s constant power": false
     },
     "d": {
-     "M50_PT_Exp4 240 s constant power": 0.05006855857082712
+     "M50_PT_Exp4 240 s constant power": 0.05006855857082712,
+     "M50_PP_Exp1 240 s constant power": 0.1574928392026991
     }
    },
    "P11": {
     "held": true,
     "per_search": {
-     "M50_PT_Exp4 240 s constant power": true
+     "M50_PT_Exp4 240 s constant power": true,
+     "M50_PP_Exp1 240 s constant power": true
     }
    }
   },
   "scored": 11,
-  "held": 10,
-  "failed": 1
+  "held": 9,
+  "failed": 2
  },
- "X_worker_hours": 0.6626553916268878,
- "n_records": 44,
+ "X_worker_hours": 0.8042902794811461,
+ "n_records": 46,
  "wall_s": {
   "N": [
    274.8340926170349,
@@ -1866,5 +1903,5 @@
   ]
  },
  "first_utc": "2026-11-24T07:35:00Z",
- "last_utc": "2026-11-24T10:32:45Z"
+ "last_utc": "2026-11-24T10:36:18Z"
 }
