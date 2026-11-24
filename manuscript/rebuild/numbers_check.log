@@ -1,4 +1,4 @@
-numbers_check --rebuild: 752 traced to a named value, 161 found in their table's source files, 0 broad matches (supplement only), 37 counts written in words checked, 0 failures, 71 structural (not looked for)
+numbers_check --rebuild: 749 traced to a named value, 161 found in their table's source files, 0 broad matches (supplement only), 37 counts written in words checked, 0 failures, 69 structural (not looked for)
 
 == main.tex: title  [map]
 == main.tex: abstract  [map]
@@ -117,11 +117,6 @@ numbers_check --rebuild: 752 traced to a named value, 161 found in their table's
    traced 900 <- results/manuscript_numbers.json: constants.run_end_s = 900
    traced 0.125 <- src/stage16_run.py: /FINAL_FRAC = ([0-9.]+)/ = 0.125
    traced 5 <- predictions_stage9.md: /within (5) K of it/ = 5
-   traced 2 <- src/stage15_inputs.py: /DIFF_S = (2\.0)/ = 2
-   traced 1 <- src/stage15_inputs.py: /RISE_JUMP = (1\.0)/ = 1
-   [exponent or subscript] -1  ...begin when its rate of rise over 2~s first reaches 1~K\,s$^{-1}$ after having reached 0.5~K\,s$^{-1}$ ...
-   traced 0.5 <- src/stage15_inputs.py: /RISE_SLOW = (0\.5)/ = 0.5
-   [exponent or subscript] -1  ...first reaches 1~K\,s$^{-1}$ after having reached 0.5~K\,s$^{-1}$ and fallen below it (Supplementary Se...
    traced 255.7 <- results/manuscript_numbers.json: constants.level_propagation_C = 255.682
    traced 21.4 <- results/stage13_skin.csv: tau_d_s where {'test': 'M50_PT_Exp1', 'region': 'half'} = 21.3865
    traced 109 <- manuscript/rebuild/data/predictions_registry.csv: rows = 109

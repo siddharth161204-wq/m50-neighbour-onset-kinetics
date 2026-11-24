@@ -583,24 +583,6 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The far face's jump is taken to begin when its rate of rise over 2~s first reaches 1~K\\,s$^{-1}$ after having reached 0.5~K\\,s$^{-1}$ and fallen below it (Supplementary Section~S7).",
-  "number": "2",
-  "source": "src/stage15_inputs.py: /DIFF_S = (2\\.0)/ = 2"
- },
- {
-  "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The far face's jump is taken to begin when its rate of rise over 2~s first reaches 1~K\\,s$^{-1}$ after having reached 0.5~K\\,s$^{-1}$ and fallen below it (Supplementary Section~S7).",
-  "number": "1",
-  "source": "src/stage15_inputs.py: /RISE_JUMP = (1\\.0)/ = 1"
- },
- {
-  "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "The far face's jump is taken to begin when its rate of rise over 2~s first reaches 1~K\\,s$^{-1}$ after having reached 0.5~K\\,s$^{-1}$ and fallen below it (Supplementary Section~S7).",
-  "number": "0.5",
-  "source": "src/stage15_inputs.py: /RISE_SLOW = (0\\.5)/ = 0.5"
- },
- {
-  "segment": "main.tex: Introduction to Discussion, with figure captions",
   "sentence": "The two-body model runs the trigger and the lumped neighbour without reaction and asks when the neighbour reaches $T_\\mathrm{ign}$ with enough heat of the low-temperature cathode reaction left to reach 255.7\\degC.",
   "number": "255.7",
   "source": "results/manuscript_numbers.json: constants.level_propagation_C = 255.682"
@@ -817,13 +799,13 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Even with the fitted triggers and no delivery, the resolved neighbour as a whole runs away in no test at any contact (Supplementary Table~S15 gives how each outcome is established), while nine tests propagated in the rig: at the low contact its hottest point peaks at most at 162.6\\degC, and at the high contact ten of the outcomes rest on the reactive cross-section alone, whose mean peaks there at most at 199.2\\degC{} and which was checked only at the central contact (Section~ ).",
+  "sentence": "Even with the fitted triggers and no delivery, the resolved neighbour as a whole runs away in no test at any contact (Supplementary Table~S15), while nine tests propagated in the rig: at the low contact its hottest point peaks at most at 162.6\\degC, and at the high contact ten of the outcomes rest on the reactive cross-section alone, whose mean peaks there at most at 199.2\\degC{} and which was checked only at the central contact (Section~ ).",
   "number": "162.6",
   "source": "results/stage7_crossings.csv: hot_peak_C, the largest of the per-test runs at the low contact = 162.614"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "Even with the fitted triggers and no delivery, the resolved neighbour as a whole runs away in no test at any contact (Supplementary Table~S15 gives how each outcome is established), while nine tests propagated in the rig: at the low contact its hottest point peaks at most at 162.6\\degC, and at the high contact ten of the outcomes rest on the reactive cross-section alone, whose mean peaks there at most at 199.2\\degC{} and which was checked only at the central contact (Section~ ).",
+  "sentence": "Even with the fitted triggers and no delivery, the resolved neighbour as a whole runs away in no test at any contact (Supplementary Table~S15), while nine tests propagated in the rig: at the low contact its hottest point peaks at most at 162.6\\degC, and at the high contact ten of the outcomes rest on the reactive cross-section alone, whose mean peaks there at most at 199.2\\degC{} and which was checked only at the central contact (Section~ ).",
   "number": "199.2",
   "source": "smallest and largest of results/stage15_nodelivery.csv: mean_peak_xs_C, high contact, outcome from the cross-section = 199.206"
  },
@@ -1951,55 +1933,55 @@
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "At 7.42~kJ, the upper end of its threshold search's bracket, it runs away at 181.9~s, and its far face's jump begins at 173~s and 234.1\\degC, 36.8~K above the measured 197.3\\degC{} and 47.6~K above the record's own jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K from the record.",
+  "sentence": "At 7.42~kJ, the upper end of its threshold search's bracket, it runs away at 181.9~s, and its far face's jump, by the rule in Fig.~ 's caption, begins at 173~s and 234.1\\degC, 36.8~K above the measured 197.3\\degC{} and 47.6~K above the record's own jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K from the record.",
   "number": "7.42",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4.bracket.hi_J = 7.41562"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "At 7.42~kJ, the upper end of its threshold search's bracket, it runs away at 181.9~s, and its far face's jump begins at 173~s and 234.1\\degC, 36.8~K above the measured 197.3\\degC{} and 47.6~K above the record's own jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K from the record.",
+  "sentence": "At 7.42~kJ, the upper end of its threshold search's bracket, it runs away at 181.9~s, and its far face's jump, by the rule in Fig.~ 's caption, begins at 173~s and 234.1\\degC, 36.8~K above the measured 197.3\\degC{} and 47.6~K above the record's own jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K from the record.",
   "number": "181.9",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4, the run at the bracket's upper end: t_C8_s = 181.923"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "At 7.42~kJ, the upper end of its threshold search's bracket, it runs away at 181.9~s, and its far face's jump begins at 173~s and 234.1\\degC, 36.8~K above the measured 197.3\\degC{} and 47.6~K above the record's own jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K from the record.",
+  "sentence": "At 7.42~kJ, the upper end of its threshold search's bracket, it runs away at 181.9~s, and its far face's jump, by the rule in Fig.~ 's caption, begins at 173~s and 234.1\\degC, 36.8~K above the measured 197.3\\degC{} and 47.6~K above the record's own jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K from the record.",
   "number": "173",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4, the run at the bracket's upper end: far_jump.t_s = 173"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "At 7.42~kJ, the upper end of its threshold search's bracket, it runs away at 181.9~s, and its far face's jump begins at 173~s and 234.1\\degC, 36.8~K above the measured 197.3\\degC{} and 47.6~K above the record's own jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K from the record.",
+  "sentence": "At 7.42~kJ, the upper end of its threshold search's bracket, it runs away at 181.9~s, and its far face's jump, by the rule in Fig.~ 's caption, begins at 173~s and 234.1\\degC, 36.8~K above the measured 197.3\\degC{} and 47.6~K above the record's own jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K from the record.",
   "number": "234.1",
   "source": "results/stage15_paper_numbers.json: B3a.run.far_jump.T_C = 234.101"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "At 7.42~kJ, the upper end of its threshold search's bracket, it runs away at 181.9~s, and its far face's jump begins at 173~s and 234.1\\degC, 36.8~K above the measured 197.3\\degC{} and 47.6~K above the record's own jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K from the record.",
+  "sentence": "At 7.42~kJ, the upper end of its threshold search's bracket, it runs away at 181.9~s, and its far face's jump, by the rule in Fig.~ 's caption, begins at 173~s and 234.1\\degC, 36.8~K above the measured 197.3\\degC{} and 47.6~K above the record's own jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K from the record.",
   "number": "36.8",
   "source": "results/stage15_scorecard.json: scorecard/predictions/P5/above_197.3_K = 36.8008"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "At 7.42~kJ, the upper end of its threshold search's bracket, it runs away at 181.9~s, and its far face's jump begins at 173~s and 234.1\\degC, 36.8~K above the measured 197.3\\degC{} and 47.6~K above the record's own jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K from the record.",
+  "sentence": "At 7.42~kJ, the upper end of its threshold search's bracket, it runs away at 181.9~s, and its far face's jump, by the rule in Fig.~ 's caption, begins at 173~s and 234.1\\degC, 36.8~K above the measured 197.3\\degC{} and 47.6~K above the record's own jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K from the record.",
   "number": "197.3",
   "source": "results/stage10_paper_numbers.json: measured.at_onset_C = 197.254"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "At 7.42~kJ, the upper end of its threshold search's bracket, it runs away at 181.9~s, and its far face's jump begins at 173~s and 234.1\\degC, 36.8~K above the measured 197.3\\degC{} and 47.6~K above the record's own jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K from the record.",
+  "sentence": "At 7.42~kJ, the upper end of its threshold search's bracket, it runs away at 181.9~s, and its far face's jump, by the rule in Fig.~ 's caption, begins at 173~s and 234.1\\degC, 36.8~K above the measured 197.3\\degC{} and 47.6~K above the record's own jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K from the record.",
   "number": "47.6",
   "source": "results/stage15_paper_numbers.json: B1 PT_Exp4's upper run, far_jump.T_C, less the record's jump by the same rule (stage15_archive.far_face_jump on inputs/fransson2024/pt_exp4_history.csv from 24.16 s) = 47.563"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "At 7.42~kJ, the upper end of its threshold search's bracket, it runs away at 181.9~s, and its far face's jump begins at 173~s and 234.1\\degC, 36.8~K above the measured 197.3\\degC{} and 47.6~K above the record's own jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K from the record.",
+  "sentence": "At 7.42~kJ, the upper end of its threshold search's bracket, it runs away at 181.9~s, and its far face's jump, by the rule in Fig.~ 's caption, begins at 173~s and 234.1\\degC, 36.8~K above the measured 197.3\\degC{} and 47.6~K above the record's own jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K from the record.",
   "number": "181.9",
   "source": "results/stage15_paper_numbers.json: B1.M50_PT_Exp4, the run at the bracket's upper end: t_C8_s = 181.923"
  },
  {
   "segment": "main.tex: Introduction to Discussion, with figure captions",
-  "sentence": "At 7.42~kJ, the upper end of its threshold search's bracket, it runs away at 181.9~s, and its far face's jump begins at 173~s and 234.1\\degC, 36.8~K above the measured 197.3\\degC{} and 47.6~K above the record's own jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K from the record.",
+  "sentence": "At 7.42~kJ, the upper end of its threshold search's bracket, it runs away at 181.9~s, and its far face's jump, by the rule in Fig.~ 's caption, begins at 173~s and 234.1\\degC, 36.8~K above the measured 197.3\\degC{} and 47.6~K above the record's own jump read by the same rule (Supplementary Section~S7); over 0 to 181.9~s its far face lies 51.4~K from the record.",
   "number": "51.4",
   "source": "results/stage15_paper_numbers.json: B3a.history.rms_K = 51.4421"
  },
