@@ -75,7 +75,7 @@ Verdict: Lists 1 and 2 are not both empty. List 1 has two items and List 2 has t
 
 ## What changed after read 8
 
-Lists 1 and 2 were not empty, so every item in them was mended, with every borderline item that costs no run and no words beyond the limits (commits eb6c53d and the next). Main text and appendices stand at 7,996 words, the abstract at 200; both numbers checks are at 0 failures.
+Lists 1 and 2 were not empty, so every item in them was mended, with every borderline item that costs no run and no words beyond the limits (commits eb6c53d and a975ff5). Main text and appendices stand at 7,996 words, the abstract at 200; both numbers checks are at 0 failures.
 
 List 1.
 - 1.1. The supplement's opening and its glossary now say sixteen steps.

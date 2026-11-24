@@ -45,7 +45,7 @@ Verdict: Lists 1 and 2 are both empty.
 
 ## What changed after read 9
 
-Lists 1 and 2 are empty, so the test passed. Under the brief, every borderline item that costs no run and no words beyond the limits was mended, and the others are listed here with the reason each stays. Main text and appendices stand at 7,998 words, the abstract at 200; both numbers checks are at 0 failures.
+Lists 1 and 2 are empty, so the test passed. Under the brief (commit b5a42cc), every borderline item that costs no run and no words beyond the limits was mended, and the others are listed here with the reason each stays. Main text and appendices stand at 7,998 words, the abstract at 200; both numbers checks are at 0 failures.
 
 Mended.
 - 3.2. The abstract now says that a heat share calibrated with either reading "may need" a trigger-dependent correction for the other, at nominal inputs; the word was paid for by dropping "measured" before "facing-side heat flux". The fourth highlight and the letters say "may need" too.
