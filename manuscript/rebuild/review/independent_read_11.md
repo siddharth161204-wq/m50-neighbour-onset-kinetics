@@ -51,3 +51,13 @@ Two would need words that the abstract, at 250 of 250, does not have: 3.1 ("body
 - 3.7: the caption's "0.5 % wide", unchanged since Brief 31.
 
 The last, 3.9, consists of facts about the author that no document can trace. The manuscript number is the one the journal's system gave on 26 October 2026, and the earlier version of this study, submitted on 17 November to the Journal of The Electrochemical Society, was declined without review on 19 November, so the manuscript is under consideration nowhere.
+
+## After Brief 33 (26 November 2026)
+
+Brief 33 mended four of the nine items, and five stand: 3.2, 3.3, 3.4, 3.7 and 3.9.
+- 3.5: Section 4.1's "the needed energies" became "the propagated tests' needs".
+- 3.6: the same sentence now points its 5.3 to 25.4 % to Section 3.6.
+- 3.8: Table 4's radiation row says that the whole 225.8 kJ is taken as radiated.
+- 3.1: the abstract says "calorimetry's largest body energy, 33.2 kJ", and the letter says "the largest body energy that the Battery Failure Databank's calorimetry gives for this cell". The abstract's two words were freed in its first sentence, where "or a temperature field (resolved)" became "or many (resolved)", which still defines the term against "one temperature (lumped)". That wording was not mended by any of reads 8 to 11.
+
+No further read was made.
