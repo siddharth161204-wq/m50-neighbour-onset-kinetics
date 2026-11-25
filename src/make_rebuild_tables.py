@@ -109,9 +109,13 @@ def table2():
          r"\cite{bergman2011fundamentals}; assumed$^{a}$, as in \cite{chen2021simplified}"),
         ("Room convection; ambient and start", r"10 W\,m$^{-2}$\,K$^{-1}$; 25\textdegree C", r"assumed$^{a}$"),
         (r"\textit{Trigger}", None, None),
+        # Brief 32: how the rise times are derived, in the main text as the Journal of Energy Storage asks of every
+        # procedure needed to repeat a result (the inputs: m50_tests.csv and fig10_section_rates.csv)
         ("Model and release", ("one temperature; triangular over 21.39 s, the mean of the two rise times derived from "
-                               "the two published records, each a peak rise over a printed heating rate (17.53 "
-                               "and 25.24 s; Supplementary Section~S7)"),
+                               r"the two published records, each the rise from 25\textdegree C, taken as its start, to "
+                               r"the trigger's maximum (686 and 630\textdegree C in PP-Exp3 and PT-Exp4) over the mean "
+                               r"heating rate printed for its runaway (37.70 and 23.97 K\,s$^{-1}$): 17.53 and 25.24 s "
+                               r"(Supplementary Section~S7)"),
          r"derived from \cite{fransson2024exploring}"),
         (r"Body energy $E_\mathrm{b}$", "9.0 to 54.3 kJ, one per test (Table 1); 33.2 kJ, the most calorimetry measured for this cell, in the runs of Section~\\ref{sec:res-conduction}",
          r"\cite{fransson2024exploring,finegan2024databank}"),
@@ -121,6 +125,12 @@ def table2():
         ("Reactant masses; initial SEI amount", r"per 720 g reference cell; 0.15 of the source's normalised amount (fresh), 0 (aged)",
          r"\cite{koenig2025uncertainty}"),
         ("Runaway level; window", r"255.7\textdegree C; within 900 s", r"\cite{koenig2025uncertainty}; this study"),
+        # Brief 32: the emulated calorimetry of Section 2.3, as src/v1_arc_check.py runs it
+        ("Calorimetry emulated (Section~\\ref{sec:kinetics})",
+         (r"the source's 720 g reference cell (1100 J\,kg$^{-1}$\,K$^{-1}$; 0.04 m$^{2}$ at 25 W\,m$^{-2}$\,K$^{-1}$) "
+          r"from 25\textdegree C in steps of 5 K at 1 K\,min$^{-1}$, each with a 30 min wait and a 10 min seek for "
+          r"0.15 K\,min$^{-1}$ of self-heating"),
+         r"\cite{koenig2025uncertainty}; ramp and seek this study"),
         (r"\textit{Delivered heat}", None, None),
         ("Region", "the half of the neighbour's can facing the trigger, a uniform flux", "this study"),
         ("Shapes", ("triangular over 21.39 s; constant power over 120, 240 or 360 s, the last outlasting the "
@@ -130,12 +140,12 @@ def table2():
          "this study"),
     ]
     lines = [r"\begin{table}[!tbp]", r"\centering", r"\scriptsize",
-             r"\caption{The model's parameters and their sources. The two-cell geometry and its solver are those of "
-             r"an earlier, archived study by the author~\cite{satte2026twocell}, whose cells stood apart and were joined "
-             r"by busbars; here the cans touch along a line and welded tabs join the cells, as in the tests. $^{a}$, a "
-             r"value that study set without a primary source, held here as an assumption.}",
-             r"\label{tab:params}", r"\renewcommand{\arraystretch}{0.9}",
-             r"\setlength{\tabcolsep}{4pt}", r"\begin{tabular}{>{\raggedright\arraybackslash}p{0.28\textwidth}>{\raggedright\arraybackslash}p{0.43\textwidth}>{\raggedright\arraybackslash}p{0.21\textwidth}}", r"\toprule",
+             r"\caption{The model's parameters and their sources. The two-cell geometry and its solver are an earlier, "
+             r"archived study's~\cite{satte2026twocell}, whose cells stood apart, joined by busbars; here the cans touch "
+             r"along a line and welded tabs join the cells, as in the tests. $^{a}$, a value that study set without a "
+             r"primary source, held here as an assumption.}",
+             r"\label{tab:params}", r"\renewcommand{\arraystretch}{0.86}",
+             r"\setlength{\tabcolsep}{4pt}", r"\begin{tabular}{>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}p{0.51\textwidth}>{\raggedright\arraybackslash}p{0.17\textwidth}}", r"\toprule",
              r"Quantity & Value & Source \\", r"\midrule"]
     for q, v, s in rows:
         if v is None:
@@ -156,7 +166,7 @@ def table3():
              "A5": "Conduction through the cell holder",
              "A6": "The neighbour's own discharge (parallel tests; for comparison)"}
     sets = {"A1": r"a black body at 1500\textdegree C filling the facing half's view (the holder may reflect); "
-                  r"a flame held on the vent's axis, about 0.85~kJ",
+                  r"a flame held on the vent's axis, about 0.85~kJ by ray tracing (Supplementary Section~S6)",
             "A2": r"convection by Churchill and Bernstein's relation~\cite{churchill1977correlating} at "
                   r"398.5~m\,s$^{-1}$~\cite{gillich2024mechanical}, at the film temperature of gas at 1500\textdegree C "
                   r"over a can at 25\textdegree C, with hydrogen's properties at 1000~K, the highest tabulated, which give a "
@@ -749,7 +759,7 @@ def table4():
              r"neighbour away by 10~s after the measured time, bracketed in three dimensions and counted to that time, "
              r"and for the other two counted to their own runaways (the same with the pulse); the cross-section's is "
              r"the upper end of a bracket 0.5\,\% of the test's ejected energy wide, set against the bracket's "
-             r"midpoint. $^{t}$: no run reproduces the measured time, so the need is the threshold (Supplementary "
+             r"midpoint, the difference computed from the unrounded values. $^{t}$: no run reproduces the measured time, so the need is the threshold (Supplementary "
              r"Table~S7); $^{b}$: interpolated between two runs. Thresholds with the pulse, by the trigger's fitted "
              r"energy: the least energy that runs the neighbour away within 900~s, and the ratio of resolved to lumped "
              r"across the brackets, rounded outward; 0: runs away with none; $^{n}$: bracketed by the need's two runs, "

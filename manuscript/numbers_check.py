@@ -309,6 +309,8 @@ def rb_structural(raw, before, after, ctx):
         return "label"
     if re.search(r"(PT|PP|ST|SP)(\\?_|-)Exp$", before):
         return "test name"
+    if re.search(r"\b[A-Z]{2,5}-D-(\d{2}-)?$", before):       # a journal's manuscript number (Brief 32's letter)
+        return "identifier"
     return None
 
 
@@ -341,7 +343,13 @@ def rb_segments(rb):
         j = tex.index(b, i) if b else len(tex)
         return tex[i:j]
     segs.append(("main.tex: title", re.search(r"\\title\{(.*?)\}\n", tex, re.S).group(1), "map"))
-    segs.append(("main.tex: abstract", cut(r"\begin{abstract}", r"\end{abstract}"), "map"))
+    ab = cut(r"\begin{abstract}", r"\end{abstract}")
+    if "%JES-ABSTRACT-START" in ab:       # two abstracts since Brief 32, each checked as its own segment
+        segs.append(("main.tex: abstract for the Journal of Energy Storage",
+                     ab[ab.index("%JES-ABSTRACT-START"):ab.index("%JES-ABSTRACT-END")], "map"))
+        segs.append(("main.tex: abstract", ab[ab.index("%ABSTRACT-START"):ab.index("%ABSTRACT-END")], "map"))
+    else:
+        segs.append(("main.tex: abstract", ab, "map"))
     body = cut(r"\section{Introduction}", r"\section{Conclusions}")
     segs.append(("main.tex: Introduction to Discussion, with figure captions", body, "map"))
     segs.append(("main.tex: Conclusions", cut(r"\section{Conclusions}", r"\appendix"), "map"))

@@ -1,11 +1,11 @@
 \begin{table}[!tbp]
 \centering
 \scriptsize
-\caption{The model's parameters and their sources. The two-cell geometry and its solver are those of an earlier, archived study by the author~\cite{satte2026twocell}, whose cells stood apart and were joined by busbars; here the cans touch along a line and welded tabs join the cells, as in the tests. $^{a}$, a value that study set without a primary source, held here as an assumption.}
+\caption{The model's parameters and their sources. The two-cell geometry and its solver are an earlier, archived study's~\cite{satte2026twocell}, whose cells stood apart, joined by busbars; here the cans touch along a line and welded tabs join the cells, as in the tests. $^{a}$, a value that study set without a primary source, held here as an assumption.}
 \label{tab:params}
-\renewcommand{\arraystretch}{0.9}
+\renewcommand{\arraystretch}{0.86}
 \setlength{\tabcolsep}{4pt}
-\begin{tabular}{>{\raggedright\arraybackslash}p{0.28\textwidth}>{\raggedright\arraybackslash}p{0.43\textwidth}>{\raggedright\arraybackslash}p{0.21\textwidth}}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}p{0.51\textwidth}>{\raggedright\arraybackslash}p{0.17\textwidth}}
 \toprule
 Quantity & Value & Source \\
 \midrule
@@ -24,12 +24,13 @@ Welded tabs: series one, parallel two & 6.8 mW\,K$^{-1}$ per tab (5 and 10 as br
 View factor between the cans; emissivity & 0.1817; 0.8 & \cite{bergman2011fundamentals}; assumed$^{a}$, as in \cite{chen2021simplified} \\
 Room convection; ambient and start & 10 W\,m$^{-2}$\,K$^{-1}$; 25\textdegree C & assumed$^{a}$ \\
 \multicolumn{3}{l}{\textit{Trigger}} \\
-Model and release & one temperature; triangular over 21.39 s, the mean of the two rise times derived from the two published records, each a peak rise over a printed heating rate (17.53 and 25.24 s; Supplementary Section~S7) & derived from \cite{fransson2024exploring} \\
+Model and release & one temperature; triangular over 21.39 s, the mean of the two rise times derived from the two published records, each the rise from 25\textdegree C, taken as its start, to the trigger's maximum (686 and 630\textdegree C in PP-Exp3 and PT-Exp4) over the mean heating rate printed for its runaway (37.70 and 23.97 K\,s$^{-1}$): 17.53 and 25.24 s (Supplementary Section~S7) & derived from \cite{fransson2024exploring} \\
 Body energy $E_\mathrm{b}$ & 9.0 to 54.3 kJ, one per test (Table 1); 33.2 kJ, the most calorimetry measured for this cell, in the runs of Section~\ref{sec:res-conduction} & \cite{fransson2024exploring,finegan2024databank} \\
 \multicolumn{3}{l}{\textit{Kinetics}} \\
 Model & Bayesian chemical reaction neural network: posterior mean, and 200 joint draws & \cite{koenig2025uncertainty} \\
 Reactant masses; initial SEI amount & per 720 g reference cell; 0.15 of the source's normalised amount (fresh), 0 (aged) & \cite{koenig2025uncertainty} \\
 Runaway level; window & 255.7\textdegree C; within 900 s & \cite{koenig2025uncertainty}; this study \\
+Calorimetry emulated (Section~\ref{sec:kinetics}) & the source's 720 g reference cell (1100 J\,kg$^{-1}$\,K$^{-1}$; 0.04 m$^{2}$ at 25 W\,m$^{-2}$\,K$^{-1}$) from 25\textdegree C in steps of 5 K at 1 K\,min$^{-1}$, each with a 30 min wait and a 10 min seek for 0.15 K\,min$^{-1}$ of self-heating & \cite{koenig2025uncertainty}; ramp and seek this study \\
 \multicolumn{3}{l}{\textit{Delivered heat}} \\
 Region & the half of the neighbour's can facing the trigger, a uniform flux & this study \\
 Shapes & triangular over 21.39 s; constant power over 120, 240 or 360 s, the last outlasting the longest combustion reported for a 21700 cell, about 300 s~\cite{chen2023comprehensive}; in PT-Exp4 also the pulse followed by a constant power; for Section~\ref{sec:res-why}, triangular over 5 to 360 s & this study \\

@@ -1281,6 +1281,37 @@ E += [
     (r"six worker-hours were used \(6\.16", ["6.16"], J(S16, "X_worker_hours"), None),
 ]
 
+# Brief 32: Table 2 gives how the trigger's rise times are derived and how the calorimetry is emulated, which the
+# Journal of Energy Storage asks to be in the main text or an appendix (the derivation is the parameters record's row
+# "Release durations"; the emulation is src/v1_arc_check.py's, with its settings in results/v1_arc_check.json)
+RATES = "inputs/fransson2024/fig10_section_rates.csv"
+V1ARC = "results/v1_arc_check.json"
+
+
+def _v1_h_and_start():
+    src = open(os.path.join(ROOT, "src", "v1_arc_check.py")).read()
+    return [float(re.search(r"H, A = ([\d.]+), 0\.04", src).group(1)), float(re.search(r"T_start_C=([\d.]+)", src).group(1))]
+
+
+E += [
+    (r"each the rise from 25° ?C, taken as its start", ["25"], MD(PARAMS, r"the (25) C start of Section I is this study's choice"), None),
+    (r"maximum \(686 and 630° ?C in PP-Exp3 and PT-Exp4\)", ["686"], C(TESTS, "trigger_max_C", test="M50_PP_Exp3"), None),
+    (r"maximum \(686 and 630° ?C in PP-Exp3 and PT-Exp4\)", ["630"], C(TESTS, "trigger_max_C", test="M50_PT_Exp4"), None),
+    (r"runaway \(37\.70 and 23\.97 K", ["37.70"], C(RATES, "rate_C_per_s", test="M50_PP_Exp3", section="I", cell="trigger"), None),
+    (r"runaway \(37\.70 and 23\.97 K", ["23.97"], C(RATES, "rate_C_per_s", test="M50_PT_Exp4", section="I", cell="trigger"), None),
+    (r"\): 17\.53 and 25\.24 s", ["17.53"], J("results/stage7_paper_numbers.json", "triggers.levels.tau_s[0]"), None),
+    (r"\): 17\.53 and 25\.24 s", ["25.24"], J("results/stage7_paper_numbers.json", "triggers.levels.tau_s[2]"), None),
+    (r"reference cell \(1100 J", ["1100"], MD("src/bcrnn.py", r"CP_REF = (1100)\.0"), None),
+    (r"0\.04 m\^\{2\} at 25 W", ["0.04"], MD("src/v1_arc_check.py", r"H, A = 25\.0, (0\.04)"), None),
+    (r"at 25 W m\^\{-2\} K\^\{-1\}\) from 25° ?C", ["25"],
+     F("src/v1_arc_check.py: the chamber's H, 25.0 W m-2 K-1, and the emulation's start, T_start_C = 25.0", _v1_h_and_start), None),
+    (r"in steps of 5 K at 1 K", ["5"], J(V1ARC, "arc_base.settings.step_C"), None),
+    (r"in steps of 5 K at 1 K", ["1"], J(V1ARC, "arc_base.settings.ramp_C_per_min"), None),
+    (r"with a 30 min wait", ["30"], J(V1ARC, "arc_base.settings.wait_min"), None),
+    (r"a 10 min seek for", ["10"], J(V1ARC, "arc_base.settings.seek_min"), None),
+    (r"seek for 0\.15 K", ["0.15"], MD("src/v1_arc_check.py", r"trigger=(0\.15)"), None),
+]
+
 WORDS = [
     (r"halved up to sixteen times", 16, MD("src/reactive.py", r"K_MAX = (16)")),
     (r"thirteen of the fourteen with strong triggers", 13, F("stage15_cross_section.json A2 against rebuild_brackets: strong-trigger tests whose cross-section bracket lies above the lumped bracket",
@@ -1362,4 +1393,15 @@ WORDS += [
     (r"the fourteen searches closed", 14, F(f"{S16}: X, closed searches", lambda: [float(len(x16()))])),
     (r"two over 120.s, those after the weak trigger", 2,
      F(f"{S16}: X, searches over 120 s not closed", lambda: [float(sum(1 for r in _json(S16)["X"] if r["delivery"].startswith("120") and r["status"] != "done"))])),
+]
+
+# Brief 32: the counts the abstract for the Journal of Energy Storage writes in words
+WORDS += [
+    (r"Sixteen tests of touching LG M50 pairs", 16, F(f"{TESTS}: tests", _n_tests(lambda r: True))),
+    (r"in two \(weak\)", 2, F(f"{TRIG}: tests whose E_J is below 30 kJ", lambda: [float(sum(1 for x in trig_E() if float(x) < 30000))])),
+    (r"the eight propagating strong-trigger tests", 8, F(f"{S16}: N searches", lambda: [float(len(_json(S16)["N"]))])),
+    (r"two of them thresholds", 2, F(f"{S16}: N searches whose need is the threshold (at_threshold)",
+                                     lambda: [float(sum(1 for r in _json(S16)["N"] if r["at_threshold"]))])),
+    (r"at most 0\.91 times after both weak ones", 2,
+     F("rebuild_headline.thresholds_3d: weak-trigger tests (E_J below 30 kJ)", lambda: [float(sum(1 for x in _hl().thresholds_3d() if trig_by_test()[x[0]] < 30000))])),
 ]

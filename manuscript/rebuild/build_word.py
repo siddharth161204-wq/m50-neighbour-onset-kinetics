@@ -15,7 +15,11 @@ Writes, in manuscript/rebuild/submission/:
   Manuscript_double_spaced.docx and .pdf (the same text double-spaced at 12 points, to count pages against the Fire
   Safety Journal's preference), and build_report.txt (page counts).
 
-Usage: python3 manuscript/rebuild/build_word.py
+Brief 32: the set for the Journal of Energy Storage is built into submission/J_Energy_Storage/ by --journal jes, with that
+journal's abstract of 250 words (main_jes.tex), its own letter, and the LaTeX sources in source/; the set for the Journal
+of Power Sources in submission/ itself is left as it is unless --journal jps is given.
+
+Usage: python3 manuscript/rebuild/build_word.py --journal jes   (or --journal jps)
 """
 import os
 import re
@@ -28,6 +32,7 @@ from docx.shared import Pt, Cm
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "submission")
+JOURNAL = "jps"         # set by main(): "jps" writes submission/, "jes" writes submission/J_Energy_Storage/
 BUILD = os.path.join(HERE, "build")
 CSL = os.path.join(BUILD, "elsevier-with-titles.csl")
 
@@ -189,12 +194,13 @@ def to_pdf(docx):
 
 def manuscript():
     tex = open(os.path.join(HERE, "main.tex")).read()
-    lab = labels(os.path.join(HERE, "main.aux"))
+    lab = labels(os.path.join(HERE, "main_jes.aux" if JOURNAL == "jes" else "main.aux"))
     title = re.search(r"\\title\{(.*?)\}\n", tex, re.S).group(1)
     author = re.search(r"\\author\{(.*?)\}", tex).group(1)
     email = re.search(r"\\ead\{(.*?)\}", tex).group(1)
     address = re.search(r"\\address\{(.*?)\}", tex).group(1)
-    abstract = tex[tex.index("%ABSTRACT-START") + len("%ABSTRACT-START"):tex.index("%ABSTRACT-END")].strip()
+    a, b = ("%JES-ABSTRACT-START", "%JES-ABSTRACT-END") if JOURNAL == "jes" else ("%ABSTRACT-START", "%ABSTRACT-END")
+    abstract = tex[tex.index(a) + len(a):tex.index(b)].strip()
     keywords = re.search(r"\\begin\{keyword\}(.*?)\\end\{keyword\}", tex, re.S).group(1).strip().replace("\\sep", ";")
     body = tex[tex.index("%BODY-START") + len("%BODY-START"):tex.index("%BODY-END")]
     body = appendix_titles(resolve(inline_tables(body), lab))
@@ -227,7 +233,43 @@ def supplement(title_main):
     style_docx(out)
 
 
+def latex_sources(src):
+    """The LaTeX sources of the set for the Journal of Energy Storage (Brief 32), each compiling alone: Manuscript.tex is
+    main.tex with that journal's abstract in place of the switch between the two, with its bibliography (.bbl, from the
+    build of main_jes.tex) beside the .bib; Supplementary_material.tex is supplement.tex; the tables and figures they
+    read are copied beside them."""
+    os.makedirs(os.path.join(src, "tables"), exist_ok=True)
+    os.makedirs(os.path.join(src, "figures"), exist_ok=True)
+    tex = open(os.path.join(HERE, "main.tex")).read()
+    i, j = tex.index("\\ifdefined\\JESabstract"), tex.index("\\fi\n\\end{abstract}")
+    jes = tex[tex.index("%JES-ABSTRACT-START"):tex.index("%JES-ABSTRACT-END") + len("%JES-ABSTRACT-END")]
+    head = tex[:tex.index("% Two abstracts (Brief 32)")]
+    tex = head + jes + "\n" + tex[j + len("\\fi\n"):]
+    # the working comments (the build's own notes and markers) are left out of the files sent; none is inline
+    nocomment = lambda t: "\n".join(x for x in t.splitlines() if not x.lstrip().startswith("%")) + "\n"
+    open(os.path.join(src, "Manuscript.tex"), "w").write(nocomment(tex))
+    shutil.copy(os.path.join(HERE, "main_jes.bbl"), os.path.join(src, "Manuscript.bbl"))
+    open(os.path.join(src, "Supplementary_material.tex"), "w").write(
+        nocomment(open(os.path.join(HERE, "supplement.tex")).read()))
+    shutil.copy(os.path.join(HERE, "supplement.bbl"), os.path.join(src, "Supplementary_material.bbl"))
+    shutil.copy(os.path.join(HERE, "references.bib"), os.path.join(src, "references.bib"))
+    import glob as _glob
+    for f in _glob.glob(os.path.join(HERE, "tables", "*.tex")):
+        shutil.copy(f, os.path.join(src, "tables", os.path.basename(f)))
+    for i in range(1, 8):
+        shutil.copy(os.path.join(HERE, "figures", f"fig{i}.pdf"), os.path.join(src, "figures", f"fig{i}.pdf"))
+
+
 def main():
+    global OUT, JOURNAL
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--journal", choices=["jps", "jes"], required=True,
+                    help="jes: the Journal of Energy Storage's set in submission/J_Energy_Storage/ (Brief 32); "
+                         "jps: the Journal of Power Sources' set in submission/, which Brief 32 leaves as it is")
+    JOURNAL = ap.parse_args().journal
+    if JOURNAL == "jes":
+        OUT = os.path.join(HERE, "submission", "J_Energy_Storage")
     os.makedirs(OUT, exist_ok=True)
     os.makedirs(BUILD, exist_ok=True)
     if not os.path.exists(CSL):
@@ -245,19 +287,35 @@ def main():
     for ext in ("tif", "pdf"):
         shutil.copy(os.path.join(HERE, "figures", f"graphical_abstract.{ext}"), os.path.join(OUT, f"Graphical_abstract.{ext}"))
     rep = []
-    for name in ("Manuscript.docx", "Manuscript_double_spaced.docx", "Supplementary_material.docx"):
+    names = ("Manuscript.docx", "Supplementary_material.docx") if JOURNAL == "jes" else \
+        ("Manuscript.docx", "Manuscript_double_spaced.docx", "Supplementary_material.docx")
+    if JOURNAL == "jes":     # the double-spaced copy was for the Fire Safety Journal's page count only
+        dbl = os.path.join(OUT, "Manuscript_double_spaced.docx")
+        if os.path.exists(dbl):
+            os.remove(dbl)
+    for name in names:
         pdf, n = to_pdf(os.path.join(OUT, name))
         if name != "Manuscript_double_spaced.docx":
             os.remove(pdf)      # LibreOffice does not draw Word equations; the PDFs are the LaTeX ones
         rep.append(f"{name}: {n} pages as LibreOffice lays it out (A4, 2.5 cm margins, Times New Roman 12 pt; "
                    "LibreOffice leaves the Word equations out of its PDF, so the count is low by their lines)")
-    # the three cover letters (Word, with their text) and the three enquiries, so that the set is in one folder (Brief 30)
     import glob as _glob
-    for f in sorted(_glob.glob(os.path.join(HERE, "letters", "Cover_letter_*.docx"))
-                    + _glob.glob(os.path.join(HERE, "letters", "Cover_letter_*.txt"))
-                    + _glob.glob(os.path.join(HERE, "letters", "Enquiry_*.txt"))):
-        shutil.copy(f, os.path.join(OUT, os.path.basename(f)))
-    shutil.copy(os.path.join(HERE, "main.pdf"), os.path.join(OUT, "Manuscript.pdf"))
+    if JOURNAL == "jes":     # the journal's own letter only (Brief 32), and the LaTeX sources
+        for ext in ("docx", "txt"):
+            shutil.copy(os.path.join(HERE, "letters", f"Cover_letter_J_Energy_Storage.{ext}"),
+                        os.path.join(OUT, f"Cover_letter_J_Energy_Storage.{ext}"))
+        pdf, n = to_pdf(os.path.join(OUT, "Cover_letter_J_Energy_Storage.docx"))
+        os.remove(pdf)
+        rep.append(f"Cover_letter_J_Energy_Storage.docx: {n} page as LibreOffice lays it out")
+        latex_sources(os.path.join(OUT, "source"))
+        shutil.copy(os.path.join(HERE, "main_jes.pdf"), os.path.join(OUT, "Manuscript.pdf"))
+    else:
+        # the three cover letters (Word, with their text) and the three enquiries, so that the set is in one folder
+        for f in sorted(_glob.glob(os.path.join(HERE, "letters", "Cover_letter_*.docx"))
+                        + _glob.glob(os.path.join(HERE, "letters", "Cover_letter_*.txt"))
+                        + _glob.glob(os.path.join(HERE, "letters", "Enquiry_*.txt"))):
+            shutil.copy(f, os.path.join(OUT, os.path.basename(f)))
+        shutil.copy(os.path.join(HERE, "main.pdf"), os.path.join(OUT, "Manuscript.pdf"))
     shutil.copy(os.path.join(HERE, "supplement.pdf"), os.path.join(OUT, "Supplementary_material.pdf"))
     n_tex = int(re.search(r"Pages:\s+(\d+)", subprocess.run(["pdfinfo", os.path.join(OUT, "Manuscript.pdf")],
                                                             capture_output=True, text=True).stdout).group(1))

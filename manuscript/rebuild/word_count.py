@@ -38,10 +38,15 @@ def main():
         n = len(words(p))
         total += n
         out.append(f"{name}: {n}")
-    abstract = tex[tex.index(r"\begin{abstract}") + len(r"\begin{abstract}"):tex.index(r"\end{abstract}")]
+    # two abstracts since Brief 32: the Journal of Power Sources' between %ABSTRACT-START and %ABSTRACT-END, and the
+    # Journal of Energy Storage's between %JES-ABSTRACT-START and %JES-ABSTRACT-END, which main_jes.tex selects
+    abstract = tex[tex.index("%ABSTRACT-START") + len("%ABSTRACT-START"):tex.index("%ABSTRACT-END")]
     out.append(f"Main text (Introduction to Conclusions, without figures, tables, appendices and declarations): {total}")
     out.append(f"Appendices: {len(words(apps))}; main text and appendices: {total + len(words(apps))}")
     out.append(f"Abstract: {len(words(abstract))} words")
+    if "%JES-ABSTRACT-START" in tex:
+        jes = tex[tex.index("%JES-ABSTRACT-START") + len("%JES-ABSTRACT-START"):tex.index("%JES-ABSTRACT-END")]
+        out.append(f"Abstract for the Journal of Energy Storage (main_jes.tex): {len(words(jes))} words")
     nfig = len(re.findall(r"\\begin\{figure\}", tex))
     ntab = len(re.findall(r"\\IfFileExists\{tables/t", tex))
     out.append(f"Figures: {nfig}; tables: {ntab}; together: {nfig + ntab}")
