@@ -1,4 +1,4 @@
-numbers_check --rebuild: 732 traced to a named value, 249 found in their table's source files, 0 broad matches (supplement only), 45 counts written in words checked, 0 failures, 79 structural (not looked for)
+numbers_check --rebuild: 735 traced to a named value, 249 found in their table's source files, 0 broad matches (supplement only), 45 counts written in words checked, 0 failures, 79 structural (not looked for)
 
 == main.tex: title  [map]
 == main.tex: abstract for the Journal of Energy Storage  [map]
@@ -492,6 +492,7 @@ numbers_check --rebuild: 732 traced to a named value, 249 found in their table's
    traced 7.54 <- results/stage16_scorecard.json: N, the smallest lower end and the largest upper end of the eight brackets = 7.53609
    traced 0.26 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 0.2635
    traced 5.96 <- smallest and largest of results/stage14_needs.csv: need_21s_lo_J of the propagated tests read at the measured time = 5.9624
+   traced 360 <- results/stage15_table.csv: tau_s where {'test': 'M50_ST_Exp3'} = 360
    traced 76.74 <- results/stage14_inputs.csv: value where {'key': 'db_Eej_median'} = 76.7412
    traced 12.3 <- results/stage15_table.csv: C2_E_by_t_J, the largest = 12.2592
    traced 5.3 <- smallest and largest of results/stage15_table.csv: C8_xs_share_of_76.74kJ = 5.29617
@@ -793,7 +794,9 @@ numbers_check --rebuild: 732 traced to a named value, 249 found in their table's
    traced 27.9 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A1', 'window_s': '21.39'} = 27.8564
    traced 225.8 <- results/stage14_corrections.json: E_avail_J = 225.838
    traced 1500 <- results/stage14_inputs.csv: value where {'key': 'T_flame_max'} = 1500
+   traced 0.38 <- results/stage14_independent_read.md: /gives (0\.003759) \+- 0\.000022 at 0\.85 R/ = 0.3759
    traced 0.85 <- results/stage14_independent_read.md: /at most about (\d+) J \(1\.11 %\)/ = 0.849
+   traced 225.8 <- results/stage14_corrections.json: E_avail_J = 225.838
    traced 195.5 <- results/stage14_bounds_corrected.csv: upper_J where {'path': 'A2', 'window_s': '21.39'} = 195.516
    traced 225.8 <- results/stage14_corrections.json: E_avail_J = 225.838
    traced 398.5 <- results/stage14_inputs.csv: value where {'key': 'u_vent_max'} = 398.5

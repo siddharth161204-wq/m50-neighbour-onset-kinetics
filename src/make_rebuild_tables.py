@@ -166,7 +166,8 @@ def table3():
              "A5": "Conduction through the cell holder",
              "A6": "The neighbour's own discharge (parallel tests; for comparison)"}
     sets = {"A1": r"a black body at 1500\textdegree C filling the facing half's view (the holder may reflect); "
-                  r"a flame held on the vent's axis, about 0.85~kJ by ray tracing (Supplementary Section~S6)",
+                  r"a flame held on the vent's axis would send the facing half about 0.38\,\% of its radiation, by ray tracing "
+                  r"(Supplementary Section~S6), about 0.85~kJ of the 225.8~kJ in all",
             "A2": r"convection by Churchill and Bernstein's relation~\cite{churchill1977correlating} at "
                   r"398.5~m\,s$^{-1}$~\cite{gillich2024mechanical}, at the film temperature of gas at 1500\textdegree C "
                   r"over a can at 25\textdegree C, with hydrogen's properties at 1000~K, the highest tabulated, which give a "

@@ -73,7 +73,8 @@ def jes_letter(j, title, H, n_pred, author, sign, C):
          "facing "
          "the failing cell, runs it away by the test's measured time, is searched."),
         "",
-        ("With the failing cell's energy fitted or held to 33.2 kJ, the most that calorimetry gives for this cell, "
+        ("With the failing cell's energy fitted or held to 33.2 kJ, the most that the Battery Failure Databank's "
+         "calorimetry gives for this cell, "
          "conduction and radiation run no resolved neighbour away. With heat delivered over 21.4 s, the mean rise time "
          f"derived from two published records, the {W[C['needs']]} tests that propagated after strong triggers need "
          f"{H['n3'][0]:.2f} to {H['n3'][1]:.2f} kJ if the neighbour is resolved, {W[C['at_thr']]} of them its "
